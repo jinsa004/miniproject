@@ -93,32 +93,29 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div class="modal_login_wrap">
         <h2>로그인</h2>
         <div class="form_box">
-          <form action="/login" method="post">
+          <form>
             <input
-              id="username"
+              id="coUsername"
               type="text"
               placeholder="아이디를 입력하세요."
-              value="${username}"
             />
             <input
-              id="password"
+              id="coPassword"
               type="password"
               placeholder="패스워드를 입력하세요."
-              name="password"
             />
           </form>
           <label class="btn_check">
             <input
               type="checkbox"
               class="login_check"
-              id="user_remember"
-              name=""
+              id="remember"
               checked
             />
             <span class="login_check_icon"></span>
             <span class="login_check_text">로그인 상태 유지</span>
           </label>
-          <button id="btn_login" type="button" class="btn btn-primary">
+          <button id="btn_login" type="button" class="btn btn-primary" onclick="coLogin()">
             로그인
           </button>
         </div>

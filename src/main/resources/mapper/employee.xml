@@ -17,6 +17,13 @@
 
 	</select>
 
+	<select id="findByEmployeeUsername"
+		resultType="site.metacoding.miniproject.domain.employee.Employee">
+		SELECT *
+		FROM employee
+		WHERE employee_username = #{employeeUsername}
+	</select>
+
 	<update id="update">
 
 	</update>
