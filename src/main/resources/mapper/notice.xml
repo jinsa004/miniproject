@@ -12,6 +12,18 @@
         ORDER BY notice_period DESC;
 	</select>
 
+	<select id="findByJobCodeToNotice" resultType="site.metacoding.miniproject.domain.notice.Notice">
+		SELECT
+        n.notice_title, n.notice_task, n.notice_career, n.notice_qual,
+        n.notice_position, DATE_FORMAT(n.notice_period, '%Y.%m.%d') as notice_period, j.job_code
+        FROM notice n
+		INNER JOIN job j
+		ON n.job_id = j.job_id
+		WHERE j.job_code = #{jobCode}
+        ORDER BY n.notice_period DESC;
+	</select>
+
+
 	<select id="findByCompanyId" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT *
 		FROM notice

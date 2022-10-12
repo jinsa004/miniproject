@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.notice.Notice;
@@ -17,11 +18,18 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
-    @GetMapping("emp")
+    @GetMapping("emp") // ({ "emp/", "emp/notice" }) 로 두 개 걸어주는 것 불가 (쿼리스트링시 매핑 주소 "notice"가 중복되기 때문)
     public String getAllNoticeList(Model model) {
         List<Notice> noticeAllList = noticeService.채용공고전체목록보기();
         model.addAttribute("noticeAllList", noticeAllList);
         return "employee/main";
+    }
+
+    @GetMapping("emp/notice")
+    public String getJobNoticeList(@RequestParam("jobCode") Integer jobCode, Model model) {
+        List<Notice> jobNoticeList = noticeService.채용공고분야별목록보기(jobCode);
+        model.addAttribute("jobNoticeList", jobNoticeList);
+        return "employee/jobNotice";
     }
 
     @GetMapping("co/supCompany/{companyId}")

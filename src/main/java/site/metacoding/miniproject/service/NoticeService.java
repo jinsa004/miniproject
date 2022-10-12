@@ -18,6 +18,10 @@ public class NoticeService {
         return noticeDao.findAll();
     }
 
+    public List<Notice> 채용공고분야별목록보기(Integer jobCode) {
+        return noticeDao.findByJobCodeToNotice(jobCode);
+    }
+
     public List<Notice> 내공고목록보기(Integer companyId) {
         return noticeDao.findByCompanyId(companyId);
     }
