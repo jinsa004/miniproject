@@ -15,4 +15,8 @@ public class ResumeService {
     public void 이력서작성(Resume resume) {
         resumeDao.insert(resume);
     }
+
+    public Resume 이력서상세보기(Integer resumeId) {
+        return resumeDao.findById(resumeId);
+    }
 }

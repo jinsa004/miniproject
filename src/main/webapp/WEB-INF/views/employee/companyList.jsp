@@ -22,7 +22,7 @@
                 <ul>
                   <c:forEach var="intro" items="${introList}" begin="0" end="3" step="1">
                     <li>
-                      <a href="companyIntroDetail">
+                      <a href="companyIntroDetail/${intro.introId}">
                         <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
                         <div class="company_txt">
                           <input type="hidden" value="${intro.no}">
