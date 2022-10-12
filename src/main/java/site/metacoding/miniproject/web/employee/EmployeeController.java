@@ -2,9 +2,20 @@ package site.metacoding.miniproject.web.employee;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.employee.Employee;
+import site.metacoding.miniproject.service.employee.EmployeeService;
+import site.metacoding.miniproject.web.dto.response.CMRespDto;
+
+@RequiredArgsConstructor
 @Controller
 public class EmployeeController {
+
+    private final EmployeeService employeeService;
 
     @GetMapping({ "/", "/emp/main" })
     public String main() {// 개인회원이 보는 메인페이지
@@ -39,6 +50,17 @@ public class EmployeeController {
     @GetMapping("/emp/employeeInfo")
     public String 회원정보() {// 개인회원 회원가입 정보 수정/탈퇴 페이지
         return "employee/empInfo";
+    }
+
+    @PostMapping("/emp/join")
+    public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee) {
+        employeeService.employeeJoin(employee);
+        return new CMRespDto<>(1, "회원가입성공", null);
+    }
+
+    @GetMapping("/emp/join")
+    public String mainJoin() {
+        return "employee/header";
     }
 
 }
