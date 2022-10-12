@@ -12,4 +12,6 @@ public interface NoticeDao {
 	public void update(Integer noticeId, Notice notice);
 
 	public void deleteById(Integer noticeId);
+
+	public List<Notice> findByCompanyId(Integer CompanyId);
 }
