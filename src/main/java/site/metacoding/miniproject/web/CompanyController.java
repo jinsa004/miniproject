@@ -89,4 +89,5 @@ public class CompanyController {
         companyService.회원가입(joinDto);
         return new CMRespDto<>(1, "회원가입성공", null);
     }
+
 }
