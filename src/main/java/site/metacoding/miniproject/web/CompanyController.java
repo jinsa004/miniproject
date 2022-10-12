@@ -48,7 +48,7 @@ public class CompanyController {
         session.setAttribute("principal", principal);
         return new CMRespDto<>(1, "로그인성공", null);
     }
-
+    
     @GetMapping("/co/main")
     public String main() {// 개인회원이 보는 메인페이지
         return "company/mainCompany";
@@ -83,11 +83,9 @@ public class CompanyController {
     public String 마이페이지() {// 기업소개 상세보기 수정하기 intro 테이블
         return "company/coIntroUpdate";
     }
-
     @PostMapping("/co/Join")
     public @ResponseBody CMRespDto<?> companyJoin(@RequestBody JoinDto joinDto) {
         companyService.회원가입(joinDto);
         return new CMRespDto<>(1, "회원가입성공", null);
     }
-
 }

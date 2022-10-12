@@ -1,10 +1,15 @@
 package site.metacoding.miniproject.web;
 
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,8 +17,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
+import site.metacoding.miniproject.domain.intro.Intro;
+import site.metacoding.miniproject.service.employee.IntroService;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.web.dto.request.LoginDto;
+
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -21,6 +29,8 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+
+    @Autowired
 
     private final HttpSession session;
 
@@ -64,8 +74,16 @@ public class EmployeeController {
         return "employee/subscription";
     }
 
+    // @GetMapping("/emp/companyList")
+    // public String companyList() {// 개인회원이 보는 기업정보탭(기업소개 목록보기)
+    // return "employee/companyList";
+    // }
+
     @GetMapping("/emp/companyList")
-    public String companyList() {// 개인회원이 보는 기업정보탭(기업소개 목록보기)
+    public String companylist(Model model) {
+        List<Intro> introList = introService.기업소개목록보기();
+        model.addAttribute("introList", introList);
+
         return "employee/companyList";
     }
 
