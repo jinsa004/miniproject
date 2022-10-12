@@ -58,10 +58,13 @@ public class EmployeeController {
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
-    @GetMapping({ "/", "/emp/main" })
-    public String main() {// 개인회원이 보는 메인페이지
-        return "employee/main";
-    }
+    // @GetMapping("/")
+    // public String main() {// 개인회원이 보는 메인페이지
+    // return "employee/main";
+    // }
+    // NoticeController의 전체직군보기 페이지가 메인이라
+    // 일단 주석처리함. EmployeeController에 Notice 메서드를 넣을지 NoticeController에 넣을지 정해야 함.
+    // 일단은 EmployeeController에 불러온 Service가 많아서 NoticeController에 넣어놨음.
 
     @GetMapping("/emp/matchingNotice")
     public String matchingList() {// 개인회원이 보는 매칭리스트탭(관심분야맞는 공고 목록보기)

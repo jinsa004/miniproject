@@ -6,8 +6,8 @@
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT
-        notice_title,notice_coname, notice_task,notice_qual,
-        notice_position,notice_sal,notice_period
+        notice_title,notice_task, notice_career,notice_qual,
+        notice_position, DATE_FORMAT(notice_period, '%Y.%m.%d') as notice_period
         FROM notice
         ORDER BY notice_period DESC;
 	</select>
