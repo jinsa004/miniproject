@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.web.company;
+package site.metacoding.miniproject.web;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
-import site.metacoding.miniproject.web.dto.CMRespDto;
-import site.metacoding.miniproject.web.dto.LoginDto;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
+import site.metacoding.miniproject.web.dto.request.LoginDto;
+import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
 @Controller

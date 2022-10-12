@@ -11,6 +11,7 @@ import site.metacoding.miniproject.domain.company.Company;
 @Setter
 @Getter
 public class JoinDto {
+  private Integer companyId;
   private Integer companyNumber;
   private String companyName;
   private String companyEmail;

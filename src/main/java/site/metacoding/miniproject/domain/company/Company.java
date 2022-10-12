@@ -1,9 +1,11 @@
 package site.metacoding.miniproject.domain.company;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
 
+@NoArgsConstructor
 @Setter
 @Getter
 public class Company {
