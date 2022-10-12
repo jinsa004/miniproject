@@ -14,10 +14,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/employee.js"></script>
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     ></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <title>4조 PROJECT</title>
   </head>
   <body>
@@ -60,8 +62,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             >
               회원가입
             </button>
-            <a href="/emp/mypageInsertForm" class="btn_company">마이 페이지</a
-              >
+            <a href="/emp/mypageInsertForm" class="btn_company">마이 페이지</a>
             <a href="/co/mainCompany" class="btn_company">기업 서비스</a
             ><!-- .btn_company -->
           </div>
@@ -132,57 +133,71 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             <div class="join_left">
               <div class="join_id join_box">
                 <h3>
-                  <label for="id">아이디</label>
+                  <label for="employeeUsername">아이디</label>
                 </h3>
                 <span>
                   <input
-                    id="id"
+                    id="employeeUsername"
                     type="text"
                     placeholder="아이디를 입력하세요."
-                    value="${username}"
+                    value="${employeeUsername}"
                     maxlength="20"
                   />
+                  <button
+                    id="btnUsernameSameCheck"
+                    type="button"
+                    maxlength="20"
+                  >
+                    중복체크
+                  </button>
                 </span>
               </div>
 
               <div class="join_pw join_box">
                 <h3>
-                  <label for="password">비밀번호</label>
+                  <label for="employeePassword">비밀번호</label>
                 </h3>
                 <span>
                   <input
-                    id="password"
+                    id="employeePassword"
                     type="password"
                     placeholder="패스워드를 입력하세요."
-                    name="password"
+                    name="employeePassword"
                     maxlength="20"
                   />
                 </span>
               </div>
               <div class="join_pw2 join_box">
+                <input
+                  id="employeepasswordRepeat"
+                  type="password"
+                  placeholder="패스워드를 입력하세요."
+                />
+              </div>
+              <div class="join_sex join_box">
                 <h3>
-                  <label for="password2">비밀번호 재확인</label>
+                  <label for="employeeSex">성별</label>
                 </h3>
                 <span>
                   <input
-                    id="password2"
-                    type="password"
-                    placeholder="패스워드를 입력하세요."
-                    name="password"
+                    id="employeeSex"
+                    type="text"
+                    placeholder="성별을 입력하세요."
+                    name="employeeSex"
                     maxlength="20"
                   />
                 </span>
               </div>
               <div class="join_email join_box">
                 <h3>
-                  <label for="email">이메일</label>
+                  <label for="employeeEmail">이메일</label>
                 </h3>
                 <span>
                   <input
-                    id="email"
+                    id="employeeEmail"
                     type="email"
                     placeholder="이메일을 입력하세요."
-                    name="email"
+                    name="employeeEmail"
                     maxlength="30"
                   />
                 </span>
@@ -191,57 +206,43 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="user_info">
                 <div class="join_name join_box">
                   <h3>
-                    <label for="u_name">이름</label>
+                    <label for="employeeName">이름</label>
                   </h3>
                   <span>
                     <input
-                      id="u_name"
+                      id="employeeName"
                       type="text"
                       placeholder="이름을 입력하세요."
-                      name="userName"
+                      name="employeeName"
                       maxlength="10"
                     />
                   </span>
                 </div>
                 <div class="join_birth join_box">
                   <h3>
-                    <label for="u_birth">생년월일</label>
+                    <label for="employeeBirth">생년월일</label>
                   </h3>
                   <span>
                     <input
-                      id="u_birth"
+                      id="employeeBirth"
                       type="date"
                       placeholder="생년월일을 입력하세요."
-                      name="userBirth"
+                      name="employeeBirth"
                       maxlength="40"
                     />
                   </span>
                 </div>
                 <div class="join_phone join_box">
                   <h3>
-                    <label for="u_phone">휴대폰번호</label>
+                    <label for="employeeTel">휴대폰번호</label>
                   </h3>
                   <span>
                     <input
-                      id="u_phone"
+                      id="employeeTel"
                       type="tel"
                       placeholder="휴대폰번호를 입력하세요."
-                      name="userPhone"
+                      name="employeeTel"
                       maxlength="40"
-                    />
-                  </span>
-                </div>
-                <div class="join_adress join_box">
-                  <h3>
-                    <label for="u_adress">주소</label>
-                  </h3>
-                  <span>
-                    <input
-                      id="u_adress"
-                      type="text"
-                      placeholder="주소를 입력하세요."
-                      name="userAdress"
-                      maxlength="100"
                     />
                   </span>
                 </div>
@@ -249,6 +250,41 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             </div>
 
             <div class="join_right">
+              <div class="join_adress join_box company_location">
+                <h3>
+                  <label for="employeeLocation">주소</label>
+                </h3>
+                <span>
+                  <input
+                    type="text"
+                    id="sample6_postcode"
+                    placeholder="우편번호"
+                  />
+                  <input
+                    type="button"
+                    onclick="sample6_execDaumPostcode()"
+                    value="우편번호 찾기"
+                  /><br />
+                  <input
+                    type="text"
+                    id="sample6_address"
+                    class="employeeLocation"
+                    placeholder="주소"
+                  /><br />
+                  <input
+                    type="text"
+                    id="sample6_detailAddress"
+                    placeholder="상세주소"
+                  />
+                  <input
+                    type="text"
+                    id="sample6_extraAddress"
+                    placeholder="참고항목"
+                  />
+                </span>
+              </div>
+              <!-- .join_adress -->
+
               <div class="career_part">
                 <h2>관심분야</h2>
                 <div class="career_part1 part_box">
@@ -311,13 +347,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               </div>
             </div>
           </form>
-          <button id="btn_join" type="button" class="btn btn-primary">
+          <button id="btn_join" type="button" onclick="joinSave()">
             회원가입
           </button>
         </div>
       </div>
     </div>
   </body>
-
-  
 </html>
