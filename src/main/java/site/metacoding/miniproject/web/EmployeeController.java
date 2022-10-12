@@ -76,6 +76,7 @@ public class EmployeeController {
 
     @GetMapping("/emp/mypageInsertForm")
     public String mypageResumeInsert() {// 이력서 등록, 수정, 삭제, 대표 이력서 선택
+        session.getAttribute("principal");
         return "employee/mypageInsertForm";
     }
 

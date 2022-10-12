@@ -24,4 +24,8 @@ public class EmployeeService {
     public void employeeJoin(Employee employee) {
         employeeDao.insert(employee);
     }
+
+    public Employee 구직자정보보기(Integer employeeId) {
+        return employeeDao.findById(employeeId);
+    }
 }
