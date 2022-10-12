@@ -110,6 +110,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               type="checkbox"
               class="login_check"
               id="remember"
+              checked
             />
             <span class="login_check_icon"></span>
             <span class="login_check_text">로그인 상태 유지</span>
