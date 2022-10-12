@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.web.company;
+package site.metacoding.miniproject.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

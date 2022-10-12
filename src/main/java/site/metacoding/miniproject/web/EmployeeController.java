@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.web.employee;
+package site.metacoding.miniproject.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
