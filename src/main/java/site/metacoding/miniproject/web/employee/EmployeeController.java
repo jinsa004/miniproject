@@ -1,5 +1,9 @@
 package site.metacoding.miniproject.web.employee;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,14 +12,48 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
+
+import site.metacoding.miniproject.service.EmployeeService;
+import site.metacoding.miniproject.web.dto.CMRespDto;
+import site.metacoding.miniproject.web.dto.LoginDto;
+
 import site.metacoding.miniproject.service.employee.EmployeeService;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
+import site.metacoding.miniproject.web.dto.LoginDto;
 
 @RequiredArgsConstructor
 @Controller
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+
+    private final HttpSession session;
+
+    @PostMapping("/emp/login")
+    public @ResponseBody CMRespDto<?> login(@RequestBody LoginDto loginDto, HttpServletResponse response){
+        System.out.println("===============");
+		System.out.println(loginDto.isRemember());
+		System.out.println("===============");
+        
+        if (loginDto.isRemember() == true) {
+			Cookie cookie = new Cookie("employeeUsername", loginDto.getEmployeeUsername());
+			cookie.setMaxAge(60 * 60 * 24);
+			response.addCookie(cookie);
+
+		} else {
+			Cookie cookie = new Cookie("employeeUsername", null);
+			cookie.setMaxAge(0);
+			response.addCookie(cookie);
+		}
+
+        Employee principal = employeeService.로그인(loginDto);
+        if(principal == null){
+            return new CMRespDto<>(-1, "로그인실패", null);
+        }
+        session.setAttribute("principal", principal);
+        return new CMRespDto<>(1,"로그인성공",null);
+    }
+
 
     @GetMapping({ "/", "/emp/main" })
     public String main() {// 개인회원이 보는 메인페이지

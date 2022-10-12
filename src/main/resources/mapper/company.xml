@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.miniproject.domain.company.CompanyDao">
 
   <insert id="insert">
@@ -7,10 +10,19 @@
 		VALUES(#{companyNumber}, #{companyName}, #{companyEmail}, #{companyTel}, #{companyLocation}, #{jobId}, #{companyUsername}, #{companyPassword})
 	</insert>
 
-  <select id="findAll" resultType="site.metacoding.miniproject.domain.company.Company"></select>
+	<select id="findAll"
+		resultType="site.metacoding.miniproject.domain.company.Company">
+	</select>
 
   <select id="findById" resultType="site.metacoding.miniproject.domain.company.Company">
 		SELECT * FROM company WHERE company_Id=#{companyId}
+	</select>
+  
+	<select id="findByCompanyUsername"
+		resultType="site.metacoding.miniproject.domain.company.Company">
+		SELECT *
+		FROM company
+		WHERE company_username = #{companyUsername}
 	</select>
 
   <update id="update">
@@ -26,7 +38,9 @@
     WHERE company_id = #{companyId}
 	</update>
 
-  <delete id="deleteById"></delete>
+	<delete id="deleteById">
+
+	</delete>
 
 
 </mapper>
