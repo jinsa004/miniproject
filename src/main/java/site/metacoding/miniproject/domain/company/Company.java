@@ -19,6 +19,9 @@ public class Company {
 	private String companyPassword;
 	private Integer jobId;
 
+	//엔티티 필드 아님
+	private Integer employeeId;
+
 	// public Company(Integer companyNumber, String companyName, String
 	// companyEmail, String companyTel,
 	// String companyLocation, String companyUsername, String companyPassword,

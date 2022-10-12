@@ -16,4 +16,7 @@ public class Employee {
 	private String employeeLocation;
 	private String employeeTel;
 	private Integer jobId;
+
+	//엔티티 필드 아님
+	private Integer companyId;
 }
