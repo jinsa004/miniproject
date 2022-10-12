@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.service.employee.EmployeeService;
+import site.metacoding.miniproject.service.employee.IntroService;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -16,6 +17,7 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+    private final IntroService introService;
 
     @GetMapping({ "/", "/emp/main" })
     public String main() {// 개인회원이 보는 메인페이지
@@ -37,8 +39,14 @@ public class EmployeeController {
         return "employee/companyList";
     }
 
-    @GetMapping("/emp/companyIntroDetail")
-    public String 기업소개상세보기() {// 개인회원이 intro 테이블 기업소개 상세보기
+    // @GetMapping("/emp/companyIntroDetail")
+    // public String 기업소개상세보기() {// 개인회원이 intro 테이블 기업소개 상세보기
+    //     return "employee/coIntroDetail";
+    // }
+
+    @GetMapping("/emp/companyIntroDetail/{introId}")
+    public String introDetail(@PathVariable Integer introId, Model model){
+        model.addAttribute("intro", introService.기업소개상세보기(introId));
         return "employee/coIntroDetail";
     }
 
