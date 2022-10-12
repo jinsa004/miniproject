@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.service.employee;
+package site.metacoding.miniproject.service;
 
 import java.util.List;
 
@@ -16,5 +16,9 @@ public class IntroService {
 
     public List<Intro> 기업소개목록보기() {
         return introDao.findAll();
+    }
+
+    public Intro 기업소개상세보기(Integer intoId) {
+        return introDao.findById(intoId);
     }
 }

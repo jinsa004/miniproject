@@ -1,6 +1,5 @@
 package site.metacoding.miniproject.web;
 
-
 import java.util.List;
 
 import javax.servlet.http.Cookie;
@@ -58,7 +57,7 @@ public class EmployeeController {
         session.setAttribute("principal", principal);
         return new CMRespDto<>(1, "로그인성공", null);
     }
-    
+
     @GetMapping({ "/", "/emp/main" })
     public String main() {// 개인회원이 보는 메인페이지
         return "employee/main";
@@ -74,20 +73,11 @@ public class EmployeeController {
         return "employee/subscription";
     }
 
-    @GetMapping("/emp/companyList")
-    public String companyList() {// 개인회원이 보는 기업정보탭(기업소개 목록보기)
-        return "employee/companyList";
-    }
-
-
-    // @GetMapping("/emp/companyIntroDetail")
-    // public String 기업소개상세보기() {// 개인회원이 intro 테이블 기업소개 상세보기
-    //     return "employee/coIntroDetail";
-    // }
-
     @GetMapping("/emp/companyIntroDetail/{introId}")
-    public String introDetail(@PathVariable Integer introId, Model model){
+    public String introDetail(@PathVariable Integer introId, Model model) {
         model.addAttribute("intro", introService.기업소개상세보기(introId));
+        return "employee/coIntroDetail";
+    }
 
     @GetMapping("/emp/companyList")
     public String companylist(Model model) {
@@ -106,7 +96,6 @@ public class EmployeeController {
     public String 회원정보() {// 개인회원 회원가입 정보 수정/탈퇴 페이지
         return "employee/empInfo";
     }
-
 
     @PostMapping("/emp/join")
     public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee) {

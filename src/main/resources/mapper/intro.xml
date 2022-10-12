@@ -4,15 +4,16 @@
 
 	<insert id="insert"></insert>
 
-	<select id="findAll" resultType="site.metacoding.miniproject.domain.intro.Intro">
+	<select id="findAll" resultType="site.metacoding.miniproject.domain.intro.Intro"></select>
+
+	<select id="findById" resultType="site.metacoding.miniproject.domain.intro.Intro">
 		SELECT i.intro_id, row_number() over(order BY i.intro_id desc) as NO,i.company_id, i.intro_title, i.intro_task, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_sal, i.intro_wellfare,
 		i.intro_content, i.intro_location, i.job_id, i.intro_image, c.company_name, i.intro_birth
 		FROM intro i
 		LEFT OUTER JOIN company c
 		ON i.company_id = c.company_id
+		WHERE intro_id = #{introId}
 	</select>
-
-	<select id="findById" resultType="site.metacoding.miniproject.domain.intro.Intro"></select>
 
 	<update id="update"></update>
 

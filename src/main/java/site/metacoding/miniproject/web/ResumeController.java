@@ -6,15 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.miniproject.Service.ResumeService;
+import site.metacoding.miniproject.service.ResumeService;
 
 @RequiredArgsConstructor
 @Controller
 public class ResumeController {
 
     private final ResumeService resumeService;
-
-
 
     @GetMapping("co/resumeList")
     public String resumeList() { // 기업회원이 보는 이력서리스트**
@@ -23,7 +21,7 @@ public class ResumeController {
 
     // @GetMapping("co/resumeDetail")
     // public String 이력서상세보기() { // 이력서 상세보기 페이지
-    //     return "company/resumeDetail";
+    // return "company/resumeDetail";
     // }
 
     @GetMapping("co/resumeDetail/{resumeId}")
