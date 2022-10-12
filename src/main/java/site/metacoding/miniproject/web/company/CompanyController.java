@@ -15,10 +15,13 @@ import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.web.dto.CMRespDto;
 import site.metacoding.miniproject.web.dto.LoginDto;
+import site.metacoding.miniproject.web.dto.request.JoinDto;
+
 
 @RequiredArgsConstructor
 @Controller
 public class CompanyController {
+    private final CompanyService companyService;
 
     private final CompanyService companyService;
     private final HttpSession session;
@@ -81,6 +84,12 @@ public class CompanyController {
     @GetMapping("/co/companyIntroUpdate")
     public String 마이페이지() {// 기업소개 상세보기 수정하기 intro 테이블
         return "company/coIntroUpdate";
+    }
+
+    @PostMapping("/co/Join")
+    public @ResponseBody CMRespDto<?> companyJoin(@RequestBody JoinDto joinDto) {
+        companyService.회원가입(joinDto);
+        return new CMRespDto<>(1, "회원가입성공", null);
     }
 
 }
