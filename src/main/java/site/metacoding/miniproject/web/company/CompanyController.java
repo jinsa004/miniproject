@@ -17,38 +17,36 @@ import site.metacoding.miniproject.web.dto.CMRespDto;
 import site.metacoding.miniproject.web.dto.LoginDto;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
 
-
 @RequiredArgsConstructor
 @Controller
 public class CompanyController {
-    private final CompanyService companyService;
 
     private final CompanyService companyService;
     private final HttpSession session;
 
     @PostMapping("/co/login")
-    public @ResponseBody CMRespDto<?> login(@RequestBody LoginDto loginDto, HttpServletResponse response){
+    public @ResponseBody CMRespDto<?> login(@RequestBody LoginDto loginDto, HttpServletResponse response) {
         System.out.println("===============");
-		System.out.println(loginDto.isRemember());
-		System.out.println("===============");
-        
-        if (loginDto.isRemember() == true) {
-			Cookie cookie = new Cookie("companyUsername", loginDto.getCompanyUsername());
-			cookie.setMaxAge(60 * 60 * 24);
-			response.addCookie(cookie);
+        System.out.println(loginDto.isRemember());
+        System.out.println("===============");
 
-		} else {
-			Cookie cookie = new Cookie("companyUsername", null);
-			cookie.setMaxAge(0);
-			response.addCookie(cookie);
-		}
+        if (loginDto.isRemember() == true) {
+            Cookie cookie = new Cookie("companyUsername", loginDto.getCompanyUsername());
+            cookie.setMaxAge(60 * 60 * 24);
+            response.addCookie(cookie);
+
+        } else {
+            Cookie cookie = new Cookie("companyUsername", null);
+            cookie.setMaxAge(0);
+            response.addCookie(cookie);
+        }
 
         Company principal = companyService.로그인(loginDto);
-        if(principal == null){
+        if (principal == null) {
             return new CMRespDto<>(-1, "로그인실패", null);
         }
         session.setAttribute("principal", principal);
-        return new CMRespDto<>(1,"로그인성공",null);
+        return new CMRespDto<>(1, "로그인성공", null);
     }
 
     @GetMapping("/co/main")

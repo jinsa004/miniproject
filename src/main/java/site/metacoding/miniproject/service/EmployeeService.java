@@ -12,12 +12,16 @@ import site.metacoding.miniproject.web.dto.LoginDto;
 public class EmployeeService {
     private final EmployeeDao employeeDao;
 
-    public Employee 로그인(LoginDto loginDto){
+    public Employee 로그인(LoginDto loginDto) {
         Employee employeePS = employeeDao.findByEmployeeUsername(loginDto.getEmployeeUsername());
-		
-		if (employeePS.getEmployeePassword().equals(loginDto.getEmployeePassword())) {
-			return employeePS;
-		}
-		return null;
+
+        if (employeePS.getEmployeePassword().equals(loginDto.getEmployeePassword())) {
+            return employeePS;
+        }
+        return null;
+    }
+
+    public void employeeJoin(Employee employee) {
+        employeeDao.insert(employee);
     }
 }
