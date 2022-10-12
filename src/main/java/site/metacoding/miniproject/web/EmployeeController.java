@@ -1,15 +1,14 @@
 package site.metacoding.miniproject.web;
 
-
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,20 +17,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
-import site.metacoding.miniproject.service.employee.IntroService;
 import site.metacoding.miniproject.service.EmployeeService;
+import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.web.dto.request.LoginDto;
-
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
 @Controller
 public class EmployeeController {
-
-    private final EmployeeService employeeService;
-
     @Autowired
-
+    private final EmployeeService employeeService;
+    private final IntroService introService;
     private final HttpSession session;
 
     @PostMapping("/emp/login")
