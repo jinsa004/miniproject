@@ -17,13 +17,20 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
+    @GetMapping({ "/", "/notice" })
+    public String getNoticeList(Model model) {
+        List<Notice> noticeAllList = noticeService.채용공고전체목록보기();
+        model.addAttribute("noticeAllList", noticeAllList);
+        return "notice/notice_main";
+    }
+
     @GetMapping("co/supCompany/{companyId}")
     public String myNoticeFindAll(@PathVariable Integer companyId, Model model) {
         List<Notice> noticeList = noticeService.내공고목록보기(companyId);
         model.addAttribute("noticeList", noticeList);
         return "company/supporter";
     }
-    
+
     @GetMapping("emp/noticeDetail")
     public String recruitDetail() {// 개인회원 입장에서 채용공고 상세보기
         return "employee/noticeDetail";
