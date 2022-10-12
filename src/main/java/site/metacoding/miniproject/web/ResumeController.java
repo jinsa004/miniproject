@@ -15,6 +15,7 @@ public class ResumeController {
     private final ResumeService resumeService;
 
 
+
     @GetMapping("co/resumeList")
     public String resumeList() { // 기업회원이 보는 이력서리스트**
         return "company/resumeList";
