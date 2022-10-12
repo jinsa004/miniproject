@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -8,16 +9,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   <insert id="insert">
 		INSERT INTO company(company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
 		VALUES(#{companyNumber}, #{companyName}, #{companyEmail}, #{companyTel}, #{companyLocation}, #{jobId}, #{companyUsername}, #{companyPassword})
+=======
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.metacoding.miniproject.domain.company.CompanyDao">
+
+	<insert id="insert">
+
+>>>>>>> f9d1b19922d78c77544604155244c8afd1d580db
 	</insert>
 
 	<select id="findAll"
 		resultType="site.metacoding.miniproject.domain.company.Company">
 	</select>
 
+<<<<<<< HEAD
   <select id="findById" resultType="site.metacoding.miniproject.domain.company.Company">
 		SELECT * FROM company WHERE company_Id=#{companyId}
 	</select>
   
+=======
+	<select id="findById"
+		resultType="site.metacoding.miniproject.domain.company.Company">
+
+	</select>
+
+>>>>>>> f9d1b19922d78c77544604155244c8afd1d580db
 	<select id="findByCompanyUsername"
 		resultType="site.metacoding.miniproject.domain.company.Company">
 		SELECT *
@@ -25,6 +43,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE company_username = #{companyUsername}
 	</select>
 
+<<<<<<< HEAD
   <update id="update">
 		UPDATE company 
 		SET company_number = #{companyNumber},
@@ -36,6 +55,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		company_password = #{companyPassword},
 		job_id = #{jobId},
     WHERE company_id = #{companyId}
+=======
+	<update id="update">
+
+>>>>>>> f9d1b19922d78c77544604155244c8afd1d580db
 	</update>
 
 	<delete id="deleteById">
