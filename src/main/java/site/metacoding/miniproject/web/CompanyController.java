@@ -48,7 +48,7 @@ public class CompanyController {
         session.setAttribute("principal", principal);
         return new CMRespDto<>(1, "로그인성공", null);
     }
-
+    
     @GetMapping("/co/main")
     public String main() {// 개인회원이 보는 메인페이지
         return "company/mainCompany";

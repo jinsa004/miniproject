@@ -27,13 +27,20 @@ public class ResumeController {
     private final JobService jobService;
     private final HttpSession session;
 
+
     @GetMapping("co/resumeList")
     public String resumeList() { // 기업회원이 보는 이력서리스트**
         return "company/resumeList";
     }
 
-    @GetMapping("co/resumeDetail")
-    public String resumeDetail() { // 이력서 상세보기 페이지
+    // @GetMapping("co/resumeDetail")
+    // public String 이력서상세보기() { // 이력서 상세보기 페이지
+    // return "company/resumeDetail";
+    // }
+
+    @GetMapping("co/resumeDetail/{resumeId}")
+    public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
+        model.addAttribute("resume", resumeService.이력서상세보기(resumeId));
         return "company/resumeDetail";
     }
 

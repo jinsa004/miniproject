@@ -32,6 +32,7 @@ public class Resume {
     private boolean isMain;
     private Timestamp createdAt;
 
+
     // 수정화면 불러올 시 employee 정보 불러오기용
     private String employeeName;
     private String employeeBirth;
@@ -39,7 +40,6 @@ public class Resume {
     private String employeeEmail;
     private String employeeTel;
     private String employeeLocation;
-
     // 내 이력서 목록 볼때 관심분야 표시용
     private String jobName;
 }
