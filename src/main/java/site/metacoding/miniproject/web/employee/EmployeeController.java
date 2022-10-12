@@ -1,14 +1,21 @@
 package site.metacoding.miniproject.web.employee;
 
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.service.employee.EmployeeService;
+import site.metacoding.miniproject.web.dto.employee.EmployeeUpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -16,6 +23,7 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+    private final HttpSession session;
 
     @GetMapping({ "/", "/emp/main" })
     public String main() {// 개인회원이 보는 메인페이지
@@ -47,8 +55,17 @@ public class EmployeeController {
         return "employee/mypageInsertForm";
     }
 
-    @GetMapping("/emp/employeeInfo")
-    public String 회원정보() {// 개인회원 회원가입 정보 수정/탈퇴 페이지
+    @PutMapping("/emp/employeeInfo/{id}")
+    public @ResponseBody CMRespDto<?> 회원정보수정(@PathVariable Integer employeeId,
+            @RequestBody EmployeeUpdateDto employeeUpdateDto) {
+        employeeService.employeeUpdate(employeeId, employeeUpdateDto);
+        return new CMRespDto<>(1, "회원수정성공", null);
+    }
+
+    @GetMapping("/emp/{id}/employeeInfo")
+    public String 회원정보수정페이지(@PathVariable Integer employeeId, Model model) {// 개인회원 회원가입 정보수정
+        Employee employee = employeeService.회원정보수정데이터가져오기(employeeId);
+        model.addAttribute("employee", employee);
         return "employee/empInfo";
     }
 
