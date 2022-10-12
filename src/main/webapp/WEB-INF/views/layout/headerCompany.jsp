@@ -136,10 +136,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </h3>
                 <span>
                   <input
-                    id="id"
+                    id="companyUsername"
                     type="text"
                     placeholder="아이디를 입력하세요."
-                    value="${username}"
                     maxlength="20"
                   />
                 </span>
@@ -151,7 +150,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </h3>
                 <span>
                   <input
-                    id="password"
+                    id="companyPassword"
                     type="password"
                     placeholder="패스워드를 입력하세요."
                     name="password"
@@ -179,7 +178,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </h3>
                 <span>
                   <input
-                    id="email"
+                    id="companyEmail"
                     type="email"
                     placeholder="이메일을 입력하세요."
                     name="email"
@@ -189,13 +188,27 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               </div>
 
               <div class="company_info">
+                <div class="join_name join_box">
+                  <h3>
+                    <label for="c_name">회사명</label>
+                  </h3>
+                  <span>
+                    <input
+                      id="companyName"
+                      type="text"
+                      placeholder="회사명을 입력하세요."
+                      name="companyName"
+                      maxlength="30"
+                    />
+                  </span>
+                </div>
                 <div class="join_number join_box">
                   <h3>
                     <label for="c_number">사업자등록번호</label>
                   </h3>
                   <span>
                     <input
-                      id="c_number"
+                      id="companyNumber"
                       type="text"
                       placeholder="사업자번호를 입력하세요."
                       name="companyNumber"
@@ -223,7 +236,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </h3>
                   <span>
                     <input
-                      id="c_phone"
+                      id="companyTel"
                       type="tel"
                       placeholder="휴대폰번호를 입력하세요."
                       name="companyPhone"
@@ -237,7 +250,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </h3>
                   <span>
                     <input
-                      id="c_adress"
+                      id="companyLocation"
                       type="text"
                       placeholder="주소를 입력하세요."
                       name="companyAdress"
@@ -255,7 +268,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <input
                     type="checkbox"
                     class="login_check"
-                    id="c_part_front"
+                    id="job_Id"
                     name=""
                     checked
                   />

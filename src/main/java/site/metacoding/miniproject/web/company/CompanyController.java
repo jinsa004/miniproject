@@ -2,9 +2,19 @@ package site.metacoding.miniproject.web.company;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.service.CompanyService;
+import site.metacoding.miniproject.web.dto.request.JoinDto;
+import site.metacoding.miniproject.web.dto.response.CMRespDto;
+
+@RequiredArgsConstructor
 @Controller
 public class CompanyController {
+    private final CompanyService companyService;
 
     @GetMapping("/co/main")
     public String main() {// 개인회원이 보는 메인페이지
@@ -39,6 +49,12 @@ public class CompanyController {
     @GetMapping("/co/companyIntroUpdate")
     public String 마이페이지() {// 기업소개 상세보기 수정하기 intro 테이블
         return "company/coIntroUpdate";
+    }
+
+    @PostMapping("/co/Join")
+    public @ResponseBody CMRespDto<?> companyJoin(@RequestBody JoinDto joinDto) {
+        companyService.회원가입(joinDto);
+        return new CMRespDto<>(1, "회원가입성공", null);
     }
 
 }
