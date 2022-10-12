@@ -10,12 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
+
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
@@ -25,6 +27,7 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 @RequiredArgsConstructor
 @Controller
 public class EmployeeController {
+
     @Autowired
     private final EmployeeService employeeService;
     private final IntroService introService;
@@ -70,10 +73,20 @@ public class EmployeeController {
         return "employee/subscription";
     }
 
-    // @GetMapping("/emp/companyList")
-    // public String companyList() {// 개인회원이 보는 기업정보탭(기업소개 목록보기)
-    // return "employee/companyList";
+
+    @GetMapping("/emp/companyList")
+    public String companyList() {// 개인회원이 보는 기업정보탭(기업소개 목록보기)
+        return "employee/companyList";
+    }
+
+    // @GetMapping("/emp/companyIntroDetail")
+    // public String 기업소개상세보기() {// 개인회원이 intro 테이블 기업소개 상세보기
+    //     return "employee/coIntroDetail";
     // }
+
+    @GetMapping("/emp/companyIntroDetail/{introId}")
+    public String introDetail(@PathVariable Integer introId, Model model){
+        model.addAttribute("intro", introService.기업소개상세보기(introId));
 
     @GetMapping("/emp/companyList")
     public String companylist(Model model) {
@@ -81,11 +94,6 @@ public class EmployeeController {
         model.addAttribute("introList", introList);
 
         return "employee/companyList";
-    }
-
-    @GetMapping("/emp/companyIntroDetail")
-    public String 기업소개상세보기() {// 개인회원이 intro 테이블 기업소개 상세보기
-        return "employee/coIntroDetail";
     }
 
     @GetMapping("/emp/mypageInsertForm")
