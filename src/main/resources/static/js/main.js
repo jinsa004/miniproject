@@ -6,7 +6,7 @@ $("ul.tabs li").click(function(){
   $(this).addClass("on");
   $("#"+tab_id).addClass("on");
   $("#"+tab_id).show();
-})
+});
 
 
 
@@ -149,3 +149,39 @@ function popCloseRecruit() {
   $(modalBg).hide();
 }
 
+
+/* 기업 회원가입*/ 
+  $("#btn_join").click(()=>{
+    join();
+  });
+
+  function join(){
+    let data ={
+      companyNumber:$("#companyNumber").val(),
+      companyName:$("#companyName").val(),
+      companyEmail:$("#companyEmail").val(),
+      companyTel:$("#companyTel").val(),
+      companyLocation:$("#companyLocation").val(),
+      companyUsername:$("#companyUsername").val(),
+      companyPassword:$("#companyPassword").val(),
+      job_Id:$("input:checkbox[value='frontend']").is(":checked")
+    };
+    console.log(data);
+
+    $.ajax("/co/Join", {
+      type: "POST",
+      dataType: "json", 
+      data: JSON.stringify(data), 
+      headers: { 
+        "Content-Type": "application/json"
+      }
+    }).done((res) => {
+      if (res.code == 1) {
+        alert("회원가입 완료");
+        console.log(res);
+        location.href = "/";
+      } else {
+        alert(res.msg);
+      }
+    });
+  }
