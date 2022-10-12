@@ -20,139 +20,38 @@
             <div class="company_card">
               <div id="tab-1" class="company_inner company_inner1 tab-content on">
                 <ul>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
+                  <c:forEach var="intro" items="${introList}" begin="0" end="3" step="1">
+                    <li>
+                      <a href="companyIntroDetail">
+                        <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
+                        <div class="company_txt">
+                          <input type="hidden" value="${intro.no}">
+                          <span class="company_title">${intro.companyName}</span>
+                          <span class="company_text">${intro.introTitle}, ${intro.introTask}</span>
+                        </div>
+                        <!-- .company_txt -->
+                      </a>
+                  </c:forEach>
                   </li>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_2.jpg" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_2.jpg" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                </ul>
+              </div>
+              <div id="tab-2" class="company_inner company_inner1 tab-content on">
                 <ul>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
+                  <c:forEach var="intro" items="${introList}" begin="4" end="7" step="1">
+                    <li>
+                      <a href="companyIntroDetail/${intro.introId}">
+                        <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
+                        <div class="company_txt">
+                          <input type="hidden" value="${intro.no}">
+                          <span class="company_title">${intro.companyName}</span>
+                          <span class="company_text">${intro.introTitle}, ${intro.introTask}</span>
+                        </div>
+                        <!-- .company_txt -->
+                      </a>
+                  </c:forEach>
                   </li>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_2.jpg" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_2.jpg" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                </ul>
-              </div><!-- #tab-1 -->
-
-              <div id="tab-2" class="company_inner company_inner2 tab-content">
-                <ul>
-                  <li>
-                    <a href="#">
-                      <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_2.jpg" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                  <li>
-                    <a href="companyIntroDetail">
-                      <span class="company_logo"><img src="/img/logo_2.jpg" alt="회사로고" /></span>
-                      <div class="company_txt">
-                        <span class="company_title">기업명</span>
-                        <span class="company_text">주요업무, 관심분야</span>
-                      </div>
-                      <!-- .company_txt -->
-                    </a>
-                  </li>
-                </ul>
-              </div><!-- #tab-2-->
-
+              </div>
             </div>
-          </div>
-          <!-- .notice_box -->
+            <!-- .notice_box -->
         </section>
         <div class="paging">
           <ul class="pagination">
