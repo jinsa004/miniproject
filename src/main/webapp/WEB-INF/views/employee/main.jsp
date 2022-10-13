@@ -43,35 +43,6 @@
                 </div>
               </c:forEach>
             </div><!-- .notice_inner1 -->
-
-            <!-- <div id="tab-2" class="notice_inner notice_inner2 tab-content">
-              <ul>
-                <li><a href="#"><img src="/img/logo_1.png" alt="logo"></a></li>
-                <li><a href="#">
-                    보안/운영 시스템 개발팀 백엔드 개발자 모집
-                    <span class="notice_small">백엔드/서버개발, 웹개발, 정보보안</span>
-                  </a></li>
-                <li>경력무관<span class="notice_small">학력무관</span></li>
-                <li>정규직<span class="notice_small">부산</span></li>
-                <li>~10/19(수)<span class="notice_small">마감 13일전</span></li>
-              </ul>
-            </div> -->
-            <!-- .notice_inner2 -->
-
-            <!-- <div id="tab-3" class="notice_inner notice_inner3 tab-content">
-              <ul>
-                <li><a href="#"><img src="/img/logo_1.png" alt="logo"></a></li>
-                <li><a href="#">
-                    보안/운영 시스템 개발팀 백엔드 개발자 모집
-                    <span class="notice_small">백엔드/서버개발, 웹개발, 정보보안</span>
-                  </a></li>
-                <li>경력무관<span class="notice_small">학력무관</span></li>
-                <li>정규직<span class="notice_small">부산</span></li>
-                <li>~10/19(수)<span class="notice_small">마감 13일전</span></li>
-              </ul>
-            </div> -->
-            <!-- .notice_inner3 -->
-            <!-- inner2, 3 없어도 되는지 프론트 담당에게 물어보기 -->
           </div>
           <!-- .notice_box -->
         </section>

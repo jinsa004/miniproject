@@ -27,22 +27,7 @@ public class ResumeController {
     private final JobService jobService;
     private final HttpSession session;
 
-
-    @GetMapping("co/resumeList")
-    public String resumeList() { // 기업회원이 보는 이력서리스트**
-        return "company/resumeList";
-    }
-
-    // @GetMapping("co/resumeDetail")
-    // public String 이력서상세보기() { // 이력서 상세보기 페이지
-    // return "company/resumeDetail";
-    // }
-
-    @GetMapping("co/resumeDetail/{resumeId}")
-    public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
-        model.addAttribute("resume", resumeService.이력서상세보기(resumeId));
-        return "company/resumeDetail";
-    }
+/*=============================개인회원========================================= */
 
     @GetMapping("emp/resumeSaveForm/{employeeId}")
     public String insertResumeForm(@PathVariable Integer employeeId, Model model) { // 이력서 등록 페이지
@@ -62,5 +47,25 @@ public class ResumeController {
     public String 이력서수정() { // 이력서 수정 페이지
         return "resume/resumeUpdate";
     }
+
+
+/*=============================기업회원========================================= */
+   
+    @GetMapping("co/resumeList")
+    public String resumeList() { // 기업회원이 보는 이력서리스트**
+        return "company/resumeList";
+    }
+
+    @GetMapping("co/resumeDetail")
+    public String 이력서상세보기() { // 이력서 상세보기 페이지
+    return "company/resumeDetail";
+    }
+
+    @GetMapping("co/resumeDetail/{resumeId}")
+    public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
+        model.addAttribute("resume", resumeService.이력서상세보기(resumeId));
+        return "company/resumeDetail";
+}
+
 
 }

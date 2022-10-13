@@ -18,6 +18,8 @@ public class NoticeController {
 
     private final NoticeService noticeService;
 
+/*=============================개인회원========================================= */
+
     @GetMapping("emp") // ({ "emp/", "emp/notice" }) 로 두 개 걸어주는 것 불가 (쿼리스트링시 매핑 주소 "notice"가 중복되기 때문)
     public String getAllNoticeList(Model model) {
         List<Notice> noticeAllList = noticeService.채용공고전체목록보기();
@@ -32,17 +34,12 @@ public class NoticeController {
         return "employee/jobNotice";
     }
 
-    @GetMapping("co/supCompany/{companyId}")
-    public String myNoticeFindAll(@PathVariable Integer companyId, Model model) { // 메서드이름은 동사여야 하지 않나요
-        List<Notice> noticeList = noticeService.내공고목록보기(companyId);
-        model.addAttribute("noticeList", noticeList);
-        return "company/supporter";
-    }
-
     @GetMapping("emp/noticeDetail") // notice/Detail로 들어가는게 좋을 것 같습니다
     public String recruitDetail() {// 개인회원 입장에서 채용공고 상세보기
         return "employee/noticeDetail";
     }
+
+/*=============================기업회원========================================= */
 
     @GetMapping("co/noticeDetail")
     public String noticeDetail() {// 기업회원 입장에서 채용공고 상세보기
@@ -57,6 +54,13 @@ public class NoticeController {
     @GetMapping("co/noticeUpdate")
     public String 공고수정() {
         return "notice/noticeUpdate";
+    }
+
+    @GetMapping("co/supCompany/{companyId}")
+    public String FindAllmyNotice(@PathVariable Integer companyId, Model model) { // 메서드이름은 동사여야 하지 않나요
+        List<Notice> noticeList = noticeService.내공고목록보기(companyId);
+        model.addAttribute("noticeList", noticeList);
+        return "company/supporter";
     }
 
 }
