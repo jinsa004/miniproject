@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,6 +17,7 @@ import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.ResumeService;
+import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -42,11 +44,21 @@ public class ResumeController {
         return new CMRespDto<>(1, "이력서 등록 성공", null);
     }
 
-    @GetMapping("emp/resumeUpdate")
-    public String 이력서수정() { // 이력서 수정 페이지
+    @GetMapping("emp/resumeUpdate/{resumeId}")
+    public String updateResumeForm(@PathVariable Integer resumeId, Model model) { // 이력서 수정 페이지
+        session.getAttribute("principal");
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
+        Resume resumePS = resumeService.이력서상세보기(resumeId);
+        model.addAttribute("resumePS", resumePS);
         return "resume/resumeUpdate";
     }
 
+    @PutMapping("emp/resumeUpdate/{resumeId}")
+    public @ResponseBody CMRespDto<?> updateResume(@PathVariable Integer resumeId, @RequestBody UpdateDto updateDto) {
+        resumeService.이력서수정(resumeId, updateDto);
+        return new CMRespDto<>(1, "이력서 등록 성공", null);
+    }
 
     /* =============================기업회원========================================= */
 

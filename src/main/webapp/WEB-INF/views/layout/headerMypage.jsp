@@ -37,7 +37,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </a>
           </li>
           <li class="gnb_list2">
-            <a href="/emp/resumeUpdate">
+            <a href="/emp/resumeUpdate/${resumePS.resumeId}">
               <i class="fa-regular fa-pen-to-square"></i>
               <span class="txt">이력서 관리</span>
             </a>
