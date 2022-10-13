@@ -12,4 +12,6 @@ public interface CompanyDao {
 	public void update(Company company);
 
 	public void deleteById(Integer companyId);
+
+	public Company findByCompanyUsername(String companyUsername);
 }

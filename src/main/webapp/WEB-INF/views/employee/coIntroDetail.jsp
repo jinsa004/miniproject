@@ -33,7 +33,7 @@
               <p class="basic_list_item">회사명</p>
             </div>
             <div class="basic_input">
-              <span>그린</span>
+              <span>${intro.companyName}</span>
             </div>
           </div>
           <div class="basic_row">
@@ -41,7 +41,7 @@
               <p class="basic_list_item">설립년도</p>
             </div>
             <div class="basic_input">
-              <span>0000년 00월 00일</span>
+              <span>${intro.introBirth}</span>
             </div>
           </div>
           <div class="basic_row">
@@ -49,7 +49,7 @@
               <p class="basic_list_item">주요업무</p>
             </div>
             <div class="basic_input">
-              <span>서버관리</span>
+              <span>${intro.introTask}</span>
             </div>
           </div>
           <div class="basic_row">
@@ -57,7 +57,7 @@
               <p class="basic_list_item">평균연봉</p>
             </div>
             <div class="basic_input">
-              <span>4000만원</span>
+              <span>${intro.introSal}</span>
             </div>
           </div>
           <div class="basic_row">
@@ -65,7 +65,7 @@
               <p class="basic_list_item">기업복지</p>
             </div>
             <div class="basic_input">
-              <span>1. 유연한 출퇴근</span>
+              <span>${intro.introWellfare}</span>
             </div>
           </div>
           <div class="basic_row">
@@ -73,7 +73,7 @@
               <p class="basic_list_item">회사소개</p>
             </div>
             <div class="basic_input">
-              <span>기업의 가치를</span>
+              <span>${intro.introContent}</span>
             </div>
           </div>
           <div class="basic_row">
@@ -81,7 +81,7 @@
               <p class="basic_list_item">회사위치</p>
             </div>
             <div class="basic_input">
-              <span>부산 금정구</span>
+              <span>${intro.introLocation}</span>
             </div>
           </div>
 
@@ -94,7 +94,7 @@
           <h2 class="title">관심분야</h2>
         </div>
         <div class="field_form">
-          <p>프론트엔드</p>
+          <p>${intro.jobId}</p>
         </div>
       </div>
       <!-- field -->

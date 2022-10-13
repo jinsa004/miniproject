@@ -5,7 +5,7 @@
       <div class="container">
         <div class="tablist">
           <ul class="tabs">
-            <li class="btn_tab on" data-tab="tab-1"><a href="/emp">전체직군</a></li>
+            <li class="btn_tab on" data-tab="tab-1"><a href="/emp/">전체직군</a></li>
             <li class="btn_tab" data-tab="tab-2"><a href="/emp/notice?jobCode=1">프론트엔드</a></li>
             <li class="btn_tab" data-tab="tab-3"><a href="/emp/notice?jobCode=2">백엔드</a></li>
             <li class="btn_tab" data-tab="tab-4"><a href="/emp/notice?jobCode=3">웹풀스택</a></li>
@@ -27,22 +27,51 @@
               </ul>
             </div><!-- .notice_title -->
             <div id="tab-1" class="notice_inner notice_inner1 tab-content on">
-              <c:forEach var="noticeAllList" items="${noticeAllList}">
+              <c:forEach var="jobNoticeList" items="${jobNoticeList}">
                 <div>
                   <ul>
                     <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
                     <li><a href="noticeDetail">
-                        ${noticeAllList.noticeTitle}
-                        <span class="notice_small">${noticeAllList.noticeTask}</span>
+                        ${jobNoticeList.noticeTitle}
+                        <span class="notice_small">${jobNoticeList.noticeTask}</span>
                       </a></li>
-                    <li>${noticeAllList.noticeCareer}<span class="notice_small">${noticeAllList.noticeQual}</span></li>
-                    <li>${noticeAllList.noticePosition}<span class="notice_small">부산</span></li>
+                    <li>${jobNoticeList.noticeCareer}<span class="notice_small">${jobNoticeList.noticeQual}</span></li>
+                    <li>${jobNoticeList.noticePosition}<span class="notice_small">부산</span></li>
                     <!-- notice 테이블에 지역 컬럼 만들거나 sal을 넣는 등 수정 필요 -->
-                    <li>~${noticeAllList.noticePeriod}<span class="notice_small">마감 13일전</span></li>
+                    <li>~${jobNoticeList.noticePeriod}<span class="notice_small">마감 13일전</span></li>
                   </ul>
                 </div>
               </c:forEach>
             </div><!-- .notice_inner1 -->
+
+            <!-- <div id="tab-2" class="notice_inner notice_inner2 tab-content">
+              <ul>
+                <li><a href="#"><img src="/img/logo_1.png" alt="logo"></a></li>
+                <li><a href="#">
+                    보안/운영 시스템 개발팀 백엔드 개발자 모집
+                    <span class="notice_small">백엔드/서버개발, 웹개발, 정보보안</span>
+                  </a></li>
+                <li>경력무관<span class="notice_small">학력무관</span></li>
+                <li>정규직<span class="notice_small">부산</span></li>
+                <li>~10/19(수)<span class="notice_small">마감 13일전</span></li>
+              </ul>
+            </div> -->
+            <!-- .notice_inner2 -->
+
+            <!-- <div id="tab-3" class="notice_inner notice_inner3 tab-content">
+              <ul>
+                <li><a href="#"><img src="/img/logo_1.png" alt="logo"></a></li>
+                <li><a href="#">
+                    보안/운영 시스템 개발팀 백엔드 개발자 모집
+                    <span class="notice_small">백엔드/서버개발, 웹개발, 정보보안</span>
+                  </a></li>
+                <li>경력무관<span class="notice_small">학력무관</span></li>
+                <li>정규직<span class="notice_small">부산</span></li>
+                <li>~10/19(수)<span class="notice_small">마감 13일전</span></li>
+              </ul>
+            </div> -->
+            <!-- .notice_inner3 -->
+            <!-- inner2, 3 없어도 되는지 프론트 담당에게 물어보기 -->
           </div>
           <!-- .notice_box -->
         </section>
