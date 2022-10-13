@@ -20,7 +20,7 @@
         <div class="header_wrap">
           <header>
             <div class="logo">
-              <a href="/co/mainCompany">COMPANY_4</a>
+              <a href="/co">COMPANY_4</a>
             </div>
             <!-- .logo -->
 
@@ -48,7 +48,7 @@
             <nav>
               <ul>
                 <li>
-                  <a href="/co/mainCompany">인재검색</a>
+                  <a href="/co">인재검색</a>
                 </li>
                 <li>
                   <a href="/co/noticeSave">공고등록</a>

@@ -54,7 +54,7 @@ public class ResumeController {
     public String getAllResumeList(Model model) { // 기업회원이 보는 이력서리스트
         List<Resume> resumeAllList = resumeService.이력서목록보기();
         model.addAttribute("resumeAllList", resumeAllList);
-        return "company/mianCompany";
+        return "company/mainCompany";
     }
 
     @GetMapping("co/resumeDetail")

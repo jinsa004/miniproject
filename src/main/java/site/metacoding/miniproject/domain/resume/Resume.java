@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 public class Resume {
     private Integer resumeId;
-    private String resumeName;
+    private String resumeName; // resumeTitle로
     private Integer employeeId;
     private String resumeImage;
     private String highschoolName;
@@ -25,6 +25,7 @@ public class Resume {
     private float univGrades;
     private String prevCo;
     private String careerPeriod;
+    // 신입지원이라면 신입지원이라고 입력 받게 해야 함
     private String careerPosition;
     private String careerDepartment;
     private String careerTask;
@@ -32,7 +33,7 @@ public class Resume {
     private boolean isMain;
     private Timestamp createdAt;
 
-    // 수정화면 불러올 시 employee 정보 불러오기용
+    // 인재목록 볼 때 & 수정화면 불러올 시 employee 정보 불러오기용
     private String employeeName;
     private String employeeBirth;
     private String employeeSex;
