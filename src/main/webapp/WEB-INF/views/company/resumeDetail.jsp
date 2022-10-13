@@ -39,130 +39,230 @@
             <div class="resume_edu">
               <div class="edu_select">
                 <div class="btn-group">
-                  <button type="button" class="edu_btn">고등학교 졸업</button>
-                  <button type="button" class="edu_btn" id="checked">대학.대학원 이상 졸업</button>
+                  <button type="button" class="edu_btn" id="high_btn" onclick="show_highschool()">고등학교 졸업</button>
+                  <button type="button" class="edu_btn" id="univ_btn" onclick="show_univ()">대학.대학원 이상 졸업</button>
                 </div>
               </div>
-              <div class="edu_form">
-                <h4>대학.대학원 정보 입력</h4>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">대학</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>대학교(4년)</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">학교명</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.univName}</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">재학기한</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.univStartdate} - ${resume.univEnddate}</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">전공</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.univMajor}</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">학점</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.univGrade} / 4.5</span>
-                  </div>
-                </div>
+            </div>
 
+            <div class="edu_form" id="highschool">
+              <h4>고등학교 정보 입력</h4>
+              <div class="edu_row">
+                <div class="edu_list">
+                  <p class="edu_list_item">학교명</p>
+                </div>
+                <div class="edu_input">
+                  <span>${resume.highschoolName}</span>
+                </div>
               </div>
+              <div class="edu_row">
+                <div class="edu_list">
+                  <p class="edu_list_item">재학기간</p>
+                </div>
+                <div class="edu_input">
+                  <span>${resume.highschoolStartdate} - ${resume.highschoolEnddate}</span>
+                </div>
+              </div>
+              <div class="edu_row">
+                <div class="edu_list">
+                  <p class="edu_list_item">전공계열</p>
+                </div>
+                <div class="edu_input">
+                  <span>${resume.highschoolMajor}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="edu_form" id="univ">
+              <h4>대학.대학원 정보 입력</h4>
+              <div class="edu_row">
+                <div class="edu_list">
+                  <p class="edu_list_item">대학</p>
+                </div>
+                <div class="edu_input">
+                  <span>대학교(4년)</span>
+                </div>
+              </div>
+              <div class="edu_row">
+                <div class="edu_list">
+                  <p class="edu_list_item">학교명</p>
+                </div>
+                <div class="edu_input">
+                  <span>${resume.univName}</span>
+                </div>
+              </div>
+              <div class="edu_row">
+                <div class="edu_list">
+                  <p class="edu_list_item">재학기한</p>
+                </div>
+                <div class="edu_input">
+                  <span>${resume.univStartdate} - ${resume.univEnddate}</span>
+                </div>
+              </div>
+              <div class="edu_row">
+                <div class="edu_list">
+                  <p class="edu_list_item">전공</p>
+                </div>
+                <div class="edu_input">
+                  <span>${resume.univMajor}</span>
+                </div>
+              </div>
+              <div class="edu_row">
+              </div>
+              <div class="edu_row">
+                <div class="edu_list">
+                  <p class="edu_list_item">학점</p>
+                </div>
+                <div class="edu_input">
+                  <span>${resume.univGrade} / 4.5</span>
+                </div>
+              </div>
+
             </div>
           </div>
-          <!-- edu -->
+        </div>
+        <!-- edu -->
 
-          <div id="career" class="form">
-            <div class="form_title">
-              <h2 class="title">경력사항</h2>
-            </div>
-            <div class="resume_career">
-              <div class="career_select">
-                <div class="btn-group">
-                  <button type="button" class="career_btn">신입</button>
-                  <button type="button" class="career_btn" id="checked">경력</button>
-                </div>
+        <div id="career" class="form">
+          <div class="form_title">
+            <h2 class="title">경력사항</h2>
+          </div>
+          <div class="resume_career">
+            <div class="career_select">
+              <div class="btn-group">
+                <button type="button" class="career_btn" id="new_btn" onclick="show_new()">신입</button>
+                <button type="button" class="career_btn" id="work_btn" onclick="show_work()">경력</button>
               </div>
-              <div class="career_form">
-                <h4>회사 정보 입력</h4>
-                <div class="career_row">
-                  <div class="career_list">
-                    <p class="career_list_item">회사명</p>
-                  </div>
-                  <div class="career_input">
-                    <span>${resume.prevCo}</span>
-                  </div>
+            </div>
+            <div class="career_form" id="work">
+              <h4>회사 정보 입력</h4>
+              <div class="career_row">
+                <div class="career_list">
+                  <p class="career_list_item">회사명</p>
                 </div>
-                <div class="career_row">
-                  <div class="career_list">
-                    <p class="career_list_item">재직기간</p>
-                  </div>
-                  <div class="career_input">
-                    <span>${resume.careerPeriod}</span>
-                  </div>
-                </div>
-                <div class="career_row">
-                </div>
-                <div class="career_row">
-                  <div class="career_list">
-                    <p class="career_list_item">직급/직책</p>
-                  </div>
-                  <div class="career_input">
-                    <span>${resume.careerPosition}</span>
-                  </div>
-                </div>
-                <div class="career_row">
-                  <div class="career_list">
-                    <p class="career_list_item">근무부서</p>
-                  </div>
-                  <div class="career_input">
-                    <span>${resume.careerDepartment}</span>
-                  </div>
-                </div>
-                <div class="career_row">
+                <div class="career_input">
+                  <span>${resume.prevCo}</span>
                 </div>
               </div>
               <div class="career_row">
                 <div class="career_list">
-                  <p class="career_list_item">담당업무</p>
+                  <p class="career_list_item">재직기간</p>
                 </div>
                 <div class="career_input">
-                  <span>${resume.careerTask}</span>
+                  <span>${resume.careerPeriod}</span>
                 </div>
               </div>
-
+              <div class="career_row">
+              </div>
+              <div class="career_row">
+                <div class="career_list">
+                  <p class="career_list_item">직급/직책</p>
+                </div>
+                <div class="career_input">
+                  <span>${resume.careerPosition}</span>
+                </div>
+              </div>
+              <div class="career_row">
+                <div class="career_list">
+                  <p class="career_list_item">근무부서</p>
+                </div>
+                <div class="career_input">
+                  <span>${resume.careerDepartment}</span>
+                </div>
+              </div>
+              <div class="career_row">
+              </div>
             </div>
+            <div class="career_row">
+              <div class="career_list">
+                <p class="career_list_item">담당업무</p>
+              </div>
+              <div class="career_input">
+                <span>${resume.careerTask}</span>
+              </div>
+            </div>
+
           </div>
         </div>
-        <!-- career -->
-
-        <div class="contact_btn">
-          <button type="button" onclick="location.href='#'">컨택하기</button>
-        </div>
-        <!-- contact -->
       </div>
-      <!-- resume_detail -->
+      <!-- career -->
+
+      <div class="contact_btn">
+        <button type="button" onclick="location.href='#'">컨택하기</button>
+      </div>
+      <!-- contact -->
+    </div>
+    <!-- resume_detail -->
     </div>
     </div>
+
+    <script>
+      function show_highschool() {
+        var con1 = document.getElementById("highschool");
+        var con2 = document.getElementById("univ");
+        var con3 = document.getElementById("high_btn");
+        var con4 = document.getElementById("univ_btn");
+        if (con3.style.background != '#4876ef') {
+          con1.style.display = 'block';
+          con2.style.display = 'none';
+          con3.style.background = '#4876ef';
+          con3.style.color = '#fff';
+          con4.style.background = '#fff';
+          con4.style.color = '#333';
+        } else {
+          con1.style.display = 'none';
+          con3.style.background = '#fff';
+          con3.style.color = '#333';
+        }
+      }
+      function show_univ() {
+        var con1 = document.getElementById("univ");
+        var con2 = document.getElementById("highschool");
+        var con3 = document.getElementById("high_btn");
+        var con4 = document.getElementById("univ_btn");
+        if (con4.style.background != '#4876ef') {
+          con1.style.display = 'block';
+          con2.style.display = 'none';
+          con4.style.background = '#4876ef';
+          con4.style.color = '#fff';
+          con3.style.background = '#fff';
+          con3.style.color = '#333';
+        } else {
+          con1.style.display = 'none';
+          con4.style.background = '#fff';
+          con4.style.color = '#333';
+        }
+      }
+      function show_new() {
+        var con1 = document.getElementById("work");
+        var con2 = document.getElementById("new_btn");
+        var con3 = document.getElementById("work_btn");
+        if (con2.style.background != '#4876ef') {
+          con1.style.display = 'none';
+          con2.style.background = '#4876ef';
+          con2.style.color = '#fff';
+          con3.style.background = '#fff';
+          con3.style.color = '#333';
+        } else {
+          con2.style.background = '#fff';
+          con2.style.color = '#333';
+        }
+      }
+      function show_work() {
+        var con1 = document.getElementById("work");
+        var con2 = document.getElementById("new_btn");
+        var con3 = document.getElementById("work_btn");
+        if (con3.style.background != '#4876ef') {
+          con1.style.display = 'block';
+          con3.style.background = '#4876ef';
+          con3.style.color = '#fff';
+          con2.style.background = '#fff';
+          con2.style.color = '#333';
+        } else {
+          con1.style.display = 'none';
+          con3.style.background = '#fff';
+          con3.style.color = '#333';
+        }
+      }
+    </script>
     <%@ include file="../layout/footerCompany.jsp" %>
