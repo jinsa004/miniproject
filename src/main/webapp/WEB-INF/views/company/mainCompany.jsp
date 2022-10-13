@@ -43,7 +43,6 @@
                     </li>
                   </c:forEach>
                 </ul><!-- #tab-1 -->
-
               </div>
             </div>
             <!-- .resume_list -->

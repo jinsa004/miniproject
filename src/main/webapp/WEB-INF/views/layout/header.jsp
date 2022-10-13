@@ -43,7 +43,7 @@
                 회원가입
               </button>
               <a href="/emp/mypageInsertForm" class="btn_company">마이 페이지</a>
-              <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
+              <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
             </div>
             <!-- .login_box -->
 
