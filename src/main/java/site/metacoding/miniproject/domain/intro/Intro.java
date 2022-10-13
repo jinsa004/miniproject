@@ -2,6 +2,7 @@ package site.metacoding.miniproject.domain.intro;
 
 import lombok.Getter;
 import lombok.Setter;
+import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 
 @Getter
 @Setter
@@ -17,7 +18,21 @@ public class Intro {
 	private String introLocation;
 	private String introImage;
 	private Integer jobId;
-
-	private Integer no;
+  
+  //엔티티가 아닌 필드
+  private Integer no;
 	private String companyName;
+	private String jobName;
+
+	public void Update(UpdateDto updateDto) {
+		this.companyName = updateDto.getCompanyName();
+		this.introTitle = updateDto.getIntroTitle();
+		this.introBirth = updateDto.getIntroBirth();
+		this.introTask = updateDto.getIntroTask();
+		this.introSal = updateDto.getIntroSal();
+		this.introWellfare = updateDto.getIntroWellfare();
+		this.introContent = updateDto.getIntroContent();
+		this.introLocation = updateDto.getIntroLocation();
+		this.introImage = updateDto.getIntroImage();
+		this.jobName = updateDto.getJobName();
 }

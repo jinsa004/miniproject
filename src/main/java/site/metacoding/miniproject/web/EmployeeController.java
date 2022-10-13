@@ -1,11 +1,9 @@
 package site.metacoding.miniproject.web;
 
 import java.util.List;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,10 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
-
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
@@ -66,6 +62,7 @@ public class EmployeeController {
     // 일단 주석처리함. EmployeeController에 Notice 메서드를 넣을지 NoticeController에 넣을지 정해야 함.
     // 일단은 EmployeeController에 불러온 Service가 많아서 NoticeController에 넣어놨음.
 
+
     @GetMapping("/emp/matchingNotice")
     public String matchingList() {// 개인회원이 보는 매칭리스트탭(관심분야맞는 공고 목록보기)
         return "employee/matchingNotice";
@@ -91,8 +88,8 @@ public class EmployeeController {
 
     @GetMapping("/emp/mypageInsertForm")
     public String mypageResumeInsert() {// 이력서 등록, 수정, 삭제, 대표 이력서 선택
-        session.getAttribute("principal");
-        return "employee/mypageInsertForm";
+    session.getAttribute("principal");
+    return "employee/mypageInsertForm";
     }
 
     @GetMapping("/emp/employeeInfo")
