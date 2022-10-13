@@ -31,7 +31,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </div>
         <ul class="gnb_left">
           <li class="gnb_list3">
-            <a href="/emp/employeeInfo">
+            <a href="/emp/mypageInsertForm">
               <i class="fa-regular fa-star"></i>
               <span class="txt">마이페이지</span>
             </a>
