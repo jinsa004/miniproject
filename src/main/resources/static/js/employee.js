@@ -11,7 +11,7 @@ function joinSave() {
     employeeBirth: $("#employeeBirth").val(),
     employeeTel: $("#employeeTel").val(),
     employeeLocation: $(".employeeLocation").val(),
-    jobId: $("input[id=jobId]:checked").val(),
+    job_Id: $("input:checkbox[value='frontend']").is(":checked"),
   };
   $.ajax("/emp/join", {
     type: "POST",

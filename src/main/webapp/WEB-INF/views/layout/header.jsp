@@ -48,26 +48,35 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <!-- .search_bar -->
 
           <div class="login_box">
-            <button
-              class="btn_login"
-              type="button"
-              onClick="javascript:popOpen();"
-            >
-              로그인
-            </button>
+            <c:choose>
+              <c:when test="${empty principal}">
+                <button
+                  class="btn_login"
+                  type="button"
+                  onClick="javascript:popOpen();"
+                >
+                  로그인
+                </button>
+                <button
+                  class="btn_join"
+                  type="button"
+                  onClick="javascript:popOpen2();"
+                >
+                  회원가입
+                </button>
+                <a href="/co/mainCompany" class="btn_company">기업 서비스</a
+                ><!-- .btn_company -->
+              </c:when>
+              <c:otherwise>
+                <a class="btn_logout" href="/logout">로그아웃</a>
 
-            <a class="btn_logout" href="/logout">로그아웃</a>
-
-            <button
-              class="btn_join"
-              type="button"
-              onClick="javascript:popOpen2();"
-            >
-              회원가입
-            </button>
-            <a href="/emp/mypageInsertForm" class="btn_company">마이 페이지</a>
-            <a href="/co/mainCompany" class="btn_company">기업 서비스</a
-            ><!-- .btn_company -->
+                <a href="/emp/mypageInsertForm" class="btn_mypage"
+                  >마이 페이지</a
+                >
+                <a href="/co/mainCompany" class="btn_company">기업 서비스</a
+                ><!-- .btn_company -->
+              </c:otherwise>
+            </c:choose>
           </div>
           <!-- .login_box -->
 
@@ -291,7 +300,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                   <input
                     type="checkbox"
                     class="login_check"
-                    id="c_part_front jobId"
+                    id="jobId"
                     name=""
                     checked
                   />
@@ -305,7 +314,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     class="login_check"
                     id="c_part_back"
                     name=""
-                    checked
                   />
                   <em>
                     <label for="c_part_back">백엔드</label>
