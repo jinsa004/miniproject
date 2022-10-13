@@ -31,4 +31,13 @@ public class NoticeDaoTest {
     //     // then
     //         assertEquals(1, result);
     // }
+
+    @Test
+    public void deleteByNoticeId(){
+        //given
+
+        //when
+
+        //then
+    }
 }
