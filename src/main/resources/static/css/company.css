@@ -82,40 +82,74 @@ header{
     position: absolute;
     right: 0;
     top: 38px;
+    display: flex;
+    justify-content: space-around;
 }
-
+.login_box button{
+    vertical-align: top;
+    font-size: 13px;
+    letter-spacing: 0em;
+    cursor: pointer;
+}
+.login_box a{
+    vertical-align: top;
+    letter-spacing: 0em;
+    font-size: 13px;
+}
 .login_box .btn_login{
-    width: 90px;
-    padding: 6px 0 7px;
+    width: 92px;
+    height: 35px;
     border-radius: 50px;
     background: #fff;
     color: #435070;
     border: 1px solid #fff;
     font-weight: bold;
-    cursor: pointer;
+}
+.login_box .btn_logout{
+    width: 92px;
+    /* padding: 6px 0 7px; */
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50px;
+    background: #435070;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-left: 5px;
 }
 .login_box .btn_join{
-    width: 90px;
-    padding: 6px 0 7px;
+    width: 92px;
+    height: 35px;
     border-radius: 50px;
     background: #435070;
     border: 1px solid #fff;
     color: #fff;
     font-weight: bold;
-    cursor: pointer;
     margin-left: 5px;
 }
 
 .login_box .btn_company{
-    color: #91ADF2;
-    font-size: 14px;
     width: 100px;
-    padding: 5px 0 6px;
+    color: #91ADF2;
+    font-size: 13px;
+    width: 100px;
+    height: 35px;
+    line-height: 34px;
     border-radius: 50px;
     background: #435070;
     border: 1px solid #91ADF2;
-    display: inline-block;
+    box-sizing: border-box;
     margin-left: 5px;
+}
+.login_box .btn_mypage{
+    width: 92px;
+    height: 35px;
+    line-height: 34px;
+    border-radius: 50px;
+    background: #435070;
+    color: #91ADF2;
+    border: 1px solid #91ADF2;
+    margin-left: 5px;
+    box-sizing: border-box;
 }
 
 nav{
