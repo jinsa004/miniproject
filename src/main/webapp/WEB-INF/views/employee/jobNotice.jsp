@@ -27,18 +27,18 @@
               </ul>
             </div><!-- .notice_title -->
             <div id="tab-1" class="notice_inner notice_inner1 tab-content on">
-              <c:forEach var="noticeAllList" items="${noticeAllList}">
+              <c:forEach var="jobNoticeList" items="${jobNoticeList}">
                 <div>
                   <ul>
                     <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
                     <li><a href="noticeDetail">
-                        ${noticeAllList.noticeTitle}
-                        <span class="notice_small">${noticeAllList.noticeTask}</span>
+                        ${jobNoticeList.noticeTitle}
+                        <span class="notice_small">${jobNoticeList.noticeTask}</span>
                       </a></li>
-                    <li>${noticeAllList.noticeCareer}<span class="notice_small">${noticeAllList.noticeQual}</span></li>
-                    <li>${noticeAllList.noticePosition}<span class="notice_small">부산</span></li>
+                    <li>${jobNoticeList.noticeCareer}<span class="notice_small">${jobNoticeList.noticeQual}</span></li>
+                    <li>${jobNoticeList.noticePosition}<span class="notice_small">부산</span></li>
                     <!-- notice 테이블에 지역 컬럼 만들거나 sal을 넣는 등 수정 필요 -->
-                    <li>~${noticeAllList.noticePeriod}<span class="notice_small">마감 13일전</span></li>
+                    <li>~${jobNoticeList.noticePeriod}<span class="notice_small">마감 13일전</span></li>
                   </ul>
                 </div>
               </c:forEach>

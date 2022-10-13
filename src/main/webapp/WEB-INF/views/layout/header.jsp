@@ -22,7 +22,7 @@
         <div class="header_wrap">
           <header>
             <div class="logo">
-              <a href="/emp/main">PROJECT_4</a>
+              <a href="/emp">PROJECT_4</a>
             </div>
             <!-- .logo -->
 
@@ -50,7 +50,7 @@
             <nav>
               <ul>
                 <li>
-                  <a href="/emp/main">채용공고</a>
+                  <a href="/emp/">채용공고</a>
                 </li>
                 <li>
                   <a href="/emp/matchingNotice">매칭리스트</a>

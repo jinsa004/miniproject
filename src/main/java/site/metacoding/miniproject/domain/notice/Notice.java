@@ -23,4 +23,7 @@ public class Notice {
 	private String noticeWellfare;
 	private Integer jobId;
 	private Timestamp createdAt;
+
+	// 엔티티가 아닌 필드
+	private Integer jobCode;
 }
