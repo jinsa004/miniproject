@@ -199,7 +199,7 @@
           },
         }).done((res) => {
           if (res.code == 1) {
-            alert("이력서 수정 완료");
+            alert("기업소개 수정 완료");
             location.reload;
           } else {
             alert("업데이트에 실패하였습니다");

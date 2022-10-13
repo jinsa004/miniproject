@@ -25,6 +25,8 @@ public class Company {
 	private String introContent;
 	private String introLocation;
 	private String introImage;
+	private String jobName;
+	private Integer jobCode;
 
 	public void Update(UpdateDto updateDto) {
 		this.companyName = updateDto.getCompanyName();
@@ -36,5 +38,7 @@ public class Company {
 		this.introContent = updateDto.getIntroContent();
 		this.introLocation = updateDto.getIntroLocation();
 		this.introImage = updateDto.getIntroImage();
+		this.jobName = updateDto.getJobName();
+		this.jobCode = updateDto.getJobCode();
 	}
 }
