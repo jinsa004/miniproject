@@ -19,10 +19,11 @@
 		UPDATE company c
 		RIGHT JOIN intro i ON (i.company_id = c.company_id)
 		SET c.company_name = #{companyName},
-		i.intro_birth = #{introBitrh},
+		i.intro_birth = #{introBirth},
 		i.intro_task = #{introTask},
 		i.intro_wellfare = #{introWellfare},
 		i.intro_content = #{introContent},
+		i.intro_sal = #{introSal},
 		i.intro_location = #{introLocation},
 		i.job_id = #{jobId},
 		i.intro_image = #{introImage}
