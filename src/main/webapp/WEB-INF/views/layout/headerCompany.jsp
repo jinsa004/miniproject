@@ -79,7 +79,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <a href="/emp/main" class="btn_company">회원 서비스</a>
               </c:when>
               <c:otherwise>
-                <a class="btn_logout" href="/logout">로그아웃</a>
+                <a class="btn_logout" href="/co/logout">로그아웃</a>
                 <a href="/co/companyIntroUpdate/${principal.companyId}" class="btn_mypage"
                   >마이페이지</a
                 >

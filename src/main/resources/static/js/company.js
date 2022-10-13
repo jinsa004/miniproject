@@ -1,5 +1,6 @@
 /* 기업정보 수정*/
-$("#btn_update").click(() => {
+
+$("#btn_update").click(()=>{
   console.log("클릭됨");
   companyUpdate();
 });
@@ -21,22 +22,22 @@ function companyUpdate() {
   console.log("업데이트");
 
   $.ajax("/co/companyUpdate/" + companyId, {
-    type: "PUT",
-    dataType: "json",
-    data: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json; charset=utf-8"
-    },
+      type: "PUT",
+      dataType: "json",
+      data: JSON.stringify(data),
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
   }).done((res) => {
-    if (res.code == 1) {
-      alert("기업정보수정 완료");
-      console.log(res);
-      location.reload;
-    } else {
-      alert("업데이트에 실패하였습니다");
-    }
-  });
-}
+      if (res.code == 1) {
+          alert("기업정보수정 완료");
+          console.log(res);
+          location.reload;
+      } else {
+          alert("업데이트에 실패하였습니다");
+      }
+  });          
+
 function coLogin() {
 
   let data = {

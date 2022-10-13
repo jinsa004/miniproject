@@ -173,9 +173,9 @@ function popCloseRecruit() {
 
 
 /* 기업 회원가입*/
-/* $("#btn_join").click(() => {
+$("#btn_join").click(() => {
   join();
-});*/
+});
 
 function join() {
   let data = {

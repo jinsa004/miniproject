@@ -27,7 +27,6 @@ public class EmployeeService {
 
     public Employee 로그인(EmployeeLoginDto loginDto) {
         Employee employeePS = employeeDao.findByEmployeeUsername(loginDto.getEmployeeUsername());
-
         if (employeePS.getEmployeePassword().equals(loginDto.getEmployeePassword())) {
             return employeePS;
         }
