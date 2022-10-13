@@ -27,7 +27,7 @@ public class ResumeController {
     private final JobService jobService;
     private final HttpSession session;
 
-/*=============================개인회원========================================= */
+    /* =============================개인회원========================================= */
 
     @GetMapping("emp/resumeSaveForm/{employeeId}")
     public String insertResumeForm(@PathVariable Integer employeeId, Model model) { // 이력서 등록 페이지
@@ -48,24 +48,25 @@ public class ResumeController {
         return "resume/resumeUpdate";
     }
 
+    /* =============================기업회원========================================= */
 
-/*=============================기업회원========================================= */
-   
-    @GetMapping("co/resumeList")
-    public String resumeList() { // 기업회원이 보는 이력서리스트**
-        return "company/resumeList";
+    @GetMapping("co")
+    public String getAllResumeList(Model model) { // 기업회원이 보는 이력서리스트
+        List<Resume> resumeAllList = resumeService.이력서목록보기();
+        model.addAttribute("resumeAllList", resumeAllList);
+        return "company/mianCompany";
     }
 
     @GetMapping("co/resumeDetail")
     public String 이력서상세보기() { // 이력서 상세보기 페이지
-    return "company/resumeDetail";
+        return "company/resumeDetail";
     }
 
     @GetMapping("co/resumeDetail/{resumeId}")
     public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
         model.addAttribute("resume", resumeService.이력서상세보기(resumeId));
         return "company/resumeDetail";
-}
+    }
 
-
+    // 나중에 지원자 관리 메서드 생성 필요 (resumeList.jsp)
 }
