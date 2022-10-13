@@ -270,3 +270,11 @@
 #btn_main_resume:hover{
     background: #ecf1ff;
 }
+
+#btnEmployeeUpdate{
+    cursor: pointer;
+}
+
+#btnEmployeeDelete{
+    cursor: pointer;
+}

@@ -1,9 +1,7 @@
 package site.metacoding.miniproject.web;
 
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
@@ -63,9 +62,18 @@ public class ResumeController {
 
     /* =============================기업회원========================================= */
 
-    @GetMapping("co/resumeList")
-    public String resumeList() { // 기업회원이 보는 이력서리스트**
-        return "company/resumeList";
+    @GetMapping("co")
+    public String getAllResumeList(Model model) { // 기업회원이 보는 이력서리스트
+        List<Resume> resumeAllList = resumeService.이력서목록보기();
+        model.addAttribute("resumeAllList", resumeAllList);
+        return "company/mainCompany";
+    }
+
+    @GetMapping("co/resume")
+    public String getJobResumeList(@RequestParam("jobCode") Integer jobCode, Model model) {
+        List<Resume> jobResumeList = resumeService.이력서분야별목록보기(jobCode);
+        model.addAttribute("jobResumeList", jobResumeList);
+        return "company/jobResume";
     }
 
     @GetMapping("co/resumeDetail")
@@ -79,4 +87,5 @@ public class ResumeController {
         return "company/resumeDetail";
     }
 
+    // 나중에 지원자 관리 메서드 생성 필요 (resumeList.jsp)
 }

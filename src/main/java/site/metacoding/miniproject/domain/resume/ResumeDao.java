@@ -7,6 +7,8 @@ import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
 public interface ResumeDao {
     public List<Resume> findAll();
 
+    public List<Resume> findByJobCodeToResume(Integer jobCode);
+
     public Resume findById(Integer resumeId);
 
     public void insert(Resume resume);
