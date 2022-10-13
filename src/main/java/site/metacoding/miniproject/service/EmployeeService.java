@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.employee.EmployeeDao;
+import site.metacoding.miniproject.web.dto.request.EmployeeUpdateDto;
 import site.metacoding.miniproject.web.dto.request.LoginDto;
-import site.metacoding.miniproject.web.dto.employee.EmployeeUpdateDto;
 
 @RequiredArgsConstructor
 @Service

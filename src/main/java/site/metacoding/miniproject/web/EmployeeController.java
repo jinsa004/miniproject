@@ -23,7 +23,7 @@ import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
-import site.metacoding.miniproject.web.dto.employee.EmployeeUpdateDto;
+import site.metacoding.miniproject.web.dto.request.EmployeeUpdateDto;
 import site.metacoding.miniproject.web.dto.request.LoginDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
