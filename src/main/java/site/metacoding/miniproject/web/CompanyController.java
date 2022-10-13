@@ -48,11 +48,13 @@ public class CompanyController {
         session.setAttribute("principal", principal);
         return new CMRespDto<>(1, "로그인성공", null);
     }
+
     
     @GetMapping("/co/mainCompany")
     public String companyMain() {// 기업회원이 보는 메인페이지
         return "company/mainCompany";
     }
+
 
     @GetMapping("/co/supCompany")
     public String supportList() {// 기업회원이 보는 공고/지원자관리 탭

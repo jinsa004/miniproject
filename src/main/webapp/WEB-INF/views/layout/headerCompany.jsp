@@ -20,7 +20,7 @@
         <div class="header_wrap">
           <header>
             <div class="logo">
-              <a href="/co/mainCompany">COMPANY_4</a>
+              <a href="/co">COMPANY_4</a>
             </div>
             <!-- .logo -->
 
@@ -41,14 +41,14 @@
                 회원가입
               </button>
               <a href="/co/companyIntroUpdate" class="btn_company">기업 마이페이지</a>
-              <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
+              <a href="/emp" class="btn_company">회원 서비스</a><!-- .btn_company -->
             </div>
             <!-- .login_box -->
 
             <nav>
               <ul>
                 <li>
-                  <a href="/co/mainCompany">인재검색</a>
+                  <a href="/co">인재검색</a>
                 </li>
                 <li>
                   <a href="/co/noticeSave">공고등록</a>
