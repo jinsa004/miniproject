@@ -30,24 +30,25 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <a href="/emp/main">PROJECT_4</a>
         </div>
         <ul class="gnb_left">
+          <li class="gnb_list3">
+            <a href="/emp/employeeInfo">
+              <i class="fa-regular fa-star"></i>
+              <span class="txt">마이페이지</span>
+            </a>
+          </li>
           <li class="gnb_list1">
             <a href="/emp/resumeSaveForm/${principal.employeeId}">
               <i class="fa-regular fa-paper-plane"></i>
               <span class="txt">이력서 등록</span>
             </a>
           </li>
-          <li class="gnb_list2">
+          <!-- <li class="gnb_list2">
             <a href="/emp/resumeUpdate/${resumePS.resumeId}">
               <i class="fa-regular fa-pen-to-square"></i>
               <span class="txt">이력서 관리</span>
             </a>
-          </li>
-          <li class="gnb_list3">
-            <a href="/emp/employeeInfo">
-              <i class="fa-regular fa-star"></i>
-              <span class="txt">관심분야 관리</span>
-            </a>
-          </li>
+          </li> -->
+          
           <li class="gnb_list4">
             <a href="/emp/employeeInfo/${principal.employeeId}">
               <i class="fa-regular fa-user"></i>
