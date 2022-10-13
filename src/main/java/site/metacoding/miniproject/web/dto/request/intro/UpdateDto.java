@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.web.dto.request.company;
+package site.metacoding.miniproject.web.dto.request.intro;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,5 +20,4 @@ public class UpdateDto {
     private String introLocation;
     private String introImage;
     private String jobName;
-    private Integer jobCode;
 }

@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.miniproject.service.CompanyService;
-import site.metacoding.miniproject.web.dto.request.company.UpdateDto;
+import site.metacoding.miniproject.service.IntroService;
+import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
 @Controller
 public class CompanyController {
 
-    private final CompanyService companyService;
+    private final IntroService introService;
 
     @GetMapping("/co/main")
     public String main() {// 개인회원이 보는 메인페이지
@@ -55,15 +55,15 @@ public class CompanyController {
     // }
 
     @GetMapping("/co/companyIntroUpdate/{companyId}")
-    public String getCompanyUpdate(@PathVariable Integer companyId, Model model) {
-        model.addAttribute("company", companyService.기업상세보기(companyId));
+    public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
+        model.addAttribute("intro", introService.기업소개상세보기(companyId));
         return "company/coIntroUpdate";
     }
 
     @PutMapping("/co/companyIntroUpdate/{companyId}/update")
-    public @ResponseBody CMRespDto<?> putCompanyUpdate(@PathVariable Integer companyId,
+    public @ResponseBody CMRespDto<?> putIntroUpdate(@PathVariable Integer companyId,
             @RequestBody UpdateDto updateDto) {
-        companyService.기업소개수정하기(companyId, updateDto);
+        introService.기업소개수정하기(companyId, updateDto);
         return new CMRespDto<>(1, "수정성공", null);
     }
 }

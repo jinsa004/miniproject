@@ -17,7 +17,7 @@
         </div>
       </div>
       <!-- logo -->
-      <input id="companyId" type="hidden" value="${company.companyId}" />
+      <input id="introId" type="hidden" value="${intro.introId}" />
       <div id="basic_info" class="form">
         <div class="form_title">
           <h2 class="title">회사 정보</h2>
@@ -28,7 +28,7 @@
               <p class="basic_list_item">회사명</p>
             </div>
             <div class="basic_input">
-              <input type="text" id="companyName" name="basic_name" class="box_input" value="${company.companyName}"
+              <input type="text" id="companyName" name="basic_name" class="box_input" value="${intro.companyName}"
                 placeholder="회사명을 입력하세요" />
             </div>
           </div>
@@ -37,7 +37,7 @@
               <p class="basic_list_item">설립년도</p>
             </div>
             <div class="basic_input">
-              <input type="text" id="introBirth" name="basic_birth" class="box_input" value="${company.introBirth}"
+              <input type="text" id="introBirth" name="basic_birth" class="box_input" value="${intro.introBirth}"
                 placeholder="설립년도를 입력하세요" />
             </div>
           </div>
@@ -46,7 +46,7 @@
               <p class="basic_list_item">주요업무</p>
             </div>
             <div class="basic_input">
-              <input type="text" id="introTask" name="basic_task" class="box_input" value="${company.introTask}"
+              <input type="text" id="introTask" name="basic_task" class="box_input" value="${intro.introTask}"
                 placeholder="주요 업무를 입력하세요" />
             </div>
           </div>
@@ -55,7 +55,7 @@
               <p class="basic_list_item">평균연봉</p>
             </div>
             <div class="basic_input">
-              <input type="text" id="introSal" name="basic_sal" class="box_input" value="${company.introSal}"
+              <input type="text" id="introSal" name="basic_sal" class="box_input" value="${intro.introSal}"
                 placeholder="평균연봉을 입력하세요" />
             </div>
           </div>
@@ -65,7 +65,7 @@
             </div>
             <div class="basic_input">
               <input type="text" id="introWellfare" name="basic_welfare" class="box_input"
-                value="${company.introWellfare}" placeholder="복지를 입력하세요" />
+                value="${intro.introWellfare}" placeholder="복지를 입력하세요" />
             </div>
           </div>
           <div class="basic_row">
@@ -73,8 +73,8 @@
               <p class="basic_list_item">회사소개</p>
             </div>
             <div class="basic_input">
-              <input type="text" id="introContent" name="basic_content" class="box_input"
-                value="${company.introContent}" placeholder="회사소개를 입력하세요" />
+              <input type="text" id="introContent" name="basic_content" class="box_input" value="${intro.introContent}"
+                placeholder="회사소개를 입력하세요" />
             </div>
           </div>
           <div class="basic_row">
@@ -101,7 +101,7 @@
           <h2 class="title">관심분야</h2>
         </div>
         <div class="field_select">
-          <form method="post" action="/#">
+          <form id="jobName" method="post" action="/#">
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="프론트엔드" name="프론트엔드" value="프론트엔드">
               <label class="form-check-label" for="프론트엔드">프론트엔드</label>
@@ -175,7 +175,7 @@
     <script>
       $("#btnUpdate").click(() => {
         console.log("클릭됨");
-        console.log($("#companyId").val());
+        console.log($("#introId").val());
         update();
       });
       function update() {
@@ -185,11 +185,12 @@
           introTask: $("#introTask").val(),
           introSal: $("#introSal").val(),
           introWellfare: $("#introWellfare").val(),
-          introContent: $("#introContent").val()
+          introContent: $("#introContent").val(),
+          jobName: $("#jobName").val()
         }
-        let companyId = $("#companyId").val();
+        let introId = $("#introId").val();
         console.log("업데이트확인");
-        $.ajax("/co/companyIntroUpdate/" + companyId + "/update", {
+        $.ajax("/co/companyIntroUpdate/" + introId + "/update", {
           type: "PUT",
           dataType: "json", // 응답 데이터
           data: JSON.stringify(data), // http body에 들고갈 요청 데이터
