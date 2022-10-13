@@ -3,6 +3,7 @@ package site.metacoding.miniproject.domain.company;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import site.metacoding.miniproject.web.dto.request.CompanyUpdateDto;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
 
 @NoArgsConstructor
@@ -19,7 +20,7 @@ public class Company {
 	private String companyPassword;
 	private Integer jobId;
 
-	//엔티티 필드 아님
+	// 엔티티 필드 아님
 	private Integer employeeId;
 
 	// public Company(Integer companyNumber, String companyName, String
@@ -45,5 +46,16 @@ public class Company {
 		this.companyUsername = joinDto.getCompanyUsername();
 		this.companyPassword = joinDto.getCompanyPassword();
 		this.jobId = joinDto.getJobId();
+	}
+
+	public void update(CompanyUpdateDto companyupdateDto) {
+		this.companyNumber = companyupdateDto.getCompanyNumber();
+		this.companyName = companyupdateDto.getCompanyName();
+		this.companyEmail = companyupdateDto.getCompanyEmail();
+		this.companyTel = companyupdateDto.getCompanyTel();
+		this.companyLocation = companyupdateDto.getCompanyLocation();
+		this.companyUsername = companyupdateDto.getCompanyUsername();
+		this.companyPassword = companyupdateDto.getCompanyPassword();
+		this.jobId = companyupdateDto.getJobId();
 	}
 }

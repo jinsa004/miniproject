@@ -11,6 +11,7 @@
       <link rel="stylesheet" href="/css/reset.css" />
       <link rel="stylesheet" href="/css/company.css" />
       <script type="text/javascript" src="/js/main.js"></script>
+      <script type="text/javascript" src="/js/company.js"></script>
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <title>4조 PROJECT</title>
     </head>

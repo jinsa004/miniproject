@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
+import site.metacoding.miniproject.web.dto.request.CompanyUpdateDto;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
 import site.metacoding.miniproject.web.dto.request.LoginDto;
@@ -54,7 +55,7 @@ public class CompanyController {
         session.setAttribute("principal", principal);
         return new CMRespDto<>(1, "로그인성공", null);
     }
-    
+
     @GetMapping("/co/mainCompany")
     public String companyMain() {// 기업회원이 보는 메인페이지
         return "company/mainCompany";
@@ -70,9 +71,20 @@ public class CompanyController {
         return "company/matchingResume";
     }
 
-    @GetMapping("/co/companyInfo")
-    public String 기업정보() {// 기업회원 회원가입 정보 수정할 때 쓰는 거 company 테이블
+    @GetMapping("/co/companyInfo/{companyId}")
+    public String 기업정보관리(@PathVariable Integer companyId, Model model) {// 기업회원 회원가입 정보 수정할 때 쓰는 거 company 테이블
+        Company companyPS = (Company) session.getAttribute("principal");
+        model.addAttribute("company", companyPS);
         return "company/companyInfo";
+    }
+
+    @PutMapping("/co/companyUpdate/{companyId}")
+    public @ResponseBody CMRespDto<?> companyUpdate(@PathVariable Integer companyId,
+            @RequestBody CompanyUpdateDto companyupdateDto) {
+
+        Company companyPS = companyService.기업정보수정(companyId, companyupdateDto);
+        session.setAttribute("principal", companyPS);
+        return new CMRespDto<>(1, "수정성공", null);
     }
 
     @GetMapping("/co/companyIntroDetail")
