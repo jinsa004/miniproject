@@ -63,9 +63,6 @@
         WHERE resume_id = #{resumeId}
 	</update>
 
-	<delete id="deleteById">
-
-
 	<delete id="deleteById"></delete>
 
 
