@@ -218,7 +218,7 @@
             <div class="form_title">
               <h2 class="title">관심분야</h2>
             </div>
-            <div class="resume_field info_form">
+            <div class="resume_field info_form2">
               <div class="field_select">
                 <div class="select-group">
                   <ul class="part_box_wrap">

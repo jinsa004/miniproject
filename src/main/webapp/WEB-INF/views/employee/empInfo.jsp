@@ -96,7 +96,7 @@
             <div class="form_title">
               <h2 class="title">관심 분야</h2>
             </div>
-            <div class="resume_field info_form">
+            <div class="resume_field info_form2">
               <div class="field_select">
                 <form method="post" action="/#">
                   <ul class="part_box_wrap">
