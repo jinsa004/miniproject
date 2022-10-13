@@ -33,10 +33,11 @@ public class CompanyService {
     return companyDao.findById(companyId);
   }
 
-  public void 기업정보수정(Integer companyId, CompanyUpdateDto companyupdateDto) {
+  public Company 기업정보수정(Integer companyId, CompanyUpdateDto companyupdateDto) {
     Company companyPS = companyDao.findById(companyId);
     companyPS.update(companyupdateDto);
     companyDao.update(companyPS);
+    return companyPS;
   }
 
 }

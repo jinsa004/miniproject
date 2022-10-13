@@ -70,7 +70,7 @@ public class CompanyController {
 
     @GetMapping("/co/companyInfo/{companyId}")
     public String 기업정보관리(@PathVariable Integer companyId, Model model) {// 기업회원 회원가입 정보 수정할 때 쓰는 거 company 테이블
-        Company companyPS = companyService.기업정보관리(companyId);
+        Company companyPS = (Company) session.getAttribute("principal");
         model.addAttribute("company", companyPS);
         return "company/companyInfo";
     }
@@ -78,7 +78,9 @@ public class CompanyController {
     @PutMapping("/co/companyUpdate/{companyId}")
     public @ResponseBody CMRespDto<?> companyUpdate(@PathVariable Integer companyId,
             @RequestBody CompanyUpdateDto companyupdateDto) {
-        companyService.기업정보수정(companyId, companyupdateDto);
+
+        Company companyPS = companyService.기업정보수정(companyId, companyupdateDto);
+        session.setAttribute("principal", companyPS);
         return new CMRespDto<>(1, "수정성공", null);
     }
 
