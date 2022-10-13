@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.company.CompanyDao;
+import site.metacoding.miniproject.web.dto.request.CompanyUpdateDto;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
 import site.metacoding.miniproject.web.dto.request.LoginDto;
 
@@ -27,4 +28,15 @@ public class CompanyService {
     Company company = joinDto.toEntity(joinDto);
     companyDao.insert(company);
   }
+
+  public Company 기업정보관리(Integer companyId) {
+    return companyDao.findById(companyId);
+  }
+
+  public void 기업정보수정(Integer companyId, CompanyUpdateDto companyupdateDto) {
+    Company companyPS = companyDao.findById(companyId);
+    companyPS.update(companyupdateDto);
+    companyDao.update(companyPS);
+  }
+
 }
