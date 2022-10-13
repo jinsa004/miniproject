@@ -5,10 +5,9 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.company.CompanyDao;
-import site.metacoding.miniproject.web.dto.request.CompanyUpdateDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
-import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
 
 @Service
 @RequiredArgsConstructor
@@ -34,9 +33,9 @@ public class CompanyService {
     return companyDao.findById(companyId);
   }
 
-  public Company 기업정보수정(Integer companyId, CompanyUpdateDto companyupdateDto) {
+  public Company 기업정보수정(Integer companyId, CompanyUpdateDto companyUpdateDto) {
     Company companyPS = companyDao.findById(companyId);
-    companyPS.update(companyupdateDto);
+    companyPS.update(companyUpdateDto);
     companyDao.update(companyPS);
     return companyPS;
   }
