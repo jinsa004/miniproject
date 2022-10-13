@@ -12,4 +12,6 @@ public interface EmployeeDao {
 	public void update(Employee employee);
 
 	public void deleteById(Integer employeeId);
+
+	public Employee findByEmployeeUsername(String employeeUsername);
 }

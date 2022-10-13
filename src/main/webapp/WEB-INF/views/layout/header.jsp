@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%>
+pageEncoding="UTF-8" %> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,6 +22,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <title>4조 PROJECT</title>
   </head>
+
   <body>
     <div id="user_wrap">
       <div class="header_wrap">
@@ -54,6 +55,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             >
               로그인
             </button>
+
+            <a class="btn_logout" href="/logout">로그아웃</a>
 
             <button
               class="btn_join"
@@ -94,32 +97,29 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div class="modal_login_wrap">
         <h2>로그인</h2>
         <div class="form_box">
-          <form action="/login" method="post">
+          <form>
             <input
               id="username"
               type="text"
               placeholder="아이디를 입력하세요."
-              value="${username}"
             />
             <input
               id="password"
               type="password"
               placeholder="패스워드를 입력하세요."
-              name="password"
             />
           </form>
           <label class="btn_check">
-            <input
-              type="checkbox"
-              class="login_check"
-              id="user_remember"
-              name=""
-              checked
-            />
+            <input type="checkbox" class="login_check" id="remember" checked />
             <span class="login_check_icon"></span>
             <span class="login_check_text">로그인 상태 유지</span>
           </label>
-          <button id="btn_login" type="button" class="btn btn-primary">
+          <button
+            id="btn_login"
+            type="button"
+            class="btn btn-primary"
+            onclick="login()"
+          >
             로그인
           </button>
         </div>
@@ -291,7 +291,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <input
                     type="checkbox"
                     class="login_check"
-                    id="c_part_front"
+                    id="c_part_front jobId"
                     name=""
                     checked
                   />

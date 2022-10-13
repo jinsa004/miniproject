@@ -27,6 +27,9 @@ public class Employee {
 		this.employeeEmail = employeeUpdateDto.getEmployeeEmail();
 		this.employeeLocation = employeeUpdateDto.getEmployeeLocation();
 		this.employeeTel = employeeUpdateDto.getEmployeeTel();
+
 	}
 
+	// 엔티티 필드 아님
+	private Integer companyId;
 }

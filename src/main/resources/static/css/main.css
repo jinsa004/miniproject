@@ -82,6 +82,8 @@ header{
     position: absolute;
     right: 0;
     top: 38px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .login_box .btn_login{
@@ -93,6 +95,17 @@ header{
     border: 1px solid #4876ef;
     font-weight: bold;
     cursor: pointer;
+}
+.login_box .btn_logout{
+    width: 90px;
+    padding: 6px 0 7px;
+    border-radius: 50px;
+    background: #fff;
+    border: 1px solid #4876ef;
+    color: #4876ef;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 13px;
 }
 .login_box .btn_join{
     width: 90px;
