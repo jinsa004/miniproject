@@ -25,4 +25,8 @@ public class NoticeService {
     public List<Notice> 내공고목록보기(Integer companyId) {
         return noticeDao.findByCompanyId(companyId);
     }
+
+    public void 공고등록(Notice notice){
+        noticeDao.insert(notice);
+    }
 }
