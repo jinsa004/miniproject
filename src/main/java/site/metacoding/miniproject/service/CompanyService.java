@@ -40,4 +40,7 @@ public class CompanyService {
     return companyPS;
   }
 
+  public void 기업회원탈퇴(Integer companyId) {
+    companyDao.deleteById(companyId);
+  }
 }

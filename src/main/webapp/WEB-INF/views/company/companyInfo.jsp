@@ -75,12 +75,13 @@
       </div>
       <!-- login -->
 
-      <div class="btn_group">
+      <br class="btn_group">
         <div class="update_btn">
           <button id="btn_update" type="button">등록완료</button>
         </div>
+      
         <div class="delete_btn">
-          <button type="button">회원탈퇴</button>
+          <button id="btn_delete" type="button">회원탈퇴</button>
         </div>
       </div>
       <!-- btn -->

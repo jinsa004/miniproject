@@ -33,7 +33,8 @@
     WHERE company_id = #{companyId}
 	</update>
 
-	<delete id="deleteById"></delete>
-
+	<delete id="deleteById">
+		DELETE FROM company WHERE company_id=#{companyId}
+	</delete>
 
 </mapper>
