@@ -82,7 +82,6 @@
       
         <div class="delete_btn">
           <button id="btn_delete" type="button">회원탈퇴</button>
-
         </div>
       </div>
       <!-- btn -->

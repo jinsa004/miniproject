@@ -20,7 +20,8 @@ import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
-import site.metacoding.miniproject.web.dto.request.LoginDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
 import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
@@ -33,7 +34,7 @@ public class CompanyController {
     private final IntroService introService;
 
     @PostMapping("/co/login")
-    public @ResponseBody CMRespDto<?> login(@RequestBody LoginDto loginDto, HttpServletResponse response) {
+    public @ResponseBody CMRespDto<?> login(@RequestBody CompanyLoginDto loginDto, HttpServletResponse response) {
         System.out.println("===============");
         System.out.println(loginDto.isRemember());
         System.out.println("===============");
@@ -72,9 +73,27 @@ public class CompanyController {
         return "company/matchingResume";
     }
 
-    @GetMapping("/co/companyInfo")
-    public String 기업정보() {// 기업회원 회원가입 정보 수정할 때 쓰는 거 company 테이블
+    @GetMapping("/co/companyInfo/{companyId}")
+    public String 기업정보관리(@PathVariable Integer companyId, Model model) {// 기업회원 회원가입 정보 수정할 때 쓰는 거 company 테이블
+        Company companyPS = (Company) session.getAttribute("principal");
+        model.addAttribute("company", companyPS);
         return "company/companyInfo";
+    }
+
+    @PutMapping("/co/companyUpdate/{companyId}")
+    public @ResponseBody CMRespDto<?> companyUpdate(@PathVariable Integer companyId,
+            @RequestBody CompanyUpdateDto companyupdateDto) {
+
+        Company companyPS = companyService.기업정보수정(companyId, companyupdateDto);
+        session.setAttribute("principal", companyPS);
+        return new CMRespDto<>(1, "수정성공", null);
+    }
+
+    @DeleteMapping("/co/companyDelete/{companyId}")
+    public @ResponseBody CMRespDto<?> companyDelete(@PathVariable Integer companyId) {
+        companyService.기업회원탈퇴(companyId);
+        session.invalidate();
+        return new CMRespDto<>(1, "기업탈퇴성공", null);
     }
 
     @GetMapping("/co/companyIntroDetail")
@@ -106,4 +125,5 @@ public class CompanyController {
         session.invalidate();
         return "redirect:/co";
     }
+
 }

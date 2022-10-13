@@ -11,7 +11,7 @@ public interface ResumeDao {
 
     public void insert(Resume resume);
 
-    public void update(Integer resumeId, Resume resume);
-
     public void deleteById(Integer resumeId);
+
+    public void update(Resume resume);
 }
