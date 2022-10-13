@@ -14,14 +14,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import lombok.Delegate;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
-import site.metacoding.miniproject.web.dto.request.CompanyUpdateDto;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
-import site.metacoding.miniproject.web.dto.request.LoginDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
 import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
@@ -34,7 +33,7 @@ public class CompanyController {
     private final IntroService introService;
 
     @PostMapping("/co/login")
-    public @ResponseBody CMRespDto<?> login(@RequestBody LoginDto loginDto, HttpServletResponse response) {
+    public @ResponseBody CMRespDto<?> login(@RequestBody CompanyLoginDto loginDto, HttpServletResponse response) {
         System.out.println("===============");
         System.out.println(loginDto.isRemember());
         System.out.println("===============");
@@ -89,14 +88,13 @@ public class CompanyController {
         return new CMRespDto<>(1, "수정성공", null);
     }
 
-
     @DeleteMapping("/co/companyDelete/{companyId}")
     public @ResponseBody CMRespDto<?> companyDelete(@PathVariable Integer companyId) {
         companyService.기업회원탈퇴(companyId);
         session.invalidate();
         return new CMRespDto<>(1, "기업탈퇴성공", null);
     }
-    
+
     @GetMapping("/co/companyIntroDetail")
     public String 기업소개입력() {// 기업소개 상세보기 intro 테이블
         return "company/coIntroDetail";

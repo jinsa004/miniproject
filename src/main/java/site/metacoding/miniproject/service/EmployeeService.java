@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.employee.EmployeeDao;
-import site.metacoding.miniproject.web.dto.request.EmployeeUpdateDto;
-import site.metacoding.miniproject.web.dto.request.LoginDto;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 
 @RequiredArgsConstructor
 @Service
@@ -25,7 +25,7 @@ public class EmployeeService {
         return employeePS;
     }
 
-    public Employee 로그인(LoginDto loginDto) {
+    public Employee 로그인(EmployeeLoginDto loginDto) {
         Employee employeePS = employeeDao.findByEmployeeUsername(loginDto.getEmployeeUsername());
 
         if (employeePS.getEmployeePassword().equals(loginDto.getEmployeePassword())) {

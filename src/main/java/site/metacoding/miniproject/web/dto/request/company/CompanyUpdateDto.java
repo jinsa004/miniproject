@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.web.dto.request;
+package site.metacoding.miniproject.web.dto.request.company;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

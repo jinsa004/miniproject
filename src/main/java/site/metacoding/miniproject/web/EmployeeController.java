@@ -19,8 +19,8 @@ import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
-import site.metacoding.miniproject.web.dto.request.EmployeeUpdateDto;
-import site.metacoding.miniproject.web.dto.request.LoginDto;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -33,7 +33,7 @@ public class EmployeeController {
     private final HttpSession session;
 
     @PostMapping("/emp/login")
-    public @ResponseBody CMRespDto<?> login(@RequestBody LoginDto loginDto, HttpServletResponse response) {
+    public @ResponseBody CMRespDto<?> login(@RequestBody EmployeeLoginDto loginDto, HttpServletResponse response) {
         System.out.println("===============");
         System.out.println(loginDto.isRemember());
         System.out.println("===============");
@@ -65,7 +65,6 @@ public class EmployeeController {
     // 일단 주석처리함. EmployeeController에 Notice 메서드를 넣을지 NoticeController에 넣을지 정해야 함.
     // 일단은 EmployeeController에 불러온 Service가 많아서 NoticeController에 넣어놨음.
 
-
     @GetMapping("/emp/matchingNotice")
     public String matchingList() {// 개인회원이 보는 매칭리스트탭(관심분야맞는 공고 목록보기)
         return "employee/matchingNotice";
@@ -77,13 +76,13 @@ public class EmployeeController {
     }
 
     @GetMapping("/emp/companyIntroDetail/{introId}")
-    public String introDetail(@PathVariable Integer introId, Model model) {//개인회원 보는 기업소개 상세보기
+    public String introDetail(@PathVariable Integer introId, Model model) {// 개인회원 보는 기업소개 상세보기
         model.addAttribute("intro", introService.기업소개상세보기(introId));
         return "employee/coIntroDetail";
     }
 
     @GetMapping("/emp/companyList")
-    public String companylist(Model model) {//개인회원이 보는 기업소개 목록보기
+    public String companylist(Model model) {// 개인회원이 보는 기업소개 목록보기
         List<Intro> introList = introService.기업소개목록보기();
         model.addAttribute("introList", introList);
         return "employee/companyList";
@@ -91,8 +90,8 @@ public class EmployeeController {
 
     @GetMapping("/emp/mypageInsertForm")
     public String mypageResumeInsert() {// 이력서 등록, 수정, 삭제, 대표 이력서 선택
-    session.getAttribute("principal");
-    return "employee/mypageInsertForm";
+        session.getAttribute("principal");
+        return "employee/mypageInsertForm";
     }
 
     @GetMapping("/emp/employeeInfo/{employeeId}")

@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.company.CompanyDao;
-import site.metacoding.miniproject.web.dto.request.CompanyUpdateDto;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
-import site.metacoding.miniproject.web.dto.request.LoginDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
 
 @Service
 @RequiredArgsConstructor
@@ -15,7 +15,7 @@ public class CompanyService {
 
   private final CompanyDao companyDao;
 
-  public Company 로그인(LoginDto loginDto) {
+  public Company 로그인(CompanyLoginDto loginDto) {
     Company companyPS = companyDao.findByCompanyUsername(loginDto.getCompanyUsername());
 
     if (companyPS.getCompanyPassword().equals(loginDto.getCompanyPassword())) {
