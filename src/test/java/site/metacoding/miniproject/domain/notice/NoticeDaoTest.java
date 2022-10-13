@@ -31,4 +31,14 @@ public class NoticeDaoTest {
     //     // then
     //         assertEquals(1, result);
     // }
+
+    @Test
+    public void deleteByNoticeId(){
+        //given
+            Integer noticeId = 3;
+        //when
+            noticeDao.deleteById(noticeId);
+        //then
+        
+    }
 }
