@@ -4,9 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.service.CompanyService;
+import site.metacoding.miniproject.web.dto.request.company.UpdateDto;
+import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -55,4 +60,10 @@ public class CompanyController {
         return "company/coIntroUpdate";
     }
 
+    @PutMapping("/co/companyIntroUpdate/{companyId}/update")
+    public @ResponseBody CMRespDto<?> putCompanyUpdate(@PathVariable Integer companyId,
+            @RequestBody UpdateDto updateDto) {
+        companyService.기업소개수정하기(companyId, updateDto);
+        return new CMRespDto<>(1, "수정성공", null);
+    }
 }
