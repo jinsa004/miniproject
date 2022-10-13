@@ -17,8 +17,10 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.web.dto.request.CompanyUpdateDto;
+import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
 import site.metacoding.miniproject.web.dto.request.LoginDto;
+import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -27,6 +29,7 @@ public class CompanyController {
 
     private final CompanyService companyService;
     private final HttpSession session;
+    private final IntroService introService;
 
     @PostMapping("/co/login")
     public @ResponseBody CMRespDto<?> login(@RequestBody LoginDto loginDto, HttpServletResponse response) {
@@ -89,9 +92,17 @@ public class CompanyController {
         return "company/coIntroDetail";
     }
 
-    @GetMapping("/co/companyIntroUpdate")
-    public String 마이페이지() {// 기업소개 상세보기 수정하기 intro 테이블
+    @GetMapping("/co/companyIntroUpdate/{companyId}")
+    public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
+        model.addAttribute("intro", introService.기업소개상세보기(companyId));
         return "company/coIntroUpdate";
+    }
+
+    @PutMapping("/co/companyIntroUpdate/{companyId}/update")
+    public @ResponseBody CMRespDto<?> putIntroUpdate(@PathVariable Integer companyId,
+            @RequestBody UpdateDto updateDto) {
+        introService.기업소개수정하기(companyId, updateDto);
+        return new CMRespDto<>(1, "수정성공", null);
     }
 
     @PostMapping("/co/Join")
@@ -99,5 +110,4 @@ public class CompanyController {
         companyService.회원가입(joinDto);
         return new CMRespDto<>(1, "회원가입성공", null);
     }
-
 }

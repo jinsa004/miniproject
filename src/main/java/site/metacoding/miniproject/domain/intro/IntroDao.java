@@ -9,7 +9,7 @@ public interface IntroDao {
 
 	public void insert(Intro intro);
 
-	public void update(Integer introId, Intro intro);
+	public void update(Intro intro);
 
 	public void deleteById(Integer introId);
 }
