@@ -1,10 +1,18 @@
-package site.metacoding.miniproject.web.company;
+package site.metacoding.miniproject.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.service.CompanyService;
+
+@RequiredArgsConstructor
 @Controller
 public class CompanyController {
+
+    private final CompanyService companyService;
 
     @GetMapping("/co/main")
     public String main() {// 개인회원이 보는 메인페이지
@@ -36,8 +44,14 @@ public class CompanyController {
         return "company/coIntroDetail";
     }
 
-    @GetMapping("/co/companyIntroUpdate")
-    public String 마이페이지() {// 기업소개 상세보기 수정하기 intro 테이블
+    // @GetMapping("/co/companyIntroUpdate")
+    // public String 마이페이지() {// 기업소개 상세보기 수정하기 intro 테이블
+    // return "company/coIntroUpdate";
+    // }
+
+    @GetMapping("/co/companyIntroUpdate/{companyId}")
+    public String getCompanyUpdate(@PathVariable Integer companyId, Model model) {
+        model.addAttribute("company", companyService.기업상세보기(companyId));
         return "company/coIntroUpdate";
     }
 
