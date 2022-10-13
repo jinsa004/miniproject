@@ -104,6 +104,7 @@ header{
     color: #435070;
     border: 1px solid #fff;
     font-weight: bold;
+    transition: all 0.6s;
 }
 .login_box .btn_logout{
     width: 92px;
@@ -115,6 +116,7 @@ header{
     border: 1px solid #fff;
     color: #fff;
     margin-left: 5px;
+    transition: all 0.6s;
 }
 .login_box .btn_join{
     width: 92px;
@@ -125,6 +127,7 @@ header{
     color: #fff;
     font-weight: bold;
     margin-left: 5px;
+    transition: all 0.6s;
 }
 
 .login_box .btn_company{
@@ -139,6 +142,7 @@ header{
     border: 1px solid #91ADF2;
     box-sizing: border-box;
     margin-left: 5px;
+    transition: all 0.6s;
 }
 .login_box .btn_mypage{
     width: 92px;
@@ -150,6 +154,26 @@ header{
     border: 1px solid #91ADF2;
     margin-left: 5px;
     box-sizing: border-box;
+    transition: all 0.6s;
+}
+.login_box .btn_login:hover{
+    background-color: #4876ef;
+    border-color: #4876ef;
+    color: #fff;
+}
+.login_box .btn_mypage:hover{
+    background-color: #4876ef;
+    border-color: #4876ef;
+    color: #fff;
+}
+.login_box .btn_logout:hover{
+    background-color: #ccdaff46;
+}
+.login_box .btn_company:hover{
+    background-color: rgba(238, 238, 238, 0.199);
+}
+.login_box .btn_join:hover{
+    background-color: #ccdaff46;
 }
 
 nav{
