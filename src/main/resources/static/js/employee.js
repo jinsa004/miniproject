@@ -1,3 +1,5 @@
+// 회원정보 수정
+
 //회원가입
 function joinSave() {
   let data = {
@@ -9,6 +11,7 @@ function joinSave() {
     employeeBirth: $("#employeeBirth").val(),
     employeeTel: $("#employeeTel").val(),
     employeeLocation: $(".employeeLocation").val(),
+    job_Id: $("input:checkbox[value='frontend']").is(":checked"),
   };
   $.ajax("/emp/join", {
     type: "POST",
