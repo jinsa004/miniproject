@@ -18,6 +18,10 @@ public class ResumeService {
         return resumeDao.findAll();
     }
 
+    public List<Resume> 이력서분야별목록보기(Integer jobCode) {
+        return resumeDao.findByJobCodeToResume(jobCode);
+    }
+
     public void 이력서작성(Resume resume) {
         resumeDao.insert(resume);
     }

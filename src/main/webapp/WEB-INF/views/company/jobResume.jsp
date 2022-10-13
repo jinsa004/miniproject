@@ -20,21 +20,21 @@
             <div class="resume_list">
               <div class="resume_form resume_card">
                 <ul id="tab-1" class="resume_inner resume_inner1 tab-content on">
-                  <c:forEach var="resumeAllList" items="${resumeAllList}">
+                  <c:forEach var="jobResumeList" items="${jobResumeList}">
                     <li class="resume_cont">
                       <a href="resumeDetail">
                         <span class="resume_logo"><img src="/img/default_profile.png" alt="프로필이미지" /></span>
                         <span class="resume_name">
-                          ${resumeAllList.employeeName}
+                          ${jobResumeList.employeeName}
                         </span>
                         <div class="resume_txt">
-                          <span class="resume_title">${resumeAllList.resumeName}</span>
+                          <span class="resume_title">${jobResumeList.resumeName}</span>
                           <div class="resume_option">
                             <ul class="list_option">
                               <li class="career">
-                                <span>${resumeAllList.careerPeriod}</span>
+                                <span>${jobResumeList.careerPeriod}</span>
                               </li>
-                              <li class="part"><span>${resumeAllList.jobName}</span></li>
+                              <li class="part"><span>${jobResumeList.jobName}</span></li>
                             </ul>
                           </div>
                         </div>

@@ -5,6 +5,8 @@ import java.util.List;
 public interface ResumeDao {
     public List<Resume> findAll();
 
+    public List<Resume> findByJobCodeToResume(Integer jobCode);
+
     public Resume findById(Integer resumeId);
 
     public void insert(Resume resume);
