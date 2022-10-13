@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.RequiredArgsConstructor;
@@ -49,6 +50,12 @@ public class NoticeController {
     @GetMapping("co/noticeSave")
     public String 공고등록() {
         return "notice/noticeSave";
+    }
+
+    @PostMapping("co/noticeSave")
+    public String insert(Notice notice){
+        noticeService.공고등록(notice);
+        return "redirect:/co/mainCompany";
     }
 
     @GetMapping("co/noticeUpdate")

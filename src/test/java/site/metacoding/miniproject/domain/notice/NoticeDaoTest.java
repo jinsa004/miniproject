@@ -18,17 +18,17 @@ public class NoticeDaoTest {
     @Autowired
     private NoticeDao noticeDao;
 
-    @Test
-    public void insert(){
-        // given
-            String noticeTitle = "사원채용공고";
-            String noticeWellfare = "중식 무상제공";
-            Integer companyId = 1;
-            Notice notice = new Notice(noticeTitle, noticeWellfare, companyId);
-        // when
-            int result = noticeDao.insert(notice);
-            System.out.println(notice.getNoticeWellfare());
-        // then
-            assertEquals(1, result);
-    }
+    // @Test
+    // public void insert(){
+    //     // given
+    //         String noticeTitle = "사원채용공고";
+    //         String noticeWellfare = "중식 무상제공";
+    //         Integer companyId = 1;
+    //         Notice notice = new Notice(noticeTitle, noticeWellfare, companyId);
+    //     // when
+    //         int result = noticeDao.insert(notice);
+    //         System.out.println(notice.getNoticeWellfare());
+    //     // then
+    //         assertEquals(1, result);
+    // }
 }
