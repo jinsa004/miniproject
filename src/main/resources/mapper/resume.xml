@@ -40,6 +40,14 @@
 		WHERE resume_id = #{resumeId}
 	</select>
 
+	<select id="findByEmployeeId" resultType="site.metacoding.miniproject.domain.resume.Resume">
+        SELECT *
+        FROM resume r
+        INNER JOIN job j
+        ON r.job_id = j.job_id
+        WHERE employee_id=#{employeeId};
+    </select>
+
 
 	<update id="update">
         UPDATE resume SET
