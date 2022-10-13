@@ -26,4 +26,10 @@ public class Notice {
 
 	// 엔티티가 아닌 필드
 	private Integer jobCode;
+	//Junit 테스트를 위한 임시코드
+	public Notice(String noticeTitle, String noticeWellfare, Integer companyId) {
+		this.companyId = companyId;
+		this.noticeTitle = noticeTitle;
+		this.noticeWellfare = noticeWellfare;
+	}
 }

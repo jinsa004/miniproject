@@ -9,7 +9,7 @@ public interface NoticeDao {
 
 	public Notice findById(Integer noticeId);
 
-	public void insert(Notice notice);
+	public int insert(Notice notice);
 
 	public void update(Integer noticeId, Notice notice);
 
