@@ -278,3 +278,237 @@
 #btnEmployeeDelete{
     cursor: pointer;
 }
+
+/* ===================이력서등록============================= */
+#resume_wrap{
+    position: relative;
+    width: 100%;
+}
+#resume_wrap .container{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding-top: 80px;
+    padding-bottom: 140px;
+    padding-left: 110px;
+}
+.resume_update{
+    text-align: left;
+}
+.resume_update input{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.resume_update button{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.resume_title{
+    width: 1200px;
+}
+.title_update{
+    width: 1200px;
+}
+.title_input input{
+    width: 1140px;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 32px;
+    color: #222;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 60px;
+}
+.title_input::placeholder{
+    color: #eee;
+}
+.resume_update h2{
+    font-size: 26px;
+    line-height: 30px;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    display: inline-block;
+    padding-right: 10px;
+}
+.resume_update .form_title span{
+    display: inline-block;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #666;
+}
+.info_form{
+    width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    padding: 50px 80px 40px;
+    background: rgba(238, 238, 238, 0.4);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.info_form .info_myimg{
+    display: block;
+    width: 160px;
+    height: 180px;
+    background: #ccc;
+    border: 1px solid #ddd;
+}
+.info_form .info_myimg img{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+#files{
+    padding-left: 0;
+    margin-top: 10px;
+    background-color: #eee;
+}
+button.file_submit{
+    display: block;
+    cursor: pointer;
+    width: 252px;
+    height: 38px;
+    border-radius: 6px;
+    background: #4876ef;
+    margin-top: 5px;
+    color: #fff;
+}
+.info_form .info_left{
+    float: left;
+}
+.info_form .info_right{
+    float: left;
+    padding-left: 80px;
+}
+.info_form .info_right dd{
+    margin-bottom: 15px;
+}
+.info_form .info_right_txt{
+    display: inline-block;
+    color: #666;
+    font-weight: 300;
+    width: 100px;
+}
+.info_form .info_right_input{
+    display: inline-block;
+    width: 550px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+.edu_select .btn-group{
+    display: flex;
+    justify-content: space-around;
+}
+.edu_select .btn-group button{
+    display: block;
+    width: 50%;
+    height: 60px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background: #fff;
+    font-size: 18px;
+}
+.edu_select .btn-group button.on{
+    background: #4876ef;
+    color: #fff;
+}
+#univ_btn{
+    margin-left: -1px;
+}
+#univ{
+    display: none;
+}
+.info_form h3{
+    padding: 40px 0 30px;
+}
+.edu_form div{
+    margin-bottom: 15px;
+}
+.info_form .info_right_input2{
+    display: inline-block;
+    width: 265px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+
+.resume_career .btn-group button{
+    display: block;
+    width: 50%;
+    height: 60px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background: #fff;
+    font-size: 18px;
+}
+.resume_career .btn-group button.on{
+    background: #4876ef;
+    color: #fff;
+}
+.resume_career .btn-group{
+    display: flex;
+    justify-content: space-around;
+}
+#work_btn{
+    margin-left: -1px;
+}
+.resume_career div{
+    margin-bottom: 15px;
+}
+#work{
+    display: none;
+}
+
+
+.field_select .part_box_wrap{
+    display: flex;
+    justify-content: space-around;
+}
+.field_select .part_box{
+    text-align: left;
+    margin-bottom: 5px;
+}
+.field_select .part_box input{
+    width: 24px;
+    height: 24px;
+}
+.field_select .part_box em{
+    font-style: normal;
+    color: #222;
+    font-size: 18px;
+    line-height: 23px;
+    vertical-align: top;
+    padding-left: 4px;
+    font-weight: 300;
+}
+
+.update_btn{
+    display: flex;
+    justify-content: end;
+}
+#btnInsertResume{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #333;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnInsertResume:hover{
+    background: #4876ef;
+}
