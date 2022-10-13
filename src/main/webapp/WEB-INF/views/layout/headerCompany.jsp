@@ -51,7 +51,7 @@
                   <a href="/co/mainCompany">인재검색</a>
                 </li>
                 <li>
-                  <a href="/co/noticeSave">공고등록</a>
+                  <a href="/co/noticeSave/${principal.companyId}">공고등록</a>
                 </li>
                 <li>
                   <a href="/co/supCompany/${principal.companyId}">공고/지원자관리</a>
