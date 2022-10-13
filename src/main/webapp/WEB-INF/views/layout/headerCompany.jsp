@@ -21,6 +21,19 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <title>4조 PROJECT</title>
   </head>
 
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/css/reset.css" />
+      <link rel="stylesheet" href="/css/company.css" />
+      <script type="text/javascript" src="/js/main.js"></script>
+      <script type="text/javascript" src="/js/company.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <title>4조 PROJECT</title>
+    </head>
+
   <body>
     <div id="user_wrap">
       <div class="header_wrap">
@@ -29,6 +42,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <a href="/co/mainCompany">COMPANY_4</a>
           </div>
           <!-- .logo -->
+
 
           <div class="search_bar">
             <form class="cf">
@@ -75,15 +89,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </c:choose>
           </div>
           <!-- .login_box -->
-
           <nav>
             <ul>
               <li>
                 <a href="/co/mainCompany">인재검색</a>
               </li>
-              <li>
-                <a href="/co/noticeSave">공고등록</a>
-              </li>
+                 <li>
+                  <a href="/co/noticeSave/${principal.companyId}">공고등록</a>
+                </li>
               <li>
                 <a href="/co/supCompany/${principal.companyId}"
                   >공고/지원자관리</a

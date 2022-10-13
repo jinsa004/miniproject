@@ -31,7 +31,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <a href="/emp/main">PROJECT_4</a>
           </div>
           <!-- .logo -->
-
+          
           <div class="search_bar">
             <form class="cf">
               <input
@@ -79,7 +79,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </c:choose>
           </div>
           <!-- .login_box -->
-
           <nav>
             <ul>
               <li>

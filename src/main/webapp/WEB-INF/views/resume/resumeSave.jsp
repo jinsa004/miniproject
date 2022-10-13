@@ -240,7 +240,7 @@
           careerPosition: $("#career_position").val(),
           careerDepartment: $("#career_section").val(),
           careerTask: $("#career_task").val(),
-          jobId: $('input[id=jobId]:checked').val(),
+          jobId: $('input[id=jobId]:checked').val()
         };
 
 
