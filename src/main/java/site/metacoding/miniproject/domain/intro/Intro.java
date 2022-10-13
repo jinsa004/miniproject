@@ -36,3 +36,4 @@ public class Intro {
 		this.introImage = updateDto.getIntroImage();
 		this.jobName = updateDto.getJobName();
 }
+}

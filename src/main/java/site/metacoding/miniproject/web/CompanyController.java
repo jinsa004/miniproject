@@ -1,23 +1,25 @@
 package site.metacoding.miniproject.web;
 
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import lombok.RequiredArgsConstructor;
-import site.metacoding.miniproject.service.IntroService;
-import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
+import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.web.dto.request.JoinDto;
 import site.metacoding.miniproject.web.dto.request.LoginDto;
+import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -26,6 +28,7 @@ public class CompanyController {
 
     private final CompanyService companyService;
     private final HttpSession session;
+    private final IntroService introService;
 
     @PostMapping("/co/login")
     public @ResponseBody CMRespDto<?> login(@RequestBody LoginDto loginDto, HttpServletResponse response) {
@@ -76,8 +79,6 @@ public class CompanyController {
     public String 기업소개입력() {// 기업소개 상세보기 intro 테이블
         return "company/coIntroDetail";
     }
-
-
 
     @GetMapping("/co/companyIntroUpdate/{companyId}")
     public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
