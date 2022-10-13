@@ -49,11 +49,6 @@ public class CompanyController {
         return new CMRespDto<>(1, "로그인성공", null);
     }
     
-    @GetMapping("/co/main")
-    public String main() {// 개인회원이 보는 메인페이지
-        return "company/mainCompany";
-    }
-
     @GetMapping("/co/mainCompany")
     public String companyMain() {// 기업회원이 보는 메인페이지
         return "company/mainCompany";
