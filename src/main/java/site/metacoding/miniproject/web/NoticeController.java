@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.notice.Notice;
+import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.NoticeService;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
@@ -26,6 +28,7 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 public class NoticeController {
 
     private final NoticeService noticeService;
+    private final CompanyService companyService;
     private final HttpSession session;
     private final JobService jobService;
 
@@ -80,10 +83,10 @@ public class NoticeController {
     }
 
     @GetMapping("/co/noticeService/{companyId}/noticeDetail/{noticeId}")
-    public String updateMyNotice(@PathVariable @Param("companyId") Integer companyId,
-            @Param("noticeId") Integer noticeId, Model model) {
-        Notice notice = noticeService.내공고하나보기(noticeId);
-        model.addAttribute("notice", notice);
+    public String updateMyNotice(@PathVariable Integer companyId,
+            @PathVariable Integer noticeId, Model model) {
+        Notice noticePS = noticeService.내공고하나보기(noticeId);
+        model.addAttribute("noticePS", noticePS);
         return "notice/noticeUpdate";
     }
 

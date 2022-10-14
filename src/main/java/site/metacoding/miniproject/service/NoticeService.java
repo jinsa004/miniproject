@@ -26,7 +26,11 @@ public class NoticeService {
         return noticeDao.findByCompanyId(companyId);
     }
 
-    public void 공고등록(Notice notice){
+    public Notice 내공고하나보기(Integer noticeId) {
+        return noticeDao.findById(noticeId);
+    }
+
+    public void 공고등록(Notice notice) {
         noticeDao.insert(notice);
     }
 }

@@ -33,7 +33,11 @@
 		WHERE company_id = #{companyId}
 	</select>
 
-	<select id="findById" resultType="site.metacoding.miniproject.domain.notice.Notice"></select>
+	<select id="findById" resultType="site.metacoding.miniproject.domain.notice.Notice">
+		SELECT *
+		FROM notice
+		WHERE notice_id = #{noticeId}
+	</select>
 
 	<update id="update"></update>
 
