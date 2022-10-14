@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -71,15 +72,19 @@ public class NoticeController {
         return new CMRespDto<>(1, "통신성공", null);
     }
 
-    @GetMapping("co/noticeUpdate")
-    public String 공고수정() {
-        return "notice/noticeUpdate";
-    }
-
     @GetMapping("co/noticeService/{companyId}")
     public String FindAllmyNotice(@PathVariable Integer companyId, Model model) { // 메서드이름은 동사여야 하지 않나요
         List<Notice> noticeList = noticeService.내공고목록보기(companyId);
         model.addAttribute("noticeList", noticeList);
         return "company/supporter";
     }
+
+    @GetMapping("/co/noticeService/{companyId}/noticeDetail/{noticeId}")
+    public String updateMyNotice(@PathVariable @Param("companyId") Integer companyId,
+            @Param("noticeId") Integer noticeId, Model model) {
+        Notice notice = noticeService.내공고하나보기(noticeId);
+        model.addAttribute("notice", notice);
+        return "notice/noticeUpdate";
+    }
+
 }
