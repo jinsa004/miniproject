@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +22,7 @@ import site.metacoding.miniproject.domain.notice.Notice;
 import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.NoticeService;
+import site.metacoding.miniproject.web.dto.request.notice.NoticeUpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -82,14 +84,19 @@ public class NoticeController {
         return "company/supporter";
     }
 
-    @GetMapping("/co/noticeService/{companyId}/noticeDetail/{noticeId}")
+    @GetMapping("co/noticeService/{companyId}/noticeDetail/{noticeId}")
     public String updateMyNotice(@PathVariable Integer companyId,
             @PathVariable Integer noticeId, Model model) {
-        Notice noticePS = noticeService.내공고하나보기(noticeId);
-        model.addAttribute("noticePS", noticePS);
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
         return "notice/noticeUpdate";
+    }
+
+    @PutMapping("co/noticeUpdate/{noticeId}")
+    public @ResponseBody CMRespDto<?> updateResume(@PathVariable Integer noticeId,
+            @RequestBody NoticeUpdateDto noticeUpdateDto) {
+        // noticeService.이력서수정(noticeId, noticeUpdateDto);
+        return new CMRespDto<>(1, "이력서 등록 성공", null);
     }
 
 }

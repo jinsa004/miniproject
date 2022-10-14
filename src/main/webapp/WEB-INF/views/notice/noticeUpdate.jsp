@@ -13,6 +13,7 @@
             <!-- delete_btn -->
 
             <div class="notice_form">
+              <input type="hidden" id="notice_id" value="${notice.noticeId}" />
               <div class="notice_row">
                 <div class="notice_list">
                   <p class="notice_list_item">공고명</p>
@@ -28,7 +29,7 @@
                 </div>
                 <div class="notice_input">
                   <c:forEach var="jobPS" items="${jobPS}">
-                    <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" <c:if
+                    <input type='radio' id='job_id' name='job_id' value="${jobPS.jobId}" <c:if
                       test="${jobPS.jobId eq noticePS.jobId}">checked="checked"</c:if> /> ${jobPS.jobName}
                     <br>
                   </c:forEach>
@@ -85,11 +86,11 @@
                 </div>
                 <div class="notice_input">
                   <div class="form-check">
-                    <input type="radio" id="noticeQual" name="noticeQual" value="대졸" <c:if
+                    <input type="radio" id="notice_qual" name="notice_qual" value="대졸" <c:if
                       test="${'대졸' eq noticePS.noticeQual}">checked="checked"</c:if> /> 대졸
                   </div>
                   <div class="form-check">
-                    <input type="radio" id="noticeQual" name="noticeQual" value="고졸" <c:if
+                    <input type="radio" id="notice_qual" name="notice_qual" value="고졸" <c:if
                       test="${'고졸' eq noticePS.noticeQual}">checked="checked"</c:if> />고졸
                   </div>
                 </div>
@@ -118,7 +119,7 @@
 
           <div class="btn_group_update">
             <div class="update_btn">
-              <button type="button" onclick="location.href='#'">수정완료</button>
+              <button id="btnUpdateNotice" type="button">수정완료</button>
             </div>
           </div>
           <!-- update_btn -->
