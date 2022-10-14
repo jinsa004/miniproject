@@ -988,6 +988,7 @@ button.btn_delete:hover{
     text-align: center;
     overflow: hidden;
     vertical-align: top;
+    margin-bottom: 0;
 }
 .logo_form_update .info_myimg img{
     width: 100%;
@@ -1063,4 +1064,64 @@ button.btn_delete:hover{
 }
 .company_location .location_info input:last-child{
     margin-bottom: 0;
+}
+
+
+/* ================= 기업 회원 정보 관리 ================== */
+#co_info_wrap{
+    position: relative;
+    width: 100%;
+}
+#co_info_wrap .container{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding-top: 80px;
+    padding-bottom: 140px;
+    padding-left: 200px;
+}
+.co_update{
+    text-align: left;
+}
+.co_update input{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.co_update button{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.title_update{
+    width: 1200px;
+}
+.title_update h1{
+    font-size: 30px;
+    line-height: 34px;
+}
+
+.co_update h2{
+    font-size: 24px;
+    color: #666;
+    line-height: 30px;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    display: inline-block;
+    padding-right: 10px;
+}
+.co_update .form_title span{
+    display: inline-block;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #666;
+}
+.info_form div{
+    margin-bottom: 15px;
+}
+.login_form div{
+    margin-bottom: 15px;
+}
+.co_update .info_left{
+    float: none;
+}
+.co_update .info_right{
+    float: none;
 }
