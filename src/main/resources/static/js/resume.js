@@ -15,15 +15,11 @@ $("#btnUpdateResume").click(() => {
     updateResume();
 });
 
-$("#btnDeleteResume").click(() => {
-    deleteResume();
-});
-
 // ====================== function ========================== //
 
 function insertResume() {
     let data = {
-        resumeName: $("#highschool_name").val(),
+        resumeName: $("#resume_name").val(),
         employeeId: $("#employeeId").val(),
         resumeImage: $("#files").val(),
         highschoolName: $("#highschool_name").val(),
@@ -40,8 +36,9 @@ function insertResume() {
         careerPosition: $("#career_position").val(),
         careerDepartment: $("#career_section").val(),
         careerTask: $("#career_task").val(),
-        jobId: $("input[id=jobId]:checked").val(),
+        jobId: $("input[id=jobId]:checked").val()
     };
+    console.log(data.resumeName);
 
     $.ajax("/emp/resumeSave", {
         type: "POST",
@@ -61,9 +58,8 @@ function insertResume() {
     });
 }
 
-
-
 function updateResume() {
+    
     let data = {
         resumeName: $("#resume_name").val(),
         resumeImage: $("#files").val(),
@@ -81,7 +77,7 @@ function updateResume() {
         careerPosition: $("#career_position").val(),
         careerDepartment: $("#career_section").val(),
         careerTask: $("#career_task").val(),
-        jobId: $("input[id=jobId]:checked").val(),
+        jobId: $("input[id=jobId]:checked").val()
     };
 
     let resumeId = $("#resumeId").val();
@@ -97,16 +93,16 @@ function updateResume() {
     }).done((res) => {
         if (res.code == 1) {
             alert("이력서 수정 완료");
-            location.href = "/emp";
+            location.href = "/emp/mypageIsertForm/"+ data.employeeId;
         } else {
             alert("등록에 실패하였습니다");
         }
     });
 }
 
-function deleteResume() {
+function deleteResume(resumeId) {
 
-    let resumeId = $("#resumeId").val();
+    let employeeId = $("#employeeId").val();
 
     $.ajax("/emp/resumeDelete/" + resumeId, {
         type: "DELETE",
@@ -114,7 +110,7 @@ function deleteResume() {
     }).done((res) => {
         if (res.code == 1) {
             alert("이력서 삭제 완료");
-            location.href = "/";
+            location.href = "/emp/mypageInsertForm/" + employeeId;
         } else {
             alert("삭제에 실패하였습니다");
         }
@@ -157,23 +153,6 @@ function show_univ() {
         con4.style.background = "#fff";
         con4.style.color = "#333";
     }
-}
-
-
-function deleteResume(resumeId) {
-    console.log(resumeId);
-
-    $.ajax("/emp/resumeDelete/" + resumeId, {
-        type: "DELETE",
-        dataType: "json", // 응답 데이터
-    }).done((res) => {
-        if (res.code == 1) {
-            alert("이력서 삭제 완료");
-            location.href = "/emp/mypageInsertForm/" + employeeId;
-        } else {
-            alert("삭제에 실패하였습니다");
-        }
-    });
 }
 
 function setMain() {

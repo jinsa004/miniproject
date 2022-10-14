@@ -7,7 +7,7 @@
         <h2>이력서 제목</h2>
         <div class="title_update">
           <div class="title_input">
-            <input type="text" class="resume_title_input" placeholder="이력서 제목을 입력하세요">
+            <input id="resume_name" type="text" class="resume_title_input" placeholder="이력서 제목을 입력하세요">
             <!-- input 입력 넣기 -->
           </div>
         </div>
