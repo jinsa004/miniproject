@@ -21,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.resume.Resume;
+import site.metacoding.miniproject.domain.subscribe.Subscribe;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.service.ResumeService;
@@ -45,14 +46,15 @@ public class EmployeeController {
         System.out.println("===============");
 
         // if (loginDto.isRemember() == true) {
-        //     Cookie cookie = new Cookie("employeeUsername", loginDto.getEmployeeUsername());
-        //     cookie.setMaxAge(60 * 60 * 24);
-        //     response.addCookie(cookie);
+        // Cookie cookie = new Cookie("employeeUsername",
+        // loginDto.getEmployeeUsername());
+        // cookie.setMaxAge(60 * 60 * 24);
+        // response.addCookie(cookie);
 
         // } else {
-        //     Cookie cookie = new Cookie("employeeUsername", null);
-        //     cookie.setMaxAge(0);
-        //     response.addCookie(cookie);
+        // Cookie cookie = new Cookie("employeeUsername", null);
+        // cookie.setMaxAge(0);
+        // response.addCookie(cookie);
         // }
 
         Employee principal = employeeService.로그인(loginDto);
@@ -83,8 +85,27 @@ public class EmployeeController {
 
     @GetMapping("/emp/companyIntroDetail/{introId}")
     public String introDetail(@PathVariable Integer introId, Model model) {// 개인회원 보는 기업소개 상세보기
-        model.addAttribute("intro", introService.기업소개상세보기(introId));
+        Employee principal = (Employee) session.getAttribute("principal");
+        if (principal == null) {
+            model.addAttribute("detailDto", introService.기업소개상세보기(introId, 0));
+        } else {
+            model.addAttribute("detailDto", introService.기업소개상세보기(introId, principal.getEmployeeId()));
+        }
         return "employee/coIntroDetail";
+    }
+
+    @PostMapping("/emp/companyIntroDetail/{introId}/subscribe")
+    public @ResponseBody CMRespDto<?> insertSub(@PathVariable Integer introId) {// 구독하기
+        Employee principal = (Employee) session.getAttribute("principal");
+        Subscribe subscribe = new Subscribe(principal.getEmployeeId(), introId);
+        introService.구독하기(subscribe);
+        return new CMRespDto<>(1, "구독성공", subscribe);
+    }
+
+    @DeleteMapping("/emp/companyIntroDetail/{introId}/subscribe/{subscribeId}")
+    public @ResponseBody CMRespDto<?> deleteSub(@PathVariable Integer introId, @PathVariable Integer subscribeId) {// 구독취소
+        introService.구독취소하기(subscribeId);
+        return new CMRespDto<>(1, "구독취소성공", null);
     }
 
     @GetMapping("/emp/companyList")

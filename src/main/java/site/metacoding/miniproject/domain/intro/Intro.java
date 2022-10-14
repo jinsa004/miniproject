@@ -18,9 +18,9 @@ public class Intro {
 	private String introLocation;
 	private String introImage;
 	private Integer jobId;
-  
-  //엔티티가 아닌 필드
-  private Integer no;
+
+	// 엔티티가 아닌 필드
+	private Integer no;
 	private String companyName;
 	private String jobName;
 
@@ -35,5 +35,5 @@ public class Intro {
 		this.introLocation = updateDto.getIntroLocation();
 		this.introImage = updateDto.getIntroImage();
 		this.jobName = updateDto.getJobName();
-}
+	}
 }
