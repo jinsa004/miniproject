@@ -33,7 +33,7 @@ function insertResume() {
     headers: {
       // http header에 들고갈 요청 데이터
       "Content-Type": "application/json; charset=utf-8",
-    },
+    }
   }).done((res) => {
     if (res.code == 1) {
       alert("이력서 등록 완료");
@@ -41,7 +41,7 @@ function insertResume() {
     } else {
       alert("등록에 실패하였습니다");
     }
-  })
+  });
 }
 
 $("#btnUpdateResume").click(() => {
@@ -85,7 +85,7 @@ function updateResume() {
     headers: {
       // http header에 들고갈 요청 데이터
       "Content-Type": "application/json; charset=utf-8",
-    },
+    }
   }).done((res) => {
     if (res.code == 1) {
       alert("이력서 수정 완료");
@@ -93,7 +93,7 @@ function updateResume() {
     } else {
       alert("등록에 실패하였습니다");
     }
-  })
+  });
 }
 
 

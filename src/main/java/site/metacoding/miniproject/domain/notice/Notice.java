@@ -39,7 +39,7 @@ public class Notice {
 	// }
 
 	public void update(NoticeUpdateDto noticeUpdateDto) {
-		this.noticePeriod = noticeUpdateDto.getNoticeTitle();
+		this.noticeTitle = noticeUpdateDto.getNoticeTitle();
 		this.noticeDept = noticeUpdateDto.getNoticeDept();
 		this.noticePosition = noticeUpdateDto.getNoticePosition();
 		this.noticeTask = noticeUpdateDto.getNoticeTask();

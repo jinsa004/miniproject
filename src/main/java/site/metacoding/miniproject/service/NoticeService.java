@@ -31,8 +31,8 @@ public class NoticeService {
         return noticeDao.findById(noticeId);
     }
 
-    public void 이력서수정(Integer resumeId, NoticeUpdateDto noticeUpdateDto) {
-        Notice noticePS = noticeDao.findById(resumeId);
+    public void 이력서수정(Integer noticeId, NoticeUpdateDto noticeUpdateDto) {
+        Notice noticePS = noticeDao.findById(noticeId);
         noticePS.update(noticeUpdateDto);
         noticeDao.update(noticePS);
     }

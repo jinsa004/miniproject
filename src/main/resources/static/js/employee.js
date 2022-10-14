@@ -19,7 +19,7 @@ function joinSave() {
     data: JSON.stringify(data), // 요청데이터 타입명
     headers: {
       "Content-Type": "application/json; charset=utf-8", // spring에게 알려주는 것 - json으로 보내겠다. mime type - 필수
-    },
+    }
   }).done((res) => {
     if (res.code == 1) {
       alert("회원가입 성공");
@@ -72,22 +72,22 @@ $("#btnEmployeeDelete").click(() => {
   employeeDelete();
 });
 
-function employeeDelete(){
+function employeeDelete() {
   let employeeId = $("#employeeId").val();
 
   $.ajax("/emp/employeeInfo/" + employeeId, {
-		type: "DELETE",
-		dataType: "json"
-	}).done((res) => {
-		if (res.code == 1) {
-			console.log(res.msg);
-			alert("회원탈퇴 완료");
-			location.href = "/"; 
-		} else {
-			alert("회원탈퇴에 실패했습니다.");
-			console.log(res.msg);
-		}
-	});
+    type: "DELETE",
+    dataType: "json"
+  }).done((res) => {
+    if (res.code == 1) {
+      console.log(res.msg);
+      alert("회원탈퇴 완료");
+      location.href = "/";
+    } else {
+      alert("회원탈퇴에 실패했습니다.");
+      console.log(res.msg);
+    }
+  });
 }
 
 //개인회원 로그인

@@ -72,7 +72,10 @@ function btnInsertNotice() {
 //     }).open();
 // }
 
-function updateNoitce() {
+function updateNotice() {
+  let noticeId = $("#notice_id").val();
+  let companyId = $("#company_id").val();
+
   let data = {
     noticeTitle: $("#notice_title").val(),
     jobId: $('input[id=job_id]:checked').val(),
@@ -81,13 +84,10 @@ function updateNoitce() {
     noticePosition: $("#notice_position").val(),
     noticeTask: $("#notice_task").val(),
     noticeSal: $("#notice_sal").val(),
-    noticeQual: $('input[id=noticeQual]:checked').val(),
+    noticeQual: $('input[id=notice_qual]:checked').val(),
     noticeCareer: $("#notice_career").val(),
-    noticeWellfare: $("#notice_wellfare").val(),
+    noticeWellfare: $('textarea[name=company_wellfare]').val()
   };
-
-  let noticeId = $("#notice_Id").val();
-  let companyId = $("#company_Id").val();
 
   $.ajax("/co/noticeUpdate/" + noticeId, {
     type: "PUT",
@@ -96,13 +96,13 @@ function updateNoitce() {
     headers: {
       // http header에 들고갈 요청 데이터
       "Content-Type": "application/json; charset=utf-8",
-    },
+    }
   }).done((res) => {
     if (res.code == 1) {
       alert("내 공고 수정 완료");
-      location.href = "co/noticeService/" + companyId;
+      location.href = "/co/noticeService/" + companyId;
     } else {
       alert("내 공고 수정에 실패하였습니다");
     }
-  })
+  });
 }

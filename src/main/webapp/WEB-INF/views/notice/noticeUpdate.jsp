@@ -13,8 +13,8 @@
             <!-- delete_btn -->
 
             <div class="notice_form">
-              <input type="hidden" id="notice_id" value="${notice.noticeId}" />
-              <input type="hidden" id="company_id" value="${notice.company_id}" />
+              <input id="notice_id" type="hidden" value="${noticePS.noticeId}" />
+              <input id="company_id" type="hidden" value="${noticePS.companyId}" />
               <div class="notice_row">
                 <div class="notice_list">
                   <p class="notice_list_item">공고명</p>
@@ -118,10 +118,8 @@
           </div>
           <!-- basic -->
 
-          <div class="btn_group_update">
-            <div class="update_btn">
-              <button id="btnUpdateNotice" type="button">수정완료</button>
-            </div>
+          <div class="update_btn">
+            <button id="btnUpdateNotice" type="button">수정완료</button>
           </div>
           <!-- update_btn -->
 
