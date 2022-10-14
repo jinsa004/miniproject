@@ -3,31 +3,23 @@ $(".btn_delete_resume").click((event) => {
     deleteResume(resumeId);
 });
 
-
 $("#btn_main_resume").click(() => {
     setMain();
 });
-
 
 $("#btnInsertResume").click(() => {
     insertResume();
 });
 
-
 $("#btnUpdateResume").click(() => {
     updateResume();
 });
-
 
 $("#btnDeleteResume").click(() => {
     deleteResume();
 });
 
-
-
 // ====================== function ========================== //
-
-
 
 function insertResume() {
     let data = {
@@ -113,6 +105,7 @@ function updateResume() {
 }
 
 function deleteResume() {
+
     let resumeId = $("#resumeId").val();
 
     $.ajax("/emp/resumeDelete/" + resumeId, {

@@ -132,7 +132,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                         id="btn_login"
                         type="button"
                         class="btn btn-primary"
-                        onclick="coLogin()"
                     >
                         로그인
                     </button>
@@ -346,7 +345,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             </div>
                         </div>
           </form>
-          <button id="btn_join" type="button" class="btn btn-primary" onclick="join()">
+          <button id="btn_join" type="button" class="btn btn-primary">
             회원가입
           </button>
         </div>

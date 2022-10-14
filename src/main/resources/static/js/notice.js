@@ -1,3 +1,7 @@
+$("#btn_insert_notice").click(()=>{
+  btnInsertNotice()
+});
+
 function btnInsertNotice(){
     let data = {
       companyId : $("#companyId").val(),

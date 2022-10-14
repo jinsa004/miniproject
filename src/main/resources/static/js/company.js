@@ -1,8 +1,20 @@
-/* 기업회원 탈퇴*/
 $("#btn_delete").click(()=>{
   Delete();
 });
 
+$("#btn_join").click(()=>{
+  join();
+});
+
+$("#btn_update").click(()=>{
+  companyUpdate();
+});
+
+$("#btn_login").click(()=>{
+  coLogin();
+});
+
+/* 기업회원 탈퇴*/
 function Delete(){
   
   console.log("삭제");
@@ -24,10 +36,6 @@ function Delete(){
 }
 
  /* 기업정보 수정*/
-
-$("#btn_update").click(()=>{
-  companyUpdate();
-});
 
 function companyUpdate() {
 
@@ -61,7 +69,7 @@ function companyUpdate() {
       }
   });          
 }
-
+//기업회원 로그인
 function coLogin() {
 
   let data = {
@@ -85,7 +93,7 @@ function coLogin() {
     }
   });
 }
-
+// 기업회원가입
 function join() {
   let data = {
     companyNumber: $("#companyNumber").val(),
