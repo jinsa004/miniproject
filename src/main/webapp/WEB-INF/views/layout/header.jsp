@@ -89,7 +89,7 @@
             </label>
 
             <button id="btn_login" type="button" class="btn btn-primary">
-            
+
               로그인
             </button>
           </div>
@@ -233,5 +233,3 @@
           </div>
         </div>
       </div>
-      <script src="/js/main.js"></script>
-      <script src="/js/employee.js"></script>

@@ -9,7 +9,7 @@
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT
-        notice_title,notice_task, notice_career,notice_qual,
+        notice_id, notice_title,notice_task, notice_career,notice_qual,
         notice_position, DATE_FORMAT(notice_period, '%Y.%m.%d') as notice_period
         FROM notice
         ORDER BY notice_period DESC;
@@ -55,9 +55,6 @@
 	</update>
 
 	<delete id="deleteById"></delete>
-
-
-
 
 
 </mapper>

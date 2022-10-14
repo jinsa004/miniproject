@@ -15,10 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.notice.Notice;
+import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.NoticeService;
+import site.metacoding.miniproject.service.ResumeService;
 import site.metacoding.miniproject.web.dto.request.notice.NoticeUpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
@@ -27,6 +30,7 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 public class NoticeController {
 
     private final NoticeService noticeService;
+    private final ResumeService resumeService;
     private final HttpSession session;
     private final JobService jobService;
 
@@ -47,8 +51,13 @@ public class NoticeController {
         return "employee/jobNotice";
     }
 
-    @GetMapping("emp/noticeDetail") // notice/Detail로 들어가는게 좋을 것 같습니다
-    public String recruitDetail() {// 개인회원 입장에서 채용공고 상세보기
+    @GetMapping("emp/noticeDetail/{noticeId}") // notice/Detail로 들어가는게 좋을 것 같습니다
+    public String recruitDetail(@PathVariable Integer noticeId, Model model) {// 개인회원 입장에서 채용공고 상세보기
+        Employee principal = (Employee) session.getAttribute("principal");
+        Notice noticePS = noticeService.내공고하나보기(noticeId);
+        model.addAttribute("noticePS", noticePS);
+        List<Resume> resumePS = resumeService.내이력서가져오기(principal.getEmployeeId());
+        model.addAttribute("resumePS", resumePS);
         return "employee/noticeDetail";
     }
 

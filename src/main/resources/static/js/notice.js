@@ -2,9 +2,10 @@ $("#btnUpdateNotice").click(() => {
   updateNotice();
 });
 
-$("#btn_insert_notice").click(()=>{
+$("#btn_insert_notice").click(() => {
   btnInsertNotice()
 });
+
 
 function btnInsertNotice() {
   let data = {
@@ -73,12 +74,15 @@ function updateNotice() {
     }
   });
 }
+
+
+
 {/* <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> */ }
 
 // function sample6_execDaumPostcode() {
 //     new daum.Postcode({
 //         oncomplete: function(data) {
-//             var addr = ''; 
+//             var addr = '';
 //             var extraAddr = '';
 
 //             if (data.userSelectedType === 'R') {

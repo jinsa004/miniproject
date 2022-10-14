@@ -1,14 +1,14 @@
 $(".btn_delete_resume").click((event) => {
-    let resumeId = event.target.value;
-    deleteResume(resumeId);
+  let resumeId = event.target.value;
+  deleteResume(resumeId);
 });
 
 $("#btn_main_resume").click(() => {
-    setMain();
+  setMain();
 });
 
 $("#btnInsertResume").click(() => {
-    insertResume();
+  insertResume();
 });
 
 $("#btnUpdateResume").click(() => {
@@ -23,43 +23,43 @@ $("#btnDeleteResume").click(() => {
 //이력서 등록
 function insertResume() {
 
-    let data = {
-        resumeName: $("#resume_name").val(),
-        employeeId: $("#employeeId").val(),
-        resumeImage: $("#files").val(),
-        highschoolName: $("#highschool_name").val(),
-        highschoolStartdate: $("#highschool_start_date").val(),
-        highschoolEnddate: $("#highschool_end_date").val(),
-        highschoolMajor: $("#highschool_major").val(),
-        univName: $("#univ_name").val(),
-        univStartdate: $("#univ_start_date").val(),
-        univEnddate: $("#univ_end_date").val(),
-        univMajor: $("#univ_major").val(),
-        univGrades: $("#grades").val(),
-        prevCo: $("#career_name").val(),
-        careerPeriod: $("#career_period").val(),
-        careerPosition: $("#career_position").val(),
-        careerDepartment: $("#career_section").val(),
-        careerTask: $("#career_task").val(),
-        jobId: $("input[id=jobId]:checked").val()
-    };
-    console.log(data.resumeName);
-      $.ajax("/emp/resumeSave", {
-        type: "POST",
-        dataType: "json", // 응답 데이터
-        data: JSON.stringify(data), // http body에 들고갈 요청 데이터
-        headers: {
-            // http header에 들고갈 요청 데이터
-            "Content-Type": "application/json; charset=utf-8",
-        },
-    }).done((res) => {
-        if (res.code == 1) {
-            alert("이력서 등록 완료");
-            location.href = "/emp/mypageInsertForm/" + data.employeeId;
-        } else {
-            alert("등록에 실패하였습니다");
-        }
-    });
+  let data = {
+    resumeName: $("#resume_name").val(),
+    employeeId: $("#employeeId").val(),
+    resumeImage: $("#files").val(),
+    highschoolName: $("#highschool_name").val(),
+    highschoolStartdate: $("#highschool_start_date").val(),
+    highschoolEnddate: $("#highschool_end_date").val(),
+    highschoolMajor: $("#highschool_major").val(),
+    univName: $("#univ_name").val(),
+    univStartdate: $("#univ_start_date").val(),
+    univEnddate: $("#univ_end_date").val(),
+    univMajor: $("#univ_major").val(),
+    univGrades: $("#grades").val(),
+    prevCo: $("#career_name").val(),
+    careerPeriod: $("#career_period").val(),
+    careerPosition: $("#career_position").val(),
+    careerDepartment: $("#career_section").val(),
+    careerTask: $("#career_task").val(),
+    jobId: $("input[id=jobId]:checked").val()
+  };
+  console.log(data.resumeName);
+  $.ajax("/emp/resumeSave", {
+    type: "POST",
+    dataType: "json", // 응답 데이터
+    data: JSON.stringify(data), // http body에 들고갈 요청 데이터
+    headers: {
+      // http header에 들고갈 요청 데이터
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("이력서 등록 완료");
+      location.href = "/emp/mypageInsertForm/" + data.employeeId;
+    } else {
+      alert("등록에 실패하였습니다");
+    }
+  });
 }
 
 //이력서 수정
@@ -107,44 +107,44 @@ function updateResume() {
 //이력서 삭제기능
 function deleteResume(resumeId) {
 
-    let employeeId = $("#employeeId").val();
+  let employeeId = $("#employeeId").val();
 
-    $.ajax("/emp/resumeDelete/" + resumeId, {
-        type: "DELETE",
-        dataType: "json", // 응답 데이터
-    }).done((res) => {
-        if (res.code == 1) {
-            alert("이력서 삭제 완료");
-            location.href = "/emp/mypageInsertForm/" + employeeId;
-        } else {
-            alert("삭제에 실패하였습니다");
-        }
-    });
+  $.ajax("/emp/resumeDelete/" + resumeId, {
+    type: "DELETE",
+    dataType: "json", // 응답 데이터
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("이력서 삭제 완료");
+      location.href = "/emp/mypageInsertForm/" + employeeId;
+    } else {
+      alert("삭제에 실패하였습니다");
+    }
+  });
 }
 
 //메인이력서 선택기능
 function setMain() {
 
-    resumeId = $("input[id=resume_select]:checked").val();
-    employeeId = $("#employeeId").val();
+  resumeId = $("input[id=resume_select]:checked").val();
+  employeeId = $("#employeeId").val();
 
-    console.log(employeeId);
+  console.log(employeeId);
 
-    $.ajax("/resume/setMainResume/" + resumeId, {
-        type: "PUT",
-        dataType: "json",
-        data: JSON.stringify(resumeId),
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-    }).done((res) => {
-        if (res.code == 1) {
-            alert("메인 이력서 등록 완료");
-            location.href = "/emp/mypageInsertForm/" + employeeId;
-        } else {
-            alert("메인 이력서 등록에 실패하였습니다");
-        }
-    });
+  $.ajax("/emp/resume/setMainResume/" + resumeId, {
+    type: "PUT",
+    dataType: "json",
+    data: JSON.stringify(resumeId),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("메인 이력서 등록 완료");
+      location.href = "/emp/mypageInsertForm/" + employeeId;
+    } else {
+      alert("메인 이력서 등록에 실패하였습니다");
+    }
+  });
 }
 //고졸, 대졸 선택시 나오는 
 function show_highschool() {
