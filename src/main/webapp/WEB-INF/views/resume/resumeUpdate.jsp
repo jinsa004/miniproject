@@ -126,13 +126,6 @@
             <h2 class="title">경력사항</h2>
           </div>
           <div class="resume_career">
-            <div class="career_select">
-              <div class="btn-group">
-                <button type="button" class="career_btn" id="new_btn" onclick="show_new()">신입</button>
-                <button type="button" class="career_btn" id="work_btn" onclick="show_work()">경력</button>
-              </div>
-            </div>
-
             <div class="career_form" id="work">
               <h4>회사 정보 입력</h4>
               <div class="career_row">

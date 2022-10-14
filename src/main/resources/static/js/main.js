@@ -148,11 +148,6 @@ function sample6_execDaumPostcode() {
       //   }).open();
       // }
 
-      $("#btnUpdate").click(() => {
-        console.log("클릭됨");
-        console.log($("#introId").val());
-        update();
-      });
       function update() {
         let data = {
           companyName: $("#companyName").val(),

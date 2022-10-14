@@ -2,6 +2,14 @@ $("#btnInsertResume").click(() => {
     insertResume();
   });
 
+$("#btnUpdateResume").click(() => {
+    updateResume();
+});
+
+$("#btnDeleteResume").click(() => {
+    deleteResume();
+});
+
   function insertResume() {
     let data = {
       resumeName: $("#highschool_name").val(),
@@ -24,8 +32,6 @@ $("#btnInsertResume").click(() => {
       jobId: $('input[id=jobId]:checked').val()
     };
 
-
-
     $.ajax("/emp/resumeSave", {
       type: "POST",
       dataType: "json", // 응답 데이터
@@ -43,17 +49,6 @@ $("#btnInsertResume").click(() => {
       }
     })
   }
-
-$("#btnUpdateResume").click(() => {
-    updateResume();
-});
-
-
-
-$("#btnDeleteResume").click(() => {
-    deleteResume();
-});
-
 
   function updateResume() {
     let data = {
@@ -95,7 +90,6 @@ $("#btnDeleteResume").click(() => {
         }
     })
 }
-
 
   function deleteResume() {
 
