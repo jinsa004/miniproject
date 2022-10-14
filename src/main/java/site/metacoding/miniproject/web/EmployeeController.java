@@ -38,16 +38,16 @@ public class EmployeeController {
         System.out.println(loginDto.isRemember());
         System.out.println("===============");
 
-        if (loginDto.isRemember() == true) {
-            Cookie cookie = new Cookie("employeeUsername", loginDto.getEmployeeUsername());
-            cookie.setMaxAge(60 * 60 * 24);
-            response.addCookie(cookie);
+        // if (loginDto.isRemember() == true) {
+        //     Cookie cookie = new Cookie("employeeUsername", loginDto.getEmployeeUsername());
+        //     cookie.setMaxAge(60 * 60 * 24);
+        //     response.addCookie(cookie);
 
-        } else {
-            Cookie cookie = new Cookie("employeeUsername", null);
-            cookie.setMaxAge(0);
-            response.addCookie(cookie);
-        }
+        // } else {
+        //     Cookie cookie = new Cookie("employeeUsername", null);
+        //     cookie.setMaxAge(0);
+        //     response.addCookie(cookie);
+        // }
 
         Employee principal = employeeService.로그인(loginDto);
         if (principal == null) {

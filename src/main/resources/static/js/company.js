@@ -37,6 +37,7 @@ function companyUpdate() {
           alert("업데이트에 실패하였습니다");
       }
   });          
+}
 
 function coLogin() {
 

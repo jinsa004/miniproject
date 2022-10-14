@@ -49,7 +49,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
           <div class="login_box">
             <c:choose>
-              <c:when test="${empty principal}">
+              <c:when test="${empty principal.employeeId}">
                 <button
                   class="btn_login"
                   type="button"

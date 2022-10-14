@@ -14,6 +14,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/company.css" />
     <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/company.js"></script>
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -61,7 +62,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
           <div class="login_box">
             <c:choose>
-              <c:when test="${empty principal}">
+              <c:when test="${empty principal.companyId}">
                 <button
                   class="btn_login"
                   type="button"
@@ -149,7 +150,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       <div class="modal_join_wrap">
         <h2>회원가입</h2>
         <div class="form_box cf">
-          <form action="/join" method="post">
+          <form>
             <div class="join_left">
               <div class="join_id join_box">
                 <h3>
