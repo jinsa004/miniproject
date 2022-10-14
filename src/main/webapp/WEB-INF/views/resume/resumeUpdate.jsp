@@ -215,17 +215,9 @@
 </div>
 <!-- body -->
 
-<script>
             $("#btnUpdateResume").click(() => {
                 updateResume();
             });
-
-
-
-            $("#btnDeleteResume").click(() => {
-                deleteResume();
-            });
-
 
               function updateResume() {
                 let data = {
@@ -268,11 +260,6 @@
                 })
             }
 
-
-
-</script>
-
-<script>
   function show_highschool(){ 	
       var con1 = document.getElementById("highschool");
       var con2 = document.getElementById("univ");
@@ -311,40 +298,8 @@
       } 
   }
 
-  function show_new(){ 	
-      var con1 = document.getElementById("work");
-      var con2 = document.getElementById("new_btn");
-      var con3 = document.getElementById("work_btn");
-      if(con2.style.background!='#4876ef'){ 		
-        con1.style.display = 'none';
-        con2.style.background='#4876ef';
-        con2.style.color='#fff';
-        con3.style.background='#fff';
-        con3.style.color='#333';
-      }else{
-        con2.style.background='#fff';
-        con2.style.color='#333';
-      } 
-  }
-  
-  function show_work(){ 	
-      var con1 = document.getElementById("work");
-      var con2 = document.getElementById("new_btn");
-      var con3 = document.getElementById("work_btn");
-      if(con3.style.background!='#4876ef'){ 		
-        con1.style.display = 'block';
-        con3.style.background='#4876ef';
-        con3.style.color='#fff';
-        con2.style.background='#fff';
-        con2.style.color='#333';
-      }else{ 		
-        con1.style.display = 'none';
-        con3.style.background='#fff';
-        con3.style.color='#333';
-      } 
-  }
-  </script>
-
+<script src="/js/main.js"></script>
+<script src="/js/resume.js"></script>
 <%@ include file="../layout/footer.jsp"%>
 
 

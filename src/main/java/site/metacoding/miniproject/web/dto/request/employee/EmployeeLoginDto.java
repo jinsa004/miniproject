@@ -8,7 +8,5 @@ import lombok.Setter;
 public class EmployeeLoginDto {
     private String employeeUsername;
     private String employeePassword;
-    private String companyUsername;
-    private String companyPassword;
     private boolean remember;
 }

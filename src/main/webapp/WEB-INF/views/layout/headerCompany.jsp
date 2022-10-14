@@ -3,52 +3,33 @@ pageEncoding="UTF-8" %> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="/css/reset.css" />
-        <link rel="stylesheet" href="/css/company.css" />
 
-        <script
-            type="text/javascript"
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        ></script>
-        <title>4조 PROJECT</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/company.css" />
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    ></script>
+    <title>4조 PROJECT</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="/css/reset.css" />
-        <link rel="stylesheet" href="/css/company.css" />
-        <script type="text/javascript" src="/js/main.js"></script>
-        <script type="text/javascript" src="/js/company.js"></script>
-        <script
-            type="text/javascript"
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        ></script>
-        <title>4조 PROJECT</title>
-    </head>
-
-    <body>
-        <div id="user_wrap">
-            <div class="header_wrap">
-                <header>
-                    <div class="logo">
-                        <a href="/co/mainCompany">COMPANY_4</a>
-                    </div>
-                    <!-- .logo -->
-
+  <body>
+    <div id="user_wrap">
+      <div class="header_wrap">
+        <header>
+          <div class="logo">
+            <a href="/co/mainCompany">COMPANY_4</a>
+          </div>
+          <!-- .logo -->
+          
                     <div class="search_bar">
                         <form class="cf">
                             <input
@@ -64,68 +45,59 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </div>
                     <!-- .search_bar -->
 
-                    <div class="login_box">
-                        <c:choose>
-                            <c:when test="${empty principal}">
-                                <button
-                                    class="btn_login"
-                                    type="button"
-                                    onClick="javascript:popOpenCompany();"
-                                >
-                                    로그인
-                                </button>
-                                <button
-                                    class="btn_join"
-                                    type="button"
-                                    onClick="javascript:popOpenCompany2();"
-                                >
-                                    회원가입
-                                </button>
-                                <a href="/emp/main" class="btn_company"
-                                    >회원 서비스</a
-                                >
-                            </c:when>
-                            <c:otherwise>
-                                <a class="btn_logout" href="/co/logout"
-                                    >로그아웃</a
-                                >
-                                <a
-                                    href="/co/companyIntroUpdate/${principal.companyId}"
-                                    class="btn_mypage"
-                                    >마이페이지</a
-                                >
-                                <a href="/emp/main" class="btn_company"
-                                    >회원 서비스</a
-                                ><!-- .btn_company -->
-                            </c:otherwise>
-                        </c:choose>
-                    </div>
-                    <!-- .login_box -->
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="/co/mainCompany">인재검색</a>
-                            </li>
-                            <li>
-                                <a href="/co/noticeSave/${principal.companyId}"
-                                    >공고등록</a
-                                >
-                            </li>
-                            <li>
-                                <a href="/co/supCompany/${principal.companyId}"
-                                    >공고/지원자관리</a
-                                >
-                            </li>
-                            <li>
-                                <a href="/co/matchingResume">매칭리스트</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- nav -->
-                </header>
-                <!-- header -->
-            </div>
-            <!-- .header_wrap -->
+          <div class="login_box">
+            <c:choose>
+              <c:when test="${empty principal.companyId}">
+                <button
+                  class="btn_login"
+                  type="button"
+                  onClick="javascript:popOpenCompany();"
+                >
+                  로그인
+                </button>
+                <button
+                  class="btn_join"
+                  type="button"
+                  onClick="javascript:popOpenCompany2();"
+                >
+                  회원가입
+                </button>
+                <a href="/emp/main" class="btn_company">회원 서비스</a>
+              </c:when>
+              <c:otherwise>
+                <a class="btn_logout" href="/co/logout">로그아웃</a>
+                <a href="/co/companyIntroUpdate/${principal.companyId}" class="btn_mypage"
+                  >마이페이지</a
+                >
+                <a href="/emp/main" class="btn_company">회원 서비스</a
+                ><!-- .btn_company -->
+              </c:otherwise>
+            </c:choose>
+          </div>
+          <!-- .login_box -->
+          <nav>
+            <ul>
+              <li>
+                <a href="/co/mainCompany">인재검색</a>
+              </li>
+                 <li>
+                  <a href="/co/noticeSave/${principal.companyId}">공고등록</a>
+                </li>
+              <li>
+                <a href="/co/supCompany/${principal.companyId}"
+                  >공고/지원자관리</a
+                >
+              </li>
+              <li>
+                <a href="/co/matchingResume">매칭리스트</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- nav -->
+        </header>
+        <!-- header -->
+      </div>
+      <!-- .header_wrap -->
 
             <div
                 class="modal_login_bg"
@@ -167,29 +139,25 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </div>
             </div>
 
-            <div
-                class="modal_join_bg"
-                onClick="javascript:popCloseCompany2();"
-            ></div>
-            <div class="modal_join_wrap">
-                <h2>회원가입</h2>
-                <div class="form_box cf">
-                    <form action="/join" method="post">
-                        <div class="join_left">
-                            <div class="join_id join_box">
-                                <h3>
-                                    <label for="id">아이디</label>
-                                </h3>
-                                <span>
-                                    <input
-                                        id="companyUsername"
-                                        type="text"
-                                        placeholder="아이디를 입력하세요."
-                                        maxlength="20"
-                                    />
-                                </span>
-                            </div>
-
+      <div class="modal_join_bg" onClick="javascript:popCloseCompany2();"></div>
+      <div class="modal_join_wrap">
+        <h2>회원가입</h2>
+        <div class="form_box cf">
+          <form>
+            <div class="join_left">
+              <div class="join_id join_box">
+                <h3>
+                  <label for="id">아이디</label>
+                </h3>
+                <span>
+                  <input
+                    id="companyUsername"
+                    type="text"
+                    placeholder="아이디를 입력하세요."
+                    maxlength="20"
+                  />
+                </span>
+              </div>
                             <div class="join_pw join_box">
                                 <h3>
                                     <label for="password">비밀번호</label>
@@ -377,12 +345,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    <button id="btn_join" type="button" class="btn btn-primary">
-                        회원가입
-                    </button>
-                </div>
-            </div>
+          </form>
+          <button id="btn_join" type="button" class="btn btn-primary" onclick="join()">
+            회원가입
+          </button>
         </div>
-    </body>
-</html>
+      </div>
+    </div>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/company.js"></script>

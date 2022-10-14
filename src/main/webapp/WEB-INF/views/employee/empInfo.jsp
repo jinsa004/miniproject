@@ -144,64 +144,6 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/headerMypage.jsp"%>
   </div>
 </div>
 <!-- body -->
-<script>
-  $("#btnEmployeeUpdate").click(() => {
-  employeeUpdate();
-});
-function employeeUpdate() {
-  let employeeId = $("#employeeId").val();
-  let data = {
-    employeeUsername: $("#employeeUsername").val(),
-    employeePassword: $("#employeePassword").val(),
-    employeeSex: $("#employeeSex").val(),
-    employeeEmail: $("#employeeEmail").val(),
-    employeeName: $("#employeeName").val(),
-    employeeBirth: $("#employeeBirth").val(),
-    employeeTel: $("#employeeTel").val(),
-    employeeLocation: $(".employeeLocation").val(),
-
-  };
-  console.log(data);
-  $.ajax("/emp/employeeInfo/" + employeeId, {
-    type: "PUT",
-    dataType: "json",
-    data: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-    },
-  }).done((res) => {
-    if (res.code == 1) {
-      console.log(res.msg);
-      alert("회원정보 수정 완료");
-      location.reload();
-    } else {
-      alert("업데이트에 실패했습니다.");
-      console.log(res.msg);
-    }
-  });
-}
-
-
-$("#btnEmployeeDelete").click(() => {
-  employeeDelete();
-});
-
-function employeeDelete(){
-  let employeeId = $("#employeeId").val();
-
-  $.ajax("/emp/employeeInfo/" + employeeId, {
-		type: "DELETE",
-		dataType: "json"
-	}).done((res) => {
-		if (res.code == 1) {
-			console.log(res.msg);
-			alert("회원탈퇴 완료");
-			location.href = "/"; 
-		} else {
-			alert("회원탈퇴에 실패했습니다.");
-			console.log(res.msg);
-		}
-	});
-}
-</script>
+<script src="/js/main.js"></script>
+<script src="/js/employee.js"></script>
 <%@ include file="../layout/footer.jsp"%>
