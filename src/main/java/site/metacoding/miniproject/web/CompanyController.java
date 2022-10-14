@@ -101,7 +101,7 @@ public class CompanyController {
 
     @GetMapping("/co/companyIntroUpdate/{companyId}")
     public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
-        model.addAttribute("intro", introService.기업소개상세보기(companyId));
+        model.addAttribute("intro", introService.기업소개수정상세보기(companyId));
         return "company/coIntroUpdate";
     }
 

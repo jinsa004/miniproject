@@ -1,4 +1,22 @@
-// 회원정보 수정
+$("#btn_join").click(()=>{
+  join();
+});
+
+$("#btnEmployeeUpdate").click(() => {
+  employeeUpdate();
+});
+
+$("#btnEmployeeDelete").click(() => {
+  employeeDelete();
+});
+
+$("#btnEmployeeDelete").click(() => {
+  employeeDelete();
+});
+
+$("#btn_login").click(()=>{
+  login();
+});
 
 //회원가입
 function joinSave() {
@@ -31,9 +49,7 @@ function joinSave() {
   //람다식을 사용하면 코드가 간결해지고, 스코프가 명확해진다.
 }
 /**개인회원 수정 */
-$("#btnEmployeeUpdate").click(() => {
-  employeeUpdate();
-});
+
 function employeeUpdate() {
   let employeeId = $("#employeeId").val();
   let data = {
@@ -68,11 +84,9 @@ function employeeUpdate() {
 }
 
 /**개인회원 탈퇴 */
-$("#btnEmployeeDelete").click(() => {
-  employeeDelete();
-});
 
-function employeeDelete() {
+function employeeDelete(){
+
   let employeeId = $("#employeeId").val();
 
   $.ajax("/emp/employeeInfo/" + employeeId, {

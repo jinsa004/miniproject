@@ -83,7 +83,6 @@
               </div>
             </div>
           </div>
-
           <div class="edu_form" id="univ">
             <h4>대학.대학원 정보 입력</h4>
             <div class="edu_row">

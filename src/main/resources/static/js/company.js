@@ -1,10 +1,30 @@
+
 /* 기업회원 탈퇴*/
 $("#btn_delete").click(() => {
   Delete();
 });
 
-function Delete() {
+$("#btn_delete").click(()=>{
+  Delete();
+});
 
+$("#btn_join").click(()=>{
+  join();
+});
+
+$("#btn_update").click(()=>{
+  companyUpdate();
+});
+
+$("#btn_login").click(()=>{
+  coLogin();
+});
+
+
+/* 기업회원 탈퇴*/
+
+function Delete(){
+  
   console.log("삭제");
   let companyId = $("#companyId").val();
 
@@ -25,11 +45,6 @@ function Delete() {
 
 /* 기업정보 수정*/
 
-$("#btn_update").click(() => {
-  console.log("클릭됨");
-  companyUpdate();
-});
-
 function companyUpdate() {
 
   let companyId = $("#companyId").val();
@@ -43,7 +58,6 @@ function companyUpdate() {
     companyUsername: $("#companyUsername").val(),
     companyPassword: $("#companyPassword").val()
   };
-  console.log(data);
   console.log("업데이트");
 
   $.ajax("/co/companyUpdate/" + companyId, {
@@ -64,6 +78,7 @@ function companyUpdate() {
   });
 }
 
+//기업회원 로그인
 function coLogin() {
 
   let data = {
@@ -88,10 +103,7 @@ function coLogin() {
   });
 }
 
-$("#btn_join").click(() => {
-  join();
-});
-
+// 기업회원가입
 function join() {
   let data = {
     companyNumber: $("#companyNumber").val(),
@@ -103,7 +115,6 @@ function join() {
     companyPassword: $("#companyPassword").val(),
     job_Id: $("input:checkbox[value='frontend']").is(":checked")
   };
-  console.log(data);
 
   $.ajax("/co/join", {
     type: "POST",

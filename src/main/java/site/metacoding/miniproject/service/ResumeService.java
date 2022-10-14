@@ -15,6 +15,12 @@ public class ResumeService {
 
     private final ResumeDao resumeDao;
 
+
+    
+    public void 메인이력서등록(Integer resumeId) {
+        resumeDao.updateMain(resumeId);
+    }
+
     public List<Resume> 이력서목록보기() {
         return resumeDao.findAll();
     }
@@ -40,5 +46,9 @@ public class ResumeService {
     public List<Resume> 내이력서가져오기(Integer employeeId) {
         List<Resume> resumePS = resumeDao.findByEmployeeId(employeeId);
         return resumePS;
+    }
+
+    public void 이력서삭제(Integer resumeId) {
+        resumeDao.deleteById(resumeId);
     }
 }

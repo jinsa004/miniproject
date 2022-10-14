@@ -71,7 +71,14 @@
         WHERE resume_id = #{resumeId}
 	</update>
 
-	<delete id="deleteById"></delete>
+	<delete id="deleteById">
+		DELETE FROM resume WHERE resume_id = #{resumeId}
+	</delete>
 
-
+	<update id="updateMain">
+		UPDATE resume 
+		SET is_main =  case when resume_id=#{resumeId} then 1 ELSE 0 END
+		WHERE employee_id = (select employee_id from resume WHERE resume_id=#{resumeId})
+	</update>
+	
 </mapper>

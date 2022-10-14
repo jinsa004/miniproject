@@ -4,6 +4,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,6 +30,18 @@ public class ResumeController {
     private final HttpSession session;
 
     /* =============================개인회원========================================= */
+
+    @PutMapping("/resume/setMainResume/{resumeId}")
+    public @ResponseBody CMRespDto<?> setMainResume(@PathVariable Integer resumeId) {
+        resumeService.메인이력서등록(resumeId);
+        return new CMRespDto<>(1, "메인 이력서 등록 성공", null);
+    }
+
+    @DeleteMapping("emp/resumeDelete/{resumeId}")
+    public @ResponseBody CMRespDto<?> deleteResume(@PathVariable Integer resumeId) {
+        resumeService.이력서삭제(resumeId);
+        return new CMRespDto<>(1, "이력서 삭제 성공", null);
+    }
 
     @GetMapping("emp/resumeSaveForm/{employeeId}")
     public String insertResumeForm(@PathVariable Integer employeeId, Model model) { // 이력서 등록 페이지
@@ -57,7 +70,7 @@ public class ResumeController {
     @PutMapping("emp/resumeUpdate/{resumeId}")
     public @ResponseBody CMRespDto<?> updateResume(@PathVariable Integer resumeId, @RequestBody UpdateDto updateDto) {
         resumeService.이력서수정(resumeId, updateDto);
-        return new CMRespDto<>(1, "이력서 등록 성공", null);
+        return new CMRespDto<>(1, "이력서 수정 성공", null);
     }
 
     /* =============================기업회원========================================= */

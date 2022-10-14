@@ -87,7 +87,9 @@
               <span class="login_check_icon"></span>
               <span class="login_check_text">로그인 상태 유지</span>
             </label>
-            <button id="btn_login" type="button" class="btn btn-primary" onclick="login()">
+
+            <button id="btn_login" type="button" class="btn btn-primary">
+            
               로그인
             </button>
           </div>
@@ -223,7 +225,9 @@
                 </div>
               </div>
             </form>
-            <button id="btn_join" type="button" onclick="joinSave()">
+
+            <button id="btn_join" type="button">
+
               회원가입
             </button>
           </div>

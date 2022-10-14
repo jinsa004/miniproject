@@ -109,7 +109,7 @@
         </div>
       </div>
       <!-- notice -->
-          <button type="button" class="btn btn-primary" onclick="btnInsertNotice()">공고등록</button>
+          <button id="btn_insert_notice" type="button" class="btn btn-primary">공고등록</button>
       <!-- btn -->
     </form>
     </div>
