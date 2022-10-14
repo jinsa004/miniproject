@@ -29,11 +29,11 @@ public class CompanyService {
     companyDao.insert(company);
   }
 
-  public Company 기업정보관리(Integer companyId) {
+  public Company 기업소개하나보기(Integer companyId) {
     return companyDao.findById(companyId);
   }
 
-  public Company 기업정보수정(Integer companyId, CompanyUpdateDto companyUpdateDto) {
+  public Company 기업소개수정(Integer companyId, CompanyUpdateDto companyUpdateDto) {
     Company companyPS = companyDao.findById(companyId);
     companyPS.update(companyUpdateDto);
     companyDao.update(companyPS);

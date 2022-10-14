@@ -1,86 +1,62 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/company.css" />
-    <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    ></script>
-    <title>4조 PROJECT</title>
-  </head>
+    <!DOCTYPE html>
+    <html>
 
-  <body>
-    <div id="user_wrap">
-      <div class="header_wrap">
-        <header>
-          <div class="logo">
-            <a href="/co/mainCompany">COMPANY_4</a>
-          </div>
-          <!-- .logo -->
-          
-                    <div class="search_bar">
-                        <form class="cf">
-                            <input
-                                type="text"
-                                id="search"
-                                title="검색어 입력"
-                                name="search"
-                                placeholder="검색어를 입력해주세요."
-                                maxlength="50"
-                            />
-                            <!-- <button type="submit" class="btn_search">검색</button> -->
-                        </form>
-                    </div>
-                    <!-- .search_bar -->
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/css/reset.css" />
+      <link rel="stylesheet" href="/css/company.css" />
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <title>4조 PROJECT</title>
+    </head>
 
-          <div class="login_box">
-            <c:choose>
-              <c:when test="${empty principal.companyId}">
-                <button
-                  class="btn_login"
-                  type="button"
-                  onClick="javascript:popOpenCompany();"
-                >
-                  로그인
-                </button>
-                <button
-                  class="btn_join"
-                  type="button"
-                  onClick="javascript:popOpenCompany2();"
-                >
-                  회원가입
-                </button>
-                <a href="/emp/main" class="btn_company">회원 서비스</a>
-              </c:when>
-              <c:otherwise>
-                <a class="btn_logout" href="/co/logout">로그아웃</a>
-                <a href="/co/companyIntroUpdate/${principal.companyId}" class="btn_mypage"
-                  >마이페이지</a
-                >
-                <a href="/emp/main" class="btn_company">회원 서비스</a
-                ><!-- .btn_company -->
-              </c:otherwise>
-            </c:choose>
-          </div>
-          <!-- .login_box -->
-          <nav>
-            <ul>
-              <li>
-                <a href="/co/mainCompany">인재검색</a>
-              </li>
-                 <li>
+    <body>
+      <div id="user_wrap">
+        <div class="header_wrap">
+          <header>
+            <div class="logo">
+              <a href="/co">COMPANY_4</a>
+            </div>
+            <!-- .logo -->
+
+            <div class="search_bar">
+              <form class="cf">
+                <input type="text" id="search" title="검색어 입력" name="search" placeholder="검색어를 입력해주세요." maxlength="50" />
+                <!-- <button type="submit" class="btn_search">검색</button> -->
+              </form>
+            </div>
+            <!-- .search_bar -->
+
+            <div class="login_box">
+              <c:choose>
+                <c:when test="${empty principal.companyId}">
+                  <button class="btn_login" type="button" onClick="javascript:popOpenCompany();">
+                    로그인
+                  </button>
+                  <button class="btn_join" type="button" onClick="javascript:popOpenCompany2();">
+                    회원가입
+                  </button>
+                  <a href="/emp/main" class="btn_company">회원 서비스</a>
+                </c:when>
+                <c:otherwise>
+                  <a class="btn_logout" href="/co/logout">로그아웃</a>
+                  <a href="/co/companyIntroUpdate/${principal.companyId}" class="btn_mypage">마이페이지</a>
+                  <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
+                </c:otherwise>
+              </c:choose>
+            </div>
+            <!-- .login_box -->
+            <nav>
+              <ul>
+                <li>
+                  <a href="/co">인재검색</a>
+                </li>
+                <li>
                   <a href="/co/noticeSave/${principal.companyId}">공고등록</a>
                 </li>
               <li>
@@ -350,6 +326,5 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </button>
         </div>
       </div>
-    </div>
-    <script type="text/javascript" src="/js/main.js"></script>
-    <script type="text/javascript" src="/js/company.js"></script>
+      <script type="text/javascript" src="/js/main.js"></script>
+      <script type="text/javascript" src="/js/company.js"></script>

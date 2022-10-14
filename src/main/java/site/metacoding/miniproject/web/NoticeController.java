@@ -4,20 +4,25 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.notice.Notice;
+import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.NoticeService;
+import site.metacoding.miniproject.web.dto.request.notice.NoticeUpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
 @RequiredArgsConstructor
@@ -28,9 +33,10 @@ public class NoticeController {
     private final HttpSession session;
     private final JobService jobService;
 
-/*=============================개인회원========================================= */
+    /* =============================개인회원========================================= */
 
-    @GetMapping({"emp/main","emp","/"}) // ({ "emp/", "emp/notice" }) 로 두 개 걸어주는 것 불가 (쿼리스트링시 매핑 주소 "notice"가 중복되기 때문)
+    @GetMapping({ "emp/main", "emp", "/" }) // ({ "emp/", "emp/notice" }) 로 두 개 걸어주는 것 불가 (쿼리스트링시 매핑 주소 "notice"가 중복되기
+                                            // 때문)
     public String getAllNoticeList(Model model) {
         List<Notice> noticeAllList = noticeService.채용공고전체목록보기();
         model.addAttribute("noticeAllList", noticeAllList);
@@ -49,7 +55,7 @@ public class NoticeController {
         return "employee/noticeDetail";
     }
 
-/*=============================기업회원========================================= */
+    /* =============================기업회원========================================= */
 
     @GetMapping("co/noticeDetail")
     public String noticeDetail() {// 기업회원 입장에서 채용공고 상세보기
@@ -63,23 +69,35 @@ public class NoticeController {
         model.addAttribute("jobPS", jobPS);
         return "notice/noticeSave";
     }
-    
 
     @PostMapping("co/noticeSave")
-    public @ResponseBody CMRespDto<?> insert(@RequestBody Notice notice){
+    public @ResponseBody CMRespDto<?> insert(@RequestBody Notice notice) {
         noticeService.공고등록(notice);
-        return new CMRespDto<>(1,"통신성공",null);
+        return new CMRespDto<>(1, "통신성공", null);
     }
 
-    @GetMapping("co/noticeUpdate")
-    public String 공고수정() {
-        return "notice/noticeUpdate";
-    }
-
-    @GetMapping("co/supCompany/{companyId}")
+    @GetMapping("co/noticeService/{companyId}")
     public String FindAllmyNotice(@PathVariable Integer companyId, Model model) { // 메서드이름은 동사여야 하지 않나요
         List<Notice> noticeList = noticeService.내공고목록보기(companyId);
         model.addAttribute("noticeList", noticeList);
         return "company/supporter";
     }
+
+    @GetMapping("co/noticeService/{companyId}/noticeDetail/{noticeId}")
+    public String updateMyNotice(@PathVariable Integer companyId,
+            @PathVariable Integer noticeId, Model model) {
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
+        Notice noticePS = noticeService.내공고하나보기(noticeId);
+        model.addAttribute("noticePS", noticePS);
+        return "notice/noticeUpdate";
+    }
+
+    @PutMapping("co/noticeUpdate/{noticeId}")
+    public @ResponseBody CMRespDto<?> updateResume(@PathVariable Integer noticeId,
+            @RequestBody NoticeUpdateDto noticeUpdateDto) {
+        noticeService.이력서수정(noticeId, noticeUpdateDto);
+        return new CMRespDto<>(1, "이력서 등록 성공", null);
+    }
+
 }
