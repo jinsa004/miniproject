@@ -38,14 +38,14 @@ public class CompanyController {
         System.out.println("===============");
 
         // if (loginDto.isRemember() == true) {
-        //     Cookie cookie = new Cookie("companyUsername", loginDto.getCompanyUsername());
-        //     cookie.setMaxAge(60 * 60 * 24);
-        //     response.addCookie(cookie);
+        // Cookie cookie = new Cookie("companyUsername", loginDto.getCompanyUsername());
+        // cookie.setMaxAge(60 * 60 * 24);
+        // response.addCookie(cookie);
 
         // } else {
-        //     Cookie cookie = new Cookie("companyUsername", null);
-        //     cookie.setMaxAge(0);
-        //     response.addCookie(cookie);
+        // Cookie cookie = new Cookie("companyUsername", null);
+        // cookie.setMaxAge(0);
+        // response.addCookie(cookie);
         // }
 
         Company principal = companyService.로그인(loginDto);
@@ -101,7 +101,7 @@ public class CompanyController {
 
     @GetMapping("/co/companyIntroUpdate/{companyId}")
     public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
-        model.addAttribute("intro", introService.기업소개상세보기(companyId));
+        model.addAttribute("intro", introService.기업소개수정상세보기(companyId));
         return "company/coIntroUpdate";
     }
 
