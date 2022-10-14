@@ -269,22 +269,7 @@
             }
 
 
-              function deleteResume() {
 
-                let resumeId = $("#resumeId").val();
-
-                $.ajax("/emp/resumeDelete/"+resumeId, {
-                    type: "DELETE",
-                    dataType: "json", // 응답 데이터
-                }).done((res) => {
-                    if (res.code == 1) {
-                        alert("이력서 삭제 완료");
-                        location.href = "/";
-                    } else {
-                        alert("삭제에 실패하였습니다");
-                    }
-                })
-            }
 </script>
 
 <script>

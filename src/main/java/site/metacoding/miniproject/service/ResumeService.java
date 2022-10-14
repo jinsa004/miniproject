@@ -41,4 +41,8 @@ public class ResumeService {
         List<Resume> resumePS = resumeDao.findByEmployeeId(employeeId);
         return resumePS;
     }
+
+    public void 이력서삭제(Integer resumeId) {
+        resumeDao.deleteById(resumeId);
+    }
 }

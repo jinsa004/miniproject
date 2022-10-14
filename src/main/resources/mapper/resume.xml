@@ -71,7 +71,9 @@
         WHERE resume_id = #{resumeId}
 	</update>
 
-	<delete id="deleteById"></delete>
+	<delete id="deleteById">
+		DELETE FROM resume WHERE resume_id = #{resumeId}
+	</delete>
 
 
 </mapper>
