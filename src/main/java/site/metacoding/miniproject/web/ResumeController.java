@@ -31,6 +31,12 @@ public class ResumeController {
 
     /* =============================개인회원========================================= */
 
+    @PutMapping("/resume/setMainResume/{resumeId}")
+    public @ResponseBody CMRespDto<?> setMainResume(@PathVariable Integer resumeId) {
+        resumeService.메인이력서등록(resumeId);
+        return new CMRespDto<>(1, "메인 이력서 등록 성공", null);
+    }
+
     @DeleteMapping("emp/resumeDelete/{resumeId}")
     public @ResponseBody CMRespDto<?> deleteResume(@PathVariable Integer resumeId) {
         resumeService.이력서삭제(resumeId);
