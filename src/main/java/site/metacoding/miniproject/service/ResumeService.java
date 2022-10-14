@@ -36,4 +36,9 @@ public class ResumeService {
         resumePS.update(updateDto);
         resumeDao.update(resumePS);
     }
+
+    public List<Resume> 내이력서가져오기(Integer employeeId) {
+        List<Resume> resumePS = resumeDao.findByEmployeeId(employeeId);
+        return resumePS;
+    }
 }
