@@ -14,6 +14,7 @@
 
             <div class="notice_form">
               <input type="hidden" id="notice_id" value="${notice.noticeId}" />
+              <input type="hidden" id="company_id" value="${notice.company_id}" />
               <div class="notice_row">
                 <div class="notice_list">
                   <p class="notice_list_item">공고명</p>

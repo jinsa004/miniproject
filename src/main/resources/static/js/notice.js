@@ -87,6 +87,7 @@ function updateNoitce() {
   };
 
   let noticeId = $("#notice_Id").val();
+  let companyId = $("#company_Id").val();
 
   $.ajax("/co/noticeUpdate/" + noticeId, {
     type: "PUT",
@@ -98,10 +99,10 @@ function updateNoitce() {
     },
   }).done((res) => {
     if (res.code == 1) {
-      alert("이력서 수정 완료");
-      location.href = "/emp";
+      alert("내 공고 수정 완료");
+      location.href = "co/noticeService/" + companyId;
     } else {
-      alert("등록에 실패하였습니다");
+      alert("내 공고 수정에 실패하였습니다");
     }
   })
 }

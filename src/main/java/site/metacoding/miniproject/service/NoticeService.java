@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.notice.Notice;
 import site.metacoding.miniproject.domain.notice.NoticeDao;
+import site.metacoding.miniproject.web.dto.request.notice.NoticeUpdateDto;
 
 @Service
 @RequiredArgsConstructor
@@ -30,7 +31,14 @@ public class NoticeService {
         return noticeDao.findById(noticeId);
     }
 
+    public void 이력서수정(Integer resumeId, NoticeUpdateDto noticeUpdateDto) {
+        Notice noticePS = noticeDao.findById(resumeId);
+        noticePS.update(noticeUpdateDto);
+        noticeDao.update(noticePS);
+    }
+
     public void 공고등록(Notice notice) {
         noticeDao.insert(notice);
     }
+
 }

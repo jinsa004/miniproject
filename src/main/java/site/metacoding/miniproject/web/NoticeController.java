@@ -30,7 +30,6 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 public class NoticeController {
 
     private final NoticeService noticeService;
-    private final CompanyService companyService;
     private final HttpSession session;
     private final JobService jobService;
 
@@ -89,13 +88,15 @@ public class NoticeController {
             @PathVariable Integer noticeId, Model model) {
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
+        Notice noticePS = noticeService.내공고하나보기(noticeId);
+        model.addAttribute("noticePS", noticePS);
         return "notice/noticeUpdate";
     }
 
     @PutMapping("co/noticeUpdate/{noticeId}")
     public @ResponseBody CMRespDto<?> updateResume(@PathVariable Integer noticeId,
             @RequestBody NoticeUpdateDto noticeUpdateDto) {
-        // noticeService.이력서수정(noticeId, noticeUpdateDto);
+        noticeService.이력서수정(noticeId, noticeUpdateDto);
         return new CMRespDto<>(1, "이력서 등록 성공", null);
     }
 

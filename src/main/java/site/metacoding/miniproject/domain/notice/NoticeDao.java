@@ -11,7 +11,7 @@ public interface NoticeDao {
 
 	public void insert(Notice notice);
 
-	public void update(Integer noticeId, Notice notice);
+	public void update(Notice notice);
 
 	public void deleteById(Integer noticeId);
 
