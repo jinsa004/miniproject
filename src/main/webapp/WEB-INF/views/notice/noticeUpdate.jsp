@@ -27,15 +27,11 @@
                   <p class="notice_list_item">분야</p>
                 </div>
                 <div class="notice_input">
-                  <div class="select-group">
-                    <select>
-                      <option>프론트엔드</option>
-                      <option>백엔드</option>
-                      <option>풀스택</option>
-                      <option>안드로이드</option>
-                      <option>IOS</option>
-                    </select>
-                  </div>
+                  <c:forEach var="jobPS" items="${jobPS}">
+                    <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" <c:if
+                      test="${jobPS.jobId eq noticePS.jobId}">checked="checked"</c:if>/> ${jobPS.jobName}
+                    <br>
+                  </c:forEach>
                 </div>
               </div>
               <div class="notice_row">
