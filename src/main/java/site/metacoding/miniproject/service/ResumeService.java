@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.application.Application;
+import site.metacoding.miniproject.domain.application.ApplicationDao;
 import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.domain.resume.ResumeDao;
 import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
@@ -14,9 +16,12 @@ import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
 public class ResumeService {
 
     private final ResumeDao resumeDao;
+    private final ApplicationDao applicationDao;
 
+    public void 지원하기(Application application) {
+        applicationDao.insert(application);
+    }
 
-    
     public void 메인이력서등록(Integer resumeId) {
         resumeDao.updateMain(resumeId);
     }

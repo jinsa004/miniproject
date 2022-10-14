@@ -1,4 +1,4 @@
-$("#btn_join").click(()=>{
+$("#btn_join").click(() => {
   join();
 });
 
@@ -14,9 +14,14 @@ $("#btnEmployeeDelete").click(() => {
   employeeDelete();
 });
 
-$("#btn_login").click(()=>{
+$("#btn_login").click(() => {
   login();
 });
+
+$("#btn_recruit").click(() => {
+  applicate();
+});
+
 
 //회원가입
 function joinSave() {
@@ -85,7 +90,7 @@ function employeeUpdate() {
 
 /**개인회원 탈퇴 */
 
-function employeeDelete(){
+function employeeDelete() {
 
   let employeeId = $("#employeeId").val();
 
@@ -130,3 +135,29 @@ function login() {
 
 }
 
+// 공고지원
+function applicate() {
+  let data = {
+    resumeId: $('input[id=resume_select]:checked').val(),
+    noticeId: $("#noticeId").val()
+  };
+
+  console.log(data.resumeId);
+  console.log(data.noticeId);
+
+  $.ajax("/emp/resume/applicate", {
+    type: "POST",
+    dataType: "json",
+    data: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("공고 지원 완료");
+      location.reload();
+    } else {
+      alert("지원에 실패하였습니다");
+    }
+  });
+}

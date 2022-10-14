@@ -1,7 +1,9 @@
 package site.metacoding.miniproject.web;
 
 import java.util.List;
+
 import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.application.Application;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.service.JobService;
@@ -31,7 +34,13 @@ public class ResumeController {
 
     /* =============================개인회원========================================= */
 
-    @PutMapping("/resume/setMainResume/{resumeId}")
+    @PostMapping("emp/resume/applicate")
+    public @ResponseBody CMRespDto<?> applicateByResumeId(@RequestBody Application application) {
+        resumeService.지원하기(application);
+        return new CMRespDto<>(1, "공고 지원 성공", null);
+    }
+
+    @PutMapping("emp/resume/setMainResume/{resumeId}")
     public @ResponseBody CMRespDto<?> setMainResume(@PathVariable Integer resumeId) {
         resumeService.메인이력서등록(resumeId);
         return new CMRespDto<>(1, "메인 이력서 등록 성공", null);
