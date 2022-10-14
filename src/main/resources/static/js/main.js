@@ -1,4 +1,4 @@
-$("ul.tabs li").click(function () {
+$("ul .tabs li").click(function () {
   var tab_id = $(this).attr("data-tab");
   $("ul.tabs li").removeClass("on");
   $(".tab-content").removeClass("on");
