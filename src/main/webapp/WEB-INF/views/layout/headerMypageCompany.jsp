@@ -48,6 +48,5 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     </li>
   </ul>
 </div><!-- .gnb_mypage -->
-
-
 </div>
+
