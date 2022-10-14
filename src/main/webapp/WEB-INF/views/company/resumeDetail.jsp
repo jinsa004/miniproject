@@ -195,7 +195,7 @@
     <!-- resume_detail -->
     </div>
     </div>
-    
-     <script src="/js/main.js"></script>
-     <script src="/js/company.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

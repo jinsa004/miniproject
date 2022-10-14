@@ -11,9 +11,9 @@
               <ul>
                 <c:forEach var="resumePS" items="${resumePS}">
                   <li class="resume_cont">
-                    <span class="input_radio">                      
-                      <input type="radio" name="resume_select" id="resume_select" value="${resumePS.resumeId}"
-                      <c:if test="${resumePS.main eq true}">checked</c:if> />
+                    <span class="input_radio">
+                      <input type="radio" name="resume_select" id="resume_select" value="${resumePS.resumeId}" <c:if
+                        test="${resumePS.main eq true}">checked</c:if> />
                     </span>
                     <label for="resume_select" class="resume_select_box">
                       <a href="#" class="list_title">
@@ -26,10 +26,10 @@
                         <li class="part"><span>${resumePS.jobName}</span></li>
                       </ul>
                     </label>
-    
+
                     <div class="btn_resume_option">
                       <span><a href="/emp/resumeUpdate/${resumePS.resumeId}">수정하기</a></span>
-                      <button  class="btn_delete_resume" type="button" value="${resumePS.resumeId}">삭제하기</button>
+                      <button class="btn_delete_resume" type="button" value="${resumePS.resumeId}">삭제하기</button>
                     </div><!-- .btn_resume_option -->
                   </li><!-- .resume_cont -->
                 </c:forEach>
@@ -53,4 +53,3 @@
     <script src="/js/main.js"></script>
     <script src="/js/employee.js"></script>
     <%@ include file="../layout/footer.jsp" %>
-
