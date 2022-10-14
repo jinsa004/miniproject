@@ -331,7 +331,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </div>
             </div>
           </form>
-          <button id="btn_join" type="button" class="btn btn-primary">
+          <button id="btn_join" type="button" class="btn btn-primary" onclick="join()">
             회원가입
           </button>
         </div>

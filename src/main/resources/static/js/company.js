@@ -26,7 +26,6 @@ function Delete(){
  /* 기업정보 수정*/
 
 $("#btn_update").click(()=>{
-  console.log("클릭됨");
   companyUpdate();
 });
 
@@ -43,7 +42,6 @@ function companyUpdate() {
     companyUsername: $("#companyUsername").val(),
     companyPassword: $("#companyPassword").val()
   };
-  console.log(data);
   console.log("업데이트");
 
   $.ajax("/co/companyUpdate/" + companyId, {
@@ -88,10 +86,6 @@ function coLogin() {
   });
 }
 
-$("#btn_join").click(() => {
-  join();
-});
-
 function join() {
   let data = {
     companyNumber: $("#companyNumber").val(),
@@ -103,7 +97,6 @@ function join() {
     companyPassword: $("#companyPassword").val(),
     job_Id: $("input:checkbox[value='frontend']").is(":checked")
   };
-  console.log(data);
 
   $.ajax("/co/join", {
     type: "POST",
