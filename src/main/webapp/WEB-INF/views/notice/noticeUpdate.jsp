@@ -29,7 +29,7 @@
                 <div class="notice_input">
                   <c:forEach var="jobPS" items="${jobPS}">
                     <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" <c:if
-                      test="${jobPS.jobId eq noticePS.jobId}">checked="checked"</c:if>/> ${jobPS.jobName}
+                      test="${jobPS.jobId eq noticePS.jobId}">checked="checked"</c:if> /> ${jobPS.jobName}
                     <br>
                   </c:forEach>
                 </div>
@@ -85,12 +85,12 @@
                 </div>
                 <div class="notice_input">
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>대졸
-                    <label class="form-check-label" for="radio1"></label>
+                    <input type="radio" id="noticeQual" name="noticeQual" value="대졸" <c:if
+                      test="${'대졸' eq noticePS.noticeQual}">checked="checked"</c:if> /> 대졸
                   </div>
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">고졸
-                    <label class="form-check-label" for="radio2"></label>
+                    <input type="radio" id="noticeQual" name="noticeQual" value="고졸" <c:if
+                      test="${'고졸' eq noticePS.noticeQual}">checked="checked"</c:if> />고졸
                   </div>
                 </div>
               </div>
