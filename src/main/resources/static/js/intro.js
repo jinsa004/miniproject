@@ -13,6 +13,12 @@ $("#iconSub").click(() => {
   }
 });
 
+$("#btnUpdate").click(() => {
+  console.log("클릭됨");
+  console.log($("#introId").val());
+  update();
+});
+
 //DB에 insert요청하기
 function insertSub() {
   let introId = $("#introId").val();
@@ -57,4 +63,34 @@ function renderSub() {
 function renderCancelSub() {
   $("#iconSub").removeClass("fa-solid");
   $("#iconSub").addClass("fa-regular");
+}
+//기업소개 수정하기
+function update() {
+  let data = {
+    companyName: $("#companyName").val(),
+    introBirth: $("#introBirth").val(),
+    introTask: $("#introTask").val(),
+    introSal: $("#introSal").val(),
+    introWellfare: $("#introWellfare").val(),
+    introContent: $("#introContent").val(),
+    jobName: $("#jobName").val()
+  }
+  let introId = $("#introId").val();
+  console.log("업데이트확인");
+  $.ajax("/co/companyIntroUpdate/" + introId + "/update", {
+    type: "PUT",
+    dataType: "json", // 응답 데이터
+    data: JSON.stringify(data), // http body에 들고갈 요청 데이터
+    headers: {
+      // http header에 들고갈 요청 데이터
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("기업소개 수정 완료");
+      location.reload;
+    } else {
+      alert("업데이트에 실패하였습니다");
+    }
+  });
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,10 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.notice.Notice;
-import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.NoticeService;
 import site.metacoding.miniproject.web.dto.request.notice.NoticeUpdateDto;
