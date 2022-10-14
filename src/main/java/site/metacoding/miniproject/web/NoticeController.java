@@ -28,9 +28,10 @@ public class NoticeController {
     private final HttpSession session;
     private final JobService jobService;
 
-/*=============================개인회원========================================= */
+    /* =============================개인회원========================================= */
 
-    @GetMapping({"emp/main","emp","/"}) // ({ "emp/", "emp/notice" }) 로 두 개 걸어주는 것 불가 (쿼리스트링시 매핑 주소 "notice"가 중복되기 때문)
+    @GetMapping({ "emp/main", "emp", "/" }) // ({ "emp/", "emp/notice" }) 로 두 개 걸어주는 것 불가 (쿼리스트링시 매핑 주소 "notice"가 중복되기
+                                            // 때문)
     public String getAllNoticeList(Model model) {
         List<Notice> noticeAllList = noticeService.채용공고전체목록보기();
         model.addAttribute("noticeAllList", noticeAllList);
@@ -49,7 +50,7 @@ public class NoticeController {
         return "employee/noticeDetail";
     }
 
-/*=============================기업회원========================================= */
+    /* =============================기업회원========================================= */
 
     @GetMapping("co/noticeDetail")
     public String noticeDetail() {// 기업회원 입장에서 채용공고 상세보기
@@ -63,12 +64,11 @@ public class NoticeController {
         model.addAttribute("jobPS", jobPS);
         return "notice/noticeSave";
     }
-    
 
     @PostMapping("co/noticeSave")
-    public @ResponseBody CMRespDto<?> insert(@RequestBody Notice notice){
+    public @ResponseBody CMRespDto<?> insert(@RequestBody Notice notice) {
         noticeService.공고등록(notice);
-        return new CMRespDto<>(1,"통신성공",null);
+        return new CMRespDto<>(1, "통신성공", null);
     }
 
     @GetMapping("co/noticeUpdate")
@@ -76,7 +76,7 @@ public class NoticeController {
         return "notice/noticeUpdate";
     }
 
-    @GetMapping("co/supCompany/{companyId}")
+    @GetMapping("co/noticeService/{companyId}")
     public String FindAllmyNotice(@PathVariable Integer companyId, Model model) { // 메서드이름은 동사여야 하지 않나요
         List<Notice> noticeList = noticeService.내공고목록보기(companyId);
         model.addAttribute("noticeList", noticeList);
