@@ -23,7 +23,7 @@
                     </div>
                   </form>
                 </div>
-              </div>
+              </div><!-- .logo_form -->
             </div>
             <!-- logo -->
             <input id="introId" type="hidden" value="${intro.introId}" />
@@ -90,7 +90,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div><!-- .location_wrap -->
 
               </div>
             </div>

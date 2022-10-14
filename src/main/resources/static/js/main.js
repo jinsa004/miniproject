@@ -9,7 +9,6 @@ $("ul.tabs li").click(function () {
   $("#" + tab_id).show();
 });
 
-
 $("#btnDelete").click(() => {
   DeletestadiumList();
 });
@@ -49,7 +48,7 @@ function login() {
   let data = {
     employeeUsername: $("#username").val(),
     employeePassword: $("#password").val(),
-    remember: $("#remember").prop("checked")
+    remember: $("#remember").prop("checked"),
   };
 
   $.ajax("/emp/login", {
@@ -67,16 +66,14 @@ function login() {
       alert("로그인 실패, 아이디 패스워드를 확인해주세요");
     }
   });
-
 }
 
 function coLogin() {
-
   let data = {
     companyUsername: $("#coUsername").val(),
     companyPassword: $("#coPassword").val(),
-    remember: $("#remember").prop("checked")
-  }
+    remember: $("#remember").prop("checked"),
+  };
   $.ajax("/co/login", {
     type: "POST",
     dataType: "json", //응답데이터 타입명
@@ -92,7 +89,6 @@ function coLogin() {
       alert("로그인 실패, 아이디 패스워드를 확인해주세요");
     }
   });
-
 }
 function popOpen() {
   let modalPop = $(".modal_login_wrap");
@@ -170,12 +166,10 @@ function popCloseRecruit() {
   $(modalBg).hide();
 }
 
-
-
 /* 기업 회원가입*/
-/* $("#btn_join").click(() => {
+$("#btn_join").click(() => {
   join();
-});*/
+});
 
 function join() {
   let data = {
@@ -186,7 +180,7 @@ function join() {
     companyLocation: $("#companyLocation").val(),
     companyUsername: $("#companyUsername").val(),
     companyPassword: $("#companyPassword").val(),
-    job_Id: $("input:checkbox[value='frontend']").is(":checked")
+    job_Id: $("input:checkbox[value='frontend']").is(":checked"),
   };
   console.log(data);
 
@@ -195,8 +189,8 @@ function join() {
     dataType: "json",
     data: JSON.stringify(data),
     headers: {
-      "Content-Type": "application/json"
-    }
+      "Content-Type": "application/json",
+    },
   }).done((res) => {
     if (res.code == 1) {
       alert("회원가입 완료");
@@ -240,4 +234,3 @@ function sample6_execDaumPostcode() {
     },
   }).open();
 }
-
