@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%>
+pageEncoding="UTF-8" %> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,13 +13,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/company.css" />
-    <script type="text/javascript" src="/js/main.js"></script>
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     ></script>
     <title>4조 PROJECT</title>
   </head>
+
   <body>
     <div id="user_wrap">
       <div class="header_wrap">
@@ -28,6 +28,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             <a href="/co/mainCompany">COMPANY_4</a>
           </div>
           <!-- .logo -->
+
 
           <div class="search_bar">
             <form class="cf">
@@ -45,38 +46,47 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <!-- .search_bar -->
 
           <div class="login_box">
-            <button
-              class="btn_login"
-              type="button"
-              onClick="javascript:popOpenCompany();"
-            >
-              로그인
-            </button>
-
-            <button
-              class="btn_join"
-              type="button"
-              onClick="javascript:popOpenCompany2();"
-            >
-              회원가입
-            </button>
-            <a href="/co/companyIntroUpdate" class="btn_company">기업 마이페이지</a
-              >
-            <a href="/emp/main" class="btn_company">회원 서비스</a
-            ><!-- .btn_company -->
+            <c:choose>
+              <c:when test="${empty principal.companyId}">
+                <button
+                  class="btn_login"
+                  type="button"
+                  onClick="javascript:popOpenCompany();"
+                >
+                  로그인
+                </button>
+                <button
+                  class="btn_join"
+                  type="button"
+                  onClick="javascript:popOpenCompany2();"
+                >
+                  회원가입
+                </button>
+                <a href="/emp/main" class="btn_company">회원 서비스</a>
+              </c:when>
+              <c:otherwise>
+                <a class="btn_logout" href="/co/logout">로그아웃</a>
+                <a href="/co/companyIntroUpdate/${principal.companyId}" class="btn_mypage"
+                  >마이페이지</a
+                >
+                <a href="/emp/main" class="btn_company">회원 서비스</a
+                ><!-- .btn_company -->
+              </c:otherwise>
+            </c:choose>
           </div>
           <!-- .login_box -->
-
           <nav>
             <ul>
               <li>
                 <a href="/co/mainCompany">인재검색</a>
               </li>
+                 <li>
+                  <a href="/co/noticeSave/${principal.companyId}">공고등록</a>
+                </li>
               <li>
-                <a href="/co/noticeSave">공고등록</a>
-              </li>
-              <li>
-                <a href="/co/supCompany">공고/지원자관리</a>
+                <a href="/co/supCompany/${principal.companyId}"
+                  >공고/지원자관리</a
+                >
               </li>
               <li>
                 <a href="/co/matchingResume">매칭리스트</a>
@@ -93,32 +103,29 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div class="modal_login_wrap">
         <h2>로그인</h2>
         <div class="form_box">
-          <form action="/login" method="post">
+          <form>
             <input
-              id="username"
+              id="coUsername"
               type="text"
               placeholder="아이디를 입력하세요."
-              value="${username}"
             />
             <input
-              id="password"
+              id="coPassword"
               type="password"
               placeholder="패스워드를 입력하세요."
-              name="password"
             />
           </form>
           <label class="btn_check">
-            <input
-              type="checkbox"
-              class="login_check"
-              id="user_remember"
-              name=""
-              checked
-            />
+            <input type="checkbox" class="login_check" id="remember" checked />
             <span class="login_check_icon"></span>
             <span class="login_check_text">로그인 상태 유지</span>
           </label>
-          <button id="btn_login" type="button" class="btn btn-primary">
+          <button
+            id="btn_login"
+            type="button"
+            class="btn btn-primary"
+            onclick="coLogin()"
+          >
             로그인
           </button>
         </div>
@@ -128,7 +135,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div class="modal_join_wrap">
         <h2>회원가입</h2>
         <div class="form_box cf">
-          <form action="/join" method="post">
+          <form>
             <div class="join_left">
               <div class="join_id join_box">
                 <h3>
@@ -136,10 +143,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </h3>
                 <span>
                   <input
-                    id="id"
+                    id="companyUsername"
                     type="text"
                     placeholder="아이디를 입력하세요."
-                    value="${username}"
                     maxlength="20"
                   />
                 </span>
@@ -151,7 +157,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </h3>
                 <span>
                   <input
-                    id="password"
+                    id="companyPassword"
                     type="password"
                     placeholder="패스워드를 입력하세요."
                     name="password"
@@ -179,7 +185,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </h3>
                 <span>
                   <input
-                    id="email"
+                    id="companyEmail"
                     type="email"
                     placeholder="이메일을 입력하세요."
                     name="email"
@@ -189,13 +195,27 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               </div>
 
               <div class="company_info">
+                <div class="join_name join_box">
+                  <h3>
+                    <label for="c_name">회사명</label>
+                  </h3>
+                  <span>
+                    <input
+                      id="companyName"
+                      type="text"
+                      placeholder="회사명을 입력하세요."
+                      name="companyName"
+                      maxlength="30"
+                    />
+                  </span>
+                </div>
                 <div class="join_number join_box">
                   <h3>
                     <label for="c_number">사업자등록번호</label>
                   </h3>
                   <span>
                     <input
-                      id="c_number"
+                      id="companyNumber"
                       type="text"
                       placeholder="사업자번호를 입력하세요."
                       name="companyNumber"
@@ -223,7 +243,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </h3>
                   <span>
                     <input
-                      id="c_phone"
+                      id="companyTel"
                       type="tel"
                       placeholder="휴대폰번호를 입력하세요."
                       name="companyPhone"
@@ -237,7 +257,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </h3>
                   <span>
                     <input
-                      id="c_adress"
+                      id="companyLocation"
                       type="text"
                       placeholder="주소를 입력하세요."
                       name="companyAdress"
@@ -255,7 +275,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <input
                     type="checkbox"
                     class="login_check"
-                    id="c_part_front"
+                    id="job_Id"
                     name=""
                     checked
                   />
@@ -311,11 +331,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               </div>
             </div>
           </form>
-          <button id="btn_join" type="button" class="btn btn-primary">
+          <button id="btn_join" type="button" class="btn btn-primary" onclick="join()">
             회원가입
           </button>
         </div>
       </div>
     </div>
-  </body>
-</html>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/company.js"></script>

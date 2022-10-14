@@ -4,72 +4,10 @@ $("ul.tabs li").click(function () {
   $(".tab-content").removeClass("on");
   $(".tab-content").hide();
   $(this).addClass("on");
+
   $("#" + tab_id).addClass("on");
   $("#" + tab_id).show();
 });
-
-$("#btnDelete").click(() => {
-  DeletestadiumList();
-});
-
-function DeletestadiumList() {
-  let chkArray = new Array();
-
-  $("input[name='checkbox']:checked").each(function () {
-    let item = $(this).val();
-    chkArray.push(item);
-  });
-
-  if (chkArray.length < 1) {
-    alert("값을 선택해주시기 바랍니다.");
-    return;
-  }
-  deleteStadium(chkArray);
-}
-
-function deleteStadium(id) {
-  $.ajax("/api/login", {
-    type: "DELETE",
-    dataType: "json",
-    data: { deletelist: id },
-    Headers: {
-      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-    },
-  }).done((res) => {
-    if (res.code == 1) {
-      alert(res.msg);
-      location.href = "/";
-    }
-  });
-}
-
-$("#btnLogin").click(() => {
-  login();
-});
-
-function login() {
-  let data = {
-    username: $("#username").val(),
-    password: $("#password").val(),
-  };
-
-  $.ajax("/api/login", {
-    type: "POST",
-    dataType: "json", //응답데이터 타입명
-    data: JSON.stringify(data), // 요청데이터 타입명
-    headers: {
-      "Content-Type": "application/json; charset=utf-8", // spring에게 알려주는 것 - json으로 보내겠다. mime type - 필수
-    },
-  }).done((res) => {
-    if (res.code == 1) {
-      alert("로그인 성공");
-      location.href = "/";
-    } else {
-      alert("로그인 실패, 아이디 패스워드를 확인해주세요");
-    }
-  });
-  //람다식을 사용하면 코드가 간결해지고, 스코프가 명확해진다.
-}
 
 function popOpen() {
   let modalPop = $(".modal_login_wrap");
@@ -179,3 +117,68 @@ function sample6_execDaumPostcode() {
     },
   }).open();
 }
+      // function sample6_execDaumPostcode() {
+      //   new daum.Postcode({
+      //     oncomplete: function (data) {
+      //       var addr = '';
+      //       var extraAddr = '';
+      //       if (data.userSelectedType === 'R') {
+      //         addr = data.roadAddress;
+      //       } else {
+      //         addr = data.jibunAddress;
+      //       }
+      //       if (data.userSelectedType === 'R') {
+      //         if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+      //           extraAddr += data.bname;
+      //         }
+      //         if (data.buildingName !== '' && data.apartment === 'Y') {
+      //           extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+      //         }
+      //         if (extraAddr !== '') {
+      //           extraAddr = ' (' + extraAddr + ')';
+      //         }
+      //         document.getElementById("sample6_extraAddress").value = extraAddr;
+      //       } else {
+      //         document.getElementById("sample6_extraAddress").value = '';
+      //       }
+      //       document.getElementById('sample6_postcode').value = data.zonecode;
+      //       document.getElementById("sample6_address").value = addr;
+      //       document.getElementById("sample6_detailAddress").focus();
+      //     }
+      //   }).open();
+      // }
+
+      $("#btnUpdate").click(() => {
+        console.log("클릭됨");
+        console.log($("#introId").val());
+        update();
+      });
+      function update() {
+        let data = {
+          companyName: $("#companyName").val(),
+          introBirth: $("#introBirth").val(),
+          introTask: $("#introTask").val(),
+          introSal: $("#introSal").val(),
+          introWellfare: $("#introWellfare").val(),
+          introContent: $("#introContent").val(),
+          jobName: $("#jobName").val()
+        }
+        let introId = $("#introId").val();
+        console.log("업데이트확인");
+        $.ajax("/co/companyIntroUpdate/" + introId + "/update", {
+          type: "PUT",
+          dataType: "json", // 응답 데이터
+          data: JSON.stringify(data), // http body에 들고갈 요청 데이터
+          headers: {
+            // http header에 들고갈 요청 데이터
+            "Content-Type": "application/json; charset=utf-8",
+          },
+        }).done((res) => {
+          if (res.code == 1) {
+            alert("기업소개 수정 완료");
+            location.reload;
+          } else {
+            alert("업데이트에 실패하였습니다");
+          }
+        });
+      }

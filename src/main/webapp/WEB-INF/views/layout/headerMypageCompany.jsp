@@ -14,7 +14,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/mypage.css" />
-    <script type="text/javascript" src="/js/main.js"></script>
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -26,11 +25,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 <div id="mypage_wrap">
 <div id="gnb_mypage">
   <div class="logo">
-    <a href="/co/main">PROJECT_4</a>
+    <a href="/co">PROJECT_4</a>
   </div>
   <ul class="gnb_left">
       <li class="gnb_list1">
-          <a href="/co/companyIntroUpdate">
+          <a href="/co/companyIntroUpdate/${principal.companyId}">
             <i class="fa-regular fa-paper-plane"></i>
             <span class="txt">기업소개 관리</span>
           </a>
@@ -42,7 +41,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           </a>
       </li>
       <li class="gnb_list3">
-        <a href="/co/companyInfo">
+        <a href="/co/companyInfo/${principal.companyId}">
           <i class="fa-regular fa-star"></i>
           <span class="txt">회원정보 관리(수정/탈퇴)</span>
         </a>
