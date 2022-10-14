@@ -1,4 +1,29 @@
-/* 기업정보 수정*/
+/* 기업회원 탈퇴*/
+$("#btn_delete").click(()=>{
+  Delete();
+});
+
+function Delete(){
+  
+  console.log("삭제");
+  let companyId = $("#companyId").val();
+
+  $.ajax("/co/companyDelete/" + companyId, {
+      type: "DELETE",
+      dataType: "json"
+
+  }).done((res) => {
+      if (res.code == 1) {
+          alert("기업회원탈퇴 완료");
+          console.log(res);
+          location.href="/";
+      } else {
+          alert("회원탈퇴에 실패하였습니다");
+      }
+  });          
+}
+
+ /* 기업정보 수정*/
 
 $("#btn_update").click(()=>{
   console.log("클릭됨");
@@ -59,6 +84,41 @@ function coLogin() {
       location.href = "/co/mainCompany";
     } else {
       alert("로그인 실패, 아이디 패스워드를 확인해주세요");
+    }
+  });
+}
+
+$("#btn_join").click(() => {
+  join();
+});
+
+function join() {
+  let data = {
+    companyNumber: $("#companyNumber").val(),
+    companyName: $("#companyName").val(),
+    companyEmail: $("#companyEmail").val(),
+    companyTel: $("#companyTel").val(),
+    companyLocation: $("#companyLocation").val(),
+    companyUsername: $("#companyUsername").val(),
+    companyPassword: $("#companyPassword").val(),
+    job_Id: $("input:checkbox[value='frontend']").is(":checked")
+  };
+  console.log(data);
+
+  $.ajax("/co/join", {
+    type: "POST",
+    dataType: "json",
+    data: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("회원가입 완료");
+      console.log(res);
+      location.href = "/co";
+    } else {
+      alert(res.msg);
     }
   });
 }

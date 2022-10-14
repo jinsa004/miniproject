@@ -1,6 +1,5 @@
 package site.metacoding.miniproject.web;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -113,7 +112,7 @@ public class CompanyController {
         return new CMRespDto<>(1, "수정성공", null);
     }
 
-    @PostMapping("/co/Join")
+    @PostMapping("/co/join")
     public @ResponseBody CMRespDto<?> companyJoin(@RequestBody JoinDto joinDto) {
         companyService.회원가입(joinDto);
         return new CMRespDto<>(1, "회원가입성공", null);

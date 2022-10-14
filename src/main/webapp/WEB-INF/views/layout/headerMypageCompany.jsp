@@ -14,8 +14,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/mypage.css" />
-    <script type="text/javascript" src="/js/main.js"></script>
-    <script type="text/javascript" src="/js/company.js"></script>
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -31,7 +29,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   </div>
   <ul class="gnb_left">
       <li class="gnb_list1">
-          <a href="/co/companyIntroUpdate">
+          <a href="/co/companyIntroUpdate/${principal.companyId}">
             <i class="fa-regular fa-paper-plane"></i>
             <span class="txt">기업소개 관리</span>
           </a>
