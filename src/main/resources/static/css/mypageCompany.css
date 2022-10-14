@@ -1125,3 +1125,69 @@ button.btn_delete:hover{
 .co_update .info_right{
     float: none;
 }
+.co_update .info_right_txt{
+    display: inline-block;
+    color: #666;
+    font-weight: 300;
+    width: 100px;
+    font-size: 16px;
+}
+.co_update .info_right_input{
+    display: inline-block;
+    width: 550px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+.co_update .basic_input{
+    margin-bottom: 15px;
+}
+.co_update .contact_input{
+    margin-bottom: 15px;
+}
+.co_update .login_input{
+    margin-bottom: 15px;
+}
+.co_update .update_btn{
+    display: flex;
+    justify-content: end;
+}
+.co_update .btn_group .delete_btn{
+    margin-left: 10px;
+}
+#btnCoInfoUpdate{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #4876ef;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnCoInfoUpdate:hover{
+    background: #0ccca4;
+}
+#btnCoInfoDelete{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnCoInfoDelete:hover{
+    background: #333;
+}
