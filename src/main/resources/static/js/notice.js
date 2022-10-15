@@ -6,6 +6,9 @@ $("#btn_insert_notice").click(() => {
   btnInsertNotice()
 });
 
+$("#btn_delete_notice").click(() => {
+  btnDeleteNotice()
+});
 
 function btnInsertNotice() {
   let data = {
@@ -32,15 +35,16 @@ function btnInsertNotice() {
     }
   }).done((res) => {
     if (res.code == 1) {
-      alert("공고등록에 성공하였습니다.");
+      alert("공고 등록에 성공하였습니다.");
       location.href = "/co/mainCompany";
     } else {
-      alert("공고등록에 실패하였습니다.");
+      alert("공고 등록에 실패하였습니다.");
     }
   });
 }
 
 function updateNotice() {
+
   let noticeId = $("#notice_id").val();
   let companyId = $("#company_id").val();
 
@@ -71,6 +75,24 @@ function updateNotice() {
       location.href = "/co/noticeService/" + companyId;
     } else {
       alert("내 공고 수정에 실패하였습니다");
+    }
+  });
+}
+
+function btnDeleteNotice() {
+
+  let noticeId = $("#notice_id").val();
+  let companyId = $("#company_id").val();
+
+  $.ajax("/co/noticeDelete/" + noticeId, {
+    type: "DELETE",
+    dataType: "json"
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("공고 삭제에 성공하였습니다.");
+      location.href = "/co/noticeService/" + companyId;
+    } else {
+      alert("공고 삭제에 실패하였습니다.");
     }
   });
 }

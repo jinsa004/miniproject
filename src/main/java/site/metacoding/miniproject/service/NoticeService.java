@@ -15,6 +15,11 @@ public class NoticeService {
 
     private final NoticeDao noticeDao;
 
+    public void 내공고삭제(Integer noticeId) {
+        Notice noticePS = noticeDao.findById(noticeId); // 영속화
+        noticeDao.deleteById(noticePS.getNoticeId());
+    }
+
     public List<Notice> 채용공고전체목록보기() {
         return noticeDao.findAll();
     }

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -103,7 +104,12 @@ public class NoticeController {
     public @ResponseBody CMRespDto<?> updateResume(@PathVariable Integer noticeId,
             @RequestBody NoticeUpdateDto noticeUpdateDto) {
         noticeService.이력서수정(noticeId, noticeUpdateDto);
-        return new CMRespDto<>(1, "이력서 등록 성공", null);
+        return new CMRespDto<>(1, "공고 수정 성공", null);
     }
 
+    @DeleteMapping("co/noticeDelete/{noticeId}")
+    public @ResponseBody CMRespDto<?> deleteNotice(@PathVariable Integer noticeId) {
+        noticeService.내공고삭제(noticeId);
+        return new CMRespDto<>(1, "공고 삭제 성공", null);
+    }
 }
