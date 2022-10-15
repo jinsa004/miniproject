@@ -7,7 +7,7 @@
           <div id="notice_info" class="form">
             <div class="btn_group_delete">
               <div class="delete_btn">
-                <button type="button" onclick="location.href='#'">공고삭제</button>
+                <button id="btn_delete_notice" type="button">공고삭제</button>
               </div>
             </div>
             <!-- delete_btn -->
