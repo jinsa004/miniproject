@@ -219,6 +219,20 @@
     border-radius: 5px;
     transition: all 0.4s;
 }
+.btn_resume_option button{
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    background: #4876ef;
+    color: #fff;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    letter-spacing: -0.04em;
+    transition: all 0.4s;
+}
 .btn_resume_option span:first-child{
     margin-bottom: 10px;
 }
@@ -235,9 +249,11 @@
     line-height: 40px;
     transition: all 0.4s;
 }
+.btn_resume_option button:hover{
+    background: #0ccca4;
+}
 .btn_resume_option span:hover{
     background: #0ccca4;
-
 }
 .btn_resume_option span:hover a{
     color: #fff;

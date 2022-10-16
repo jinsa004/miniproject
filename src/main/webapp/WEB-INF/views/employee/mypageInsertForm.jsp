@@ -24,7 +24,7 @@
                     </ul>
                   </label>
                   <div class="btn_resume_option">
-                    <span><a href="#">수정하기</a></span>
+                    <span><button type="button">수정하기</button></span>
                     <span><a href="#">삭제하기</a></span>
                   </div><!-- .btn_resume_option -->
                 </li><!-- .resume_cont -->
@@ -45,7 +45,7 @@
                     </ul>
                   </label>
                   <div class="btn_resume_option">
-                    <span><a href="#">수정하기</a></span>
+                    <span><button type="button">수정하기</button></span>
                     <span><a href="#">삭제하기</a></span>
                   </div><!-- .btn_resume_option -->
                 </li><!-- .resume_cont -->
@@ -66,7 +66,7 @@
                     </ul>
                   </label>
                   <div class="btn_resume_option">
-                    <span><a href="#">수정하기</a></span>
+                    <span><button type="button">수정하기</button></span>
                     <span><a href="#">삭제하기</a></span>
                   </div><!-- .btn_resume_option -->
                 </li><!-- .resume_cont -->
