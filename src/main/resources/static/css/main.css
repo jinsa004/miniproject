@@ -275,6 +275,7 @@ nav ul li a:hover{
 
 .notice_box{
     margin-top: 25px;   
+    position: relative;
 }
 .notice_inner1{}
 
@@ -1072,4 +1073,242 @@ input.login_check{
     left: 0;
     width: 18px;
     height: 18px;
+}
+
+
+
+/* ============= 기업 소개 구독 페이지 ================== */
+#co_Intro_wrap{
+    position: relative;
+    width: 100%;
+}
+#co_Intro_wrap .container{
+    margin-top: 25px;
+    text-align: left;
+    position: relative;
+    padding-bottom: 120px;
+}
+.intro_update input{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.intro_update button{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#co_Intro_wrap .info_form{
+    background:rgba(238, 238, 238, 0.3);
+}
+.title_update h1{
+    font-size: 30px;
+    line-height: 34px;
+}
+.title_input input{
+    width: 1140px;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 32px;
+    color: #222;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 60px;
+}
+.title_input::placeholder{
+    color: #eee;
+}
+.intro_update h2{
+    font-size: 24px;
+    color: #666;
+    line-height: 30px;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    display: inline-block;
+    padding-right: 10px;
+}
+.intro_update .form_title span{
+    display: inline-block;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #666;
+}
+.info_form{
+    width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    padding: 50px 80px 40px;
+    background: rgba(238, 238, 238, 0.4);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+.logo_form .info_myimg{
+    display: inline-block;
+    width: 340px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: top;
+}
+.logo_form .info_myimg img{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.logo_form .logo_img_right{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    padding-top: 81px;
+}
+.info_form .info_right_txt{
+    display: inline-block;
+    color: #666;
+    font-weight: 300;
+    width: 100px;
+    font-size: 16px;
+}
+.info_form .info_right_input{
+    display: inline-block;
+    width: 550px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+.basic_input{
+    margin-bottom: 18px;
+}
+.co_Info_Detail_title{
+    font-size: 15px;
+    font-weight: 300;
+    color: #666;
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+.co_Info_Detail_txt{
+    font-weight: normal;
+    letter-spacing: -0.04em;
+    font-size: 17px;
+    display: inline-block;
+    vertical-align: top;
+}
+.info_right_txt2{
+    float: left;
+}
+.basic_location{
+    float: left;
+}
+.location_map{
+    width: 380px;
+    height: 330px;
+    background: #ddd;
+    text-align: center;
+}
+.location_info{
+    margin-top: 20px;
+}
+.location_info input{
+    display: block;
+    width: 365px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.resume_part{
+    padding-top: 10px;
+}
+.resume_part .resume_part_select{
+    text-align: center;
+    background: #e9e9e9;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-right: 10px;
+    line-height: 40px;
+}
+
+/* 버튼 */
+.btn_group{
+    position: absolute;
+    top: 84px;
+    right: 0;
+}
+.btn_group .fa-regular{
+    color: #4876ef;
+    transition: all 0.3s;
+    margin-left: -4px;
+}
+.fa-star::before{
+    
+}
+.subscribe_btn button{
+    display: block;
+    width: 110px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50px;
+    border: 1px solid #4876ef;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    letter-spacing: 0em;
+    text-align: center;
+    line-height: 30px;
+}
+.subscribe_btn button .txt{
+    color: #4876ef;
+    padding-left: 0px;
+    font-size: 17px;
+    transition: all 0.3s;
+    font-weight: normal;
+}
+/* .subscribe_btn button::before{
+    display: block;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background: url(/img/icon_star.png) no-repeat -90px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.subscribe_btn button:hover{
+    border-color: #0ccca4;
+    background: #0ccca4;
+    animation: btn 0.5s linear;
+}
+@keyframes btn {
+    10%{ transform:translateX(2px) rotate(-2deg);}
+	30%{ transform:translateX(2px) rotate(2deg);}
+	40%{ transform:translateX(-2px) rotate(-2deg);}	
+	50%{ transform:translateX(1px) rotate(1deg);}
+	60%{ transform:translateX(-1px) rotate(-1deg);}
+	70%{ transform:translateX(1px) rotate(1deg);}
+	80%{ transform:translateX(-1px) rotate(-1deg);}
+	90%{ transform:translateX(0.3px) rotate(0);}
+	100%{ transform:translateX(-0.3px) rotate(0);}
+}
+.subscribe_btn button:hover .fa-regular{
+    color: #fff;
+
+}
+.subscribe_btn button:hover .txt{
+    color: #fff;
 }
