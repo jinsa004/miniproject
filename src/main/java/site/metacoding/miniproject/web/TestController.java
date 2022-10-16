@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
 
+
     @GetMapping("/co/resumeList")
     public String 공고지원자리스트() {
         return "company/resumeList";

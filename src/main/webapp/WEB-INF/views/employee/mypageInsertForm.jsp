@@ -4,7 +4,7 @@
     <div id="content_wrap">
       <div class="cont_mypage">
         <h2>이력서 목록</h2>
-        <div class="notice_box2">
+        <div class="notice_box3">
           <div class="mypage_resume_list">
             <div class="resume_form">
               <ul>
@@ -24,8 +24,8 @@
                     </ul>
                   </label>
                   <div class="btn_resume_option">
-                    <span><button type="button">수정하기</button></span>
-                    <span><a href="#">삭제하기</a></span>
+                    <span><a href="/emp/resumeUpdate/1">수정하기</a></span>
+                    <button type="button">삭제하기</button>
                   </div><!-- .btn_resume_option -->
                 </li><!-- .resume_cont -->
 
@@ -45,8 +45,8 @@
                     </ul>
                   </label>
                   <div class="btn_resume_option">
-                    <span><button type="button">수정하기</button></span>
-                    <span><a href="#">삭제하기</a></span>
+                    <span><a href="/emp/resumeUpdate/1">수정하기</a></span>
+                    <button type="button">삭제하기</button>
                   </div><!-- .btn_resume_option -->
                 </li><!-- .resume_cont -->
 
@@ -66,8 +66,8 @@
                     </ul>
                   </label>
                   <div class="btn_resume_option">
-                    <span><button type="button">수정하기</button></span>
-                    <span><a href="#">삭제하기</a></span>
+                    <span><a href="/emp/resumeUpdate/1">수정하기</a></span>
+                    <button type="button">삭제하기</button>
                   </div><!-- .btn_resume_option -->
                 </li><!-- .resume_cont -->
               </ul><!-- #tab-1 -->

@@ -3,6 +3,7 @@
 
     <div id="resume_wrap">
       <div class="container">
+        <h1>이력서 등록하기</h1>
         <div class="resume_update">
           <input id="employeeId" type="hidden" value="${principal.employeeId}" />
           <div class="resume_title">
@@ -32,7 +33,7 @@
                 </div>
               </div><!-- .info_left -->
               <div class="info_right">
-                <input id="employeeId" type="hidden" value="${employeePS.employeeId}" />
+
                 <dl class="info_name">
                   <dd class="name">
                     <span class="info_right_txt">이름</span>
@@ -117,7 +118,7 @@
                   <div class="edu_input">
                     <span class="info_right_txt">전공계열</span>
                     <input type="text" id="highschool_major" name="highschool_major" class="box_input info_right_input"
-                      placeholder="전공계열" />
+                      placeholder="전공계열을 입력하세요" />
                   </div>
                 </div>
               </div>
@@ -145,14 +146,14 @@
                   <div class="edu_input">
                     <span class="info_right_txt">전공</span>
                     <input type="text" id="univ_major" name="univ_major" class="box_input info_right_input"
-                      placeholder="전공 입력" />
+                      placeholder="전공을 입력하세요" />
                   </div>
                 </div>
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">졸업학점</span>
                     <input type="text" id="grades" name="grades" class="box_input info_right_input2"
-                      placeholder="학점 입력" />
+                      placeholder="학점을 입력하세요" />
                     <span class="grade">/ 4.5</span>
                   </div>
                 </div>
@@ -187,7 +188,7 @@
                   <div class="career_input">
                     <span class="info_right_txt">재직기간</span>
                     <input type="text" id="career_period" name="start_date" class="box_input info_right_input"
-                      placeholder="신입 or 근무년수 입력" />
+                      placeholder="근무년수를 입력하세요" />
                   </div>
                 </div>
                 <div class="career_row">

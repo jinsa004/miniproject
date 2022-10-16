@@ -22,7 +22,7 @@
       <div id="mypage_co_wrap">
         <div id="gnb_mypage">
           <div class="logo">
-            <a href="/co/main">COMPANY_4</a>
+            <a href="/co/mainCompany">COMPANY_4</a>
           </div>
           <ul class="gnb_left">
             <li class="gnb_list1">

@@ -74,8 +74,8 @@
 }
 .cont_mypage{
     position: relative;
-    margin: 95px auto 130px;
-    padding-left: 280px;
+    margin: 80px auto 130px;
+    padding-left: 200px;
     text-align: left;
     width: 1200px;
 }
@@ -101,6 +101,9 @@
 }
 
 .notice_box2{
+    padding-top: 50px;
+}
+.notice_box3{
     padding-top: 50px;
 }
 .mypage_resume_list .resume_form{
@@ -215,9 +218,10 @@
     display: block;
     width: 150px;
     height: 40px;
-    background: #4876ef;
+    background: #fff;
     border-radius: 5px;
     transition: all 0.4s;
+    border: 1px solid #4876ef;
 }
 .btn_resume_option button{
     display: block;
@@ -245,7 +249,7 @@
 }
 .btn_resume_option span a{
     font-size: 15px;
-    color: #fff;
+    color: #4876ef;
     line-height: 40px;
     transition: all 0.4s;
 }
@@ -253,10 +257,11 @@
     background: #0ccca4;
 }
 .btn_resume_option span:hover{
-    background: #0ccca4;
+    border-color: #0ccca4;
+    background: #0ccca60a;
 }
 .btn_resume_option span:hover a{
-    color: #fff;
+    color: #0ccca4;
 }
 .btn_resume_option span:last-child:hover{
     background: none;
@@ -308,6 +313,14 @@
     padding-top: 80px;
     padding-bottom: 140px;
     padding-left: 200px;
+}
+#resume_wrap h1{
+    text-align: left;
+    font-size: 30px;
+    line-height: 38px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 50px;
 }
 .resume_update{
     text-align: left;
@@ -561,7 +574,38 @@ button.file_submit:hover{
 #btnInsertResume:hover{
     background: #4876ef;
 }
-
+#btnUpdateResume{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #4876ef;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnUpdateResume:hover{
+    background: #0ccca4;
+}
+#btnResumeDelete{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnResumeDelete:hover{
+    background: #333;
+}
 
 /* =================== 회원정보 수정 ======================== */
 .users_update{
