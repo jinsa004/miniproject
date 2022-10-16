@@ -18,16 +18,17 @@ public class Resume {
     private Integer employeeId;
     private String resumeImageId;
     private String highschoolName;
-    private Integer highschoolStartdate;
-    private Integer highschoolEnddate;
+    private String highschoolStartdate;
+    private String highschoolEnddate;
     private String highschoolMajor;
     private String univName;
-    private Integer univStartdate;
-    private Integer univEnddate;
+    private String univStartdate;
+    private String univEnddate;
     private String univMajor;
     private float univGrades;
     private String prevCo;
     private String careerPeriod;
+
     // 신입지원이라면 신입지원이라고 입력 받게 해야 함
     private String careerPosition;
     private String careerDepartment;

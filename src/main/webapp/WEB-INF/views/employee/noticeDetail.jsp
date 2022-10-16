@@ -102,7 +102,7 @@
                       <input type="radio" name="resume_select" id="resume_select" value="${resumePS.resumeId}" />
                     </span>
                     <label for="resume_select" class="resume_select_box">
-                      <span class="tit">${resumePS.resumeName}</span>
+                      <span class="tit">${resumePS.resumeTitle}</span>
                       <span class="career">${resumePS.careerPeriod}</span>
                       <span class="part">${resumePS.jobName}</span>
                     </label>

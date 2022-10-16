@@ -28,7 +28,7 @@
                           ${resumeAllList.employeeName}
                         </span>
                         <div class="resume_txt">
-                          <span class="resume_title">${resumeAllList.resumeName}</span>
+                          <span class="resume_title">${resumeAllList.resumeTitle}</span>
                           <div class="resume_option">
                             <ul class="list_option">
                               <li class="career">

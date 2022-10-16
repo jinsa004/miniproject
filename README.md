@@ -143,11 +143,9 @@ insert into employee(employee_name, employee_birth, employee_sex, employee_usern
 VALUES('전영재', '1993-08-05', '남', 'wjsdudwo', '1234', 'wjsdudwox@naver.com', '010-1111-2222', '부산', 2);
 insert into employee(employee_name, employee_birth, employee_sex, employee_username, employee_password, employee_email, employee_tel, employee_location, job_id) 
 VALUES('정회지', '1999-11-22', '여', 'hj12', '1234', 'hj12@naver.com', '010-2222-3333', '부산', 1);
-insert into resume(resume_name, employee_id, resume_image, highschool_name, highschool_startdate, highschool_enddate, highschool_major, 
-univ_name, univ_startdate, univ_enddate, univ_major, univ_grades, prev_co, career_period, career_position, career_department, career_task, job_id, is_main, created_at) 
+insert into resume(resume_title, employee_id, resume_image_id, highschool_name, highschool_startdate, highschool_enddate, highschool_major, univ_name, univ_startdate, univ_enddate, univ_major, univ_grades, prev_co, career_period, career_position, career_department, career_task, job_id, is_main, created_at) 
 VALUES('완성하겠습니다.', 1, NULL, "영운고", '2009-03-01', '2012-02-01', "문과", NULL, NULL, NULL, NULL, NULL, "김해여객", "1년", "주임", "영업관리부", "사무업무", 1, 0, NOW());
-insert into resume(resume_name, employee_id, resume_image, highschool_name, highschool_startdate, highschool_enddate, highschool_major, 
-univ_name, univ_startdate, univ_enddate, univ_major, univ_grades, prev_co, career_period, career_position, career_department, career_task, job_id, is_main, created_at) 
+insert into resume(resume_title, employee_id, resume_image_id, highschool_name, highschool_startdate, highschool_enddate, highschool_major, univ_name, univ_startdate, univ_enddate, univ_major, univ_grades, prev_co, career_period, career_position, career_department, career_task, job_id, is_main, created_at) 
 VALUES('최선을 다하겠습니다..', 2, NULL, NULL, NULL, NULL, NULL, "서면대", '2012-03-01', '2018-02-01', "영어영문학과", 3.3, "보성엔진", "1년", "사원", "해외영업", "무역관리", 2, 0, NOW());
 INSERT INTO company
 (company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
@@ -159,13 +157,13 @@ INSERT INTO company
 (company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
 VALUES(117242, 'LG전자', 'veda@lgelectronic.com', '02-5522-1854', '부산시 부산진구 어디어디', 1, 'LGman1234', 'q1w2e3r4!@');
 INSERT INTO intro
-(company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image)
+(company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
 VALUES(1, '회사소개입니다', '1998-02-24', 'flutter 신규 앱 개발', '2600만원', '야근거의없음, 월1회 회식', '우리회사는 어쩌고저쩌고 이렇습니다', '부산시 부산진구 어디어디', 3, NULL);
 INSERT INTO intro
-(company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image)
+(company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
 VALUES(2, '회사소개입니당', '2007-07-01', 'DB 관리', '2400만원', '야근거의없음, 분기당 1회 회식', '우리회사는 어쩌고저쩌고 저렇습니다', '부산시 부산진구 어디어디', 2, NULL);
 INSERT INTO intro
-(company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image)
+(company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
 VALUES(3, '회사소개요', '1995-11-20', '웹디자인', '2800만원', '전자레인지 있음, 주5회 회식', '우리회사는 어쩌고저쩌고 그렇다', '부산시 부산진구 어디어디', 1, NULL);
 INSERT INTO notice(company_id, notice_title, notice_period, notice_dept, notice_position, notice_task, notice_sal, notice_qual, notice_career, notice_wellfare, job_id)
 VALUES(1, '백엔드 개발자 모집중', '2022-10-30', '백엔드개발', '사원', 'java 코딩', '회사 내규에 따름', '대졸', '신입', '전자레인지 있음, 커피 제공', 2);

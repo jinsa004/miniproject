@@ -10,7 +10,7 @@
   </insert>
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.resume.Resume">
-		SELECT e.employee_name, r.resume_name, r.career_period, j.job_name, r.resume_id
+		SELECT e.employee_name, r.resume_title, r.career_period, j.job_name, r.resume_id
 		FROM resume r
 		JOIN employee e
 		ON r.employee_id=e.employee_id
