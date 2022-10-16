@@ -15,14 +15,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.check.employee.EmpCheck;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.domain.subscribe.Subscribe;
+import site.metacoding.miniproject.service.CheckService;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.service.JobService;
@@ -40,6 +43,7 @@ public class EmployeeController {
     private final ResumeService resumeService;
     private final IntroService introService;
     private final JobService jobService;
+    private final CheckService checkService;
     private final HttpSession session;
 
     @PostMapping("/emp/login")
@@ -154,9 +158,10 @@ public class EmployeeController {
     // }
 
     @PostMapping("/emp/join")
-    public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee) {
+    public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee,
+            @RequestParam(value = "checkBoxArr[]") List<Integer> jobId) {
         employeeService.employeeJoin(employee);
-        checkboxService.insert();
+        checkService.insert(employee.getEmployeeId(), jobId);
         return new CMRespDto<>(1, "회원가입성공", null);
     }
 
