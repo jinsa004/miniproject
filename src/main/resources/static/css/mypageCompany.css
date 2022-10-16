@@ -498,6 +498,14 @@ button.file_submit{
     border-radius: 10px;
     box-sizing: border-box;
 }
+.info_form3{
+    width: 700px;
+    height: 120px;
+    padding: 50px 20px 40px;
+    background: rgba(238, 238, 238, 0.4);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
 .info_form2 div{
     margin-bottom: 0;
 }
@@ -888,6 +896,9 @@ button.file_submit{
 .btn_co_recruit_insert .btn_update:hover{
     background: #0ccca4;
 }
+.btn_co_recruit_insert button.btn_delete{
+    padding: 19px 0;
+}
 button.btn_delete:hover{
     background: #333;
 }
@@ -1053,7 +1064,7 @@ button.btn_delete:hover{
     display: block;
 }
 .company_location .location_info input:nth-child(2){
-    display: iblock;
+    display: block;
     width: 180px;
     text-align: center;
     padding-right: 20px;
@@ -1064,6 +1075,9 @@ button.btn_delete:hover{
 }
 .company_location .location_info input:last-child{
     margin-bottom: 0;
+}
+.notice_box3 div#field{
+    padding-bottom: 0;
 }
 
 
