@@ -6,7 +6,7 @@
           <div class="intro_update">
             <div class="recruit_detail_box cf">
               <div class="title_update">
-                <h1>공고 수정하기</h1>
+                <h1>기업 채용 공고 수정하기</h1>
               </div>
               <div class="notice_box rd_left notice_box3">
                 <div class="notice_title">
