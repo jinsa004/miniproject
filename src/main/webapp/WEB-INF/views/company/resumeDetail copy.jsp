@@ -12,7 +12,7 @@
             </div>
             <div class="info_form">
               <div class="info_img">
-                <img src="assets/resume/face1.jpg" width="100" height="140" />
+                ㅎ
               </div>
               <dl class="info_name">
                 <dd class="name">${resume.employeeName}</dd>

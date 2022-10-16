@@ -96,19 +96,19 @@
                           <tbody>
                             <tr>
                               <td class="resume_table_center" rowspan="1">
-                                2022.10.14 - 2023.02.14
+                                2022.10.14 - 2023.02.14 ${resume.univStartdate} - ${resume.univEnddate}
                               </td>
                               <td class="resume_table_center">
-                                그린컴퓨터
+                                그린컴퓨터 ${resume.univName}
                               </td>
                               <td class="resume_table_center">
-                                전공
+                                전공 ${resume.univMajor}
                               </td>
                               <td class="resume_table_center" rowspan="1">
                                 졸업
                               </td>
                               <td class="resume_table_center">
-                                4.35 /4.5
+                                ${resume.univGrade} /4.5
                               </td>
                             </tr>
                           </tbody>
@@ -143,22 +143,22 @@
                           <tbody>
                             <tr>
                               <td class="resume_table_center" rowspan="2">
-                                2022.10.14 - 2023.02.14
+                                2022.10.14 - 2023.02.14 ${resume.careerPeriod}
                               </td>
                               <td class="resume_table_center">
-                                그린컴퓨터
+                                ${resume.prevCo} 그린컴퓨터
                               </td>
                               <td class="resume_table_center">
-                                사원
+                                사원 ${resume.careerPosition}
                               </td>
                               <td class="resume_table_center" rowspan="1">
-                                풀스택
+                                개발 ${resume.careerDepartment}
                               </td>
                             </tr>
                             <tr>
                               <td class="" colspan="3">
                                 <p>
-                                  <span class="table_icon">담당업무</span> 소프트웨어 개발, UX/UI
+                                  <span class="table_icon">담당업무</span> 소프트웨어 개발, UX/UI ${resume.careerTask}
                                 </p>
                               </td>
                             </tr>
