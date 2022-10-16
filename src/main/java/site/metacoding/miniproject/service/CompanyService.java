@@ -43,4 +43,14 @@ public class CompanyService {
   public void 기업회원탈퇴(Integer companyId) {
     companyDao.deleteById(companyId);
   }
+
+  public boolean 회사유저네임중복확인(String companyUsername) {
+		Company CompanyPS = companyDao.findByCompanyUsername(companyUsername);
+		if (CompanyPS == null) { 
+      System.out.println(companyPS);
+			return false;
+		} else { 
+			return true;
+		}
+	}
 }

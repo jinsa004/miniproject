@@ -105,8 +105,8 @@
                                         <label for="id">아이디</label>
                                     </h3>
                                     <span>
-                                        <input id="companyUsername" type="text" placeholder="아이디를 입력하세요."
-                                            maxlength="20" />
+                                        <input id="companyUsername" type="text" placeholder="아이디를 입력하세요." maxlength="20" />
+			                                  <button id="btnCompanyUsernameSameCheck" class="btn btn-warning" type="button">유저네임 중복체크</button>
                                     </span>
                                 </div>
                                 <div class="join_pw join_box">
@@ -123,7 +123,7 @@
                                         <label for="password2">비밀번호 재확인</label>
                                     </h3>
                                     <span>
-                                        <input id="password2" type="password" placeholder="패스워드를 입력하세요." name="password"
+                                        <input id="companyPasswordSame" type="password" placeholder="패스워드를 입력하세요." name="password"
                                             maxlength="20" />
                                     </span>
                                 </div>

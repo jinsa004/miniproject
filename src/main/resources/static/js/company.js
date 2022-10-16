@@ -20,6 +20,11 @@ $("#btn_login").click(()=>{
   coLogin();
 });
 
+// 유저네임 중복 체크
+$("#btnCompanyUsernameSameCheck").click(() => {
+	checkUsername();
+});
+
 
 /* 기업회원 탈퇴*/
 
@@ -105,6 +110,25 @@ function coLogin() {
 
 // 기업회원가입
 function join() {
+
+  if (isCompanyUsernameSameCheck == false) {
+		alert("아이디 중복 체크를 진행해주세요");
+		return;
+	}
+
+  if (companyPasswordSameCheck() == true) {
+		alert("비밀번호가 일치하지 않습니다.")
+		return;
+	}
+
+  if(emailCheck() == false){
+    alert("이메일 형식이 맞지 않습니다.")
+    return;
+  }
+  
+
+
+
   let data = {
     companyNumber: $("#companyNumber").val(),
     companyName: $("#companyName").val(),
@@ -133,3 +157,54 @@ function join() {
     }
   });
 }
+
+let isCompanyUsernameSameCheck = false;
+
+function checkUsername() {
+	
+	let companyUsername = $("#companyUsername").val();
+	
+	$.ajax(`/company/usernameSameCheck?username=${companyUsername}`, {
+		type: "GET",
+		dataType: "json",
+		async: true
+	}).done((res) => { 	
+		console.log(res);
+		if (res.code == 1) {	
+			if (res.data == false) {
+        console.log(res.data)
+				alert("아이디가 중복되지 않았습니다.")
+				isCompanyUsernameSameCheck = true;
+			} else {
+				alert("아이디가 중복되었어요. 다른 아이디를 사용해주세요")
+				isCompanyUsernameSameCheck = false;
+				$("#companyUsername").val(""); 
+			}
+		}
+	});
+}
+
+
+function companyPasswordSameCheck() {
+	let companyPassword = $("#companyPassword").val();
+	let companyPasswordSame = $("#companyPasswordSame").val();
+	if (companyPassword != companyPasswordSame) {
+		companyPassword.value = "";
+		companyPasswordSame.value = "";
+		return true;
+	} else{
+		return false;
+	}
+}
+
+function emailCheck() {
+	let email = $("#email").val();
+	let form = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+	if (form.test(email)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+

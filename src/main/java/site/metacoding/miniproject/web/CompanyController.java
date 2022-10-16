@@ -118,6 +118,12 @@ public class CompanyController {
         return new CMRespDto<>(1, "회원가입성공", null);
     }
 
+    @GetMapping("/company/usernameSameCheck")
+    public @ResponseBody CMRespDto<Boolean> usernameSameCheck(String companyUsername) {
+      boolean isSame = companyService.회사유저네임중복확인(companyUsername);
+      return new CMRespDto<>(1, "성공", isSame);
+    }
+
     @GetMapping("/co/logout")
     public String Companylogout() {
         session.invalidate();
