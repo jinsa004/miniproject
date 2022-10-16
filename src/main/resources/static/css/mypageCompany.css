@@ -357,7 +357,7 @@
 .logo_form .info_myimg{
     display: inline-block;
     width: 340px;
-    height: auto;
+    height: 164px;
     border: 1px solid #ddd;
     border-radius: 10px;
     text-align: center;
@@ -535,6 +535,22 @@ button.file_submit{
 .update_btn{
     display: flex;
     justify-content: end;
+}
+#btnInsertCompanyInfo{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #4876ef;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnInsertCompanyInfo:hover{
+    background: #0ccca4;
 }
 #btnInsertCompany{
     display: block;
