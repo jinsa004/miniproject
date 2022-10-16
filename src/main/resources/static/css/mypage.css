@@ -431,13 +431,22 @@ button.file_submit:hover{
 }
 .info_form h3{
     padding: 40px 0 30px;
+    color:#666;
+    font-size: 18px;
 }
 .edu_form div{
     margin-bottom: 15px;
 }
+.edu_input .icon{
+    display: inline-block;
+    color: #333;
+    font-size: 17px;
+    line-height: 17px;
+    padding: 0 10px;
+}
 .info_form .info_right_input2{
     display: inline-block;
-    width: 265px;
+    width: 233px;
     height: 48px;
     line-height: 48px;
     border-radius: 8px;
@@ -445,6 +454,12 @@ button.file_submit:hover{
     border: 1px solid #ddd;
     padding-left: 15px;
     font-size: 16px;
+    padding-right: 20px;
+}
+.edu_input .grade{
+    color: #333;
+    font-size: 17px;
+    padding-left: 5px;
 }
 
 

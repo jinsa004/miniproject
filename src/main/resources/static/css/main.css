@@ -1241,7 +1241,7 @@ input.login_check{
 }
 
 /* 버튼 */
-.btn_group{
+#co_Intro_wrap .btn_group{
     position: absolute;
     top: 84px;
     right: 0;

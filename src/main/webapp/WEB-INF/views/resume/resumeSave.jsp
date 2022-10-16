@@ -106,9 +106,10 @@
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">재학기간</span>
-                    <input type="text" id="highschool_start_date" name="start_date" class="box_input info_right_input2"
+                    <input type="date" id="highschool_start_date" name="start_date" class="box_input info_right_input2"
                       placeholder="입학년도" />
-                    <input type="text" id="highschool_end_date" name="end_date" class="box_input info_right_input2"
+                    <span class="icon">-</span>
+                    <input type="date" id="highschool_end_date" name="end_date" class="box_input info_right_input2"
                       placeholder="졸업년도" />
                   </div>
                 </div>
@@ -135,6 +136,7 @@
                     <span class="info_right_txt">재학기간</span>
                     <input type="text" id="univ_start_date" name="start_date" class="box_input info_right_input2"
                       placeholder="입학년도" />
+                    <span class="icon">-</span>
                     <input type="text" id="univ_end_date" name="end_date" class="box_input info_right_input2"
                       placeholder="졸업년도" />
                   </div>
@@ -151,7 +153,7 @@
                     <span class="info_right_txt">졸업학점</span>
                     <input type="text" id="grades" name="grades" class="box_input info_right_input2"
                       placeholder="학점 입력" />
-                    <span>/ 4.5</span>
+                    <span class="grade">/ 4.5</span>
                   </div>
                 </div>
 
@@ -229,25 +231,25 @@
                       </em>
                     </li>
                     <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name=""/>
+                      <input type="checkbox" class="login_check" id="jobId" name="" />
                       <em>
                         <label for="c_part_front">백엔드</label>
                       </em>
                     </li>
                     <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name=""/>
+                      <input type="checkbox" class="login_check" id="jobId" name="" />
                       <em>
                         <label for="c_part_front">풀스택</label>
                       </em>
                     </li>
                     <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name=""/>
+                      <input type="checkbox" class="login_check" id="jobId" name="" />
                       <em>
                         <label for="c_part_front">안드로이드</label>
                       </em>
                     </li>
                     <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name=""/>
+                      <input type="checkbox" class="login_check" id="jobId" name="" />
                       <em>
                         <label for="c_part_front">IOS</label>
                       </em>
