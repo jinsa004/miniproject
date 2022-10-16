@@ -194,7 +194,7 @@
                   <h2>관심분야</h2>
                   <c:forEach var="jobPS" items="${jobPS}">
                     <div class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="job_Id" name="job_checkbox"
+                      <input type="checkbox" class="login_check" class="job_Id" name="job_checkbox"
                         value="${jobPS.jobId}" />
                       <em>
                         <label for="c_part_front">${jobPS.jobName}</label>

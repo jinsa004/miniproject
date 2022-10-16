@@ -162,6 +162,9 @@ public class EmployeeController {
             @RequestParam(value = "checkBoxArr[]") List<Integer> jobIds) {
         employeeService.employeeJoin(employee);
         checkService.checkboxInsert(employee.getEmployeeId(), jobIds);
+        System.out.println("=================");
+        System.out.println(employee.getEmployeeId());
+        System.out.println("=================");
         return new CMRespDto<>(1, "회원가입성공", null);
     }
 

@@ -34,8 +34,7 @@ function join() {
     employeeName: $("#employeeName").val(),
     employeeBirth: $("#employeeBirth").val(),
     employeeTel: $("#employeeTel").val(),
-    employeeLocation: $(".employeeLocation").val(),
-    job_Id: $("input:checkbox[value='frontend']").is(":checked"),
+    employeeLocation: $(".employeeLocation").val()
   };
   $.ajax("/emp/join", {
     type: "POST",
@@ -43,7 +42,8 @@ function join() {
     data: JSON.stringify(data), // 요청데이터 타입명
     headers: {
       "Content-Type": "application/json; charset=utf-8", // spring에게 알려주는 것 - json으로 보내겠다. mime type - 필수
-    }
+    },
+    async: false
   }).done((res) => {
     if (res.code == 1) {
       alert("회원가입 성공");
@@ -67,7 +67,8 @@ function jobJoin() {
     dataType: "json", //응답데이터 타입명
     data: {
       checkBoxArr: checkBoxArr
-    }
+    },
+    async: false
   }).done((res) => {
     if (res.code == 1) {
       alert("관심분야 등록 성공");
