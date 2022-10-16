@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.domain.resumeImage;
+package site.metacoding.miniproject.domain.Image.resume;
 
 import java.sql.Timestamp;
 import lombok.Getter;
