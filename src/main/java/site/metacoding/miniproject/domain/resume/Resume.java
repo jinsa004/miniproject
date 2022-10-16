@@ -14,9 +14,9 @@ import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
 @Getter
 public class Resume {
     private Integer resumeId;
-    private String resumeName; // resumeTitle로
+    private String resumeTitle;
     private Integer employeeId;
-    private String resumeImage;
+    private String resumeImageId;
     private String highschoolName;
     private Integer highschoolStartdate;
     private Integer highschoolEnddate;
@@ -48,8 +48,8 @@ public class Resume {
     private String jobName;
 
     public void update(UpdateDto updateDto) {
-        this.resumeName = updateDto.getResumeName();
-        this.resumeImage = updateDto.getResumeImage();
+        this.resumeTitle = updateDto.getResumeTitle();
+        this.resumeImageId = updateDto.getResumeImageId();
         this.highschoolName = updateDto.getHighschoolName();
         this.highschoolStartdate = updateDto.getHighschoolStartdate();
         this.highschoolEnddate = updateDto.getHighschoolEnddate();
