@@ -189,4 +189,28 @@ insert into application(resume_id, notice_id, created_at)
 VALUES(1,2,NOW());
 insert into application(resume_id, notice_id, created_at) 
 VALUES(2,1,NOW());
+insert into resume_image(origin_image_name, new_image_name, image_path, created_at) 
+VALUES("100100101", "10101110", "D:/user/resume/image", NOW());
+insert into resume_image(origin_image_name, new_image_name, image_path, created_at) 
+VALUES("100100111", "10101111", "D:/user/resume/image", NOW());
+insert into resume_image(origin_image_name, new_image_name, image_path, created_at)
+VALUES("100101101", "10111110", "D:/user/resume/image", NOW());
+insert into intro_image(origin_image_name, new_image_name, image_path, created_at) 
+VALUES("110101101", "11111110", "D:/user/notice/image", NOW());
+insert into intro_image(origin_image_name, new_image_name, image_path, created_at) 
+VALUES("101101101", "10111111", "D:/user/notice/image", NOW());
+insert into intro_image(origin_image_name, new_image_name, image_path, created_at) 
+VALUES("11101101", "11001110", "D:/user/notice/image", NOW());
+insert into emp_check(employee_id, job_id) 
+VALUES(1, 1);
+insert into emp_check(employee_id, job_id) 
+VALUES(2, 2);
+insert into emp_check(employee_id, job_id) 
+VALUES(3, 1);
+insert into co_check(company_id, job_id) 
+VALUES(1, 1);
+insert into co_check(company_id, job_id) 
+VALUES(2, 2);
+insert into co_check(company_id, job_id) 
+VALUES(3, 2);
 ```
