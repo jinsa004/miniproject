@@ -159,9 +159,9 @@ public class EmployeeController {
 
     @PostMapping("/emp/join")
     public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee,
-            @RequestParam(value = "checkBoxArr[]") List<Integer> jobId) {
+            @RequestParam(value = "checkBoxArr[]") List<Integer> jobIds) {
         employeeService.employeeJoin(employee);
-        checkService.insert(employee.getEmployeeId(), jobId);
+        checkService.checkboxInsert(employee.getEmployeeId(), jobIds);
         return new CMRespDto<>(1, "회원가입성공", null);
     }
 
