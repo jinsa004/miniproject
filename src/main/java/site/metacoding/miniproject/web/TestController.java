@@ -6,6 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
 
+    /*
+     * @GetMapping("/co/resume")
+     * public String 분야별이력서리스트() {
+     * return "company/jobResume";
+     * }
+     */
 
     @GetMapping("/co/resumeList")
     public String 공고지원자리스트() {
