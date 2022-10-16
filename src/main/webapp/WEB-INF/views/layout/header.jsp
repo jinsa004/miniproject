@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <!DOCTYPE html>
     <html>
 
@@ -192,36 +192,15 @@
 
                 <div class="career_part">
                   <h2>관심분야</h2>
-                  <div class="career_part1 part_box">
-                    <input type="checkbox" class="login_check" id="jobId" name="" checked />
-                    <em>
-                      <label for="c_part_front">프론트엔드</label>
-                    </em>
-                  </div>
-                  <div class="career_part2 part_box">
-                    <input type="checkbox" class="login_check" id="c_part_back" name="" />
-                    <em>
-                      <label for="c_part_back">백엔드</label>
-                    </em>
-                  </div>
-                  <div class="career_part3 part_box">
-                    <input type="checkbox" class="login_check" id="c_part_full" name="" />
-                    <em>
-                      <label for="c_part_full">풀스택</label>
-                    </em>
-                  </div>
-                  <div class="career_part4 part_box">
-                    <input type="checkbox" class="login_check" id="c_part_android" name="" />
-                    <em>
-                      <label for="c_part_android">안드로이드</label>
-                    </em>
-                  </div>
-                  <div class="career_part5 part_box">
-                    <input type="checkbox" class="login_check" id="c_part_ios" name="" />
-                    <em>
-                      <label for="c_part_ios">IOS</label>
-                    </em>
-                  </div>
+                  <c:forEach var="jobPS" items="${jobPS}">
+                    <div class="career_part1 part_box">
+                      <input type="checkbox" class="login_check" id="job_Id" name="job_checkbox"
+                        value="${jobPS.jobId}" />
+                      <em>
+                        <label for="c_part_front">${jobPS.jobName}</label>
+                      </em>
+                    </div>
+                  </c:forEach>
                 </div>
               </div>
             </form>

@@ -1,5 +1,6 @@
 $("#btn_join").click(() => {
   join();
+  jobJoin();
 });
 
 $("#btnEmployeeUpdate").click(() => {
@@ -24,7 +25,7 @@ $("#btn_recruit").click(() => {
 
 
 //회원가입
-function joinSave() {
+function join() {
   let data = {
     employeeUsername: $("#employeeUsername").val(),
     employeePassword: $("#employeePassword").val(),
@@ -54,6 +55,28 @@ function joinSave() {
   //람다식을 사용하면 코드가 간결해지고, 스코프가 명확해진다.
 }
 /**개인회원 수정 */
+
+function jobJoin() {
+  let checkBoxArr = [];
+  $("input:checkbox[name='job_checkbox']:checked").each(function () {
+    checkBoxArr.push($(this).val()); // 체크된 값 배열에 push
+  })
+
+  $.ajax("/emp/join", {
+    type: "POST",
+    dataType: "json", //응답데이터 타입명
+    data: {
+      checkBoxArr: checkBoxArr
+    }
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("관심분야 등록 성공");
+      location.href = "/";
+    } else {
+      alert(res.msg);
+    }
+  });
+}
 
 function employeeUpdate() {
   let employeeId = $("#employeeId").val();

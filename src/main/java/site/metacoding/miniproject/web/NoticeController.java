@@ -40,6 +40,10 @@ public class NoticeController {
     @GetMapping({ "emp/main", "emp", "/" }) // ({ "emp/", "emp/notice" }) 로 두 개 걸어주는 것 불가 (쿼리스트링시 매핑 주소 "notice"가 중복되기
                                             // 때문)
     public String getAllNoticeList(Model model) {
+        System.out.println("컨트롤러 실행됨");
+        List<Job> jobPS = jobService.관심직무보기();
+        System.out.println(jobPS.size());
+        model.addAttribute("jobPS", jobPS);
         List<Notice> noticeAllList = noticeService.채용공고전체목록보기();
         model.addAttribute("noticeAllList", noticeAllList);
         return "employee/main";
