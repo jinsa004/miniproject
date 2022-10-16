@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.domain.introImage;
+package site.metacoding.miniproject.domain.image.intro;
 
 import java.util.List;
 

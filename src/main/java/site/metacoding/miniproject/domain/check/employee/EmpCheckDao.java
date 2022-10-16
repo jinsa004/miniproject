@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.domain.check.company;
+package site.metacoding.miniproject.domain.check.employee;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.domain.check.employee;
+package site.metacoding.miniproject.domain.check.company;
 
 import lombok.Getter;
 import lombok.Setter;
