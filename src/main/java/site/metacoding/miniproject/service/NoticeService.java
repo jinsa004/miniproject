@@ -15,6 +15,10 @@ public class NoticeService {
 
     private final NoticeDao noticeDao;
 
+    public List<Notice> 구독공고목록보기(Integer employeeId) {
+        return noticeDao.findSubsByEmployeeId(employeeId);
+    }
+
     public void 내공고삭제(Integer noticeId) {
         Notice noticePS = noticeDao.findById(noticeId); // 영속화
         noticeDao.deleteById(noticePS.getNoticeId());
