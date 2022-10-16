@@ -5,12 +5,12 @@
       <div class="container">
         <div class="tablist">
           <ul class="tabs">
-            <li class="btn_tab on" data-tab="tab-1"><a href="/emp">전체직군</a></li>
-            <li class="btn_tab" data-tab="tab-2"><a href="/emp/notice?jobCode=1">프론트엔드</a></li>
-            <li class="btn_tab" data-tab="tab-3"><a href="/emp/notice?jobCode=2">백엔드</a></li>
-            <li class="btn_tab" data-tab="tab-4"><a href="/emp/notice?jobCode=3">웹풀스택</a></li>
-            <li class="btn_tab" data-tab="tab-5"><a href="/emp/notice?jobCode=4">안드로이드</a></li>
-            <li class="btn_tab" data-tab="tab-6"><a href="/emp/notice?jobCode=5">IOS</a></li>
+            <li class="tab_button active" data-tab="tab-1"><a href="/emp" >전체직군</a></li>
+            <li class="" data-tab="tab-2"><a href="/emp/notice?jobCode=1" >프론트엔드</a></li>
+            <li class="" data-tab="tab-3"><a href="/emp/notice?jobCode=2" >백엔드</a></li>
+            <li class="" data-tab="tab-4"><a href="/emp/notice?jobCode=3" >웹풀스택</a></li>
+            <li class="" data-tab="tab-5"><a href="/emp/notice?jobCode=4" >안드로이드</a></li>
+            <li class="" data-tab="tab-6"><a href="/emp/notice?jobCode=5" class="">IOS</a></li>
           </ul>
         </div>
         <!-- .tablist -->
@@ -26,10 +26,12 @@
                 <li>마감일</li>
               </ul>
             </div><!-- .notice_title -->
-            <div id="tab-1" class="notice_inner notice_inner1 tab-content on">
-              <c:forEach var="noticeAllList" items="${noticeAllList}">
-                <div>
-                  <ul>
+
+
+            <div class="tabcontent">
+              <div id="tab-1" class="notice_inner tab_content show">
+                <ul>
+                  <c:forEach var="noticeAllList" items="${noticeAllList}">
                     <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
                     <li><a href="noticeDetail">
                         ${noticeAllList.noticeTitle}
@@ -39,13 +41,14 @@
                     <li>${noticeAllList.noticePosition}<span class="notice_small">부산</span></li>
                     <!-- notice 테이블에 지역 컬럼 만들거나 sal을 넣는 등 수정 필요 -->
                     <li>~${noticeAllList.noticePeriod}<span class="notice_small">마감 13일전</span></li>
-                  </ul>
-                </div>
-              </c:forEach>
-            </div><!-- .notice_inner1 -->
+                  </c:forEach>
+                </ul>
+              </div>
+            </div><!-- .tabcontent -->
           </div>
           <!-- .notice_box -->
         </section>
+
         <div class="paging">
           <ul class="pagination">
             <li class="page-item page-prev">
@@ -64,7 +67,8 @@
       </div>
       <!-- .container -->
     </div>
-    <!-- #wrap -->
+    <!-- #user_wrap -->
 
-    <script src="/js/main.js"></script>
+    
+    <script type="text/javascript" src="/js/main.js"></script>
     <%@ include file="../layout/footer.jsp" %>

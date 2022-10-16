@@ -1,48 +1,26 @@
-$("ul.tabs li").click(function () {
-  var tab_id = $(this).attr("data-tab");
-  $("ul.tabs li").removeClass("on");
-  $(".tab-content").removeClass("on");
-  $(".tab-content").hide();
-  $(this).addClass("on");
 
-  $("#" + tab_id).addClass("on");
-  $("#" + tab_id).show();
+$('nav ul li').click(function(){
+  $('nav ul li').removeClass('on');
+  $(this).addClass('on');
 });
 
-$("#btnDelete").click(() => {
-  DeletestadiumList();
+$('ul.tabs li').click(function(){
+  $('ul.tabs li').removeClass('active');
+  $(this).addClass('active');
 });
 
-function DeletestadiumList() {
-  let chkArray = new Array();
 
-  $("input[name='checkbox']:checked").each(function () {
-    let item = $(this).val();
-    chkArray.push(item);
+/*   $(".tablist .tabs li a").on("click", function(){
+    const num = $(".tablist .tabs li a").index($(this));
+    $(".tablist .tabs li").removeClass("active");
+    $(".tab_content").removeClass("show");
+
+    $('.tablist .tabs li:eq(' + num + ')').addClass("active");
+    $('.tab_content:eq(' + num + ')').addClass("show");
+
   });
+ */
 
-  if (chkArray.length < 1) {
-    alert("값을 선택해주시기 바랍니다.");
-    return;
-  }
-  deleteStadium(chkArray);
-}
-
-function deleteStadium(id) {
-  $.ajax("/api/login", {
-    type: "DELETE",
-    dataType: "json",
-    data: { deletelist: id },
-    Headers: {
-      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-    },
-  }).done((res) => {
-    if (res.code == 1) {
-      alert(res.msg);
-      location.href = "/";
-    }
-  });
-}
 
 function login() {
   let data = {
