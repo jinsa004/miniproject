@@ -1,197 +1,209 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
-<%@ include file="../layout/headerCompany.jsp"%>
-<div class="p-5 border text-center">
-  <h1>공고 등록</h1>
-</div>
-<form>
-  <input type="hidden" id="companyId" value="${principal.companyId}">
-<div class="container">
-  <div class="row">
-    <div class="notice_save">  
-      <div id="notice_info" class="form">
-        <div class="notice_form">
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">공고명</p>
-            </div>
-            <div class="notice_input">
-              <input type="text" id="noticeTitle" class="box_input" placeholder="공고명을 입력하세요"/>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">회사명</p>
-            </div>
-            <div class="notice_input">
-              <input type="text" id="noticeConame" class="box_input" placeholder="회사명을 입력하세요"/>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">분야</p>
-            </div>
-            <div class="notice_input">
-              <c:forEach var="jobPS" items="${jobPS}">
-                <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
-                <br>
-              </c:forEach>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">공고마감일</p>
-            </div>
-            <div class="notice_input">
-              <input type="text" id="noticePeriod" class="box_input" placeholder="공고 마감일"/>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">채용부서</p>
-            </div>
-            <div class="notice_input">
-              <input type="text" id="noticeDept" class="box_input" placeholder="부서명을 입력하세요"/>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">채용직급</p>
-            </div>
-            <div class="notice_input">
-              <input type="text" id="noticePosition" class="box_input" placeholder="직급을 입력하세요"/>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">주요업무</p>
-            </div>
-            <div class="notice_input">
-              <input type="text" id="noticeTask" class="box_input" placeholder="업무를 입력하세요"/>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">평균연봉</p>
-            </div>
-            <div class="notice_input">
-              <input type="text" id="noticeSal" class="box_input" placeholder="연봉를 입력하세요"/>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">자격요건</p>
-            </div>
-            <div class="notice_input">
-              <div class="form-check">
-                <input type="radio" id="noticeQual" name="noticeQual" value="대졸">대졸
-              </div>
-              <div class="form-check">
-                <input type="radio" id="noticeQual" name="noticeQual" value="고졸">고졸
-              </div>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">경력기간</p>
-            </div>
-            <div class="notice_input">
-              <input type="text" id="noticeCareer" class="box_input" placeholder="경력 기간을 입력하세요"/>
-            </div>
-          </div>
-          <div class="notice_row">
-            <div class="notice_list">
-              <p class="notice_list_item">복리후생</p>
-            </div>
-            <div class="notice_input">
-              <textarea id="noticeWellfare" cols="40" rows="5" placeholder="복리 후생"></textarea>
-            </div>
-          </div>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+  <%@ include file="../layout/headerCompany.jsp" %>
+    <div class="company_update">
+      <div id="co_notice_wrap">
+        <div class="container2">
+          <section>
+            <div class="notice_box">
+              <section id="notice_wrap">
+                <div class="container">
+                  <div class="intro_update">
+                    <div class="recruit_detail_box cf">
+                      <div class="title_update">
+                        <h1>기업 공고 등록</h1>
+                      </div>
+                      <div class="notice_box rd_left">
+                        <div class="notice_title">
+                          <h3>공고명</h3>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input" value=""
+                            placeholder="공고 제목을 입력하세요" />
+                        </div>
+                        <!-- .notice_title -->
+
+                        <div class="notice_part">
+                          <h3>채용분야</h3>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input4" value=""
+                            placeholder="채용분야를 입력하세요" / maxlength="20">
+                        </div>
+                        <!-- .notice_part -->
+
+                        <div class="notice_dept">
+                          <h3>채용부서</h3>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input4" value=""
+                            placeholder="채용부서를 입력하세요" / maxlength="20">
+                        </div>
+                        <!-- .notice_dept -->
+
+                        <div class="notice_grade">
+                          <h3>채용직급</h3>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input4" value=""
+                            placeholder="채용직급을 입력하세요" / maxlength="20">
+                        </div>
+                        <!-- .notice_grade -->
+
+                        <div class="notice_task">
+                          <h3>주요업무</h3>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input5" value=""
+                            placeholder="주요업무를 입력하세요" />
+                        </div>
+                        <!-- .notice_task -->
+
+                        <div class="notice_ssar">
+                          <h3>평균연봉</h3>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input4" value=""
+                            placeholder="평균연봉을 입력하세요" / maxlength="20">
+                        </div>
+                        <!-- .notice_ssar -->
+
+                        <div class="notice_skill">
+                          <h3>자격요건</h3>
+                          <div class="input_radio_skill">
+                            <ul>
+                              <li>
+                                <input type="radio" name="skill_select" id="skill_select_high" value="" checked />
+                                <label for="skill_select_high"><em>고졸</em></label>
+                              </li>
+                              <li>
+                                <input type="radio" name="skill_select" id="skill_select_univ" value="" />
+                                <label for="skill_select_univ"><em>대졸</em></label>
+                              </li>
+                            </ul>
+                          </div><!-- .input_radio_skill -->
+                        </div>
+                        <!-- .notice_skill -->
+
+                        <div class="notice_career">
+                          <h3>경력</h3>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input4" value=""
+                            placeholder="경력을 입력하세요" / maxlength="20">
+                        </div>
+                        <!-- .notice_career -->
+
+                        <div class="notice_benefit">
+                          <h3>복리후생</h3>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input5" value=""
+                            placeholder="복리후생을 입력하세요" />
+                        </div>
+                        <!-- .notice_benefit -->
+
+                        <div class="notice_dead">
+                          <h3>공고 마감일</h3>
+                          <input type="date" id="" name="basic_name" class="box_input info_right_input6" value=""
+                            placeholder="공고마감일을 입력하세요" / maxlength="20">
+                        </div>
+                        <!-- .notice_dead -->
+                      </div>
+                      <!-- .notice_box .rd_left -->
+
+                      <div class="company_box rd_right">
+                        <span class="company_box_title">기업정보</span>
+                        <div class="logo_form_update">
+                          <div class="info_img">
+                            <form method="post" action="/resume_detail" enctype="multipart/form-data">
+                              <span class="info_myimg">
+                                <img src="/img/logo_1.png">
+                              </span>
+                              <div class="logo_img_right">
+                                <input type="file" name="file" id="files" class="hidden" />
+                                <button type="submit" class="file_submit">파일전송</button>
+                              </div>
+                            </form>
+                          </div>
+                        </div><!-- .logo_form -->
+                        <span class="info_tit">
+                          <em>회사명</em>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input7" value=""
+                            placeholder="회사명을 입력하세요" / maxlength="15">
+                        </span>
+                        <span class="info_year">
+                          <em>설립연도</em>
+                          <input type="date" id="" name="basic_name" class="box_input info_right_input7" value=""
+                            placeholder="공고마감일을 입력하세요" / maxlength="15">
+                        </span>
+                        <span class="info_task">
+                          <em>주요업무</em>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input7" value=""
+                            placeholder="주요업무를 입력하세요" / maxlength="15">
+                        </span>
+                        <span class="info_ssar">
+                          <em>평균연봉</em>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input7" value=""
+                            placeholder="평균연봉을 입력하세요" / maxlength="15">
+                        </span>
+                        <span class="info_benefit">
+                          <em>기업복지</em>
+                          <input type="text" id="" name="basic_name" class="box_input info_right_input7" value=""
+                            placeholder="복리후생을 입력하세요" / maxlength="25">
+                        </span>
+                        <div class="company_location">
+                          <div class="basic_row location_wrap">
+                            <div class="basic_input cf">
+                              <span class="info_right_txt info_right_txt2">주소지</span>
+                              <div class="basic_location">
+                                <div class="location_map">
+                                  지도
+                                </div>
+                                <div class="location_info">
+                                  <input type="text" id="sample6_postcode" placeholder="우편번호">
+                                  <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"
+                                    class="btn_post">
+                                  <input type="text" id="sample6_address" placeholder="주소">
+                                  <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+                                  <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div><!-- .location_wrap -->
+                        </div>
+                        <!-- .company_location -->
+                      </div>
+                      <!-- .company_box .rd_right -->
+
+                      <div class="btn_co_recruit_insert">
+                        <button type="button" class="btn btn-primary btn_recruit_insert" onclick="btnInsertNotice()">공고등록</button>
+                      </div><!-- .btn_co_recruit_insert -->
+                    </div><!-- .recruit_detail_box -->
+                  </div><!-- .intro_update -->
+                </div><!-- .container -->
+              </section><!-- .resume_wrap -->
+            </div><!-- .notice_box -->
+          </section>
         </div>
       </div>
-      <!-- notice -->
-          <button type="button" class="btn btn-primary" onclick="btnInsertNotice()">공고등록</button>
-      <!-- btn -->
-    </form>
     </div>
-    <!-- notice_save -->
-  </div>
-</div>
-<!-- body -->
-
-<div class="mt-5 p-4 bg-dark text-white text-center">
-  <p>Footer</p>
-</div>
-<!-- footer -->
-
-</body>
-
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-    // function sample6_execDaumPostcode() {
-    //     new daum.Postcode({
-    //         oncomplete: function(data) {
-    //             var addr = ''; 
-    //             var extraAddr = '';
-
-    //             if (data.userSelectedType === 'R') {
-    //                 addr = data.roadAddress;
-    //             } else {
-    //                 addr = data.jibunAddress;
-    //             }
-
-    //             if(data.userSelectedType === 'R'){
-    //                 if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-    //                     extraAddr += data.bname;
-    //                 }
-    //                 if(data.buildingName !== '' && data.apartment === 'Y'){
-    //                     extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-    //                 }
-    //                 if(extraAddr !== ''){
-    //                     extraAddr = ' (' + extraAddr + ')';
-    //                 }
-    //                 document.getElementById("sample6_extraAddress").value = extraAddr;
-    //             } else {
-    //                 document.getElementById("sample6_extraAddress").value = '';
-    //             }
-
-    //             document.getElementById('sample6_postcode').value = data.zonecode;
-    //             document.getElementById("sample6_address").value = addr;
-    //             document.getElementById("sample6_detailAddress").focus();
-    //         }
-    //     }).open();
-    // }
-
-    function btnInsertNotice(){
-    let data = {
-      companyId : $("#companyId").val(),
-      noticeTitle : $("#noticeTitle").val(),
-      noticeConame : $("#noticeConame").val(),
-      noticePeriod : $("#noticePeriod").val(),
-      noticeDept : $("#noticeDept").val(),
-      noticePosition : $("#noticePosition").val(),
-      noticeTask : $("#noticeTask").val(),
-      noticeSal : $("#noticeSal").val(),
-      noticeQual : $('input[id=noticeQual]:checked').val(),
-      noticeCareer : $("#noticeCareer").val(),
-      noticeWellfare : $("#noticeWellfare").val(),
-      jobId: $('input[id=jobId]:checked').val()
-		};
-    console.log(data);
-	$.ajax("/co/noticeSave", {
-		type: "POST",
-		dataType: "json",
-		data: JSON.stringify(data),
-		headers: {
-			"Content-Type": "application/json; charset=utf-8"
-		}
-	}).done((res) => {
-		if (res.code == 1) {
+    <script>
+      function btnInsertNotice() {
+        let data = {
+          companyId: $("#companyId").val(),
+          noticeTitle: $("#noticeTitle").val(),
+          noticeConame: $("#noticeConame").val(),
+          noticePeriod: $("#noticePeriod").val(),
+          noticeDept: $("#noticeDept").val(),
+          noticePosition: $("#noticePosition").val(),
+          noticeTask: $("#noticeTask").val(),
+          noticeSal: $("#noticeSal").val(),
+          noticeQual: $('input[id=noticeQual]:checked').val(),
+          noticeCareer: $("#noticeCareer").val(),
+          noticeWellfare: $("#noticeWellfare").val(),
+          jobId: $('input[id=jobId]:checked').val()
+        };
+        console.log(data);
+        $.ajax("/co/noticeSave", {
+          type: "POST",
+          dataType: "json",
+          data: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        }).done((res) => {
+          if (res.code == 1) {
             alert("공고등록에 성공하였습니다.");
-			location.href="/co/mainCompany";
-		} else {
+            location.href = "/co/mainCompany";
+          } else {
             alert("공고등록에 실패하였습니다.");
-		}
-	});
-}
-</script>
-<%@ include file="../layout/footerCompany.jsp"%>
+          }
+        });
+      }
+    </script>
+    <script src="/js/main.js"></script>
+    <%@ include file="../layout/footerCompany.jsp" %>
