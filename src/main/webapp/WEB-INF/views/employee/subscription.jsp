@@ -9,7 +9,7 @@ pageEncoding="UTF-8"%> <%@ include file="../layout/header.jsp"%>
     <!-- .tablist -->
 
     <section>
-      <div class="notice_box">
+      <div class="notice_box notice_box2">
         <div class="notice_title">
           <ul>
             <li>기업명</li>
