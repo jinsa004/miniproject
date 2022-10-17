@@ -4,7 +4,7 @@ import org.apache.ibatis.annotations.Param;
 
 public interface CoCheckDao {
 
-    public void insert(@Param("employeeId") Integer companyId, @Param("jobId") Integer jobId);
+    public void insert(@Param("companyId") Integer companyId, @Param("jobId") Integer jobId);
 
     public void updateByEmployeeId();
 

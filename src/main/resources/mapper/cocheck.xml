@@ -3,8 +3,8 @@
 <mapper namespace="site.metacoding.miniproject.domain.check.company.CoCheckDao">
 
 	<insert id="insert">
-		INSERT INTO emp_check(employee_id, job_id)
-		VALUES(#{employeeId}, #{jobId})
+		INSERT INTO emp_check(company_id, job_id)
+		VALUES(#{companyId}, #{jobId})
 	</insert>
 
 </mapper>
