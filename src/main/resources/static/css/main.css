@@ -708,9 +708,10 @@ input.login_check{
     padding-top: 10px;
 }
 .company_card ul{
-    display: flex;
-    justify-content:space-between;
+    /* display: flex;
+    justify-content:space-between; */
     margin-bottom: 15px;
+    font-size: 0;
 }
 .company_card ul li{
     width: 290px;
@@ -722,6 +723,8 @@ input.login_check{
     border: 1px solid #d9d9d9;
     overflow: hidden;
     transition: all 0.4s;
+    display: inline-block;
+    vertical-align: top;
 }
 .company_card ul li:last-child{
     margin-right: 0;
