@@ -111,23 +111,25 @@ function coLogin() {
 // 기업회원가입
 function join() {
 
+  if($("#companyUsername").val() == ""){
+    alert("아이디를 입력해주세요.");
+    $("#companyUsername").focus();
+    return;
+  }
+
   if (isCompanyUsernameSameCheck == false) {
 		alert("아이디 중복 체크를 진행해주세요");
 		return;
 	}
 
   if (companyPasswordSameCheck() == true) {
-		alert("비밀번호가 일치하지 않습니다.")
+		alert("비밀번호가 일치하지 않습니다.");
 		return;
 	}
 
-  // if(emailCheck() == false){
-  //   alert("이메일 형식이 맞지 않습니다.")
-  //   return;
-  // }
-  
-
-
+  if(blackCheck() == false){
+    return;
+  }
 
   let data = {
     companyNumber: $("#companyNumber").val(),
@@ -195,13 +197,52 @@ function companyPasswordSameCheck() {
 	}
 }
 
-// function emailCheck() {
-// 	let email = $("#email").val();
-// 	let form = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+function blackCheck() {
+  let companyNumber = $("#companyNumber").val();
+  let companyName = $("#companyName").val();
+  let companyEmail = $("#companyEmail").val();
+  let companyTel =$("#companyTel").val();
+  let companyLocation =$("#companyLocation").val();
+  let companyUsername = $("#companyUsername").val();
+  let companyPassword = $("#companyPassword").val();
 
-// 	if (form.test(email)) {
-// 		return true;
-// 	} else {
-// 		return false;
-// 	}
-// }
+  if($("#companyUsername").val() == ""){
+    alert("아이디를 입력해주세요.");
+    $("#companyUsername").focus();
+    return false;
+  }
+  else if($("#companyPassword").val() == ""){
+    alert("비밀번호를 입력해주세요.");
+    $("#companyPassword").focus();
+    return false;
+  } 
+  else if($("#companyEmail").val() == ""){
+    alert("이메일을 입력해주세요.");
+    $("#companyEmail").focus();
+    return false;
+  } 
+  else if($("#companyName").val() == ""){
+    alert("회사명을 입력해주세요.");
+    $("#companyName").focus();
+    return false;
+  } 
+  else if($("#companyNumber").val() == ""){
+    alert("사업자등록번호를 입력해주세요.");
+    $("#companyNumber").focus();
+    return false;
+  } 
+  else if($("#companyTel").val() == ""){
+    alert("휴대폰번호를 입력해주세요.");
+    $("#companyTel").focus();
+    return false;
+  } 
+  else if($("#companyLocation").val() == ""){
+    alert("주소를 입력해주세요.");
+    $("#companyLocation").focus();
+    return false;
+  } else{
+    return true;
+  }
+
+  }
+
