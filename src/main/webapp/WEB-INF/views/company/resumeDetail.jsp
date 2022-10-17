@@ -18,7 +18,7 @@
               </div>
               <dl class="info_name">
                 <dd class="name">${resume.employeeName}</dd>
-                <dd class="sex">${resume.employeeSex}, ${resume.employeeBrith} (00세/만 00세)</dd>
+                <dd class="sex">${resume.employeeSex}, ${resume.employeeBirth} (00세/만 00세)</dd>
               </dl>
               <dl class="info_basic">
                 <dt class="info_list_item">이메일</dt>
@@ -114,7 +114,7 @@
                   <p class="edu_list_item">학점</p>
                 </div>
                 <div class="edu_input">
-                  <span>${resume.univGrade} / 4.5</span>
+                  <span>${resume.univGrades} / 4.5</span>
                 </div>
               </div>
 
@@ -195,7 +195,7 @@
     <!-- resume_detail -->
     </div>
     </div>
-    
-     <script src="/js/main.js"></script>
-     <script src="/js/company.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

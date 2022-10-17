@@ -7,7 +7,7 @@
         <h2>이력서 제목</h2>
         <div class="title_update">
           <div class="title_input">
-            <input type="text" class="resume_title_input" placeholder="이력서 제목을 입력하세요">
+            <input id="resume_name" type="text" class="resume_title_input" placeholder="이력서 제목을 입력하세요">
             <!-- input 입력 넣기 -->
           </div>
         </div>
@@ -132,76 +132,76 @@
           <h2 class="title">경력사항</h2>
         </div>
 
-          <div class="career_form" id="work">
-            <h4>회사 정보 입력</h4>
-            <div class="career_row">
-              <div class="career_list">
-                <p class="career_list_item">직장명</p>
-              </div>
-              <div class="career_input">
-                <input type="text" id="career_name" name="career_name" class="box_input" placeholder="직장 명을 입력하세요" />
-              </div>
+        <div class="career_form" id="work">
+          <h4>회사 정보 입력</h4>
+          <div class="career_row">
+            <div class="career_list">
+              <p class="career_list_item">직장명</p>
             </div>
-            <div class="career_row">
-              <div class="career_list">
-                <p class="career_list_item">재직기간</p>
-              </div>
-              <div class="career_input">
-                <input type="text" id="career_period" name="start_date" class="box_input" placeholder="신입 or 근무년수 입력" />
-              </div>
+            <div class="career_input">
+              <input type="text" id="career_name" name="career_name" class="box_input" placeholder="직장 명을 입력하세요" />
             </div>
-            <div class="career_row">
-              <div class="career_list">
-                <p class="career_list_item">직급명</p>
-              </div>
-              <div class="career_input">
-                <input type="text" id="career_position" name="career_position" class="box_input"
-                  placeholder="직급을 입력하세요" />
-              </div>
+          </div>
+          <div class="career_row">
+            <div class="career_list">
+              <p class="career_list_item">재직기간</p>
             </div>
-            <div class="career_row">
-              <div class="career_list">
-                <p class="career_list_item">근무부서</p>
-              </div>
-              <div class="career_input">
-                <input type="text" id="career_section" name="career_section" class="box_input"
-                  placeholder="근무 부서를 입력하세요" />
-              </div>
+            <div class="career_input">
+              <input type="text" id="career_period" name="start_date" class="box_input" placeholder="신입 or 근무년수 입력" />
             </div>
-            <div class="career_row">
-              <div class="career_list">
-                <p class="career_list_item">담당업무</p>
-              </div>
-              <div class="career_input">
-                <input type="text" id="career_task" name="career_task" class="box_input" placeholder="담당 업무를 입력하세요" />
-              </div>
+          </div>
+          <div class="career_row">
+            <div class="career_list">
+              <p class="career_list_item">직급명</p>
+            </div>
+            <div class="career_input">
+              <input type="text" id="career_position" name="career_position" class="box_input"
+                placeholder="직급을 입력하세요" />
+            </div>
+          </div>
+          <div class="career_row">
+            <div class="career_list">
+              <p class="career_list_item">근무부서</p>
+            </div>
+            <div class="career_input">
+              <input type="text" id="career_section" name="career_section" class="box_input"
+                placeholder="근무 부서를 입력하세요" />
+            </div>
+          </div>
+          <div class="career_row">
+            <div class="career_list">
+              <p class="career_list_item">담당업무</p>
+            </div>
+            <div class="career_input">
+              <input type="text" id="career_task" name="career_task" class="box_input" placeholder="담당 업무를 입력하세요" />
             </div>
           </div>
         </div>
       </div>
-      <!-- career -->
+    </div>
+    <!-- career -->
 
-      <div id="field" class="form">
-        <div class="form_title">
-          <h2 class="title">관심분야</h2>
-        </div>
-        <div class="resume_field">
-          <div class="field_select">
-            <div class="select-group">
-              <c:forEach var="jobPS" items="${jobPS}">
-                <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
-                <br>
-              </c:forEach>
-            </div>
+    <div id="field" class="form">
+      <div class="form_title">
+        <h2 class="title">관심분야</h2>
+      </div>
+      <div class="resume_field">
+        <div class="field_select">
+          <div class="select-group">
+            <c:forEach var="jobPS" items="${jobPS}">
+              <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
+              <br>
+            </c:forEach>
           </div>
         </div>
       </div>
-      <!-- field -->
+    </div>
+    <!-- field -->
 
-      <div class="update_btn">
-        <button id="btnInsertResume" type="button">등록완료</button>
-      </div>
-      <!-- update -->
+    <div class="update_btn">
+      <button id="btnInsertResume" type="button">등록완료</button>
+    </div>
+    <!-- update -->
 
     </div>
     <!-- resume_update -->

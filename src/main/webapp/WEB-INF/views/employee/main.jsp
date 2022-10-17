@@ -29,8 +29,9 @@
               <c:forEach var="noticeAllList" items="${noticeAllList}">
                 <div>
                   <ul>
-                    <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
-                    <li><a href="noticeDetail">
+                    <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}"><img src="/img/logo_1.png" alt="logo"></a>
+                    </li>
+                    <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}">
                         ${noticeAllList.noticeTitle}
                         <span class="notice_small">${noticeAllList.noticeTask}</span>
                       </a></li>

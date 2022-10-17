@@ -2,6 +2,7 @@ package site.metacoding.miniproject.domain.employee;
 
 import lombok.Getter;
 import lombok.Setter;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 
 @Setter
@@ -18,6 +19,17 @@ public class Employee {
 	private String employeeTel;
 	private Integer jobId;
 
+	public Employee(EmployeeJoinDto employeeJoinDto) {
+		this.employeeName = employeeJoinDto.getEmployeeName();
+		this.employeeBirth = employeeJoinDto.getEmployeeBirth();
+		this.employeeSex = employeeJoinDto.getEmployeeSex();
+		this.employeeUsername = employeeJoinDto.getEmployeeUsername();
+		this.employeePassword = employeeJoinDto.getEmployeePassword();
+		this.employeeEmail = employeeJoinDto.getEmployeeEmail();
+		this.employeeTel = employeeJoinDto.getEmployeeTel();
+		this.employeeLocation = employeeJoinDto.getEmployeeLocation();
+	}
+
 	public void update(EmployeeUpdateDto employeeUpdateDto) {
 		this.employeeName = employeeUpdateDto.getEmployeeName();
 		this.employeeBirth = employeeUpdateDto.getEmployeeBirth();
@@ -27,7 +39,6 @@ public class Employee {
 		this.employeeEmail = employeeUpdateDto.getEmployeeEmail();
 		this.employeeLocation = employeeUpdateDto.getEmployeeLocation();
 		this.employeeTel = employeeUpdateDto.getEmployeeTel();
-
 	}
 
 	// 엔티티 필드 아님

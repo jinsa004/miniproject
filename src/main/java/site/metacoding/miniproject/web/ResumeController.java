@@ -1,7 +1,9 @@
 package site.metacoding.miniproject.web;
 
 import java.util.List;
+
 import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.application.Application;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.service.JobService;
@@ -30,6 +33,18 @@ public class ResumeController {
     private final HttpSession session;
 
     /* =============================개인회원========================================= */
+
+    @PostMapping("emp/resume/applicate")
+    public @ResponseBody CMRespDto<?> applicateByResumeId(@RequestBody Application application) {
+        resumeService.지원하기(application);
+        return new CMRespDto<>(1, "공고 지원 성공", null);
+    }
+
+    @PutMapping("emp/resume/setMainResume/{resumeId}")
+    public @ResponseBody CMRespDto<?> setMainResume(@PathVariable Integer resumeId) {
+        resumeService.메인이력서등록(resumeId);
+        return new CMRespDto<>(1, "메인 이력서 등록 성공", null);
+    }
 
     @DeleteMapping("emp/resumeDelete/{resumeId}")
     public @ResponseBody CMRespDto<?> deleteResume(@PathVariable Integer resumeId) {
@@ -71,6 +86,8 @@ public class ResumeController {
 
     @GetMapping("co")
     public String getAllResumeList(Model model) { // 기업회원이 보는 이력서리스트
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
         List<Resume> resumeAllList = resumeService.이력서목록보기();
         model.addAttribute("resumeAllList", resumeAllList);
         return "company/mainCompany";
@@ -81,11 +98,6 @@ public class ResumeController {
         List<Resume> jobResumeList = resumeService.이력서분야별목록보기(jobCode);
         model.addAttribute("jobResumeList", jobResumeList);
         return "company/jobResume";
-    }
-
-    @GetMapping("co/resumeDetail")
-    public String 이력서상세보기() { // 이력서 상세보기 페이지
-        return "company/resumeDetail";
     }
 
     @GetMapping("co/resumeDetail/{resumeId}")

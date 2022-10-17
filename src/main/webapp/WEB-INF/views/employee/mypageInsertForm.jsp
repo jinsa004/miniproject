@@ -2,6 +2,7 @@
   <%@ include file="../layout/headerMypage.jsp" %>
 
     <div id="content_wrap">
+      <input id="employeeId" type="hidden" value="${principal.employeeId}" />
       <div class="cont_mypage">
         <h2>이력서 등록</h2>
         <div class="notice_box2">
@@ -11,11 +12,12 @@
                 <c:forEach var="resumePS" items="${resumePS}">
                   <li class="resume_cont">
                     <span class="input_radio">
-                      <input type="radio" name="resume_select" id="resume_select" value="${resumePS.resumeId}" />
+                      <input type="radio" name="resume_select" id="resume_select" value="${resumePS.resumeId}" <c:if
+                        test="${resumePS.main eq true}">checked</c:if> />
                     </span>
                     <label for="resume_select" class="resume_select_box">
                       <a href="#" class="list_title">
-                        <span>${resumePS.resumeName}</span>
+                        <span>${resumePS.resumeTitle}</span>
                       </a>
                       <ul class="list_option">
                         <li class="career">
@@ -24,10 +26,10 @@
                         <li class="part"><span>${resumePS.jobName}</span></li>
                       </ul>
                     </label>
-    
+
                     <div class="btn_resume_option">
                       <span><a href="/emp/resumeUpdate/${resumePS.resumeId}">수정하기</a></span>
-                      <button  class="btn_delete_resume" type="button" value="${resumePS.resumeId}">삭제하기</button>
+                      <button class="btn_delete_resume" type="button" value="${resumePS.resumeId}">삭제하기</button>
                     </div><!-- .btn_resume_option -->
                   </li><!-- .resume_cont -->
                 </c:forEach>
@@ -47,32 +49,7 @@
     </div>
     </div>
     <!-- #wrap -->
-    <script>
-            $(".btn_delete_resume").click((event) => {
-
-                let resumeId = event.target.value;
-                deleteResume(resumeId);
-            });
-
-
-            function deleteResume(resumeId) {
-
-              console.log(resumeId);
-
-                $.ajax("/emp/resumeDelete/"+resumeId, {
-                    type: "DELETE",
-                    dataType: "json", // 응답 데이터
-                }).done((res) => {
-                    if (res.code == 1) {
-                        alert("이력서 삭제 완료");
-                        location.href = "/emp";
-                    } else {
-                        alert("삭제에 실패하였습니다");
-                    }
-                })
-            }
-    </script>
+    <script src="/js/resume.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/employee.js"></script>
     <%@ include file="../layout/footer.jsp" %>
-

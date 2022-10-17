@@ -25,6 +25,7 @@ import site.metacoding.miniproject.domain.subscribe.Subscribe;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.service.ResumeService;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
@@ -64,14 +65,6 @@ public class EmployeeController {
         session.setAttribute("principal", principal);
         return new CMRespDto<>(1, "로그인성공", null);
     }
-
-    // @GetMapping("/")
-    // public String main() {// 개인회원이 보는 메인페이지
-    // return "employee/main";
-    // }
-    // NoticeController의 전체직군보기 페이지가 메인이라
-    // 일단 주석처리함. EmployeeController에 Notice 메서드를 넣을지 NoticeController에 넣을지 정해야 함.
-    // 일단은 EmployeeController에 불러온 Service가 많아서 NoticeController에 넣어놨음.
 
     @GetMapping("/emp/matchingNotice")
     public String matchingList() {// 개인회원이 보는 매칭리스트탭(관심분야맞는 공고 목록보기)
@@ -154,14 +147,9 @@ public class EmployeeController {
     }
 
     @PostMapping("/emp/join")
-    public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee) {
-        employeeService.employeeJoin(employee);
+    public @ResponseBody CMRespDto<?> 회원가입(@RequestBody EmployeeJoinDto employeeJoinDto) {
+        employeeService.employeeJoin(employeeJoinDto);
         return new CMRespDto<>(1, "회원가입성공", null);
-    }
-
-    @GetMapping("/emp/join")
-    public String mainJoin() {
-        return "employee/header";
     }
 
     @GetMapping("/logout")
