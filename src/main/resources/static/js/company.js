@@ -111,12 +111,10 @@ function coLogin() {
 // 기업회원가입
 function join() {
 
-  if($("#companyUsername").val() == ""){
-    alert("아이디를 입력해주세요.");
-    $("#companyUsername").focus();
+  if(blackCheck() == false){
     return;
   }
-
+  
   if (isCompanyUsernameSameCheck == false) {
 		alert("아이디 중복 체크를 진행해주세요");
 		return;
@@ -127,9 +125,7 @@ function join() {
 		return;
 	}
 
-  if(blackCheck() == false){
-    return;
-  }
+ 
 
   let data = {
     companyNumber: $("#companyNumber").val(),
