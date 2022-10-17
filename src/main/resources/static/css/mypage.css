@@ -608,6 +608,26 @@ button.file_submit:hover{
 }
 
 /* =================== 회원정보 수정 ======================== */
+#user_info_wrap{
+    position: relative;
+    width: 100%;
+}
+#user_info_wrap .container{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding-top: 80px;
+    padding-bottom: 140px;
+    padding-left: 200px;
+}
+#user_info_wrap h1{
+    text-align: left;
+    font-size: 30px;
+    line-height: 38px;
+    font-weight: bold;
+    color: #333;
+
+}
 .users_update{
     text-align: left;
 }

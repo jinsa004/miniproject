@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypage.jsp" %>
 
-    <div id="resume_wrap">
+    <div id="user_info_wrap">
       <div class="container">
 
         <div class="users_update">
