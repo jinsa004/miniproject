@@ -60,6 +60,7 @@ public class NoticeController {
         Notice noticePS = noticeService.내공고하나보기(noticeId);
         model.addAttribute("noticePS", noticePS);
         List<Resume> resumePS = resumeService.내이력서가져오기(principal.getEmployeeId());
+
         model.addAttribute("resumePS", resumePS);
         return "employee/noticeDetail";
     }

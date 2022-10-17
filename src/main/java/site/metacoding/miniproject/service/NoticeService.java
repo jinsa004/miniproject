@@ -16,7 +16,7 @@ public class NoticeService {
     private final NoticeDao noticeDao;
 
     public Notice 내공고하나보기(Integer noticeId) {
-        return noticeDao.findByNoticeIdtoNoticeDetail(noticeId);
+        return noticeDao.findByNoticeIdToNoticeDetail(noticeId);
     }
 
     public List<Notice> 구독공고목록보기(Integer employeeId) {

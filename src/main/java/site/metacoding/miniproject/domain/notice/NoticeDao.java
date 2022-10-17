@@ -21,5 +21,5 @@ public interface NoticeDao {
 
 	public List<Notice> findSubsByEmployeeId(Integer employeeId);
 
-	public Notice findByNoticeIdtoNoticeDetail(Integer noticeId);
+	public Notice findByNoticeIdToNoticeDetail(Integer noticeId);
 }

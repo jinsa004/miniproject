@@ -17,7 +17,7 @@
 
 	<select id="findByJobCodeToNotice" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT
-        n.notice_title, n.notice_task, n.notice_career, n.notice_qual,
+        n.notice_id, n.notice_title, n.notice_task, n.notice_career, n.notice_qual,
         n.notice_position, DATE_FORMAT(n.notice_period, '%Y.%m.%d') as notice_period, j.job_code
         FROM notice n
 		INNER JOIN job j
@@ -58,13 +58,17 @@
 		WHERE s.employee_id = #{employeeId}
 	</select>
 
-	<select id="findByNoticeIdtoNoticeDetail" resultType="site.metacoding.miniproject.domain.notice.Notice">
+	<select id="findByNoticeIdToNoticeDetail" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT *
 		FROM notice n
-		INNER JOIN intro i
+		INNER JOIN (
+		SELECT i.intro_id, i.company_id, i.intro_title, i.intro_birth, i.intro_task, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_location, j.job_code, j.job_name
+		FROM intro i
 		INNER JOIN job j
-		ON n.company_id = i.company_id 
-		WHERE n.notice_id = #{noticeId} and n.job_id = j.job_id
+		ON i.job_id = j.job_id) ij
+		ON n.company_id = ij.company_id
+		WHERE n.notice_id = #{noticeId}
+		GROUP BY n.notice_id
 	</select>
 
 	<update id="update">
