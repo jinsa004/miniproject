@@ -10,17 +10,17 @@
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="/css/reset.css" />
       <link rel="stylesheet" href="/css/main.css" />
-      <link rel="stylesheet" href="/css/mypage.css" />
+      <link rel="stylesheet" href="/css/mypageCompany.css" />
+
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <title>4조 PROJECT</title>
     </head>
 
     <body>
-
-      <div id="mypage_wrap">
+      <div id="mypage_co_wrap">
         <div id="gnb_mypage">
           <div class="logo">
-            <a href="/co">PROJECT_4</a>
+            <a href="/co/mainCompany">COMPANY_4</a>
           </div>
           <ul class="gnb_left">
             <li class="gnb_list1">
@@ -44,3 +44,5 @@
           </ul>
         </div><!-- .gnb_mypage -->
       </div>
+      <script type="text/javascript" src="/js/main.js"></script>
+      <script type="text/javascript" src="/js/company.js"></script>

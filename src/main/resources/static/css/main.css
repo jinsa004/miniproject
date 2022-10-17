@@ -98,6 +98,7 @@ header{
     font-size: 13px;
 }
 
+
 .login_box .btn_login{
     width: 92px;
     /* padding: 6px 0 7px; */
@@ -108,6 +109,7 @@ header{
     color: #fff;
     border: 1px solid #4876ef;
     font-weight: bold;
+    transition: all 0.6s;
     
 }
 .login_box .btn_logout{
@@ -120,6 +122,8 @@ header{
     border: 1px solid #4876ef;
     color: #4876ef;
     margin-left: 5px;
+    transition: all 0.6s;
+    box-sizing: border-box;
 }
 .login_box .btn_join{
     width: 92px;
@@ -132,6 +136,7 @@ header{
     color: #4876ef;
     font-weight: bold;
     margin-left: 5px;
+    transition: all 0.6s;
 }
 
 .login_box .btn_company{
@@ -147,6 +152,7 @@ header{
     box-sizing: border-box;
     height: 35px;
     line-height: 32px;
+    transition: all 0.6s;
 }
 .login_box .btn_mypage{
     width: 92px;
@@ -159,6 +165,24 @@ header{
     border: 1px solid #4876ef;
     margin-left: 5px;
     box-sizing: border-box;
+    transition: all 0.6s;
+}
+.login_box .btn_login:hover{
+    background-color: #0ccca4;
+    border-color: #0ccca4;
+}
+.login_box .btn_mypage:hover{
+    background-color: #0ccca4;
+    border-color: #0ccca4;
+}
+.login_box .btn_logout:hover{
+    background-color: #e8eeff;
+}
+.login_box .btn_company:hover{
+    background-color: rgba(238, 238, 238, 0.726);
+}
+.login_box .btn_join:hover{
+    background-color: #e8eeff;
 }
 
 nav{
@@ -185,13 +209,21 @@ nav ul li{
     display: inline-block;
     padding-left: 40px;
 }
-
+nav ul li.active a{
+    color: #4876ef;
+}
 nav ul li:first-child{
     padding-left: 0;
 }
 nav ul li a{
     color: #333;
     font-weight: 500;
+}
+nav ul li a:active{
+    color: #4876ef;
+}
+nav ul li a:visited{
+    color: #333;
 }
 nav ul li a:hover{
     color: #4876ef;
@@ -212,23 +244,35 @@ nav ul li a:hover{
 .tablist ul.tabs{
     font-size: 0;
 }
-.tablist ul.tabs li.on{
+.tablist .tabs li.active{
     border-color: #4876ef;
-    font-weight: bold;
+}
+.tablist .tabs li.active a{
     color: #4876ef;
+}
+
+.tablist .tabs li a{
+    display: block;
+    width: 110px;
+    height: 100%;
+    line-height: 35px;
+    font-size: 14px;
+    color: #666;
 }
 .tablist ul li{
     display: inline-block;
     text-align: center;
-    padding: 7px 24px 6px;
+    /* padding: 7px 24px 6px; */
+    width: 110px;
+    height: 35px;
     border: 1px solid #bbb;
-    border-radius: 50px;
-    color: #333;
-    font-size: 14px;
+    border-radius: 50px;    
     background: #fff;
     cursor: pointer;
     transition: all 0.4s;
     margin-left: 20px;
+    vertical-align: top;
+    zoom: 1;
 }
 .tablist ul li:first-child{
     margin-left: 0;
@@ -242,15 +286,19 @@ nav ul li a:hover{
     font-weight: bold;
     color: #4876ef;
 } */
-.tablist ul li.on:hover{
+.tablist ul li.active:hover{
     background: #e8eeff;
 }
 
-.tab-content{ display:none;}
-.tab-content.on{ display:block;}
+.tab_content{ display: block;}
+.tab_content.active{ }
 
 .notice_box{
     margin-top: 25px;   
+    position: relative;
+}
+.notice_box2{
+    margin-top: 50px;
 }
 .notice_inner1{}
 
@@ -627,12 +675,12 @@ input.login_check{
     float: left;
     width: 50%;
     border-right: 1px solid #eee;
-    padding-right: 45px;
+    padding-right: 50px;
     padding-top: 10px;
 }
 .join_right{
     float: left;
-    padding-left: 45px;
+    padding-left: 40px;
 }
 
 
@@ -666,9 +714,10 @@ input.login_check{
     padding-top: 10px;
 }
 .company_card ul{
-    display: flex;
-    justify-content:space-between;
+    /* display: flex;
+    justify-content:space-between; */
     margin-bottom: 15px;
+    font-size: 0;
 }
 .company_card ul li{
     width: 290px;
@@ -680,6 +729,8 @@ input.login_check{
     border: 1px solid #d9d9d9;
     overflow: hidden;
     transition: all 0.4s;
+    display: inline-block;
+    vertical-align: top;
 }
 .company_card ul li:last-child{
     margin-right: 0;
@@ -1048,4 +1099,322 @@ input.login_check{
     left: 0;
     width: 18px;
     height: 18px;
+}
+
+
+
+/* ============= 기업 소개 구독 페이지 ================== */
+#co_Intro_wrap{
+    position: relative;
+    width: 100%;
+}
+#co_Intro_wrap .container{
+    margin-top: 25px;
+    text-align: left;
+    position: relative;
+    padding-bottom: 120px;
+}
+.intro_update input{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.intro_update button{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#co_Intro_wrap .info_form{
+    background:rgba(238, 238, 238, 0.3);
+}
+.title_update h1{
+    font-size: 30px;
+    line-height: 34px;
+}
+.title_input input{
+    width: 1140px;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 32px;
+    color: #222;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 60px;
+}
+.title_input::placeholder{
+    color: #eee;
+}
+.intro_update h2{
+    font-size: 24px;
+    color: #666;
+    line-height: 30px;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    display: inline-block;
+    padding-right: 10px;
+}
+.intro_update .form_title span{
+    display: inline-block;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #666;
+}
+.info_form{
+    width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    padding: 50px 80px 40px;
+    background: rgba(238, 238, 238, 0.4);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+.logo_form .info_myimg{
+    display: inline-block;
+    width: 340px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: top;
+}
+.logo_form .info_myimg img{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.logo_form .logo_img_right{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    padding-top: 81px;
+}
+.info_form .info_right_txt{
+    display: inline-block;
+    color: #666;
+    font-weight: 300;
+    width: 100px;
+    font-size: 16px;
+}
+.info_form .info_right_input{
+    display: inline-block;
+    width: 550px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+.basic_input{
+    margin-bottom: 18px;
+}
+.co_Info_Detail_title{
+    font-size: 15px;
+    font-weight: 300;
+    color: #666;
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+.co_Info_Detail_txt{
+    font-weight: normal;
+    letter-spacing: -0.04em;
+    font-size: 17px;
+    display: inline-block;
+    vertical-align: top;
+}
+.info_right_txt2{
+    float: left;
+}
+.basic_location{
+    float: left;
+}
+.location_map{
+    width: 380px;
+    height: 330px;
+    background: #ddd;
+    text-align: center;
+}
+.location_info{
+    margin-top: 20px;
+}
+.location_info input{
+    display: block;
+    width: 365px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.resume_part{
+    padding-top: 10px;
+}
+.resume_part .resume_part_select{
+    text-align: center;
+    background: #e9e9e9;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin-right: 10px;
+    line-height: 40px;
+}
+
+/* 버튼 */
+#co_Intro_wrap .btn_group{
+    position: absolute;
+    top: 84px;
+    right: 0;
+}
+.btn_group .fa-regular{
+    color: #4876ef;
+    transition: all 0.3s;
+    margin-left: -4px;
+}
+.fa-star::before{
+    
+}
+.subscribe_btn button{
+    display: block;
+    width: 110px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50px;
+    border: 1px solid #4876ef;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    letter-spacing: 0em;
+    text-align: center;
+    line-height: 30px;
+}
+.subscribe_btn button .txt{
+    color: #4876ef;
+    padding-left: 0px;
+    font-size: 17px;
+    transition: all 0.3s;
+    font-weight: normal;
+}
+/* .subscribe_btn button::before{
+    display: block;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background: url(/img/icon_star.png) no-repeat -90px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.subscribe_btn button:hover{
+    border-color: #0ccca4;
+    background: #0ccca4;
+    animation: btn 0.5s linear;
+}
+@keyframes btn {
+    10%{ transform:translateX(2px) rotate(-2deg);}
+	30%{ transform:translateX(2px) rotate(2deg);}
+	40%{ transform:translateX(-2px) rotate(-2deg);}	
+	50%{ transform:translateX(1px) rotate(1deg);}
+	60%{ transform:translateX(-1px) rotate(-1deg);}
+	70%{ transform:translateX(1px) rotate(1deg);}
+	80%{ transform:translateX(-1px) rotate(-1deg);}
+	90%{ transform:translateX(0.3px) rotate(0);}
+	100%{ transform:translateX(-0.3px) rotate(0);}
+}
+.subscribe_btn button:hover .fa-regular{
+    color: #fff;
+
+}
+.subscribe_btn button:hover .txt{
+    color: #fff;
+}
+
+
+
+/* ============== 유효성체크 ========================== */
+#employeeUsername{
+}
+#btnUsernameSameCheck{
+    height: 42px;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #fff;
+    width: 50.5%;
+    margin-left: 1.5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+#btnUsernameSameCheck:hover{
+    background: #4876ef;
+}
+#btnUsernameSameCheck:active{
+    background: #111;
+}
+
+span.check{
+    display: flex;
+    justify-content: space-between;
+}
+
+#employeepasswordRepeat{
+}
+#employeepasswordCheck{
+    height: 42px;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #fff;
+    width: 50.5%;
+    margin-left: 1.5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+#employeepasswordCheck:hover{
+    background: #4876ef;
+}
+#employeepasswordCheck:active{
+    background: #111;
+}
+#employeeEmail{
+}
+#employeeEmailCheck{
+    height: 42px;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #fff;
+    width: 50.5%;
+    margin-left: 1.5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+#employeeEmailCheck:hover{
+    background: #4876ef;
+}
+#employeeEmailCheck:active{
+    background: #111;
+}
+
+.modal_join_wrap input.btn_post_code{
+    cursor: pointer;
+    background: #ddd;
+    color: #fff;
+    transition: all 0.3s;
+}
+.modal_join_wrap input.btn_post_code:hover{
+    background: #4876ef;
+}
+.modal_join_wrap input.btn_post_code:active{
+    background: #111;
 }

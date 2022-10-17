@@ -46,7 +46,6 @@ function Delete() {
 /* 기업정보 수정*/
 
 function companyUpdate() {
-
   let companyId = $("#companyId").val();
 
   let data = {
@@ -56,7 +55,7 @@ function companyUpdate() {
     companyTel: $("#companyTel").val(),
     companyLocation: $("#companyLocation").val(),
     companyUsername: $("#companyUsername").val(),
-    companyPassword: $("#companyPassword").val()
+    companyPassword: $("#companyPassword").val(),
   };
   console.log("업데이트");
 
@@ -65,7 +64,7 @@ function companyUpdate() {
     dataType: "json",
     data: JSON.stringify(data),
     headers: {
-      "Content-Type": "application/json; charset=utf-8"
+      "Content-Type": "application/json; charset=utf-8",
     },
   }).done((res) => {
     if (res.code == 1) {
@@ -80,12 +79,11 @@ function companyUpdate() {
 
 //기업회원 로그인
 function coLogin() {
-
   let data = {
     companyUsername: $("#coUsername").val(),
     companyPassword: $("#coPassword").val(),
-    remember: $("#remember").prop("checked")
-  }
+    remember: $("#remember").prop("checked"),
+  };
   $.ajax("/co/login", {
     type: "POST",
     dataType: "json", //응답데이터 타입명

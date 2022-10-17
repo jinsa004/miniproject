@@ -1,0 +1,1302 @@
+#mypage_co_wrap{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+#mypage_co_wrap #gnb_mypage{
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    box-shadow: 0px 0 20px #ccc;
+    background: #435070;
+    text-align: center;
+}
+#mypage_co_wrap .logo{
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+#mypage_co_wrap .logo a{
+    color: #fff;
+}
+.gnb_left{
+    width: 260px;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 122px;
+    
+}
+.gnb_left li{
+    position: relative;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+    border-radius: 10px;
+}
+#mypage_co_wrap .gnb_left li a{
+    display: block;
+    position: relative;
+    padding: 15px 35px 15px 23px;
+    font-weight:300;
+    color: #fff;
+    font-size: 17px;
+    transition: all 0.3s;
+}
+.gnb_left li .fa-regular{
+    color: #cad0d6;
+    transition: all 0.3s;
+}
+.gnb_left li a span.txt{
+    padding-left: 12px;
+}
+.gnb_left li:hover{
+    position: relative;
+    margin-bottom: 20px;
+    background: #ecf1ff;
+}
+#mypage_co_wrap .gnb_left li:hover a{
+    color: #333;
+}
+.gnb_left li:hover i{
+    color: #4876ef;
+}
+.gnb_left li.on{
+    position: relative;
+    margin-bottom: 15px;
+    background: #4876ef;
+    border-radius: 10px;
+}
+.gnb_left li.on a{
+    color: #fff;
+}
+
+#content_wrap{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.cont_mypage{
+    position: relative;
+    margin: 95px auto 130px;
+    padding-left: 280px;
+    text-align: left;
+    width: 1200px;
+}
+.cont_mypage h2{
+    font-size: 30px;
+    line-height: 38px;
+    font-weight: bold;
+    color: #333;
+}
+#sri_footer{
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #ddd;
+}
+#sri_footer .wrap_footer{
+    background: #fff;
+    border: none;
+
+}
+.wrap_footer{
+    width: 960px;
+    padding-left: 260px;
+}
+
+.notice_box2{
+    padding-top: 50px;
+}
+.mypage_resume_list .resume_form{
+    text-align: left;
+}
+.mypage_resume_list .resume_form .resume_cont{
+    position: relative;
+    padding: 45px 35px 40px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d9d9d9;
+    transition: all 0.4s;
+}
+.mypage_resume_list .resume_form .resume_cont:last-child{
+    margin-bottom: 0;
+}
+.mypage_resume_list .resume_form .resume_cont:hover{
+    border: 1px solid #91ADF2;
+    box-shadow: 0px 0px 10px #eee;
+}
+.mypage_resume_list .list_title:hover span{
+    text-decoration: underline;
+    color: #435070;
+}
+.mypage_resume_list .resume_form .resume_cont .list_title{
+    max-width: 760px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #333;
+    padding-bottom: 30px;
+}
+.mypage_resume_list .resume_form .resume_cont .list_title span{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 760px;
+}
+.mypage_resume_list .resume_form .resume_cont .list_option{
+    font-size: 0;
+}
+.mypage_resume_list .resume_form .resume_cont .list_option li{
+    display: inline-block;
+    vertical-align: top;
+}
+.mypage_resume_list .resume_form .resume_cont .list_option li span{
+
+    padding-left: 22px;
+}
+.mypage_resume_list .resume_form .resume_cont .list_option .career{
+    width: 25%;
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    color: #444;
+    font-size: 14px;
+    font-weight: 300;
+
+}
+
+.mypage_resume_list .resume_form .resume_cont .list_option .career::before{
+    content: "";
+    display: block;
+    background: url("/img/icon_career.svg") no-repeat center center;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+}
+.mypage_resume_list .resume_form .resume_cont .list_option .part{
+    width: 25%;
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    color: #444;
+    font-size: 14px;
+    font-weight: 300;
+    max-width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mypage_resume_list .resume_form .resume_cont .list_option .part::before{
+    content: "";
+    display: block;
+    background: url("/img/icon_part.svg") no-repeat center center;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.input_radio{
+    display: block;
+    position: absolute;
+}
+.resume_select_box{
+    display: block;
+    padding-left: 40px;
+}
+
+.btn_resume_option{
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    margin-top: -45px;
+    text-align: center;
+}
+.btn_resume_option span{
+    display: block;
+    width: 150px;
+    height: 40px;
+    background: #4876ef;
+    border-radius: 5px;
+    transition: all 0.4s;
+}
+.btn_resume_option span:first-child{
+    margin-bottom: 10px;
+}
+.btn_resume_option span:last-child{
+    background: #fff;
+    border: 1px solid #bbb;
+}
+.btn_resume_option span:last-child a{
+    color: #666;
+}
+.btn_resume_option span a{
+    font-size: 15px;
+    color: #fff;
+    line-height: 40px;
+    transition: all 0.4s;
+}
+.btn_resume_option span:hover{
+    background: #0ccca4;
+
+}
+.btn_resume_option span:hover a{
+    color: #fff;
+}
+.btn_resume_option span:last-child:hover{
+    background: none;
+    border-color: #0ccca4;
+}
+.btn_resume_option span:last-child:hover a{
+    color: #0ccca4;
+}
+.btn_main_resume_select{
+    width: 100%;
+    text-align: right;
+    margin-top: 30px;
+}
+#btn_main_resume{
+    background: #fff;
+    border-radius: 5px;
+    transition: all 0.4s;
+    width: 150px;
+    height: 42px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #4876ef;
+    border: 1px solid #4876ef;
+    margin-right: 40px;
+    font-size: 14px;
+    letter-spacing: -0.06em;
+}
+#btn_main_resume:hover{
+    background: #ecf1ff;
+}
+
+#btnEmployeeUpdate{
+    cursor: pointer;
+}
+
+#btnEmployeeDelete{
+    cursor: pointer;
+}
+
+/* =================== 기업 소개 관리 ============================= */
+#intro_wrap{
+    position: relative;
+    width: 100%;
+}
+#intro_wrap .container{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding-top: 80px;
+    padding-bottom: 140px;
+    padding-left: 200px;
+}
+.intro_update{
+    text-align: left;
+}
+.intro_update input{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.intro_update button{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.resume_title{
+    width: 1200px;
+}
+.title_update{
+    width: 1200px;
+}
+.title_input input{
+    width: 1140px;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 32px;
+    color: #222;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 60px;
+}
+.title_input::placeholder{
+    color: #eee;
+}
+.intro_update h2{
+    font-size: 24px;
+    color: #666;
+    line-height: 30px;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    display: inline-block;
+    padding-right: 10px;
+}
+.resume_update .form_title span{
+    display: inline-block;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #666;
+}
+.info_form{
+    width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    padding: 50px 80px 40px;
+    background: rgba(238, 238, 238, 0.4);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+.logo_form .info_myimg{
+    display: inline-block;
+    width: 340px;
+    height: 164px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: top;
+}
+.logo_form .info_myimg img{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.logo_form .logo_img_right{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    padding-top: 81px;
+}
+#files{
+    padding-left: 0;
+    margin-top: 10px;
+    background-color: rgba(238, 238, 238, 0.4);
+}
+button.file_submit{
+    display: block;
+    cursor: pointer;
+    width: 252px;
+    height: 40px;
+    border-radius: 6px;
+    background: #333;
+    margin-top: 10px;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.info_form .info_left{
+    float: left;
+}
+.info_form .info_right{
+    float: left;
+    padding-left: 60px;
+}
+.info_form .info_right dd{
+    margin-bottom: 15px;
+}
+.info_form .info_right_txt{
+    display: inline-block;
+    color: #666;
+    font-weight: 300;
+    width: 100px;
+    font-size: 16px;
+}
+.info_form .info_right_input{
+    display: inline-block;
+    width: 550px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+.edu_select .btn-group{
+    display: flex;
+    justify-content: space-around;
+}
+.edu_select .btn-group button{
+    display: block;
+    width: 50%;
+    height: 60px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background: #fff;
+    font-size: 18px;
+}
+.edu_select .btn-group button.on{
+    background: #4876ef;
+    color: #fff;
+}
+#univ_btn{
+    margin-left: -1px;
+}
+#univ{
+    display: none;
+}
+.info_form h3{
+    padding: 40px 0 30px;
+}
+.edu_form div{
+    margin-bottom: 15px;
+}
+.info_form .info_right_input2{
+    display: inline-block;
+    width: 265px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+
+.intro_career .btn-group button{
+    display: block;
+    width: 50%;
+    height: 60px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background: #fff;
+    font-size: 18px;
+}
+.intro_career .btn-group button.on{
+    background: #4876ef;
+    color: #fff;
+}
+.intro_career .btn-group{
+    display: flex;
+    justify-content: space-around;
+}
+#work_btn{
+    margin-left: -1px;
+}
+.intro_career div{
+    margin-bottom: 15px;
+}
+#work{
+    display: none;
+}
+
+.info_form2{
+    width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    padding: 50px 80px 40px;
+    background: rgba(238, 238, 238, 0.4);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.info_form3{
+    width: 700px;
+    height: 120px;
+    padding: 50px 20px 40px;
+    background: rgba(238, 238, 238, 0.4);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.info_form2 div{
+    margin-bottom: 0;
+}
+.field_select .part_box_wrap{
+    display: flex;
+    justify-content: space-around;
+}
+
+.field_select .part_box{
+    text-align: left;
+    margin-bottom: 5px;
+}
+.field_select .part_box input{
+    width: 24px;
+    height: 24px;
+}
+.field_select .part_box em{
+    font-style: normal;
+    color: #222;
+    font-size: 18px;
+    line-height: 23px;
+    vertical-align: top;
+    padding-left: 4px;
+    font-weight: 300;
+}
+
+.update_btn{
+    display: flex;
+    justify-content: end;
+}
+#btnInsertCompanyInfo{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #4876ef;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnInsertCompanyInfo:hover{
+    background: #0ccca4;
+}
+#btnInsertCompany{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #91ADF2;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnInsertCompany:hover{
+    background: #4876ef;
+}
+.btnInsertCompany_go{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #4876ef;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+    text-align: center;
+    line-height: 60px;
+}
+.btnInsertCompany_go:hover{
+    background: #0ccca4;
+}
+
+#intro_wrap .info_right_txt{
+    display: inline-block;
+}
+#intro_wrap .rewumeDetail_txt{
+    display: inline-block;
+}
+#intro_wrap .location_wrap2{
+    margin-top: 0;
+}
+.info_form4{
+    width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    padding: 50px 80px 40px;
+    background: rgba(238, 238, 238, 0.25);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* =================== 회원정보 수정 ======================== */
+.users_update{
+    text-align: left;
+}
+.users_update input{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.users_update button{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.title_update{
+    width: 1200px;
+}
+.title_update h1{
+    font-size: 30px;
+    line-height: 34px;
+}
+
+.users_update h2{
+    font-size: 24px;
+    color: #666;
+    line-height: 30px;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    display: inline-block;
+    padding-right: 10px;
+}
+.users_update .form_title span{
+    display: inline-block;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #666;
+}
+.info_form div{
+    margin-bottom: 0px;
+}
+.margin_bottom{
+    padding-bottom: 15px;
+}
+.login_form div{
+    margin-bottom: 15px;
+}
+.intro_update .info_left{
+    float: none;
+}
+.intro_update .info_right{
+    float: none;
+}
+
+.btn_group{
+    display: flex;
+    justify-content: end;
+}
+.btn_group .delete_btn{
+    margin-left: 10px;
+}
+#btnEmployeeUpdate{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #4876ef;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnEmployeeUpdate:hover{
+    background: #0ccca4;
+}
+#btnEmployeeDelete{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnEmployeeDelete:hover{
+    background: #333;
+}
+
+
+.users_update .info_birth_input{
+    width: 530px;
+    padding-right: 20px;
+}
+.login_check{
+    cursor: pointer;
+}
+
+
+.info_form .info_right_input3{
+    display: inline-block;
+    width: 918px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left:15px;
+    font-size: 16px;
+}
+
+/* ===================== 도로명 주소 =========================== */
+.location_wrap{
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+.location_map{
+    width: 380px;
+    height: 330px;
+    background: #ddd;
+    text-align: center;
+}
+.basic_location{
+    float: left;
+    padding-left: 4px;
+}
+.info_right_txt2{
+    float: left;
+}
+.location_info{
+    margin-top: 20px;
+}
+.location_info input{
+    display: block;
+    width: 365px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.location_info input:nth-child(1){
+    display: inline-block;
+}
+.location_info input:nth-child(2){
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    padding-right: 20px;
+    margin-left: 5px;
+    background: #333;
+    color: #fff;
+    border-color: #333;
+    cursor: pointer;
+}
+.location_info input:last-child{
+    margin-bottom: 0;
+}
+
+/* =====================기업 채용 공고 상세보기=========================== */
+#co_resume_wrap{
+    position: relative;
+    width: 100%;
+}
+#co_resume_wrap .container{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding-top: 80px;
+    padding-bottom: 140px;
+    padding-left: 200px;
+}
+
+.recruit_detail_box{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    padding-bottom: 40px;
+}
+.recruit_detail_box h2{
+    display: block;
+    width: 700px;
+    font-size: 18px;
+    padding-top: 40px;
+    font-weight: 300;
+}
+.recruit_detail_box .notice_box{
+    display: block;
+    float: left;
+    width: calc(100% - 500px);
+    padding: 0px 0;
+    margin-top: 50px;
+}
+.recruit_detail_box .notice_box div{
+    padding-bottom: 55px;
+}
+.recruit_detail_box .notice_box h3{
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 14px;
+}
+.recruit_detail_box .notice_box .notice_txt{
+    font-weight: normal;
+    letter-spacing: -0.04em;
+    font-size: 17px;
+}
+
+.recruit_detail_box .notice_box .notice_title{
+    margin-bottom: 16px;
+    border-top: none;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+}
+.recruit_detail_box .notice_box .notice_title h3{
+    color: #4876ef;
+    margin-bottom: 5px;
+}
+.recruit_detail_box .notice_box .notice_title span.notice_txt{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.recruit_detail_box .notice_box .notice_part .notice_txt{
+    text-align: center;
+    background: #e9e9e9;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+.recruit_detail_box .notice_box .notice_dept .notice_txt{
+    text-align: center;
+    background: #eee;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+.recruit_detail_box .notice_box .notice_dead .notice_txt{
+    text-align: center;
+    background: #eee;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
+
+.company_box{
+    display: block;
+    text-align: left;
+    width: 340px;
+    float: right;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px 30px 50px;
+    margin-top: 28px;
+}
+.company_box .company_box_title{
+    font-size: 18px;
+    color: #222;
+    padding: 0;
+    font-weight: 300;
+}
+.company_box span{
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #aaa;
+    margin-bottom: 8px;
+    display: block;
+}
+.company_box .info_logo{
+    width: 340px;
+    text-align: center;
+}
+.company_box .info_logo img{
+    max-width: 340px;
+    height: auto;
+}
+
+.company_box span em{
+    display: inline-block;
+    font-style: normal;
+    width: 100px;
+    vertical-align: top;
+}
+.company_box p.rewumeDetail_txt{
+    display: inline-block;
+    vertical-align: top;  
+}
+.company_box p.rewumeDetail_txt strong{
+    font-size: 15px;
+    vertical-align: top;
+}
+.company_box span strong{
+    font-weight: normal;
+    letter-spacing: -0.04em;
+    color: #333;
+}
+.company_box .company_location{
+    border-top: 1px solid #ddd;
+    padding-top: 25px;
+    margin-top: 35px;
+}
+.company_box .company_location span{
+    padding-bottom: 15px;
+    margin: 0;
+}
+.company_box .company_location .location_img{
+    width: 340px;
+    height: 200px;
+    background: #bbb;
+}
+
+.btn_co_recruit_insert{
+    width: 402px;
+    float: right;
+    margin-top: 40px;
+}
+.btn_co_recruit_insert button{
+    width: 402px;
+    padding: 16px 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background: #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 15px;
+}
+.btn_co_recruit_insert .btn_update_go{
+    width: 402px;
+    padding: 19px 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background: #4876ef;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.btn_co_recruit_insert .btn_update{
+    width: 402px;
+    padding: 16px 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background: #4876ef;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.btn_co_recruit_insert .btn_update_go:hover{
+    background: #0ccca4;
+}
+.btn_co_recruit_insert .btn_update:hover{
+    background: #0ccca4;
+}
+.btn_co_recruit_insert button.btn_delete{
+    padding: 16px 0;
+}
+button.btn_delete:hover{
+    background: #333;
+}
+
+.notice_box .info_right_input{
+    display: inline-block;
+    width: 685px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.notice_box .info_right_input4{
+    display: inline-block;
+    width: 385px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+.notice_box .info_right_input5{
+    display: inline-block;
+    width: 685px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+.notice_box .info_right_input6{
+    display: inline-block;
+    width: 365px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+    padding-right: 20px;
+}
+.info_right_input7{
+    display: inline-block;
+    width: 170px;
+    height: 40px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+    padding-right: 20px;
+}
+
+.recruit_detail_box .notice_box div.notice_skill{
+    padding-bottom: 0;
+}
+.input_radio_skill ul{
+    font-size: 0;
+}
+.input_radio_skill ul li{
+    display: inline-block;
+}
+.input_radio_skill input{
+    vertical-align: top;
+    margin-right: 7px;
+}
+.input_radio_skill ul li em{
+    font-style: normal;
+    color: #333;
+    font-size: 16px;
+    vertical-align: top;
+}
+#skill_select_univ{
+    margin-left: 20px;
+}
+.rewumeDetail_txt{
+    font-size: 17px;
+}
+.rewumeDetail_txt2{
+    font-size: 14px;
+    text-align: center;
+    background: #e9e9e9;
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.notice_txt2{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.notice_skill2{
+    padding-bottom: 50px;
+}
+/* 로고 이미지 업로드 */
+.logo_form_update{
+    padding-bottom: 30px;
+}
+.logo_form_update .info_myimg{
+    display: inline-block;
+    width: 340px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: top;
+    margin-bottom: 0;
+}
+.logo_form_update .info_myimg img{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.logo_form_update .logo_img_right{
+    display: inline-block;
+    vertical-align: top;
+}
+#files{
+    padding-left: 0;
+    margin-top: 10px;
+    background-color: rgba(238, 238, 238, 0.4);
+}
+.logo_form_update button.file_submit{
+    display: block;
+    cursor: pointer;
+    width: 342px;
+    height: 40px;
+    border-radius: 6px;
+    background: #333;
+    margin-top: 10px;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+/* 도로명 주소  */
+.company_location .location_wrap{
+    margin-top: 0;
+    padding-bottom: 20px;
+}
+.company_location .location_map{
+    width: 340px;
+    height: 200px;
+    background: #ddd;
+    text-align: center;
+}
+.company_location .basic_location{
+    float: left;
+    padding-left: 4px;
+}
+.company_location .info_right_txt2{
+    float: left;
+}
+.company_location .location_info{
+    margin-top: 20px;
+}
+.company_location .location_info input{
+    display: block;
+    width: 325px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+.company_location .location_info input:nth-child(1){
+    display: block;
+}
+.company_location .location_info input:nth-child(2){
+    display: block;
+    width: 180px;
+    text-align: center;
+    padding-right: 20px;
+    background: #333;
+    color: #fff;
+    border-color: #333;
+    cursor: pointer;
+}
+.company_location .location_info input:last-child{
+    margin-bottom: 0;
+}
+.notice_box3 div#field{
+    padding-bottom: 0;
+}
+
+
+/* ================= 기업 회원 정보 관리 ================== */
+#co_info_wrap{
+    position: relative;
+    width: 100%;
+}
+#co_info_wrap .container{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding-top: 80px;
+    padding-bottom: 140px;
+    padding-left: 200px;
+}
+.co_update{
+    text-align: left;
+}
+.co_update input{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.co_update button{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.title_update{
+    width: 1200px;
+}
+.title_update h1{
+    font-size: 30px;
+    line-height: 34px;
+}
+
+.co_update h2{
+    font-size: 24px;
+    color: #666;
+    line-height: 30px;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    display: inline-block;
+    padding-right: 10px;
+}
+.co_update .form_title span{
+    display: inline-block;
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    color: #666;
+}
+.info_form div{
+    margin-bottom: 15px;
+}
+.login_form div{
+    margin-bottom: 15px;
+}
+.co_update .info_left{
+    float: none;
+}
+.co_update .info_right{
+    float: none;
+}
+.co_update .info_right_txt{
+    display: inline-block;
+    color: #666;
+    font-weight: 300;
+    width: 100px;
+    font-size: 16px;
+}
+.co_update .info_right_input{
+    display: inline-block;
+    width: 550px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    font-size: 16px;
+}
+.co_update .basic_input{
+    margin-bottom: 15px;
+}
+.co_update .contact_input{
+    margin-bottom: 15px;
+}
+.co_update .login_input{
+    margin-bottom: 15px;
+}
+.co_update .update_btn{
+    display: flex;
+    justify-content: end;
+}
+.co_update .btn_group .delete_btn{
+    margin-left: 10px;
+}
+#btnCoInfoUpdate{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #4876ef;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnCoInfoUpdate:hover{
+    background: #0ccca4;
+}
+#btnCoInfoDelete{
+    display: block;
+    width: 260px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 5px;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+#btnCoInfoDelete:hover{
+    background: #333;
+}

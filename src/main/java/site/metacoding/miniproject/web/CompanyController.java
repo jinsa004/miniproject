@@ -94,8 +94,13 @@ public class CompanyController {
         return new CMRespDto<>(1, "기업탈퇴성공", null);
     }
 
+    @GetMapping("/co/companyIntroInsert")
+    public String 기업소개등록() {// 추가함
+        return "company/coIntroInsert";
+    }
+
     @GetMapping("/co/companyIntroDetail")
-    public String 기업소개입력() {// 기업소개 상세보기 intro 테이블
+    public String 기업소개상세() {// 기업소개 상세보기 intro 테이블
         return "company/coIntroDetail";
     }
 

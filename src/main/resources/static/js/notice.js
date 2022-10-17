@@ -19,7 +19,7 @@ function btnInsertNotice() {
     noticePosition: $("#noticePosition").val(),
     noticeTask: $("#noticeTask").val(),
     noticeSal: $("#noticeSal").val(),
-    noticeQual: $('input[id=noticeQual]:checked').val(),
+    noticeQual: $('input[class=noticeQual]:checked').val(),
     noticeCareer: $("#noticeCareer").val(),
     noticeWellfare: $("#noticeWellfare").val(),
     jobId: $('input[id=jobId]:checked').val()
