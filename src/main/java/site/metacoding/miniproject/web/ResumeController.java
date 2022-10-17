@@ -86,6 +86,8 @@ public class ResumeController {
 
     @GetMapping("co")
     public String getAllResumeList(Model model) { // 기업회원이 보는 이력서리스트
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
         List<Resume> resumeAllList = resumeService.이력서목록보기();
         model.addAttribute("resumeAllList", resumeAllList);
         return "company/mainCompany";
@@ -96,11 +98,6 @@ public class ResumeController {
         List<Resume> jobResumeList = resumeService.이력서분야별목록보기(jobCode);
         model.addAttribute("jobResumeList", jobResumeList);
         return "company/jobResume";
-    }
-
-    @GetMapping("co/resumeDetail")
-    public String 이력서상세보기() { // 이력서 상세보기 페이지
-        return "company/resumeDetail";
     }
 
     @GetMapping("co/resumeDetail/{resumeId}")

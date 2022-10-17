@@ -4,19 +4,19 @@ $("#btn_delete").click(() => {
   Delete();
 });
 
-$("#btn_delete").click(()=>{
+$("#btn_delete").click(() => {
   Delete();
 });
 
-$("#btn_join").click(()=>{
+$("#btn_join").click(() => {
   join();
 });
 
-$("#btn_update").click(()=>{
+$("#btn_update").click(() => {
   companyUpdate();
 });
 
-$("#btn_login").click(()=>{
+$("#btn_login").click(() => {
   coLogin();
 });
 
@@ -28,8 +28,8 @@ $("#btnCompanyUsernameSameCheck").click(() => {
 
 /* 기업회원 탈퇴*/
 
-function Delete(){
-  
+function Delete() {
+
   console.log("삭제");
   let companyId = $("#companyId").val();
 
@@ -111,6 +111,7 @@ function coLogin() {
 // 기업회원가입
 function join() {
 
+
   if(blackCheck() == false){
     return;
   }
@@ -124,8 +125,15 @@ function join() {
 		alert("비밀번호가 일치하지 않습니다.");
 		return;
 	}
-
+}
  
+  let checkBoxArr = [];
+  $("input:checkbox[name='job_checkbox']:checked").each(function () {
+    checkBoxArr.push($(this).val()); // 체크된 값 배열에 push
+  })
+
+  console.log(checkBoxArr);
+
 
   let data = {
     companyNumber: $("#companyNumber").val(),
@@ -135,7 +143,7 @@ function join() {
     companyLocation: $("#companyLocation").val(),
     companyUsername: $("#companyUsername").val(),
     companyPassword: $("#companyPassword").val(),
-    job_Id: $("input:checkbox[value='frontend']").is(":checked")
+    jobIds: checkBoxArr
   };
 
   $.ajax("/co/join", {

@@ -6,7 +6,7 @@
         <h2>이력서 제목</h2>
         <div class="title_update">
           <div class="title_input">
-            <input type="text" id="resume_name" class="form-control" value="${resumePS.resumeName}" />
+            <input type="text" id="resume_name" class="form-control" value="${resumePS.resumeTitle}" />
             <!-- input 입력 넣기 -->
           </div>
         </div>

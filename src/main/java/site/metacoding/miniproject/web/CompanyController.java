@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.IntroService;
-import site.metacoding.miniproject.web.dto.request.JoinDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyJoinDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
 import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
@@ -115,8 +115,8 @@ public class CompanyController {
     }
 
     @PostMapping("/co/join")
-    public @ResponseBody CMRespDto<?> companyJoin(@RequestBody JoinDto joinDto) {
-        companyService.회원가입(joinDto);
+    public @ResponseBody CMRespDto<?> companyJoin(@RequestBody CompanyJoinDto companyJoinDto) {
+        companyService.회원가입(companyJoinDto);
         return new CMRespDto<>(1, "회원가입성공", null);
     }
 
