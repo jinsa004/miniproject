@@ -1,5 +1,7 @@
 package site.metacoding.miniproject.domain.intro;
 
+import javax.validation.constraints.NotBlank;
+
 import lombok.Getter;
 import lombok.Setter;
 import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
@@ -9,8 +11,10 @@ import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 public class Intro {
 	private Integer introId;
 	private Integer companyId;
+	@NotBlank
 	private String introTitle;
 	private String introBirth;
+	@NotBlank
 	private String introTask;
 	private String introSal;
 	private String introWellfare;

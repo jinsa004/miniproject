@@ -7,6 +7,7 @@ import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.intro.IntroDao;
 import site.metacoding.miniproject.domain.subscribe.Subscribe;
 import site.metacoding.miniproject.domain.subscribe.SubscribeDao;
+import site.metacoding.miniproject.handler.ex.MyException;
 import site.metacoding.miniproject.web.dto.request.intro.DetailDto;
 import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 
@@ -26,11 +27,21 @@ public class IntroService {
     }
 
     public Intro 기업소개수정상세보기(Integer companyId) {// 기업이 보는 마이페이지
-        return introDao.findById(companyId);
+        Intro intro = introDao.findById(companyId);
+
+        if (intro == null) {
+            throw new MyException(companyId + "의 게시글을 찾을 수 없습니다.");
+        }
+        return intro;
     }
 
     public void 기업소개수정하기(Integer companyId, UpdateDto updateDto) {
         Intro introPS = introDao.findById(companyId);
+
+        if (introPS == null) {
+            throw new RuntimeException(companyId + "의 게시글을 찾을 수 없습니다.");
+        }
+
         introPS.Update(updateDto);
         introDao.update(introPS);
     }
