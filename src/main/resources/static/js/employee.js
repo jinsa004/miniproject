@@ -33,25 +33,6 @@ function join() {
 
   console.log(checkBoxArr);
 
-  // let param = {};
-  // let list = [];
-
-  // for (let i = 0; i < checkBoxArr.length; i++) {
-
-  //   let obj = {};
-
-  //   obj.jobIds = checkBoxArr[i].value;
-
-  // list.push(obj);
-
-  // console.log(list);
-  //}
-
-  // param.jobIds = list;
-
-  // console.log(param);
-
-
   let data = {
     employeeUsername: $("#employeeUsername").val(),
     employeePassword: $("#employeePassword").val(),

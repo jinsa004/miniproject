@@ -10,11 +10,11 @@ import site.metacoding.miniproject.domain.check.employee.EmpCheckDao;
 @RequiredArgsConstructor
 @Service
 public class CheckService {
-    private final EmpCheckDao empCheckDao;
 
     public void checkboxInsert(Integer employeeId, List<Integer> jobIds) {
-        for (Integer jobId : jobIds) {
-            empCheckDao.insert(employeeId, jobId);
-        }
+        System.out.println("=====임플로이아이디나와야함===");
+        System.out.println(employeeId);
+        System.out.println("=====임플로이아이디나와야함===");
+
     }
 }

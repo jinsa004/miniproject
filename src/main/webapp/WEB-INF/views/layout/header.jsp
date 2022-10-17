@@ -79,8 +79,8 @@
           <h2>로그인</h2>
           <div class="form_box">
             <form>
-              <input id="username" type="text" placeholder="아이디를 입력하세요." />
-              <input id="password" type="password" placeholder="패스워드를 입력하세요." />
+              <input id="username" type="text" placeholder="아이디를 입력하세요." value="ssar" />
+              <input id="password" type="password" placeholder="패스워드를 입력하세요." value="1234" />
             </form>
             <label class="btn_check">
               <input type="checkbox" class="login_check" id="remember" checked />
@@ -107,7 +107,7 @@
                   </h3>
                   <span>
                     <input id="employeeUsername" type="text" placeholder="아이디를 입력하세요." value="${employeeUsername}"
-                      maxlength="20" />
+                      maxlength="20" value="ssar" />
                     <button id="btnUsernameSameCheck" type="button" maxlength="20">
                       중복체크
                     </button>
@@ -120,18 +120,19 @@
                   </h3>
                   <span>
                     <input id="employeePassword" type="password" placeholder="패스워드를 입력하세요." name="employeePassword"
-                      maxlength="20" />
+                      maxlength="20" value="1234" />
                   </span>
                 </div>
                 <div class="join_pw2 join_box">
-                  <input id="employeepasswordRepeat" type="password" placeholder="패스워드를 입력하세요." />
+                  <input id="employeepasswordRepeat" type="password" placeholder="패스워드를 입력하세요." value="1234" />
                 </div>
                 <div class="join_sex join_box">
                   <h3>
                     <label for="employeeSex">성별</label>
                   </h3>
                   <span>
-                    <input id="employeeSex" type="text" placeholder="성별을 입력하세요." name="employeeSex" maxlength="20" />
+                    <input id="employeeSex" type="text" placeholder="성별을 입력하세요." name="employeeSex" maxlength="20"
+                      value="여" />
                   </span>
                 </div>
                 <div class="join_email join_box">
@@ -139,8 +140,8 @@
                     <label for="employeeEmail">이메일</label>
                   </h3>
                   <span>
-                    <input id="employeeEmail" type="email" placeholder="이메일을 입력하세요." name="employeeEmail"
-                      maxlength="30" />
+                    <input id="employeeEmail" type="email" placeholder="이메일을 입력하세요." name="employeeEmail" maxlength="30"
+                      value="ssar@nate.com" />
                   </span>
                 </div>
 
@@ -150,8 +151,8 @@
                       <label for="employeeName">이름</label>
                     </h3>
                     <span>
-                      <input id="employeeName" type="text" placeholder="이름을 입력하세요." name="employeeName"
-                        maxlength="10" />
+                      <input id="employeeName" type="text" placeholder="이름을 입력하세요." name="employeeName" maxlength="10"
+                        value="회지" />
                     </span>
                   </div>
                   <div class="join_birth join_box">
@@ -160,7 +161,7 @@
                     </h3>
                     <span>
                       <input id="employeeBirth" type="date" placeholder="생년월일을 입력하세요." name="employeeBirth"
-                        maxlength="40" />
+                        maxlength="40" value="2000-01-01" />
                     </span>
                   </div>
                   <div class="join_phone join_box">
@@ -168,8 +169,8 @@
                       <label for="employeeTel">휴대폰번호</label>
                     </h3>
                     <span>
-                      <input id="employeeTel" type="tel" placeholder="휴대폰번호를 입력하세요." name="employeeTel"
-                        maxlength="40" />
+                      <input id="employeeTel" type="tel" placeholder="휴대폰번호를 입력하세요." name="employeeTel" maxlength="40"
+                        value="01022229999" />
                     </span>
                   </div>
                 </div>
@@ -181,11 +182,12 @@
                     <label for="employeeLocation">주소</label>
                   </h3>
                   <span>
-                    <input type="text" id="sample6_postcode" placeholder="우편번호" />
+                    <input type="text" id="sample6_postcode" placeholder="우편번호" value="613-103" />
                     <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" /><br />
-                    <input type="text" id="sample6_address" class="employeeLocation" placeholder="주소" /><br />
-                    <input type="text" id="sample6_detailAddress" placeholder="상세주소" />
-                    <input type="text" id="sample6_extraAddress" placeholder="참고항목" />
+                    <input type="text" id="sample6_address" class="employeeLocation" placeholder="주소"
+                      value="부산" /><br />
+                    <input type="text" id="sample6_detailAddress" placeholder="상세주소" value="부전동" />
+                    <input type="text" id="sample6_extraAddress" placeholder="참고항목" value="참고" />
                   </span>
                 </div>
                 <!-- .join_adress -->

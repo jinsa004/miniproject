@@ -26,8 +26,8 @@ public class Employee {
 		this.employeeUsername = employeeJoinDto.getEmployeeUsername();
 		this.employeePassword = employeeJoinDto.getEmployeePassword();
 		this.employeeEmail = employeeJoinDto.getEmployeeEmail();
-		this.employeeLocation = employeeJoinDto.getEmployeeLocation();
 		this.employeeTel = employeeJoinDto.getEmployeeTel();
+		this.employeeLocation = employeeJoinDto.getEmployeeLocation();
 	}
 
 	public void update(EmployeeUpdateDto employeeUpdateDto) {
@@ -39,7 +39,6 @@ public class Employee {
 		this.employeeEmail = employeeUpdateDto.getEmployeeEmail();
 		this.employeeLocation = employeeUpdateDto.getEmployeeLocation();
 		this.employeeTel = employeeUpdateDto.getEmployeeTel();
-
 	}
 
 	// 엔티티 필드 아님

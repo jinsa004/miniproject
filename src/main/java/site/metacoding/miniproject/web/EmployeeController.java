@@ -155,16 +155,7 @@ public class EmployeeController {
 
     @PostMapping("/emp/join")
     public @ResponseBody CMRespDto<?> 회원가입(@RequestBody EmployeeJoinDto employeeJoinDto) {
-        System.out.println("조인 실행됨================");
-        System.out.println(employeeJoinDto.getEmployeeBirth());
-        System.out.println(employeeJoinDto.getJobIds().size());
-        System.out.println("================");
-        Integer employeeId = employeeService.employeeJoin(employeeJoinDto);
-        System.out.println("***********************");
-        System.out.println(employeeId);
-        System.out.println("***********************");
-        checkService.checkboxInsert(employeeId,
-                employeeJoinDto.getJobIds());
+        employeeService.employeeJoin(employeeJoinDto);
         return new CMRespDto<>(1, "회원가입성공", null);
     }
 
