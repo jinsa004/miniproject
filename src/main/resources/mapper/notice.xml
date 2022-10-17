@@ -26,6 +26,17 @@
         ORDER BY n.notice_period DESC;
 	</select>
 
+	<select id="findMatchingByJobId" resultType="site.metacoding.miniproject.domain.notice.Notice">
+		SELECT n.notice_Id, n.notice_title, n.notice_task, n.notice_career, n.notice_qual, n.notice_position, DATE_FORMAT(n.notice_period, '%Y.%m.%d') as notice_period, n.job_id
+		FROM notice n
+		INNER JOIN (SELECT ec.job_id
+		FROM emp_check ec
+		INNER JOIN employee e
+		ON ec.employee_id = e.employee_id
+		WHERE ec.employee_id = #{employeeId}) ec
+		ON n.job_id = ec.job_id
+		ORDER BY n.notice_period DESC;
+	</select>
 
 	<select id="findByCompanyId" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT *

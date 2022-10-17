@@ -64,6 +64,11 @@ public class NoticeController {
         return "employee/noticeDetail";
     }
 
+    @GetMapping("/emp/matchingNotice")
+    public String matchingList() {// 개인회원이 보는 매칭리스트탭(관심분야맞는 공고 목록보기)
+        return "employee/matchingNotice";
+    }
+
     @GetMapping("emp/subscribeNotice/{employeeId}")
     public String subs(@PathVariable Integer employeeId, Model model) {
         List<Notice> noticeList = noticeService.구독공고목록보기(employeeId);
