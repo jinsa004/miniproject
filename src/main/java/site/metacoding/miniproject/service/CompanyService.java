@@ -1,12 +1,14 @@
 package site.metacoding.miniproject.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.check.company.CoCheckDao;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.company.CompanyDao;
 import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
-import site.metacoding.miniproject.web.dto.request.JoinDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyJoinDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
 
 @Service
@@ -14,6 +16,7 @@ import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
 public class CompanyService {
 
   private final CompanyDao companyDao;
+  private final CoCheckDao coCheckDao;
 
   public Company 로그인(CompanyLoginDto loginDto) {
     Company companyPS = companyDao.findByCompanyUsername(loginDto.getCompanyUsername());
@@ -24,9 +27,14 @@ public class CompanyService {
     return null;
   }
 
-  public void 회원가입(JoinDto joinDto) {
-    Company company = joinDto.toEntity(joinDto);
+  @Transactional
+  public void 회원가입(CompanyJoinDto companyJoinDto) {
+    Company company = companyJoinDto.toEntity(companyJoinDto);
     companyDao.insert(company);
+
+    for (Integer jobId : companyJoinDto.getJobIds()) {
+      coCheckDao.insert(company.getEmployeeId(), jobId);
+    }
   }
 
   public Company 기업소개하나보기(Integer companyId) {

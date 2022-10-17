@@ -2,7 +2,7 @@ package site.metacoding.miniproject.domain.employee;
 
 import lombok.Getter;
 import lombok.Setter;
-import site.metacoding.miniproject.web.dto.request.EmployeeJoinDto;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 
 @Setter

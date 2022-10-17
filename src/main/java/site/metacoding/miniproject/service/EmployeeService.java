@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.check.employee.EmpCheckDao;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.employee.EmployeeDao;
-import site.metacoding.miniproject.web.dto.request.EmployeeJoinDto;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 

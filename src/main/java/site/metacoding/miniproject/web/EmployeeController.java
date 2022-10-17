@@ -22,11 +22,10 @@ import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.domain.subscribe.Subscribe;
-import site.metacoding.miniproject.service.CheckService;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.service.ResumeService;
-import site.metacoding.miniproject.web.dto.request.EmployeeJoinDto;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
@@ -39,7 +38,6 @@ public class EmployeeController {
     private final EmployeeService employeeService;
     private final ResumeService resumeService;
     private final IntroService introService;
-    private final CheckService checkService;
     private final HttpSession session;
 
     @PostMapping("/emp/login")

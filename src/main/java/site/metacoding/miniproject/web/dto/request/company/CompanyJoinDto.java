@@ -1,4 +1,6 @@
-package site.metacoding.miniproject.web.dto.request;
+package site.metacoding.miniproject.web.dto.request.company;
+
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +12,7 @@ import site.metacoding.miniproject.domain.company.Company;
 @AllArgsConstructor
 @Setter
 @Getter
-public class JoinDto {
+public class CompanyJoinDto {
   private Integer companyId;
   private Integer companyNumber;
   private String companyName;
@@ -19,9 +21,9 @@ public class JoinDto {
   private String companyLocation;
   private String companyUsername;
   private String companyPassword;
-  private Integer jobId;
+  private List<Integer> jobIds;
 
-  public Company toEntity(JoinDto joinDto) {
+  public Company toEntity(CompanyJoinDto joinDto) {
     Company company = new Company(joinDto);
     return company;
   }
