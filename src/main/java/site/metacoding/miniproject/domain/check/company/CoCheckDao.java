@@ -1,0 +1,12 @@
+package site.metacoding.miniproject.domain.check.company;
+
+import org.apache.ibatis.annotations.Param;
+
+public interface CoCheckDao {
+
+    public void insert(@Param("employeeId") Integer companyId, @Param("jobId") Integer jobId);
+
+    public void updateByEmployeeId();
+
+    public void deleteById(Integer applicationId);
+}
