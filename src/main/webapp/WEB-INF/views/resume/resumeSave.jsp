@@ -117,10 +117,16 @@
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">전공계열</span>
-                    <input type="text" id="highschool_major" name="highschool_major" class="box_input info_right_input"
-                      placeholder="전공계열을 입력하세요" />
+                    <!-- <input type="text" id="highschool_major" name="highschool_major" class="box_input info_right_input"
+                      placeholder="전공계열을 입력하세요" /> -->
+                        <select id="highschool_major" name="highschool_major">
+                          <option value="">전공계열 선택</option>
+                          <option value="문과">문과</option>
+                          <option value="이과">이과</option>
+                          <option value="예체능">예체능</option>
+                        </select>
                   </div>
-                </div>
+                </div><!-- .edu_row -->
               </div>
 
               <div class="edu_form" id="univ">
@@ -168,11 +174,21 @@
               <h2 class="title">경력사항</h2>
             </div>
             <div class="resume_career info_form">
+              <h3 class="h4">신입/경력</h3>
               <div class="career_select">
-                <div class="btn-group">
+                <!-- <div class="btn-group">
                   <button type="button" class="career_btn on" id="new_btn" onclick="show_new()">신입</button>
                   <button type="button" class="career_btn" id="work_btn" onclick="show_work()">경력</button>
-                </div>
+                </div> -->
+                <span class="info_right_txt">경력 선택</span>
+                <select id="career_option" name="career_option">
+                  <option value="">경력 선택</option>
+                  <option value="신입" class="career_new">신입</option>
+                  <option value="1년">1년 ~ 3년</option>
+                  <option value="3년">3년 ~ 6년</option>
+                  <option value="6년">6년 ~ 10년</option>
+                  <option value="10년">10년 이상</option>
+                </select>
               </div>
 
               <div class="career_form" id="work">

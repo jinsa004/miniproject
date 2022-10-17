@@ -1,14 +1,12 @@
-
-$('nav ul li').click(function(){
-  $('nav ul li').removeClass('on');
-  $(this).addClass('on');
+$("nav ul li").click(function () {
+  $("nav ul li").removeClass("on");
+  $(this).addClass("on");
 });
 
-$('ul.tabs li').click(function(){
-  $('ul.tabs li').removeClass('active');
-  $(this).addClass('active');
+$("ul.tabs li").click(function () {
+  $("ul.tabs li").removeClass("active");
+  $(this).addClass("active");
 });
-
 
 /*   $(".tablist .tabs li a").on("click", function(){
     const num = $(".tablist .tabs li a").index($(this));
@@ -20,7 +18,6 @@ $('ul.tabs li').click(function(){
 
   });
  */
-
 
 function login() {
   let data = {
