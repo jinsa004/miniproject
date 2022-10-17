@@ -11,4 +11,5 @@ public class CoCheck {
     private Integer empCheckId;
     private Integer companyId;
     private Integer jobId;
+
 }

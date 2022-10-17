@@ -64,6 +64,13 @@ public class NoticeController {
         return "employee/noticeDetail";
     }
 
+    @GetMapping("emp/subscribeNotice/{employeeId}")
+    public String subs(@PathVariable Integer employeeId, Model model) {
+        List<Notice> noticeList = noticeService.구독공고목록보기(employeeId);
+        model.addAttribute("noticeList", noticeList);
+        return "employee/subscription";
+    }
+
     /* =============================기업회원========================================= */
 
     @GetMapping("co/noticeDetail")

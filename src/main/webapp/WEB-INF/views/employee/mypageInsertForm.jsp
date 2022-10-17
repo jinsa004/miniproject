@@ -17,7 +17,7 @@
                     </span>
                     <label for="resume_select" class="resume_select_box">
                       <a href="#" class="list_title">
-                        <span>${resumePS.resumeName}</span>
+                        <span>${resumePS.resumeTitle}</span>
                       </a>
                       <ul class="list_option">
                         <li class="career">

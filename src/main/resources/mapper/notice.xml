@@ -39,6 +39,23 @@
 		WHERE notice_id = #{noticeId}
 	</select>
 
+	<select id="findSubsByEmployeeId" resultType="site.metacoding.miniproject.domain.notice.Notice">
+		SELECT *
+		FROM notice n
+		INNER JOIN subscribe s
+		ON n.company_id = s.company_id
+		WHERE s.employee_id = #{employeeId}
+	</select>
+
+	<select id="findByNoticeIdtoNoticeDetail" resultType="site.metacoding.miniproject.domain.notice.Notice">
+		SELECT *
+		FROM notice n
+		INNER JOIN intro i
+		INNER JOIN job j
+		ON n.company_id = i.company_id 
+		WHERE n.notice_id = #{noticeId} and n.job_id = j.job_id
+	</select>
+
 	<update id="update">
 		UPDATE notice SET
         notice_title = #{noticeTitle}, 

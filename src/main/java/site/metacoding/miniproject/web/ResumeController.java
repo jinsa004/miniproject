@@ -100,11 +100,6 @@ public class ResumeController {
         return "company/jobResume";
     }
 
-    @GetMapping("co/resumeDetail")
-    public String 이력서상세보기() { // 이력서 상세보기 페이지
-        return "company/resumeDetail";
-    }
-
     @GetMapping("co/resumeDetail/{resumeId}")
     public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
         model.addAttribute("resume", resumeService.이력서상세보기(resumeId));

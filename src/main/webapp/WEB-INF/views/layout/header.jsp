@@ -61,7 +61,7 @@
                   <a href="/emp/matchingNotice">매칭리스트</a>
                 </li>
                 <li>
-                  <a href="/emp/subscription">구독기업공고</a>
+                  <a href="/emp/subscribeNotice/${principal.employeeId}">구독기업공고</a>
                 </li>
                 <li>
                   <a href="/emp/companyList">기업정보</a>

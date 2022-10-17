@@ -18,6 +18,6 @@ public class UpdateDto {
     private String introWellfare;
     private String introContent;
     private String introLocation;
-    private String introImage;
+    private String introImageId;
     private String jobName;
 }

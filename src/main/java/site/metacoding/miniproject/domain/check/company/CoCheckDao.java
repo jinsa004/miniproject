@@ -9,4 +9,5 @@ public interface CoCheckDao {
     public void updateByEmployeeId();
 
     public void deleteById(Integer applicationId);
+
 }

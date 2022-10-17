@@ -15,5 +15,9 @@ public interface NoticeDao {
 
 	public void deleteById(Integer noticeId);
 
-	public List<Notice> findByCompanyId(Integer CompanyId);
+	public List<Notice> findByCompanyId(Integer companyId);
+
+	public List<Notice> findSubsByEmployeeId(Integer employeeId);
+
+	public Notice findByNoticeIdtoNoticeDetail(Integer noticeId);
 }

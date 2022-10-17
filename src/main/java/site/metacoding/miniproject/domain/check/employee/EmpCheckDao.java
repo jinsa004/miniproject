@@ -9,4 +9,5 @@ public interface EmpCheckDao {
     public void updateByEmployeeId();
 
     public void deleteById(Integer applicationId);
+
 }

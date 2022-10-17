@@ -7,6 +7,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
+
 public class EmpCheck {
     private Integer empCheckId;
     private Integer employeeId;

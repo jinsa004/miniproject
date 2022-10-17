@@ -15,6 +15,14 @@ public class NoticeService {
 
     private final NoticeDao noticeDao;
 
+    public Notice 내공고하나보기(Integer noticeId) {
+        return noticeDao.findByNoticeIdtoNoticeDetail(noticeId);
+    }
+
+    public List<Notice> 구독공고목록보기(Integer employeeId) {
+        return noticeDao.findSubsByEmployeeId(employeeId);
+    }
+
     public void 내공고삭제(Integer noticeId) {
         Notice noticePS = noticeDao.findById(noticeId); // 영속화
         noticeDao.deleteById(noticePS.getNoticeId());
@@ -30,10 +38,6 @@ public class NoticeService {
 
     public List<Notice> 내공고목록보기(Integer companyId) {
         return noticeDao.findByCompanyId(companyId);
-    }
-
-    public Notice 내공고하나보기(Integer noticeId) {
-        return noticeDao.findById(noticeId);
     }
 
     public void 이력서수정(Integer noticeId, NoticeUpdateDto noticeUpdateDto) {
