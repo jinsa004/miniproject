@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.domain.image.resume;
+package site.metacoding.miniproject.domain.Image.resume;
 
 import java.util.List;
 

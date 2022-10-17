@@ -1,12 +1,17 @@
 package site.metacoding.miniproject.domain.employee;
 
+import java.io.Serializable;
+
+import org.springframework.data.redis.core.RedisHash;
+
 import lombok.Getter;
 import lombok.Setter;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 
 @Setter
 @Getter
-public class Employee {
+@RedisHash("Employee")
+public class Employee implements Serializable {
 	private Integer employeeId;
 	private String employeeName;
 	private String employeeBirth;
