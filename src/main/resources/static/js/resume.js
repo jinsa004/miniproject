@@ -24,7 +24,7 @@ $("#btnDeleteResume").click(() => {
 function insertResume() {
 
   let data = {
-    resumeName: $("#resume_name").val(),
+    resumeTitle: $("#resume_title").val(),
     employeeId: $("#employeeId").val(),
     resumeImage: $("#files").val(),
     highschoolName: $("#highschool_name").val(),
@@ -66,7 +66,7 @@ function insertResume() {
 function updateResume() {
 
   let data = {
-    resumeName: $("#resume_name").val(),
+    resumeTitle: $("#resume_title").val(),
     resumeImage: $("#files").val(),
     highschoolName: $("#highschool_name").val(),
     highschoolStartdate: $("#highschool_start_date").val(),
@@ -84,7 +84,7 @@ function updateResume() {
     careerTask: $("#career_task").val(),
     jobId: $('input[id=jobId]:checked').val(),
   };
-
+  let employeeId = $("#employeeId").val();
   let resumeId = $("#resumeId").val();
 
   $.ajax("/emp/resumeUpdate/" + resumeId, {
@@ -98,7 +98,7 @@ function updateResume() {
   }).done((res) => {
     if (res.code == 1) {
       alert("이력서 수정 완료");
-      location.href = "/emp";
+      location.href = "/emp/mypageInsertForm/" + employeeId;
     } else {
       alert("등록에 실패하였습니다");
     }

@@ -79,8 +79,8 @@
           <h2>로그인</h2>
           <div class="form_box">
             <form>
-              <input id="username" type="text" placeholder="아이디를 입력하세요." value="ssar" />
-              <input id="password" type="password" placeholder="패스워드를 입력하세요." value="1234" />
+              <input id="username" type="text" placeholder="아이디를 입력하세요." />
+              <input id="password" type="password" placeholder="패스워드를 입력하세요." />
             </form>
             <label class="btn_check">
               <input type="checkbox" class="login_check" id="remember" checked />
@@ -89,7 +89,6 @@
             </label>
 
             <button id="btn_login" type="button" class="btn btn-primary">
-
               로그인
             </button>
           </div>

@@ -1,10 +1,12 @@
 package site.metacoding.miniproject.domain.employee;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 
+@NoArgsConstructor
 @Setter
 @Getter
 public class Employee {
@@ -17,7 +19,6 @@ public class Employee {
 	private String employeeEmail;
 	private String employeeLocation;
 	private String employeeTel;
-	private Integer jobId;
 
 	public Employee(EmployeeJoinDto employeeJoinDto) {
 		this.employeeName = employeeJoinDto.getEmployeeName();
@@ -43,4 +44,5 @@ public class Employee {
 
 	// 엔티티 필드 아님
 	private Integer companyId;
+	private Integer jobId;
 }

@@ -2,11 +2,12 @@
   <%@ include file="../layout/headerMypage.jsp" %>
     < <div class="resume_update">
       <input id="resumeId" type="hidden" value="${resumePS.resumeId}" />
+      <input type="text" id="employeeId" class="hidden" value="${principal.employeeId}" />
       <div class="resume_title">
         <h2>이력서 제목</h2>
         <div class="title_update">
           <div class="title_input">
-            <input type="text" id="resume_name" class="form-control" value="${resumePS.resumeTitle}" />
+            <input type="text" id="resume_title" class="form-control" value="${resumePS.resumeTitle}" />
             <!-- input 입력 넣기 -->
           </div>
         </div>

@@ -5,6 +5,7 @@
     </div>
 
     <div class="container">
+
       <div class="row">
         <div class="company_detail">
           <input id="introId" type="hidden" value="${detailDto.introId}" />

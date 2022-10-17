@@ -28,9 +28,8 @@
 		company_tel = #{companyTel},
 		company_location = #{companyLocation},
 		company_username = #{companyUsername},
-		company_password = #{companyPassword},
-		job_id = #{jobId}
-    WHERE company_id = #{companyId}
+		company_password = #{companyPassword}
+    	WHERE company_id = #{companyId}
 	</update>
 
 	<delete id="deleteById">
