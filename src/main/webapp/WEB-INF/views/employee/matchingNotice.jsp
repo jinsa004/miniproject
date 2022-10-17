@@ -20,69 +20,23 @@
               </ul>
             </div><!-- .notice_title -->
             <div id="tab-1" class="notice_inner notice_inner1 tab-content on">
-              <div>
-                <ul>
-                  <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
-                  <li><a href="noticeDetail">
-                      보안/운영 시스템 개발팀 백엔드 개발자 모집
-                      <span class="notice_small">백엔드/서버개발, 웹개발, 정보보안</span>
-                    </a></li>
-                  <li>경력무관<span class="notice_small">학력무관</span></li>
-                  <li>정규직<span class="notice_small">부산</span></li>
-                  <li>~10/19(수)<span class="notice_small">마감 13일전</span></li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
-                  <li><a href="noticeDetail">
-                      보안/운영 시스템 개발팀 백엔드 개발자 모집
-                      <span class="notice_small">백엔드/서버개발, 웹개발, 정보보안</span>
-                    </a></li>
-                  <li>경력무관<span class="notice_small">학력무관</span></li>
-                  <li>정규직<span class="notice_small">부산</span></li>
-                  <li>~10/19(수)<span class="notice_small">마감 13일전</span></li>
-                </ul>
-              </div>
-              <div>
-                <ul>
-                  <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
-                  <li><a href="noticeDetail">
-                      보안/운영 시스템 개발팀 백엔드 개발자 모집
-                      <span class="notice_small">백엔드/서버개발, 웹개발, 정보보안</span>
-                    </a></li>
-                  <li>경력무관<span class="notice_small">학력무관</span></li>
-                  <li>정규직<span class="notice_small">부산</span></li>
-                  <li>~10/19(수)<span class="notice_small">마감 13일전</span></li>
-                </ul>
-              </div>
+              <c:forEach var="matchingNotice" items="${matchingNotice}">
+                <div>
+                  <ul>
+                    <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
+                    <li><a href="noticeDetail">
+                        ${matchingNotice.noticeTitle}
+                        <span class="notice_small">${matchingNotice.noticeTask}</span>
+                      </a></li>
+                    <li>${matchingNotice.noticeCareer}<span class="notice_small">${matchingNotice.noticeQual}</span>
+                    </li>
+                    <li>${matchingNotice.noticePosition}<span class="notice_small">부산</span></li>
+                    <!-- notice 테이블에 지역 컬럼 만들거나 sal을 넣는 등 수정 필요 -->
+                    <li>~${matchingNotice.noticePeriod}<span class="notice_small">마감 13일전</span></li>
+                  </ul>
+                </div>
+              </c:forEach>
             </div><!-- .notice_inner1 -->
-
-            <div id="tab-2" class="notice_inner notice_inner2 tab-content">
-              <ul>
-                <li><a href="#"><img src="/img/logo_1.png" alt="logo"></a></li>
-                <li><a href="#">
-                    보안/운영 시스템 개발팀 백엔드 개발자 모집
-                    <span class="notice_small">백엔드/서버개발, 웹개발, 정보보안</span>
-                  </a></li>
-                <li>경력무관<span class="notice_small">학력무관</span></li>
-                <li>정규직<span class="notice_small">부산</span></li>
-                <li>~10/19(수)<span class="notice_small">마감 13일전</span></li>
-              </ul>
-            </div><!-- .notice_inner2 -->
-
-            <div id="tab-3" class="notice_inner notice_inner3 tab-content">
-              <ul>
-                <li><a href="#"><img src="/img/logo_1.png" alt="logo"></a></li>
-                <li><a href="#">
-                    보안/운영 시스템 개발팀 백엔드 개발자 모집
-                    <span class="notice_small">백엔드/서버개발, 웹개발, 정보보안</span>
-                  </a></li>
-                <li>경력무관<span class="notice_small">학력무관</span></li>
-                <li>정규직<span class="notice_small">부산</span></li>
-                <li>~10/19(수)<span class="notice_small">마감 13일전</span></li>
-              </ul>
-            </div><!-- .notice_inner3 -->
           </div>
           <!-- .notice_box -->
         </section>

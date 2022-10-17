@@ -58,7 +58,7 @@
                   <a href="/emp/main">채용공고</a>
                 </li>
                 <li>
-                  <a href="/emp/matchingNotice">매칭리스트</a>
+                  <a href="/emp/matchingNotice/${principal.employeeId}">매칭리스트</a>
                 </li>
                 <li>
                   <a href="/emp/subscribeNotice/${principal.employeeId}">구독기업공고</a>

@@ -66,8 +66,8 @@ public class NoticeController {
 
     @GetMapping("/emp/matchingNotice/{employeeId}")
     public String matchingList(@PathVariable Integer employeeId, Model model) {
-        List<Notice> matchingNoticePS = noticeService.구직자매칭리스트보기(employeeId);
-        model.addAttribute("matchingNoticePS", matchingNoticePS);
+        List<Notice> matchingNotice = noticeService.구직자매칭리스트보기(employeeId);
+        model.addAttribute("matchingNotice", matchingNotice);
         return "employee/matchingNotice";
     }
 
