@@ -16,8 +16,15 @@ function login() {
     if (res.code == 1) {
       alert("로그인 성공");
       location.href = "/emp/main";
+    } else if (employeeUsername == "") {
+      alert("아이디를 입력해주세요.");
+      return;
+    } else if (employeePassword == "") {
+      alert("비밀번호를 입력해주세요.");
+      return;
     } else {
       alert("로그인 실패, 아이디 패스워드를 확인해주세요");
+      return;
     }
   });
 }
@@ -187,4 +194,28 @@ function sample6_execDaumPostcode() {
       document.getElementById("sample6_detailAddress").focus();
     },
   }).open();
+}
+
+/* ======== 공고등록 로그인 ============= */
+function coLogin2() {
+  let data = {
+    companyUsername: $("#coUsername").val(),
+    companyPassword: $("#coPassword").val(),
+    remember: $("#remember").prop("checked"),
+  };
+  $.ajax("/co/login", {
+    type: "POST",
+    dataType: "json", //응답데이터 타입명
+    data: JSON.stringify(data), // 요청데이터 타입명
+    headers: {
+      "Content-Type": "application/json; charset=utf-8", // spring에게 알려주는 것 - json으로 보내겠다. mime type - 필수
+    },
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("로그인 성공");
+      location.href = "/co/noticeSave";
+    } else {
+      alert("로그인 실패, 아이디 패스워드를 확인해주세요");
+    }
+  });
 }

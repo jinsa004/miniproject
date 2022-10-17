@@ -19,6 +19,18 @@
 		WHERE employee_username = #{employeeUsername}
 	</select>
 
+	<select id="findByEmployeePassword" resultType="site.metacoding.miniproject.domain.employee.Employee">
+		SELECT *
+		FROM employee
+		WHERE employee_password = #{employeePassword}
+	</select>
+
+	<select id="findByEmployeeEmail" resultType="site.metacoding.miniproject.domain.employee.Employee">
+		SELECT *
+		FROM employee
+		WHERE employee_email = #{employeeEmail}
+	</select>
+
 	<update id="update">
 		UPDATE employee SET 
 		employee_name=#{employeeName},

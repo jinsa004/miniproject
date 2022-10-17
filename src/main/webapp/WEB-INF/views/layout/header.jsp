@@ -62,8 +62,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 >
                   회원가입
                 </button>
-                <a href="/co/mainCompany" class="btn_company">기업 서비스</a
-                ><!-- .btn_company -->
+                <a href="/co/mainCompany" class="btn_company">기업 서비스</a>
+                <!-- .btn_company -->
               </c:when>
               <c:otherwise>
                 <a class="btn_logout" href="/logout">로그아웃</a>
@@ -141,7 +141,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <h3>
                   <label for="employeeUsername">아이디</label>
                 </h3>
-                <span>
+                <span class="check">
                   <input
                     id="employeeUsername"
                     type="text"
@@ -153,6 +153,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     id="btnUsernameSameCheck"
                     type="button"
                     maxlength="20"
+                    onclick="checkUsername()"
                   >
                     중복체크
                   </button>
@@ -172,14 +173,23 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     maxlength="20"
                   />
                 </span>
+                <span class="check">
+                  <input
+                    id="employeepasswordRepeat"
+                    type="password"
+                    placeholder="패스워드를 입력하세요."
+                  />
+                  <button
+                    id="employeepasswordCheck"
+                    type="button"
+                    maxlength="20"
+                    onclick="checkPassword()"
+                  >
+                    비밀번호 확인
+                  </button>
+                </span>
               </div>
-              <div class="join_pw2 join_box">
-                <input
-                  id="employeepasswordRepeat"
-                  type="password"
-                  placeholder="패스워드를 입력하세요."
-                />
-              </div>
+              <div class="join_pw2 join_box"></div>
               <div class="join_sex join_box">
                 <h3>
                   <label for="employeeSex">성별</label>
@@ -198,7 +208,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 <h3>
                   <label for="employeeEmail">이메일</label>
                 </h3>
-                <span>
+                <span class="check">
                   <input
                     id="employeeEmail"
                     type="email"
@@ -206,6 +216,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     name="employeeEmail"
                     maxlength="30"
                   />
+                  <button
+                    id="employeeEmailCheck"
+                    type="button"
+                    maxlength="20"
+                    onclick="checkEmail()"
+                  >
+                    이메일 확인
+                  </button>
                 </span>
               </div>
 
@@ -270,13 +288,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     type="button"
                     onclick="sample6_execDaumPostcode()"
                     value="우편번호 찾기"
-                  /><br />
+                    class="btn_post_code"
+                  />
                   <input
                     type="text"
                     id="sample6_address"
                     class="employeeLocation"
                     placeholder="주소"
-                  /><br />
+                  />
                   <input
                     type="text"
                     id="sample6_detailAddress"
