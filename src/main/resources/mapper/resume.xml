@@ -35,7 +35,7 @@
 		FROM resume r
 		LEFT OUTER JOIN employee e
 		ON r.employee_id = e.employee_id
-		WHERE resume_id = #{resumeId}
+		WHERE r.resume_id = #{resumeId}
 	</select>
 
 	<select id="findByEmployeeId" resultType="site.metacoding.miniproject.domain.resume.Resume">
@@ -43,7 +43,7 @@
     FROM resume r
     INNER JOIN job j
     ON r.job_id = j.job_id
-    WHERE employee_id=#{employeeId};
+    WHERE r.employee_id=#{employeeId};
   </select>
 
 	<update id="update">
