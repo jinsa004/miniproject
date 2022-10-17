@@ -23,8 +23,10 @@
               <c:forEach var="matchingNotice" items="${matchingNotice}">
                 <div>
                   <ul>
-                    <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
-                    <li><a href="noticeDetail">
+                    <li><a href="/emp/noticeDetail/${matchingNotice.noticeId}"><img src="/img/logo_1.png"
+                          alt="logo"></a>
+                    </li>
+                    <li><a href="/emp/noticeDetail/${matchingNotice.noticeId}">
                         ${matchingNotice.noticeTitle}
                         <span class="notice_small">${matchingNotice.noticeTask}</span>
                       </a></li>
