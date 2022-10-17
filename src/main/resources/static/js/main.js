@@ -1,24 +1,3 @@
-$("nav ul li").click(function () {
-  $("nav ul li").removeClass("on");
-  $(this).addClass("on");
-});
-
-$("ul.tabs li").click(function () {
-  $("ul.tabs li").removeClass("active");
-  $(this).addClass("active");
-});
-
-/*   $(".tablist .tabs li a").on("click", function(){
-    const num = $(".tablist .tabs li a").index($(this));
-    $(".tablist .tabs li").removeClass("active");
-    $(".tab_content").removeClass("show");
-
-    $('.tablist .tabs li:eq(' + num + ')').addClass("active");
-    $('.tab_content:eq(' + num + ')').addClass("show");
-
-  });
- */
-
 function login() {
   let data = {
     employeeUsername: $("#username").val(),

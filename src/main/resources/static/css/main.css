@@ -209,7 +209,7 @@ nav ul li{
     display: inline-block;
     padding-left: 40px;
 }
-nav ul li.on a{
+nav ul li.active a{
     color: #4876ef;
 }
 nav ul li:first-child{
@@ -218,6 +218,12 @@ nav ul li:first-child{
 nav ul li a{
     color: #333;
     font-weight: 500;
+}
+nav ul li a:active{
+    color: #4876ef;
+}
+nav ul li a:visited{
+    color: #333;
 }
 nav ul li a:hover{
     color: #4876ef;
@@ -284,8 +290,8 @@ nav ul li a:hover{
     background: #e8eeff;
 }
 
-.tab_content{ display:none;}
-.show{ display:block;}
+.tab_content{ display: block;}
+.tab_content.active{ }
 
 .notice_box{
     margin-top: 25px;   

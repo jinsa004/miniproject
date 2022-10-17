@@ -229,11 +229,14 @@ nav ul li a:hover{
 .tablist ul.tabs{
     font-size: 0;
 }
-.tablist ul.tabs li.on{
+.tablist ul.tabs li.active{
     border-color: #435070;
     font-weight: bold;
     color: #435070;
     background: #f4f4f4;
+}
+.tablist .tabs li.active a{
+    color: #435070;
 }
 .tablist ul li{
     display: inline-block;
