@@ -116,10 +116,10 @@ function join() {
 		return;
 	}
 
-  // if (companyPasswordSameCheck() == true) {
-	// 	alert("비밀번호가 일치하지 않습니다.")
-	// 	return;
-	// }
+  if (companyPasswordSameCheck() == true) {
+		alert("비밀번호가 일치하지 않습니다.")
+		return;
+	}
 
   // if(emailCheck() == false){
   //   alert("이메일 형식이 맞지 않습니다.")
@@ -183,17 +183,17 @@ function checkUsername() {
 }
 
 
-// function companyPasswordSameCheck() {
-// 	let companyPassword = $("#companyPassword").val();
-// 	let companyPasswordSame = $("#companyPasswordSame").val();
-// 	if (companyPassword != companyPasswordSame) {
-// 		companyPassword.value = "";
-// 		companyPasswordSame.value = "";
-// 		return true;
-// 	} else{
-// 		return false;
-// 	}
-// }
+function companyPasswordSameCheck() {
+	let companyPassword = $("#companyPassword").val();
+	let companyPasswordSame = $("#companyPasswordSame").val();
+	if (companyPassword != companyPasswordSame) {
+		companyPassword.value = "";
+		companyPasswordSame.value = "";
+		return true;
+	} else{
+		return false;
+	}
+}
 
 // function emailCheck() {
 // 	let email = $("#email").val();
@@ -205,4 +205,3 @@ function checkUsername() {
 // 		return false;
 // 	}
 // }
-
