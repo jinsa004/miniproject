@@ -4,8 +4,8 @@
 <mapper namespace="site.metacoding.miniproject.domain.company.CompanyDao">
 
 	<insert id="insert" parameterType="site.metacoding.miniproject.domain.company.Company" useGeneratedKeys="true" keyProperty="companyId">
-		INSERT INTO company(company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
-		VALUES(#{companyNumber}, #{companyName}, #{companyEmail}, #{companyTel}, #{companyLocation}, #{jobId}, #{companyUsername}, #{companyPassword})
+		INSERT INTO company(company_number, company_name, company_email, company_tel, company_location, company_username, company_password)
+		VALUES(#{companyNumber}, #{companyName}, #{companyEmail}, #{companyTel}, #{companyLocation}, #{companyUsername}, #{companyPassword})
 	</insert>
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.company.Company"></select>

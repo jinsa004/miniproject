@@ -33,7 +33,7 @@ public class CompanyService {
     companyDao.insert(company);
 
     for (Integer jobId : companyJoinDto.getJobIds()) {
-      coCheckDao.insert(company.getEmployeeId(), jobId);
+      coCheckDao.insert(company.getCompanyId(), jobId);
     }
   }
 
