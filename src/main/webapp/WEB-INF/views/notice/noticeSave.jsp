@@ -20,14 +20,6 @@
                 </div>
                 <div class="notice_row">
                   <div class="notice_list">
-                    <p class="notice_list_item">회사명</p>
-                  </div>
-                  <div class="notice_input">
-                    <input type="text" id="noticeConame" class="box_input" placeholder="회사명을 입력하세요" />
-                  </div>
-                </div>
-                <div class="notice_row">
-                  <div class="notice_list">
                     <p class="notice_list_item">분야</p>
                   </div>
                   <div class="notice_input">

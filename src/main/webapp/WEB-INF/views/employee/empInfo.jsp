@@ -139,7 +139,7 @@
 
       <div class="btn_group">
         <div class="update_btn">
-          <button type="button" onclick="location.href='#'" id="btnEmployeeUpdate">등록완료</button>
+          <button type="button" onclick="location.href='#'" id="btnEmployeeUpdate">수정완료</button>
         </div>
         <div class="delete_btn">
           <button type="button" onclick="location.href='#'" id="btnEmployeeDelete">회원탈퇴</button>

@@ -84,7 +84,7 @@
 
       <br class="btn_group">
       <div class="update_btn">
-        <button id="btn_update" type="button">등록완료</button>
+        <button id="btn_update" type="button">수정완료</button>
       </div>
 
       <div class="delete_btn">

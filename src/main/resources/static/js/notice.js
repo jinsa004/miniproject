@@ -14,7 +14,6 @@ function btnInsertNotice() {
   let data = {
     companyId: $("#companyId").val(),
     noticeTitle: $("#noticeTitle").val(),
-    noticeConame: $("#noticeConame").val(),
     noticePeriod: $("#noticePeriod").val(),
     noticeDept: $("#noticeDept").val(),
     noticePosition: $("#noticePosition").val(),
