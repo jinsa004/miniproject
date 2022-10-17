@@ -14,8 +14,6 @@ $("#iconSub").click(() => {
 });
 
 $("#btnUpdate").click(() => {
-  console.log("클릭됨");
-  console.log($("#introId").val());
   update();
 });
 
@@ -88,7 +86,7 @@ function update() {
   }).done((res) => {
     if (res.code == 1) {
       alert("기업소개 수정 완료");
-      location.reload;
+      location.reload();
     } else {
       alert("업데이트에 실패하였습니다");
     }

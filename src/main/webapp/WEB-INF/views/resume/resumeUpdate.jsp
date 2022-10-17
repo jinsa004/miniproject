@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypage.jsp" %>
-    < <div class="resume_update">
+    <div class="resume_update">
       <input id="resumeId" type="hidden" value="${resumePS.resumeId}" />
-      <input type="text" id="employeeId" class="hidden" value="${principal.employeeId}" />
+      <input id="employeeId" type="hidden" value="${principal.employeeId}" />
       <div class="resume_title">
         <h2>이력서 제목</h2>
         <div class="title_update">
@@ -221,12 +221,12 @@
       </div>
       <!-- delete -->
 
-      </div>
-      <!-- resume_update -->
-      </div>
-      </div>
-      <!-- body -->
+    </div>
+    <!-- resume_update -->
+    </div>
+    </div>
+    <!-- body -->
 
-      <script src="/js/main.js"></script>
-      <script src="/js/resume.js"></script>
-      <%@ include file="../layout/footer.jsp" %>
+    <script src="/js/main.js"></script>
+    <script src="/js/resume.js"></script>
+    <%@ include file="../layout/footer.jsp" %>
