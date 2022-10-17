@@ -1,15 +1,13 @@
 package site.metacoding.miniproject.domain.check.company;
 
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface CoCheckDao {
-    public List<CoCheck> findAll();
 
-    public CoCheck findById(Integer coCheckId);
+    public void insert(@Param("companyId") Integer companyId, @Param("jobId") Integer jobId);
 
-    public void insert(CoCheck coCheck);
+    public void updateByEmployeeId();
 
-    public void update(CoCheck coCheck);
+    public void deleteById(Integer applicationId);
 
-    public void deleteById(CoCheck coCheckId);
 }

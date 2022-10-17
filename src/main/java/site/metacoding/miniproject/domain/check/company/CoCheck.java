@@ -1,12 +1,14 @@
 package site.metacoding.miniproject.domain.check.company;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
+@NoArgsConstructor
 @Setter
+@Getter
 public class CoCheck {
-    private Integer coCheckId;
+    private Integer empCheckId;
     private Integer companyId;
     private Integer jobId;
 

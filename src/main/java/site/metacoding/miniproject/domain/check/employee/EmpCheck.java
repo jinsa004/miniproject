@@ -1,10 +1,13 @@
 package site.metacoding.miniproject.domain.check.employee;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
+@NoArgsConstructor
 @Setter
+@Getter
+
 public class EmpCheck {
     private Integer empCheckId;
     private Integer employeeId;

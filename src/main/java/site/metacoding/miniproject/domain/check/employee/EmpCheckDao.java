@@ -1,15 +1,13 @@
 package site.metacoding.miniproject.domain.check.employee;
 
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface EmpCheckDao {
-    public List<EmpCheck> findAll();
 
-    public EmpCheck findById(Integer empCheckId);
+    public void insert(@Param("employeeId") Integer employeeId, @Param("jobId") Integer jobId);
 
-    public void insert(EmpCheck empCheck);
+    public void updateByEmployeeId();
 
-    public void update(EmpCheck empCheck);
+    public void deleteById(Integer applicationId);
 
-    public void deleteById(EmpCheck empCheckId);
 }
