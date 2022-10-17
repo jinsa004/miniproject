@@ -2,6 +2,7 @@ package site.metacoding.miniproject.domain.employee;
 
 import lombok.Getter;
 import lombok.Setter;
+import site.metacoding.miniproject.web.dto.request.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 
 @Setter
@@ -17,6 +18,17 @@ public class Employee {
 	private String employeeLocation;
 	private String employeeTel;
 	private Integer jobId;
+
+	public Employee(EmployeeJoinDto employeeJoinDto) {
+		this.employeeName = employeeJoinDto.getEmployeeName();
+		this.employeeBirth = employeeJoinDto.getEmployeeBirth();
+		this.employeeSex = employeeJoinDto.getEmployeeSex();
+		this.employeeUsername = employeeJoinDto.getEmployeeUsername();
+		this.employeePassword = employeeJoinDto.getEmployeePassword();
+		this.employeeEmail = employeeJoinDto.getEmployeeEmail();
+		this.employeeLocation = employeeJoinDto.getEmployeeLocation();
+		this.employeeTel = employeeJoinDto.getEmployeeTel();
+	}
 
 	public void update(EmployeeUpdateDto employeeUpdateDto) {
 		this.employeeName = employeeUpdateDto.getEmployeeName();

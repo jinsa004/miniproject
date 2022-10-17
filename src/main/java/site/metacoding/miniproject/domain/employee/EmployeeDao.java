@@ -2,6 +2,9 @@ package site.metacoding.miniproject.domain.employee;
 
 import java.util.List;
 
+import site.metacoding.miniproject.web.dto.request.EmployeeJoinDto;
+import site.metacoding.miniproject.web.dto.request.JoinDto;
+
 public interface EmployeeDao {
 	public List<Employee> findAll();
 

@@ -1,6 +1,5 @@
 $("#btn_join").click(() => {
   join();
-  jobJoin();
 });
 
 $("#btnEmployeeUpdate").click(() => {
@@ -26,6 +25,33 @@ $("#btn_recruit").click(() => {
 
 //회원가입
 function join() {
+
+  let checkBoxArr = [];
+  $("input:checkbox[name='job_checkbox']:checked").each(function () {
+    checkBoxArr.push($(this).val()); // 체크된 값 배열에 push
+  })
+
+  console.log(checkBoxArr);
+
+  // let param = {};
+  // let list = [];
+
+  // for (let i = 0; i < checkBoxArr.length; i++) {
+
+  //   let obj = {};
+
+  //   obj.jobIds = checkBoxArr[i].value;
+
+  // list.push(obj);
+
+  // console.log(list);
+  //}
+
+  // param.jobIds = list;
+
+  // console.log(param);
+
+
   let data = {
     employeeUsername: $("#employeeUsername").val(),
     employeePassword: $("#employeePassword").val(),
@@ -34,16 +60,19 @@ function join() {
     employeeName: $("#employeeName").val(),
     employeeBirth: $("#employeeBirth").val(),
     employeeTel: $("#employeeTel").val(),
-    employeeLocation: $(".employeeLocation").val()
+    employeeLocation: $(".employeeLocation").val(),
+    jobIds: checkBoxArr
   };
+
+  console.log(data);
+
   $.ajax("/emp/join", {
     type: "POST",
     dataType: "json", //응답데이터 타입명
     data: JSON.stringify(data), // 요청데이터 타입명
     headers: {
-      "Content-Type": "application/json; charset=utf-8", // spring에게 알려주는 것 - json으로 보내겠다. mime type - 필수
-    },
-    async: false
+      "Content-Type": "application/json; charset=utf-8" // spring에게 알려주는 것 - json으로 보내겠다. mime type - 필수
+    }
   }).done((res) => {
     if (res.code == 1) {
       alert("회원가입 성공");
@@ -56,28 +85,28 @@ function join() {
 }
 /**개인회원 수정 */
 
-function jobJoin() {
-  let checkBoxArr = [];
-  $("input:checkbox[name='job_checkbox']:checked").each(function () {
-    checkBoxArr.push($(this).val()); // 체크된 값 배열에 push
-  })
+// function jobJoin() {
+//   let checkBoxArr = [];
+//   $("input:checkbox[name='job_checkbox']:checked").each(function () {
+//     checkBoxArr.push($(this).val()); // 체크된 값 배열에 push
+//   })
 
-  $.ajax("/emp/join", {
-    type: "POST",
-    dataType: "json", //응답데이터 타입명
-    data: {
-      checkBoxArr: checkBoxArr
-    },
-    async: false
-  }).done((res) => {
-    if (res.code == 1) {
-      alert("관심분야 등록 성공");
-      location.href = "/";
-    } else {
-      alert(res.msg);
-    }
-  });
-}
+//   $.ajax("/emp/join", {
+//     type: "POST",
+//     dataType: "json", //응답데이터 타입명
+//     data: {
+//       checkBoxArr: checkBoxArr
+//     },
+//     async: false
+//   }).done((res) => {
+//     if (res.code == 1) {
+//       alert("관심분야 등록 성공");
+//       location.href = "/";
+//     } else {
+//       alert(res.msg);
+//     }
+//   });
+// }
 
 function employeeUpdate() {
   let employeeId = $("#employeeId").val();

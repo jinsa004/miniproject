@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.employee.EmployeeDao;
+import site.metacoding.miniproject.web.dto.request.EmployeeJoinDto;
+import site.metacoding.miniproject.web.dto.request.JoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 
@@ -33,8 +35,10 @@ public class EmployeeService {
         return null;
     }
 
-    public void employeeJoin(Employee employee) {
+    public Integer employeeJoin(EmployeeJoinDto employeeJoinDto) {
+        Employee employee = employeeJoinDto.toEntity(employeeJoinDto);
         employeeDao.insert(employee);
+        return employee.getEmployeeId();
     }
 
     public Employee employeeUpdate(Integer employeeId) {

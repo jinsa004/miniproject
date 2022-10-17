@@ -30,6 +30,8 @@ import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.ResumeService;
+import site.metacoding.miniproject.web.dto.request.EmployeeJoinDto;
+import site.metacoding.miniproject.web.dto.request.JoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
@@ -42,7 +44,6 @@ public class EmployeeController {
     private final EmployeeService employeeService;
     private final ResumeService resumeService;
     private final IntroService introService;
-    private final JobService jobService;
     private final CheckService checkService;
     private final HttpSession session;
 
@@ -152,19 +153,18 @@ public class EmployeeController {
         return new CMRespDto<>(1, "회원수정성공", null);
     }
 
-    // @GetMapping("/emp/join")
-    // public String mainJoin(Model model) {
-    // return "employee/header";
-    // }
-
     @PostMapping("/emp/join")
-    public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee,
-            @RequestParam(value = "checkBoxArr[]") List<Integer> jobIds) {
-        employeeService.employeeJoin(employee);
-        checkService.checkboxInsert(employee.getEmployeeId(), jobIds);
-        System.out.println("=================");
-        System.out.println(employee.getEmployeeId());
-        System.out.println("=================");
+    public @ResponseBody CMRespDto<?> 회원가입(@RequestBody EmployeeJoinDto employeeJoinDto) {
+        System.out.println("조인 실행됨================");
+        System.out.println(employeeJoinDto.getEmployeeBirth());
+        System.out.println(employeeJoinDto.getJobIds().size());
+        System.out.println("================");
+        Integer employeeId = employeeService.employeeJoin(employeeJoinDto);
+        System.out.println("***********************");
+        System.out.println(employeeId);
+        System.out.println("***********************");
+        checkService.checkboxInsert(employeeId,
+                employeeJoinDto.getJobIds());
         return new CMRespDto<>(1, "회원가입성공", null);
     }
 
