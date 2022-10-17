@@ -116,15 +116,15 @@ function join() {
 		return;
 	}
 
-  if (companyPasswordSameCheck() == true) {
-		alert("비밀번호가 일치하지 않습니다.")
-		return;
-	}
+  // if (companyPasswordSameCheck() == true) {
+	// 	alert("비밀번호가 일치하지 않습니다.")
+	// 	return;
+	// }
 
-  if(emailCheck() == false){
-    alert("이메일 형식이 맞지 않습니다.")
-    return;
-  }
+  // if(emailCheck() == false){
+  //   alert("이메일 형식이 맞지 않습니다.")
+  //   return;
+  // }
   
 
 
@@ -163,16 +163,14 @@ let isCompanyUsernameSameCheck = false;
 function checkUsername() {
 	
 	let companyUsername = $("#companyUsername").val();
-	
-	$.ajax(`/company/usernameSameCheck?username=${companyUsername}`, {
+  
+	$.ajax(`/company/usernameSameCheck?companyUsername=${companyUsername}`, {
 		type: "GET",
 		dataType: "json",
 		async: true
 	}).done((res) => { 	
-		console.log(res);
 		if (res.code == 1) {	
 			if (res.data == false) {
-        console.log(res.data)
 				alert("아이디가 중복되지 않았습니다.")
 				isCompanyUsernameSameCheck = true;
 			} else {
@@ -185,26 +183,26 @@ function checkUsername() {
 }
 
 
-function companyPasswordSameCheck() {
-	let companyPassword = $("#companyPassword").val();
-	let companyPasswordSame = $("#companyPasswordSame").val();
-	if (companyPassword != companyPasswordSame) {
-		companyPassword.value = "";
-		companyPasswordSame.value = "";
-		return true;
-	} else{
-		return false;
-	}
-}
+// function companyPasswordSameCheck() {
+// 	let companyPassword = $("#companyPassword").val();
+// 	let companyPasswordSame = $("#companyPasswordSame").val();
+// 	if (companyPassword != companyPasswordSame) {
+// 		companyPassword.value = "";
+// 		companyPasswordSame.value = "";
+// 		return true;
+// 	} else{
+// 		return false;
+// 	}
+// }
 
-function emailCheck() {
-	let email = $("#email").val();
-	let form = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+// function emailCheck() {
+// 	let email = $("#email").val();
+// 	let form = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
-	if (form.test(email)) {
-		return true;
-	} else {
-		return false;
-	}
-}
+// 	if (form.test(email)) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
 

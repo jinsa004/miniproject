@@ -106,7 +106,7 @@
                                     </h3>
                                     <span>
                                         <input id="companyUsername" type="text" placeholder="아이디를 입력하세요." maxlength="20" />
-			                                  <button id="btnCompanyUsernameSameCheck" class="btn btn-warning" type="button">유저네임 중복체크</button>
+			                            <button id="btnCompanyUsernameSameCheck" class="btn btn-warning" type="button">유저네임 중복체크</button>
                                     </span>
                                 </div>
                                 <div class="join_pw join_box">

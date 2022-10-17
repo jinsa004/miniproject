@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
@@ -119,9 +121,10 @@ public class CompanyController {
     }
 
     @GetMapping("/company/usernameSameCheck")
-    public @ResponseBody CMRespDto<Boolean> usernameSameCheck(String companyUsername) {
-      boolean isSame = companyService.회사유저네임중복확인(companyUsername);
-      return new CMRespDto<>(1, "성공", isSame);
+    public @ResponseBody CMRespDto<?> usernameSameCheck(String companyUsername) {
+        System.out.println("company이름:" + companyUsername);
+        boolean isSame = companyService.회사유저네임중복확인(companyUsername);
+        return new CMRespDto<>(1, "성공", isSame);
     }
 
     @GetMapping("/co/logout")

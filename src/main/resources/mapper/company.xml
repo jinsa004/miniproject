@@ -15,10 +15,15 @@
 	</select>
 
 	<select id="findByCompanyUsername" resultType="site.metacoding.miniproject.domain.company.Company">
-		SELECT *
-		FROM company
+		SELECT * FROM company
 		WHERE company_username = #{companyUsername}
 	</select>
+
+	<select id="findByIdCompanyUsername" resultType="site.metacoding.miniproject.domain.company.Company">
+		SELECT company_username FROM company
+		WHERE company_username = #{companyUsername}
+	</select>
+
 
 	<update id="update">
 		UPDATE company 

@@ -1,6 +1,7 @@
 package site.metacoding.miniproject.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
@@ -45,12 +46,12 @@ public class CompanyService {
   }
 
   public boolean 회사유저네임중복확인(String companyUsername) {
-		Company CompanyPS = companyDao.findByCompanyUsername(companyUsername);
-		if (CompanyPS == null) { 
-      System.out.println(companyPS);
-			return false;
-		} else { 
-			return true;
-		}
-	}
+    Company companyPS = companyDao.findByIdCompanyUsername(companyUsername);
+
+    if (companyPS == null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
