@@ -31,7 +31,9 @@ public class EmployeeService {
 
     public Employee 로그인(EmployeeLoginDto loginDto) {
         Employee employeePS = employeeDao.findByEmployeeUsername(loginDto.getEmployeeUsername());
-        if (employeePS.getEmployeePassword().equals(loginDto.getEmployeePassword())) {
+
+        // if (employeePS.getEmployeePassword().equals(loginDto.getEmployeePassword()))
+        if (employeePS != null && employeePS.getEmployeePassword().equals(loginDto.getEmployeePassword())) {
             return employeePS;
         }
         return null;
@@ -49,5 +51,26 @@ public class EmployeeService {
 
     public Employee employeeUpdate(Integer employeeId) {
         return null;
+    }
+
+    // =========================== 유효성체크 ======================================
+    public boolean 유저네임중복확인(String employeeUsername) {
+        Employee employeePS = employeeDao.findByEmployeeUsername(employeeUsername);
+        if (employeePS == null)
+            return false;
+        return true;
+        // 있으면 true, 없으면 false
+    }
+
+    public boolean 비밀번호2차체크(String employeePassword) {
+        employeeDao.findByEmployeePassword(employeePassword);
+        return true;
+    }
+
+    public boolean 이메일형식체크(String employeePassword) {
+        Employee employeePS = employeeDao.findByEmployeeEmail(employeePassword);
+        if (employeePS == null)
+            return false;
+        return true;
     }
 }

@@ -60,8 +60,16 @@ public class NoticeController {
         Notice noticePS = noticeService.내공고하나보기(noticeId);
         model.addAttribute("noticePS", noticePS);
         List<Resume> resumePS = resumeService.내이력서가져오기(principal.getEmployeeId());
+
         model.addAttribute("resumePS", resumePS);
         return "employee/noticeDetail";
+    }
+
+    @GetMapping("/emp/matchingNotice/{employeeId}")
+    public String matchingList(@PathVariable Integer employeeId, Model model) {
+        List<Notice> matchingNotice = noticeService.구직자매칭리스트보기(employeeId);
+        model.addAttribute("matchingNotice", matchingNotice);
+        return "employee/matchingNotice";
     }
 
     @GetMapping("emp/subscribeNotice/{employeeId}")

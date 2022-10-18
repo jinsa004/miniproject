@@ -66,11 +66,6 @@ public class EmployeeController {
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
-    @GetMapping("/emp/matchingNotice")
-    public String matchingList() {// 개인회원이 보는 매칭리스트탭(관심분야맞는 공고 목록보기)
-        return "employee/matchingNotice";
-    }
-
     @GetMapping("/emp/subscription")
     public String subscriptionList() {// 개인회원이 보는 구독기업공고탭(구독기업 공고 목록보기)
         return "employee/subscription";
@@ -156,5 +151,28 @@ public class EmployeeController {
     public String logout() {
         session.invalidate();
         return "redirect:/";
+    }
+
+    // =========================== 유효성체크 ======================================
+    // http://localhost:8000/users/usernameSameCheck?username=ssar
+    @GetMapping("emp/usernameSameCheck")
+    public @ResponseBody CMRespDto<Boolean> usernameSameCheck(String employeeUsername) {
+        boolean isSame = employeeService.유저네임중복확인(employeeUsername);
+        // return은 JSON으로
+        // HttpMessageConverter발동 - 자동으로 json type으로 변경해준다.
+        // HttpMessageConverter는 Restcontroller나 @ResponseBody의 어노테이션에의해 발동 된다.
+        return new CMRespDto<>(1, "성공", isSame);
+    }
+
+    @GetMapping("emp/checkPassword")
+    public @ResponseBody CMRespDto<Boolean> checkPassword(String employeePassword) {
+        boolean isSame = employeeService.비밀번호2차체크(employeePassword);
+        return new CMRespDto<>(1, "성공", isSame);
+    }
+
+    @GetMapping("emp/checkEmail")
+    public @ResponseBody CMRespDto<Boolean> checkEmail(String employeeEmail) {
+        boolean isSame = employeeService.이메일형식체크(employeeEmail);
+        return new CMRespDto<>(1, "성공", isSame);
     }
 }

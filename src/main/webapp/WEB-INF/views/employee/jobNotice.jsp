@@ -30,8 +30,9 @@
               <c:forEach var="jobNoticeList" items="${jobNoticeList}">
                 <div>
                   <ul>
-                    <li><a href="noticeDetail"><img src="/img/logo_1.png" alt="logo"></a></li>
-                    <li><a href="noticeDetail">
+                    <li><a href="/emp/noticeDetail/${jobNoticeList.noticeId}"><img src="/img/logo_1.png" alt="logo"></a>
+                    </li>
+                    <li><a href="/emp/noticeDetail/${jobNoticeList.noticeId}">
                         ${jobNoticeList.noticeTitle}
                         <span class="notice_small">${jobNoticeList.noticeTask}</span>
                       </a></li>

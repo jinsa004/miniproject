@@ -42,8 +42,7 @@
 	<delete id="deleteById"></delete>
 
 	<select id="findByDetail" resultType="site.metacoding.miniproject.web.dto.request.intro.DetailDto">
-		SELECT
-		i.*,
+		SELECT i.*,
 		s.subscribe_id subscribeId,	
 		if(s.subscribe_id IS NULL, 0 ,1) isSubed,
 		j.job_name,

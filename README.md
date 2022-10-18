@@ -18,8 +18,7 @@ create table employee(
     employee_password VARCHAR(24) NOT null,
     employee_email VARCHAR(64) NOT null,
     employee_tel VARCHAR(24) NOT NULL ,
-    employee_location VARCHAR(128) NOT null,
-    job_id INT
+    employee_location VARCHAR(128) NOT null
 );
 
 create table resume(
@@ -53,7 +52,6 @@ create table company(
     company_email VARCHAR(64) NOT null,
     company_tel VARCHAR(24) NOT null,
     company_location VARCHAR(256) NOT null,
-    job_id INT NOT null,
     company_username VARCHAR(24) NOT null,
     company_password VARCHAR(24) NOT null
 );
@@ -137,25 +135,25 @@ create table co_check(
 
 ### 더미데이터 추가
 ```sql
-insert into employee(employee_name, employee_birth, employee_sex, employee_username, employee_password, employee_email, employee_tel, employee_location, job_id) 
-VALUES('이성진', '1993-08-18', '남', 'jinsa', '1234', 'jinsa004@naver.com', '010-7164-9311', '김해', 1);
-insert into employee(employee_name, employee_birth, employee_sex, employee_username, employee_password, employee_email, employee_tel, employee_location, job_id) 
-VALUES('전영재', '1993-08-05', '남', 'wjsdudwo', '1234', 'wjsdudwox@naver.com', '010-1111-2222', '부산', 2);
-insert into employee(employee_name, employee_birth, employee_sex, employee_username, employee_password, employee_email, employee_tel, employee_location, job_id) 
-VALUES('정회지', '1999-11-22', '여', 'hj12', '1234', 'hj12@naver.com', '010-2222-3333', '부산', 1);
+insert into employee(employee_name, employee_birth, employee_sex, employee_username, employee_password, employee_email, employee_tel, employee_location) 
+VALUES('이성진', '1993-08-18', '남', 'jinsa', '1234', 'jinsa004@naver.com', '010-7164-9311', '김해');
+insert into employee(employee_name, employee_birth, employee_sex, employee_username, employee_password, employee_email, employee_tel, employee_location) 
+VALUES('전영재', '1993-08-05', '남', 'wjsdudwo', '1234', 'wjsdudwox@naver.com', '010-1111-2222', '부산');
+insert into employee(employee_name, employee_birth, employee_sex, employee_username, employee_password, employee_email, employee_tel, employee_location) 
+VALUES('정회지', '1999-11-22', '여', 'hj12', '1234', 'hj12@naver.com', '010-2222-3333', '부산');
 insert into resume(resume_title, employee_id, resume_image_id, highschool_name, highschool_startdate, highschool_enddate, highschool_major, univ_name, univ_startdate, univ_enddate, univ_major, univ_grades, prev_co, career_period, career_position, career_department, career_task, job_id, is_main, created_at) 
 VALUES('완성하겠습니다.', 1, NULL, "영운고", '2009-03-01', '2012-02-01', "문과", NULL, NULL, NULL, NULL, NULL, "김해여객", "1년", "주임", "영업관리부", "사무업무", 1, 0, NOW());
 insert into resume(resume_title, employee_id, resume_image_id, highschool_name, highschool_startdate, highschool_enddate, highschool_major, univ_name, univ_startdate, univ_enddate, univ_major, univ_grades, prev_co, career_period, career_position, career_department, career_task, job_id, is_main, created_at) 
 VALUES('최선을 다하겠습니다..', 2, NULL, NULL, NULL, NULL, NULL, "서면대", '2012-03-01', '2018-02-01', "영어영문학과", 3.3, "보성엔진", "1년", "사원", "해외영업", "무역관리", 2, 0, NOW());
 INSERT INTO company
-(company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
-VALUES(621070, '삼성전자', 'aabb@samsung.com', '02-1234-1234', '부산시 부산진구 어디어디', 2, 'samsungman1234', 'q1w2e3r4');
+(company_number, company_name, company_email, company_tel, company_location, company_username, company_password)
+VALUES(621070, '삼성전자', 'aabb@samsung.com', '02-1234-1234', '부산시 부산진구 어디어디',  'samsungman1234', 'q1w2e3r4');
 INSERT INTO company
-(company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
-VALUES(110152, '보성엔지니어링', 'ebz2@bosung.com', '051-621-0864', '부산시 부산진구 초량동 어디어디', 3, 'bosung1234', 'q1w2e3r4!!');
+(company_number, company_name, company_email, company_tel, company_location, company_username, company_password)
+VALUES(110152, '보성엔지니어링', 'ebz2@bosung.com', '051-621-0864', '부산시 부산진구 초량동 어디어디', 'bosung1234', 'q1w2e3r4!!');
 INSERT INTO company
-(company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
-VALUES(117242, 'LG전자', 'veda@lgelectronic.com', '02-5522-1854', '부산시 부산진구 어디어디', 1, 'LGman1234', 'q1w2e3r4!@');
+(company_number, company_name, company_email, company_tel, company_location, company_username, company_password)
+VALUES(117242, 'LG전자', 'veda@lgelectronic.com', '02-5522-1854', '부산시 부산진구 어디어디', 'LGman1234', 'q1w2e3r4!@');
 INSERT INTO intro
 (company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
 VALUES(1, '회사소개입니다', '1998-02-24', 'flutter 신규 앱 개발', '2600만원', '야근거의없음, 월1회 회식', '우리회사는 어쩌고저쩌고 이렇습니다', '부산시 부산진구 어디어디', 3, NULL);
@@ -177,6 +175,10 @@ insert into job(job_name, job_code)
 VALUES("백엔드", 2);
 insert into job(job_name, job_code) 
 VALUES("풀스택", 3);
+insert into job(job_name, job_code) 
+VALUES("안드로이드", 4);
+insert into job(job_name, job_code) 
+VALUES("IOS", 5);
 insert into subscribe(employee_id, company_id) 
 VALUES(1,1);
 insert into subscribe(employee_id, company_id) 
