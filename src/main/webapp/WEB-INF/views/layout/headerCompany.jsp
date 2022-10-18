@@ -194,8 +194,115 @@
               </div>
             </form>
 
-            <button id="btn_join" type="button" class="btn btn-primary">
-              회원가입
-            </button>
-          </div>
-        </div>
+                <div class="modal_join_bg" onClick="javascript:popCloseCompany2();"></div>
+                <div class="modal_join_wrap">
+                    <h2>회원가입</h2>
+                    <div class="form_box cf">
+                        <form>
+                            <div class="join_left">
+                                <div class="join_id join_box">
+                                    <h3>
+                                        <label for="id">아이디</label>
+                                    </h3>
+                                    <span>
+                                        <input id="companyUsername" type="text" placeholder="아이디를 입력하세요." maxlength="20" />
+			                            <button id="btnCompanyUsernameSameCheck" class="btn btn-warning" type="button">유저네임 중복체크</button>
+                                    </span>
+                                </div>
+                                <div class="join_pw join_box">
+                                    <h3>
+                                        <label for="password">비밀번호</label>
+                                    </h3>
+                                    <span>
+                                        <input id="companyPassword" type="password" placeholder="패스워드를 입력하세요."
+                                            name="password" maxlength="20" />
+                                    </span>
+                                </div>
+                                <div class="join_pw2 join_box">
+                                    <h3>
+                                        <label for="password2">비밀번호 재확인</label>
+                                    </h3>
+                                    <span>
+                                        <input id="companyPasswordSame" type="password" placeholder="패스워드를 입력하세요." name="password"
+                                            maxlength="20" />
+                                    </span>
+                                </div>
+                                <div class="join_email join_box">
+                                    <h3>
+                                        <label for="email">이메일</label>
+                                    </h3>
+                                    <span>
+                                        <input id="companyEmail" type="email" placeholder="이메일을 입력하세요." name="email"
+                                            maxlength="30" />
+                                    </span>
+                                </div>
+
+                                <div class="company_info">
+                                    <div class="join_name join_box">
+                                        <h3>
+                                            <label for="c_name">회사명</label>
+                                        </h3>
+                                        <span>
+                                            <input id="companyName" type="text" placeholder="회사명을 입력하세요."
+                                                name="companyName" maxlength="30" />
+                                        </span>
+                                    </div>
+                                    <div class="join_number join_box">
+                                        <h3>
+                                            <label for="c_number">사업자등록번호</label>
+                                        </h3>
+                                        <span>
+                                            <input id="companyNumber" type="text" placeholder="사업자번호를 입력하세요."
+                                                name="companyNumber" maxlength="30" />
+                                        </span>
+                                    </div>
+                                    <div class="join_birth join_box">
+                                        <h3>
+                                            <label for="c_birth">생년월일</label>
+                                        </h3>
+                                        <span>
+                                            <input id="c_birth" type="date" placeholder="생년월일을 입력하세요."
+                                                name="companyBirth" maxlength="40" />
+                                        </span>
+                                    </div>
+                                    <div class="join_phone join_box">
+                                        <h3>
+                                            <label for="c_phone">휴대폰번호</label>
+                                        </h3>
+                                        <span>
+                                            <input id="companyTel" type="tel" placeholder="휴대폰번호를 입력하세요."
+                                                name="companyPhone" maxlength="40" />
+                                        </span>
+                                    </div>
+                                    <div class="join_adress join_box">
+                                        <h3>
+                                            <label for="c_adress">주소</label>
+                                        </h3>
+                                        <span>
+                                            <input id="companyLocation" type="text" placeholder="주소를 입력하세요."
+                                                name="companyAdress" maxlength="100" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="join_right">
+                                <div class="career_part">
+                                    <h2>관심분야</h2>
+                                    <c:forEach var="jobPS" items="${jobPS}">
+                                        <div class="career_part1 part_box">
+                                            <input type="checkbox" class="login_check" class="job_Id"
+                                                name="job_checkbox" value="${jobPS.jobId}" />
+                                            <em>
+                                                <label for="c_part_front">${jobPS.jobName}</label>
+                                            </em>
+                                        </div>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </form>
+                        <button id="btn_join" type="button" class="btn btn-primary">
+                            회원가입
+                        </button>
+                    </div>
+                </div>
