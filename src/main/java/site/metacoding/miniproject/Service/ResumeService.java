@@ -42,7 +42,6 @@ public class ResumeService {
         resumeDao.insert(resume);
     }
 
-
     public Resume 이력서상세보기(Integer resumeId) {
         return resumeDao.findById(resumeId);
     }
