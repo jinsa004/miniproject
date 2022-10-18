@@ -9,9 +9,13 @@ public interface ResumeDao {
 
     public Resume findById(Integer resumeId);
 
+    public List<Resume> findByEmployeeId(Integer employeeId);
+
     public void insert(Resume resume);
 
     public void deleteById(Integer resumeId);
 
     public void update(Resume resume);
+
+    public void updateMain(Integer resumeId);
 }

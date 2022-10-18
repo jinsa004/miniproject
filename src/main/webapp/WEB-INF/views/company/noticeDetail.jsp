@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypageCompany.jsp" %>
+    <input id="noticeId" type="hidden" value="${noticePS.noticeId}" />
     <div class="company_update">
       <div id="co_resume_wrap">
         <div class="container">
@@ -12,7 +13,7 @@
                 <div class="notice_title">
                   <h3>공고명</h3>
                   <p class="notice_txt2">
-                    프론트엔드 & 백엔드 개발자 채용 서버개발자 Server Developer
+                    ${noticePS.noticeTitle}
                   </p>
                 </div>
                 <!-- .notice_title -->
@@ -20,7 +21,7 @@
                 <div class="notice_part">
                   <h3>채용분야</h3>
                   <span class="rewumeDetail_txt2">
-                    프론트엔드
+                    ${noticePS.jobName}
                   </span>
                 </div>
                 <!-- .notice_part -->
@@ -28,7 +29,7 @@
                 <div class="notice_dept">
                   <h3>채용부서</h3>
                   <span class="rewumeDetail_txt2">
-                    웹 개발팀
+                    ${noticePS.noticeDept}
                   </span>
                 </div>
                 <!-- .notice_dept -->
@@ -36,7 +37,7 @@
                 <div class="notice_grade">
                   <h3>채용직급</h3>
                   <p class="rewumeDetail_txt">
-                    사원, 주임, 대리, 과장
+                    ${noticePS.noticePosition}
                   </p>
                 </div>
                 <!-- .notice_grade -->
@@ -44,8 +45,7 @@
                 <div class="notice_task">
                   <h3>주요업무</h3>
                   <p class="rewumeDetail_txt">
-                    사내 플랫폼과 외부 광고 플랫폼들이 제공하는 기능 및 데이터들을
-                    통합하고 사용성 개선
+                    ${noticePS.noticeTask}
                   </p>
                 </div>
                 <!-- .notice_task -->
@@ -53,7 +53,7 @@
                 <div class="notice_ssar">
                   <h3>평균연봉</h3>
                   <p class="rewumeDetail_txt">
-                    회사내규에 따름-면접 후 결정
+                    ${noticePS.noticeSal}
                   </p>
                 </div>
                 <!-- .notice_ssar -->
@@ -61,7 +61,7 @@
                 <div class="notice_skill2">
                   <h3>자격요건</h3>
                   <p class="rewumeDetail_txt">
-                    고졸
+                    ${noticePS.noticeQual}
                   </p>
                 </div>
                 <!-- .notice_skill -->
@@ -69,7 +69,7 @@
                 <div class="notice_career">
                   <h3>경력</h3>
                   <p class="rewumeDetail_txt">
-                    신입
+                    ${noticePS.noticeCareer}
                   </p>
                 </div>
                 <!-- .notice_career -->
@@ -77,7 +77,7 @@
                 <div class="notice_benefit">
                   <h3>복리후생</h3>
                   <p class="rewumeDetail_txt">
-                    4대 보험 적용, 각종 경조금 지원, 식대/교통비 지원, 성과금
+                    ${noticePS.noticeWellfare}
                   </p>
                 </div>
                 <!-- .notice_benefit -->
@@ -85,7 +85,7 @@
                 <div class="notice_dead">
                   <h3>공고 마감일</h3>
                   <span class="rewumeDetail_txt2">
-                    2022.10.19
+                    ${noticePS.noticePeriod}
                   </span>
                 </div>
                 <!-- .notice_dead -->
@@ -104,48 +104,37 @@
                 <span class="info_tit info_tit2">
                   <em>회사명</em>
                   <p class="rewumeDetail_txt">
-                    <strong>PROJECT4</strong>
+                    <strong>${noticePS.introTitle}</strong>
                   </p>
                 </span>
                 <span class="info_year">
                   <em>설립연도</em>
                   <p class="rewumeDetail_txt">
-                    <strong>2022.10.07</strong>
+                    <strong>${noticePS.introBirth}</strong>
                   </p>
                 </span>
                 <span class="info_task">
                   <em>주요업무</em>
                   <p class="rewumeDetail_txt">
-                    <strong>서버관리 및 프로그램 설계</strong>
+                    <strong>${noticePS.introTask}</strong>
                   </p>
                 </span>
                 <span class="info_ssar">
                   <em>평균연봉</em>
                   <p class="rewumeDetail_txt">
-                    <strong>4000</strong>
+                    <strong>${noticePS.introSal}</strong>
                   </p>
                 </span>
                 <span class="info_benefit">
                   <em>기업복지</em>
                   <p class="rewumeDetail_txt">
-                    <strong>유연한 출퇴근, 4대보험, 성과금</strong>
+                    <strong>${noticePS.introWellfare}</strong>
                   </p>
                 </span>
                 <div class="company_location">
                   <div class="basic_row location_wrap">
                     <div class="basic_input cf">
-                      <span class="info_right_txt info_right_txt2">주소지</span>
-                      <div class="basic_location">
-                        <div class="location_map">
-                          지도
-                        </div>
-                        <div class="location_info">
-                          <p class="rewumeDetail_txt">
-                            부산시 부산진구 어쩌고
-                          </p>
-                          <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
-                        </div>
-                      </div>
+                      <span class="info_right_txt info_right_txt2">${noticePS.introLocation}</span>
                     </div>
                   </div><!-- .location_wrap -->
                 </div>
@@ -167,8 +156,7 @@
       </div>
       <!-- .container -->
     </div>
-    </div>
     <!-- #wrap -->
-
     <script src="/js/main.js"></script>
-    <%@ include file="../layout/footerCompany.jsp" %>
+    <script src="/js/employee.js"></script>
+    <%@ include file="../layout/footer.jsp" %>

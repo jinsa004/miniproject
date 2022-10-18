@@ -1,6 +1,5 @@
 package site.metacoding.miniproject.web;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -18,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.IntroService;
-import site.metacoding.miniproject.web.dto.request.JoinDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyJoinDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
 import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
@@ -38,16 +37,16 @@ public class CompanyController {
         System.out.println(loginDto.isRemember());
         System.out.println("===============");
 
-        if (loginDto.isRemember() == true) {
-            Cookie cookie = new Cookie("companyUsername", loginDto.getCompanyUsername());
-            cookie.setMaxAge(60 * 60 * 24);
-            response.addCookie(cookie);
+        // if (loginDto.isRemember() == true) {
+        // Cookie cookie = new Cookie("companyUsername", loginDto.getCompanyUsername());
+        // cookie.setMaxAge(60 * 60 * 24);
+        // response.addCookie(cookie);
 
-        } else {
-            Cookie cookie = new Cookie("companyUsername", null);
-            cookie.setMaxAge(0);
-            response.addCookie(cookie);
-        }
+        // } else {
+        // Cookie cookie = new Cookie("companyUsername", null);
+        // cookie.setMaxAge(0);
+        // response.addCookie(cookie);
+        // }
 
         Company principal = companyService.로그인(loginDto);
         if (principal == null) {
@@ -57,10 +56,10 @@ public class CompanyController {
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
-    @GetMapping("/co/mainCompany")
-    public String companyMain() {// 기업회원이 보는 메인페이지
-        return "company/mainCompany";
-    }
+    // @GetMapping("/co/mainCompany")
+    // public String companyMain() {// 기업회원이 보는 메인페이지
+    // return "company/mainCompany";
+    // }
 
     @GetMapping("/co/supCompany")
     public String supportList() {// 기업회원이 보는 공고/지원자관리 탭
@@ -83,7 +82,7 @@ public class CompanyController {
     public @ResponseBody CMRespDto<?> companyUpdate(@PathVariable Integer companyId,
             @RequestBody CompanyUpdateDto companyupdateDto) {
 
-        Company companyPS = companyService.기업정보수정(companyId, companyupdateDto);
+        Company companyPS = companyService.기업소개수정(companyId, companyupdateDto);
         session.setAttribute("principal", companyPS);
         return new CMRespDto<>(1, "수정성공", null);
     }
@@ -107,7 +106,7 @@ public class CompanyController {
 
     @GetMapping("/co/companyIntroUpdate/{companyId}")
     public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
-        model.addAttribute("intro", introService.기업소개상세보기(companyId));
+        model.addAttribute("intro", introService.기업소개수정상세보기(companyId));
         return "company/coIntroUpdate";
     }
 
@@ -118,9 +117,23 @@ public class CompanyController {
         return new CMRespDto<>(1, "수정성공", null);
     }
 
-    @PostMapping("/co/Join")
-    public @ResponseBody CMRespDto<?> companyJoin(@RequestBody JoinDto joinDto) {
-        companyService.회원가입(joinDto);
+    @PostMapping("/co/join")
+    public @ResponseBody CMRespDto<?> companyJoin(@RequestBody CompanyJoinDto companyJoinDto) {
+        companyService.회원가입(companyJoinDto);
         return new CMRespDto<>(1, "회원가입성공", null);
     }
+
+    @GetMapping("/company/usernameSameCheck")
+    public @ResponseBody CMRespDto<?> usernameSameCheck(String companyUsername) {
+        System.out.println("company이름:" + companyUsername);
+        boolean isSame = companyService.회사유저네임중복확인(companyUsername);
+        return new CMRespDto<>(1, "성공", isSame);
+    }
+
+    @GetMapping("/co/logout")
+    public String Companylogout() {
+        session.invalidate();
+        return "redirect:/co";
+    }
+
 }

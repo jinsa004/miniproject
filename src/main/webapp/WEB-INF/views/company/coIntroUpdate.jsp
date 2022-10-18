@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypageCompany.jsp" %>
+
     <div class="company_update">
       <div id="intro_wrap">
         <div class="container">
@@ -96,56 +97,6 @@
             </div>
             <!-- basic -->
 
-            <div id="field" class="form">
-              <div class="form_title">
-                <h2 class="title">관심분야</h2>
-              </div>
-              <div class="resume_field info_form2">
-                <div class="field_select">
-                  <div class="select-group">
-                    <ul class="part_box_wrap">
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" checked />
-                        <em>
-                          <label for="c_part_front">프론트엔드</label>
-                        </em>
-                      </li>
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" />
-                        <em>
-                          <label for="c_part_front">백엔드</label>
-                        </em>
-                      </li>
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" />
-                        <em>
-                          <label for="c_part_front">풀스택</label>
-                        </em>
-                      </li>
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" />
-                        <em>
-                          <label for="c_part_front">안드로이드</label>
-                        </em>
-                      </li>
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" />
-                        <em>
-                          <label for="c_part_front">IOS</label>
-                        </em>
-                      </li>
-                    </ul>
-
-                    <c:forEach var="jobPS" items="${jobPS}">
-                      <input type='checkbox' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
-                      <br>
-                    </c:forEach>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- field -->
-
             <div class="btn_group">
               <div class="update_btn">
                 <button id="btnInsertCompany" type="button" class="btn btn-primary">수정완료</button>
@@ -161,73 +112,7 @@
     </div>
     </div>
     <!-- body -->
-    <script>
-      function sample6_execDaumPostcode() {
-        new daum.Postcode({
-          oncomplete: function (data) {
-            var addr = '';
-            var extraAddr = '';
-            if (data.userSelectedType === 'R') {
-              addr = data.roadAddress;
-            } else {
-              addr = data.jibunAddress;
-            }
-            if (data.userSelectedType === 'R') {
-              if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-                extraAddr += data.bname;
-              }
-              if (data.buildingName !== '' && data.apartment === 'Y') {
-                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-              }
-              if (extraAddr !== '') {
-                extraAddr = ' (' + extraAddr + ')';
-              }
-              document.getElementById("sample6_extraAddress").value = extraAddr;
-            } else {
-              document.getElementById("sample6_extraAddress").value = '';
-            }
-            document.getElementById('sample6_postcode').value = data.zonecode;
-            document.getElementById("sample6_address").value = addr;
-            document.getElementById("sample6_detailAddress").focus();
-          }
-        }).open();
-      }
-    </script>
-
-    <script>
-      $("#btnUpdate").click(() => {
-        console.log("클릭됨");
-        console.log($("#introId").val());
-        update();
-      });
-      function update() {
-        let data = {
-          companyName: $("#companyName").val(),
-          introBirth: $("#introBirth").val(),
-          introTask: $("#introTask").val(),
-          introSal: $("#introSal").val(),
-          introWellfare: $("#introWellfare").val(),
-          introContent: $("#introContent").val(),
-          jobName: $("#jobName").val()
-        }
-        let introId = $("#introId").val();
-        console.log("업데이트확인");
-        $.ajax("/co/companyIntroUpdate/" + introId + "/update", {
-          type: "PUT",
-          dataType: "json", // 응답 데이터
-          data: JSON.stringify(data), // http body에 들고갈 요청 데이터
-          headers: {
-            // http header에 들고갈 요청 데이터
-            "Content-Type": "application/json; charset=utf-8",
-          },
-        }).done((res) => {
-          if (res.code == 1) {
-            alert("기업소개 수정 완료");
-            location.reload;
-          } else {
-            alert("업데이트에 실패하였습니다");
-          }
-        });
-      }
-    </script>
+    <script src="/js/main.js"></script>
+    <script src="/js/company.js"></script>
+    <script src="/js/intro.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

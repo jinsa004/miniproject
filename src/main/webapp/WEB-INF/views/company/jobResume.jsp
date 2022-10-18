@@ -28,7 +28,7 @@
                           ${jobResumeList.employeeName}
                         </span>
                         <div class="resume_txt">
-                          <span class="resume_title">${jobResumeList.resumeName}</span>
+                          <span class="resume_title">${jobResumeList.resumeTitle}</span>
                           <div class="resume_option">
                             <ul class="list_option">
                               <li class="career">
@@ -71,4 +71,5 @@
     <!-- #wrap -->
 
     <script src="/js/main.js"></script>
+    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

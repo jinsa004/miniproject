@@ -17,21 +17,20 @@
     </head>
 
     <body>
-
       <div id="mypage_co_wrap">
         <div id="gnb_mypage">
           <div class="logo">
-            <a href="/co/mainCompany">COMPANY_4</a>
+            <a href="/co">COMPANY_4</a>
           </div>
           <ul class="gnb_left">
             <li class="gnb_list1">
-              <a href="/co/companyIntroDetail">
+              <a href="/co/companyIntroUpdate/${principal.companyId}">
                 <i class="fa-regular fa-paper-plane"></i>
                 <span class="txt">기업소개 관리</span>
               </a>
             </li>
             <li class="gnb_list2">
-              <a href="/co/noticeDetail">
+              <a href="/co/noticeService/${principal.companyId}">
                 <i class="fa-regular fa-pen-to-square"></i>
                 <span class="txt">공고 관리</span>
               </a>
@@ -44,8 +43,6 @@
             </li>
           </ul>
         </div><!-- .gnb_mypage -->
-
-
       </div>
       <script type="text/javascript" src="/js/main.js"></script>
       <script type="text/javascript" src="/js/company.js"></script>

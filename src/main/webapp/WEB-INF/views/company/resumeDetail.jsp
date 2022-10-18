@@ -9,7 +9,7 @@
                 <div class="resume_update">
                   <input id="employeeId" type="hidden" value="${principal.employeeId}">
                   <div class="title_update">
-                    <h1>이력서제목 의 이력서 입니다.</h1>
+                    <h1>이력서제목의 이력서 입니다.</h1>
                   </div>
                   <div id="info" class="form">
                     <div class="form_title">
@@ -27,19 +27,19 @@
                           <dd class="name">
                             <span class="resumeDetail_title">이름</span>
                             <p class="rewumeDetail_txt">
-                              홍길동 ${resume.employeeName}
+                              ${resume.employeeName}
                             </p>
                           </dd>
                           <dd class="sex">
                             <span class="resumeDetail_title">성별</span>
                             <p class="rewumeDetail_txt">
-                              남 ${resume.employeeSex}
+                              ${resume.employeeSex}
                             </p>
                           </dd>
                           <dd class="birth">
                             <span class="resumeDetail_title">생년월일</span>
                             <p class="rewumeDetail_txt">
-                              2022-10-14 ${resume.employeeBrith}
+                              ${resume.employeeBirth}
                             </p>
                           </dd>
                         </dl>
@@ -96,19 +96,19 @@
                           <tbody>
                             <tr>
                               <td class="resume_table_center" rowspan="1">
-                                2022.10.14 - 2023.02.14 ${resume.univStartdate} - ${resume.univEnddate}
+                                ${resume.univStartdate} - ${resume.univEnddate}
                               </td>
                               <td class="resume_table_center">
-                                그린컴퓨터 ${resume.univName}
+                                ${resume.univName}
                               </td>
                               <td class="resume_table_center">
-                                전공 ${resume.univMajor}
+                                ${resume.univMajor}
                               </td>
                               <td class="resume_table_center" rowspan="1">
                                 졸업
                               </td>
                               <td class="resume_table_center">
-                                ${resume.univGrade} /4.5
+                                ${resume.univGrades} /4.5
                               </td>
                             </tr>
                           </tbody>
@@ -143,22 +143,22 @@
                           <tbody>
                             <tr>
                               <td class="resume_table_center" rowspan="2">
-                                2022.10.14 - 2023.02.14 ${resume.careerPeriod}
+                                ${resume.careerPeriod}
                               </td>
                               <td class="resume_table_center">
-                                ${resume.prevCo} 그린컴퓨터
+                                ${resume.prevCo}
                               </td>
                               <td class="resume_table_center">
-                                사원 ${resume.careerPosition}
+                                ${resume.careerPosition}
                               </td>
                               <td class="resume_table_center" rowspan="1">
-                                개발 ${resume.careerDepartment}
+                                ${resume.careerDepartment}
                               </td>
                             </tr>
                             <tr>
                               <td class="" colspan="3">
                                 <p>
-                                  <span class="table_icon">담당업무</span> 소프트웨어 개발, UX/UI ${resume.careerTask}
+                                  <span class="table_icon">담당업무</span>${resume.careerTask}
                                 </p>
                               </td>
                             </tr>
@@ -180,7 +180,6 @@
                     </div>
                   </div> <!-- #part -->
 
-
                   <div class="contact_btn">
                     <button type="button" onclick="location.href='#'">
                       컨택하기
@@ -195,4 +194,6 @@
       </div>
     </div>
     </div><!-- .company_wrap -->
+    <script src="/js/main.js"></script>
+    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

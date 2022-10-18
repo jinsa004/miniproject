@@ -9,7 +9,8 @@
           <div class="resume_title">
             <div class="title_update">
               <div class="title_input">
-                <input type="text" class="resume_title_input" placeholder="이력서 제목을 입력해 주세요" value="" maxlength="35">
+                <input type="text" class="resume_title_input" id="resume_title" placeholder="이력서 제목을 입력해 주세요" value=""
+                  maxlength="35">
                 <!-- input 입력 넣기 -->
               </div>
             </div>
@@ -101,7 +102,6 @@
                     <span class="info_right_txt">학교명</span>
                     <input type="text" id="highschool_name" name="highschool_name" class="box_input info_right_input"
                       placeholder="고등학교 명을 입력하세요" />
-                    </p>
                   </div>
                 </div>
                 <div class="edu_row">
@@ -119,12 +119,12 @@
                     <span class="info_right_txt">전공계열</span>
                     <!-- <input type="text" id="highschool_major" name="highschool_major" class="box_input info_right_input"
                       placeholder="전공계열을 입력하세요" /> -->
-                        <select id="highschool_major" name="highschool_major">
-                          <option value="">전공계열 선택</option>
-                          <option value="문과">문과</option>
-                          <option value="이과">이과</option>
-                          <option value="예체능">예체능</option>
-                        </select>
+                    <select id="highschool_major" name="highschool_major">
+                      <option value="">전공계열 선택</option>
+                      <option value="문과">문과</option>
+                      <option value="이과">이과</option>
+                      <option value="예체능">예체능</option>
+                    </select>
                   </div>
                 </div><!-- .edu_row -->
               </div>
@@ -158,7 +158,7 @@
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">졸업학점</span>
-                    <input type="text" id="grades" name="grades" class="box_input info_right_input2"
+                    <input type="text" id="univ_grades" name="grades" class="box_input info_right_input2"
                       placeholder="학점을 입력하세요" />
                     <span class="grade">/ 4.5</span>
                   </div>
@@ -242,41 +242,12 @@
                 <div class="select-group">
                   <ul class="part_box_wrap">
                     <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" checked />
-                      <em>
-                        <label for="c_part_front">프론트엔드</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" />
-                      <em>
-                        <label for="c_part_front">백엔드</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" />
-                      <em>
-                        <label for="c_part_front">풀스택</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" />
-                      <em>
-                        <label for="c_part_front">안드로이드</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" />
-                      <em>
-                        <label for="c_part_front">IOS</label>
-                      </em>
+                      <c:forEach var="jobPS" items="${jobPS}">
+                        <input type='checkbox' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
+                        <br>
+                      </c:forEach>
                     </li>
                   </ul>
-
-                  <c:forEach var="jobPS" items="${jobPS}">
-                    <input type='checkbox' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
-                    <br>
-                  </c:forEach>
                 </div>
               </div>
             </div>
@@ -295,126 +266,6 @@
     </div>
     </div>
     <!-- body -->
-
-    <script>
-      $("#btnInsertResume").click(() => {
-        insertResume();
-      });
-
-      function insertResume() {
-        let data = {
-          resumeName: $("#highschool_name").val(),
-          employeeId: $("#employeeId").val(),
-          resumeImage: $("#files").val(),
-          highschoolName: $("#highschool_name").val(),
-          highschoolStartdate: $("#highschool_start_date").val(),
-          highschoolEnddate: $("#highschool_end_date").val(),
-          highschoolMajor: $("#highschool_major").val(),
-          univName: $("#univ_name").val(),
-          univStartdate: $("#univ_start_date").val(),
-          univEnddate: $("#univ_end_date").val(),
-          univMajor: $("#univ_major").val(),
-          univGrades: $("#grades").val(),
-          prevCo: $("#career_name").val(),
-          careerPeriod: $("#career_period").val(),
-          careerPosition: $("#career_position").val(),
-          careerDepartment: $("#career_section").val(),
-          careerTask: $("#career_task").val(),
-          jobId: $('input[id=jobId]:checked').val()
-        };
-
-
-
-        $.ajax("/emp/resumeSave", {
-          type: "POST",
-          dataType: "json", // 응답 데이터
-          data: JSON.stringify(data), // http body에 들고갈 요청 데이터
-          headers: {
-            // http header에 들고갈 요청 데이터
-            "Content-Type": "application/json; charset=utf-8",
-          },
-        }).done((res) => {
-          if (res.code == 1) {
-            alert("이력서 등록 완료");
-            location.href = "/emp/mypageInsertForm";
-          } else {
-            alert("등록에 실패하였습니다");
-          }
-        })
-      }
-    </script>
-
-    <script>
-      function show_highschool() {
-        var con1 = document.getElementById("highschool");
-        var con2 = document.getElementById("univ");
-        var con3 = document.getElementById("high_btn");
-        var con4 = document.getElementById("univ_btn");
-        if (con3.style.background != '#4876ef') {
-          con1.style.display = 'block';
-          con2.style.display = 'none';
-          con3.style.background = '#4876ef';
-          con3.style.color = '#fff';
-          con4.style.background = '#fff';
-          con4.style.color = '#333';
-        } else {
-          con1.style.display = 'none';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        }
-      }
-
-      function show_univ() {
-        var con1 = document.getElementById("univ");
-        var con2 = document.getElementById("highschool");
-        var con3 = document.getElementById("high_btn");
-        var con4 = document.getElementById("univ_btn");
-        if (con4.style.background != '#4876ef') {
-          con1.style.display = 'block';
-          con2.style.display = 'none';
-          con4.style.background = '#4876ef';
-          con4.style.color = '#fff';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        } else {
-          con1.style.display = 'none';
-          con4.style.background = '#fff';
-          con4.style.color = '#333';
-        }
-      }
-
-      function show_new() {
-        var con1 = document.getElementById("work");
-        var con2 = document.getElementById("new_btn");
-        var con3 = document.getElementById("work_btn");
-        if (con2.style.background != '#4876ef') {
-          con1.style.display = 'none';
-          con2.style.background = '#4876ef';
-          con2.style.color = '#fff';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        } else {
-          con2.style.background = '#fff';
-          con2.style.color = '#333';
-        }
-      }
-
-      function show_work() {
-        var con1 = document.getElementById("work");
-        var con2 = document.getElementById("new_btn");
-        var con3 = document.getElementById("work_btn");
-        if (con3.style.background != '#4876ef') {
-          con1.style.display = 'block';
-          con3.style.background = '#4876ef';
-          con3.style.color = '#fff';
-          con2.style.background = '#fff';
-          con2.style.color = '#333';
-        } else {
-          con1.style.display = 'none';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        }
-      }
-    </script>
-
+    <script src="/js/main.js"></script>
+    <script src="/js/resume.js"></script>
     <%@ include file="../layout/footer.jsp" %>

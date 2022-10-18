@@ -72,11 +72,11 @@
       <!-- .container -->
     </div>
     <!-- #wrap -->
-
     <script src="/js/main.js"></script>
+    <script src="/js/employee.js"></script>
     <script type="text/javascript">
       // jquery 최초 기본형
-        $(document).ready(function(){
+      $(document).ready(function () {
 
         // 탭메뉴
         let tab_menu_list_a = $('.tabs li a');
@@ -86,17 +86,17 @@
         let tab_box = $('.tab_content');
 
         // 탭메뉴 내용 보여주기
-        $.each(tab_menu_list, function(index, item){
-            // tab_menu_list_a.eq(index) = $(this)
-            $(this).click(function(event){
-                event.preventDefault();
+        $.each(tab_menu_list, function (index, item) {
+          // tab_menu_list_a.eq(index) = $(this)
+          $(this).click(function (event) {
+            event.preventDefault();
 
-                tab_menu_list.removeClass('active');
-                $(this).addClass('active');
-                tab_box.hide();
-                tab_box.eq(index).show();
-            });   
+            tab_menu_list.removeClass('active');
+            $(this).addClass('active');
+            tab_box.hide();
+            tab_box.eq(index).show();
+          });
         });
-        });
+      });
     </script>
     <%@ include file="../layout/footer.jsp" %>

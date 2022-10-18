@@ -26,8 +26,9 @@
                 <div class="basic_row">
                   <div class="basic_input">
                     <span class="info_right_txt">생년월일</span>
-                    <input type="date" id="employeeBirth" name="employeeBirth" class="box_input info_right_input info_birth_input"
-                      value="${employee.employeeBirth}" placeholder="생년월일을 입력하세요" />
+                    <input type="date" id="employeeBirth" name="employeeBirth"
+                      class="box_input info_right_input info_birth_input" value="${employee.employeeBirth}"
+                      placeholder="생년월일을 입력하세요" />
                   </div>
                 </div>
                 <div class="basic_row">
@@ -63,9 +64,6 @@
             </div>
           </div>
           <!-- basic -->
-
-
-
 
           <div id="login_info" class="form">
             <div class="form_title">
@@ -127,7 +125,7 @@
                     <li class="career_part1 part_box form-check">
                       <input type="checkbox" class="login_check" id="IOS" name="IOS" value="IOS">
                       <em>
-                      <label class="form-check-label" for="IOS">IOS</label>
+                        <label class="form-check-label" for="IOS">IOS</label>
                       </em>
                     </li>
                   </ul>
@@ -152,66 +150,10 @@
       </div><!-- .container -->
     </div><!-- .resume_wrap -->
     </div>
+    <!-- users_info -->
+    </div>
     </div>
     <!-- body -->
-    <script>
-      $("#btnEmployeeUpdate").click(() => {
-        employeeUpdate();
-      });
-      function employeeUpdate() {
-        let employeeId = $("#employeeId").val();
-        let data = {
-          employeeUsername: $("#employeeUsername").val(),
-          employeePassword: $("#employeePassword").val(),
-          employeeSex: $("#employeeSex").val(),
-          employeeEmail: $("#employeeEmail").val(),
-          employeeName: $("#employeeName").val(),
-          employeeBirth: $("#employeeBirth").val(),
-          employeeTel: $("#employeeTel").val(),
-          employeeLocation: $(".employeeLocation").val(),
-
-        };
-        console.log(data);
-        $.ajax("/emp/employeeInfo/" + employeeId, {
-          type: "PUT",
-          dataType: "json",
-          data: JSON.stringify(data),
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-          },
-        }).done((res) => {
-          if (res.code == 1) {
-            console.log(res.msg);
-            alert("회원정보 수정 완료");
-            location.reload();
-          } else {
-            alert("업데이트에 실패했습니다.");
-            console.log(res.msg);
-          }
-        });
-      }
-
-
-      $("#btnEmployeeDelete").click(() => {
-        employeeDelete();
-      });
-
-      function employeeDelete() {
-        let employeeId = $("#employeeId").val();
-
-        $.ajax("/emp/employeeInfo/" + employeeId, {
-          type: "DELETE",
-          dataType: "json"
-        }).done((res) => {
-          if (res.code == 1) {
-            console.log(res.msg);
-            alert("회원탈퇴 완료");
-            location.href = "/";
-          } else {
-            alert("회원탈퇴에 실패했습니다.");
-            console.log(res.msg);
-          }
-        });
-      }
-    </script>
+    <script src="/js/main.js"></script>
+    <script src="/js/employee.js"></script>
     <%@ include file="../layout/footer.jsp" %>

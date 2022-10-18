@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypage.jsp" %>
-
     <div id="resume_wrap">
       <div class="container">
         <h1>이력서 수정하기</h1>
         <div class="resume_update">
+          <input id="resumeId" type="hidden" value="${resumePS.resumeId}" />
           <input id="employeeId" type="hidden" value="${principal.employeeId}" />
           <div class="resume_title">
             <div class="title_update">
               <div class="title_input">
-                <input type="text" class="resume_title_input" placeholder="이력서 제목을 입력해 주세요" value="" maxlength="35">
+                <input type="text" id="resume_title" class="resume_title_input" placeholder="이력서 제목을 입력해 주세요"
+                  value="${resumePS.resumeTitle}" maxlength="35">
                 <!-- input 입력 넣기 -->
               </div>
             </div>
@@ -33,7 +34,6 @@
                 </div>
               </div><!-- .info_left -->
               <div class="info_right">
-                <input id="employeeId" type="hidden" value="${employeePS.employeeId}" />
                 <dl class="info_name">
                   <dd class="name">
                     <span class="info_right_txt">이름</span>
@@ -100,7 +100,7 @@
                   <div class="edu_input">
                     <span class="info_right_txt">학교명</span>
                     <input type="text" id="highschool_name" name="highschool_name" class="box_input info_right_input"
-                      placeholder="고등학교 명을 입력하세요" value="${resume.highName}" />
+                      placeholder="고등학교 명을 입력하세요" value="${resumePS.highschoolName}" />
                     </p>
                   </div>
                 </div>
@@ -108,10 +108,10 @@
                   <div class="edu_input">
                     <span class="info_right_txt">재학기간</span>
                     <input type="date" id="highschool_start_date" name="start_date" class="box_input info_right_input2"
-                      placeholder="입학년도" value="${resume.highStartdate}">
+                      placeholder="입학년도" value="${resumePS.highschoolStartdate}">
                     <span class="icon">-</span>
                     <input type="date" id="highschool_end_date" name="end_date" class="box_input info_right_input2"
-                      placeholder="졸업년도" value="${resume.highEnddate}">
+                      placeholder="졸업년도" value="${resumePS.highschoolEnddate}">
                   </div>
                 </div>
                 <div class="edu_row">
@@ -119,12 +119,12 @@
                     <span class="info_right_txt">전공계열</span>
                     <!-- <input type="text" id="highschool_major" name="highschool_major" class="box_input info_right_input"
                       placeholder="전공계열" value="${resume.highMajor}"> -->
-                      <select id="highschool_major" name="highschool_major">
-                        <option value="">전공계열 선택</option>
-                        <option value="${resume.highMajor}">문과</option>
-                        <option value="이과">이과</option>
-                        <option value="예체능">예체능</option>
-                      </select>
+                    <select id="highschool_major" name="highschool_major">
+                      <option value="">전공계열 선택</option>
+                      <option value="문과">문과</option>
+                      <option value="이과">이과</option>
+                      <option value="예체능">예체능</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -135,31 +135,31 @@
                   <div class="edu_input">
                     <span class="info_right_txt">학교명</span>
                     <input type="text" id="univ_name" name="univ_name" class="box_input info_right_input"
-                      placeholder="대학교 명을 입력하세요" value="${resume.univName}">
+                      placeholder="대학교 명을 입력하세요" value="${resumePS.univName}">
                   </div>
                 </div>
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">재학기간</span>
                     <input type="text" id="univ_start_date" name="start_date" class="box_input info_right_input2"
-                      placeholder="입학년도" value="${resume.univStartdate}">
+                      placeholder="입학년도" value="${resumePS.univStartdate}">
                     <span class="icon">-</span>
                     <input type="text" id="univ_end_date" name="end_date" class="box_input info_right_input2"
-                      placeholder="졸업년도" value="${resume.univEnddate}">
+                      placeholder="졸업년도" value="${resumePS.univEnddate}">
                   </div>
                 </div>
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">전공</span>
                     <input type="text" id="univ_major" name="univ_major" class="box_input info_right_input"
-                      placeholder="전공 입력" value="${resume.univMajor}">
+                      placeholder="전공 입력" value="${resumePS.univMajor}">
                   </div>
                 </div>
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">졸업학점</span>
                     <input type="text" id="grades" name="grades" class="box_input info_right_input2" placeholder="학점 입력"
-                      value="${resume.univGrade}">
+                      value="${resume.univGrades}">
                     <span class="grade">/ 4.5</span>
                   </div>
                 </div>
@@ -197,35 +197,35 @@
                   <div class="career_input">
                     <span class="info_right_txt">직장명</span>
                     <input type="text" id="career_name" name="career_name" class="box_input info_right_input"
-                      placeholder="직장 명을 입력하세요" />
+                      placeholder="직장 명을 입력하세요" value="${resumePS.prevCo}" />
                   </div>
                 </div>
                 <div class="career_row">
                   <div class="career_input">
                     <span class="info_right_txt">재직기간</span>
                     <input type="text" id="career_period" name="start_date" class="box_input info_right_input"
-                      placeholder="신입 or 근무년수 입력" />
+                      placeholder="신입 or 근무년수 입력" value="${resumePS.careerPeriod}" />
                   </div>
                 </div>
                 <div class="career_row">
                   <div class="career_input">
                     <span class="info_right_txt">직급명</span>
                     <input type="text" id="career_position" name="career_position" class="box_input info_right_input"
-                      placeholder="직급을 입력하세요" />
+                      placeholder="직급을 입력하세요" value="${resumePS.careerPosition}" />
                   </div>
                 </div>
                 <div class="career_row">
                   <div class="career_input">
                     <span class="info_right_txt">근무부서</span>
                     <input type="text" id="career_section" name="career_section" class="box_input info_right_input"
-                      placeholder="근무 부서를 입력하세요" />
+                      placeholder="근무 부서를 입력하세요" value="${resumePS.careerDepartment}" />
                   </div>
                 </div>
                 <div class="career_row">
                   <div class="career_input">
                     <span class="info_right_txt">담당업무</span>
                     <input type="text" id="career_task" name="career_task" class="box_input info_right_input"
-                      placeholder="담당 업무를 입력하세요" />
+                      placeholder="담당 업무를 입력하세요" value="${resumePS.careerTask}" />
                   </div>
                 </div>
               </div>
@@ -242,41 +242,13 @@
                 <div class="select-group">
                   <ul class="part_box_wrap">
                     <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" checked />
-                      <em>
-                        <label for="c_part_front">프론트엔드</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" />
-                      <em>
-                        <label for="c_part_front">백엔드</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" />
-                      <em>
-                        <label for="c_part_front">풀스택</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" />
-                      <em>
-                        <label for="c_part_front">안드로이드</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box">
-                      <input type="checkbox" class="login_check" id="jobId" name="" />
-                      <em>
-                        <label for="c_part_front">IOS</label>
-                      </em>
+                      <c:forEach var="jobPS" items="${jobPS}">
+                        <input type='checkbox' id='jobId' name='jobId' value="${jobPS.jobId}" <c:if
+                          test="${jobPS.jobId eq resumePS.jobId}">checked</c:if>/>${jobPS.jobName}
+                        <br>
+                      </c:forEach>
                     </li>
                   </ul>
-
-                  <c:forEach var="jobPS" items="${jobPS}">
-                    <input type='checkbox' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
-                    <br>
-                  </c:forEach>
                 </div>
               </div>
             </div>
@@ -286,9 +258,6 @@
           <div class="btn_group">
             <div class="update_btn">
               <button id="btnUpdateResume" type="button">수정완료</button>
-            </div>
-            <div class="delete_btn">
-              <button type="button" onclick="location.href='#'" id="btnResumeDelete">삭제하기</button>
             </div>
           </div><!-- .btn_group -->
           <!-- update -->
@@ -300,151 +269,7 @@
     </div>
     </div>
     <!-- body -->
-
-    <script>
-      $("#btnUpdateResume").click(() => {
-        updateResume();
-      });
-
-
-
-      $("#btnDeleteResume").click(() => {
-        deleteResume();
-      });
-
-
-      function updateResume() {
-        let data = {
-          resumeName: $("#resume_name").val(),
-          resumeImage: $("#files").val(),
-          highschoolName: $("#highschool_name").val(),
-          highschoolStartdate: $("#highschool_start_date").val(),
-          highschoolEnddate: $("#highschool_end_date").val(),
-          highschoolMajor: $("#highschool_major").val(),
-          univName: $("#univ_name").val(),
-          univStartdate: $("#univ_start_date").val(),
-          univEnddate: $("#univ_end_date").val(),
-          univMajor: $("#univ_major").val(),
-          univGrades: $("#grades").val(),
-          prevCo: $("#career_name").val(),
-          careerPeriod: $("#career_period").val(),
-          careerPosition: $("#career_position").val(),
-          careerDepartment: $("#career_section").val(),
-          careerTask: $("#career_task").val(),
-          jobId: $('input[id=jobId]:checked').val(),
-        };
-
-        let resumeId = $("#resumeId").val();
-
-        $.ajax("/emp/resumeUpdate/" + resumeId, {
-          type: "PUT",
-          dataType: "json", // 응답 데이터
-          data: JSON.stringify(data), // http body에 들고갈 요청 데이터
-          headers: {
-            // http header에 들고갈 요청 데이터
-            "Content-Type": "application/json; charset=utf-8",
-          },
-        }).done((res) => {
-          if (res.code == 1) {
-            alert("이력서 수정 완료");
-            location.href = "/emp";
-          } else {
-            alert("등록에 실패하였습니다");
-          }
-        })
-      }
-
-
-      function deleteResume() {
-
-        let resumeId = $("#resumeId").val();
-
-        $.ajax("/emp/resumeDelete/" + resumeId, {
-          type: "DELETE",
-          dataType: "json", // 응답 데이터
-        }).done((res) => {
-          if (res.code == 1) {
-            alert("이력서 삭제 완료");
-            location.href = "/";
-          } else {
-            alert("삭제에 실패하였습니다");
-          }
-        })
-      }
-    </script>
-
-
-    <script>
-      function show_highschool() {
-        var con1 = document.getElementById("highschool");
-        var con2 = document.getElementById("univ");
-        var con3 = document.getElementById("high_btn");
-        var con4 = document.getElementById("univ_btn");
-        if (con3.style.background != '#4876ef') {
-          con1.style.display = 'block';
-          con2.style.display = 'none';
-          con3.style.background = '#4876ef';
-          con3.style.color = '#fff';
-          con4.style.background = '#fff';
-          con4.style.color = '#333';
-        } else {
-          con1.style.display = 'none';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        }
-      }
-
-      function show_univ() {
-        var con1 = document.getElementById("univ");
-        var con2 = document.getElementById("highschool");
-        var con3 = document.getElementById("high_btn");
-        var con4 = document.getElementById("univ_btn");
-        if (con4.style.background != '#4876ef') {
-          con1.style.display = 'block';
-          con2.style.display = 'none';
-          con4.style.background = '#4876ef';
-          con4.style.color = '#fff';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        } else {
-          con1.style.display = 'none';
-          con4.style.background = '#fff';
-          con4.style.color = '#333';
-        }
-      }
-
-      function show_new() {
-        var con1 = document.getElementById("work");
-        var con2 = document.getElementById("new_btn");
-        var con3 = document.getElementById("work_btn");
-        if (con2.style.background != '#4876ef') {
-          con1.style.display = 'none';
-          con2.style.background = '#4876ef';
-          con2.style.color = '#fff';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        } else {
-          con2.style.background = '#fff';
-          con2.style.color = '#333';
-        }
-      }
-
-      function show_work() {
-        var con1 = document.getElementById("work");
-        var con2 = document.getElementById("new_btn");
-        var con3 = document.getElementById("work_btn");
-        if (con3.style.background != '#4876ef') {
-          con1.style.display = 'block';
-          con3.style.background = '#4876ef';
-          con3.style.color = '#fff';
-          con2.style.background = '#fff';
-          con2.style.color = '#333';
-        } else {
-          con1.style.display = 'none';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        }
-      }
-    </script>
+    <script src="/js/main.js"></script>
+    <script src="/js/resume.js"></script>
 
     <%@ include file="../layout/footer.jsp" %>

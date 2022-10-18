@@ -1,56 +1,3 @@
-function login() {
-  let data = {
-    employeeUsername: $("#username").val(),
-    employeePassword: $("#password").val(),
-    remember: $("#remember").prop("checked"),
-  };
-
-  $.ajax("/emp/login", {
-    type: "POST",
-    dataType: "json",
-    data: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json; charset=utf-8", // spring에게 알려주는 것 - json으로 보내겠다. mime type - 필수
-    },
-  }).done((res) => {
-    if (res.code == 1) {
-      alert("로그인 성공");
-      location.href = "/emp/main";
-    } else if (employeeUsername == "") {
-      alert("아이디를 입력해주세요.");
-      return;
-    } else if (employeePassword == "") {
-      alert("비밀번호를 입력해주세요.");
-      return;
-    } else {
-      alert("로그인 실패, 아이디 패스워드를 확인해주세요");
-      return;
-    }
-  });
-}
-
-function coLogin() {
-  let data = {
-    companyUsername: $("#coUsername").val(),
-    companyPassword: $("#coPassword").val(),
-    remember: $("#remember").prop("checked"),
-  };
-  $.ajax("/co/login", {
-    type: "POST",
-    dataType: "json", //응답데이터 타입명
-    data: JSON.stringify(data), // 요청데이터 타입명
-    headers: {
-      "Content-Type": "application/json; charset=utf-8", // spring에게 알려주는 것 - json으로 보내겠다. mime type - 필수
-    },
-  }).done((res) => {
-    if (res.code == 1) {
-      alert("로그인 성공");
-      location.href = "/co/mainCompany";
-    } else {
-      alert("로그인 실패, 아이디 패스워드를 확인해주세요");
-    }
-  });
-}
 function popOpen() {
   let modalPop = $(".modal_login_wrap");
   let modalBg = $(".modal_login_bg");
@@ -127,42 +74,6 @@ function popCloseRecruit() {
   $(modalBg).hide();
 }
 
-/* 기업 회원가입*/
-$("#btn_join").click(() => {
-  join();
-});
-
-function join() {
-  let data = {
-    companyNumber: $("#companyNumber").val(),
-    companyName: $("#companyName").val(),
-    companyEmail: $("#companyEmail").val(),
-    companyTel: $("#companyTel").val(),
-    companyLocation: $("#companyLocation").val(),
-    companyUsername: $("#companyUsername").val(),
-    companyPassword: $("#companyPassword").val(),
-    job_Id: $("input:checkbox[value='frontend']").is(":checked"),
-  };
-  console.log(data);
-
-  $.ajax("/co/Join", {
-    type: "POST",
-    dataType: "json",
-    data: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).done((res) => {
-    if (res.code == 1) {
-      alert("회원가입 완료");
-      console.log(res);
-      location.href = "/";
-    } else {
-      alert(res.msg);
-    }
-  });
-}
-
 // ===================== 도로명주소 api ==================
 function sample6_execDaumPostcode() {
   new daum.Postcode({
@@ -194,28 +105,4 @@ function sample6_execDaumPostcode() {
       document.getElementById("sample6_detailAddress").focus();
     },
   }).open();
-}
-
-/* ======== 공고등록 로그인 ============= */
-function coLogin2() {
-  let data = {
-    companyUsername: $("#coUsername").val(),
-    companyPassword: $("#coPassword").val(),
-    remember: $("#remember").prop("checked"),
-  };
-  $.ajax("/co/login", {
-    type: "POST",
-    dataType: "json", //응답데이터 타입명
-    data: JSON.stringify(data), // 요청데이터 타입명
-    headers: {
-      "Content-Type": "application/json; charset=utf-8", // spring에게 알려주는 것 - json으로 보내겠다. mime type - 필수
-    },
-  }).done((res) => {
-    if (res.code == 1) {
-      alert("로그인 성공");
-      location.href = "/co/noticeSave";
-    } else {
-      alert("로그인 실패, 아이디 패스워드를 확인해주세요");
-    }
-  });
 }

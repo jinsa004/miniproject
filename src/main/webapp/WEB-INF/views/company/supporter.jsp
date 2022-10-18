@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerCompany.jsp" %>
-
     <div id="company_wrap">
       <div class="container">
         <section>
@@ -20,11 +19,11 @@
                 <c:forEach var="noticeList" items="${noticeList}">
                   <ul>
                     <li>
-                      <a href="#"><img src="/img/logo_1.png" alt="logo" /></a>
+                      <a href="/co/noticeService/${principal.companyId}/noticeDetail/${noticeList.noticeId}"><img
+                          src="/img/logo_1.png" alt="logo" /></a>
                     </li>
                     <li>
-                      <a href="#">${noticeList.noticeTitle}
-                        <span class="notice_small">${noticeList.noticeTask}</span>
+                      <a href="/co/noticeService/${principal.companyId}/noticeDetail/${noticeList.noticeId}">${noticeList.noticeTitle}
                         <span class="notice_small">${noticeList.noticeDept}</span>
                       </a>
                     </li>
@@ -33,10 +32,6 @@
                     <li>${noticeList.noticePeriod}<span class="notice_small">마감 13일전</span></li>
                   </ul>
                 </c:forEach>
-                <div class="notice_hover">
-                  <span><a href="/co/noticeDetail">공고관리</a></span>
-                  <span><a href="#">지원자관리</a></span>
-                </div>
                 <!-- .notice_hover -->
               </div>
             </div>
@@ -65,4 +60,5 @@
     <!-- #wrap -->
 
     <script src="/js/main.js"></script>
+    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

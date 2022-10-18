@@ -1,5 +1,9 @@
 package site.metacoding.miniproject.domain.notice;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +33,32 @@ public class NoticeDaoTest {
     // assertEquals(1, result);
     // }
 
-    @Test
-    public void deleteByNoticeId() {
-        // given
-        Integer noticeId = 3;
-        // when
-        noticeDao.deleteById(noticeId);
-        // then
+    // @Test
+    // public void deleteByNoticeId(){
+    // //given
+    // Integer noticeId = 3;
+    // //when
+    // noticeDao.deleteById(noticeId);
+    // //then
 
-    }
+    // }
+
+    // @Test
+    // public void findSubsByEmployeeId() {
+    // // given
+    // Integer employeeId = 1;
+    // // when
+    // List<Notice> noticeList = noticeDao.findSubsByEmployeeId(employeeId);
+    // // then
+    // assertEquals(3, noticeList.size());
+    // // }
+
+    // @Test
+    // public void deleteByNoticeId() {
+    // // given
+    // Integer noticeId = 3;
+    // // when
+    // noticeDao.deleteById(noticeId);
+    // // then
+    // }
 }

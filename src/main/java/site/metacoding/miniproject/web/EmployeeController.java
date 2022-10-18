@@ -1,10 +1,10 @@
 package site.metacoding.miniproject.web;
 
 import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.swing.text.StyledEditorKit.BoldAction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,11 +16,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
+import site.metacoding.miniproject.domain.resume.Resume;
+import site.metacoding.miniproject.domain.subscribe.Subscribe;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
+import site.metacoding.miniproject.service.ResumeService;
+import site.metacoding.miniproject.web.dto.request.employee.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeUpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
@@ -31,6 +36,7 @@ public class EmployeeController {
 
     @Autowired
     private final EmployeeService employeeService;
+    private final ResumeService resumeService;
     private final IntroService introService;
     private final HttpSession session;
 
@@ -40,16 +46,17 @@ public class EmployeeController {
         System.out.println(loginDto.isRemember());
         System.out.println("===============");
 
-        if (loginDto.isRemember() == true) {
-            Cookie cookie = new Cookie("employeeUsername", loginDto.getEmployeeUsername());
-            cookie.setMaxAge(60 * 60 * 24);
-            response.addCookie(cookie);
+        // if (loginDto.isRemember() == true) {
+        // Cookie cookie = new Cookie("employeeUsername",
+        // loginDto.getEmployeeUsername());
+        // cookie.setMaxAge(60 * 60 * 24);
+        // response.addCookie(cookie);
 
-        } else {
-            Cookie cookie = new Cookie("employeeUsername", null);
-            cookie.setMaxAge(0);
-            response.addCookie(cookie);
-        }
+        // } else {
+        // Cookie cookie = new Cookie("employeeUsername", null);
+        // cookie.setMaxAge(0);
+        // response.addCookie(cookie);
+        // }
 
         Employee principal = employeeService.로그인(loginDto);
         if (principal == null) {
@@ -59,19 +66,6 @@ public class EmployeeController {
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
-    // @GetMapping("/")
-    // public String main() {// 개인회원이 보는 메인페이지
-    // return "employee/main";
-    // }
-    // NoticeController의 전체직군보기 페이지가 메인이라
-    // 일단 주석처리함. EmployeeController에 Notice 메서드를 넣을지 NoticeController에 넣을지 정해야 함.
-    // 일단은 EmployeeController에 불러온 Service가 많아서 NoticeController에 넣어놨음.
-
-    @GetMapping("/emp/matchingNotice")
-    public String matchingList() {// 개인회원이 보는 매칭리스트탭(관심분야맞는 공고 목록보기)
-        return "employee/matchingNotice";
-    }
-
     @GetMapping("/emp/subscription")
     public String subscriptionList() {// 개인회원이 보는 구독기업공고탭(구독기업 공고 목록보기)
         return "employee/subscription";
@@ -79,8 +73,27 @@ public class EmployeeController {
 
     @GetMapping("/emp/companyIntroDetail/{introId}")
     public String introDetail(@PathVariable Integer introId, Model model) {// 개인회원 보는 기업소개 상세보기
-        model.addAttribute("intro", introService.기업소개상세보기(introId));
+        Employee principal = (Employee) session.getAttribute("principal");
+        if (principal == null) {
+            model.addAttribute("detailDto", introService.기업소개상세보기(introId, 0));
+        } else {
+            model.addAttribute("detailDto", introService.기업소개상세보기(introId, principal.getEmployeeId()));
+        }
         return "employee/coIntroDetail";
+    }
+
+    @PostMapping("/emp/companyIntroDetail/{introId}/subscribe")
+    public @ResponseBody CMRespDto<?> insertSub(@PathVariable Integer introId) {// 구독하기
+        Employee principal = (Employee) session.getAttribute("principal");
+        Subscribe subscribe = new Subscribe(principal.getEmployeeId(), introId);
+        introService.구독하기(subscribe);
+        return new CMRespDto<>(1, "구독성공", subscribe);
+    }
+
+    @DeleteMapping("/emp/companyIntroDetail/{introId}/subscribe/{subscribeId}")
+    public @ResponseBody CMRespDto<?> deleteSub(@PathVariable Integer introId, @PathVariable Integer subscribeId) {// 구독취소
+        introService.구독취소하기(subscribeId);
+        return new CMRespDto<>(1, "구독취소성공", null);
     }
 
     @GetMapping("/emp/companyList")
@@ -90,8 +103,10 @@ public class EmployeeController {
         return "employee/companyList";
     }
 
-    @GetMapping("/emp/mypageInsertForm")
-    public String mypageResumeInsert() {// 이력서 등록, 수정, 삭제, 대표 이력서 선택
+    @GetMapping("/emp/mypageInsertForm/{employeeId}")
+    public String mypageResumeInsert(@PathVariable Integer employeeId, Model model) {// 이력서 등록, 수정, 삭제, 대표 이력서 선택
+        List<Resume> resumePS = resumeService.내이력서가져오기(employeeId);
+        model.addAttribute("resumePS", resumePS);
         session.getAttribute("principal");
         return "employee/mypageInsertForm";
     }
@@ -127,14 +142,9 @@ public class EmployeeController {
     }
 
     @PostMapping("/emp/join")
-    public @ResponseBody CMRespDto<?> 회원가입(@RequestBody Employee employee) {
-        employeeService.employeeJoin(employee);
+    public @ResponseBody CMRespDto<?> 회원가입(@RequestBody EmployeeJoinDto employeeJoinDto) {
+        employeeService.employeeJoin(employeeJoinDto);
         return new CMRespDto<>(1, "회원가입성공", null);
-    }
-
-    @GetMapping("/emp/join")
-    public String mainJoin() {
-        return "employee/header";
     }
 
     @GetMapping("/logout")

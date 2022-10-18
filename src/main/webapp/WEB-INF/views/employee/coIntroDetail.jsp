@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/header.jsp" %>
-
+    <input id="introId" type="hidden" value="${detailDto.introId}" />
+    <input id="subscribeId" type="hidden" value="${detailDto.subscribeId}" />
+    <input id="principalId" type="hidden" value="${principal.getEmployeeId()}" />
     <div id="co_Intro_wrap">
       <div class="container">
         <section>
           <div class="notice_box">
             <div class="intro_update">
-
               <div class="title_update">
                 <h1>기업 소개 상세보기</h1>
               </div>
@@ -33,7 +34,7 @@
                     <div class="basic_input">
                       <span class="co_Info_Detail_title">회사명</span>
                       <p class="co_Info_Detail_txt">
-                        삼성전자
+                        ${detailDto.companyName}
                       </p>
                     </div>
                   </div>
@@ -41,7 +42,7 @@
                     <div class="basic_input">
                       <span class="co_Info_Detail_title">설립년도</span>
                       <p class="co_Info_Detail_txt">
-                        2022-10-16
+                        ${detailDto.introBirth}
                       </p>
                     </div>
                   </div>
@@ -49,7 +50,7 @@
                     <div class="basic_input">
                       <span class="co_Info_Detail_title">주요업무</span>
                       <p class="co_Info_Detail_txt">
-                        웹 / 소프트웨어 개발
+                        ${detailDto.introTask}
                       </p>
                     </div>
                   </div>
@@ -57,7 +58,7 @@
                     <div class="basic_input">
                       <span class="co_Info_Detail_title">평균연봉</span>
                       <p class="co_Info_Detail_txt">
-                        평균 4000만원
+                        ${detailDto.introSal}
                       </p>
                     </div>
                   </div>
@@ -65,7 +66,7 @@
                     <div class="basic_input">
                       <span class="co_Info_Detail_title">기업복지</span>
                       <p class="co_Info_Detail_txt">
-                        칼퇴근, 야근 없음, 식비 제공, 상여금
+                        ${detailDto.introWellfare}
                       </p>
                     </div>
                   </div>
@@ -73,7 +74,7 @@
                     <div class="basic_input">
                       <span class="co_Info_Detail_title">회사소개</span>
                       <p class="co_Info_Detail_txt">
-                        삼성전자 입니다.
+                        ${detailDto.introContent}
                       </p>
                     </div>
                   </div>
@@ -101,17 +102,20 @@
                   <h2 class="title">관심분야</h2>
                 </div>
                 <div class="resume_part">
-                  <span class="resume_part_select">프론트엔드</span>
-                  <span class="resume_part_select">백엔드</span>
+                  <span class="resume_part_select">${detailDto.jobName}</span>
                 </div>
               </div> <!-- #part -->
 
               <div class="btn_group">
                 <div class="subscribe_btn">
-                  <button type="button" onclick="location.href='#'">
-                    <i class="fa-regular fa-star"></i>
+                  <button type="button">
+                    <i id="iconSub"
+                      class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-star my_pointer my_red'></i>
                     <span class="txt">구독</span>
                   </button>
+                  <!-- <div><i id="iconSub"
+                      class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-star my_pointer my_red'></i>
+                  </div> -->
                 </div>
               </div><!-- .btn_group -->
               <!-- btn -->
@@ -123,5 +127,6 @@
     </div><!-- .intro_wrap -->
     </div>
     <!-- body -->
-
+    <script src="/js/main.js"></script>
+    <script src="/js/intro.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>
