@@ -33,8 +33,8 @@
                         </div>
                       </a><!-- .resume_txt -->
                     </li>
+                  </c:forEach>
                 </ul>
-                </c:forEach>
                 <!-- #tab-2 -->
               </div>
               </a>

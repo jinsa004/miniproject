@@ -5,10 +5,10 @@
       <div class="container">
         <div class="tablist">
           <ul class="tabs">
-            <li class="active" data-tab="tab-1"><a href="/co">전체직군</a></li>
+            <li class="active" data-tab="tab-1">전체직군</a></li>
             <li data-tab="tab-2"><a href="/co/resume?jobCode=1">프론트엔드</a></li>
             <li data-tab="tab-3"><a href="/co/resume?jobCode=2">백엔드</a></li>
-            <li data-tab="tab-4"><a href="/co/resume?jobCode=3">웹풀스택</a></li>
+            <li data-tab="tab-4"><a href="/co/resume?jobCode=3">풀스택</a></li>
             <li data-tab="tab-5"><a href="/co/resume?jobCode=4">안드로이드</a></li>
             <li data-tab="tab-6"><a href="/co/resume?jobCode=5">IOS</a></li>
           </ul>
@@ -74,7 +74,7 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/company.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       // jquery 최초 기본형
       $(document).ready(function () {
         // 탭메뉴
@@ -97,5 +97,5 @@
           });
         });
       });
-    </script>
+    </script> -->
     <%@ include file="../layout/footerCompany.jsp" %>
