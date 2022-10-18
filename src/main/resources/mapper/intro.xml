@@ -34,8 +34,7 @@
 		i.intro_sal = #{introSal},
 		i.intro_content = #{introContent},
 		i.intro_location = #{introLocation},
-		i.intro_image_id  = #{introImageId},
-		j.job_name = #{jobName}
+		i.intro_image_id  = #{introImageId}
 		WHERE i.intro_id = #{introId}
 	</update>
 

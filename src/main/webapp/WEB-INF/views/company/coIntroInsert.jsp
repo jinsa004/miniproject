@@ -98,7 +98,7 @@
 
             <div class="btn_group">
               <div class="update_btn">
-                <button id="btnInsertCompanyInfo" type="button" class="btn btn-primary">등록하기</button>
+                <button id="btnInsertCompanyInfo" type="button" class="btn btn-primary">등록완료</button>
               </div>
             </div>
             <!-- btn -->

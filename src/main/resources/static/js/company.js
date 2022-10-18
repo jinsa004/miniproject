@@ -16,7 +16,7 @@ $("#btn_login").click(() => {
 });
 
 // 유저네임 중복 체크
-$("#btnCompanyUsernameSameCheck").click(() => {
+$("#btnUsernameSameCheck").click(() => {
   checkUsername();
 });
 
@@ -45,6 +45,11 @@ function Delete() {
 function companyUpdate() {
   let companyId = $("#companyId").val();
 
+  let checkBoxArr = [];
+  $("input:checkbox[name='job_checkbox']:checked").each(function () {
+    checkBoxArr.push($(this).val()); // 체크된 값 배열에 push
+  });
+
   let data = {
     companyNumber: $("#companyNumber").val(),
     companyName: $("#companyName").val(),
@@ -53,7 +58,9 @@ function companyUpdate() {
     companyLocation: $("#companyLocation").val(),
     companyUsername: $("#companyUsername").val(),
     companyPassword: $("#companyPassword").val(),
+    jobIds: checkBoxArr
   };
+
   console.log("업데이트");
 
   $.ajax("/co/companyUpdate/" + companyId, {

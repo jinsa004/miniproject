@@ -106,6 +106,9 @@
                     <input id="companyUsername" type="text" placeholder="아이디를 입력하세요." maxlength="20" />
                   </span>
                 </div>
+                <button id="btnUsernameSameCheck" type="button" maxlength="20">
+                  중복체크
+                </button>
                 <div class="join_pw join_box">
                   <h3>
                     <label for="password">비밀번호</label>
@@ -120,7 +123,8 @@
                     <label for="password2">비밀번호 재확인</label>
                   </h3>
                   <span>
-                    <input id="password2" type="password" placeholder="패스워드를 입력하세요." name="password" maxlength="20" />
+                    <input id="companyPasswordSame" type="password" placeholder="패스워드를 입력하세요." name="password"
+                      maxlength="20" />
                   </span>
                 </div>
                 <div class="join_email join_box">

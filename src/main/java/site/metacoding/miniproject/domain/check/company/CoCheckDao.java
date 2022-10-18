@@ -6,8 +6,6 @@ public interface CoCheckDao {
 
     public void insert(@Param("companyId") Integer companyId, @Param("jobId") Integer jobId);
 
-    public void updateByEmployeeId();
-
-    public void deleteById(Integer applicationId);
+    public void deleteById(Integer companyId);
 
 }
