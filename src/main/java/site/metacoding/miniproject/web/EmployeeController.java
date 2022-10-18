@@ -34,7 +34,6 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 @Controller
 public class EmployeeController {
 
-    @Autowired
     private final EmployeeService employeeService;
     private final ResumeService resumeService;
     private final IntroService introService;
