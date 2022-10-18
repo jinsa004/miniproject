@@ -34,6 +34,10 @@ public class ResumeService {
         return resumeDao.findByJobCodeToResume(jobCode);
     }
 
+    public List<Resume> 기업매칭리스트보기(Integer employeeId) {
+        return resumeDao.findMatchingByJobId(employeeId);
+    }
+
     public void 이력서작성(Resume resume) {
         resumeDao.insert(resume);
     }
