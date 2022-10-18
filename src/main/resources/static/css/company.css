@@ -682,7 +682,7 @@ input.login_check{
     font-weight: 300;
 }
 
-#btn_join{
+#btn_co_join{
     float: left;
     display: block;
     width: 100%;
@@ -1097,12 +1097,20 @@ input.login_check{
 .title_update{
     width: 100%;
 }
+.title_update2{
+    width: calc(100% - 500px);
+}
 .title_update h1{
     padding-top: 60px;
     font-size: 30px;
     line-height: 34px;
     padding-bottom: 15px;
     border-bottom: 1px solid #ddd;
+}
+.title_update2 h1{
+    font-size: 30px;
+    line-height: 34px;
+    padding-bottom: 15px;
 }
 .info_form{
     width: 1040px;
@@ -1285,6 +1293,13 @@ input.login_check{
     padding: 0px 0;
     padding-top: 25px;
 }
+.recruit_detail_box .notice_box2{
+    display: block;
+    width: calc(100% - 500px);
+    padding: 0px 0;
+    padding-top: 25px;
+    margin: 0 auto;
+}
 .recruit_detail_box .notice_box div{
     padding-bottom: 55px;
 }
@@ -1419,8 +1434,29 @@ input.login_check{
     transition: all 0.5s;
     margin-top: 15px;
 }
+.btn_co_recruit_insert2{
+    width: 700px;
+    float: right;
+    margin-top: -55px;
+}
+.btn_co_recruit_insert2 button{
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background: #91ADF2;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 15px;
+}
 
 button.btn_recruit_insert:hover{
+    background: #4876ef;
+}
+.btn_co_recruit_insert2 button:hover{
     background: #4876ef;
 }
 
@@ -1620,9 +1656,8 @@ button.btn_recruit_insert:hover{
 
 
 /* ============== 유효성체크 ========================== */
-#employeeUsername{
-}
-#btnUsernameSameCheck{
+
+#btnCompanyUsernameSameCheck{
     height: 42px;
     border-radius: 8px;
     background-color: #ddd;
@@ -1633,10 +1668,10 @@ button.btn_recruit_insert:hover{
     transition: all 0.3s;
     font-size: 12px;
 }
-#btnUsernameSameCheck:hover{
+#btnCompanyUsernameSameCheck:hover{
     background: #4876ef;
 }
-#btnUsernameSameCheck:active{
+#btnCompanyUsernameSameCheck:active{
     background: #111;
 }
 

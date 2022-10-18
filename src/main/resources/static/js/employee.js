@@ -22,6 +22,10 @@ $("#btn_recruit").click(() => {
   applicate();
 });
 
+$("btnUsernameSameCheck").click(() => {
+  checkUsername();
+});
+
 //회원가입
 function join() {
   let employeepasswordRepeat = $("#employeepasswordRepeat").val();

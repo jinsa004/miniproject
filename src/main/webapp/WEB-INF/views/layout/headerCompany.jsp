@@ -18,6 +18,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     ></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <title>4조 PROJECT</title>
   </head>
 
@@ -146,7 +147,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     maxlength="15"
                   />
                   <button
-                    id="btnUsernameSameCheck"
+                    id="btnCompanyUsernameSameCheck"
                     type="button"
                     onclick="checkUsernameCo()"
                   >
@@ -326,9 +327,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <!-- .join_right -->
           </form>
 
-          <button id="btn_join" type="button" class="btn btn-primary">
-            회원가입
-          </button>
+          <button id="btn_co_join" type="button">회원가입</button>
         </div>
       </div>
     </div>

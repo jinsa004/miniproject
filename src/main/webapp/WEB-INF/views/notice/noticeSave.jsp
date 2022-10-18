@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerCompany.jsp" %>
+  <div id="company_wrap">
     <input id="companyId" type="hidden" value="${principal.companyId}" />
     <div class="company_update">
       <div id="co_notice_wrap">
@@ -9,11 +10,11 @@
               <section id="notice_wrap">
                 <div class="container">
                   <div class="intro_update">
-                    <div class="recruit_detail_box cf">
-                      <div class="title_update">
+                    <div class="recruit_detail_box">
+                      <div class="title_update2">
                         <h1>기업 공고 등록</h1>
                       </div>
-                      <div class="notice_box rd_left">
+                      <div class="notice_box rd_left notice_box2">
                         <div class="notice_title">
                           <h3>공고명</h3>
                           <input type="text" id="noticeTitle" name="basic_name" class="box_input info_right_input"
@@ -25,20 +26,23 @@
                           <div id="field" class="form">
                             <h3>채용분야</h3>
                             <div class="resume_field info_form3">
-                              <div class="field_select">
-                                <div class="select-group">
-                                  <ul class="part_box_wrap">
-                                    <c:forEach var="jobPS" items="${jobPS}">
-                                      <li class="career_part1 part_box">
-                                        <input type='radio' id='job_id' name='job_id' value="${jobPS.jobId}" <c:if
-                                          test="${jobPS.jobId eq resumePS.jobId}">checked</c:if>/>
-                                        <br>
-                                        <em>
-                                          <label for="c_part_front">${jobPS.jobName}</label>
-                                        </em>
-                                      </li>
-                                    </c:forEach>
-                                  </ul>
+                              
+                              <!-- 수정중 -->
+                              <div class="input_radio_skill">
+                                <ul>
+                                  <li>
+                                    <input type="radio" name="skill_select" id="skill_select_high"
+                                      class="noticeQual" value="고졸" checked />
+                                    <label for="skill_select_high"><em>고졸</em></label>
+                                  </li>
+                                  <li>
+                                    <input type="radio" name="skill_select" id="skill_select_univ"
+                                      class="noticeQual" value="대졸" />
+                                    <label for="skill_select_univ"><em>대졸</em></label>
+                                  </li>
+                                </ul>
+                              </div><!-- .input_radio_skill -->
+                              <!-- 수정중 -->
 
                                   <div class="notice_dept">
                                     <h3>채용부서</h3>
@@ -110,10 +114,10 @@
                                 </div>
                                 <!-- .notice_box .rd_left -->
 
-                                <div class="btn_co_recruit_insert">
-                                  <button type="button" class="btn btn-primary btn_recruit_insert"
+                                <div class="btn_co_recruit_insert2">
+                                  <button type="button" class="btn_recruit_insert2"
                                     id="btnInsertNotice">공고등록</button>
-                                </div><!-- .btn_co_recruit_insert -->
+                                </div><!-- .btn_co_recruit_insert2 -->
                               </div><!-- .recruit_detail_box -->
                             </div><!-- .intro_update -->
                           </div><!-- .container -->
@@ -123,6 +127,7 @@
         </div>
       </div>
     </div>
+  </div>
     <script src="/js/notice.js"></script>
     <script src="/js/main.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

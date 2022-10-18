@@ -123,7 +123,7 @@ public class CompanyController {
         return new CMRespDto<>(1, "회원가입성공", null);
     }
 
-    @GetMapping("/company/usernameSameCheck")
+    @GetMapping("/co/usernameSameCheck")
     public @ResponseBody CMRespDto<?> usernameSameCheck(String companyUsername) {
         System.out.println("company이름:" + companyUsername);
         boolean isSame = companyService.회사유저네임중복확인(companyUsername);

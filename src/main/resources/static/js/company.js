@@ -1,9 +1,8 @@
-/* 기업회원 탈퇴*/
 $("#btn_delete").click(() => {
   Delete();
 });
 
-$("#btn_join").click(() => {
+$("#btn_co_join").click(() => {
   coJoin();
 });
 
@@ -16,9 +15,9 @@ $("#btn_login").click(() => {
 });
 
 // 유저네임 중복 체크
-$("#btnCompanyUsernameSameCheck").click(() => {
+/* $("#btnCompanyUsernameSameCheck").click(() => {
   checkUsernameCo();
-});
+}); */
 
 /* 기업회원 탈퇴*/
 
@@ -155,14 +154,14 @@ let isCompanyUsernameSameCheck = false;
 function checkUsernameCo() {
   let companyUsername = $("#companyUsername").val();
 
-  $.ajax(`/company/usernameSameCheck?companyUsername=${companyUsername}`, {
+  $.ajax(`/co/usernameSameCheck?companyUsername=${companyUsername}`, {
     type: "GET",
     dataType: "json",
     async: true,
   }).done((res) => {
     if (res.code == 1) {
       if (res.data == false) {
-        alert("아이디가 중복되지 않았습니다.");
+        alert("아이디 중복체크 완료");
         isCompanyUsernameSameCheck = true;
       } else {
         alert("아이디가 중복되었어요. 다른 아이디를 사용해주세요");
