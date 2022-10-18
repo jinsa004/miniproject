@@ -1,5 +1,7 @@
 package site.metacoding.miniproject.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -15,8 +17,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
+import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.IntroService;
+import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.web.dto.request.company.CompanyJoinDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
@@ -30,6 +34,7 @@ public class CompanyController {
     private final CompanyService companyService;
     private final HttpSession session;
     private final IntroService introService;
+    private final JobService jobService;
 
     @PostMapping("/co/login")
     public @ResponseBody CMRespDto<?> login(@RequestBody CompanyLoginDto loginDto, HttpServletResponse response) {
@@ -58,6 +63,8 @@ public class CompanyController {
 
     @GetMapping("/co/companyInfo/{companyId}")
     public String 기업정보관리(@PathVariable Integer companyId, Model model) {// 기업회원 회원가입 정보 수정할 때 쓰는 거 company 테이블
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
         Company companyPS = (Company) session.getAttribute("principal");
         model.addAttribute("company", companyPS);
         return "company/companyInfo";
