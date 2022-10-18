@@ -20,6 +20,11 @@ $("#btn_login").click(() => {
   coLogin();
 });
 
+// 유저네임 중복 체크
+$("#btnCompanyUsernameSameCheck").click(() => {
+	checkUsername();
+});
+
 
 /* 기업회원 탈퇴*/
 
@@ -46,7 +51,6 @@ function Delete() {
 /* 기업정보 수정*/
 
 function companyUpdate() {
-
   let companyId = $("#companyId").val();
 
   let data = {
@@ -56,7 +60,7 @@ function companyUpdate() {
     companyTel: $("#companyTel").val(),
     companyLocation: $("#companyLocation").val(),
     companyUsername: $("#companyUsername").val(),
-    companyPassword: $("#companyPassword").val()
+    companyPassword: $("#companyPassword").val(),
   };
   console.log("업데이트");
 
@@ -65,7 +69,7 @@ function companyUpdate() {
     dataType: "json",
     data: JSON.stringify(data),
     headers: {
-      "Content-Type": "application/json; charset=utf-8"
+      "Content-Type": "application/json; charset=utf-8",
     },
   }).done((res) => {
     if (res.code == 1) {
@@ -80,12 +84,11 @@ function companyUpdate() {
 
 //기업회원 로그인
 function coLogin() {
-
   let data = {
     companyUsername: $("#coUsername").val(),
     companyPassword: $("#coPassword").val(),
-    remember: $("#remember").prop("checked")
-  }
+    remember: $("#remember").prop("checked"),
+  };
   $.ajax("/co/login", {
     type: "POST",
     dataType: "json", //응답데이터 타입명
@@ -105,12 +108,30 @@ function coLogin() {
 
 // 기업회원가입
 function join() {
+
+
+  if(blackCheck() == false){
+    return;
+  }
+  
+  if (isCompanyUsernameSameCheck == false) {
+		alert("아이디 중복 체크를 진행해주세요");
+		return;
+	}
+
+  if (companyPasswordSameCheck() == true) {
+		alert("비밀번호가 일치하지 않습니다.");
+		return;
+	}
+}
+ 
   let checkBoxArr = [];
   $("input:checkbox[name='job_checkbox']:checked").each(function () {
     checkBoxArr.push($(this).val()); // 체크된 값 배열에 push
   })
 
   console.log(checkBoxArr);
+
 
   let data = {
     companyNumber: $("#companyNumber").val(),
@@ -140,3 +161,89 @@ function join() {
     }
   });
 }
+
+let isCompanyUsernameSameCheck = false;
+
+function checkUsername() {
+	
+	let companyUsername = $("#companyUsername").val();
+  
+	$.ajax(`/company/usernameSameCheck?companyUsername=${companyUsername}`, {
+		type: "GET",
+		dataType: "json",
+		async: true
+	}).done((res) => { 	
+		if (res.code == 1) {	
+			if (res.data == false) {
+				alert("아이디가 중복되지 않았습니다.")
+				isCompanyUsernameSameCheck = true;
+			} else {
+				alert("아이디가 중복되었어요. 다른 아이디를 사용해주세요")
+				isCompanyUsernameSameCheck = false;
+				$("#companyUsername").val(""); 
+			}
+		}
+	});
+}
+
+
+function companyPasswordSameCheck() {
+	let companyPassword = $("#companyPassword").val();
+	let companyPasswordSame = $("#companyPasswordSame").val();
+	if (companyPassword != companyPasswordSame) {
+		companyPassword.value = "";
+		companyPasswordSame.value = "";
+		return true;
+	} else{
+		return false;
+	}
+}
+
+function blackCheck() {
+  let companyNumber = $("#companyNumber").val();
+  let companyName = $("#companyName").val();
+  let companyEmail = $("#companyEmail").val();
+  let companyTel =$("#companyTel").val();
+  let companyLocation =$("#companyLocation").val();
+  let companyUsername = $("#companyUsername").val();
+  let companyPassword = $("#companyPassword").val();
+
+  if($("#companyUsername").val() == ""){
+    alert("아이디를 입력해주세요.");
+    $("#companyUsername").focus();
+    return false;
+  }
+  else if($("#companyPassword").val() == ""){
+    alert("비밀번호를 입력해주세요.");
+    $("#companyPassword").focus();
+    return false;
+  } 
+  else if($("#companyEmail").val() == ""){
+    alert("이메일을 입력해주세요.");
+    $("#companyEmail").focus();
+    return false;
+  } 
+  else if($("#companyName").val() == ""){
+    alert("회사명을 입력해주세요.");
+    $("#companyName").focus();
+    return false;
+  } 
+  else if($("#companyNumber").val() == ""){
+    alert("사업자등록번호를 입력해주세요.");
+    $("#companyNumber").focus();
+    return false;
+  } 
+  else if($("#companyTel").val() == ""){
+    alert("휴대폰번호를 입력해주세요.");
+    $("#companyTel").focus();
+    return false;
+  } 
+  else if($("#companyLocation").val() == ""){
+    alert("주소를 입력해주세요.");
+    $("#companyLocation").focus();
+    return false;
+  } else{
+    return true;
+  }
+
+  }

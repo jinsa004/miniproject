@@ -1,8 +1,8 @@
 package site.metacoding.miniproject.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.transaction.annotation.Transactional;
-
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.check.company.CoCheckDao;
 import site.metacoding.miniproject.domain.company.Company;
@@ -50,5 +50,15 @@ public class CompanyService {
 
   public void 기업회원탈퇴(Integer companyId) {
     companyDao.deleteById(companyId);
+  }
+
+  public boolean 회사유저네임중복확인(String companyUsername) {
+    Company companyPS = companyDao.findByIdCompanyUsername(companyUsername);
+
+    if (companyPS == null) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }

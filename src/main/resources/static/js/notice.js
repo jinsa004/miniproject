@@ -2,11 +2,11 @@ $("#btnUpdateNotice").click(() => {
   updateNotice();
 });
 
-$("#btn_insert_notice").click(() => {
+$("#btnInsertNotice").click(() => {
   btnInsertNotice()
 });
 
-$("#btn_delete_notice").click(() => {
+$("#btnDeleteNotice").click(() => {
   btnDeleteNotice()
 });
 
@@ -19,10 +19,10 @@ function btnInsertNotice() {
     noticePosition: $("#noticePosition").val(),
     noticeTask: $("#noticeTask").val(),
     noticeSal: $("#noticeSal").val(),
-    noticeQual: $('input[id=noticeQual]:checked').val(),
+    noticeQual: $('input[class=noticeQual]:checked').val(),
     noticeCareer: $("#noticeCareer").val(),
     noticeWellfare: $("#noticeWellfare").val(),
-    jobId: $('input[id=jobId]:checked').val()
+    jobId: $('input[id=job_id]:checked').val()
   };
   console.log(data);
   $.ajax("/co/noticeSave", {
@@ -35,7 +35,7 @@ function btnInsertNotice() {
   }).done((res) => {
     if (res.code == 1) {
       alert("공고 등록에 성공하였습니다.");
-      location.href = "/co/mainCompany";
+      location.href = "/co";
     } else {
       alert("공고 등록에 실패하였습니다.");
     }
@@ -49,7 +49,6 @@ function updateNotice() {
 
   let data = {
     noticeTitle: $("#notice_title").val(),
-    jobId: $('input[id=job_id]:checked').val(),
     noticePeriod: $("#notice_period").val(),
     noticeDept: $("#notice_dept").val(),
     noticePosition: $("#notice_position").val(),
@@ -57,7 +56,8 @@ function updateNotice() {
     noticeSal: $("#notice_sal").val(),
     noticeQual: $('input[id=notice_qual]:checked').val(),
     noticeCareer: $("#notice_career").val(),
-    noticeWellfare: $('textarea[name=company_wellfare]').val()
+    noticeWellfare: $('textarea[name=company_wellfare]').val(),
+    jobId: $('input[id=job_id]:checked').val(),
   };
 
   $.ajax("/co/noticeUpdate/" + noticeId, {

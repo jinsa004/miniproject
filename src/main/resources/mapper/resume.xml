@@ -43,29 +43,29 @@
     FROM resume r
     INNER JOIN job j
     ON r.job_id = j.job_id
-    WHERE r.employee_id=#{employeeId};
+    WHERE r.employee_id=#{employeeId}
   </select>
 
 	<update id="update">
-    UPDATE resume SET
-    resume_title = #{resumeTitle}, 
-    resume_image_id = #{resumeImageId}, 
-    highschool_name = #{highschoolName}, 
-    highschool_startdate = #{highschoolStartdate}, 
-    highschool_enddate = #{highschoolEnddate}, 
-    highschool_major = #{highschoolMajor}, 
-    univ_name = #{univName}, 
-    univ_startdate = #{univStartdate}, 
-    univ_enddate = #{univEnddate}, 
-    univ_major = #{univMajor}, 
-    univ_grades = #{univGrades}, 
-    prev_co = #{prevCo}, 
-    career_period = #{careerPeriod}, 
-    career_position = #{careerPosition}, 
-    career_department = #{careerDepartment}, 
-    career_task = #{careerTask}, 
-    job_id = #{jobId}
-    WHERE resume_id = #{resumeId}
+		UPDATE resume SET
+		resume_title = #{resumeTitle}, 
+		resume_image_id = #{resumeImageId}, 
+		highschool_name = #{highschoolName}, 
+		highschool_startdate = #{highschoolStartdate}, 
+		highschool_enddate = #{highschoolEnddate}, 
+		highschool_major = #{highschoolMajor}, 
+		univ_name = #{univName}, 
+		univ_startdate = #{univStartdate}, 
+		univ_enddate = #{univEnddate}, 
+		univ_major = #{univMajor}, 
+		univ_grades = #{univGrades}, 
+		prev_co = #{prevCo}, 
+		career_period = #{careerPeriod}, 
+		career_position = #{careerPosition}, 
+		career_department = #{careerDepartment}, 
+		career_task = #{careerTask}, 
+		job_id = #{jobId}
+		WHERE resume_id = #{resumeId}
 	</update>
 
 	<delete id="deleteById">
