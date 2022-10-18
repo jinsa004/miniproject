@@ -19,11 +19,11 @@
                 <c:forEach var="noticeList" items="${noticeList}">
                   <ul>
                     <li>
-                      <a href="#"><img src="/img/logo_1.png" alt="logo" /></a>
+                      <a href="/co/noticeService/${principal.companyId}/noticeDetail/${noticeList.noticeId}"><img
+                          src="/img/logo_1.png" alt="logo" /></a>
                     </li>
                     <li>
-                      <a href="#">${noticeList.noticeTitle}
-                        <span class="notice_small">${noticeList.noticeTask}</span>
+                      <a href="/co/noticeService/${principal.companyId}/noticeDetail/${noticeList.noticeId}">${noticeList.noticeTitle}
                         <span class="notice_small">${noticeList.noticeDept}</span>
                       </a>
                     </li>

@@ -20,7 +20,7 @@
       <div id="mypage_co_wrap">
         <div id="gnb_mypage">
           <div class="logo">
-            <a href="/co/mainCompany">COMPANY_4</a>
+            <a href="/co">COMPANY_4</a>
           </div>
           <ul class="gnb_left">
             <li class="gnb_list1">
@@ -30,7 +30,7 @@
               </a>
             </li>
             <li class="gnb_list2">
-              <a href="/co/noticeDetail">
+              <a href="/co/noticeService/${principal.companyId}">
                 <i class="fa-regular fa-pen-to-square"></i>
                 <span class="txt">공고 관리</span>
               </a>

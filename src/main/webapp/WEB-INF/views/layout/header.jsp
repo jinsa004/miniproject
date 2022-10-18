@@ -41,13 +41,13 @@
                   <button class="btn_join" type="button" onClick="javascript:popOpen2();">
                     회원가입
                   </button>
-                  <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
+                  <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
                 </c:when>
                 <c:otherwise>
                   <a class="btn_logout" href="/logout">로그아웃</a>
 
                   <a href="/emp/mypageInsertForm/${principal.employeeId}" class="btn_mypage">마이 페이지</a>
-                  <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
+                  <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
                 </c:otherwise>
               </c:choose>
             </div>

@@ -96,56 +96,6 @@
             </div>
             <!-- basic -->
 
-            <div id="field" class="form">
-              <div class="form_title">
-                <h2 class="title">관심분야</h2>
-              </div>
-              <div class="resume_field info_form2">
-                <div class="field_select">
-                  <div class="select-group">
-                    <ul class="part_box_wrap">
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" checked />
-                        <em>
-                          <label for="c_part_front">프론트엔드</label>
-                        </em>
-                      </li>
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" />
-                        <em>
-                          <label for="c_part_front">백엔드</label>
-                        </em>
-                      </li>
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" />
-                        <em>
-                          <label for="c_part_front">풀스택</label>
-                        </em>
-                      </li>
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" />
-                        <em>
-                          <label for="c_part_front">안드로이드</label>
-                        </em>
-                      </li>
-                      <li class="career_part1 part_box">
-                        <input type="checkbox" class="login_check" id="jobId" name="" />
-                        <em>
-                          <label for="c_part_front">IOS</label>
-                        </em>
-                      </li>
-                    </ul>
-
-                    <c:forEach var="jobPS" items="${jobPS}">
-                      <input type='checkbox' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
-                      <br>
-                    </c:forEach>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- field -->
-
             <div class="btn_group">
               <div class="update_btn">
                 <button id="btnInsertCompany" type="button" class="btn btn-primary">수정완료</button>
