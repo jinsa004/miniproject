@@ -67,56 +67,104 @@
                     </div><!-- .info_form -->
                   </div>
                   <!-- info -->
-
-                  <div id="edu" class="form">
-                    <div class="form_title">
-                      <h2 class="title">학력사항</h2>
-                      <span>최종학력 ｜ <strong>대학교 졸업</strong></span>
-                    </div>
-                    <div class="resume_edu">
-                      <div class="resume_table">
-                        <table cellspacing="0" cellpadding="0">
-                          <caption>학력</caption>
-                          <colgroup>
-                            <col width="25%">
-                            <col width="*">
-                            <col width="10%">
-                            <col width="10%">
-                            <col width="15%">
-                          </colgroup>
-                          <thead>
-                            <tr>
-                              <th scope="col">재학기간</th>
-                              <th scope="col">학교명</th>
-                              <th scope="col">전공</th>
-                              <th scope="col">구분</th>
-                              <th scope="col">학점</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td class="resume_table_center" rowspan="1">
-                                ${resume.univStartdate} - ${resume.univEnddate}
-                              </td>
-                              <td class="resume_table_center">
-                                ${resume.univName}
-                              </td>
-                              <td class="resume_table_center">
-                                ${resume.univMajor}
-                              </td>
-                              <td class="resume_table_center" rowspan="1">
-                                졸업
-                              </td>
-                              <td class="resume_table_center">
-                                ${resume.univGrades} /4.5
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div><!-- .resume_table -->
-                    </div><!-- .resume_edu -->
-                  </div><!-- .edu -->
-
+                  <c:choose>
+                    <c:when test="${empty resume.highschoolName}">
+                      <div id="edu" class="form">
+                        <div class="form_title">
+                          <h2 class="title">학력사항</h2>
+                          <span>최종학력 ｜ <strong>대학교 졸업</strong></span>
+                        </div>
+                        <div class="resume_edu">
+                          <div class="resume_table">
+                            <table cellspacing="0" cellpadding="0">
+                              <caption>학력</caption>
+                              <colgroup>
+                                <col width="25%">
+                                <col width="*">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="15%">
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <th scope="col">재학기간</th>
+                                  <th scope="col">학교명</th>
+                                  <th scope="col">전공</th>
+                                  <th scope="col">구분</th>
+                                  <th scope="col">학점</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="resume_table_center" rowspan="1">
+                                    ${resume.univStartdate} - ${resume.univEnddate}
+                                  </td>
+                                  <td class="resume_table_center">
+                                    ${resume.univName}
+                                  </td>
+                                  <td class="resume_table_center">
+                                    ${resume.univMajor}
+                                  </td>
+                                  <td class="resume_table_center" rowspan="1">
+                                    졸업
+                                  </td>
+                                  <td class="resume_table_center">
+                                    ${resume.univGrades} /4.5
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div><!-- .resume_table -->
+                        </div><!-- .resume_edu -->
+                      </div><!-- .edu -->
+                    </c:when>
+                    <c:otherwise>
+                      <div id="edu" class="form">
+                        <div class="form_title">
+                          <h2 class="title">학력사항</h2>
+                          <span>최종학력 ｜ <strong>고등학교 졸업</strong></span>
+                        </div>
+                        <div class="resume_edu">
+                          <div class="resume_table">
+                            <table cellspacing="0" cellpadding="0">
+                              <caption>학력</caption>
+                              <colgroup>
+                                <col width="25%">
+                                <col width="*">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="15%">
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <th scope="col">재학기간</th>
+                                  <th scope="col">학교명</th>
+                                  <th scope="col">전공</th>
+                                  <th scope="col">구분</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="resume_table_center" rowspan="1">
+                                    ${resume.highschoolStartdate} - ${resume.highschoolEnddate}
+                                  </td>
+                                  <td class="resume_table_center">
+                                    ${resume.highschoolName}
+                                  </td>
+                                  <td class="resume_table_center">
+                                    ${resume.highschoolMajor}
+                                  </td>
+                                  <td class="resume_table_center" rowspan="1">
+                                    졸업
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div><!-- .resume_table -->
+                        </div><!-- .resume_edu -->
+                      </div><!-- .edu -->
+                    </c:otherwise>
+                  </c:choose>
                   <div id="career" class="form">
                     <div class="form_title">
                       <h2 class="title">경력사항</h2>
