@@ -155,22 +155,19 @@ public class EmployeeController {
 
     // =========================== 유효성체크 ======================================
     // http://localhost:8000/users/usernameSameCheck?username=ssar
-    @GetMapping("emp/usernameSameCheck")
+    @GetMapping("/emp/usernameSameCheck")
     public @ResponseBody CMRespDto<Boolean> usernameSameCheck(String employeeUsername) {
         boolean isSame = employeeService.유저네임중복확인(employeeUsername);
-        // return은 JSON으로
-        // HttpMessageConverter발동 - 자동으로 json type으로 변경해준다.
-        // HttpMessageConverter는 Restcontroller나 @ResponseBody의 어노테이션에의해 발동 된다.
         return new CMRespDto<>(1, "성공", isSame);
     }
 
-    @GetMapping("emp/checkPassword")
+    @GetMapping("/emp/checkPassword")
     public @ResponseBody CMRespDto<Boolean> checkPassword(String employeePassword) {
         boolean isSame = employeeService.비밀번호2차체크(employeePassword);
         return new CMRespDto<>(1, "성공", isSame);
     }
 
-    @GetMapping("emp/checkEmail")
+    @GetMapping("/emp/checkEmail")
     public @ResponseBody CMRespDto<Boolean> checkEmail(String employeeEmail) {
         boolean isSame = employeeService.이메일형식체크(employeeEmail);
         return new CMRespDto<>(1, "성공", isSame);

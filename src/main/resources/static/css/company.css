@@ -1099,6 +1099,7 @@ input.login_check{
 }
 .title_update2{
     width: calc(100% - 500px);
+    margin: 0 auto;
 }
 .title_update h1{
     padding-top: 60px;
@@ -1271,7 +1272,7 @@ input.login_check{
 }
 #co_notice_wrap .container2{
     padding: 0;
-    padding-bottom: 90px;
+    /* padding-bottom: 90px; */
     padding-top: 180px;
     background: #fff;
 }
@@ -1299,6 +1300,7 @@ input.login_check{
     padding: 0px 0;
     padding-top: 25px;
     margin: 0 auto;
+    float: none;
 }
 .recruit_detail_box .notice_box div{
     padding-bottom: 55px;
@@ -1548,6 +1550,10 @@ button.btn_recruit_insert:hover{
 }
 .input_radio_skill ul li{
     display: inline-block;
+    margin-left: 20px;
+}
+.input_radio_skill ul li:first-child{
+    margin-left: 0;
 }
 .input_radio_skill input{
     vertical-align: top;
@@ -1560,7 +1566,6 @@ button.btn_recruit_insert:hover{
     vertical-align: top;
 }
 #skill_select_univ{
-    margin-left: 20px;
 }
 
 /* 로고 이미지 업로드 */
