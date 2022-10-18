@@ -63,7 +63,7 @@
                   <a href="/co/noticeService/${principal.companyId}">공고/지원자관리</a>
                 </li>
                 <li>
-                  <a href="/co/matchingResume">매칭리스트</a>
+                  <a href="/co/matchingResume/${principal.companyId}">매칭리스트</a>
                 </li>
               </ul>
             </nav>

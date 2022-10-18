@@ -56,21 +56,6 @@ public class CompanyController {
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
-    // @GetMapping("/co/mainCompany")
-    // public String companyMain() {// 기업회원이 보는 메인페이지
-    // return "company/mainCompany";
-    // }
-
-    @GetMapping("/co/supCompany")
-    public String supportList() {// 기업회원이 보는 공고/지원자관리 탭
-        return "company/supporter";
-    }
-
-    @GetMapping("/co/matchingResume")
-    public String companyMatchingList() {// 기업회원이 보는 이력서 매칭리스트
-        return "company/matchingResume";
-    }
-
     @GetMapping("/co/companyInfo/{companyId}")
     public String 기업정보관리(@PathVariable Integer companyId, Model model) {// 기업회원 회원가입 정보 수정할 때 쓰는 거 company 테이블
         Company companyPS = (Company) session.getAttribute("principal");

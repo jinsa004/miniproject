@@ -30,6 +30,22 @@
 		ORDER BY r.created_at DESC
 	</select>
 
+	<select id="findMatchingByJobId" resultType="site.metacoding.miniproject.domain.resume.Resume">
+		SELECT *
+		FROM (SELECT r.resume_id, r.resume_title, r.employee_id, r.resume_image_id, r.highschool_name, r.highschool_startdate, r.highschool_enddate, r.highschool_major,
+		r.univ_name, r.univ_startdate, r.univ_enddate, r.univ_major, r.univ_grades, r.prev_co, r.career_period, r.career_position, r.career_department, r.career_task,
+		r.job_id, r.is_main, r.created_at
+		FROM resume r
+		INNER JOIN (SELECT cc.job_id
+		FROM co_check cc
+		INNER JOIN company c
+		ON cc.company_id = c.company_id
+		WHERE cc.company_id = #{companyId}) cc
+		ON r.job_id = cc.job_id) rj
+		INNER JOIN employee e
+		ON rj.employee_id = e.employee_id
+	</select>
+
 	<select id="findById" resultType="site.metacoding.miniproject.domain.resume.Resume">
 		SELECT *
 		FROM resume r
