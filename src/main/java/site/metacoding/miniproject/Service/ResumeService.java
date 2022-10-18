@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.Service;
+package site.metacoding.miniproject.service;
 
 import org.springframework.stereotype.Service;
 
