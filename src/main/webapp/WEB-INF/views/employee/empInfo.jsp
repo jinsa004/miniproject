@@ -98,36 +98,14 @@
               <div class="field_select">
                 <form method="post" action="/#">
                   <ul class="part_box_wrap">
-                    <li class="career_part1 part_box form-check">
-                      <input type="checkbox" class="login_check" id="jobId" name="프론트엔드" value="프론트엔드" checked>
-                      <em>
-                        <label class="form-check-label" for="프론트엔드">프론트엔드</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box form-check">
-                      <input type="checkbox" class="login_check" id="백엔드" name="백엔드" value="백엔드">
-                      <em>
-                        <label class="form-check-label" for="백엔드">백엔드</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box form-check">
-                      <input type="checkbox" class="login_check" id="풀스택" name="풀스택" value="풀스택">
-                      <em>
-                        <label class="form-check-label" for="풀스택">풀스택</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box form-check">
-                      <input type="checkbox" class="login_check" id="안드로이드" name="안드로이드" value="안드로이드">
-                      <em>
-                        <label class="form-check-label" for="안드로이드">안드로이드</label>
-                      </em>
-                    </li>
-                    <li class="career_part1 part_box form-check">
-                      <input type="checkbox" class="login_check" id="IOS" name="IOS" value="IOS">
-                      <em>
-                        <label class="form-check-label" for="IOS">IOS</label>
-                      </em>
-                    </li>
+                    <c:forEach var="jobPS" items="${jobPS}" varStatus="">
+                      <li class="career_part1 part_box form-check">
+                        <input type="checkbox" class="login_check" name="job_checkbox" value="${jobPS.jobId}" />
+                        <em>
+                          <label class="form-check-label" for="${jobPS.jobName}">${jobPS.jobName}</label>
+                        </em>
+                      </li>
+                    </c:forEach>
                   </ul>
                 </form>
               </div>
@@ -154,6 +132,7 @@
     </div>
     </div>
     <!-- body -->
+
     <script src="/js/main.js"></script>
     <script src="/js/employee.js"></script>
     <%@ include file="../layout/footer.jsp" %>

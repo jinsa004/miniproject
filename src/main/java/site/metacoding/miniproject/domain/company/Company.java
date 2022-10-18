@@ -1,5 +1,7 @@
 package site.metacoding.miniproject.domain.company;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,7 +20,7 @@ public class Company {
 	private String companyLocation;
 	private String companyUsername;
 	private String companyPassword;
-	private Integer jobId;
+	private List<Integer> jobIds;
 
 	// 엔티티 필드 아님
 	private Integer employeeId;
@@ -55,6 +57,5 @@ public class Company {
 		this.companyLocation = companyupdateDto.getCompanyLocation();
 		this.companyUsername = companyupdateDto.getCompanyUsername();
 		this.companyPassword = companyupdateDto.getCompanyPassword();
-		this.jobId = companyupdateDto.getJobId();
 	}
 }

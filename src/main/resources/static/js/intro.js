@@ -13,7 +13,7 @@ $("#iconSub").click(() => {
   }
 });
 
-$("#btnUpdate").click(() => {
+$("#btnInsertCompany").click(() => {
   update();
 });
 
@@ -70,8 +70,7 @@ function update() {
     introTask: $("#introTask").val(),
     introSal: $("#introSal").val(),
     introWellfare: $("#introWellfare").val(),
-    introContent: $("#introContent").val(),
-    jobName: $("#jobName").val()
+    introContent: $("#introContent").val()
   }
   let introId = $("#introId").val();
   console.log("업데이트확인");
