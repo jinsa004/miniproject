@@ -243,7 +243,7 @@
                   <ul class="part_box_wrap">
                     <li class="career_part1 part_box">
                       <c:forEach var="jobPS" items="${jobPS}">
-                        <input type='checkbox' id='jobId' name='jobId' value="${jobPS.jobId}" <c:if
+                        <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" <c:if
                           test="${jobPS.jobId eq resumePS.jobId}">checked</c:if>/>${jobPS.jobName}
                         <br>
                       </c:forEach>

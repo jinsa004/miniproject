@@ -243,7 +243,7 @@
                   <ul class="part_box_wrap">
                     <li class="career_part1 part_box">
                       <c:forEach var="jobPS" items="${jobPS}">
-                        <input type='checkbox' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
+                        <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
                         <br>
                       </c:forEach>
                     </li>
