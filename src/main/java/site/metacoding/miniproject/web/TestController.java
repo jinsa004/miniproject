@@ -1,9 +1,17 @@
 package site.metacoding.miniproject.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class TestController {
+
+
+    @GetMapping("/co/noticeUpdate/{noticeId}")
+    public String 분야별이력서리스트() {
+    return "notice/noticeUpdate";
+    }
+
 
     /*
      * @GetMapping("/co/resume")

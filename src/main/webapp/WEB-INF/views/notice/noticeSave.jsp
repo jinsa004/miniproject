@@ -27,7 +27,7 @@
                               <h3>채용분야</h3>
                               <div class="resume_field info_form3">
 
-                                <!-- 수정중 -->
+                                
                                 <div class="input_radio_skill">
                                   <ul>
                                     <li>
@@ -57,7 +57,7 @@
                                     </li>
                                   </ul>
                                 </div><!-- .input_radio_skill -->
-                                <!-- 수정중 -->
+                                
 
                                 <div class="notice_dept">
                                   <h3>채용부서</h3>
