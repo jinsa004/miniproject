@@ -165,59 +165,69 @@
                       </div><!-- .edu -->
                     </c:otherwise>
                   </c:choose>
-                  <div id="career" class="form">
-                    <div class="form_title">
-                      <h2 class="title">경력사항</h2>
-                      <span>경력 ｜ <strong>신입</strong></span>
-                    </div>
-                    <div class="resume_career">
-                      <div class="resume_table">
-                        <table cellspacing="0" cellpadding="0">
-                          <caption>경력</caption>
-                          <colgroup>
-                            <col width="25%">
-                            <col width="*">
-                            <col width="20%">
-                            <col width="20%">
-                          </colgroup>
-                          <thead>
-                            <tr>
-                              <th scope="col">근무기간</th>
-                              <th scope="col">직장명</th>
-                              <th scope="col">직급/직책</th>
-                              <th scope="col">부서명</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td class="resume_table_center" rowspan="2">
-                                ${resume.careerPeriod}
-                              </td>
-                              <td class="resume_table_center">
-                                ${resume.prevCo}
-                              </td>
-                              <td class="resume_table_center">
-                                ${resume.careerPosition}
-                              </td>
-                              <td class="resume_table_center" rowspan="1">
-                                ${resume.careerDepartment}
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="" colspan="3">
-                                <p>
-                                  <span class="table_icon">담당업무</span>${resume.careerTask}
-                                </p>
-                              </td>
-                            </tr>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div><!-- .resume_table -->
-                    </div>
-                  </div>
-                  <!-- career -->
-
+                  <c:choose>
+                    <c:when test="${empty resume.prevCo}">
+                      <div id="career" class="form">
+                        <div class="form_title">
+                          <h2 class="title">경력사항</h2>
+                          <span>경력 ｜ <strong>신입</strong></span>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                      <div id="career" class="form">
+                        <div class="form_title">
+                          <h2 class="title">경력사항</h2>
+                          <span><strong>경력</strong> ｜ 신입</span>
+                        </div>
+                        <div class="resume_career">
+                          <div class="resume_table">
+                            <table cellspacing="0" cellpadding="0">
+                              <caption>경력</caption>
+                              <colgroup>
+                                <col width="25%">
+                                <col width="*">
+                                <col width="20%">
+                                <col width="20%">
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <th scope="col">근무기간</th>
+                                  <th scope="col">직장명</th>
+                                  <th scope="col">직급/직책</th>
+                                  <th scope="col">부서명</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="resume_table_center" rowspan="2">
+                                    ${resume.careerPeriod}
+                                  </td>
+                                  <td class="resume_table_center">
+                                    ${resume.prevCo}
+                                  </td>
+                                  <td class="resume_table_center">
+                                    ${resume.careerPosition}
+                                  </td>
+                                  <td class="resume_table_center" rowspan="1">
+                                    ${resume.careerDepartment}
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="" colspan="3">
+                                    <p>
+                                      <span class="table_icon">담당업무</span>${resume.careerTask}
+                                    </p>
+                                  </td>
+                                </tr>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div><!-- .resume_table -->
+                        </div>
+                      </div>
+                      <!-- career -->
+                    </c:otherwise>
+                  </c:choose>
                   <div id="part" class="form">
                     <div class="form_title">
                       <h2 class="title">관심분야</h2>
