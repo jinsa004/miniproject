@@ -707,7 +707,7 @@ input.login_check{
 }
 .join_right{
     float: left;
-    padding-left: 45px;
+    padding-left: 40px;
 }
 
 
@@ -1618,3 +1618,81 @@ button.btn_recruit_insert:hover{
     margin-bottom: 0;
 }
 
+
+/* ============== 유효성체크 ========================== */
+#employeeUsername{
+}
+#btnUsernameSameCheck{
+    height: 42px;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #fff;
+    width: 50.5%;
+    margin-left: 1.5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+#btnUsernameSameCheck:hover{
+    background: #4876ef;
+}
+#btnUsernameSameCheck:active{
+    background: #111;
+}
+
+span.check{
+    display: flex;
+    justify-content: space-between;
+}
+
+#employeepasswordRepeat{
+}
+#companyPasswordCheck{
+    height: 42px;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #fff;
+    width: 50.5%;
+    margin-left: 1.5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+#companyPasswordCheck:hover{
+    background: #4876ef;
+}
+#companyPasswordCheck:active{
+    background: #111;
+}
+#employeeEmail{
+}
+#companyEmailCheck{
+    height: 42px;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #fff;
+    width: 50.5%;
+    margin-left: 1.5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+#companyEmailCheck:hover{
+    background: #4876ef;
+}
+#companyEmailCheck:active{
+    background: #111;
+}
+
+.modal_join_wrap input.btn_post_code{
+    cursor: pointer;
+    background: #ddd;
+    color: #fff;
+    transition: all 0.3s;
+}
+.modal_join_wrap input.btn_post_code:hover{
+    background: #4876ef;
+}
+.modal_join_wrap input.btn_post_code:active{
+    background: #111;
+}

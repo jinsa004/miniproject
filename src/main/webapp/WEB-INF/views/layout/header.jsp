@@ -192,7 +192,7 @@ prefix="c" %>
                   </button>
                 </span>
               </div>
-              <div class="join_pw2 join_box"></div>
+              <!-- <div class="join_pw2 join_box"></div> -->
               <div class="join_sex join_box">
                 <h3>
                   <label for="employeeSex">성별</label>
@@ -242,7 +242,7 @@ prefix="c" %>
                       placeholder="이름을 입력하세요."
                       name="employeeName"
                       maxlength="10"
-                      value="회지"
+                      value=""
                     />
                   </span>
                 </div>
@@ -257,7 +257,7 @@ prefix="c" %>
                       placeholder="생년월일을 입력하세요."
                       name="employeeBirth"
                       maxlength="40"
-                      value="2000-01-01"
+                      value=""
                     />
                   </span>
                 </div>
@@ -272,7 +272,7 @@ prefix="c" %>
                       placeholder="휴대폰번호를 입력하세요."
                       name="employeeTel"
                       maxlength="40"
-                      value="01022229999"
+                      value=""
                     />
                   </span>
                 </div>
@@ -333,7 +333,9 @@ prefix="c" %>
                   </div>
                 </c:forEach>
               </div>
+              <!-- .career_part -->
             </div>
+            <!-- .join_right -->
           </form>
 
           <button id="btn_join" type="button">회원가입</button>
