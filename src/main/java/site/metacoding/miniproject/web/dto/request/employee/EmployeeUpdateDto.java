@@ -1,5 +1,7 @@
 package site.metacoding.miniproject.web.dto.request.employee;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,5 +16,5 @@ public class EmployeeUpdateDto {
     private String employeeEmail;
     private String employeeLocation;
     private String employeeTel;
-
+    private List<Integer> jobIds;
 }

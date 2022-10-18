@@ -21,10 +21,12 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.check.employee.EmpCheck;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
+import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.domain.subscribe.Subscribe;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
+import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.ResumeService;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
@@ -39,6 +41,7 @@ public class EmployeeController {
     private final EmployeeService employeeService;
     private final ResumeService resumeService;
     private final IntroService introService;
+    private final JobService jobService;
     private final HttpSession session;
 
     @PostMapping("/emp/login")
@@ -114,8 +117,13 @@ public class EmployeeController {
 
     @GetMapping("/emp/employeeInfo/{employeeId}")
     public String 회원정보수정탈퇴페이지(@PathVariable Integer employeeId, Model model) {// 개인회원 회원가입 정보수정
-        List<EmpCheck> jobPS = employeeService.관심분야값보기(employeeId);
+        // 리스트값 불러오기
+        List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
+        List<EmpCheck> checkPS = employeeService.관심분야값보기(employeeId);
+        model.addAttribute("checkPS", checkPS);
+
+        // 세션값담기
         Employee employeePS = (Employee) session.getAttribute("principal");
         /* Employee employeePS = employeeService.employeeUpdate(employeeId); */
         model.addAttribute("employee", employeePS);

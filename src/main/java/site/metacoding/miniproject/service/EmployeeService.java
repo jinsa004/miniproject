@@ -30,6 +30,13 @@ public class EmployeeService {
     }
 
     public Employee employeeUpdate(Integer employeeId, EmployeeUpdateDto employeeUpdateDto) {
+        // emp_check 값 업데이트
+        empCheckDao.deleteById(employeeId);
+        for (Integer jobId : employeeUpdateDto.getJobIds()) {
+            empCheckDao.insert(employeeId, jobId);
+        }
+
+        // 회원정보 업데이트
         Employee employeePS = employeeDao.findById(employeeId);
         employeePS.update(employeeUpdateDto);
         employeeDao.update(employeePS);

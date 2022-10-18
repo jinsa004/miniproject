@@ -12,4 +12,7 @@ public class EmpCheck {
     private Integer empCheckId;
     private Integer employeeId;
     private Integer jobId;
+
+    // 엔티티가 아닌 필드 (회원정보수정에 필요)
+    private String jobName;
 }

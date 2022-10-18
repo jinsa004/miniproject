@@ -10,8 +10,6 @@ public interface EmpCheckDao {
 
     public List<EmpCheck> findAll(Integer employeeId);
 
-    public void updateByEmployeeId();
-
-    public void deleteById(Integer applicationId);
+    public void deleteById(Integer employeeId);
 
 }
