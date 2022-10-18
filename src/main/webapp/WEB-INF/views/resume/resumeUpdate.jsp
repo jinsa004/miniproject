@@ -141,10 +141,10 @@
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">재학기간</span>
-                    <input type="text" id="univ_start_date" name="start_date" class="box_input info_right_input2"
+                    <input type="date" id="univ_start_date" name="start_date" class="box_input info_right_input2"
                       placeholder="입학년도" value="${resumePS.univStartdate}">
                     <span class="icon">-</span>
-                    <input type="text" id="univ_end_date" name="end_date" class="box_input info_right_input2"
+                    <input type="date" id="univ_end_date" name="end_date" class="box_input info_right_input2"
                       placeholder="졸업년도" value="${resumePS.univEnddate}">
                   </div>
                 </div>
@@ -238,20 +238,34 @@
               <h2 class="title">관심분야</h2>
             </div>
             <div class="resume_field info_form2">
-              <div class="field_select">
-                <div class="select-group">
-                  <ul class="part_box_wrap">
-                    <li class="career_part1 part_box">
-                      <c:forEach var="jobPS" items="${jobPS}">
-                        <input type='checkbox' id='jobId' name='jobId' value="${jobPS.jobId}" <c:if
-                          test="${jobPS.jobId eq resumePS.jobId}">checked</c:if>/>${jobPS.jobName}
-                        <br>
-                      </c:forEach>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+
+              <div class="input_radio_skill">
+                <ul>
+                  <li>
+                    <input type="radio" name="part_select" id="part_select_front" class="noticeQual" value="프론트엔드" />
+                    <label for="part_select_front"><em>프론트엔드</em></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="part_select" id="part_select_back" class="noticeQual" value="백엔드"
+                      checked />
+                    <label for="part_select_back"><em>백엔드</em></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="part_select" id="part_select_full" class="noticeQual" value="풀스택" />
+                    <label for="part_select_full"><em>풀스택</em></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="part_select" id="part_select_and" class="noticeQual" value="안드로이드" />
+                    <label for="part_select_and"><em>안드로이드</em></label>
+                  </li>
+                  <li>
+                    <input type="radio" name="part_select" id="part_select_ios" class="noticeQual" value="ios" />
+                    <label for="part_select_ios"><em>IOS</em></label>
+                  </li>
+                </ul>
+              </div><!-- .input_radio_skill -->
+
+            </div><!-- .resume_field -->
           </div>
           <!-- field -->
 

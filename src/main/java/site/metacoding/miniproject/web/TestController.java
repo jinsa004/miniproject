@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
 
-    @GetMapping("/emp/resumeSave")
+    @GetMapping("/emp/resumeUpdate")
     public String 분야별이력서리스트() {
-    return "resume/resumeSave";
+    return "resume/resumeUpdate";
     }
 
     /*
