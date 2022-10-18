@@ -20,7 +20,7 @@ public class CompanyService {
   public Company 로그인(CompanyLoginDto loginDto) {
     Company companyPS = companyDao.findByCompanyUsername(loginDto.getCompanyUsername());
 
-    if (companyPS.getCompanyPassword().equals(loginDto.getCompanyPassword())) {
+    if (companyPS != null && companyPS.getCompanyPassword().equals(loginDto.getCompanyPassword())) {
       return companyPS;
     }
     return null;
