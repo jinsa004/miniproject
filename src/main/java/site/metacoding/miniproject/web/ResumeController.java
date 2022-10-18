@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.application.Application;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
+import site.metacoding.miniproject.service.ImageService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.ResumeService;
 import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
@@ -30,6 +32,7 @@ public class ResumeController {
 
     private final ResumeService resumeService;
     private final JobService jobService;
+    private final ImageService imageService;
     private final HttpSession session;
 
     /* =============================개인회원========================================= */
@@ -58,6 +61,13 @@ public class ResumeController {
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
         return "resume/resumeSave";
+    }
+
+    // , produces = "text/plain;charset=utf-8"
+    @PostMapping("emp/imageSave")
+    public @ResponseBody CMRespDto<?> insertImage(@RequestParam MultipartFile image) throws Exception {
+        imageService.insertImage(image);
+        return new CMRespDto<>(1, "이력서 등록 성공", null);
     }
 
     @PostMapping("emp/resumeSave")

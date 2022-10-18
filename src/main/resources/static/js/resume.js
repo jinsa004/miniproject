@@ -7,6 +7,10 @@ $("#btn_main_resume").click(() => {
   setMain();
 });
 
+$("#btnInsertImage").click(() => {
+  insertImage();
+});
+
 $("#btnInsertResume").click(() => {
   insertResume();
 });
@@ -21,6 +25,27 @@ $("#btnDeleteResume").click(() => {
 
 // ====================== function ========================== //
 //이력서 등록
+
+
+function insertImage() {
+  let formData = new FormData();
+  formData.append("image", image);
+
+  $.ajax("/emp/imageSave", {
+    type: "POST",
+    dataType: "json", // 응답 데이터
+    processData: false,
+    contentType: false,
+    data: formData // http body에 들고갈 요청 데이터
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("이미지 등록 완료");
+    } else {
+      alert("이미지 저장에 실패하였습니다");
+    }
+  });
+}
+
 function insertResume() {
 
   let data = {
@@ -44,6 +69,7 @@ function insertResume() {
     jobId: $("input[id=jobId]:checked").val()
   };
   console.log(data.resumeName);
+
   $.ajax("/emp/resumeSave", {
     type: "POST",
     dataType: "json", // 응답 데이터

@@ -24,13 +24,16 @@
             <div class="info_form cf">
               <div class="info_left">
                 <div class="info_img">
-                  <form method="post" action="/resume_detail" enctype="multipart/form-data">
+                  <form method="post" action="/emp/resumeSave" enctype="multipart/form-data">
+                    <input id="resumeImageId" type="hidden" value="" />
                     <span class="info_myimg">
-                      <img src="">
+                      <img id="preImage" alt="image_title">
                     </span>
-                    <input type="file" name="file" id="files" class="hidden" />
-                    <button type="submit" class="file_submit">파일전송</button>
+                    <input type="file" multiple="multiple" id="image" name="image" />
                   </form>
+                  <div class="update_btn">
+                    <button id="btnInsertImage" type="button">등록완료</button>
+                  </div>
                 </div>
               </div><!-- .info_left -->
               <div class="info_right">
@@ -266,6 +269,18 @@
     </div>
     </div>
     <!-- body -->
+    <script>
+      $("#image").on("change", function (event) {
+        let file = event.target.files[0];
+
+        let reader = new FileReader();
+        reader.onload = function (e) {
+          $("#preImage").attr("src", e.target.result);
+        }
+
+        reader.readAsDataURL(file);
+      });
+    </script>
     <script src="/js/main.js"></script>
     <script src="/js/resume.js"></script>
     <%@ include file="../layout/footer.jsp" %>

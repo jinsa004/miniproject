@@ -1,16 +1,9 @@
 package site.metacoding.miniproject.domain.image.resume;
 
-import java.util.List;
+import site.metacoding.miniproject.web.dto.request.image.ResumeImageDto;
 
 public interface ResumeImageDao {
 
-    public List<ResumeImage> findAll();
+    public void save(ResumeImageDto resumeImageDto);
 
-    public ResumeImage findById(Integer resumeImageId);
-
-    public void insert(ResumeImage resumeImage);
-
-    public void update(ResumeImage resumeImage);
-
-    public void deleteById(ResumeImage resumeImageId);
 }
