@@ -97,6 +97,12 @@ function join() {
 
 function employeeUpdate() {
   let employeeId = $("#employeeId").val();
+
+  let checkBoxArr = [];
+  $("input:checkbox[name='job_checkbox']:checked").each(function () {
+    checkBoxArr.push($(this).val()); // 체크된 값 배열에 push
+  });
+
   let data = {
     employeeUsername: $("#employeeUsername").val(),
     employeePassword: $("#employeePassword").val(),
@@ -106,9 +112,11 @@ function employeeUpdate() {
     employeeBirth: $("#employeeBirth").val(),
     employeeTel: $("#employeeTel").val(),
     employeeLocation: $(".employeeLocation").val(),
-
+    jobIds: checkBoxArr
   };
+
   console.log(data);
+
   $.ajax("/emp/employeeInfo/" + employeeId, {
     type: "PUT",
     dataType: "json",
@@ -210,7 +218,7 @@ function checkUsername() {
   let employeeUsername = $("#employeeUsername").val();
 
   // 2. Ajax 통신
-  $.ajax(`emp/usernameSameCheck?employeeUsername=${employeeUsername}`, {
+  $.ajax(`/emp/usernameSameCheck?employeeUsername=${employeeUsername}`, {
     type: "GET",
     dataType: "json",
     async: true,
@@ -246,7 +254,7 @@ function checkPassword() {
   let employeepasswordRepeat = $("#employeepasswordRepeat").val();
 
   // 2. Ajax 통신
-  $.ajax(`emp/checkPassword?employeepasswordRepeat=${employeePassword}`, {
+  $.ajax(`/emp/checkPassword?employeepasswordRepeat=${employeePassword}`, {
     type: "GET",
     dataType: "json",
     async: true,
@@ -279,7 +287,7 @@ function checkEmail() {
   let employeeEmail = $("#employeeEmail").val();
 
   // 2. Ajax 통신
-  $.ajax(`emp/checkEmail?employeeEmail=${employeeEmail}`, {
+  $.ajax(`/emp/checkEmail?employeeEmail=${employeeEmail}`, {
     type: "GET",
     dataType: "json",
     async: true,

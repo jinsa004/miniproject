@@ -44,5 +44,3 @@
           </ul>
         </div><!-- .gnb_mypage -->
       </div>
-      <script type="text/javascript" src="/js/main.js"></script>
-      <script type="text/javascript" src="/js/company.js"></script>

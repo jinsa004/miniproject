@@ -13,13 +13,13 @@
               </div>
               <div class="logo_form">
                 <div class="info_img">
-                  <form method="post" action="/resume_detail" enctype="multipart/form-data">
+                  <form method="post" action="/치는주소" enctype="multipart/form-data">
                     <span class="info_myimg">
                       <img src="">
                     </span>
                     <div class="logo_img_right">
-                      <input type="file" name="file" id="files" class="hidden" />
-                      <button type="submit" class="file_submit">파일전송</button>
+                      <input type="file" multiple="multiple" name="image" />
+                      <button type="submit" id="submit" value="전송" class="file_submit">파일전송</button>
                     </div>
                   </form>
                 </div>
@@ -98,7 +98,7 @@
 
             <div class="btn_group">
               <div class="update_btn">
-                <button id="btnInsertCompanyInfo" type="button" class="btn btn-primary">등록하기</button>
+                <button id="btnInsertCompanyInfo" type="button" class="btn btn-primary">등록완료</button>
               </div>
             </div>
             <!-- btn -->
