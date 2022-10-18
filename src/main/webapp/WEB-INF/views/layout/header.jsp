@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
+pageEncoding="UTF-8" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/core"
+prefix="c" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,6 +13,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link href="/css/style.css" rel="stylesheet" />
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -47,7 +48,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
           <div class="login_box">
             <c:choose>
-              <c:when test="${empty principal}">
+              <c:when test="${empty principal.employeeId}">
                 <button
                   class="btn_login"
                   type="button"
@@ -62,33 +63,39 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 >
                   회원가입
                 </button>
-                <a href="/co/mainCompany" class="btn_company">기업 서비스</a>
-                <!-- .btn_company -->
+                <a href="/co" class="btn_company">기업 서비스</a
+                ><!-- .btn_company -->
               </c:when>
               <c:otherwise>
                 <a class="btn_logout" href="/logout">로그아웃</a>
 
-                <a href="/emp/mypageInsertForm" class="btn_mypage"
+                <a
+                  href="/emp/mypageInsertForm/${principal.employeeId}"
+                  class="btn_mypage"
                   >마이 페이지</a
                 >
-                <a href="/co/mainCompany" class="btn_company">기업 서비스</a
+                <a href="/co" class="btn_company">기업 서비스</a
                 ><!-- .btn_company -->
               </c:otherwise>
             </c:choose>
           </div>
           <!-- .login_box -->
-          <nav id="#nav">
+          <nav>
             <ul>
-              <li class="menu">
+              <li>
                 <a href="/emp/main">채용공고</a>
               </li>
-              <li class="menu">
-                <a href="/emp/matchingNotice">매칭리스트</a>
+              <li>
+                <a href="/emp/matchingNotice/${principal.employeeId}"
+                  >매칭리스트</a
+                >
               </li>
-              <li class="menu">
-                <a href="/emp/subscription">구독기업공고</a>
+              <li>
+                <a href="/emp/subscribeNotice/${principal.employeeId}"
+                  >구독기업공고</a
+                >
               </li>
-              <li class="menu">
+              <li>
                 <a href="/emp/companyList">기업정보</a>
               </li>
             </ul>
@@ -120,12 +127,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <span class="login_check_icon"></span>
             <span class="login_check_text">로그인 상태 유지</span>
           </label>
-          <button
-            id="btn_login"
-            type="button"
-            class="btn btn-primary"
-            onclick="login()"
-          >
+
+          <button id="btn_login" type="button" class="btn btn-primary">
             로그인
           </button>
         </div>
@@ -239,6 +242,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       placeholder="이름을 입력하세요."
                       name="employeeName"
                       maxlength="10"
+                      value="회지"
                     />
                   </span>
                 </div>
@@ -253,6 +257,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       placeholder="생년월일을 입력하세요."
                       name="employeeBirth"
                       maxlength="40"
+                      value="2000-01-01"
                     />
                   </span>
                 </div>
@@ -267,6 +272,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       placeholder="휴대폰번호를 입력하세요."
                       name="employeeTel"
                       maxlength="40"
+                      value="01022229999"
                     />
                   </span>
                 </div>
@@ -312,120 +318,27 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
               <div class="career_part">
                 <h2>관심분야</h2>
-                <div class="career_part1 part_box">
-                  <input
-                    type="checkbox"
-                    class="login_check"
-                    id="jobId"
-                    name=""
-                    checked
-                  />
-                  <em>
-                    <label for="c_part_front">프론트엔드</label>
-                  </em>
-                </div>
-                <div class="career_part2 part_box">
-                  <input
-                    type="checkbox"
-                    class="login_check"
-                    id="c_part_back"
-                    name=""
-                  />
-                  <em>
-                    <label for="c_part_back">백엔드</label>
-                  </em>
-                </div>
-                <div class="career_part3 part_box">
-                  <input
-                    type="checkbox"
-                    class="login_check"
-                    id="c_part_full"
-                    name=""
-                  />
-                  <em>
-                    <label for="c_part_full">풀스택</label>
-                  </em>
-                </div>
-                <div class="career_part4 part_box">
-                  <input
-                    type="checkbox"
-                    class="login_check"
-                    id="c_part_android"
-                    name=""
-                  />
-                  <em>
-                    <label for="c_part_android">안드로이드</label>
-                  </em>
-                </div>
-                <div class="career_part5 part_box">
-                  <input
-                    type="checkbox"
-                    class="login_check"
-                    id="c_part_ios"
-                    name=""
-                  />
-                  <em>
-                    <label for="c_part_ios">IOS</label>
-                  </em>
-                </div>
+                <c:forEach var="jobPS" items="${jobPS}">
+                  <div class="career_part1 part_box">
+                    <input
+                      type="checkbox"
+                      class="login_check"
+                      class="job_Id"
+                      name="job_checkbox"
+                      value="${jobPS.jobId}"
+                    />
+                    <em>
+                      <label for="c_part_front">${jobPS.jobName}</label>
+                    </em>
+                  </div>
+                </c:forEach>
               </div>
             </div>
           </form>
-          <button id="btn_join" type="button" onclick="joinSave()">
-            회원가입
-          </button>
+
+          <button id="btn_join" type="button">회원가입</button>
         </div>
       </div>
     </div>
   </body>
-
-  <script type="text/javascript" src="/js/main.js"></script>
-  <script type="text/javascript" src="/js/employee.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $("nav li a").each(function () {
-        $(this).click(function () {
-          $(this).toggleClass("active");
-          $(this).siblings().removeClass("active");
-        });
-      });
-    });
-    /* var url = window.location.pathname;
-    $("#nav")
-      .find("a")
-      .each(function () {
-        $(this).toggleClass("selected", $(this).attr("href") == url);
-      }); */
-
-    /* $(document).ready(function () {
-      $("#nav")
-        .find('a[href="' + document.location.pathname + '"]')
-        .parents("li")
-        .addClass("active");
-    }); */
-
-    /* $(document).ready(function () {
-      var classes = ["main", "matchingNotice", "subscription", "companyList"];
-      var cls = R.find(function (v) {
-        return location.href.indexOf(v) !== -1;
-      }, classes);
-
-      if (cls)
-        $("#nave")
-          .find("." + cls)
-          .addClass("active");
-    }); */
-
-    /* $(document).ready(function () {
-      $(".menu")
-        .each(function (index) {
-          $(this).attr("menu-index", index);
-        })
-        .click(function () {
-          var index = $(this).attr("menu-index");
-          $(".menu[menu-index=" + index + "]").addClass("active");
-          $(".menu[menu-index!=" + index + "]").removeClass("active");
-        });
-    }); */
-  </script>
 </html>
