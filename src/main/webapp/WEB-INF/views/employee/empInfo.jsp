@@ -100,8 +100,7 @@
                   <ul class="part_box_wrap">
                     <c:forEach var="jobPS" items="${jobPS}" varStatus="">
                       <li class="career_part1 part_box form-check">
-                        <input type="checkbox" class="login_check" id="jobId" name="${jobPS.jobName}"
-                          value="${jobPS.jobName}" />
+                        <input type="checkbox" class="login_check" name="job_checkbox" value="${jobPS.jobId}" />
                         <em>
                           <label class="form-check-label" for="${jobPS.jobName}">${jobPS.jobName}</label>
                         </em>
@@ -133,9 +132,7 @@
     </div>
     </div>
     <!-- body -->
-    <script>
-      function 
-    </script>
+
     <script src="/js/main.js"></script>
     <script src="/js/employee.js"></script>
     <%@ include file="../layout/footer.jsp" %>

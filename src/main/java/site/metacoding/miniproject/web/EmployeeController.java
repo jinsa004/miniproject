@@ -143,12 +143,9 @@ public class EmployeeController {
     @PutMapping("/emp/employeeInfo/{employeeId}")
     public @ResponseBody CMRespDto<?> 회원정보수정(@PathVariable Integer employeeId,
             @RequestBody EmployeeUpdateDto employeeUpdateDto) {
-
         Employee employeePS = employeeService.employeeUpdate(employeeId,
                 employeeUpdateDto);
         session.setAttribute("principal", employeePS);
-
-        employeeService.employeeUpdate(employeeId, employeeUpdateDto);
         return new CMRespDto<>(1, "회원수정성공", null);
     }
 
