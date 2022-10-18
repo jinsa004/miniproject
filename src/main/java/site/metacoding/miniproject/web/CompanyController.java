@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
+import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.IntroService;
@@ -86,8 +87,17 @@ public class CompanyController {
     }
 
     @GetMapping("/co/companyIntroInsert")
-    public String 기업소개등록() {// 추가함
+    public String 기업소개등록폼(Model model) {// 추가함
+        session.getAttribute("principal");
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
         return "company/coIntroInsert";
+    }
+
+    @PostMapping("/co/companyIntroInsert")
+    public @ResponseBody CMRespDto<?> 기업소개등록(@RequestBody Intro intro) {
+        introService.기업소개등록(intro);
+        return new CMRespDto<>(1, "기업소개 등록 성공", null);
     }
 
     @GetMapping("/co/companyIntroDetail")
@@ -97,6 +107,7 @@ public class CompanyController {
 
     @GetMapping("/co/companyIntroUpdate/{companyId}")
     public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
+        session.getAttribute("principal");
         model.addAttribute("intro", introService.기업소개수정상세보기(companyId));
         return "company/coIntroUpdate";
     }

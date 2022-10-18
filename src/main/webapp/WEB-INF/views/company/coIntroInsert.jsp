@@ -27,6 +27,7 @@
             </div>
             <!-- logo -->
             <input id="introId" type="hidden" value="${intro.introId}" />
+            <input id="companyId" type="hidden" value="${principal.companyId}" />
             <div id="basic_info" class="form">
               <div class="form_title">
                 <h2 class="title">회사 정보</h2>
@@ -34,9 +35,9 @@
               <div class="info_form">
                 <div class="info_left margin_bottom">
                   <div class="basic_input">
-                    <span class="info_right_txt">회사명</span>
-                    <input type="text" id="companyName" name="basic_name" class="box_input info_right_input"
-                      value="${intro.companyName}" placeholder="회사명을 입력하세요" />
+                    <span class="info_right_txt">소개명</span>
+                    <input type="text" id="introTitle" name="basic_name" class="box_input info_right_input"
+                      value="${intro.introTitle}" placeholder="소개명을 입력하세요" />
                   </div>
                 </div>
                 <div class="basic_row margin_bottom">
@@ -83,7 +84,7 @@
                       </div>
                       <div class="location_info">
                         <input type="text" id="sample6_postcode" placeholder="우편번호">
-                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn_post">
+                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn_post_code">
                         <input type="text" id="sample6_address" placeholder="주소">
                         <input type="text" id="sample6_detailAddress" placeholder="상세주소">
                         <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
@@ -91,7 +92,6 @@
                     </div>
                   </div>
                 </div><!-- .location_wrap -->
-
               </div>
             </div>
             <!-- basic -->
