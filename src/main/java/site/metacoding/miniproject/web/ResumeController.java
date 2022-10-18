@@ -23,6 +23,7 @@ import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.service.ImageService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.ResumeService;
+import site.metacoding.miniproject.web.dto.request.resume.ResumeInsertDto;
 import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
@@ -65,16 +66,18 @@ public class ResumeController {
 
     // , produces = "text/plain;charset=utf-8"
     @PostMapping("emp/imageSave")
-    public @ResponseBody CMRespDto<?> insertImage(@RequestParam MultipartFile image) throws Exception {
-        imageService.insertImage(image);
+    public @ResponseBody CMRespDto<?> insertImage(ResumeInsertDto rid) throws Exception {
+        Integer resumeImageId = imageService.insertImage(rid.getImage());
+        rid.setResumeImageId(resumeImageId);
+        resumeService.이력서작성(rid);
         return new CMRespDto<>(1, "이력서 등록 성공", null);
     }
 
-    @PostMapping("emp/resumeSave")
-    public @ResponseBody CMRespDto<?> insertResume(@RequestBody Resume resume) {
-        resumeService.이력서작성(resume);
-        return new CMRespDto<>(1, "이력서 등록 성공", null);
-    }
+    // @PostMapping("emp/resumeSave")
+    // public @ResponseBody CMRespDto<?> insertResume(@RequestBody Resume resume) {
+    // resumeService.이력서작성(resume);
+    // return new CMRespDto<>(1, "이력서 등록 성공", null);
+    // }
 
     @GetMapping("emp/resumeUpdate/{resumeId}")
     public String updateResumeForm(@PathVariable Integer resumeId, Model model) { // 이력서 수정 페이지

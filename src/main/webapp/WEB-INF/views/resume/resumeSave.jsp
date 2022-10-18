@@ -31,9 +31,6 @@
                     </span>
                     <input type="file" multiple="multiple" id="image" name="image" />
                   </form>
-                  <div class="update_btn">
-                    <button id="btnInsertImage" type="button">등록완료</button>
-                  </div>
                 </div>
               </div><!-- .info_left -->
               <div class="info_right">
