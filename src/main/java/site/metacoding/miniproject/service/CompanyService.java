@@ -60,4 +60,16 @@ public class CompanyService {
       return true;
     }
   }
+
+  public boolean 회사비밀번호2차체크(String companyPassword) {
+    companyDao.findByCompanyPassword(companyPassword);
+    return true;
+  }
+
+  public boolean 회사이메일형식체크(String companyEmail) {
+    Company companyPS = companyDao.findByCompanyEmail(companyEmail);
+    if (companyPS == null)
+      return false;
+    return true;
+  }
 }

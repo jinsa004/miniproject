@@ -143,13 +143,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     id="companyUsername"
                     type="text"
                     placeholder="아이디를 입력하세요."
-                    maxlength="20"
+                    maxlength="15"
                   />
                   <button
                     id="btnUsernameSameCheck"
                     type="button"
-                    maxlength="20"
-                    onclick="checkUsername()"
+                    onclick="checkUsernameCo()"
                   >
                     중복체크
                   </button>
@@ -165,20 +164,20 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     type="password"
                     placeholder="패스워드를 입력하세요."
                     name="password"
-                    maxlength="20"
+                    maxlength="10"
                   />
                 </span>
                 <span class="check">
                   <input
                     id="companyPasswordRepeat"
                     type="password"
+                    maxlength="10"
                     placeholder="패스워드를 입력하세요."
                   />
                   <button
                     id="companyPasswordCheck"
                     type="button"
-                    maxlength="20"
-                    onclick="checkPassword()"
+                    onclick="checkPasswordCo()"
                   >
                     비밀번호 확인
                   </button>
@@ -195,13 +194,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     type="email"
                     placeholder="이메일을 입력하세요."
                     name="email"
-                    maxlength="30"
+                    maxlength="25"
                   />
                   <button
                     id="companyEmailCheck"
                     type="button"
-                    maxlength="20"
-                    onclick="checkEmail()"
+                    onclick="checkEmailCo()"
                   >
                     이메일 확인
                   </button>
@@ -219,7 +217,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       type="text"
                       placeholder="회사명을 입력하세요."
                       name="companyName"
-                      maxlength="30"
+                      maxlength="20"
                     />
                   </span>
                 </div>
@@ -247,7 +245,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       type="date"
                       placeholder="생년월일을 입력하세요."
                       name="companyBirth"
-                      maxlength="40"
+                      maxlength="8"
                     />
                   </span>
                 </div>
@@ -261,7 +259,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       type="tel"
                       placeholder="휴대폰번호를 입력하세요."
                       name="companyPhone"
-                      maxlength="40"
+                      maxlength="11"
                     />
                   </span>
                 </div>
@@ -335,4 +333,5 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
     </div>
   </body>
+  <script src="/js/company.js"></script>
 </html>

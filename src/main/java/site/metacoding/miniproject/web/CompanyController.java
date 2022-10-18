@@ -136,4 +136,16 @@ public class CompanyController {
         return "redirect:/co";
     }
 
+    // =========================== 유효성체크 ======================================
+    @GetMapping("co/checkPasswordCo")
+    public @ResponseBody CMRespDto<Boolean> checkPasswordCo(String companyPassword) {
+        boolean isSame = companyService.회사비밀번호2차체크(companyPassword);
+        return new CMRespDto<>(1, "성공", isSame);
+    }
+
+    @GetMapping("co/checkEmailCo")
+    public @ResponseBody CMRespDto<Boolean> checkEmailCo(String companyEmail) {
+        boolean isSame = companyService.회사이메일형식체크(companyEmail);
+        return new CMRespDto<>(1, "성공", isSame);
+    }
 }

@@ -17,7 +17,7 @@ $("#btn_login").click(() => {
 
 // 유저네임 중복 체크
 $("#btnCompanyUsernameSameCheck").click(() => {
-  checkUsername();
+  checkUsernameCo();
 });
 
 /* 기업회원 탈퇴*/
@@ -100,17 +100,19 @@ function coLogin() {
 
 // 기업회원가입
 function coJoin() {
-  if (blackCheck() == false) {
-    return;
-  }
-
   if (isCompanyUsernameSameCheck == false) {
     alert("아이디 중복 체크를 진행해주세요");
+    $("#companyUsername").val("");
+    $("#companyUsername").focus();
     return;
-  }
-
-  if (companyPasswordSameCheck() == true) {
-    alert("비밀번호가 일치하지 않습니다.");
+  } else if (ischeckPasswordCo == false) {
+    alert("비밀번호 확인 체크를 진행해주세요.");
+    $("#companyPasswordRepeat").focus();
+    return;
+  } else if (blackCheck == false) {
+    return;
+  } else if (ischeckEmailCo == false) {
+    alert("이메일 확인 체크를 진행해주세요.");
     return;
   }
 
@@ -124,7 +126,7 @@ function coJoin() {
     companyName: $("#companyName").val(),
     companyEmail: $("#companyEmail").val(),
     companyTel: $("#companyTel").val(),
-    companyLocation: $("#companyLocation").val(),
+    companyLocation: $(".companyLocation").val(),
     companyUsername: $("#companyUsername").val(),
     companyPassword: $("#companyPassword").val(),
     jobIds: checkBoxArr,
@@ -147,9 +149,10 @@ function coJoin() {
     }
   });
 }
+
 let isCompanyUsernameSameCheck = false;
 
-function checkUsername() {
+function checkUsernameCo() {
   let companyUsername = $("#companyUsername").val();
 
   $.ajax(`/company/usernameSameCheck?companyUsername=${companyUsername}`, {
@@ -170,16 +173,50 @@ function checkUsername() {
   });
 }
 
-function companyPasswordSameCheck() {
+/* function companyPasswordSameCheck() {
   let companyPassword = $("#companyPassword").val();
   let companyPasswordSame = $("#companyPasswordSame").val();
   if (companyPassword != companyPasswordSame) {
-    companyPassword.value = "";
-    companyPasswordSame.value = "";
-    return true;
+    alert("패스워드가 동일하지 않습니다.");
+    $("#companyPasswordSame").val("");
+    $("#companyPasswordSame").focus();
+    return;
+  } else if (companyPassword == "") {
+    alert("패스워드를 입력해 주세요.");
+    $("#companyPasswordSame").focus();
   } else {
-    return false;
+    alert("패스워드가 동일합니다.");
+    companyPasswordSameCheck = true;
   }
+} */
+let ischeckPasswordCo = false;
+//비밀번호 확인
+function checkPasswordCo() {
+  let companyPassword = $("#companyPassword").val();
+  let companyPasswordRepeat = $("#companyPasswordRepeat").val();
+
+  // 2. Ajax 통신
+  $.ajax(`co/checkPasswordCo?companyPassword=${companyPassword}`, {
+    type: "GET",
+    dataType: "json",
+    async: true,
+  }).done((res) => {
+    if (res.code == 1) {
+      //alert("통신성공");
+      if (companyPasswordRepeat != companyPassword) {
+        alert("패스워드가 동일하지 않습니다.");
+        ischeckPasswordCo = false;
+        $("#companyPasswordRepeat").val("");
+        return;
+      } else if (companyPassword == "") {
+        alert("패스워드를 입력해 주세요.");
+        $("#companyPasswordRepeat").focus();
+      } else {
+        alert("패스워드가 동일합니다.");
+        ischeckPasswordCo = true;
+      }
+    }
+  });
 }
 
 function blackCheck() {
@@ -187,7 +224,7 @@ function blackCheck() {
   let companyName = $("#companyName").val();
   let companyEmail = $("#companyEmail").val();
   let companyTel = $("#companyTel").val();
-  let companyLocation = $("#companyLocation").val();
+  let companyLocation = $(".companyLocation").val();
   let companyUsername = $("#companyUsername").val();
   let companyPassword = $("#companyPassword").val();
 
@@ -215,11 +252,51 @@ function blackCheck() {
     alert("휴대폰번호를 입력해주세요.");
     $("#companyTel").focus();
     return false;
-  } else if ($("#companyLocation").val() == "") {
+  } else if ($(".companyLocation").val() == "") {
     alert("주소를 입력해주세요.");
-    $("#companyLocation").focus();
+    $(".companyLocation").focus();
     return false;
   } else {
     return true;
   }
+}
+
+let ischeckEmailCo = false;
+//이메일 확인
+function checkEmailCo() {
+  // 0. 통신 오브젝트 생성 (Get 요청은 body가 없다.)
+
+  // 1. 사용자가 적은 username값을 가져오기
+  let pattern = /\s/g;
+  let checkEmail = /[a-zA-z0-9]+@[a-zA-z]+[.]+[a-zA-z.]+/;
+
+  let companyEmail = $("#companyEmail").val();
+
+  // 2. Ajax 통신
+  $.ajax(`co/checkEmailCo?companyEmail=${companyEmail}`, {
+    type: "GET",
+    dataType: "json",
+    async: true,
+  }).done((res) => {
+    if (res.code == 1) {
+      //alert("통신성공");
+      if (!checkEmail.test(companyEmail)) {
+        alert("이메일형식이 올바르지 않습니다.");
+        $("#companyEmail").val("");
+        ischeckEmailCo = false;
+      } else if (pattern.test(companyEmail)) {
+        alert("이메일에서 공백이 발견되었습니다. 제외해주세요.");
+        $("#companyEmail").val("");
+        ischeckEmailCo = false;
+      } else if (res.data == true) {
+        alert("이메일이 중복되었습니다.");
+        $("#companyEmail").val("");
+        ischeckEmailCo = false;
+      } else {
+        alert("이메일이 확인되었습니다.");
+        ischeckEmailCo = true;
+        return;
+      }
+    }
+  });
 }

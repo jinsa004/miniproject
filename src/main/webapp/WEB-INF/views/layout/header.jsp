@@ -150,12 +150,11 @@ prefix="c" %>
                     type="text"
                     placeholder="아이디를 입력하세요."
                     value="${employeeUsername}"
-                    maxlength="20"
+                    maxlength="15"
                   />
                   <button
                     id="btnUsernameSameCheck"
                     type="button"
-                    maxlength="20"
                     onclick="checkUsername()"
                   >
                     중복체크
@@ -173,19 +172,19 @@ prefix="c" %>
                     type="password"
                     placeholder="패스워드를 입력하세요."
                     name="employeePassword"
-                    maxlength="20"
+                    maxlength="10"
                   />
                 </span>
                 <span class="check">
                   <input
                     id="employeepasswordRepeat"
                     type="password"
-                    placeholder="패스워드를 입력하세요."
+                    maxlength="10"
+                    placeholder="패스워드를 한번 더 입력하세요."
                   />
                   <button
                     id="employeepasswordCheck"
                     type="button"
-                    maxlength="20"
                     onclick="checkPassword()"
                   >
                     비밀번호 확인
@@ -201,9 +200,9 @@ prefix="c" %>
                   <input
                     id="employeeSex"
                     type="text"
-                    placeholder="성별을 입력하세요."
+                    placeholder="성별을 입력하세요. (ex. 남 또는 여)"
                     name="employeeSex"
-                    maxlength="20"
+                    maxlength="1"
                   />
                 </span>
               </div>
@@ -217,12 +216,11 @@ prefix="c" %>
                     type="email"
                     placeholder="이메일을 입력하세요."
                     name="employeeEmail"
-                    maxlength="30"
+                    maxlength="25"
                   />
                   <button
                     id="employeeEmailCheck"
                     type="button"
-                    maxlength="20"
                     onclick="checkEmail()"
                   >
                     이메일 확인
@@ -241,8 +239,7 @@ prefix="c" %>
                       type="text"
                       placeholder="이름을 입력하세요."
                       name="employeeName"
-                      maxlength="10"
-                      value=""
+                      maxlength="6"
                     />
                   </span>
                 </div>
@@ -256,7 +253,7 @@ prefix="c" %>
                       type="date"
                       placeholder="생년월일을 입력하세요."
                       name="employeeBirth"
-                      maxlength="40"
+                      maxlength="8"
                       value=""
                     />
                   </span>
@@ -269,10 +266,9 @@ prefix="c" %>
                     <input
                       id="employeeTel"
                       type="tel"
-                      placeholder="휴대폰번호를 입력하세요."
+                      placeholder="ex) 010-0000-0000"
                       name="employeeTel"
-                      maxlength="40"
-                      value=""
+                      maxlength="11"
                     />
                   </span>
                 </div>
@@ -343,4 +339,6 @@ prefix="c" %>
       </div>
     </div>
   </body>
+
+  <script src="/js/employee.js"></script>
 </html>
