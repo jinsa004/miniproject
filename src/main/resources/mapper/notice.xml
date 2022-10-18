@@ -12,20 +12,31 @@
         notice_id, notice_title,notice_task, notice_career,notice_qual,
         notice_position, DATE_FORMAT(notice_period, '%Y.%m.%d') as notice_period
         FROM notice
-        ORDER BY notice_period DESC;
+        ORDER BY notice_period DESC
 	</select>
 
 	<select id="findByJobCodeToNotice" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT
-        n.notice_title, n.notice_task, n.notice_career, n.notice_qual,
-        n.notice_position, DATE_FORMAT(n.notice_period, '%Y.%m.%d') as notice_period, j.job_code
+        n.notice_id, n.notice_title, n.notice_task, n.notice_career, n.notice_qual,
+        n.notice_position, DATE_FORMAT(n.notice_period, '%Y.%m.%d') as notice_period
         FROM notice n
 		INNER JOIN job j
 		ON n.job_id = j.job_id
 		WHERE j.job_code = #{jobCode}
-        ORDER BY n.notice_period DESC;
+        ORDER BY n.notice_period DESC
 	</select>
 
+	<select id="findMatchingByJobId" resultType="site.metacoding.miniproject.domain.notice.Notice">
+		SELECT n.notice_id, n.notice_title, n.notice_task, n.notice_career, n.notice_qual, n.notice_position, DATE_FORMAT(n.notice_period, '%Y.%m.%d') as notice_period, n.job_id
+		FROM notice n
+		INNER JOIN (SELECT ec.job_id
+		FROM emp_check ec
+		INNER JOIN employee e
+		ON ec.employee_id = e.employee_id
+		WHERE ec.employee_id = #{employeeId}) ec
+		ON n.job_id = ec.job_id
+		ORDER BY n.notice_period DESC
+	</select>
 
 	<select id="findByCompanyId" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT *
@@ -47,13 +58,17 @@
 		WHERE s.employee_id = #{employeeId}
 	</select>
 
-	<select id="findByNoticeIdtoNoticeDetail" resultType="site.metacoding.miniproject.domain.notice.Notice">
+	<select id="findByNoticeIdToNoticeDetail" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT *
 		FROM notice n
-		INNER JOIN intro i
+		INNER JOIN (
+		SELECT i.intro_id, i.company_id, i.intro_title, i.intro_birth, i.intro_task, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_location, j.job_code, j.job_name
+		FROM intro i
 		INNER JOIN job j
-		ON n.company_id = i.company_id 
-		WHERE n.notice_id = #{noticeId} and n.job_id = j.job_id
+		ON i.job_id = j.job_id) ij
+		ON n.company_id = ij.company_id
+		WHERE n.notice_id = #{noticeId}
+		GROUP BY n.notice_id
 	</select>
 
 	<update id="update">

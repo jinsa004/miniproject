@@ -9,6 +9,8 @@ public interface NoticeDao {
 
 	public Notice findById(Integer noticeId);
 
+	public List<Notice> findMatchingByJobId(Integer employeeId);
+
 	public void insert(Notice notice);
 
 	public void update(Notice notice);
@@ -19,5 +21,5 @@ public interface NoticeDao {
 
 	public List<Notice> findSubsByEmployeeId(Integer employeeId);
 
-	public Notice findByNoticeIdtoNoticeDetail(Integer noticeId);
+	public Notice findByNoticeIdToNoticeDetail(Integer noticeId);
 }

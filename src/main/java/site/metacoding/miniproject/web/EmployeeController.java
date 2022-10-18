@@ -66,11 +66,6 @@ public class EmployeeController {
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
-    @GetMapping("/emp/matchingNotice")
-    public String matchingList() {// 개인회원이 보는 매칭리스트탭(관심분야맞는 공고 목록보기)
-        return "employee/matchingNotice";
-    }
-
     @GetMapping("/emp/subscription")
     public String subscriptionList() {// 개인회원이 보는 구독기업공고탭(구독기업 공고 목록보기)
         return "employee/subscription";

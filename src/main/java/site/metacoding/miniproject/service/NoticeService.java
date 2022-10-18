@@ -16,7 +16,7 @@ public class NoticeService {
     private final NoticeDao noticeDao;
 
     public Notice 내공고하나보기(Integer noticeId) {
-        return noticeDao.findByNoticeIdtoNoticeDetail(noticeId);
+        return noticeDao.findByNoticeIdToNoticeDetail(noticeId);
     }
 
     public List<Notice> 구독공고목록보기(Integer employeeId) {
@@ -34,6 +34,10 @@ public class NoticeService {
 
     public List<Notice> 채용공고분야별목록보기(Integer jobCode) {
         return noticeDao.findByJobCodeToNotice(jobCode);
+    }
+
+    public List<Notice> 구직자매칭리스트보기(Integer employeeId) {
+        return noticeDao.findMatchingByJobId(employeeId);
     }
 
     public List<Notice> 내공고목록보기(Integer companyId) {
