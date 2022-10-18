@@ -100,6 +100,13 @@ public class ResumeController {
         return "company/jobResume";
     }
 
+    @GetMapping("/co/matchingResume/{companyId}")
+    public String companyMatchingList(@PathVariable Integer companyId, Model model) {// 기업회원이 보는 이력서 매칭리스트
+        List<Resume> matchingResume = resumeService.기업매칭리스트보기(companyId);
+        model.addAttribute("matchingResume", matchingResume);
+        return "company/matchingResume";
+    }
+
     @GetMapping("co/resumeDetail/{resumeId}")
     public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
         model.addAttribute("resume", resumeService.이력서상세보기(resumeId));
