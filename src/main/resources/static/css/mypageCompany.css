@@ -1,9 +1,10 @@
-#mypage_co_wrap{
+#mypage_co_wrap {
     width: 100%;
     height: auto;
     position: relative;
 }
-#mypage_co_wrap #gnb_mypage{
+
+#mypage_co_wrap #gnb_mypage {
     width: 300px;
     position: fixed;
     top: 0;
@@ -14,104 +15,123 @@
     background: #435070;
     text-align: center;
 }
-#mypage_co_wrap .logo{
+
+#mypage_co_wrap .logo {
     position: absolute;
     top: 30px;
     left: 40px;
 }
-#mypage_co_wrap .logo a{
+
+#mypage_co_wrap .logo a {
     color: #fff;
 }
-.gnb_left{
+
+.gnb_left {
     width: 260px;
     margin: 0 auto;
     text-align: left;
     margin-top: 122px;
-    
+
 }
-.gnb_left li{
+
+.gnb_left li {
     position: relative;
     margin-bottom: 5px;
     transition: all 0.3s;
     border-radius: 10px;
 }
-#mypage_co_wrap .gnb_left li a{
+
+#mypage_co_wrap .gnb_left li a {
     display: block;
     position: relative;
     padding: 15px 35px 15px 23px;
-    font-weight:300;
+    font-weight: 300;
     color: #fff;
     font-size: 17px;
     transition: all 0.3s;
 }
-.gnb_left li .fa-regular{
+
+.gnb_left li .fa-regular {
     color: #cad0d6;
     transition: all 0.3s;
 }
-.gnb_left li a span.txt{
+
+.gnb_left li a span.txt {
     padding-left: 12px;
 }
-.gnb_left li:hover{
+
+.gnb_left li:hover {
     position: relative;
     margin-bottom: 20px;
     background: #ecf1ff;
 }
-#mypage_co_wrap .gnb_left li:hover a{
+
+#mypage_co_wrap .gnb_left li:hover a {
     color: #333;
 }
-.gnb_left li:hover i{
+
+.gnb_left li:hover i {
     color: #4876ef;
 }
-.gnb_left li.on{
+
+.gnb_left li.on {
     position: relative;
     margin-bottom: 15px;
     background: #4876ef;
     border-radius: 10px;
 }
-.gnb_left li.on a{
+
+.gnb_left li.on a {
     color: #fff;
 }
 
-#content_wrap{
+#content_wrap {
     display: block;
     width: 100%;
     height: 100%;
 }
-.cont_mypage{
+
+.cont_mypage {
     position: relative;
     margin: 95px auto 130px;
     padding-left: 280px;
     text-align: left;
     width: 1200px;
 }
-.cont_mypage h2{
+
+.cont_mypage h2 {
     font-size: 30px;
     line-height: 38px;
     font-weight: bold;
     color: #333;
 }
-#sri_footer{
+
+#sri_footer {
     width: 100%;
     height: 1px;
     border-top: 1px solid #ddd;
 }
-#sri_footer .wrap_footer{
+
+#sri_footer .wrap_footer {
     background: #fff;
     border: none;
 
 }
-.wrap_footer{
+
+.wrap_footer {
     width: 960px;
     padding-left: 260px;
 }
 
-.notice_box2{
+.notice_box2 {
     padding-top: 50px;
 }
-.mypage_resume_list .resume_form{
+
+.mypage_resume_list .resume_form {
     text-align: left;
 }
-.mypage_resume_list .resume_form .resume_cont{
+
+.mypage_resume_list .resume_form .resume_cont {
     position: relative;
     padding: 45px 35px 40px;
     background: rgba(255, 255, 255, 1);
@@ -120,18 +140,22 @@
     border: 1px solid #d9d9d9;
     transition: all 0.4s;
 }
-.mypage_resume_list .resume_form .resume_cont:last-child{
+
+.mypage_resume_list .resume_form .resume_cont:last-child {
     margin-bottom: 0;
 }
-.mypage_resume_list .resume_form .resume_cont:hover{
+
+.mypage_resume_list .resume_form .resume_cont:hover {
     border: 1px solid #91ADF2;
     box-shadow: 0px 0px 10px #eee;
 }
-.mypage_resume_list .list_title:hover span{
+
+.mypage_resume_list .list_title:hover span {
     text-decoration: underline;
     color: #435070;
 }
-.mypage_resume_list .resume_form .resume_cont .list_title{
+
+.mypage_resume_list .resume_form .resume_cont .list_title {
     max-width: 760px;
     font-size: 22px;
     font-weight: 600;
@@ -139,23 +163,28 @@
     color: #333;
     padding-bottom: 30px;
 }
-.mypage_resume_list .resume_form .resume_cont .list_title span{
+
+.mypage_resume_list .resume_form .resume_cont .list_title span {
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 760px;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option{
+
+.mypage_resume_list .resume_form .resume_cont .list_option {
     font-size: 0;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option li{
+
+.mypage_resume_list .resume_form .resume_cont .list_option li {
     display: inline-block;
     vertical-align: top;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option li span{
+
+.mypage_resume_list .resume_form .resume_cont .list_option li span {
 
     padding-left: 22px;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option .career{
+
+.mypage_resume_list .resume_form .resume_cont .list_option .career {
     width: 25%;
     position: relative;
     height: 24px;
@@ -166,7 +195,7 @@
 
 }
 
-.mypage_resume_list .resume_form .resume_cont .list_option .career::before{
+.mypage_resume_list .resume_form .resume_cont .list_option .career::before {
     content: "";
     display: block;
     background: url("/img/icon_career.svg") no-repeat center center;
@@ -176,7 +205,8 @@
     width: 18px;
     height: 18px;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option .part{
+
+.mypage_resume_list .resume_form .resume_cont .list_option .part {
     width: 25%;
     position: relative;
     height: 24px;
@@ -189,7 +219,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option .part::before{
+
+.mypage_resume_list .resume_form .resume_cont .list_option .part::before {
     content: "";
     display: block;
     background: url("/img/icon_part.svg") no-repeat center center;
@@ -200,23 +231,25 @@
     height: 18px;
 }
 
-.input_radio{
+.input_radio {
     display: block;
     position: absolute;
 }
-.resume_select_box{
+
+.resume_select_box {
     display: block;
     padding-left: 40px;
 }
 
-.btn_resume_option{
+.btn_resume_option {
     position: absolute;
     right: 40px;
     top: 50%;
     margin-top: -45px;
     text-align: center;
 }
-.btn_resume_option span{
+
+.btn_resume_option span {
     display: block;
     width: 150px;
     height: 40px;
@@ -224,42 +257,52 @@
     border-radius: 5px;
     transition: all 0.4s;
 }
-.btn_resume_option span:first-child{
+
+.btn_resume_option span:first-child {
     margin-bottom: 10px;
 }
-.btn_resume_option span:last-child{
+
+.btn_resume_option span:last-child {
     background: #fff;
     border: 1px solid #bbb;
 }
-.btn_resume_option span:last-child a{
+
+.btn_resume_option span:last-child a {
     color: #666;
 }
-.btn_resume_option span a{
+
+.btn_resume_option span a {
     font-size: 15px;
     color: #fff;
     line-height: 40px;
     transition: all 0.4s;
 }
-.btn_resume_option span:hover{
+
+.btn_resume_option span:hover {
     background: #0ccca4;
 
 }
-.btn_resume_option span:hover a{
+
+.btn_resume_option span:hover a {
     color: #fff;
 }
-.btn_resume_option span:last-child:hover{
+
+.btn_resume_option span:last-child:hover {
     background: none;
     border-color: #0ccca4;
 }
-.btn_resume_option span:last-child:hover a{
+
+.btn_resume_option span:last-child:hover a {
     color: #0ccca4;
 }
-.btn_main_resume_select{
+
+.btn_main_resume_select {
     width: 100%;
     text-align: right;
     margin-top: 30px;
 }
-#btn_main_resume{
+
+#btn_main_resume {
     background: #fff;
     border-radius: 5px;
     transition: all 0.4s;
@@ -273,24 +316,26 @@
     font-size: 14px;
     letter-spacing: -0.06em;
 }
-#btn_main_resume:hover{
+
+#btn_main_resume:hover {
     background: #ecf1ff;
 }
 
-#btnEmployeeUpdate{
+#btnEmployeeUpdate {
     cursor: pointer;
 }
 
-#btnEmployeeDelete{
+#btnEmployeeDelete {
     cursor: pointer;
 }
 
 /* =================== 기업 소개 관리 ============================= */
-#intro_wrap{
+#intro_wrap {
     position: relative;
     width: 100%;
 }
-#intro_wrap .container{
+
+#intro_wrap .container {
     width: 1200px;
     margin: 0 auto;
     background: #fff;
@@ -298,22 +343,28 @@
     padding-bottom: 140px;
     padding-left: 200px;
 }
-.intro_update{
+
+.intro_update {
     text-align: left;
 }
-.intro_update input{
+
+.intro_update input {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.intro_update button{
+
+.intro_update button {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.resume_title{
+
+.resume_title {
     width: 1200px;
 }
-.title_update{
+
+.title_update {
     width: 1200px;
 }
-.title_input input{
+
+.title_input input {
     width: 1140px;
     height: 70px;
     border-radius: 10px;
@@ -325,10 +376,12 @@
     overflow: hidden;
     padding-left: 60px;
 }
-.title_input::placeholder{
+
+.title_input::placeholder {
     color: #eee;
 }
-.intro_update h2{
+
+.intro_update h2 {
     font-size: 24px;
     color: #666;
     line-height: 30px;
@@ -338,13 +391,15 @@
     display: inline-block;
     padding-right: 10px;
 }
-.resume_update .form_title span{
+
+.resume_update .form_title span {
     display: inline-block;
     font-weight: 300;
     letter-spacing: -0.06em;
     color: #666;
 }
-.info_form{
+
+.info_form {
     width: 1200px;
     margin: 0 auto;
     height: auto;
@@ -354,7 +409,8 @@
     box-sizing: border-box;
     font-size: 0;
 }
-.logo_form .info_myimg{
+
+.logo_form .info_myimg {
     display: inline-block;
     width: 340px;
     height: 164px;
@@ -364,23 +420,27 @@
     overflow: hidden;
     vertical-align: top;
 }
-.logo_form .info_myimg img{
+
+.logo_form .info_myimg img {
     width: 100%;
     height: auto;
     text-align: center;
 }
-.logo_form .logo_img_right{
+
+.logo_form .logo_img_right {
     display: inline-block;
     vertical-align: top;
     margin-left: 20px;
     padding-top: 81px;
 }
-#files{
+
+#files {
     padding-left: 0;
     margin-top: 10px;
     background-color: rgba(238, 238, 238, 0.4);
 }
-button.file_submit{
+
+button.file_submit {
     display: block;
     cursor: pointer;
     width: 252px;
@@ -392,24 +452,28 @@ button.file_submit{
     transition: all 0.5s ease;
 }
 
-.info_form .info_left{
+.info_form .info_left {
     float: left;
 }
-.info_form .info_right{
+
+.info_form .info_right {
     float: left;
     padding-left: 60px;
 }
-.info_form .info_right dd{
+
+.info_form .info_right dd {
     margin-bottom: 15px;
 }
-.info_form .info_right_txt{
+
+.info_form .info_right_txt {
     display: inline-block;
     color: #666;
     font-weight: 300;
     width: 100px;
     font-size: 16px;
 }
-.info_form .info_right_input{
+
+.info_form .info_right_input {
     display: inline-block;
     width: 550px;
     height: 48px;
@@ -420,11 +484,13 @@ button.file_submit{
     padding-left: 15px;
     font-size: 16px;
 }
-.edu_select .btn-group{
+
+.edu_select .btn-group {
     display: flex;
     justify-content: space-around;
 }
-.edu_select .btn-group button{
+
+.edu_select .btn-group button {
     display: block;
     width: 50%;
     height: 60px;
@@ -433,23 +499,29 @@ button.file_submit{
     background: #fff;
     font-size: 18px;
 }
-.edu_select .btn-group button.on{
+
+.edu_select .btn-group button.on {
     background: #4876ef;
     color: #fff;
 }
-#univ_btn{
+
+#univ_btn {
     margin-left: -1px;
 }
-#univ{
+
+#univ {
     display: none;
 }
-.info_form h3{
+
+.info_form h3 {
     padding: 40px 0 30px;
 }
-.edu_form div{
+
+.edu_form div {
     margin-bottom: 15px;
 }
-.info_form .info_right_input2{
+
+.info_form .info_right_input2 {
     display: inline-block;
     width: 265px;
     height: 48px;
@@ -462,7 +534,7 @@ button.file_submit{
 }
 
 
-.intro_career .btn-group button{
+.intro_career .btn-group button {
     display: block;
     width: 50%;
     height: 60px;
@@ -471,25 +543,30 @@ button.file_submit{
     background: #fff;
     font-size: 18px;
 }
-.intro_career .btn-group button.on{
+
+.intro_career .btn-group button.on {
     background: #4876ef;
     color: #fff;
 }
-.intro_career .btn-group{
+
+.intro_career .btn-group {
     display: flex;
     justify-content: space-around;
 }
-#work_btn{
+
+#work_btn {
     margin-left: -1px;
 }
-.intro_career div{
+
+.intro_career div {
     margin-bottom: 15px;
 }
-#work{
+
+#work {
     display: none;
 }
 
-.info_form2{
+.info_form2 {
     width: 1200px;
     margin: 0 auto;
     height: auto;
@@ -498,7 +575,8 @@ button.file_submit{
     border-radius: 10px;
     box-sizing: border-box;
 }
-.info_form3{
+
+.info_form3 {
     width: 700px;
     height: 120px;
     padding: 50px 20px 40px;
@@ -506,23 +584,27 @@ button.file_submit{
     border-radius: 10px;
     box-sizing: border-box;
 }
-.info_form2 div{
+
+.info_form2 div {
     margin-bottom: 0;
 }
-.field_select .part_box_wrap{
+
+.field_select .part_box_wrap {
     display: flex;
     justify-content: space-around;
 }
 
-.field_select .part_box{
+.field_select .part_box {
     text-align: left;
     margin-bottom: 5px;
 }
-.field_select .part_box input{
+
+.field_select .part_box input {
     width: 24px;
     height: 24px;
 }
-.field_select .part_box em{
+
+.field_select .part_box em {
     font-style: normal;
     color: #222;
     font-size: 18px;
@@ -532,11 +614,12 @@ button.file_submit{
     font-weight: 300;
 }
 
-.update_btn{
+.update_btn {
     display: flex;
     justify-content: end;
 }
-#btnInsertCompanyInfo{
+
+#btnInsertCompanyInfo {
     display: block;
     width: 260px;
     height: 60px;
@@ -549,10 +632,12 @@ button.file_submit{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnInsertCompanyInfo:hover{
+
+#btnInsertCompanyInfo:hover {
     background: #0ccca4;
 }
-#btnInsertCompany{
+
+#btnUpdateCompanyInfo {
     display: block;
     width: 260px;
     height: 60px;
@@ -565,10 +650,12 @@ button.file_submit{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnInsertCompany:hover{
+
+#btnUpdateCompanyInfo:hover {
     background: #4876ef;
 }
-.btnInsertCompany_go{
+
+.btnInsertCompany_go {
     display: block;
     width: 260px;
     height: 60px;
@@ -583,20 +670,24 @@ button.file_submit{
     text-align: center;
     line-height: 60px;
 }
-.btnInsertCompany_go:hover{
+
+.btnInsertCompany_go:hover {
     background: #0ccca4;
 }
 
-#intro_wrap .info_right_txt{
+#intro_wrap .info_right_txt {
     display: inline-block;
 }
-#intro_wrap .rewumeDetail_txt{
+
+#intro_wrap .rewumeDetail_txt {
     display: inline-block;
 }
-#intro_wrap .location_wrap2{
+
+#intro_wrap .location_wrap2 {
     margin-top: 0;
 }
-.info_form4{
+
+.info_form4 {
     width: 1200px;
     margin: 0 auto;
     height: auto;
@@ -607,24 +698,28 @@ button.file_submit{
 }
 
 /* =================== 회원정보 수정 ======================== */
-.users_update{
+.users_update {
     text-align: left;
 }
-.users_update input{
+
+.users_update input {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.users_update button{
+
+.users_update button {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.title_update{
+
+.title_update {
     width: 1200px;
 }
-.title_update h1{
+
+.title_update h1 {
     font-size: 30px;
     line-height: 34px;
 }
 
-.users_update h2{
+.users_update h2 {
     font-size: 24px;
     color: #666;
     line-height: 30px;
@@ -634,36 +729,44 @@ button.file_submit{
     display: inline-block;
     padding-right: 10px;
 }
-.users_update .form_title span{
+
+.users_update .form_title span {
     display: inline-block;
     font-weight: 300;
     letter-spacing: -0.06em;
     color: #666;
 }
-.info_form div{
+
+.info_form div {
     margin-bottom: 0px;
 }
-.margin_bottom{
+
+.margin_bottom {
     padding-bottom: 15px;
 }
-.login_form div{
+
+.login_form div {
     margin-bottom: 15px;
 }
-.intro_update .info_left{
-    float: none;
-}
-.intro_update .info_right{
+
+.intro_update .info_left {
     float: none;
 }
 
-.btn_group{
+.intro_update .info_right {
+    float: none;
+}
+
+.btn_group {
     display: flex;
     justify-content: end;
 }
-.btn_group .delete_btn{
+
+.btn_group .delete_btn {
     margin-left: 10px;
 }
-#btnEmployeeUpdate{
+
+#btnEmployeeUpdate {
     display: block;
     width: 260px;
     height: 60px;
@@ -676,10 +779,12 @@ button.file_submit{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnEmployeeUpdate:hover{
+
+#btnEmployeeUpdate:hover {
     background: #0ccca4;
 }
-#btnEmployeeDelete{
+
+#btnEmployeeDelete {
     display: block;
     width: 260px;
     height: 60px;
@@ -692,21 +797,23 @@ button.file_submit{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnEmployeeDelete:hover{
+
+#btnEmployeeDelete:hover {
     background: #333;
 }
 
 
-.users_update .info_birth_input{
+.users_update .info_birth_input {
     width: 530px;
     padding-right: 20px;
 }
-.login_check{
+
+.login_check {
     cursor: pointer;
 }
 
 
-.info_form .info_right_input3{
+.info_form .info_right_input3 {
     display: inline-block;
     width: 918px;
     height: 48px;
@@ -714,32 +821,37 @@ button.file_submit{
     border-radius: 8px;
     background: #fff;
     border: 1px solid #ddd;
-    padding-left:15px;
+    padding-left: 15px;
     font-size: 16px;
 }
 
 /* ===================== 도로명 주소 =========================== */
-.location_wrap{
+.location_wrap {
     margin-top: 50px;
     padding-bottom: 20px;
 }
-.location_map{
+
+.location_map {
     width: 380px;
     height: 330px;
     background: #ddd;
     text-align: center;
 }
-.basic_location{
+
+.basic_location {
     float: left;
     padding-left: 4px;
 }
-.info_right_txt2{
+
+.info_right_txt2 {
     float: left;
 }
-.location_info{
+
+.location_info {
     margin-top: 20px;
 }
-.location_info input{
+
+.location_info input {
     display: block;
     width: 365px;
     height: 48px;
@@ -752,10 +864,12 @@ button.file_submit{
     margin-right: 5px;
     margin-bottom: 10px;
 }
-.location_info input:nth-child(1){
+
+.location_info input:nth-child(1) {
     display: inline-block;
 }
-.location_info input:nth-child(2){
+
+.location_info input:nth-child(2) {
     display: inline-block;
     width: 180px;
     text-align: center;
@@ -766,16 +880,18 @@ button.file_submit{
     border-color: #333;
     cursor: pointer;
 }
-.location_info input:last-child{
+
+.location_info input:last-child {
     margin-bottom: 0;
 }
 
 /* =====================기업 채용 공고 상세보기=========================== */
-#co_resume_wrap{
+#co_resume_wrap {
     position: relative;
     width: 100%;
 }
-#co_resume_wrap .container{
+
+#co_resume_wrap .container {
     width: 1200px;
     margin: 0 auto;
     background: #fff;
@@ -784,72 +900,82 @@ button.file_submit{
     padding-left: 200px;
 }
 
-.recruit_detail_box{
+.recruit_detail_box {
     width: 1200px;
     margin: 0 auto;
     text-align: left;
     padding-bottom: 40px;
 }
-.recruit_detail_box h2{
+
+.recruit_detail_box h2 {
     display: block;
     width: 700px;
     font-size: 18px;
     padding-top: 40px;
     font-weight: 300;
 }
-.recruit_detail_box .notice_box{
+
+.recruit_detail_box .notice_box {
     display: block;
     float: left;
     width: calc(100% - 500px);
     padding: 0px 0;
     margin-top: 50px;
 }
-.recruit_detail_box .notice_box div{
+
+.recruit_detail_box .notice_box div {
     padding-bottom: 55px;
 }
-.recruit_detail_box .notice_box h3{
+
+.recruit_detail_box .notice_box h3 {
     font-size: 15px;
     font-weight: 500;
     color: #666;
     margin-bottom: 14px;
 }
-.recruit_detail_box .notice_box .notice_txt{
+
+.recruit_detail_box .notice_box .notice_txt {
     font-weight: normal;
     letter-spacing: -0.04em;
     font-size: 17px;
 }
 
-.recruit_detail_box .notice_box .notice_title{
+.recruit_detail_box .notice_box .notice_title {
     margin-bottom: 16px;
     border-top: none;
     border-bottom: 1px solid #ddd;
     padding-bottom: 25px;
     margin-bottom: 50px;
 }
-.recruit_detail_box .notice_box .notice_title h3{
+
+.recruit_detail_box .notice_box .notice_title h3 {
     color: #4876ef;
     margin-bottom: 5px;
 }
-.recruit_detail_box .notice_box .notice_title span.notice_txt{
+
+.recruit_detail_box .notice_box .notice_title span.notice_txt {
     font-size: 32px;
     font-weight: bold;
     line-height: 40px;
 }
-.recruit_detail_box .notice_box .notice_part .notice_txt{
+
+.recruit_detail_box .notice_box .notice_part .notice_txt {
     text-align: center;
     background: #e9e9e9;
     padding: 5px 15px;
     border-radius: 50px;
     font-size: 14px;
 }
-.recruit_detail_box .notice_box .notice_dept .notice_txt{
+
+.recruit_detail_box .notice_box .notice_dept .notice_txt {
     text-align: center;
     background: #eee;
     padding: 5px 15px;
     border-radius: 50px;
     font-size: 14px;
 }
-.recruit_detail_box .notice_box .notice_dead .notice_txt{
+
+.recruit_detail_box .notice_box .notice_dead .notice_txt {
     text-align: center;
     background: #eee;
     padding: 5px 15px;
@@ -858,7 +984,7 @@ button.file_submit{
     letter-spacing: 0.05em;
 }
 
-.company_box{
+.company_box {
     display: block;
     text-align: left;
     width: 340px;
@@ -868,13 +994,15 @@ button.file_submit{
     padding: 25px 30px 50px;
     margin-top: 28px;
 }
-.company_box .company_box_title{
+
+.company_box .company_box_title {
     font-size: 18px;
     color: #222;
     padding: 0;
     font-weight: 300;
 }
-.company_box span{
+
+.company_box span {
     padding-bottom: 10px;
     font-size: 15px;
     font-weight: 500;
@@ -882,55 +1010,64 @@ button.file_submit{
     margin-bottom: 8px;
     display: block;
 }
-.company_box .info_logo{
+
+.company_box .info_logo {
     width: 340px;
     text-align: center;
 }
-.company_box .info_logo img{
+
+.company_box .info_logo img {
     max-width: 340px;
     height: auto;
 }
 
-.company_box span em{
+.company_box span em {
     display: inline-block;
     font-style: normal;
     width: 100px;
     vertical-align: top;
 }
-.company_box p.rewumeDetail_txt{
+
+.company_box p.rewumeDetail_txt {
     display: inline-block;
-    vertical-align: top;  
+    vertical-align: top;
 }
-.company_box p.rewumeDetail_txt strong{
+
+.company_box p.rewumeDetail_txt strong {
     font-size: 15px;
     vertical-align: top;
 }
-.company_box span strong{
+
+.company_box span strong {
     font-weight: normal;
     letter-spacing: -0.04em;
     color: #333;
 }
-.company_box .company_location{
+
+.company_box .company_location {
     border-top: 1px solid #ddd;
     padding-top: 25px;
     margin-top: 35px;
 }
-.company_box .company_location span{
+
+.company_box .company_location span {
     padding-bottom: 15px;
     margin: 0;
 }
-.company_box .company_location .location_img{
+
+.company_box .company_location .location_img {
     width: 340px;
     height: 200px;
     background: #bbb;
 }
 
-.btn_co_recruit_insert{
+.btn_co_recruit_insert {
     width: 402px;
     float: right;
     margin-top: 40px;
 }
-.btn_co_recruit_insert button{
+
+.btn_co_recruit_insert button {
     width: 402px;
     padding: 16px 0;
     border-radius: 10px;
@@ -943,7 +1080,8 @@ button.file_submit{
     transition: all 0.5s;
     margin-top: 15px;
 }
-.btn_co_recruit_insert .btn_update_go{
+
+.btn_co_recruit_insert .btn_update_go {
     width: 402px;
     padding: 19px 0;
     border-radius: 10px;
@@ -955,7 +1093,8 @@ button.file_submit{
     cursor: pointer;
     transition: all 0.5s;
 }
-.btn_co_recruit_insert .btn_update{
+
+.btn_co_recruit_insert .btn_update {
     width: 402px;
     padding: 16px 0;
     border-radius: 10px;
@@ -967,20 +1106,24 @@ button.file_submit{
     cursor: pointer;
     transition: all 0.5s;
 }
-.btn_co_recruit_insert .btn_update_go:hover{
+
+.btn_co_recruit_insert .btn_update_go:hover {
     background: #0ccca4;
 }
-.btn_co_recruit_insert .btn_update:hover{
+
+.btn_co_recruit_insert .btn_update:hover {
     background: #0ccca4;
 }
-.btn_co_recruit_insert button.btn_delete{
+
+.btn_co_recruit_insert button.btn_delete {
     padding: 16px 0;
 }
-button.btn_delete:hover{
+
+button.btn_delete:hover {
     background: #333;
 }
 
-.notice_box .info_right_input{
+.notice_box .info_right_input {
     display: inline-block;
     width: 685px;
     height: 70px;
@@ -993,7 +1136,8 @@ button.btn_delete:hover{
     font-weight: bold;
     margin-top: 10px;
 }
-.notice_box .info_right_input4{
+
+.notice_box .info_right_input4 {
     display: inline-block;
     width: 385px;
     height: 48px;
@@ -1004,7 +1148,8 @@ button.btn_delete:hover{
     padding-left: 15px;
     font-size: 16px;
 }
-.notice_box .info_right_input5{
+
+.notice_box .info_right_input5 {
     display: inline-block;
     width: 685px;
     height: 48px;
@@ -1015,7 +1160,8 @@ button.btn_delete:hover{
     padding-left: 15px;
     font-size: 16px;
 }
-.notice_box .info_right_input6{
+
+.notice_box .info_right_input6 {
     display: inline-block;
     width: 365px;
     height: 48px;
@@ -1027,7 +1173,8 @@ button.btn_delete:hover{
     font-size: 16px;
     padding-right: 20px;
 }
-.info_right_input7{
+
+.info_right_input7 {
     display: inline-block;
     width: 170px;
     height: 40px;
@@ -1040,32 +1187,39 @@ button.btn_delete:hover{
     padding-right: 20px;
 }
 
-.recruit_detail_box .notice_box div.notice_skill{
+.recruit_detail_box .notice_box div.notice_skill {
     padding-bottom: 0;
 }
-.input_radio_skill ul{
+
+.input_radio_skill ul {
     font-size: 0;
 }
-.input_radio_skill ul li{
+
+.input_radio_skill ul li {
     display: inline-block;
 }
-.input_radio_skill input{
+
+.input_radio_skill input {
     vertical-align: top;
     margin-right: 7px;
 }
-.input_radio_skill ul li em{
+
+.input_radio_skill ul li em {
     font-style: normal;
     color: #333;
     font-size: 16px;
     vertical-align: top;
 }
-#skill_select_univ{
+
+#skill_select_univ {
     margin-left: 20px;
 }
-.rewumeDetail_txt{
+
+.rewumeDetail_txt {
     font-size: 17px;
 }
-.rewumeDetail_txt2{
+
+.rewumeDetail_txt2 {
     font-size: 14px;
     text-align: center;
     background: #e9e9e9;
@@ -1073,19 +1227,23 @@ button.btn_delete:hover{
     border-radius: 50px;
     margin-right: 10px;
 }
-.notice_txt2{
+
+.notice_txt2 {
     font-size: 32px;
     font-weight: bold;
     line-height: 40px;
 }
-.notice_skill2{
+
+.notice_skill2 {
     padding-bottom: 50px;
 }
+
 /* 로고 이미지 업로드 */
-.logo_form_update{
+.logo_form_update {
     padding-bottom: 30px;
 }
-.logo_form_update .info_myimg{
+
+.logo_form_update .info_myimg {
     display: inline-block;
     width: 340px;
     height: auto;
@@ -1096,21 +1254,25 @@ button.btn_delete:hover{
     vertical-align: top;
     margin-bottom: 0;
 }
-.logo_form_update .info_myimg img{
+
+.logo_form_update .info_myimg img {
     width: 100%;
     height: auto;
     text-align: center;
 }
-.logo_form_update .logo_img_right{
+
+.logo_form_update .logo_img_right {
     display: inline-block;
     vertical-align: top;
 }
-#files{
+
+#files {
     padding-left: 0;
     margin-top: 10px;
     background-color: rgba(238, 238, 238, 0.4);
 }
-.logo_form_update button.file_submit{
+
+.logo_form_update button.file_submit {
     display: block;
     cursor: pointer;
     width: 342px;
@@ -1121,28 +1283,34 @@ button.btn_delete:hover{
     color: #fff;
     transition: all 0.5s ease;
 }
+
 /* 도로명 주소  */
-.company_location .location_wrap{
+.company_location .location_wrap {
     margin-top: 0;
     padding-bottom: 20px;
 }
-.company_location .location_map{
+
+.company_location .location_map {
     width: 340px;
     height: 200px;
     background: #ddd;
     text-align: center;
 }
-.company_location .basic_location{
+
+.company_location .basic_location {
     float: left;
     padding-left: 4px;
 }
-.company_location .info_right_txt2{
+
+.company_location .info_right_txt2 {
     float: left;
 }
-.company_location .location_info{
+
+.company_location .location_info {
     margin-top: 20px;
 }
-.company_location .location_info input{
+
+.company_location .location_info input {
     display: block;
     width: 325px;
     height: 48px;
@@ -1155,10 +1323,12 @@ button.btn_delete:hover{
     margin-bottom: 10px;
     margin-left: 0;
 }
-.company_location .location_info input:nth-child(1){
+
+.company_location .location_info input:nth-child(1) {
     display: block;
 }
-.company_location .location_info input:nth-child(2){
+
+.company_location .location_info input:nth-child(2) {
     display: block;
     width: 180px;
     text-align: center;
@@ -1168,20 +1338,23 @@ button.btn_delete:hover{
     border-color: #333;
     cursor: pointer;
 }
-.company_location .location_info input:last-child{
+
+.company_location .location_info input:last-child {
     margin-bottom: 0;
 }
-.notice_box3 div#field{
+
+.notice_box3 div#field {
     padding-bottom: 0;
 }
 
 
 /* ================= 기업 회원 정보 관리 ================== */
-#co_info_wrap{
+#co_info_wrap {
     position: relative;
     width: 100%;
 }
-#co_info_wrap .container{
+
+#co_info_wrap .container {
     width: 1200px;
     margin: 0 auto;
     background: #fff;
@@ -1189,24 +1362,29 @@ button.btn_delete:hover{
     padding-bottom: 140px;
     padding-left: 200px;
 }
-.co_update{
+
+.co_update {
     text-align: left;
 }
-.co_update input{
+
+.co_update input {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.co_update button{
+
+.co_update button {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.title_update{
+
+.title_update {
     width: 1200px;
 }
-.title_update h1{
+
+.title_update h1 {
     font-size: 30px;
     line-height: 34px;
 }
 
-.co_update h2{
+.co_update h2 {
     font-size: 24px;
     color: #666;
     line-height: 30px;
@@ -1216,32 +1394,39 @@ button.btn_delete:hover{
     display: inline-block;
     padding-right: 10px;
 }
-.co_update .form_title span{
+
+.co_update .form_title span {
     display: inline-block;
     font-weight: 300;
     letter-spacing: -0.06em;
     color: #666;
 }
-.info_form div{
+
+.info_form div {
     margin-bottom: 15px;
 }
-.login_form div{
+
+.login_form div {
     margin-bottom: 15px;
 }
-.co_update .info_left{
+
+.co_update .info_left {
     float: none;
 }
-.co_update .info_right{
+
+.co_update .info_right {
     float: none;
 }
-.co_update .info_right_txt{
+
+.co_update .info_right_txt {
     display: inline-block;
     color: #666;
     font-weight: 300;
     width: 100px;
     font-size: 16px;
 }
-.co_update .info_right_input{
+
+.co_update .info_right_input {
     display: inline-block;
     width: 550px;
     height: 48px;
@@ -1252,23 +1437,29 @@ button.btn_delete:hover{
     padding-left: 15px;
     font-size: 16px;
 }
-.co_update .basic_input{
+
+.co_update .basic_input {
     margin-bottom: 15px;
 }
-.co_update .contact_input{
+
+.co_update .contact_input {
     margin-bottom: 15px;
 }
-.co_update .login_input{
+
+.co_update .login_input {
     margin-bottom: 15px;
 }
-.co_update .update_btn{
+
+.co_update .update_btn {
     display: flex;
     justify-content: end;
 }
-.co_update .btn_group .delete_btn{
+
+.co_update .btn_group .delete_btn {
     margin-left: 10px;
 }
-#btnCoInfoUpdate{
+
+#btnCoInfoUpdate {
     display: block;
     width: 260px;
     height: 60px;
@@ -1281,10 +1472,12 @@ button.btn_delete:hover{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnCoInfoUpdate:hover{
+
+#btnCoInfoUpdate:hover {
     background: #0ccca4;
 }
-#btnCoInfoDelete{
+
+#btnCoInfoDelete {
     display: block;
     width: 260px;
     height: 60px;
@@ -1297,6 +1490,7 @@ button.btn_delete:hover{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnCoInfoDelete:hover{
+
+#btnCoInfoDelete:hover {
     background: #333;
 }

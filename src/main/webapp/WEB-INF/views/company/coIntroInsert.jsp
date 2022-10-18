@@ -27,6 +27,7 @@
             </div>
             <!-- logo -->
             <input id="introId" type="hidden" value="${intro.introId}" />
+            <input id="companyId" type="hidden" value="${principal.companyId}" />
             <div id="basic_info" class="form">
               <div class="form_title">
                 <h2 class="title">회사 정보</h2>
@@ -34,9 +35,9 @@
               <div class="info_form">
                 <div class="info_left margin_bottom">
                   <div class="basic_input">
-                    <span class="info_right_txt">회사명</span>
-                    <input type="text" id="companyName" name="basic_name" class="box_input info_right_input"
-                      value="${intro.companyName}" placeholder="회사명을 입력하세요" />
+                    <span class="info_right_txt">소개명</span>
+                    <input type="text" id="introTitle" name="basic_name" class="box_input info_right_input"
+                      value="${intro.introTitle}" placeholder="소개명을 입력하세요" />
                   </div>
                 </div>
                 <div class="basic_row margin_bottom">
@@ -83,7 +84,7 @@
                       </div>
                       <div class="location_info">
                         <input type="text" id="sample6_postcode" placeholder="우편번호">
-                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn_post">
+                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn_post_code">
                         <input type="text" id="sample6_address" placeholder="주소">
                         <input type="text" id="sample6_detailAddress" placeholder="상세주소">
                         <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
@@ -91,7 +92,6 @@
                     </div>
                   </div>
                 </div><!-- .location_wrap -->
-
               </div>
             </div>
             <!-- basic -->
@@ -112,72 +112,9 @@
     </div>
     <!-- body -->
     <script>
-      function sample6_execDaumPostcode() {
-        new daum.Postcode({
-          oncomplete: function (data) {
-            var addr = '';
-            var extraAddr = '';
-            if (data.userSelectedType === 'R') {
-              addr = data.roadAddress;
-            } else {
-              addr = data.jibunAddress;
-            }
-            if (data.userSelectedType === 'R') {
-              if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-                extraAddr += data.bname;
-              }
-              if (data.buildingName !== '' && data.apartment === 'Y') {
-                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-              }
-              if (extraAddr !== '') {
-                extraAddr = ' (' + extraAddr + ')';
-              }
-              document.getElementById("sample6_extraAddress").value = extraAddr;
-            } else {
-              document.getElementById("sample6_extraAddress").value = '';
-            }
-            document.getElementById('sample6_postcode').value = data.zonecode;
-            document.getElementById("sample6_address").value = addr;
-            document.getElementById("sample6_detailAddress").focus();
-          }
-        }).open();
-      }
-    </script>
 
-    <script>
-      $("#btnUpdate").click(() => {
-        console.log("클릭됨");
-        console.log($("#introId").val());
-        update();
-      });
-      function update() {
-        let data = {
-          companyName: $("#companyName").val(),
-          introBirth: $("#introBirth").val(),
-          introTask: $("#introTask").val(),
-          introSal: $("#introSal").val(),
-          introWellfare: $("#introWellfare").val(),
-          introContent: $("#introContent").val(),
-          jobName: $("#jobName").val()
-        }
-        let introId = $("#introId").val();
-        console.log("업데이트확인");
-        $.ajax("/co/companyIntroUpdate/" + introId + "/update", {
-          type: "PUT",
-          dataType: "json", // 응답 데이터
-          data: JSON.stringify(data), // http body에 들고갈 요청 데이터
-          headers: {
-            // http header에 들고갈 요청 데이터
-            "Content-Type": "application/json; charset=utf-8",
-          },
-        }).done((res) => {
-          if (res.code == 1) {
-            alert("기업소개 수정 완료");
-            location.reload;
-          } else {
-            alert("업데이트에 실패하였습니다");
-          }
-        });
-      }
     </script>
+    <script src="/js/main.js"></script>
+    <script src="/js/company.js"></script>
+    <script src="/js/intro.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>
