@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.application.Application;
@@ -58,6 +60,16 @@ public class ResumeController {
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
         return "resume/resumeSave";
+    }
+
+    @PostMapping("emp/imageSave")
+    public @ResponseBody CMRespDto<?> insertImage(@RequestBody MultipartFile image) {
+        try {
+            resumeService.insertImage(image);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new CMRespDto<>(1, "사진 등록 성공", null);
     }
 
     @PostMapping("emp/resumeSave")

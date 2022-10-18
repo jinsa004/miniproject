@@ -25,11 +25,11 @@
               <div class="info_left">
                 <div class="info_img">
                   <form method="post" action="/resume_detail" enctype="multipart/form-data">
+                    <input id="resumeImageId" type="hidden" value="" />
                     <span class="info_myimg">
-                      <img src="">
+                      <img id="preImage" src="${pageContext.request.contextPath}/saveFile/${noticeVO.filename}" alt="image_title" onerror='this.src="${pageContext.request.contextPath}/images/no_img.jpg"'>
                     </span>
                     <input type="file" name="file" id="files" class="hidden" />
-                    <button type="submit" class="file_submit">파일전송</button>
                   </form>
                 </div>
               </div><!-- .info_left -->
@@ -266,6 +266,22 @@
     </div>
     </div>
     <!-- body -->
+        <script>
+        $(function() {
+            $("#files").on('change', function(){
+                readURL(this);
+            });
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+               var reader = new FileReader();
+               reader.onload = function (e) {
+                  $('#preImage').attr('src', e.target.result);
+               }
+               reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
     <script src="/js/main.js"></script>
     <script src="/js/resume.js"></script>
     <%@ include file="../layout/footer.jsp" %>
