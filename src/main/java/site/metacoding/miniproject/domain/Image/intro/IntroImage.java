@@ -1,4 +1,4 @@
-package site.metacoding.miniproject.domain.image.intro;
+package site.metacoding.miniproject.domain.Image.intro;
 
 import java.sql.Timestamp;
 

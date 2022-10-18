@@ -141,10 +141,10 @@
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">재학기간</span>
-                    <input type="text" id="univ_start_date" name="start_date" class="box_input info_right_input2"
+                    <input type="date" id="univ_start_date" name="start_date" class="box_input info_right_input2"
                       placeholder="입학년도" />
                     <span class="icon">-</span>
-                    <input type="text" id="univ_end_date" name="end_date" class="box_input info_right_input2"
+                    <input type="date" id="univ_end_date" name="end_date" class="box_input info_right_input2"
                       placeholder="졸업년도" />
                   </div>
                 </div>
