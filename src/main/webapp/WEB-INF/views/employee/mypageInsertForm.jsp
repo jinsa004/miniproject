@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypage.jsp" %>
-
+    <input id="employeeId" type="hidden" value="${principal.employeeId}" />
     <div id="content_wrap">
-      <input id="employeeId" type="hidden" value="${principal.employeeId}" />
       <div class="cont_mypage">
-        <h2>이력서 등록</h2>
-        <div class="notice_box2">
+        <h2>이력서 목록</h2>
+        <div class="notice_box3">
           <div class="mypage_resume_list">
             <div class="resume_form">
               <ul>
@@ -26,7 +25,6 @@
                         <li class="part"><span>${resumePS.jobName}</span></li>
                       </ul>
                     </label>
-
                     <div class="btn_resume_option">
                       <span><a href="/emp/resumeUpdate/${resumePS.resumeId}">수정하기</a></span>
                       <button class="btn_delete_resume" type="button" value="${resumePS.resumeId}">삭제하기</button>

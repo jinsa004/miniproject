@@ -16,7 +16,6 @@ public class Notice {
 	private Integer noticeId;
 	private Integer companyId;
 	private String noticeTitle;
-	private String noticeConame;
 	private String noticeImage;
 	private String noticePeriod;
 	private String noticeDept;
@@ -39,6 +38,7 @@ public class Notice {
 	private String introWellfare;
 	private String introLocation;
 	private String introImage;
+	private Integer resumeId;
 
 	public void update(NoticeUpdateDto noticeUpdateDto) {
 		this.noticeTitle = noticeUpdateDto.getNoticeTitle();

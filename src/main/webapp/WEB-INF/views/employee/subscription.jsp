@@ -7,7 +7,7 @@
     </div> -->
         <!-- .tablist -->
         <section>
-          <div class="notice_box">
+          <div class="notice_box notice_box2">
             <div class="notice_title">
               <ul>
                 <li>기업명</li>
@@ -29,13 +29,11 @@
                       </a></li>
                     <li>${noticeList.noticeCareer}<span class="notice_small">${noticeList.noticeQual}</span></li>
                     <li>${noticeList.noticeDept}<span class="notice_small">${noticeList.noticePosition}</span></li>
-                    <li>${noticeList.noticePeriod}<span class="notice_small"></span></li>
+                    <li>${noticeList.noticePeriod}<span class="notice_small">마감 13일전</span></li>
                   </ul>
                 </c:forEach>
               </div>
-            </div><!-- .notice_inner1 -->
-          </div>
-          <!-- .notice_box -->
+              <!-- .notice_box -->
         </section>
         <div class="paging">
           <ul class="pagination">

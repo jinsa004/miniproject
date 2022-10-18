@@ -41,13 +41,13 @@
                   <button class="btn_join" type="button" onClick="javascript:popOpen2();">
                     회원가입
                   </button>
-                  <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
+                  <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
                 </c:when>
                 <c:otherwise>
                   <a class="btn_logout" href="/logout">로그아웃</a>
 
                   <a href="/emp/mypageInsertForm/${principal.employeeId}" class="btn_mypage">마이 페이지</a>
-                  <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
+                  <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
                 </c:otherwise>
               </c:choose>
             </div>
@@ -79,8 +79,8 @@
           <h2>로그인</h2>
           <div class="form_box">
             <form>
-              <input id="username" type="text" placeholder="아이디를 입력하세요." value="ssar" />
-              <input id="password" type="password" placeholder="패스워드를 입력하세요." value="1234" />
+              <input id="username" type="text" placeholder="아이디를 입력하세요." />
+              <input id="password" type="password" placeholder="패스워드를 입력하세요." />
             </form>
             <label class="btn_check">
               <input type="checkbox" class="login_check" id="remember" checked />
@@ -89,7 +89,6 @@
             </label>
 
             <button id="btn_login" type="button" class="btn btn-primary">
-
               로그인
             </button>
           </div>
@@ -105,10 +104,10 @@
                   <h3>
                     <label for="employeeUsername">아이디</label>
                   </h3>
-                  <span>
+                  <span class="check">
                     <input id="employeeUsername" type="text" placeholder="아이디를 입력하세요." value="${employeeUsername}"
-                      maxlength="20" value="ssar" />
-                    <button id="btnUsernameSameCheck" type="button" maxlength="20">
+                      maxlength="20" />
+                    <button id="btnUsernameSameCheck" type="button" maxlength="20" onclick="checkUsername()">
                       중복체크
                     </button>
                   </span>
@@ -120,28 +119,34 @@
                   </h3>
                   <span>
                     <input id="employeePassword" type="password" placeholder="패스워드를 입력하세요." name="employeePassword"
-                      maxlength="20" value="1234" />
+                      maxlength="20" />
+                  </span>
+                  <span class="check">
+                    <input id="employeepasswordRepeat" type="password" placeholder="패스워드를 입력하세요." />
+                    <button id="employeepasswordCheck" type="button" maxlength="20" onclick="checkPassword()">
+                      비밀번호 확인
+                    </button>
                   </span>
                 </div>
-                <div class="join_pw2 join_box">
-                  <input id="employeepasswordRepeat" type="password" placeholder="패스워드를 입력하세요." value="1234" />
-                </div>
+                <div class="join_pw2 join_box"></div>
                 <div class="join_sex join_box">
                   <h3>
                     <label for="employeeSex">성별</label>
                   </h3>
                   <span>
-                    <input id="employeeSex" type="text" placeholder="성별을 입력하세요." name="employeeSex" maxlength="20"
-                      value="여" />
+                    <input id="employeeSex" type="text" placeholder="성별을 입력하세요." name="employeeSex" maxlength="20" />
                   </span>
                 </div>
                 <div class="join_email join_box">
                   <h3>
                     <label for="employeeEmail">이메일</label>
                   </h3>
-                  <span>
-                    <input id="employeeEmail" type="email" placeholder="이메일을 입력하세요." name="employeeEmail" maxlength="30"
-                      value="ssar@nate.com" />
+                  <span class="check">
+                    <input id="employeeEmail" type="email" placeholder="이메일을 입력하세요." name="employeeEmail"
+                      maxlength="30" />
+                    <button id="employeeEmailCheck" type="button" maxlength="20" onclick="checkEmail()">
+                      이메일 확인
+                    </button>
                   </span>
                 </div>
 
@@ -182,12 +187,11 @@
                     <label for="employeeLocation">주소</label>
                   </h3>
                   <span>
-                    <input type="text" id="sample6_postcode" placeholder="우편번호" value="613-103" />
-                    <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" /><br />
-                    <input type="text" id="sample6_address" class="employeeLocation" placeholder="주소"
-                      value="부산" /><br />
-                    <input type="text" id="sample6_detailAddress" placeholder="상세주소" value="부전동" />
-                    <input type="text" id="sample6_extraAddress" placeholder="참고항목" value="참고" />
+                    <input type="text" id="sample6_postcode" placeholder="우편번호" />
+                    <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn_post_code" />
+                    <input type="text" id="sample6_address" class="employeeLocation" placeholder="주소" />
+                    <input type="text" id="sample6_detailAddress" placeholder="상세주소" />
+                    <input type="text" id="sample6_extraAddress" placeholder="참고항목" />
                   </span>
                 </div>
                 <!-- .join_adress -->

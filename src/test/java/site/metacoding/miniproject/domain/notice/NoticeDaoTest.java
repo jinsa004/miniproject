@@ -43,13 +43,22 @@ public class NoticeDaoTest {
 
     // }
 
-    @Test
-    public void findSubsByEmployeeId() {
-        // given
-        Integer employeeId = 1;
-        // when
-        List<Notice> noticeList = noticeDao.findSubsByEmployeeId(employeeId);
-        // then
-        assertEquals(3, noticeList.size());
-    }
+    // @Test
+    // public void findSubsByEmployeeId() {
+    // // given
+    // Integer employeeId = 1;
+    // // when
+    // List<Notice> noticeList = noticeDao.findSubsByEmployeeId(employeeId);
+    // // then
+    // assertEquals(3, noticeList.size());
+    // // }
+
+    // @Test
+    // public void deleteByNoticeId() {
+    // // given
+    // Integer noticeId = 3;
+    // // when
+    // noticeDao.deleteById(noticeId);
+    // // then
+    // }
 }

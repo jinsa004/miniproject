@@ -1,110 +1,131 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/header.jsp" %>
-    <div class="p-5 border text-center">
-      <h1>기업소개 상세보기</h1>
-    </div>
+    <input id="introId" type="hidden" value="${detailDto.introId}" />
+    <input id="subscribeId" type="hidden" value="${detailDto.subscribeId}" />
+    <input id="principalId" type="hidden" value="${principal.getEmployeeId()}" />
+    <div id="co_Intro_wrap">
+      <div class="container">
+        <section>
+          <div class="notice_box">
+            <div class="intro_update">
+              <div class="title_update">
+                <h1>기업 소개 상세보기</h1>
+              </div>
+              <div id="logo_info" class="form">
+                <div class="form_title">
+                  <h2 class="title">회사로고</h2>
+                </div>
+                <div class="logo_form">
+                  <div class="info_img">
+                    <span class="info_myimg">
+                      <img src="/img/logo_1.png">
+                    </span>
+                  </div>
+                </div><!-- .logo_form -->
+              </div>
+              <!-- logo -->
+              <input id="introId" type="hidden" value="${intro.introId}" />
+              <div id="basic_info" class="form">
+                <div class="form_title">
+                  <h2 class="title">회사 정보</h2>
+                </div>
+                <div class="info_form">
+                  <div class="info_left margin_bottom">
+                    <div class="basic_input">
+                      <span class="co_Info_Detail_title">회사명</span>
+                      <p class="co_Info_Detail_txt">
+                        ${detailDto.companyName}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="basic_row margin_bottom">
+                    <div class="basic_input">
+                      <span class="co_Info_Detail_title">설립년도</span>
+                      <p class="co_Info_Detail_txt">
+                        ${detailDto.introBirth}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="basic_row margin_bottom">
+                    <div class="basic_input">
+                      <span class="co_Info_Detail_title">주요업무</span>
+                      <p class="co_Info_Detail_txt">
+                        ${detailDto.introTask}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="basic_row margin_bottom">
+                    <div class="basic_input">
+                      <span class="co_Info_Detail_title">평균연봉</span>
+                      <p class="co_Info_Detail_txt">
+                        ${detailDto.introSal}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="basic_row margin_bottom">
+                    <div class="basic_input">
+                      <span class="co_Info_Detail_title">기업복지</span>
+                      <p class="co_Info_Detail_txt">
+                        ${detailDto.introWellfare}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="basic_row">
+                    <div class="basic_input">
+                      <span class="co_Info_Detail_title">회사소개</span>
+                      <p class="co_Info_Detail_txt">
+                        ${detailDto.introContent}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="basic_row location_wrap">
+                    <div class="basic_input cf">
+                      <span class="info_right_txt info_right_txt2">회사위치</span>
+                      <div class="basic_location">
+                        <div class="location_map">
+                          <img src="">지도
+                        </div>
+                        <div class="location_info">
+                          <input type="text" id="sample6_address" placeholder="주소">
+                          <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- .location_wrap -->
 
-    <div class="container">
-      <div class="row">
-        <div class="company_detail">
-          <input id="introId" type="hidden" value="${detailDto.introId}" />
-          <input id="subscribeId" type="hidden" value="${detailDto.subscribeId}" />
-          <input id="principalId" type="hidden" value="${principal.getEmployeeId()}" />
-          <span>인증번호${principal.getEmployeeId()}</span>
-          <div id="logo_info" class="form">
-            <div>구독 <i id="iconSub"
-                class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-heart my_pointer my_red'></i>
-            </div>
-            <!-- subscribe_btn -->
-            <div class="logo_form">
-              <div class="info_img">
-                <img src="assets/resume/face1.jpg" width="160" height="170" />
+                </div>
               </div>
-            </div>
-          </div>
-          <!-- logo -->
+              <!-- basic -->
 
-          <div id="basic_info" class="form">
-            <div class="form_title">
-              <h2 class="title">회사 정보</h2>
-            </div>
-            <div class="basic_form">
-              <div class="basic_row">
-                <div class="basic_list">
-                  <p class="basic_list_item">회사명</p>
+              <div id="part" class="form">
+                <div class="form_title">
+                  <h2 class="title">관심분야</h2>
                 </div>
-                <div class="basic_input">
-                  <span>${detailDto.companyName}</span>
+                <div class="resume_part">
+                  <span class="resume_part_select">${detailDto.jobName}</span>
                 </div>
-              </div>
-              <div class="basic_row">
-                <div class="basic_list">
-                  <p class="basic_list_item">설립년도</p>
-                </div>
-                <div class="basic_input">
-                  <span>${detailDto.introBirth}</span>
-                </div>
-              </div>
-              <div class="basic_row">
-                <div class="basic_list">
-                  <p class="basic_list_item">주요업무</p>
-                </div>
-                <div class="basic_input">
-                  <span>${detailDto.introTask}</span>
-                </div>
-              </div>
-              <div class="basic_row">
-                <div class="basic_list">
-                  <p class="basic_list_item">평균연봉</p>
-                </div>
-                <div class="basic_input">
-                  <span>${detailDto.introSal}</span>
-                </div>
-              </div>
-              <div class="basic_row">
-                <div class="basic_list">
-                  <p class="basic_list_item">기업복지</p>
-                </div>
-                <div class="basic_input">
-                  <span>${detailDto.introWellfare}</span>
-                </div>
-              </div>
-              <div class="basic_row">
-                <div class="basic_list">
-                  <p class="basic_list_item">회사소개</p>
-                </div>
-                <div class="basic_input">
-                  <span>${detailDto.introContent}</span>
-                </div>
-              </div>
-              <div class="basic_row">
-                <div class="basic_list">
-                  <p class="basic_list_item">회사위치</p>
-                </div>
-                <div class="basic_input">
-                  <span>${detailDto.introLocation}</span>
-                </div>
-              </div>
+              </div> <!-- #part -->
 
-            </div>
-          </div>
-          <!-- basic -->
+              <div class="btn_group">
+                <div class="subscribe_btn">
+                  <button type="button" onclick="location.href='#'">
+                    <i class="fa-regular fa-star"></i>
+                    <span class="txt">구독</span>
+                  </button>
+                  <div><i id="iconSub"
+                      class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-heart my_pointer my_red'></i>
+                  </div>
+                </div>
+              </div><!-- .btn_group -->
+              <!-- btn -->
 
-          <div id="field_info" class="form">
-            <div class="form_title">
-              <h2 class="title">관심분야</h2>
-            </div>
-            <div class="field_form">
-              <p>${detailDto.jobName}</p>
-            </div>
-          </div>
-          <!-- field -->
-
-        </div>
-        <!-- company_detail -->
-      </div>
+            </div><!-- .intro_update -->
+          </div><!-- .notice_box -->
+        </section>
+      </div><!-- .container -->
+    </div><!-- .intro_wrap -->
     </div>
     <!-- body -->
     <script src="/js/main.js"></script>
     <script src="/js/intro.js"></script>
-    <%@ include file="../layout/footer.jsp" %>
+    <%@ include file="../layout/footerCompany.jsp" %>

@@ -3,8 +3,8 @@
 <mapper namespace="site.metacoding.miniproject.domain.notice.NoticeDao">
 
 	<insert id="insert">
-		INSERT INTO notice(company_id, notice_title, notice_coname, notice_image, notice_period, notice_dept, notice_position, notice_task, notice_sal, notice_qual, notice_career, notice_wellfare, job_id)
-        VALUES(#{companyId}, #{noticeTitle}, #{noticeConame},#{noticeImage}, #{noticePeriod},#{noticeDept},#{noticePosition},#{noticeTask},#{noticeSal},#{noticeQual},#{noticeCareer}, #{noticeWellfare},#{jobId})
+		INSERT INTO notice(company_id, notice_title, notice_period, notice_dept, notice_position, notice_task, notice_sal, notice_qual, notice_career, notice_wellfare, job_id)
+        VALUES(#{companyId}, #{noticeTitle}, #{noticePeriod},#{noticeDept},#{noticePosition},#{noticeTask},#{noticeSal},#{noticeQual},#{noticeCareer}, #{noticeWellfare},#{jobId})
 	</insert>
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.notice.Notice">
@@ -74,7 +74,6 @@
 	<delete id="deleteById">
 		DELETE FROM notice WHERE notice_id = #{noticeId}
 	</delete>
-
 
 
 </mapper>
