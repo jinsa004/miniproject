@@ -73,8 +73,7 @@ public class CompanyController {
     @PutMapping("/co/companyUpdate/{companyId}")
     public @ResponseBody CMRespDto<?> companyUpdate(@PathVariable Integer companyId,
             @RequestBody CompanyUpdateDto companyupdateDto) {
-
-        Company companyPS = companyService.기업소개수정(companyId, companyupdateDto);
+        Company companyPS = companyService.기업회원정보수정(companyId, companyupdateDto);
         session.setAttribute("principal", companyPS);
         return new CMRespDto<>(1, "수정성공", null);
     }

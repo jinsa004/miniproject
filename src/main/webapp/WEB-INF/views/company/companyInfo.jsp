@@ -111,10 +111,10 @@
 
             <div class="btn_group">
               <div class="update_btn">
-                <button id="btnCoInfoUpdate" type="button">등록완료</button>
+                <button id="btnCoInfoUpdate" class="btn_update" type="button">수정완료</button>
               </div>
               <div class="delete_btn">
-                <button id="btnCoInfoDelete" type="button">회원탈퇴</button>
+                <button id="btnCoInfoDelete" class="btn_delete" type="button">회원탈퇴</button>
               </div>
             </div>
           </div><!-- .co_update -->

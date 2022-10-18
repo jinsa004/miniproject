@@ -1,5 +1,5 @@
 /* 기업회원 탈퇴*/
-$("#btn_delete").click(() => {
+$(".btn_delete").click(() => {
   Delete();
 });
 
@@ -7,7 +7,7 @@ $("#btn_join").click(() => {
   coJoin();
 });
 
-$("#btn_update").click(() => {
+$(".btn_update").click(() => {
   companyUpdate();
 });
 
@@ -45,6 +45,11 @@ function Delete() {
 function companyUpdate() {
   let companyId = $("#companyId").val();
 
+  let checkBoxArr = [];
+  $("input:checkbox[name='job_checkbox']:checked").each(function () {
+    checkBoxArr.push($(this).val()); // 체크된 값 배열에 push
+  });
+
   let data = {
     companyNumber: $("#companyNumber").val(),
     companyName: $("#companyName").val(),
@@ -53,7 +58,9 @@ function companyUpdate() {
     companyLocation: $("#companyLocation").val(),
     companyUsername: $("#companyUsername").val(),
     companyPassword: $("#companyPassword").val(),
+    jobIds: checkBoxArr
   };
+
   console.log("업데이트");
 
   $.ajax("/co/companyUpdate/" + companyId, {

@@ -40,7 +40,14 @@ public class CompanyService {
     return companyDao.findById(companyId);
   }
 
-  public Company 기업소개수정(Integer companyId, CompanyUpdateDto companyUpdateDto) {
+  public Company 기업회원정보수정(Integer companyId, CompanyUpdateDto companyUpdateDto) {
+    // emp_check 값 업데이트
+    coCheckDao.deleteById(companyId);
+    for (Integer jobId : companyUpdateDto.getJobIds()) {
+      coCheckDao.insert(companyId, jobId);
+    }
+
+    // 회원정보 업데이트
     Company companyPS = companyDao.findById(companyId);
     companyPS.update(companyUpdateDto);
     companyDao.update(companyPS);
