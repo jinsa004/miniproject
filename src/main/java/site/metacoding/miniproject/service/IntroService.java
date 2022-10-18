@@ -22,6 +22,11 @@ public class IntroService {
     private final SubscribeDao subscribeDao;
     private final HttpSession session;
 
+    public Intro 마이페이지설정(Integer companyId) {
+        Intro intro = introDao.findById(companyId);
+        return intro;
+    }
+
     public List<Intro> 기업소개목록보기() {
         return introDao.findAll();
     }

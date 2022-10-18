@@ -45,7 +45,14 @@
                 </c:when>
                 <c:otherwise>
                   <a class="btn_logout" href="/co/logout">로그아웃</a>
-                  <a href="/co/companyIntroUpdate/${principal.companyId}" class="btn_mypage">마이페이지</a>
+                  <c:choose>
+                    <c:when test="${empty introPS.introId}">
+                      <a href="/co/companyIntroInsert" class="btn_mypage">마이페이지</a>
+                    </c:when>
+                    <c:otherwise>
+                      <a href="/co/companyIntroUpdate/${principal.companyId}" class="btn_mypage">마이페이지</a>
+                    </c:otherwise>
+                  </c:choose>
                   <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
                 </c:otherwise>
               </c:choose>
