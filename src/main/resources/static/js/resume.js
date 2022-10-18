@@ -26,8 +26,8 @@ $("#btnDeleteResume").click(() => {
 // ====================== function ========================== //
 //이력서 등록
 
-
 function insertImage() {
+  let image = $('input[name="image"]').get(0).files[0];
   let formData = new FormData();
   formData.append("image", image);
 
