@@ -1,5 +1,5 @@
 /* 기업회원 탈퇴*/
-$("#btn_delete").click(() => {
+$(".btn_delete").click(() => {
   Delete();
 });
 
@@ -7,7 +7,7 @@ $("#btn_join").click(() => {
   coJoin();
 });
 
-$("#btn_update").click(() => {
+$(".btn_update").click(() => {
   companyUpdate();
 });
 

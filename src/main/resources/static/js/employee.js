@@ -210,7 +210,7 @@ function checkUsername() {
   let employeeUsername = $("#employeeUsername").val();
 
   // 2. Ajax 통신
-  $.ajax(`emp/usernameSameCheck?employeeUsername=${employeeUsername}`, {
+  $.ajax(`/emp/usernameSameCheck?employeeUsername=${employeeUsername}`, {
     type: "GET",
     dataType: "json",
     async: true,

@@ -94,7 +94,7 @@
 
                         <div class="notice_benefit">
                           <h3>복리후생</h3>
-                          <input type="text" id="company_wellfare" name="basic_name" class="box_input info_right_input5"
+                          <input type="text" id="notice_wellfare" name="basic_name" class="box_input info_right_input5"
                             value="${noticePS.noticeWellfare}" placeholder="복리후생을 입력하세요" />
                         </div>
                         <!-- .notice_benefit -->
