@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.2.2'
 	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
 	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.65'
@@ -29,6 +30,7 @@ dependencies {
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.7.3'
 }
 
 tasks.named('test') {

@@ -5,12 +5,12 @@
       <div class="container">
         <div class="tablist">
           <ul class="tabs">
-            <li class="btn_tab on" data-tab="tab-1">전체직군</li>
-            <li class="btn_tab" data-tab="tab-2">프론트엔드</li>
-            <li class="btn_tab" data-tab="tab-3">백엔드</li>
-            <li class="btn_tab" data-tab="tab-4">웹풀스택</li>
-            <li class="btn_tab" data-tab="tab-5">안드로이드</li>
-            <li class="btn_tab" data-tab="tab-6">IOS</li>
+            <li class="active" data-tab="tab-1"><a href="/emp">전체직군</a></li>
+            <li data-tab="tab-2"><a href="/emp/notice?jobCode=1">프론트엔드</a></li>
+            <li data-tab="tab-3"><a href="/emp/notice?jobCode=2">백엔드</a></li>
+            <li data-tab="tab-4"><a href="/emp/notice?jobCode=3">웹풀스택</a></li>
+            <li data-tab="tab-5"><a href="/emp/notice?jobCode=4">안드로이드</a></li>
+            <li data-tab="tab-6"><a href="/emp/notice?jobCode=5">IOS</a></li>
           </ul>
         </div>
         <!-- .tablist -->
@@ -22,7 +22,7 @@
                 <ul>
                   <c:forEach var="intro" items="${introList}" begin="0" end="3" step="1">
                     <li>
-                      <a href="companyIntroDetail">
+                      <a href="companyIntroDetail/${intro.introId}">
                         <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
                         <div class="company_txt">
                           <input type="hidden" value="${intro.no}">
@@ -72,6 +72,31 @@
       <!-- .container -->
     </div>
     <!-- #wrap -->
-
     <script src="/js/main.js"></script>
+    <script src="/js/employee.js"></script>
+    <script type="text/javascript">
+      // jquery 최초 기본형
+      $(document).ready(function () {
+
+        // 탭메뉴
+        let tab_menu_list_a = $('.tabs li a');
+        let tab_menu_list = $('.tabs li');
+
+        // 메뉴 내용
+        let tab_box = $('.tab_content');
+
+        // 탭메뉴 내용 보여주기
+        $.each(tab_menu_list, function (index, item) {
+          // tab_menu_list_a.eq(index) = $(this)
+          $(this).click(function (event) {
+            event.preventDefault();
+
+            tab_menu_list.removeClass('active');
+            $(this).addClass('active');
+            tab_box.hide();
+            tab_box.eq(index).show();
+          });
+        });
+      });
+    </script>
     <%@ include file="../layout/footer.jsp" %>

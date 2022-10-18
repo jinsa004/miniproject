@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.miniproject.domain.company.CompanyDao">
 
-  <insert id="insert">
-		INSERT INTO company(company_number, company_name, company_email, company_tel, company_location, job_id, company_username, company_password)
-		VALUES(#{companyNumber}, #{companyName}, #{companyEmail}, #{companyTel}, #{companyLocation}, #{jobId}, #{companyUsername}, #{companyPassword})
+	<insert id="insert" parameterType="site.metacoding.miniproject.domain.company.Company" useGeneratedKeys="true" keyProperty="companyId">
+		INSERT INTO company(company_number, company_name, company_email, company_tel, company_location, company_username, company_password)
+		VALUES(#{companyNumber}, #{companyName}, #{companyEmail}, #{companyTel}, #{companyLocation}, #{companyUsername}, #{companyPassword})
 	</insert>
 
-	<select id="findAll"
-		resultType="site.metacoding.miniproject.domain.company.Company">
-	</select>
+	<select id="findAll" resultType="site.metacoding.miniproject.domain.company.Company"></select>
 
-  <select id="findById" resultType="site.metacoding.miniproject.domain.company.Company">
+	<select id="findById" resultType="site.metacoding.miniproject.domain.company.Company">
 		SELECT * FROM company WHERE company_Id=#{companyId}
 	</select>
-  
-	<select id="findByCompanyUsername"
-		resultType="site.metacoding.miniproject.domain.company.Company">
-		SELECT *
-		FROM company
+
+	<select id="findByCompanyUsername" resultType="site.metacoding.miniproject.domain.company.Company">
+		SELECT * FROM company
 		WHERE company_username = #{companyUsername}
 	</select>
 
-  <update id="update">
+	<select id="findByIdCompanyUsername" resultType="site.metacoding.miniproject.domain.company.Company">
+		SELECT company_username FROM company
+		WHERE company_username = #{companyUsername}
+	</select>
+
+
+	<update id="update">
 		UPDATE company 
 		SET company_number = #{companyNumber},
 		company_name = #{companyName},
@@ -33,14 +33,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		company_tel = #{companyTel},
 		company_location = #{companyLocation},
 		company_username = #{companyUsername},
-		company_password = #{companyPassword},
-		job_id = #{jobId},
-    WHERE company_id = #{companyId}
+		company_password = #{companyPassword}
+    	WHERE company_id = #{companyId}
 	</update>
 
 	<delete id="deleteById">
-
+		DELETE FROM company WHERE company_id=#{companyId}
 	</delete>
-
 
 </mapper>

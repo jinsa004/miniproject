@@ -3,7 +3,8 @@ package site.metacoding.miniproject.domain.company;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import site.metacoding.miniproject.web.dto.request.JoinDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyJoinDto;
+import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
 
 @NoArgsConstructor
 @Setter
@@ -19,6 +20,9 @@ public class Company {
 	private String companyPassword;
 	private Integer jobId;
 
+	// 엔티티 필드 아님
+	private Integer employeeId;
+
 	// public Company(Integer companyNumber, String companyName, String
 	// companyEmail, String companyTel,
 	// String companyLocation, String companyUsername, String companyPassword,
@@ -33,14 +37,24 @@ public class Company {
 	// this.jobId = jobId;
 	// }
 
-	public Company(JoinDto joinDto) {
-		this.companyNumber = joinDto.getCompanyNumber();
-		this.companyName = joinDto.getCompanyName();
-		this.companyEmail = joinDto.getCompanyEmail();
-		this.companyTel = joinDto.getCompanyTel();
-		this.companyLocation = joinDto.getCompanyLocation();
-		this.companyUsername = joinDto.getCompanyUsername();
-		this.companyPassword = joinDto.getCompanyPassword();
-		this.jobId = joinDto.getJobId();
+	public Company(CompanyJoinDto companyJoinDto) {
+		this.companyNumber = companyJoinDto.getCompanyNumber();
+		this.companyName = companyJoinDto.getCompanyName();
+		this.companyEmail = companyJoinDto.getCompanyEmail();
+		this.companyTel = companyJoinDto.getCompanyTel();
+		this.companyLocation = companyJoinDto.getCompanyLocation();
+		this.companyUsername = companyJoinDto.getCompanyUsername();
+		this.companyPassword = companyJoinDto.getCompanyPassword();
+	}
+
+	public void update(CompanyUpdateDto companyupdateDto) {
+		this.companyNumber = companyupdateDto.getCompanyNumber();
+		this.companyName = companyupdateDto.getCompanyName();
+		this.companyEmail = companyupdateDto.getCompanyEmail();
+		this.companyTel = companyupdateDto.getCompanyTel();
+		this.companyLocation = companyupdateDto.getCompanyLocation();
+		this.companyUsername = companyupdateDto.getCompanyUsername();
+		this.companyPassword = companyupdateDto.getCompanyPassword();
+		this.jobId = companyupdateDto.getJobId();
 	}
 }

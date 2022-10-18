@@ -1,267 +1,199 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerCompany.jsp" %>
-    <div class="p-5 border text-center">
-      <h1>이력서 상세보기</h1>
-    </div>
+    <div id="company_wrap">
+      <div class="container2">
+        <section>
+          <div class="notice_box">
+            <section id="resume_wrap">
+              <div class="container">
+                <div class="resume_update">
+                  <input id="employeeId" type="hidden" value="${principal.employeeId}">
+                  <div class="title_update">
+                    <h1>이력서제목의 이력서 입니다.</h1>
+                  </div>
+                  <div id="info" class="form">
+                    <div class="form_title">
+                      <h2 class="title title2">기본정보</h2>
+                    </div>
+                    <div class="info_form cf">
+                      <div class="info_left">
+                        <div class="info_img">
+                          <img src="assets/resume/face1.jpg" width="100" height="140" />
+                        </div>
+                      </div><!-- .info_left -->
+                      <div class="info_right">
+                        <input id="employeeId" type="hidden" value="${employeePS.employeeId}" />
+                        <dl class="info_name">
+                          <dd class="name">
+                            <span class="resumeDetail_title">이름</span>
+                            <p class="rewumeDetail_txt">
+                              ${resume.employeeName}
+                            </p>
+                          </dd>
+                          <dd class="sex">
+                            <span class="resumeDetail_title">성별</span>
+                            <p class="rewumeDetail_txt">
+                              ${resume.employeeSex}
+                            </p>
+                          </dd>
+                          <dd class="birth">
+                            <span class="resumeDetail_title">생년월일</span>
+                            <p class="rewumeDetail_txt">
+                              ${resume.employeeBirth}
+                            </p>
+                          </dd>
+                        </dl>
+                        <dl class="info_basic">
+                          <dd class="info_list_item">
+                            <span class="resumeDetail_title">이메일</span>
+                            <p class="rewumeDetail_txt">
+                              ${resume.employeeEmail}
+                            </p>
+                          </dd>
+                          <dd class="info_list_item">
+                            <span class="resumeDetail_title">전화번호</span>
+                            <p class="rewumeDetail_txt">
+                              ${resume.employeeTel}
+                            </p>
+                          </dd>
+                          <dd class="info_list_item">
+                            <span class="resumeDetail_title">주소</span>
+                            <p class="rewumeDetail_txt">
+                              ${resume.employeeLocation}
+                            </p>
+                          </dd>
+                        </dl>
+                      </div><!-- .info_right -->
+                    </div><!-- .info_form -->
+                  </div>
+                  <!-- info -->
 
-    <div class="container">
-      <div class="row">
-        <div class="resume_detail">
+                  <div id="edu" class="form">
+                    <div class="form_title">
+                      <h2 class="title">학력사항</h2>
+                      <span>최종학력 ｜ <strong>대학교 졸업</strong></span>
+                    </div>
+                    <div class="resume_edu">
+                      <div class="resume_table">
+                        <table cellspacing="0" cellpadding="0">
+                          <caption>학력</caption>
+                          <colgroup>
+                            <col width="25%">
+                            <col width="*">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="15%">
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">재학기간</th>
+                              <th scope="col">학교명</th>
+                              <th scope="col">전공</th>
+                              <th scope="col">구분</th>
+                              <th scope="col">학점</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="resume_table_center" rowspan="1">
+                                ${resume.univStartdate} - ${resume.univEnddate}
+                              </td>
+                              <td class="resume_table_center">
+                                ${resume.univName}
+                              </td>
+                              <td class="resume_table_center">
+                                ${resume.univMajor}
+                              </td>
+                              <td class="resume_table_center" rowspan="1">
+                                졸업
+                              </td>
+                              <td class="resume_table_center">
+                                ${resume.univGrades} /4.5
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div><!-- .resume_table -->
+                    </div><!-- .resume_edu -->
+                  </div><!-- .edu -->
 
-          <div id="info" class="form">
-            <div class="form_title">
-              <h2 class="title">기본정보</h2>
-            </div>
-            <div class="info_form">
-              <div class="info_img">
-                <img src="assets/resume/face1.jpg" width="100" height="140" />
-              </div>
-              <dl class="info_name">
-                <dd class="name">${resume.employeeName}</dd>
-                <dd class="sex">${resume.employeeSex}, ${resume.employeeBrith} (00세/만 00세)</dd>
-              </dl>
-              <dl class="info_basic">
-                <dt class="info_list_item">이메일</dt>
-                <dd id="info_email">${resume.employeeEmail}</dd><br>
-                <dt class="info_list_item">휴대폰</dt>
-                <dd id="info_cell">${resume.employeeTel}</dd><br>
-                <dt class="info_list_item">주소</dt>
-                <dd id="info_location">${resume.employeeLocation}</dd>
-              </dl>
-            </div>
+                  <div id="career" class="form">
+                    <div class="form_title">
+                      <h2 class="title">경력사항</h2>
+                      <span>경력 ｜ <strong>신입</strong></span>
+                    </div>
+                    <div class="resume_career">
+                      <div class="resume_table">
+                        <table cellspacing="0" cellpadding="0">
+                          <caption>경력</caption>
+                          <colgroup>
+                            <col width="25%">
+                            <col width="*">
+                            <col width="20%">
+                            <col width="20%">
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">근무기간</th>
+                              <th scope="col">직장명</th>
+                              <th scope="col">직급/직책</th>
+                              <th scope="col">부서명</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="resume_table_center" rowspan="2">
+                                ${resume.careerPeriod}
+                              </td>
+                              <td class="resume_table_center">
+                                ${resume.prevCo}
+                              </td>
+                              <td class="resume_table_center">
+                                ${resume.careerPosition}
+                              </td>
+                              <td class="resume_table_center" rowspan="1">
+                                ${resume.careerDepartment}
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="" colspan="3">
+                                <p>
+                                  <span class="table_icon">담당업무</span>${resume.careerTask}
+                                </p>
+                              </td>
+                            </tr>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div><!-- .resume_table -->
+                    </div>
+                  </div>
+                  <!-- career -->
+
+                  <div id="part" class="form">
+                    <div class="form_title">
+                      <h2 class="title">관심분야</h2>
+                    </div>
+                    <div class="resume_part">
+                      <span class="resume_part_select">프론트엔드</span>
+                      <span class="resume_part_select">백엔드</span>
+                    </div>
+                  </div> <!-- #part -->
+
+                  <div class="contact_btn">
+                    <button type="button" onclick="location.href='#'">
+                      컨택하기
+                    </button>
+                  </div>
+                  <!-- update -->
+                  <!-- resume_update -->
+                </div><!-- .container -->
+              </div><!-- .resume_wrap -->
           </div>
-          <!-- info -->
-
-          <div id="edu" class="form">
-            <div class="form_title">
-              <h2 class="title">학력사항</h2>
-            </div>
-            <div class="resume_edu">
-              <div class="edu_select">
-                <div class="btn-group">
-                  <button type="button" class="edu_btn" id="high_btn" onclick="show_highschool()">고등학교 졸업</button>
-                  <button type="button" class="edu_btn" id="univ_btn" onclick="show_univ()">대학.대학원 이상 졸업</button>
-                </div>
-              </div>
-
-              <div class="edu_form" id="highschool">
-                <h4>고등학교 정보 입력</h4>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">학교명</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.highschoolName}</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">재학기간</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.highschoolStartdate} - ${resume.highschoolEnddate}</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">전공계열</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.highschoolMajor}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="edu_form" id="univ">
-                <h4>대학.대학원 정보 입력</h4>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">대학</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>대학교(4년)</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">학교명</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.univName}</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">재학기한</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.univStartdate} - ${resume.univEnddate}</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">전공</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.univMajor}</span>
-                  </div>
-                </div>
-                <div class="edu_row">
-                </div>
-                <div class="edu_row">
-                  <div class="edu_list">
-                    <p class="edu_list_item">학점</p>
-                  </div>
-                  <div class="edu_input">
-                    <span>${resume.univGrade} / 4.5</span>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <!-- edu -->
-
-          <div id="career" class="form">
-            <div class="form_title">
-              <h2 class="title">경력사항</h2>
-            </div>
-            <div class="resume_career">
-              <div class="career_select">
-                <div class="btn-group">
-                  <button type="button" class="career_btn" id="new_btn" onclick="show_new()">신입</button>
-                  <button type="button" class="career_btn" id="work_btn" onclick="show_work()">경력</button>
-                </div>
-              </div>
-              <div class="career_form" id="work">
-                <h4>회사 정보 입력</h4>
-                <div class="career_row">
-                  <div class="career_list">
-                    <p class="career_list_item">회사명</p>
-                  </div>
-                  <div class="career_input">
-                    <span>${resume.prevCo}</span>
-                  </div>
-                </div>
-                <div class="career_row">
-                  <div class="career_list">
-                    <p class="career_list_item">재직기간</p>
-                  </div>
-                  <div class="career_input">
-                    <span>${resume.careerPeriod}</span>
-                  </div>
-                </div>
-                <div class="career_row">
-                </div>
-                <div class="career_row">
-                  <div class="career_list">
-                    <p class="career_list_item">직급/직책</p>
-                  </div>
-                  <div class="career_input">
-                    <span>${resume.careerPosition}</span>
-                  </div>
-                </div>
-                <div class="career_row">
-                  <div class="career_list">
-                    <p class="career_list_item">근무부서</p>
-                  </div>
-                  <div class="career_input">
-                    <span>${resume.careerDepartment}</span>
-                  </div>
-                </div>
-                <div class="career_row">
-                </div>
-              </div>
-              <div class="career_row">
-                <div class="career_list">
-                  <p class="career_list_item">담당업무</p>
-                </div>
-                <div class="career_input">
-                  <span>${resume.careerTask}</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <!-- career -->
-
-        <div class="contact_btn">
-          <button type="button" onclick="location.href='#'">컨택하기</button>
-        </div>
-        <!-- contact -->
+        </section>
       </div>
-      <!-- resume_detail -->
     </div>
-    </div>
-
-    <script>
-      function show_highschool() {
-        var con1 = document.getElementById("highschool");
-        var con2 = document.getElementById("univ");
-        var con3 = document.getElementById("high_btn");
-        var con4 = document.getElementById("univ_btn");
-        if (con3.style.background != '#4876ef') {
-          con1.style.display = 'block';
-          con2.style.display = 'none';
-          con3.style.background = '#4876ef';
-          con3.style.color = '#fff';
-          con4.style.background = '#fff';
-          con4.style.color = '#333';
-        } else {
-          con1.style.display = 'none';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        }
-      }
-      function show_univ() {
-        var con1 = document.getElementById("univ");
-        var con2 = document.getElementById("highschool");
-        var con3 = document.getElementById("high_btn");
-        var con4 = document.getElementById("univ_btn");
-        if (con4.style.background != '#4876ef') {
-          con1.style.display = 'block';
-          con2.style.display = 'none';
-          con4.style.background = '#4876ef';
-          con4.style.color = '#fff';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        } else {
-          con1.style.display = 'none';
-          con4.style.background = '#fff';
-          con4.style.color = '#333';
-        }
-      }
-      function show_new() {
-        var con1 = document.getElementById("work");
-        var con2 = document.getElementById("new_btn");
-        var con3 = document.getElementById("work_btn");
-        if (con2.style.background != '#4876ef') {
-          con1.style.display = 'none';
-          con2.style.background = '#4876ef';
-          con2.style.color = '#fff';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        } else {
-          con2.style.background = '#fff';
-          con2.style.color = '#333';
-        }
-      }
-      function show_work() {
-        var con1 = document.getElementById("work");
-        var con2 = document.getElementById("new_btn");
-        var con3 = document.getElementById("work_btn");
-        if (con3.style.background != '#4876ef') {
-          con1.style.display = 'block';
-          con3.style.background = '#4876ef';
-          con3.style.color = '#fff';
-          con2.style.background = '#fff';
-          con2.style.color = '#333';
-        } else {
-          con1.style.display = 'none';
-          con3.style.background = '#fff';
-          con3.style.color = '#333';
-        }
-      }
-    </script>
+    </div><!-- .company_wrap -->
+    <script src="/js/main.js"></script>
+    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

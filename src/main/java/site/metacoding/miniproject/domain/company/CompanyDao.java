@@ -9,9 +9,11 @@ public interface CompanyDao {
 
 	public void insert(Company company);
 
-	public void update(Integer companyId, Company company);
+	public void update(Company company);
 
 	public void deleteById(Integer companyId);
 
 	public Company findByCompanyUsername(String companyUsername);
+
+	public Company findByIdCompanyUsername(String companyUsername);
 }
