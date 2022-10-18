@@ -113,6 +113,7 @@ public class EmployeeController {
 
     @GetMapping("/emp/employeeInfo/{employeeId}")
     public String 회원정보수정탈퇴페이지(@PathVariable Integer employeeId, Model model) {// 개인회원 회원가입 정보수정
+
         Employee employeePS = (Employee) session.getAttribute("principal");
         /* Employee employeePS = employeeService.employeeUpdate(employeeId); */
         model.addAttribute("employee", employeePS);
