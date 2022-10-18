@@ -10,6 +10,7 @@
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="/css/reset.css" />
       <link rel="stylesheet" href="/css/main.css" />
+      <link href="/css/style.css" rel="stylesheet">
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
       <title>4조 PROJECT</title>
