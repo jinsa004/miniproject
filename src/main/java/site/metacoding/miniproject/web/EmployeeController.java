@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.check.employee.EmpCheck;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.resume.Resume;
@@ -113,7 +114,8 @@ public class EmployeeController {
 
     @GetMapping("/emp/employeeInfo/{employeeId}")
     public String 회원정보수정탈퇴페이지(@PathVariable Integer employeeId, Model model) {// 개인회원 회원가입 정보수정
-
+        List<EmpCheck> jobPS = employeeService.관심분야값보기(employeeId);
+        model.addAttribute("jobPS", jobPS);
         Employee employeePS = (Employee) session.getAttribute("principal");
         /* Employee employeePS = employeeService.employeeUpdate(employeeId); */
         model.addAttribute("employee", employeePS);

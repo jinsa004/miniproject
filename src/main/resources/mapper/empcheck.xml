@@ -9,7 +9,7 @@
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.check.employee.EmpCheck">
         select *
-        FROM emo_check
+        FROM emp_check
 		WHERE employee_id = #{employeeId}
     </select>
 
