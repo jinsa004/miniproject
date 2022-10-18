@@ -111,9 +111,6 @@
     </div>
     </div>
     <!-- body -->
-    <script>
-
-    </script>
     <script src="/js/main.js"></script>
     <script src="/js/company.js"></script>
     <script src="/js/intro.js"></script>
