@@ -5,7 +5,7 @@
       <div class="container">
         <section>
           <div class="matching_list">
-            <a href="/co/companyInfo/${principal.companyId}" class="btn_matching_insert"> 관심 분야 수정</a>
+            <a href="/co/companyInfo/${coprincipal.companyId}" class="btn_matching_insert"> 관심 분야 수정</a>
           </div>
           <!-- .tablist -->
 

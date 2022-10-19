@@ -64,7 +64,7 @@ public class EmployeeController {
         if (principal == null) {
             return new CMRespDto<>(-1, "로그인실패", null);
         }
-        session.setAttribute("principal", principal);
+        session.setAttribute("empprincipal", principal);
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
@@ -75,7 +75,7 @@ public class EmployeeController {
 
     @GetMapping("/emp/companyIntroDetail/{introId}")
     public String introDetail(@PathVariable Integer introId, Model model) {// 개인회원 보는 기업소개 상세보기
-        Employee principal = (Employee) session.getAttribute("principal");
+        Employee principal = (Employee) session.getAttribute("empprincipal");
         if (principal == null) {
             model.addAttribute("detailDto", introService.기업소개상세보기(introId, 0));
         } else {
@@ -86,7 +86,7 @@ public class EmployeeController {
 
     @PostMapping("/emp/companyIntroDetail/{introId}/subscribe")
     public @ResponseBody CMRespDto<?> insertSub(@PathVariable Integer introId) {// 구독하기
-        Employee principal = (Employee) session.getAttribute("principal");
+        Employee principal = (Employee) session.getAttribute("empprincipal");
         Subscribe subscribe = new Subscribe(principal.getEmployeeId(), introId);
         introService.구독하기(subscribe);
         return new CMRespDto<>(1, "구독성공", subscribe);
@@ -122,7 +122,7 @@ public class EmployeeController {
         model.addAttribute("checkPS", checkPS);
 
         // 세션값담기
-        Employee employeePS = (Employee) session.getAttribute("principal");
+        Employee employeePS = (Employee) session.getAttribute("empprincipal");
         /* Employee employeePS = employeeService.employeeUpdate(employeeId); */
         model.addAttribute("employee", employeePS);
         return "employee/empInfo";
@@ -143,7 +143,7 @@ public class EmployeeController {
             @RequestBody EmployeeUpdateDto employeeUpdateDto) {
         Employee employeePS = employeeService.employeeUpdate(employeeId,
                 employeeUpdateDto);
-        session.setAttribute("principal", employeePS);
+        session.setAttribute("empprincipal", employeePS);
         return new CMRespDto<>(1, "회원수정성공", null);
     }
 

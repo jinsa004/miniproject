@@ -5,7 +5,7 @@
       <div class="container">
         <h1>이력서 등록하기</h1>
         <div class="resume_update">
-          <input id="employeeId" type="hidden" value="${principal.employeeId}" />
+          <input id="employeeId" type="hidden" value="${empprincipal.employeeId}" />
           <div class="resume_title">
             <div class="title_update">
               <div class="title_input">
@@ -39,19 +39,19 @@
                   <dd class="name">
                     <span class="info_right_txt">이름</span>
                     <p class="info_right_input">
-                      ${principal.employeeName}
+                      ${empprincipal.employeeName}
                     </p>
                   </dd>
                   <dd class="sex">
                     <span class="info_right_txt">성별</span>
                     <p class="info_right_input">
-                      ${principal.employeeSex}
+                      ${empprincipal.employeeSex}
                     </p>
                   </dd>
                   <dd class="birth">
                     <span class="info_right_txt">생년월일</span>
                     <p class="info_right_input">
-                      ${principal.employeeBirth}
+                      ${empprincipal.employeeBirth}
                     </p>
                   </dd>
                 </dl>
@@ -59,19 +59,19 @@
                   <dd class="info_list_item">
                     <span class="info_right_txt">이메일</span>
                     <p class="info_right_input">
-                      ${principal.employeeEmail}
+                      ${empprincipal.employeeEmail}
                     </p>
                   </dd>
                   <dd class="info_list_item">
                     <span class="info_right_txt">전화번호</span>
                     <p class="info_right_input">
-                      ${principal.employeeTel}
+                      ${empprincipal.employeeTel}
                     </p>
                   </dd>
                   <dd class="info_list_item">
                     <span class="info_right_txt">주소</span>
                     <p class="info_right_input">
-                      ${principal.employeeLocation}
+                      ${empprincipal.employeeLocation}
                     </p>
                   </dd>
                 </dl>

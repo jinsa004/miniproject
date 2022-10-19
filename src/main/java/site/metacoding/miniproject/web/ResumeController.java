@@ -62,7 +62,7 @@ public class ResumeController {
 
     @GetMapping("emp/resumeSaveForm/{employeeId}")
     public String insertResumeForm(@PathVariable Integer employeeId, Model model) { // 이력서 등록 페이지
-        session.getAttribute("principal");
+        session.getAttribute("empprincipal");
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
         return "resume/resumeSave";
@@ -85,7 +85,7 @@ public class ResumeController {
 
     @GetMapping("emp/resumeUpdate/{resumeId}")
     public String updateResumeForm(@PathVariable Integer resumeId, Model model) { // 이력서 수정 페이지
-        session.getAttribute("principal");
+        session.getAttribute("empprincipal");
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
         Resume resumePS = resumeService.이력서상세보기(resumeId);
@@ -107,7 +107,7 @@ public class ResumeController {
         model.addAttribute("jobPS", jobPS);
         List<Resume> resumeAllList = resumeService.이력서목록보기();
         model.addAttribute("resumeAllList", resumeAllList);
-        Company principal = (Company) session.getAttribute("principal");
+        Company principal = (Company) session.getAttribute("coprincipal");
         if (principal != null) {
             Intro introPS = introService.마이페이지설정(principal.getCompanyId());
             model.addAttribute("introPS", introPS);
