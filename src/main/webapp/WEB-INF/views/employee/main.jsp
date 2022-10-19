@@ -32,7 +32,7 @@
                   <c:forEach var="noticeAllList" items="${noticeAllList}">
                     <ul>
                       <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}"><img
-                            src="/image?imageName=9339f9ee-830c-45ec-a5e9-a09c85ae4463.jpg" alt="logo"></a>
+                            src="/image?imageName=${noticeAllList.newImageName}" alt="logo"></a>
                       </li>
                       <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}">
                           ${noticeAllList.noticeTitle}
