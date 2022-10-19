@@ -15,7 +15,7 @@
                 <div class="info_img">
                   <form method="post" action="/resume_detail" enctype="multipart/form-data">
                     <span class="info_myimg">
-                      <img src="/img/logo_1.png">
+                      <img src="">
                     </span>
                   </form>
                 </div>
