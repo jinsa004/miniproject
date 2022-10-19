@@ -42,8 +42,8 @@
                 <div class="basic_row margin_bottom">
                   <div class="basic_input">
                     <span class="info_right_txt">설립년도</span>
-                    <input type="text" id="introBirth" name="basic_birth" class="box_input info_right_input"
-                      value="${intro.introBirth}" placeholder="설립년도를 입력하세요" />
+                    <input type="date" id="introBirth" name="basic_birth" class="box_input info_right_input"
+                      value="${intro.introBirth}" placeholder="설립년도를 입력하세요" style="padding-right: 20px; width: 530px;">
                   </div>
                 </div>
                 <div class="basic_row margin_bottom">
