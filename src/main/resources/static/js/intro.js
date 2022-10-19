@@ -143,7 +143,7 @@ function updateIntro() {
 
     let companyId = $("#companyId").val();
     console.log("업데이트확인");
-    $.ajax("/co/companyIntroUpdate/" + companyId + "/update", {
+    $.ajax("/coapi/cs/co/companyIntroUpdate/" + companyId + "/update", {
         type: "PUT",
         dataType: "json", // 응답 데이터
         data: JSON.stringify(data), // http body에 들고갈 요청 데이터
@@ -154,7 +154,7 @@ function updateIntro() {
     }).done((res) => {
         if (res.code == 1) {
             alert("기업소개 수정 완료");
-            location.reload();
+            location.href = "/cs/co/companyIntroDetail/" + companyId;
         } else {
             alert("업데이트에 실패하였습니다");
         }

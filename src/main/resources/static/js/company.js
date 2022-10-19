@@ -33,7 +33,7 @@ function companyDelete() {
         if (res.code == 1) {
             alert("기업회원탈퇴 완료");
             console.log(res);
-            location.href = "/";
+            location.href = "/co";
         } else {
             alert("회원탈퇴에 실패하였습니다");
         }
