@@ -99,11 +99,13 @@ public class ResumeController {
         model.addAttribute("jobPS", jobPS);
         List<Resume> resumeAllList = resumeService.이력서목록보기();
         model.addAttribute("resumeAllList", resumeAllList);
-        Company principal = (Company) session.getAttribute("coprincipal");
-        if (principal != null) {
-            Intro introPS = introService.마이페이지설정(principal.getCompanyId());
-            model.addAttribute("introPS", introPS);
-        }
+        /*
+         * Company principal = (Company) session.getAttribute("principal");
+         * if (principal != null) {
+         * Intro introPS = introService.마이페이지설정(principal.getCompanyId());
+         * model.addAttribute("introPS", introPS);
+         * }
+         */
         return "company/mainCompany";
     }
 
@@ -123,6 +125,8 @@ public class ResumeController {
 
     @GetMapping("co/resumeDetail/{resumeId}")
     public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
+        Company companyPS = (Company) session.getAttribute("coprincipal");
+        model.addAttribute("company", companyPS);
         model.addAttribute("resume", resumeService.이력서상세보기(resumeId));
         return "company/resumeDetail";
     }

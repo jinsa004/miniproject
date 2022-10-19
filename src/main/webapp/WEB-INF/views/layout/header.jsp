@@ -1,21 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-        <!DOCTYPE html>
-        <html>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <!DOCTYPE html>
+    <html>
 
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
-            <link rel="stylesheet" href="/css/reset.css" />
-            <link rel="stylesheet" href="/css/main.css" />
-            <link href="/css/style.css" rel="stylesheet" />
-            <script type="text/javascript"
-                src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-            <title>4조 PROJECT</title>
-        </head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/css/reset.css" />
+      <link rel="stylesheet" href="/css/main.css" />
+      <link href="/css/style.css" rel="stylesheet" />
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+      <title>4조 PROJECT</title>
+    </head>
 
         <body>
             <div id="user_wrap">
@@ -52,6 +55,23 @@
                                     <a href="/emp/mypageInsertForm/${empprincipal.employeeId}" class="btn_mypage">마이
                                         페이지</a>
                                     <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
+                                    <div id="alarmContainer" style="width: 40px; height: 40px; position: absolute; top: 0px; right: -50px">
+                                        <button type="button" style="width: 40px; height: 40px; background: none; border: 1px #0ccca4 solid; border-radius: 50%" onclick="addNotice()">
+                                            <i class="fa-regular fa-bell" style="color: #0ccca4"></i>
+                                        </button>
+                                        <div class="row">
+                                          <table id="conversation" class="table table-striped" style="width: 280px; display: none;">
+                                            <thead>
+                                              <tr>
+                                                <th style="width: 280px; position: relative; top: 5px; right: 120px; ">Notification</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody id="notification_emp" style="background:#fff; position: relative; top: 5px; right: 120px; font-size: 13px">
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                    </div>
+                                    <!-- alarmContainer -->
                                 </c:otherwise>
                             </c:choose>
                         </div>
@@ -75,6 +95,7 @@
                         <!-- nav -->
                     </header>
                     <!-- header -->
+                    
                 </div>
                 <!-- .header_wrap -->
 
@@ -83,20 +104,37 @@
                     <h2>로그인</h2>
                     <div class="form_box">
                         <form>
-                            <input id="username" type="text" placeholder="아이디를 입력하세요." />
-                            <input id="password" type="password" placeholder="패스워드를 입력하세요." />
+                            <input
+                                id="username"
+                                type="text"
+                                placeholder="아이디를 입력하세요."
+                            />
+                            <input
+                                id="password"
+                                type="password"
+                                placeholder="패스워드를 입력하세요."
+                            />
                         </form>
                         <label class="btn_check">
-                            <input type="checkbox" class="login_check" id="remember" checked />
+                            <input
+                                type="checkbox"
+                                class="login_check"
+                                id="remember"
+                                checked
+                            />
                             <span class="login_check_icon"></span>
                             <span class="login_check_text">로그인 상태 유지</span>
                         </label>
 
-                        <button id="btn_login" type="button" class="btn btn-primary">
-                            로그인
-                        </button>
-                    </div>
+                        <button
+                        id="btn_login"
+                        type="button"
+                        class="btn btn-primary"
+                    >
+                        로그인
+                    </button>
                 </div>
+            </div>
 
                 <div class="modal_join_bg" onClick="javascript:popClose2();"></div>
                 <div class="modal_join_wrap">
@@ -185,8 +223,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div>
-
+                                
                             <div class="join_right">
                                 <div class="join_adress join_box company_location">
                                     <h3>
@@ -204,24 +241,32 @@
                                 </div>
                                 <!-- .join_adress -->
 
-                                <div class="career_part">
-                                    <h2>관심분야</h2>
-                                    <c:forEach var="jobPS" items="${jobPS}">
-                                        <div class="career_part1 part_box">
-                                            <input type="checkbox" class="login_check" class="job_Id"
-                                                name="job_checkbox" value="${jobPS.jobId}" />
-                                            <em>
-                                                <label for="c_part_front">${jobPS.jobName}</label>
-                                            </em>
-                                        </div>
-                                    </c:forEach>
+                                    <div class="career_part">
+                                        <h2>관심분야</h2>
+                                        <c:forEach var="jobPS" items="${jobPS}">
+                                            <div class="career_part1 part_box">
+                                                <input type="checkbox" class="login_check" class="job_Id"
+                                                    name="job_checkbox" value="${jobPS.jobId}" />
+                                                <em>
+                                                    <label for="c_part_front">${jobPS.jobName}</label>
+                                                </em>
+                                            </div>
+                                        </c:forEach>
+                                    </div>
+                                    <!-- .career_part -->
                                 </div>
-                                <!-- .career_part -->
-                            </div>
-                            <!-- .join_right -->
+                                <!-- .join_right -->
                         </form>
 
                         <button id="btn_join" type="button">회원가입</button>
                     </div>
                 </div>
             </div>
+            <c:choose>
+                <c:when test="${!empty empprincipal.employeeId}">
+                    <input class="checkprinciple" type="hidden" value="${empprincipal.employeeName}">
+                </c:when>
+                <c:when test="${!empty coprincipal.companyId}">
+                    <input class="checkprinciple" type="hidden" value="${coprincipal.companyName}">
+                </c:when>
+            </c:choose>

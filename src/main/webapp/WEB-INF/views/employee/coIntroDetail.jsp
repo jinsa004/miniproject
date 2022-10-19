@@ -2,7 +2,9 @@
   <%@ include file="../layout/header.jsp" %>
     <input id="introId" type="hidden" value="${detailDto.introId}" />
     <input id="subscribeId" type="hidden" value="${detailDto.subscribeId}" />
-    <input id="principalId" type="hidden" value="${empprincipal.employeeId}" />
+    <input id="principalId" type="hidden" value="${empprincipal.getEmployeeId()}" />
+    <input id="receiver" type="hidden" value="${detailDto.companyName}">
+    <input id="sender" type="hidden" value="${empprincipal.employeeName}">
     <div id="co_Intro_wrap">
       <div class="container">
         <section>
@@ -83,7 +85,7 @@
                       <span class="info_right_txt info_right_txt2">회사위치</span>
                       <div class="basic_location">
                         <div class="location_map">
-                          <img src="">지도
+                          <img src="/img/map_1.png" alt="지도예시">
                         </div>
                         <div class="location_info">
                           <input type="text" id="sample6_address" value="${detailDto.introLocation}" readonly>
@@ -109,9 +111,8 @@
               <div class="btn_group">
                 <div class="subscribe_btn">
                   <button type="button">
-                    <i id="iconSub"
-                      class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-star my_pointer my_red'></i>
-                    <span class="txt">구독</span>
+                    <i id="iconSub" class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-star my_pointer my_red'></i>
+                    <!-- <span class="txt">구독</span> -->
                   </button>
                   <!-- <div><i id="iconSub"
                       class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-star my_pointer my_red'></i>
