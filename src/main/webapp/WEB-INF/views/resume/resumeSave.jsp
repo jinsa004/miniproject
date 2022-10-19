@@ -24,12 +24,12 @@
             <div class="info_form cf">
               <div class="info_left">
                 <div class="info_img">
-                  <form method="post" action="/resume_detail" enctype="multipart/form-data">
+                  <form method="post" action="/emp/resumeSave" enctype="multipart/form-data">
+                    <input id="resumeImageId" type="hidden" value="" />
                     <span class="info_myimg">
-                      <img src="">
+                      <img id="preImage" alt="image_title">
                     </span>
-                    <input type="file" name="file" id="files" class="hidden" />
-                    <button type="submit" class="file_submit">파일전송</button>
+                    <input type="file" multiple="multiple" id="image" name="image" />
                   </form>
                 </div>
               </div><!-- .info_left -->
@@ -141,10 +141,10 @@
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">재학기간</span>
-                    <input type="text" id="univ_start_date" name="start_date" class="box_input info_right_input2"
+                    <input type="date" id="univ_start_date" name="start_date" class="box_input info_right_input2"
                       placeholder="입학년도" />
                     <span class="icon">-</span>
-                    <input type="text" id="univ_end_date" name="end_date" class="box_input info_right_input2"
+                    <input type="date" id="univ_end_date" name="end_date" class="box_input info_right_input2"
                       placeholder="졸업년도" />
                   </div>
                 </div>
@@ -238,19 +238,20 @@
               <h2 class="title">관심분야</h2>
             </div>
             <div class="resume_field info_form2">
-              <div class="field_select">
-                <div class="select-group">
-                  <ul class="part_box_wrap">
-                    <li class="career_part1 part_box">
-                      <c:forEach var="jobPS" items="${jobPS}">
-                        <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" />${jobPS.jobName}
-                        <br>
-                      </c:forEach>
+
+              <div class="input_radio_skill">
+                <ul>
+                  <c:forEach var="jobPS" items="${jobPS}">
+                    <li>
+                      <input type="radio" name="part_select" id="part_select_front" class="job_id"
+                        value="${jobPS.jobId}" />
+                      <label for="part_select_front"><em>${jobPS.jobName}</em></label>
                     </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+                  </c:forEach>
+                </ul>
+              </div><!-- .input_radio_skill -->
+
+            </div><!-- .resume_field -->
           </div>
           <!-- field -->
 
@@ -266,6 +267,18 @@
     </div>
     </div>
     <!-- body -->
+    <script>
+      $("#image").on("change", function (event) {
+        let file = event.target.files[0];
+
+        let reader = new FileReader();
+        reader.onload = function (e) {
+          $("#preImage").attr("src", e.target.result);
+        }
+
+        reader.readAsDataURL(file);
+      });
+    </script>
     <script src="/js/main.js"></script>
     <script src="/js/resume.js"></script>
     <%@ include file="../layout/footer.jsp" %>

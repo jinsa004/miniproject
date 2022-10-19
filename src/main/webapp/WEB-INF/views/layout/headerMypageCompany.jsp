@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="/css/reset.css" />
       <link rel="stylesheet" href="/css/main.css" />
       <link rel="stylesheet" href="/css/mypageCompany.css" />
-      <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <title>4조 PROJECT</title>
     </head>

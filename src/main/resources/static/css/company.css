@@ -682,7 +682,7 @@ input.login_check{
     font-weight: 300;
 }
 
-#btn_join{
+#btn_co_join{
     float: left;
     display: block;
     width: 100%;
@@ -707,7 +707,7 @@ input.login_check{
 }
 .join_right{
     float: left;
-    padding-left: 45px;
+    padding-left: 40px;
 }
 
 
@@ -1097,12 +1097,21 @@ input.login_check{
 .title_update{
     width: 100%;
 }
+.title_update2{
+    width: calc(100% - 500px);
+    margin: 0 auto;
+}
 .title_update h1{
     padding-top: 60px;
     font-size: 30px;
     line-height: 34px;
     padding-bottom: 15px;
     border-bottom: 1px solid #ddd;
+}
+.title_update2 h1{
+    font-size: 30px;
+    line-height: 34px;
+    padding-bottom: 15px;
 }
 .info_form{
     width: 1040px;
@@ -1263,7 +1272,7 @@ input.login_check{
 }
 #co_notice_wrap .container2{
     padding: 0;
-    padding-bottom: 90px;
+    /* padding-bottom: 90px; */
     padding-top: 180px;
     background: #fff;
 }
@@ -1284,6 +1293,14 @@ input.login_check{
     width: calc(100% - 500px);
     padding: 0px 0;
     padding-top: 25px;
+}
+.recruit_detail_box .notice_box2{
+    display: block;
+    width: calc(100% - 500px);
+    padding: 0px 0;
+    padding-top: 25px;
+    margin: 0 auto;
+    float: none;
 }
 .recruit_detail_box .notice_box div{
     padding-bottom: 55px;
@@ -1419,8 +1436,29 @@ input.login_check{
     transition: all 0.5s;
     margin-top: 15px;
 }
+.btn_co_recruit_insert2{
+    width: 700px;
+    float: right;
+    margin-top: -55px;
+}
+.btn_co_recruit_insert2 button{
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background: #91ADF2;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 15px;
+}
 
 button.btn_recruit_insert:hover{
+    background: #4876ef;
+}
+.btn_co_recruit_insert2 button:hover{
     background: #4876ef;
 }
 
@@ -1512,6 +1550,10 @@ button.btn_recruit_insert:hover{
 }
 .input_radio_skill ul li{
     display: inline-block;
+    margin-left: 20px;
+}
+.input_radio_skill ul li:first-child{
+    margin-left: 0;
 }
 .input_radio_skill input{
     vertical-align: top;
@@ -1524,7 +1566,6 @@ button.btn_recruit_insert:hover{
     vertical-align: top;
 }
 #skill_select_univ{
-    margin-left: 20px;
 }
 
 /* 로고 이미지 업로드 */
@@ -1618,3 +1659,80 @@ button.btn_recruit_insert:hover{
     margin-bottom: 0;
 }
 
+
+/* ============== 유효성체크 ========================== */
+
+#btnCompanyUsernameSameCheck{
+    height: 42px;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #fff;
+    width: 50.5%;
+    margin-left: 1.5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+#btnCompanyUsernameSameCheck:hover{
+    background: #4876ef;
+}
+#btnCompanyUsernameSameCheck:active{
+    background: #111;
+}
+
+span.check{
+    display: flex;
+    justify-content: space-between;
+}
+
+#employeepasswordRepeat{
+}
+#companyPasswordCheck{
+    height: 42px;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #fff;
+    width: 50.5%;
+    margin-left: 1.5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+#companyPasswordCheck:hover{
+    background: #4876ef;
+}
+#companyPasswordCheck:active{
+    background: #111;
+}
+#employeeEmail{
+}
+#companyEmailCheck{
+    height: 42px;
+    border-radius: 8px;
+    background-color: #ddd;
+    color: #fff;
+    width: 50.5%;
+    margin-left: 1.5%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+#companyEmailCheck:hover{
+    background: #4876ef;
+}
+#companyEmailCheck:active{
+    background: #111;
+}
+
+.modal_join_wrap input.btn_post_code{
+    cursor: pointer;
+    background: #ddd;
+    color: #fff;
+    transition: all 0.3s;
+}
+.modal_join_wrap input.btn_post_code:hover{
+    background: #4876ef;
+}
+.modal_join_wrap input.btn_post_code:active{
+    background: #111;
+}

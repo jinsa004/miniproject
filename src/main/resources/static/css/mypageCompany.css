@@ -927,6 +927,10 @@ button.file_submit {
     padding-bottom: 55px;
 }
 
+.recruit_detail_box .notice_box div.resume_field {
+    padding-bottom: 0;
+}
+
 .recruit_detail_box .notice_box h3 {
     font-size: 15px;
     font-weight: 500;
@@ -1081,6 +1085,25 @@ button.file_submit {
     margin-top: 15px;
 }
 
+.btn_co_recruit_insert2 {
+    width: 700px;
+    float: left;
+}
+
+.btn_co_recruit_insert2 button {
+    width: 700px;
+    padding: 16px 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background: #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 15px;
+}
+
 .btn_co_recruit_insert .btn_update_go {
     width: 402px;
     padding: 19px 0;
@@ -1107,6 +1130,19 @@ button.file_submit {
     transition: all 0.5s;
 }
 
+.btn_co_recruit_insert2 .btn_update {
+    width: 700px;
+    padding: 16px 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background: #4876ef;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
 .btn_co_recruit_insert .btn_update_go:hover {
     background: #0ccca4;
 }
@@ -1115,11 +1151,23 @@ button.file_submit {
     background: #0ccca4;
 }
 
+.btn_co_recruit_insert2 .btn_update:hover {
+    background: #0ccca4;
+}
+
 .btn_co_recruit_insert button.btn_delete {
     padding: 16px 0;
 }
 
+.btn_co_recruit_insert2 button.btn_delete {
+    padding: 16px 0;
+}
+
 button.btn_delete:hover {
+    background: #333;
+}
+
+button.btn_delete2:hover {
     background: #333;
 }
 
@@ -1197,6 +1245,11 @@ button.btn_delete:hover {
 
 .input_radio_skill ul li {
     display: inline-block;
+    margin-left: 20px;
+}
+
+.input_radio_skill ul li:first-child {
+    margin-left: 0;
 }
 
 .input_radio_skill input {
@@ -1211,9 +1264,7 @@ button.btn_delete:hover {
     vertical-align: top;
 }
 
-#skill_select_univ {
-    margin-left: 20px;
-}
+#skill_select_univ {}
 
 .rewumeDetail_txt {
     font-size: 17px;

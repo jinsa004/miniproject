@@ -233,8 +233,7 @@
                       <h2 class="title">관심분야</h2>
                     </div>
                     <div class="resume_part">
-                      <span class="resume_part_select">프론트엔드</span>
-                      <span class="resume_part_select">백엔드</span>
+                      <span class="resume_part_select">${resume.jobName}</span>
                     </div>
                   </div> <!-- #part -->
 

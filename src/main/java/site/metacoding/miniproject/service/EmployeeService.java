@@ -81,8 +81,8 @@ public class EmployeeService {
         return true;
     }
 
-    public boolean 이메일형식체크(String employeePassword) {
-        Employee employeePS = employeeDao.findByEmployeeEmail(employeePassword);
+    public boolean 이메일형식체크(String employeeEmail) {
+        Employee employeePS = employeeDao.findByEmployeeEmail(employeeEmail);
         if (employeePS == null)
             return false;
         return true;
