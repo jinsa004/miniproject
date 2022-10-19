@@ -26,9 +26,9 @@ public class Intro {
 	private Integer jobId;
 
 	// 엔티티가 아닌 필드
-	private Integer no;
 	private String companyName;
 	private String jobName;
+	private String newImageName;
 
 	public void Update(UpdateDto updateDto) {
 		this.companyName = updateDto.getCompanyName();

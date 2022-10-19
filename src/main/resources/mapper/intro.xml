@@ -9,11 +9,13 @@
 	</insert>
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.intro.Intro">
-		SELECT i.intro_id, row_number() over(order BY i.intro_id desc) as NO,i.company_id, i.intro_coname, i.intro_task, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_sal, i.intro_wellfare,
-		i.intro_content, i.intro_location, i.job_id, i.intro_image_id, c.company_name, i.intro_birth
+		SELECT ii.*, c.company_name
+		FROM (SELECT i.*, img.new_image_name
 		FROM intro i
+		INNER JOIN intro_image img
+		ON i.intro_image_id = img.intro_image_id) ii
 		LEFT OUTER JOIN company c
-		ON i.company_id = c.company_id
+		ON ii.company_id = c.company_id
 	</select>
 
 	<select id="findById" resultType="site.metacoding.miniproject.domain.intro.Intro">
