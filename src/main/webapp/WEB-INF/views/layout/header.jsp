@@ -66,7 +66,7 @@
                                                 <th style="width: 250px; position: relative; top: 5px; right: 100px; ">Notification</th>
                                               </tr>
                                             </thead>
-                                            <tbody id="notification_emp" style=" position: relative; top: 5px; right: 100px; font-size: 13px">
+                                            <tbody id="notification_emp" style="background:#fff; position: relative; top: 5px; right: 100px; font-size: 13px">
                                             </tbody>
                                           </table>
                                         </div>

@@ -60,16 +60,16 @@
                                         <button type="button" style="width: 40px; height: 40px; color: #fff; background: none; border: 1px #fff solid; border-radius: 50%" onclick="addNotice()">
                                             <i class="fa-regular fa-bell"></i>
                                         </button>
-                                        <div class="row"  style="display: none;">
-                                            <table id="conversation" class="table table-striped" style="position: relative; top: 5px; right: 25px; display: none;">
+                                        <div class="row">
+                                            <table id="conversation" class="table table-striped" style="width: 250px; display: none;">
                                                 <thead>
-                                                  <tr>
-                                                    <th>Notification</th>
-                                                  </tr>
+                                                <tr>
+                                                    <th style="width: 250px; position: relative; top: 5px; right: 100px; ">Notification</th>
+                                                </tr>
                                                 </thead>
-                                                <tbody id="notification_emp">
+                                                <tbody id="notification_co" style="background: #fff; position: relative; top: 5px; right: 100px; font-size: 13px">
                                                 </tbody>
-                                              </table>
+                                            </table>
                                         </div>
                                     </div>
                                     <!-- alarmContainer -->
