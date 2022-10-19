@@ -65,7 +65,7 @@ public class CompanyController {
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
-    @GetMapping("/co/companyInfo/{companyId}")
+    @GetMapping("/cs/co/companyInfo/{companyId}")
     public String 기업정보관리(@PathVariable Integer companyId, Model model) {// 기업회원 회원가입 정보 수정할 때 쓰는 거 company 테이블
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
@@ -74,7 +74,7 @@ public class CompanyController {
         return "company/companyInfo";
     }
 
-    @PutMapping("/co/companyUpdate/{companyId}")
+    @PutMapping("/coapi/cs/co/companyUpdate/{companyId}")
     public @ResponseBody CMRespDto<?> companyUpdate(@PathVariable Integer companyId,
             @RequestBody CompanyUpdateDto companyupdateDto) {
         Company companyPS = companyService.기업회원정보수정(companyId, companyupdateDto);
@@ -82,14 +82,14 @@ public class CompanyController {
         return new CMRespDto<>(1, "수정성공", null);
     }
 
-    @DeleteMapping("/co/companyDelete/{companyId}")
+    @DeleteMapping("/coapi/cs/co/companyDelete/{companyId}")
     public @ResponseBody CMRespDto<?> companyDelete(@PathVariable Integer companyId) {
         companyService.기업회원탈퇴(companyId);
         session.invalidate();
         return new CMRespDto<>(1, "기업탈퇴성공", null);
     }
 
-    @GetMapping("/co/companyIntroInsert")
+    @GetMapping("/cs/co/companyIntroInsert")
     public String 기업소개등록폼(Model model) {// 추가함
         session.getAttribute("coprincipal");
         List<Job> jobPS = jobService.관심직무보기();
@@ -97,7 +97,7 @@ public class CompanyController {
         return "company/coIntroInsert";
     }
 
-    @PostMapping("/co/companyIntroInsert")
+    @PostMapping("/coapi/cs/co/companyIntroInsert")
     public @ResponseBody CMRespDto<?> 기업소개등록(IntroInsertDto introInsertDto) throws Exception {
         Integer introImageId = imageService.introInsertImage(introInsertDto.getImage());
         introInsertDto.setIntroImageId(introImageId);
@@ -105,7 +105,7 @@ public class CompanyController {
         return new CMRespDto<>(1, "기업소개 등록 성공", null);
     }
 
-    @GetMapping("/co/companyIntroDetail/{companyId}")
+    @GetMapping("/cs/co/companyIntroDetail/{companyId}")
     public String 기업소개상세(@PathVariable Integer companyId, Model model) {// 기업소개 상세보기 intro 테이블
         session.getAttribute("coprincipal");
         Intro introPS = introService.기업소개상세보기(companyId);
@@ -113,14 +113,16 @@ public class CompanyController {
         return "company/coIntroDetail";
     }
 
-    @GetMapping("/co/companyIntroUpdate/{companyId}")
+    @GetMapping("/cs/co/companyIntroUpdate/{companyId}")
     public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
         session.getAttribute("coprincipal");
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
         model.addAttribute("intro", introService.기업소개상세보기(companyId));
         return "company/coIntroUpdate";
     }
 
-    @PutMapping("/co/companyIntroUpdate/{companyId}/update")
+    @PutMapping("/coapi/cs/co/companyIntroUpdate/{companyId}/update")
     public @ResponseBody CMRespDto<?> putIntroUpdate(@PathVariable Integer companyId,
             @RequestBody UpdateDto updateDto) {
         introService.기업소개수정하기(companyId, updateDto);

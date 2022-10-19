@@ -143,7 +143,7 @@
               <!-- .company_box .rd_right -->
 
               <div class="btn_co_recruit_insert">
-                <a href="/co/noticeUpdate" class="btn_update_go">수정하기</a>
+                <a href="/cs/co/noticeUpdate" class="btn_update_go">수정하기</a>
                 <button class="btn_delete" type="button" onClick="javascript:popOpenRecruit();">
                   삭제하기
                 </button>
