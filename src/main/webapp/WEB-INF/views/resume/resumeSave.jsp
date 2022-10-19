@@ -25,13 +25,12 @@
               <div class="info_left">
                 <div class="info_img">
                   <span class="info_myimg">
-                    <img id="preImage" alt="image_title">
+                    <img id="preImage" alt="image_title" onerror="this.style.display='none';" />
                   </span>
                   <input type="file" multiple="multiple" id="image" name="image" />
                 </div>
               </div><!-- .info_left -->
               <div class="info_right">
-
                 <dl class="info_name">
                   <dd class="name">
                     <span class="info_right_txt">이름</span>
@@ -263,18 +262,6 @@
     </div>
     </div>
     <!-- body -->
-    <script>
-      $("#image").on("change", function (event) {
-        let file = event.target.files[0];
-
-        let reader = new FileReader();
-        reader.onload = function (e) {
-          $("#preImage").attr("src", e.target.result);
-        }
-
-        reader.readAsDataURL(file);
-      });
-    </script>
     <script src="/js/main.js"></script>
     <script src="/js/resume.js"></script>
     <%@ include file="../layout/footer.jsp" %>

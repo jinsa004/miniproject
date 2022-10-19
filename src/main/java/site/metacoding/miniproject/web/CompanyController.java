@@ -100,6 +100,14 @@ public class CompanyController {
         return new CMRespDto<>(1, "기업소개 등록 성공", null);
     }
 
+    @PostMapping(value = "/co/companyIntroInsert", produces = "text/plain;charset=utf-8")
+    public @ResponseBody CMRespDto<?> insertImage(IntroInsertDto introInsertDto) throws Exception {
+        Integer introImageId = imageService.insertImage(introInsertDto.getImage());
+        introInsertDto.setResumeImageId(introImageId);
+        introService.이력서작성(introInsertDto);
+        return new CMRespDto<>(1, "이력서 등록 성공", null);
+    }
+
     @GetMapping("/co/companyIntroDetail")
     public String 기업소개상세() {// 기업소개 상세보기 intro 테이블
         return "company/coIntroDetail";

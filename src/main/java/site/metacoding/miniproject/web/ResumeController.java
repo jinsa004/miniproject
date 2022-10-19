@@ -67,20 +67,14 @@ public class ResumeController {
         return "resume/resumeSave";
     }
 
-    // , produces = "text/plain;charset=utf-8"
-    @PostMapping("emp/imageSave")
+    //
+    @PostMapping(value = "emp/imageSave", produces = "text/plain;charset=utf-8")
     public @ResponseBody CMRespDto<?> insertImage(ResumeInsertDto rid) throws Exception {
         Integer resumeImageId = imageService.insertImage(rid.getImage());
         rid.setResumeImageId(resumeImageId);
         resumeService.이력서작성(rid);
         return new CMRespDto<>(1, "이력서 등록 성공", null);
     }
-
-    // @PostMapping("emp/resumeSave")
-    // public @ResponseBody CMRespDto<?> insertResume(@RequestBody Resume resume) {
-    // resumeService.이력서작성(resume);
-    // return new CMRespDto<>(1, "이력서 등록 성공", null);
-    // }
 
     @GetMapping("emp/resumeUpdate/{resumeId}")
     public String updateResumeForm(@PathVariable Integer resumeId, Model model) { // 이력서 수정 페이지

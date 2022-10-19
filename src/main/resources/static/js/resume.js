@@ -22,6 +22,17 @@ $("#btnDeleteResume").click(() => {
 // ====================== function ========================== //
 //이력서 등록
 
+$("#image").on("change", function (event) {
+  let file = event.target.files[0];
+
+  let reader = new FileReader();
+  reader.onload = function (e) {
+    $("#preImage").attr("src", e.target.result);
+  }
+
+  reader.readAsDataURL(file);
+});
+
 function insertResume() {
   let resumeTitle = $("#resume_title").val();
   let employeeId = $("#employeeId").val();
@@ -71,6 +82,7 @@ function insertResume() {
   }).done((res) => {
     if (res.code == 1) {
       alert("이력서 등록 완료");
+      location.href = "/emp/mypageInsertForm/" + employeeId
     } else {
       alert("이력서 등록에 실패하였습니다");
     }
