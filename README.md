@@ -132,6 +132,7 @@ create table co_check(
     company_id INT NOT null,
     job_id INT NOT null
 );
+
 ```
 
 ### 더미데이터 추가
@@ -198,12 +199,12 @@ insert into resume_image(origin_image_name, new_image_name, image_path, created_
 VALUES("100100111", "10101111", "D:/user/resume/image", NOW());
 insert into resume_image(origin_image_name, new_image_name, image_path, created_at)
 VALUES("100101101", "10111110", "D:/user/resume/image", NOW());
-insert into intro_image(origin_image_name, new_image_name, image_path, created_at) 
-VALUES("110101101", "11111110", "D:/user/notice/image", NOW());
-insert into intro_image(origin_image_name, new_image_name, image_path, created_at) 
-VALUES("101101101", "10111111", "D:/user/notice/image", NOW());
-insert into intro_image(origin_image_name, new_image_name, image_path, created_at) 
-VALUES("11101101", "11001110", "D:/user/notice/image", NOW());
+insert into intro_image(company_id, origin_image_name, new_image_name, image_path, created_at) 
+VALUES(1,"110101101", "11111110", "D:/user/notice/image", NOW());
+insert into intro_image(company_id, origin_image_name, new_image_name, image_path, created_at) 
+VALUES(2,"101101101", "10111111", "D:/user/notice/image", NOW());
+insert into intro_image(company_id, origin_image_name, new_image_name, image_path, created_at) 
+VALUES(3,"11101101", "11001110", "D:/user/notice/image", NOW());
 insert into emp_check(employee_id, job_id) 
 VALUES(1, 1);
 insert into emp_check(employee_id, job_id) 
