@@ -56,6 +56,7 @@
   <script src="/js/company.js"></script>
   <script src="/js/notice.js"></script>
   <script src="/js/intro.js"></script>
+  <script src="/js/websocket.js"></script>
   </body>
 
   </html>
