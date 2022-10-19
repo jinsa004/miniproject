@@ -1,6 +1,9 @@
 package site.metacoding.miniproject.domain.company;
 
+import java.io.Serializable;
 import java.util.List;
+
+import org.springframework.data.redis.core.RedisHash;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +14,8 @@ import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
 @NoArgsConstructor
 @Setter
 @Getter
-public class Company {
+@RedisHash("Company")
+public class Company implements Serializable {
 	private Integer companyId;
 	private Integer companyNumber;
 	private String companyName;
