@@ -60,14 +60,18 @@
 	</select>
 
 	<select id="findByNoticeIdToNoticeDetail" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT nj.*, i.intro_id, i.intro_coname, i.intro_birth, i.intro_task, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_location
+		SELECT nj.*, ii.intro_id, ii.intro_coname, ii.intro_birth, ii.intro_task, ii.intro_sal, ii.intro_wellfare, ii.intro_content, ii.intro_location, ii.new_image_name
 		FROM (SELECT n.*,j.job_name
 		FROM notice n
 		INNER JOIN job j
 		ON n.job_id = j.job_id) nj
-		INNER JOIN intro i
-		ON nj.company_id = i.company_id
-		WHERE nj.company_id = #{companyId}
+		INNER JOIN (
+		SELECT i.*, img.new_image_name
+		FROM intro i
+		INNER JOIN intro_image img
+		ON i.intro_image_id = img.intro_image_id) ii
+		ON nj.company_id = ii.company_id
+		WHERE nj.notice_id = #{noticeId}
 	</select>
 
 	<update id="update">
