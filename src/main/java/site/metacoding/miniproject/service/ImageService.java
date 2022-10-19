@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.image.intro.IntroImage;
+import site.metacoding.miniproject.domain.image.intro.IntroImageDao;
 import site.metacoding.miniproject.domain.image.resume.ResumeImage;
 import site.metacoding.miniproject.domain.image.resume.ResumeImageDao;
 
@@ -16,7 +17,7 @@ import site.metacoding.miniproject.domain.image.resume.ResumeImageDao;
 @Service
 public class ImageService {
     private final ResumeImageDao resumeImageDao;
-    private final IntroImageDao IntroImageDao;
+    private final IntroImageDao introImageDao;
 
     public Integer resumeInsertImage(MultipartFile image) throws Exception {
         // 파일이 빈 것이 들어오면 메서드 종료
@@ -126,6 +127,6 @@ public class ImageService {
 
         }
         // DTO를 위에 띄웠기 때문에 resumeImageId값을 받을 수 있음
-        return introImage.getResumeImageId();
+        return introImage.getIntroImageId();
     }
 }
