@@ -24,13 +24,10 @@
             <div class="info_form cf">
               <div class="info_left">
                 <div class="info_img">
-                  <form method="post" action="/emp/resumeSave" enctype="multipart/form-data">
-                    <!-- <input id="resumeImageId" type="hidden" value="" /> -->
-                    <span class="info_myimg">
-                      <img id="preImage" alt="image_title">
-                    </span>
-                    <input type="file" multiple="multiple" id="image" name="image" />
-                  </form>
+                  <span class="info_myimg">
+                    <img id="preImage" alt="image_title">
+                  </span>
+                  <input type="file" multiple="multiple" id="image" name="image" />
                 </div>
               </div><!-- .info_left -->
               <div class="info_right">

@@ -13,15 +13,12 @@
               </div>
               <div class="logo_form">
                 <div class="info_img">
-                  <form method="post" action="/resume_detail" enctype="multipart/form-data">
-                    <span class="info_myimg">
-                      <img src="">
-                    </span>
-                    <div class="logo_img_right">
-                      <input type="file" name="file" id="files" class="hidden" />
-                      <button type="submit" class="file_submit">파일전송</button>
-                    </div>
-                  </form>
+                  <span class="info_myimg">
+                    <img id="preImage" alt="image_title">
+                  </span>
+                  <br />
+                  <br /> <!-- css 맞춰주세요 -->
+                  <input type="file" multiple="multiple" id="image" name="image" />
                 </div>
               </div><!-- .logo_form -->
             </div>
