@@ -13,13 +13,13 @@
               </div>
               <div class="logo_form">
                 <div class="info_img">
-                  <form method="post" action="/치는주소" enctype="multipart/form-data">
+                  <form method="post" action="/resume_detail" enctype="multipart/form-data">
                     <span class="info_myimg">
                       <img src="">
                     </span>
                     <div class="logo_img_right">
-                      <input type="file" multiple="multiple" name="image" />
-                      <button type="submit" id="submit" value="전송" class="file_submit">파일전송</button>
+                      <input type="file" name="file" id="files" class="hidden" />
+                      <button type="submit" class="file_submit">파일전송</button>
                     </div>
                   </form>
                 </div>
@@ -98,7 +98,7 @@
 
             <div class="btn_group">
               <div class="update_btn">
-                <button id="btnInsertCompanyInfo" type="button" class="btn btn-primary">등록완료</button>
+                <button id="btnInsertCompanyInfo" type="button" class="btn btn-primary">등록하기</button>
               </div>
             </div>
             <!-- btn -->
@@ -111,73 +111,7 @@
     </div>
     </div>
     <!-- body -->
-    <script>
-      function sample6_execDaumPostcode() {
-        new daum.Postcode({
-          oncomplete: function (data) {
-            var addr = '';
-            var extraAddr = '';
-            if (data.userSelectedType === 'R') {
-              addr = data.roadAddress;
-            } else {
-              addr = data.jibunAddress;
-            }
-            if (data.userSelectedType === 'R') {
-              if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-                extraAddr += data.bname;
-              }
-              if (data.buildingName !== '' && data.apartment === 'Y') {
-                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-              }
-              if (extraAddr !== '') {
-                extraAddr = ' (' + extraAddr + ')';
-              }
-              document.getElementById("sample6_extraAddress").value = extraAddr;
-            } else {
-              document.getElementById("sample6_extraAddress").value = '';
-            }
-            document.getElementById('sample6_postcode').value = data.zonecode;
-            document.getElementById("sample6_address").value = addr;
-            document.getElementById("sample6_detailAddress").focus();
-          }
-        }).open();
-      }
-    </script>
-
-    <script>
-      $("#btnUpdate").click(() => {
-        console.log("클릭됨");
-        console.log($("#introId").val());
-        update();
-      });
-      function update() {
-        let data = {
-          companyName: $("#companyName").val(),
-          introBirth: $("#introBirth").val(),
-          introTask: $("#introTask").val(),
-          introSal: $("#introSal").val(),
-          introWellfare: $("#introWellfare").val(),
-          introContent: $("#introContent").val(),
-          jobName: $("#jobName").val()
-        }
-        let introId = $("#introId").val();
-        console.log("업데이트확인");
-        $.ajax("/co/companyIntroUpdate/" + introId + "/update", {
-          type: "PUT",
-          dataType: "json", // 응답 데이터
-          data: JSON.stringify(data), // http body에 들고갈 요청 데이터
-          headers: {
-            // http header에 들고갈 요청 데이터
-            "Content-Type": "application/json; charset=utf-8",
-          },
-        }).done((res) => {
-          if (res.code == 1) {
-            alert("기업소개 수정 완료");
-            location.reload;
-          } else {
-            alert("업데이트에 실패하였습니다");
-          }
-        });
-      }
-    </script>
+    <script src="/js/main.js"></script>
+    <script src="/js/company.js"></script>
+    <script src="/js/intro.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

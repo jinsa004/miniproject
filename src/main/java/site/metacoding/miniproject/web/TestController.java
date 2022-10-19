@@ -5,6 +5,18 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class TestController {
 
+    // @GetMapping("/emp/resumeUpdate")
+    // public String 분야별이력서리스트() {
+    // return "resume/resumeUpdate";
+    // }
+
+    /*
+     * @GetMapping("/co/noticeUpdate/{noticeId}")
+     * public String 분야별이력서리스트() {
+     * return "notice/noticeUpdate";
+     * }
+     */
+
     /*
      * @GetMapping("/co/resume")
      * public String 분야별이력서리스트() {

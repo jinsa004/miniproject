@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.company.Company;
+import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.IntroService;
@@ -86,8 +87,17 @@ public class CompanyController {
     }
 
     @GetMapping("/co/companyIntroInsert")
-    public String 기업소개등록() {// 추가함
+    public String 기업소개등록폼(Model model) {// 추가함
+        session.getAttribute("principal");
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
         return "company/coIntroInsert";
+    }
+
+    @PostMapping("/co/companyIntroInsert")
+    public @ResponseBody CMRespDto<?> 기업소개등록(@RequestBody Intro intro) {
+        introService.기업소개등록(intro);
+        return new CMRespDto<>(1, "기업소개 등록 성공", null);
     }
 
     @GetMapping("/co/companyIntroDetail")
@@ -97,6 +107,7 @@ public class CompanyController {
 
     @GetMapping("/co/companyIntroUpdate/{companyId}")
     public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
+        session.getAttribute("principal");
         model.addAttribute("intro", introService.기업소개수정상세보기(companyId));
         return "company/coIntroUpdate";
     }
@@ -114,7 +125,7 @@ public class CompanyController {
         return new CMRespDto<>(1, "회원가입성공", null);
     }
 
-    @GetMapping("/company/usernameSameCheck")
+    @GetMapping("/co/usernameSameCheck")
     public @ResponseBody CMRespDto<?> usernameSameCheck(String companyUsername) {
         System.out.println("company이름:" + companyUsername);
         boolean isSame = companyService.회사유저네임중복확인(companyUsername);
@@ -127,4 +138,16 @@ public class CompanyController {
         return "redirect:/co";
     }
 
+    // =========================== 유효성체크 ======================================
+    @GetMapping("co/checkPasswordCo")
+    public @ResponseBody CMRespDto<Boolean> checkPasswordCo(String companyPassword) {
+        boolean isSame = companyService.회사비밀번호2차체크(companyPassword);
+        return new CMRespDto<>(1, "성공", isSame);
+    }
+
+    @GetMapping("co/checkEmailCo")
+    public @ResponseBody CMRespDto<Boolean> checkEmailCo(String companyEmail) {
+        boolean isSame = companyService.회사이메일형식체크(companyEmail);
+        return new CMRespDto<>(1, "성공", isSame);
+    }
 }

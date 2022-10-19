@@ -141,10 +141,10 @@
                 <div class="edu_row">
                   <div class="edu_input">
                     <span class="info_right_txt">재학기간</span>
-                    <input type="text" id="univ_start_date" name="start_date" class="box_input info_right_input2"
+                    <input type="date" id="univ_start_date" name="start_date" class="box_input info_right_input2"
                       placeholder="입학년도" value="${resumePS.univStartdate}">
                     <span class="icon">-</span>
-                    <input type="text" id="univ_end_date" name="end_date" class="box_input info_right_input2"
+                    <input type="date" id="univ_end_date" name="end_date" class="box_input info_right_input2"
                       placeholder="졸업년도" value="${resumePS.univEnddate}">
                   </div>
                 </div>
@@ -238,20 +238,20 @@
               <h2 class="title">관심분야</h2>
             </div>
             <div class="resume_field info_form2">
-              <div class="field_select">
-                <div class="select-group">
-                  <ul class="part_box_wrap">
-                    <li class="career_part1 part_box">
-                      <c:forEach var="jobPS" items="${jobPS}">
-                        <input type='radio' id='jobId' name='jobId' value="${jobPS.jobId}" <c:if
-                          test="${jobPS.jobId eq resumePS.jobId}">checked</c:if>/>${jobPS.jobName}
-                        <br>
-                      </c:forEach>
+
+              <div class="input_radio_skill">
+                <ul>
+                  <c:forEach var="jobPS" items="${jobPS}">
+                    <li>
+                      <input type="radio" name="part_select" id="part_select_front" class="job_id"
+                        value="${jobPS.jobId}" <c:if test="${jobPS.jobId eq resumePS.jobId}">checked</c:if> />
+                      <label for="part_select_front"><em>${jobPS.jobName}</em></label>
                     </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+                  </c:forEach>
+                </ul>
+              </div><!-- .input_radio_skill -->
+
+            </div><!-- .resume_field -->
           </div>
           <!-- field -->
 

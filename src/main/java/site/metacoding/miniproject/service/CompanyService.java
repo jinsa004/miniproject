@@ -20,7 +20,7 @@ public class CompanyService {
   public Company 로그인(CompanyLoginDto loginDto) {
     Company companyPS = companyDao.findByCompanyUsername(loginDto.getCompanyUsername());
 
-    if (companyPS.getCompanyPassword().equals(loginDto.getCompanyPassword())) {
+    if (companyPS != null && companyPS.getCompanyPassword().equals(loginDto.getCompanyPassword())) {
       return companyPS;
     }
     return null;
@@ -66,5 +66,17 @@ public class CompanyService {
     } else {
       return true;
     }
+  }
+
+  public boolean 회사비밀번호2차체크(String companyPassword) {
+    companyDao.findByCompanyPassword(companyPassword);
+    return true;
+  }
+
+  public boolean 회사이메일형식체크(String companyEmail) {
+    Company companyPS = companyDao.findByCompanyEmail(companyEmail);
+    if (companyPS == null)
+      return false;
+    return true;
   }
 }
