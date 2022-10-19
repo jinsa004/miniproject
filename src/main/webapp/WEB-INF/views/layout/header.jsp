@@ -339,6 +339,4 @@ prefix="c" %>
       </div>
     </div>
   </body>
-
-  <script src="/js/employee.js"></script>
 </html>
