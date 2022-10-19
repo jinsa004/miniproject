@@ -97,13 +97,12 @@ public class CompanyController {
         return "company/coIntroInsert";
     }
 
-    //
-    @PostMapping(value = "/co/companyIntroInsert", produces = "text/plain;charset=utf-8")
+    @PostMapping("/co/companyIntroInsert")
     public @ResponseBody CMRespDto<?> 기업소개등록(IntroInsertDto introInsertDto) throws Exception {
         Integer introImageId = imageService.introInsertImage(introInsertDto.getImage());
         introInsertDto.setIntroImageId(introImageId);
         introService.기업소개등록(introInsertDto);
-        return new CMRespDto<>(1, "이력서 등록 성공", null);
+        return new CMRespDto<>(1, "기업소개 등록 성공", null);
     }
 
     @GetMapping("/co/companyIntroDetail")

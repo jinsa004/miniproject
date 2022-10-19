@@ -67,8 +67,7 @@ public class ResumeController {
         return "resume/resumeSave";
     }
 
-    //
-    @PostMapping(value = "emp/imageSave", produces = "text/plain;charset=utf-8")
+    @PostMapping("emp/imageSave")
     public @ResponseBody CMRespDto<?> insertImage(ResumeInsertDto rid) throws Exception {
         Integer resumeImageId = imageService.resumeInsertImage(rid.getImage());
         rid.setResumeImageId(resumeImageId);
