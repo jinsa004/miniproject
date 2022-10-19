@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypageCompany.jsp" %>
-
     <div class="company_update">
       <div id="intro_wrap">
         <div class="container">
@@ -27,7 +26,7 @@
               </div><!-- .logo_form -->
             </div>
             <!-- logo -->
-            <input id="companyId" type="hidden" value="${principal.companyId}" />
+            <input id="companyId" type="hidden" value="${coprincipal.companyId}" />
             <div id="basic_info" class="form">
               <div class="form_title">
                 <h2 class="title">회사 정보</h2>
@@ -112,7 +111,4 @@
     </div>
     </div>
     <!-- body -->
-    <script src="/js/main.js"></script>
-    <script src="/js/company.js"></script>
-    <script src="/js/intro.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

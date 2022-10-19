@@ -5,7 +5,7 @@
         <h1>이력서 수정하기</h1>
         <div class="resume_update">
           <input id="resumeId" type="hidden" value="${resumePS.resumeId}" />
-          <input id="employeeId" type="hidden" value="${principal.employeeId}" />
+          <input id="employeeId" type="hidden" value="${empprincipal.employeeId}" />
           <div class="resume_title">
             <div class="title_update">
               <div class="title_input">
@@ -24,13 +24,10 @@
             <div class="info_form cf">
               <div class="info_left">
                 <div class="info_img">
-                  <form method="post" action="/resume_detail" enctype="multipart/form-data">
-                    <span class="info_myimg">
-                      <ul class="image_preview"></ul>
-                    </span>
-                    <input type="file" name="file" id="files" class="upload" accept="image/*" />
-                    <div class="file_submit">파일전송</div>
-                  </form>
+                  <span class="info_myimg">
+                    <img id="preImage" alt="image_title" onerror="this.style.display='none';" />
+                  </span>
+                  <input type="file" multiple="multiple" id="image" name="image" />
                 </div>
               </div><!-- .info_left -->
               <div class="info_right">
@@ -38,19 +35,19 @@
                   <dd class="name">
                     <span class="info_right_txt">이름</span>
                     <p class="info_right_input">
-                      ${principal.employeeName}
+                      ${empprincipal.employeeName}
                     </p>
                   </dd>
                   <dd class="sex">
                     <span class="info_right_txt">성별</span>
                     <p class="info_right_input">
-                      ${principal.employeeSex}
+                      ${empprincipal.employeeSex}
                     </p>
                   </dd>
                   <dd class="birth">
                     <span class="info_right_txt">생년월일</span>
                     <p class="info_right_input">
-                      ${principal.employeeBirth}
+                      ${empprincipal.employeeBirth}
                     </p>
                   </dd>
                 </dl>
@@ -58,19 +55,19 @@
                   <dd class="info_list_item">
                     <span class="info_right_txt">이메일</span>
                     <p class="info_right_input">
-                      ${principal.employeeEmail}
+                      ${empprincipal.employeeEmail}
                     </p>
                   </dd>
                   <dd class="info_list_item">
                     <span class="info_right_txt">전화번호</span>
                     <p class="info_right_input">
-                      ${principal.employeeTel}
+                      ${empprincipal.employeeTel}
                     </p>
                   </dd>
                   <dd class="info_list_item">
                     <span class="info_right_txt">주소</span>
                     <p class="info_right_input">
-                      ${principal.employeeLocation}
+                      ${empprincipal.employeeLocation}
                     </p>
                   </dd>
                 </dl>
@@ -269,51 +266,4 @@
     </div>
     </div>
     <!-- body -->
-    <script src="/js/main.js"></script>
-    <script src="/js/resume.js"></script>
-    <script>
-      function getImageFiles(e){
-        const uploadFile = [];
-        const files = e.currentTarget.files;
-        const imagePreview = document.querySelector('.image_preview');
-        const docFrag = new DocumentFragment();
-
-        
-        // 파일 타입 검사
-        [...files].forEach(file =>{
-          if(!file.type.match("image/.*")){
-            alert('이미지 파일만 업로드가 가능합니다.');
-            return;
-          }
-
-          // 파일 갯수 검사
-          if([...files].length<2){
-            uploadFile.push(file);
-            const reader = new FileReader();
-            reader.onload = (e)=>{
-              const preview = createElement(e, file);
-              imagePreview.appendChild(preview);
-            };
-            reader.readAsDataURL(file);
-          }
-        });
-        console.log(typeof files, files);
-      }
-
-      function createElement(e, file){
-        const li = document.createElement('li');
-        const img = document.createElement('img');
-        img.setAttribute('src', e.target.result);
-        img.setAttribute('data-file', file.name);
-        li.appendChild(img);
-        return li;
-      }
-
-      const upload = document.querySelector('.upload');
-      const uploadS = document.querySelector('.file_submit');
-
-      uploadS.addEventListener('click', ()=> upload.click());
-      upload.addEventListener('change', getImageFiles);
-    </script>
-
     <%@ include file="../layout/footer.jsp" %>

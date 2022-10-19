@@ -15,7 +15,11 @@ public class NoticeService {
 
     private final NoticeDao noticeDao;
 
-    public Notice 내공고하나보기(Integer noticeId) {
+    public Notice 내공고상세보기(Integer noticeId) {// 기업회원이 수정할 때 사용
+        return noticeDao.findById(noticeId);
+    }
+
+    public Notice 기업공고하나보기(Integer noticeId) {
         return noticeDao.findByNoticeIdToNoticeDetail(noticeId);
     }
 

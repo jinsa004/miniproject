@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypage.jsp" %>
-    <input id="employeeId" type="hidden" value="${principal.employeeId}" />
+    <input id="employeeId" type="hidden" value="${empprincipal.employeeId}" />
     <div id="content_wrap">
       <div class="cont_mypage">
         <h2>이력서 목록</h2>
@@ -47,7 +47,4 @@
     </div>
     </div>
     <!-- #wrap -->
-    <script src="/js/resume.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/employee.js"></script>
     <%@ include file="../layout/footer.jsp" %>

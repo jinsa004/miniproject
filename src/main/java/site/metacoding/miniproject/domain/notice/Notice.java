@@ -32,7 +32,7 @@ public class Notice {
 	private Integer jobCode;
 	private String jobName;
 	private String introId;
-	private String introTitle;
+	private String introConame;
 	private String introBirth;
 	private String introTask;
 	private String introSal;

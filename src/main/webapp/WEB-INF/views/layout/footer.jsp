@@ -54,6 +54,11 @@
       </div>
     </footer>
   </div>
+  <script src="/js/main.js"></script>
+  <script src="/js/employee.js"></script>
+  <script src="/js/resume.js"></script>
+  <script src="/js/websocket.js"></script>
+  <script src="/js/intro.js"></script>
   </body>
 
   </html>

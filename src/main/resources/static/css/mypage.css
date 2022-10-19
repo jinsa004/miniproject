@@ -1,9 +1,10 @@
-#mypage_wrap{
+#mypage_wrap {
     width: 100%;
     height: auto;
     position: relative;
 }
-#gnb_mypage{
+
+#gnb_mypage {
     width: 300px;
     position: fixed;
     top: 0;
@@ -14,102 +15,119 @@
     background: #fff;
     text-align: center;
 }
-.logo{
+
+.logo {
     position: absolute;
     top: 30px;
     left: 40px;
 }
-.gnb_left{
+
+.gnb_left {
     width: 260px;
     margin: 0 auto;
     text-align: left;
     margin-top: 122px;
-    
+
 }
-.gnb_left li{
+
+.gnb_left li {
     position: relative;
     margin-bottom: 5px;
     border-radius: 10px;
     transition: all 0.3s;
 }
-.gnb_left li a{
+
+.gnb_left li a {
     display: block;
     position: relative;
     padding: 15px 35px 15px 23px;
-    font-weight:300;
+    font-weight: 300;
     color: #222;
     font-size: 17px;
 }
-.gnb_left li .fa-regular{
+
+.gnb_left li .fa-regular {
     color: #cad0d6;
     transition: all 0.3s;
 }
-.gnb_left li a span.txt{
+
+.gnb_left li a span.txt {
     padding-left: 12px;
 }
-.gnb_left li:hover{
+
+.gnb_left li:hover {
     position: relative;
     margin-bottom: 20px;
     background: #ecf1ff;
     border-radius: 10px;
 }
 
-.gnb_left li:hover i{
+.gnb_left li:hover i {
     color: #4876ef;
 }
-.gnb_left li.on{
+
+.gnb_left li.on {
     position: relative;
     margin-bottom: 15px;
     background: #4876ef;
     border-radius: 10px;
 }
-.gnb_left li.on a{
+
+.gnb_left li.on a {
     color: #fff;
 }
 
-#content_wrap{
+#content_wrap {
     display: block;
     width: 100%;
     height: 100%;
 }
-.cont_mypage{
+
+.cont_mypage {
     position: relative;
     margin: 80px auto 130px;
     padding-left: 200px;
     text-align: left;
     width: 1200px;
 }
-.cont_mypage h2{
+
+.cont_mypage h2 {
     font-size: 30px;
     line-height: 38px;
     font-weight: bold;
     color: #333;
 }
-#sri_footer{
+
+#sri_footer {
     width: 100%;
     height: 1px;
     border-top: 1px solid #ddd;
 }
-#sri_footer .wrap_footer{
+
+#sri_footer .wrap_footer {
     background: #fff;
     border: none;
 
 }
-.wrap_footer{
+
+.wrap_footer {
     width: 960px;
     padding-left: 260px;
 }
 
-.notice_box2{
+.notice_box2 {
     padding-top: 50px;
 }
-.notice_box3{
+
+.notice_box3 {
     padding-top: 50px;
 }
-.mypage_resume_list .resume_form{
+
+.mypage_resume_list .resume_form {
     text-align: left;
 }
-.mypage_resume_list .resume_form .resume_cont{
+
+.mypage_resume_list .resume_form .resume_cont {
     position: relative;
     padding: 45px 35px 40px;
     background: rgba(255, 255, 255, 1);
@@ -118,18 +136,22 @@
     border: 1px solid #d9d9d9;
     transition: all 0.4s;
 }
-.mypage_resume_list .resume_form .resume_cont:last-child{
+
+.mypage_resume_list .resume_form .resume_cont:last-child {
     margin-bottom: 0;
 }
-.mypage_resume_list .resume_form .resume_cont:hover{
+
+.mypage_resume_list .resume_form .resume_cont:hover {
     border: 1px solid #91ADF2;
     box-shadow: 0px 0px 10px #eee;
 }
-.mypage_resume_list .list_title:hover span{
+
+.mypage_resume_list .list_title:hover span {
     text-decoration: underline;
     color: #435070;
 }
-.mypage_resume_list .resume_form .resume_cont .list_title{
+
+.mypage_resume_list .resume_form .resume_cont .list_title {
     max-width: 760px;
     font-size: 22px;
     font-weight: 600;
@@ -137,23 +159,28 @@
     color: #333;
     padding-bottom: 30px;
 }
-.mypage_resume_list .resume_form .resume_cont .list_title span{
+
+.mypage_resume_list .resume_form .resume_cont .list_title span {
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 760px;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option{
+
+.mypage_resume_list .resume_form .resume_cont .list_option {
     font-size: 0;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option li{
+
+.mypage_resume_list .resume_form .resume_cont .list_option li {
     display: inline-block;
     vertical-align: top;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option li span{
+
+.mypage_resume_list .resume_form .resume_cont .list_option li span {
 
     padding-left: 22px;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option .career{
+
+.mypage_resume_list .resume_form .resume_cont .list_option .career {
     width: 25%;
     position: relative;
     height: 24px;
@@ -164,7 +191,7 @@
 
 }
 
-.mypage_resume_list .resume_form .resume_cont .list_option .career::before{
+.mypage_resume_list .resume_form .resume_cont .list_option .career::before {
     content: "";
     display: block;
     background: url("/img/icon_career.svg") no-repeat center center;
@@ -174,7 +201,8 @@
     width: 18px;
     height: 18px;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option .part{
+
+.mypage_resume_list .resume_form .resume_cont .list_option .part {
     width: 25%;
     position: relative;
     height: 24px;
@@ -187,7 +215,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.mypage_resume_list .resume_form .resume_cont .list_option .part::before{
+
+.mypage_resume_list .resume_form .resume_cont .list_option .part::before {
     content: "";
     display: block;
     background: url("/img/icon_part.svg") no-repeat center center;
@@ -198,23 +227,25 @@
     height: 18px;
 }
 
-.input_radio{
+.input_radio {
     display: block;
     position: absolute;
 }
-.resume_select_box{
+
+.resume_select_box {
     display: block;
     padding-left: 40px;
 }
 
-.btn_resume_option{
+.btn_resume_option {
     position: absolute;
     right: 40px;
     top: 50%;
     margin-top: -45px;
     text-align: center;
 }
-.btn_resume_option span{
+
+.btn_resume_option span {
     display: block;
     width: 150px;
     height: 40px;
@@ -223,7 +254,8 @@
     transition: all 0.4s;
     border: 1px solid #4876ef;
 }
-.btn_resume_option button{
+
+.btn_resume_option button {
     display: block;
     width: 100%;
     border-radius: 5px;
@@ -237,45 +269,56 @@
     letter-spacing: -0.04em;
     transition: all 0.4s;
 }
-.btn_resume_option span:first-child{
+
+.btn_resume_option span:first-child {
     margin-bottom: 10px;
 }
-.btn_resume_option span:last-child{
+
+.btn_resume_option span:last-child {
     background: #fff;
     border: 1px solid #bbb;
 }
-.btn_resume_option span:last-child a{
+
+.btn_resume_option span:last-child a {
     color: #666;
 }
-.btn_resume_option span a{
+
+.btn_resume_option span a {
     font-size: 15px;
     color: #4876ef;
     line-height: 40px;
     transition: all 0.4s;
 }
-.btn_resume_option button:hover{
+
+.btn_resume_option button:hover {
     background: #0ccca4;
 }
-.btn_resume_option span:hover{
+
+.btn_resume_option span:hover {
     border-color: #0ccca4;
     background: #0ccca60a;
 }
-.btn_resume_option span:hover a{
+
+.btn_resume_option span:hover a {
     color: #0ccca4;
 }
-.btn_resume_option span:last-child:hover{
+
+.btn_resume_option span:last-child:hover {
     background: none;
     border-color: #0ccca4;
 }
-.btn_resume_option span:last-child:hover a{
+
+.btn_resume_option span:last-child:hover a {
     color: #0ccca4;
 }
-.btn_main_resume_select{
+
+.btn_main_resume_select {
     width: 100%;
     text-align: right;
     margin-top: 30px;
 }
-#btn_main_resume{
+
+#btn_main_resume {
     background: #fff;
     border-radius: 5px;
     transition: all 0.4s;
@@ -289,24 +332,26 @@
     font-size: 14px;
     letter-spacing: -0.06em;
 }
-#btn_main_resume:hover{
+
+#btn_main_resume:hover {
     background: #ecf1ff;
 }
 
-#btnEmployeeUpdate{
+#btnEmployeeUpdate {
     cursor: pointer;
 }
 
-#btnEmployeeDelete{
+#btnEmployeeDelete {
     cursor: pointer;
 }
 
 /* ===================이력서등록============================= */
-#resume_wrap{
+#resume_wrap {
     position: relative;
     width: 100%;
 }
-#resume_wrap .container{
+
+#resume_wrap .container {
     width: 1200px;
     margin: 0 auto;
     background: #fff;
@@ -314,7 +359,8 @@
     padding-bottom: 140px;
     padding-left: 200px;
 }
-#resume_wrap h1{
+
+#resume_wrap h1 {
     text-align: left;
     font-size: 30px;
     line-height: 38px;
@@ -322,22 +368,28 @@
     color: #333;
     margin-bottom: 50px;
 }
-.resume_update{
+
+.resume_update {
     text-align: left;
 }
-.resume_update input{
+
+.resume_update input {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.resume_update button{
+
+.resume_update button {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.resume_title{
+
+.resume_title {
     width: 1200px;
 }
-.title_update{
+
+.title_update {
     width: 1200px;
 }
-.title_input input{
+
+.title_input input {
     width: 1140px;
     height: 70px;
     border-radius: 10px;
@@ -349,10 +401,12 @@
     overflow: hidden;
     padding-left: 60px;
 }
-.title_input::placeholder{
+
+.title_input::placeholder {
     color: #eee;
 }
-.resume_update h2{
+
+.resume_update h2 {
     font-size: 24px;
     color: #666;
     line-height: 30px;
@@ -362,13 +416,15 @@
     display: inline-block;
     padding-right: 10px;
 }
-.resume_update .form_title span{
+
+.resume_update .form_title span {
     display: inline-block;
     font-weight: 300;
     letter-spacing: -0.06em;
     color: #666;
 }
-.info_form{
+
+.info_form {
     width: 1200px;
     margin: 0 auto;
     height: auto;
@@ -377,19 +433,29 @@
     border-radius: 10px;
     box-sizing: border-box;
 }
-.info_form .info_myimg{
+
+.info_form .info_myimg {
+    position: relative;
     display: block;
     /* max-width: 160px;
     max-height: 180px; */
-    background: #ccc;
+    max-width: 140px;
+    min-height: 180px;
+    max-height: 180px;
+    background: #eee;
     border: 1px solid #ddd;
-}
-.info_form .info_myimg img{
-    width: 100%;
-    height: 180px;
     text-align: center;
 }
-#files{
+
+.info_form .info_myimg img {
+    text-align: center;
+    min-height: 180px;
+    height: 100%;
+    width: 140px;
+    line-height: 180px;
+}
+
+#files {
     padding-left: 0;
     margin-top: 10px;
     background-color: rgba(238, 238, 238, 0.4);
@@ -421,20 +487,24 @@ ul.image_preview{
 .info_form .info_left{
     float: left;
 }
-.info_form .info_right{
+
+.info_form .info_right {
     float: left;
     padding-left: 60px;
 }
-.info_form .info_right dd{
+
+.info_form .info_right dd {
     margin-bottom: 15px;
 }
-.info_form .info_right_txt{
+
+.info_form .info_right_txt {
     display: inline-block;
     color: #666;
     font-weight: 300;
     width: 100px;
 }
-.info_form .info_right_input{
+
+.info_form .info_right_input {
     display: inline-block;
     width: 550px;
     height: 48px;
@@ -445,11 +515,13 @@ ul.image_preview{
     padding-left: 15px;
     font-size: 16px;
 }
-.edu_select .btn-group{
+
+.edu_select .btn-group {
     display: flex;
     justify-content: space-around;
 }
-.edu_select .btn-group button{
+
+.edu_select .btn-group button {
     display: block;
     width: 50%;
     height: 60px;
@@ -458,37 +530,45 @@ ul.image_preview{
     background: #fff;
     font-size: 18px;
 }
-.edu_select .btn-group button.on{
+
+.edu_select .btn-group button.on {
     background: #4876ef;
     color: #fff;
 }
-#univ_btn{
+
+#univ_btn {
     margin-left: -1px;
 }
-#univ{
+
+#univ {
     display: none;
 }
-.info_form h3{
+
+.info_form h3 {
     padding: 40px 0 30px;
-    color:#666;
+    color: #666;
     font-size: 18px;
 }
-.info_form h3.h4{
+
+.info_form h3.h4 {
     padding: 0px 0 30px;
-    color:#666;
+    color: #666;
     font-size: 18px;
 }
-.edu_form div{
+
+.edu_form div {
     margin-bottom: 15px;
 }
-.edu_input .icon{
+
+.edu_input .icon {
     display: inline-block;
     color: #333;
     font-size: 17px;
     line-height: 17px;
     padding: 0 10px;
 }
-.info_form .info_right_input2{
+
+.info_form .info_right_input2 {
     display: inline-block;
     width: 233px;
     height: 48px;
@@ -502,7 +582,7 @@ ul.image_preview{
 }
 
 /* 셀렉트 박스 */
-select{
+select {
     display: inline-block;
     width: 565px;
     height: 48px;
@@ -515,25 +595,27 @@ select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background:#fff url("/img/icon_arrow2.png") no-repeat right 15px center;
+    background: #fff url("/img/icon_arrow2.png") no-repeat right 15px center;
     background-size: 25px;
 }
-select::-ms-expand{
+
+select::-ms-expand {
     display: none;
 }
-select option{
+
+select option {
     border-radius: 8px;
-    
+
 }
 
-.edu_input .grade{
+.edu_input .grade {
     color: #333;
     font-size: 17px;
     padding-left: 5px;
 }
 
 
-.resume_career .btn-group button{
+.resume_career .btn-group button {
     display: block;
     width: 50%;
     height: 60px;
@@ -542,25 +624,30 @@ select option{
     background: #fff;
     font-size: 18px;
 }
-.resume_career .btn-group button.on{
+
+.resume_career .btn-group button.on {
     background: #4876ef;
     color: #fff;
 }
-.resume_career .btn-group{
+
+.resume_career .btn-group {
     display: flex;
     justify-content: space-around;
 }
-#work_btn{
+
+#work_btn {
     margin-left: -1px;
 }
-.resume_career div{
+
+.resume_career div {
     margin-bottom: 15px;
 }
-#work{
+
+#work {
     display: block;
 }
 
-.info_form2{
+.info_form2 {
     width: 1200px;
     margin: 0 auto;
     height: auto;
@@ -569,23 +656,27 @@ select option{
     border-radius: 10px;
     box-sizing: border-box;
 }
-.info_form2 div{
+
+.info_form2 div {
     margin-bottom: 0;
 }
-.field_select .part_box_wrap{
+
+.field_select .part_box_wrap {
     display: flex;
     justify-content: space-around;
 }
 
-.field_select .part_box{
+.field_select .part_box {
     text-align: left;
     margin-bottom: 5px;
 }
-.field_select .part_box input{
+
+.field_select .part_box input {
     width: 24px;
     height: 24px;
 }
-.field_select .part_box em{
+
+.field_select .part_box em {
     font-style: normal;
     color: #222;
     font-size: 18px;
@@ -595,11 +686,12 @@ select option{
     font-weight: 300;
 }
 
-.update_btn{
+.update_btn {
     display: flex;
     justify-content: end;
 }
-#btnInsertResume{
+
+#btnInsertResume {
     display: block;
     width: 260px;
     height: 60px;
@@ -612,10 +704,12 @@ select option{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnInsertResume:hover{
+
+#btnInsertResume:hover {
     background: #4876ef;
 }
-#btnUpdateResume{
+
+#btnUpdateResume {
     display: block;
     width: 260px;
     height: 60px;
@@ -628,10 +722,12 @@ select option{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnUpdateResume:hover{
+
+#btnUpdateResume:hover {
     background: #0ccca4;
 }
-#btnResumeDelete{
+
+#btnResumeDelete {
     display: block;
     width: 260px;
     height: 60px;
@@ -644,7 +740,8 @@ select option{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnResumeDelete:hover{
+
+#btnResumeDelete:hover {
     background: #333;
 }
 
@@ -658,32 +755,39 @@ select option{
     height: 20px;
     transition: border 0.3s ease-in-out;
 }
+
 [type="radio"]:checked {
     border: 6px solid #4876ef;
 }
+
 [type="radio"]:focus-visible {
     outline-offset: max(2px, 2px);
     outline: max(2px, 2px) solid #4876ef;
-} 
+}
+
 [type="radio"]:hover {
     box-shadow: 0 0 0 max(4px, 2px) #ddd;
     cursor: pointer;
 }
-.input_radio_skill ul{
+
+.input_radio_skill ul {
     font-size: 0;
     display: flex;
     justify-content: space-evenly;
 }
-.input_radio_skill ul li{
-}
-.input_radio_skill ul li:first-child{
+
+.input_radio_skill ul li {}
+
+.input_radio_skill ul li:first-child {
     margin-left: 0;
 }
-.input_radio_skill input{
+
+.input_radio_skill input {
     vertical-align: top;
     margin-right: 10px;
 }
-.input_radio_skill ul li em{
+
+.input_radio_skill ul li em {
     font-style: normal;
     color: #333;
     font-size: 18px;
@@ -692,11 +796,12 @@ select option{
 
 
 /* =================== 회원정보 수정 ======================== */
-#user_info_wrap{
+#user_info_wrap {
     position: relative;
     width: 100%;
 }
-#user_info_wrap .container{
+
+#user_info_wrap .container {
     width: 1200px;
     margin: 0 auto;
     background: #fff;
@@ -704,7 +809,8 @@ select option{
     padding-bottom: 140px;
     padding-left: 200px;
 }
-#user_info_wrap h1{
+
+#user_info_wrap h1 {
     text-align: left;
     font-size: 30px;
     line-height: 38px;
@@ -712,24 +818,29 @@ select option{
     color: #333;
 
 }
-.users_update{
+
+.users_update {
     text-align: left;
 }
-.users_update input{
+
+.users_update input {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.users_update button{
+
+.users_update button {
     font-family: 'Noto Sans KR', sans-serif;
 }
-.title_update{
+
+.title_update {
     width: 1200px;
 }
-.title_update h1{
+
+.title_update h1 {
     font-size: 30px;
     line-height: 34px;
 }
 
-.users_update h2{
+.users_update h2 {
     font-size: 24px;
     color: #666;
     line-height: 30px;
@@ -739,33 +850,40 @@ select option{
     display: inline-block;
     padding-right: 10px;
 }
-.users_update .form_title span{
+
+.users_update .form_title span {
     display: inline-block;
     font-weight: 300;
     letter-spacing: -0.06em;
     color: #666;
 }
-.info_form div{
+
+.info_form div {
     margin-bottom: 15px;
 }
-.login_form div{
+
+.login_form div {
     margin-bottom: 15px;
 }
-.users_update .info_left{
-    float: none;
-}
-.users_update .info_right{
+
+.users_update .info_left {
     float: none;
 }
 
-.btn_group{
+.users_update .info_right {
+    float: none;
+}
+
+.btn_group {
     display: flex;
     justify-content: end;
 }
-.btn_group .delete_btn{
+
+.btn_group .delete_btn {
     margin-left: 10px;
 }
-#btnEmployeeUpdate{
+
+#btnEmployeeUpdate {
     display: block;
     width: 260px;
     height: 60px;
@@ -778,10 +896,12 @@ select option{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnEmployeeUpdate:hover{
+
+#btnEmployeeUpdate:hover {
     background: #0ccca4;
 }
-#btnEmployeeDelete{
+
+#btnEmployeeDelete {
     display: block;
     width: 260px;
     height: 60px;
@@ -794,15 +914,17 @@ select option{
     cursor: pointer;
     transition: all 0.6s;
 }
-#btnEmployeeDelete:hover{
+
+#btnEmployeeDelete:hover {
     background: #333;
 }
 
 
-.users_update .info_birth_input{
+.users_update .info_birth_input {
     width: 530px;
     padding-right: 20px;
 }
-.login_check{
+
+.login_check {
     cursor: pointer;
 }

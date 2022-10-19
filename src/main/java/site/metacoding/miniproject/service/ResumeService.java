@@ -9,6 +9,7 @@ import site.metacoding.miniproject.domain.application.Application;
 import site.metacoding.miniproject.domain.application.ApplicationDao;
 import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.domain.resume.ResumeDao;
+import site.metacoding.miniproject.web.dto.request.resume.ResumeInsertDto;
 import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
 
 @RequiredArgsConstructor
@@ -38,10 +39,9 @@ public class ResumeService {
         return resumeDao.findMatchingByJobId(employeeId);
     }
 
-    public void 이력서작성(Resume resume) {
-        resumeDao.insert(resume);
+    public void 이력서작성(ResumeInsertDto rid) {
+        resumeDao.insert(rid);
     }
-
 
     public Resume 이력서상세보기(Integer resumeId) {
         return resumeDao.findById(resumeId);

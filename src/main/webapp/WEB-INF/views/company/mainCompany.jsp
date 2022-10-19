@@ -75,9 +75,6 @@ pageEncoding="UTF-8" %> <%@ include file="../layout/headerCompany.jsp" %>
   <!-- .container -->
 </div>
 <!-- #wrap -->
-
-<script src="/js/main.js"></script>
-<script src="/js/company.js"></script>
 <!-- <script type="text/javascript">
       // jquery 최초 기본형
       $(document).ready(function () {

@@ -16,7 +16,7 @@ public class UpdateDto {
 	private String univStartdate;
 	private String univEnddate;
 	private String univMajor;
-	private float univGrades;
+	private String univGrades;
 	private String prevCo;
 	private String careerPeriod;
 	private String careerPosition;

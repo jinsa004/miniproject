@@ -2,25 +2,23 @@
 pageEncoding="UTF-8" %> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/company.css" />
-    <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    ></script>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <title>4조 PROJECT</title>
-  </head>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/css/reset.css" />
+      <link rel="stylesheet" href="/css/company.css" />
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+      <title>4조 PROJECT</title>
+    </head>
 
   <body>
     <div id="user_wrap">
@@ -46,69 +44,75 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
           <!-- .search_bar -->
 
-          <div class="login_box">
-            <c:choose>
-              <c:when test="${empty principal.companyId}">
-                <button
-                  class="btn_login"
-                  type="button"
-                  onClick="javascript:popOpenCompany();"
-                >
-                  로그인
-                </button>
-                <button
-                  class="btn_join"
-                  type="button"
-                  onClick="javascript:popOpenCompany2();"
-                >
-                  회원가입
-                </button>
-                <a href="/emp/main" class="btn_company">회원 서비스</a>
-              </c:when>
-              <c:otherwise>
-                <a class="btn_logout" href="/co/logout">로그아웃</a>
-                <a href="/co/companyIntroInsert" class="btn_mypage"
-                  >마이페이지</a
-                >
-                <!-- <c:choose>
+            <div class="login_box">
+              <c:choose>
+                <c:when test="${empty coprincipal.companyId}">
+                  <button class="btn_login" type="button" onClick="javascript:popOpenCompany();">
+                    로그인
+                  </button>
+                  <button class="btn_join" type="button" onClick="javascript:popOpenCompany2();">
+                    회원가입
+                  </button>
+                  <a href="/emp/main" class="btn_company">회원 서비스</a>
+                </c:when>
+                <c:otherwise>
+                  <a class="btn_logout" href="/co/logout">로그아웃</a>
+                  <c:choose>
                     <c:when test="${empty introPS.introId}">
                       <a href="/co/companyIntroInsert" class="btn_mypage">마이페이지</a>
                     </c:when>
                     <c:otherwise>
-                      <a href="/co/companyIntroUpdate/${principal.companyId}" class="btn_mypage">마이페이지</a>
+                      <a href="/co/companyIntroUpdate/${coprincipal.companyId}" class="btn_mypage">마이페이지</a>
                     </c:otherwise>
-                  </c:choose> -->
-                <a href="/emp/main" class="btn_company">회원 서비스</a
-                ><!-- .btn_company -->
-              </c:otherwise>
-            </c:choose>
-          </div>
-          <!-- .login_box -->
-          <nav>
-            <ul>
-              <li>
-                <a href="/co">인재검색</a>
-              </li>
-              <li>
-                <a href="/co/noticeSave/${principal.companyId}">공고등록</a>
-              </li>
-              <li>
-                <a href="/co/noticeService/${principal.companyId}"
-                  >공고/지원자관리</a
-                >
-              </li>
-              <li>
-                <a href="/co/matchingResume/${principal.companyId}"
-                  >매칭리스트</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <!-- nav -->
-        </header>
-        <!-- header -->
-      </div>
-      <!-- .header_wrap -->
+                  </c:choose>
+                  <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
+                  <div id="alarmContainer"
+                    style="width: 40px; height: 40px; position: absolute; top: 0px; right: -50px">
+                    <button type="button"
+                      style="width: 40px; height: 40px; color: #fff; background: none; border: 1px #0ccca4 solid; border-radius: 50%"
+                      onclick="addNotice()">
+                      <i class="fa-regular fa-bell" style="color: #0ccca4;"></i>
+                    </button>
+                    <div class="row">
+                      <table id="conversation" class="table table-striped" style="width: 280px; display: none;">
+                        <thead>
+                          <tr>
+                            <th style="width: 280px; position: relative; top: 5px; right: 120px; color: #fff">
+                              Notification</th>
+                          </tr>
+                        </thead>
+                        <tbody id="notification_co"
+                          style="color: #fff; position: relative; top: 5px; right: 120px; font-size: 13px">
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- alarmContainer -->
+                </c:otherwise>
+              </c:choose>
+            </div>
+            <!-- .login_box -->
+            <nav>
+              <ul>
+                <li>
+                  <a href="/co">인재검색</a>
+                </li>
+                <li>
+                  <a href="/co/noticeSave/${coprincipal.companyId}">공고등록</a>
+                </li>
+                <li>
+                  <a href="/co/noticeService/${coprincipal.companyId}">공고/지원자관리</a>
+                </li>
+                <li>
+                  <a href="/co/matchingResume/${coprincipal.companyId}">매칭리스트</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- nav -->
+          </header>
+          <!-- header -->
+        </div>
+        <!-- .header_wrap -->
 
       <div class="modal_login_bg" onClick="javascript:popCloseCompany();"></div>
       <div class="modal_login_wrap">
@@ -335,9 +339,15 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <!-- .join_right -->
           </form>
 
-          <button id="btn_co_join" type="button">회원가입</button>
+            <button id="btn_co_join" type="button">회원가입</button>
+          </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+      <c:choose>
+        <c:when test="${!empty empprincipal.employeeId}">
+          <input class="checkprinciple" type="hidden" value="${empprincipal.employeeName}">
+        </c:when>
+        <c:when test="${!empty coprincipal.companyId}">
+          <input class="checkprinciple" type="hidden" value="${coprincipal.companyName}">
+        </c:when>
+      </c:choose>

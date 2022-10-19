@@ -4,7 +4,7 @@
     <div id="user_wrap">
       <div class="container">
         <div class="matching_list">
-          <a href="/emp/employeeInfo/${principal.employeeId}" class="btn_matching_insert"> 관심 분야 수정</a>
+          <a href="/emp/employeeInfo/${empprincipal.employeeId}" class="btn_matching_insert"> 관심 분야 수정</a>
         </div>
         <!-- .tablist -->
 
@@ -61,6 +61,5 @@
       <!-- .container -->
     </div>
     <!-- #wrap -->
-    <script src="/js/main.js"></script>
-    <script src="/js/employee.js"></script>
+
     <%@ include file="../layout/footer.jsp" %>

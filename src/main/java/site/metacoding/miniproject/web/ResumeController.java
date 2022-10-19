@@ -21,9 +21,11 @@ import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
+import site.metacoding.miniproject.service.ImageService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.ResumeService;
+import site.metacoding.miniproject.web.dto.request.resume.ResumeInsertDto;
 import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
@@ -33,6 +35,7 @@ public class ResumeController {
 
     private final ResumeService resumeService;
     private final JobService jobService;
+    private final ImageService imageService;
     private final IntroService introService;
     private final HttpSession session;
 
@@ -58,21 +61,23 @@ public class ResumeController {
 
     @GetMapping("emp/resumeSaveForm/{employeeId}")
     public String insertResumeForm(@PathVariable Integer employeeId, Model model) { // 이력서 등록 페이지
-        session.getAttribute("principal");
+        session.getAttribute("empprincipal");
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
         return "resume/resumeSave";
     }
 
-    @PostMapping("emp/resumeSave")
-    public @ResponseBody CMRespDto<?> insertResume(@RequestBody Resume resume) {
-        resumeService.이력서작성(resume);
+    @PostMapping("emp/imageSave")
+    public @ResponseBody CMRespDto<?> insertImage(ResumeInsertDto rid) throws Exception {
+        Integer resumeImageId = imageService.resumeInsertImage(rid.getImage());
+        rid.setResumeImageId(resumeImageId);
+        resumeService.이력서작성(rid);
         return new CMRespDto<>(1, "이력서 등록 성공", null);
     }
 
     @GetMapping("emp/resumeUpdate/{resumeId}")
     public String updateResumeForm(@PathVariable Integer resumeId, Model model) { // 이력서 수정 페이지
-        session.getAttribute("principal");
+        session.getAttribute("empprincipal");
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
         Resume resumePS = resumeService.이력서상세보기(resumeId);
@@ -94,11 +99,13 @@ public class ResumeController {
         model.addAttribute("jobPS", jobPS);
         List<Resume> resumeAllList = resumeService.이력서목록보기();
         model.addAttribute("resumeAllList", resumeAllList);
-        /* Company principal = (Company) session.getAttribute("principal");
-        if (principal != null) {
-            Intro introPS = introService.마이페이지설정(principal.getCompanyId());
-            model.addAttribute("introPS", introPS);
-        } */
+        /*
+         * Company principal = (Company) session.getAttribute("principal");
+         * if (principal != null) {
+         * Intro introPS = introService.마이페이지설정(principal.getCompanyId());
+         * model.addAttribute("introPS", introPS);
+         * }
+         */
         return "company/mainCompany";
     }
 
@@ -118,6 +125,8 @@ public class ResumeController {
 
     @GetMapping("co/resumeDetail/{resumeId}")
     public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
+        Company companyPS = (Company) session.getAttribute("coprincipal");
+        model.addAttribute("company", companyPS);
         model.addAttribute("resume", resumeService.이력서상세보기(resumeId));
         return "company/resumeDetail";
     }

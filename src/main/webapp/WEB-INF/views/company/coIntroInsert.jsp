@@ -7,21 +7,19 @@
             <div class="title_update">
               <h1>기업 소개 등록</h1>
             </div>
+            <input id="companyId" type="hidden" value="${coprincipal.companyId}" />
             <div id="logo_info" class="form">
               <div class="form_title">
                 <h2 class="title">회사로고</h2>
               </div>
               <div class="logo_form">
                 <div class="info_img">
-                  <form method="post" action="/resume_detail" enctype="multipart/form-data">
-                    <span class="info_myimg">
-                      <img src="/img/logo_1.png">
-                    </span>
-                    <div class="logo_img_right">
-                      <input type="file" name="file" id="files" class="hidden" />
-                      <button type="submit" class="file_submit">파일전송</button>
-                    </div>
-                  </form>
+                  <span class="info_myimg">
+                    <img id="preImage" alt="image_title">
+                  </span>
+                  <br />
+                  <br /> <!-- css 맞춰주세요 -->
+                  <input type="file" multiple="multiple" id="image" name="image" />
                 </div>
               </div><!-- .logo_form -->
             </div>
@@ -35,8 +33,8 @@
                 <div class="info_left margin_bottom">
                   <div class="basic_input">
                     <span class="info_right_txt">회사명</span>
-                    <input type="text" id="companyName" name="basic_name" class="box_input info_right_input"
-                      value="${intro.companyName}" placeholder="회사명을 입력하세요" />
+                    <input type="text" id="introConame" name="basic_name" class="box_input info_right_input"
+                      value="${intro.introConame}" placeholder="회사명을 입력하세요" />
                   </div>
                 </div>
                 <div class="basic_row margin_bottom">
@@ -111,7 +109,4 @@
     </div>
     </div>
     <!-- body -->
-    <script src="/js/main.js"></script>
-    <script src="/js/company.js"></script>
-    <script src="/js/intro.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

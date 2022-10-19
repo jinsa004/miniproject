@@ -418,7 +418,7 @@
     border-radius: 10px;
     text-align: center;
     overflow: hidden;
-    vertical-align: top;
+    position: relative;
 }
 
 .logo_form .info_myimg img {
@@ -427,6 +427,12 @@
     max-width: 340px;
     min-height: 164px;
     width: 340px;
+    line-height: 164px;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .logo_form .logo_img_right {

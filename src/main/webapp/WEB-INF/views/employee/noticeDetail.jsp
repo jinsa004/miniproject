@@ -72,7 +72,7 @@ pageEncoding="UTF-8" %> <%@ include file="../layout/header.jsp" %>univ_
         <span class="company_box_title">기업정보</span>
         <span class="info_logo"><img src="/img/logo_1.png" alt="logo" /></span>
         <span class="info_tit"
-          ><em>회사명</em><strong>${noticePS.introTitle}</strong></span
+          ><em>회사명</em><strong>${noticePS.introConame}</strong></span
         >
         <span class="info_year"
           ><em>설립연도</em><strong>${noticePS.introBirth}</strong></span
@@ -88,9 +88,7 @@ pageEncoding="UTF-8" %> <%@ include file="../layout/header.jsp" %>univ_
         >
         <div class="company_location">
           <span><em>주소지</em><strong>${noticePS.introLocation}</strong></span>
-          <div class="location_img">
-            <img src="/img/map_1.png" alt="지도예시" />
-          </div>
+          <div class="location_img"></div>
         </div>
         <!-- .company_location -->
       </div>
@@ -146,6 +144,4 @@ pageEncoding="UTF-8" %> <%@ include file="../layout/header.jsp" %>univ_
   <!-- .container -->
 </div>
 <!-- #wrap -->
-<script src="/js/main.js"></script>
-<script src="/js/employee.js"></script>
 <%@ include file="../layout/footer.jsp" %>
