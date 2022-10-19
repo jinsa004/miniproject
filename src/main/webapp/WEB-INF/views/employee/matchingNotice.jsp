@@ -32,8 +32,8 @@
                       </a></li>
                     <li>${matchingNotice.noticeCareer}<span class="notice_small">${matchingNotice.noticeQual}</span>
                     </li>
-                    <li>${matchingNotice.noticePosition}<span class="notice_small">부산</span></li>
-                    <!-- notice 테이블에 지역 컬럼 만들거나 sal을 넣는 등 수정 필요 -->
+                    <li>${matchingNotice.noticeDept}<span class="notice_small">${matchingNotice.noticePosition}</span>
+                    </li>
                     <li>~${matchingNotice.noticePeriod}<span class="notice_small">마감 13일전</span></li>
                   </ul>
                 </div>
