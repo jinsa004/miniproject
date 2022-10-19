@@ -26,7 +26,7 @@
                       </ul>
                     </label>
                     <div class="btn_resume_option">
-                      <span><a href="/emp/resumeUpdate/${resumePS.resumeId}">수정하기</a></span>
+                      <span><a href="/es/emp/resumeUpdate/${resumePS.resumeId}">수정하기</a></span>
                       <button class="btn_delete_resume" type="button" value="${resumePS.resumeId}">삭제하기</button>
                     </div><!-- .btn_resume_option -->
                   </li><!-- .resume_cont -->

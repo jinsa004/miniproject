@@ -112,7 +112,7 @@
 
             <div class="btn_group">
               <div class="update_btn">
-                <a href="/co/companyIntroUpdate/${coprincipal.companyId}" class="btnInsertCompany_go">수정하러가기</a>
+                <a href="/cs/co/companyIntroUpdate/${coprincipal.companyId}" class="btnInsertCompany_go">수정하러가기</a>
               </div>
             </div>
             <!-- btn -->

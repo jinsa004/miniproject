@@ -69,7 +69,7 @@ public class EmployeeController {
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
-    @GetMapping("/emp/subscription")
+    @GetMapping("/es/emp/subscription")
     public String subscriptionList() {// 개인회원이 보는 구독기업공고탭(구독기업 공고 목록보기)
         return "employee/subscription";
     }
@@ -85,7 +85,7 @@ public class EmployeeController {
         return "employee/coIntroDetail";
     }
 
-    @PostMapping("/emp/companyIntroDetail/{introId}/subscribe")
+    @PostMapping("/empapi/es/emp/companyIntroDetail/{introId}/subscribe")
     public @ResponseBody CMRespDto<?> insertSub(@PathVariable Integer introId) {// 구독하기
         Employee principal = (Employee) session.getAttribute("empprincipal");
         Subscribe subscribe = new Subscribe(principal.getEmployeeId(), introId);
@@ -93,7 +93,7 @@ public class EmployeeController {
         return new CMRespDto<>(1, "구독성공", subscribe);
     }
 
-    @DeleteMapping("/emp/companyIntroDetail/{introId}/subscribe/{subscribeId}")
+    @DeleteMapping("/empapi/es/emp/companyIntroDetail/{introId}/subscribe/{subscribeId}")
     public @ResponseBody CMRespDto<?> deleteSub(@PathVariable Integer introId, @PathVariable Integer subscribeId) {// 구독취소
         introService.구독취소하기(subscribeId);
         return new CMRespDto<>(1, "구독취소성공", null);
@@ -113,7 +113,7 @@ public class EmployeeController {
         return "employee/companyJobList";
     }
 
-    @GetMapping("/emp/mypageInsertForm/{employeeId}")
+    @GetMapping("/es/emp/mypageInsertForm/{employeeId}")
     public String mypageResumeInsert(@PathVariable Integer employeeId, Model model) {// 이력서 등록, 수정, 삭제, 대표 이력서 선택
         List<Resume> resumePS = resumeService.내이력서가져오기(employeeId);
         model.addAttribute("resumePS", resumePS);
@@ -121,7 +121,7 @@ public class EmployeeController {
         return "employee/mypageInsertForm";
     }
 
-    @GetMapping("/emp/employeeInfo/{employeeId}")
+    @GetMapping("/es/emp/employeeInfo/{employeeId}")
     public String 회원정보수정탈퇴페이지(@PathVariable Integer employeeId, Model model) {// 개인회원 회원가입 정보수정
         // 리스트값 불러오기
         List<Job> jobPS = jobService.관심직무보기();
@@ -136,7 +136,7 @@ public class EmployeeController {
         return "employee/empInfo";
     }
 
-    @DeleteMapping("/emp/employeeInfo/{employeeId}")
+    @DeleteMapping("/empapi/es/emp/employeeInfo/{employeeId}")
     public @ResponseBody CMRespDto<?> 회원탈퇴(@PathVariable Integer employeeId, HttpServletResponse response) {
         employeeService.employeeDelete(employeeId);
         Cookie cookie = new Cookie("employeeUsername", null);
@@ -146,7 +146,7 @@ public class EmployeeController {
         return new CMRespDto<>(1, "회원탈퇴성공", null);
     }
 
-    @PutMapping("/emp/employeeInfo/{employeeId}")
+    @PutMapping("/empapi/es/emp/employeeInfo/{employeeId}")
     public @ResponseBody CMRespDto<?> 회원정보수정(@PathVariable Integer employeeId,
             @RequestBody EmployeeUpdateDto employeeUpdateDto) {
         Employee employeePS = employeeService.employeeUpdate(employeeId,

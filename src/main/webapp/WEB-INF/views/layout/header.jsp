@@ -54,7 +54,7 @@
                                 <c:otherwise>
                                     <a class="btn_logout" href="/logout">로그아웃</a>
 
-                                    <a href="/emp/mypageInsertForm/${empprincipal.employeeId}" class="btn_mypage">마이
+                                    <a href="/es/emp/mypageInsertForm/${empprincipal.employeeId}" class="btn_mypage">마이
                                         페이지</a>
                                     <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
                                     <div id="alarmContainer"
@@ -91,10 +91,10 @@
                                     <a href="/emp/main">채용공고</a>
                                 </li>
                                 <li>
-                                    <a href="/emp/matchingNotice/${empprincipal.employeeId}">매칭리스트</a>
+                                    <a href="/es/emp/matchingNotice/${empprincipal.employeeId}">매칭리스트</a>
                                 </li>
                                 <li>
-                                    <a href="/emp/subscribeNotice/${empprincipal.employeeId}">구독기업공고</a>
+                                    <a href="/es/emp/subscribeNotice/${empprincipal.employeeId}">구독기업공고</a>
                                 </li>
                                 <li>
                                     <a href="/emp/companyList">기업정보</a>

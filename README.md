@@ -132,6 +132,7 @@ create table co_check(
     company_id INT NOT null,
     job_id INT NOT null
 );
+
 ```
 
 ### 더미데이터 추가

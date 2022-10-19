@@ -10,7 +10,7 @@
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT n.*, i.new_image_name
 		FROM notice n
-		INNER JOIN intro_image i
+		LEFT outer JOIN intro_image i
 		ON n.company_id = i.company_id
 		ORDER BY n.notice_period DESC
 	</select>

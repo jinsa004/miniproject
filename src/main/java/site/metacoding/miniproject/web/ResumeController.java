@@ -41,25 +41,25 @@ public class ResumeController {
 
     /* =============================개인회원========================================= */
 
-    @PostMapping("emp/resume/applicate")
+    @PostMapping("/empapi/es/emp/resume/applicate")
     public @ResponseBody CMRespDto<?> applicateByResumeId(@RequestBody Application application) {
         resumeService.지원하기(application);
         return new CMRespDto<>(1, "공고 지원 성공", null);
     }
 
-    @PutMapping("emp/resume/setMainResume/{resumeId}")
+    @PutMapping("/empapi/es/emp/resume/setMainResume/{resumeId}")
     public @ResponseBody CMRespDto<?> setMainResume(@PathVariable Integer resumeId) {
         resumeService.메인이력서등록(resumeId);
         return new CMRespDto<>(1, "메인 이력서 등록 성공", null);
     }
 
-    @DeleteMapping("emp/resumeDelete/{resumeId}")
+    @DeleteMapping("/empapi/es/emp/resumeDelete/{resumeId}")
     public @ResponseBody CMRespDto<?> deleteResume(@PathVariable Integer resumeId) {
         resumeService.이력서삭제(resumeId);
         return new CMRespDto<>(1, "이력서 삭제 성공", null);
     }
 
-    @GetMapping("emp/resumeSaveForm/{employeeId}")
+    @GetMapping("/es/emp/resumeSaveForm/{employeeId}")
     public String insertResumeForm(@PathVariable Integer employeeId, Model model) { // 이력서 등록 페이지
         session.getAttribute("empprincipal");
         List<Job> jobPS = jobService.관심직무보기();
@@ -67,7 +67,7 @@ public class ResumeController {
         return "resume/resumeSave";
     }
 
-    @PostMapping("emp/imageSave")
+    @PostMapping("/empapi/es/emp/imageSave")
     public @ResponseBody CMRespDto<?> insertImage(ResumeInsertDto rid) throws Exception {
         Integer resumeImageId = imageService.resumeInsertImage(rid.getImage());
         rid.setResumeImageId(resumeImageId);
@@ -75,7 +75,7 @@ public class ResumeController {
         return new CMRespDto<>(1, "이력서 등록 성공", null);
     }
 
-    @GetMapping("emp/resumeUpdate/{resumeId}")
+    @GetMapping("/es/emp/resumeUpdate/{resumeId}")
     public String updateResumeForm(@PathVariable Integer resumeId, Model model) { // 이력서 수정 페이지
         session.getAttribute("empprincipal");
         List<Job> jobPS = jobService.관심직무보기();
@@ -85,7 +85,7 @@ public class ResumeController {
         return "resume/resumeUpdate";
     }
 
-    @PutMapping("emp/resumeUpdate/{resumeId}")
+    @PutMapping("/empapi/es/emp/resumeUpdate/{resumeId}")
     public @ResponseBody CMRespDto<?> updateResume(@PathVariable Integer resumeId, @RequestBody UpdateDto updateDto) {
         resumeService.이력서수정(resumeId, updateDto);
         return new CMRespDto<>(1, "이력서 수정 성공", null);
@@ -93,7 +93,7 @@ public class ResumeController {
 
     /* =============================기업회원========================================= */
 
-    @GetMapping("co")
+    @GetMapping("/co")
     public String getAllResumeList(Model model) { // 기업회원이 보는 이력서리스트
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
@@ -109,21 +109,21 @@ public class ResumeController {
         return "company/mainCompany";
     }
 
-    @GetMapping("co/resume")
+    @GetMapping("/co/resume")
     public String getJobResumeList(@RequestParam("jobCode") Integer jobCode, Model model) {
         List<Resume> jobResumeList = resumeService.이력서분야별목록보기(jobCode);
         model.addAttribute("jobResumeList", jobResumeList);
         return "company/jobResume";
     }
 
-    @GetMapping("/co/matchingResume/{companyId}")
+    @GetMapping("/cs/co/matchingResume/{companyId}")
     public String companyMatchingList(@PathVariable Integer companyId, Model model) {
         List<Resume> matchingResume = resumeService.기업매칭리스트보기(companyId);
         model.addAttribute("matchingResume", matchingResume);
         return "company/matchingResume";
     }
 
-    @GetMapping("co/resumeDetail/{resumeId}")
+    @GetMapping("/co/resumeDetail/{resumeId}")
     public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
         Company companyPS = (Company) session.getAttribute("coprincipal");
         model.addAttribute("company", companyPS);
