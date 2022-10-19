@@ -97,8 +97,8 @@ public class CompanyController {
         return "company/coIntroInsert";
     }
 
-    // value = "/co/companyIntroInsert", produces = "text/plain;charset=utf-8"
-    @PostMapping("/co/companyIntroInsert")
+    //
+    @PostMapping(value = "/co/companyIntroInsert", produces = "text/plain;charset=utf-8")
     public @ResponseBody CMRespDto<?> 기업소개등록(IntroInsertDto introInsertDto) throws Exception {
         Integer introImageId = imageService.introInsertImage(introInsertDto.getImage());
         introInsertDto.setIntroImageId(introImageId);
