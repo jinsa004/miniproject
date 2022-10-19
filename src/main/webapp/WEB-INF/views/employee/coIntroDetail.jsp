@@ -2,7 +2,9 @@
   <%@ include file="../layout/header.jsp" %>
     <input id="introId" type="hidden" value="${detailDto.introId}" />
     <input id="subscribeId" type="hidden" value="${detailDto.subscribeId}" />
-    <input id="principalId" type="hidden" value="${empprincipal.employeeId}" />
+    <input id="principalId" type="hidden" value="${empprincipal.getEmployeeId()}" />
+    <input id="receiver" type="hidden" value="${detailDto.companyName}">
+    <input id="sender" type="hidden" value="${empprincipal.employeeName}">
     <div id="co_Intro_wrap">
       <div class="container">
         <section>

@@ -106,3 +106,13 @@ function sample6_execDaumPostcode() {
     },
   }).open();
 }
+
+//  notification
+function addNotice(){
+  var con = document.getElementById("conversation"); 	
+  if(con.style.display=='none'){ 		
+    con.style.display = 'block'; 	
+  }else{ 		
+    con.style.display = 'none'; 	
+  } 
+}

@@ -125,6 +125,8 @@ public class ResumeController {
 
     @GetMapping("co/resumeDetail/{resumeId}")
     public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
+        Company companyPS = (Company) session.getAttribute("coprincipal");
+        model.addAttribute("company", companyPS);
         model.addAttribute("resume", resumeService.이력서상세보기(resumeId));
         return "company/resumeDetail";
     }

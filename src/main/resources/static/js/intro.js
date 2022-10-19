@@ -9,6 +9,7 @@ $("#iconSub").click(() => {
       deleteSub();
     } else {
       insertSub();
+      subscribe();
     }
   }
 });

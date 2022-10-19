@@ -13,6 +13,9 @@
       <link rel="stylesheet" href="/css/company.css" />
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
       <title>4조 PROJECT</title>
     </head>
 
@@ -55,6 +58,28 @@
                     </c:otherwise>
                   </c:choose>
                   <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
+                  <div id="alarmContainer"
+                    style="width: 40px; height: 40px; position: absolute; top: 0px; right: -50px">
+                    <button type="button"
+                      style="width: 40px; height: 40px; color: #fff; background: none; border: 1px #0ccca4 solid; border-radius: 50%"
+                      onclick="addNotice()">
+                      <i class="fa-regular fa-bell" style="color: #0ccca4;"></i>
+                    </button>
+                    <div class="row">
+                      <table id="conversation" class="table table-striped" style="width: 280px; display: none;">
+                        <thead>
+                          <tr>
+                            <th style="width: 280px; position: relative; top: 5px; right: 120px; color: #fff">
+                              Notification</th>
+                          </tr>
+                        </thead>
+                        <tbody id="notification_co"
+                          style="color: #fff; position: relative; top: 5px; right: 120px; font-size: 13px">
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- alarmContainer -->
                 </c:otherwise>
               </c:choose>
             </div>
@@ -220,3 +245,11 @@
           </div>
         </div>
       </div>
+      <c:choose>
+        <c:when test="${!empty empprincipal.employeeId}">
+          <input class="checkprinciple" type="hidden" value="${empprincipal.employeeName}">
+        </c:when>
+        <c:when test="${!empty coprincipal.companyId}">
+          <input class="checkprinciple" type="hidden" value="${coprincipal.companyName}">
+        </c:when>
+      </c:choose>

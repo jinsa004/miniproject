@@ -193,7 +193,9 @@
           <!-- career -->
 
           <div class="contact_btn">
-            <button type="button" onclick="location.href='#'">컨택하기</button>
+            <input id="receiver" type="hidden" value="${resume.employeeName}">
+            <input id="sender" type="hidden" value="${company.companyName}">
+            <button type="button" onclick="contact()">컨택하기</button> 
           </div>
           <!-- contact -->
         </div>
