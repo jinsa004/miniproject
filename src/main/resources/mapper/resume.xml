@@ -52,7 +52,7 @@
 		LEFT OUTER JOIN employee e
 		ON r.employee_id = e.employee_id
 		LEFT OUTER JOIN job j
-		ON e.job_id = j.job_id
+		ON r.job_id = j.job_id
 		WHERE r.resume_id = #{resumeId}
 	</select>
 
