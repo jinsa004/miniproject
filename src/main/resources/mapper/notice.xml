@@ -75,7 +75,7 @@
 		INNER JOIN (
 		SELECT i.*, img.new_image_name
 		FROM intro i
-		INNER JOIN intro_image img
+		LEFT OUTER JOIN intro_image img
 		ON i.intro_image_id = img.intro_image_id) ii
 		ON nj.company_id = ii.company_id
 		WHERE nj.notice_id = #{noticeId}
