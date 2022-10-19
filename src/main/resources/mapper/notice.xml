@@ -8,22 +8,23 @@
 	</insert>
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT
-        notice_id, notice_title,notice_task, notice_career,notice_qual,
-        notice_position, DATE_FORMAT(notice_period, '%Y.%m.%d') as notice_period
-        FROM notice
-        ORDER BY notice_period DESC
+		SELECT n.*, i.new_image_name
+		FROM notice n
+		INNER JOIN intro_image i
+		ON n.company_id = i.company_id
+		ORDER BY n.notice_period DESC
 	</select>
 
 	<select id="findByJobCodeToNotice" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT
-        n.notice_id, n.notice_title, n.notice_task, n.notice_career, n.notice_qual,
-        n.notice_position, DATE_FORMAT(n.notice_period, '%Y.%m.%d') as notice_period
-        FROM notice n
+		SELECT ni.*
+		FROM (SELECT n.*, i.new_image_name
+		FROM notice n
+		INNER JOIN intro_image i
+		ON n.company_id = i.company_id) ni
 		INNER JOIN job j
-		ON n.job_id = j.job_id
+		ON ni.job_id = j.job_id
 		WHERE j.job_code = #{jobCode}
-        ORDER BY n.notice_period DESC
+		ORDER BY ni.notice_period DESC
 	</select>
 
 	<select id="findMatchingByJobId" resultType="site.metacoding.miniproject.domain.notice.Notice">
