@@ -86,7 +86,7 @@
                           <img src="">지도
                         </div>
                         <div class="location_info">
-                          <input type="text" id="sample6_address" placeholder="주소">
+                          <input type="text" id="sample6_address" value="${detailDto.introLocation}" readonly>
                           <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
                         </div>
                       </div>
