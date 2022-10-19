@@ -61,7 +61,7 @@ public class CompanyController {
         if (principal == null) {
             return new CMRespDto<>(-1, "로그인실패", null);
         }
-        session.setAttribute("principal", principal);
+        session.setAttribute("coprincipal", principal);
         return new CMRespDto<>(1, "로그인성공", null);
     }
 
@@ -69,7 +69,7 @@ public class CompanyController {
     public String 기업정보관리(@PathVariable Integer companyId, Model model) {// 기업회원 회원가입 정보 수정할 때 쓰는 거 company 테이블
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
-        Company companyPS = (Company) session.getAttribute("principal");
+        Company companyPS = (Company) session.getAttribute("coprincipal");
         model.addAttribute("company", companyPS);
         return "company/companyInfo";
     }
@@ -78,7 +78,7 @@ public class CompanyController {
     public @ResponseBody CMRespDto<?> companyUpdate(@PathVariable Integer companyId,
             @RequestBody CompanyUpdateDto companyupdateDto) {
         Company companyPS = companyService.기업회원정보수정(companyId, companyupdateDto);
-        session.setAttribute("principal", companyPS);
+        session.setAttribute("coprincipal", companyPS);
         return new CMRespDto<>(1, "수정성공", null);
     }
 
@@ -91,7 +91,7 @@ public class CompanyController {
 
     @GetMapping("/co/companyIntroInsert")
     public String 기업소개등록폼(Model model) {// 추가함
-        session.getAttribute("principal");
+        session.getAttribute("coprincipal");
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
         return "company/coIntroInsert";
@@ -112,7 +112,7 @@ public class CompanyController {
 
     @GetMapping("/co/companyIntroUpdate/{companyId}")
     public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
-        session.getAttribute("principal");
+        session.getAttribute("coprincipal");
         model.addAttribute("intro", introService.기업소개수정상세보기(companyId));
         return "company/coIntroUpdate";
     }

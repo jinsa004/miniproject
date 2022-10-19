@@ -1,13 +1,13 @@
 /* 기업회원 탈퇴*/
-$(".btn_delete").click(() => {
-  Delete();
+$("#btnCoInfoDelete").click(() => {
+  companyDelete();
 });
 
 $("#btn_co_join").click(() => {
   coJoin();
 });
 
-$(".btn_update").click(() => {
+$("#btnCoInfoUpdate").click(() => {
   companyUpdate();
 });
 
@@ -22,7 +22,7 @@ $("#btnUsernameSameCheck").click(() => {
 
 /* 기업회원 탈퇴*/
 
-function Delete() {
+function companyDelete() {
   console.log("삭제");
   let companyId = $("#companyId").val();
 

@@ -2,7 +2,7 @@
   <%@ include file="../layout/header.jsp" %>
     <input id="introId" type="hidden" value="${detailDto.introId}" />
     <input id="subscribeId" type="hidden" value="${detailDto.subscribeId}" />
-    <input id="principalId" type="hidden" value="${principal.getEmployeeId()}" />
+    <input id="principalId" type="hidden" value="${empprincipal.employeeId}" />
     <div id="co_Intro_wrap">
       <div class="container">
         <section>
@@ -127,6 +127,4 @@
     </div><!-- .intro_wrap -->
     </div>
     <!-- body -->
-    <script src="/js/main.js"></script>
-    <script src="/js/intro.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

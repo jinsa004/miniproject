@@ -132,7 +132,4 @@
     </div>
     </div>
     <!-- body -->
-
-    <script src="/js/main.js"></script>
-    <script src="/js/employee.js"></script>
     <%@ include file="../layout/footer.jsp" %>

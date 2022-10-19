@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerCompany.jsp" %>
     <div id="company_wrap">
-      <input id="companyId" type="hidden" value="${principal.companyId}" />
+      <input id="companyId" type="hidden" value="${coprincipal.companyId}" />
       <div class="company_update">
         <div id="co_notice_wrap">
           <div class="container2">
@@ -121,6 +121,4 @@
         </div>
       </div>
     </div>
-    <script src="/js/notice.js"></script>
-    <script src="/js/main.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

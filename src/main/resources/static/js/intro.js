@@ -17,6 +17,10 @@ $("#btnInsertCompany").click(() => {
   update();
 });
 
+$("#btnUpdateCompanyInfo").click(() => {
+  updateIntro();
+});
+
 //DB에 insert요청하기
 function insertSub() {
   let introId = $("#introId").val();
@@ -121,11 +125,6 @@ function InsertIntro() {
     }
   });
 }
-
-
-$("#btnUpdateCompanyInfo").click(() => {
-  updateIntro();
-});
 
 function updateIntro() {
   let data = {

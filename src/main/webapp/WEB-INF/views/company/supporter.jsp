@@ -19,11 +19,11 @@
                 <c:forEach var="noticeList" items="${noticeList}">
                   <ul>
                     <li>
-                      <a href="/co/noticeService/${principal.companyId}/noticeDetail/${noticeList.noticeId}"><img
+                      <a href="/co/noticeService/${coprincipal.companyId}/noticeDetail/${noticeList.noticeId}"><img
                           src="/img/logo_1.png" alt="logo" /></a>
                     </li>
                     <li>
-                      <a href="/co/noticeService/${principal.companyId}/noticeDetail/${noticeList.noticeId}">${noticeList.noticeTitle}
+                      <a href="/co/noticeService/${coprincipal.companyId}/noticeDetail/${noticeList.noticeId}">${noticeList.noticeTitle}
                         <span class="notice_small">${noticeList.noticeDept}</span>
                       </a>
                     </li>
@@ -58,7 +58,4 @@
       <!-- .container -->
     </div>
     <!-- #wrap -->
-
-    <script src="/js/main.js"></script>
-    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>
