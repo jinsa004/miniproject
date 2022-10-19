@@ -35,8 +35,8 @@
                 <div class="info_left margin_bottom">
                   <div class="basic_input">
                     <span class="info_right_txt">회사명</span>
-                    <input type="text" id="companyName" name="basic_name" class="box_input info_right_input"
-                      value="${intro.companyName}" placeholder="회사명을 입력하세요" />
+                    <input type="text" id="introConame" name="basic_name" class="box_input info_right_input"
+                      value="${intro.introConame}" placeholder="회사명을 입력하세요" />
                   </div>
                 </div>
                 <div class="basic_row margin_bottom">
@@ -82,10 +82,13 @@
                         지도
                       </div>
                       <div class="location_info">
-                        <input type="text" id="sample6_postcode" placeholder="우편번호">
-                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn_post">
-                        <input type="text" id="sample6_address" placeholder="주소">
-                        <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+                        <input type="text" id="sample6_postcode" placeholder="우편번호" />
+                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"
+                          class="btn_post_code" />
+                        <input type="text" id="sample6_address" class="introLocation" placeholder="주소"
+                          value="${intro.introLocation}" />
+                        <input type="text" id="sample6_detailAddress" placeholder="상세주소" />
+                        <input type="text" id="sample6_extraAddress" placeholder="참고항목" />
                         <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
                       </div>
                     </div>

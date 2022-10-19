@@ -44,47 +44,96 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           </div>
           <!-- .search_bar -->
 
-            <div class="login_box">
-              <c:choose>
-                <c:when test="${empty coprincipal.companyId}">
-                  <button class="btn_login" type="button" onClick="javascript:popOpenCompany();">
-                    로그인
-                  </button>
-                  <button class="btn_join" type="button" onClick="javascript:popOpenCompany2();">
-                    회원가입
-                  </button>
-                  <a href="/emp/main" class="btn_company">회원 서비스</a>
-                </c:when>
-                <c:otherwise>
-                  <a class="btn_logout" href="/co/logout">로그아웃</a>
-                  <c:choose>
-                    <c:when test="${empty introPS.introId}">
-                      <a href="/co/companyIntroInsert" class="btn_mypage">마이페이지</a>
-                    </c:when>
-                    <c:otherwise>
-                      <a href="/co/companyIntroUpdate/${coprincipal.companyId}" class="btn_mypage">마이페이지</a>
-                    </c:otherwise>
-                  </c:choose>
-                  <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
-                  <div id="alarmContainer"
-                    style="width: 40px; height: 40px; position: absolute; top: 0px; right: -50px">
-                    <button type="button"
-                      style="width: 40px; height: 40px; color: #fff; background: none; border: 1px #0ccca4 solid; border-radius: 50%"
-                      onclick="addNotice()">
-                      <i class="fa-regular fa-bell" style="color: #0ccca4;"></i>
-                    </button>
-                    <div class="row">
-                      <table id="conversation" class="table table-striped" style="width: 280px; display: none;">
-                        <thead>
-                          <tr>
-                            <th style="width: 280px; position: relative; top: 5px; right: 120px; color: #fff">
-                              Notification</th>
-                          </tr>
-                        </thead>
-                        <tbody id="notification_co"
-                          style="color: #fff; position: relative; top: 5px; right: 120px; font-size: 13px">
-                        </tbody>
-                      </table>
+                        <div class="login_box">
+                            <c:choose>
+                                <c:when test="${empty coprincipal.companyId}">
+                                    <button class="btn_login" type="button" onClick="javascript:popOpenCompany();">
+                                        로그인
+                                    </button>
+                                    <button class="btn_join" type="button" onClick="javascript:popOpenCompany2();">
+                                        회원가입
+                                    </button>
+                                    <a href="/emp/main" class="btn_company">회원 서비스</a>
+                                </c:when>
+                                <c:otherwise>
+                                    <a class="btn_logout" href="/co/logout">로그아웃</a>
+                                    <c:choose>
+                                        <c:when test="${empty introPS.introId}">
+                                            <a href="/co/companyIntroDetail/${coprincipal.companyId}"
+                                                class=" btn_mypage">마이페이지</a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="/co/companyIntroDetail/${coprincipal.companyId}"
+                                                class="btn_mypage">마이페이지</a>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
+                                    <div id="alarmContainer"
+                                        style="width: 40px; height: 40px; position: absolute; top: 0px; right: -50px">
+                                        <button type="button"
+                                            style="width: 40px; height: 40px; color: #fff; background: none; border: 1px #0ccca4 solid; border-radius: 50%"
+                                            onclick="addNotice()">
+                                            <i class="fa-regular fa-bell" style="color: #0ccca4;"></i>
+                                        </button>
+                                        <div class="row">
+                                            <table id="conversation" class="table table-striped"
+                                                style="width: 280px; display: none;">
+                                                <thead>
+                                                    <tr>
+                                                        <th
+                                                            style="width: 280px; position: relative; top: 5px; right: 120px; color: #fff">
+                                                            Notification</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="notification_co"
+                                                    style="color: #fff; position: relative; top: 5px; right: 120px; font-size: 13px">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- alarmContainer -->
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                        <!-- .login_box -->
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/co">인재검색</a>
+                                </li>
+                                <li>
+                                    <a href="/co/noticeSave/${coprincipal.companyId}">공고등록</a>
+                                </li>
+                                <li>
+                                    <a href="/co/noticeService/${coprincipal.companyId}">공고/지원자관리</a>
+                                </li>
+                                <li>
+                                    <a href="/co/matchingResume/${coprincipal.companyId}">매칭리스트</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- nav -->
+                    </header>
+                    <!-- header -->
+                </div>
+                <!-- .header_wrap -->
+
+                <div class="modal_login_bg" onClick="javascript:popCloseCompany();"></div>
+                <div class="modal_login_wrap">
+                    <h2>로그인</h2>
+                    <div class="form_box">
+                        <form>
+                            <input id="coUsername" type="text" placeholder="아이디를 입력하세요." />
+                            <input id="coPassword" type="password" placeholder="패스워드를 입력하세요." />
+                        </form>
+                        <label class="btn_check">
+                            <input type="checkbox" class="login_check" id="remember" checked />
+                            <span class="login_check_icon"></span>
+                            <span class="login_check_text">로그인 상태 유지</span>
+                        </label>
+                        <button id="btn_login" type="button" class="btn btn-primary">
+                            로그인
+                        </button>
                     </div>
                   </div>
                   <!-- alarmContainer -->
@@ -92,27 +141,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </c:choose>
             </div>
             <!-- .login_box -->
-            <nav>
-              <ul>
-                <li>
-                  <a href="/co">인재검색</a>
-                </li>
-                <li>
-                  <a href="/co/noticeSave/${coprincipal.companyId}">공고등록</a>
-                </li>
-                <li>
-                  <a href="/co/noticeService/${coprincipal.companyId}">공고/지원자관리</a>
-                </li>
-                <li>
-                  <a href="/co/matchingResume/${coprincipal.companyId}">매칭리스트</a>
-                </li>
-              </ul>
-            </nav>
-            <!-- nav -->
-          </header>
-          <!-- header -->
-        </div>
-        <!-- .header_wrap -->
 
       <div class="modal_login_bg" onClick="javascript:popCloseCompany();"></div>
       <div class="modal_login_wrap">
@@ -233,7 +261,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       maxlength="20"
                     />
                   </span>
-                </div>
+                </div
                 <div class="join_number join_box">
                   <h3>
                     <label for="c_number">사업자등록번호</label>
@@ -342,12 +370,12 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <button id="btn_co_join" type="button">회원가입</button>
           </div>
         </div>
-      </div>
-      <c:choose>
-        <c:when test="${!empty empprincipal.employeeId}">
-          <input class="checkprinciple" type="hidden" value="${empprincipal.employeeName}">
-        </c:when>
-        <c:when test="${!empty coprincipal.companyId}">
-          <input class="checkprinciple" type="hidden" value="${coprincipal.companyName}">
-        </c:when>
-      </c:choose>
+            </div>
+            <c:choose>
+                <c:when test="${!empty empprincipal.employeeId}">
+                    <input class="checkprinciple" type="hidden" value="${empprincipal.employeeName}">
+                </c:when>
+                <c:when test="${!empty coprincipal.companyId}">
+                    <input class="checkprinciple" type="hidden" value="${coprincipal.companyName}">
+                </c:when>
+            </c:choose>

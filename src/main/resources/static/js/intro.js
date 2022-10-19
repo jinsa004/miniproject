@@ -129,7 +129,8 @@ function updateIntro() {
     introTask: $("#introTask").val(),
     introSal: $("#introSal").val(),
     introWellfare: $("#introWellfare").val(),
-    introContent: $("#introContent").val()
+    introContent: $("#introContent").val(),
+    introLocation: $(".introLocation").val()
   }
   let companyId = $("#companyId").val();
   console.log("업데이트확인");

@@ -21,7 +21,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <title>4조 PROJECT</title>
   </head>
-
   <body>
     <div id="mypage_co_wrap">
       <div id="gnb_mypage">
@@ -57,5 +56,4 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       </div>
       <!-- .gnb_mypage -->
     </div>
-  </body>
-</html>
+
