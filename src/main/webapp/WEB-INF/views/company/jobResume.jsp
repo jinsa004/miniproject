@@ -22,7 +22,7 @@
                 <ul id="tab-1" class="resume_inner resume_inner1 tab-content on">
                   <c:forEach var="jobResumeList" items="${jobResumeList}">
                     <li class="resume_cont">
-                      <a href="resumeDetail">
+                      <a href="/co/resumeDetail/${jobResumeList.resumeId}">
                         <span class="resume_logo"><img src="/img/default_profile.png" alt="프로필이미지" /></span>
                         <span class="resume_name">
                           ${jobResumeList.employeeName}
