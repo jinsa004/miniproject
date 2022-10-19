@@ -18,7 +18,7 @@
                 <div class="logo_form">
                   <div class="info_img">
                     <span class="info_myimg">
-                      <img src="/img/logo_1.png">
+                      <img src="/image?imageName=${detailDto.newImageName}">
                     </span>
                   </div>
                 </div><!-- .logo_form -->

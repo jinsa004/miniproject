@@ -48,20 +48,23 @@
 	<delete id="deleteById"></delete>
 
 	<select id="findByDetail" resultType="site.metacoding.miniproject.web.dto.request.intro.DetailDto">
-		SELECT i.*,
+		SELECT ii.*,
 		s.subscribe_id subscribeId,	
 		if(s.subscribe_id IS NULL, 0 ,1) isSubed,
 		j.job_name,
 		j.job_code,
 		c.company_name
+		FROM (SELECT i.*, img.new_image_name
 		FROM intro i
+		INNER JOIN intro_image img
+		ON i.intro_image_id = img.intro_image_id) ii
 		LEFT OUTER JOIN (SELECT * FROM subscribe WHERE employee_id = #{principalId}) s
-		ON i.company_id = s.company_id
+		ON ii.company_id = s.company_id
 		LEFT OUTER JOIN job j
-		ON i.job_id = j.job_id
+		ON ii.job_id = j.job_id
 		LEFT OUTER JOIN company c
-		ON i.company_id = c.company_id
-		WHERE i.intro_id = #{introId}
+		ON ii.company_id = c.company_id
+		WHERE ii.intro_id = #{introId}
 	</select>
 
 </mapper>
