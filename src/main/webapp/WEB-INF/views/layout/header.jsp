@@ -55,18 +55,18 @@
                                     <a href="/emp/mypageInsertForm/${empprincipal.employeeId}" class="btn_mypage">마이
                                         페이지</a>
                                     <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
-                                    <div id="alarmContainer" style="width: 40px; height: 40px; position: relative; top: 0px; right: -20px">
-                                        <button type="button" style="width: 40px; height: 40px; background: none; border: 1px #ddd solid; border-radius: 50%" onclick="addNotice()">
-                                            <i class="fa-regular fa-bell"></i>
+                                    <div id="alarmContainer" style="width: 40px; height: 40px; position: absolute; top: 0px; right: -50px">
+                                        <button type="button" style="width: 40px; height: 40px; background: none; border: 1px #0ccca4 solid; border-radius: 50%" onclick="addNotice()">
+                                            <i class="fa-regular fa-bell" style="color: #0ccca4"></i>
                                         </button>
                                         <div class="row">
-                                          <table id="conversation" class="table table-striped" style="width: 250px; display: none;">
+                                          <table id="conversation" class="table table-striped" style="width: 280px; display: none;">
                                             <thead>
                                               <tr>
-                                                <th style="width: 250px; position: relative; top: 5px; right: 100px; ">Notification</th>
+                                                <th style="width: 280px; position: relative; top: 5px; right: 120px; ">Notification</th>
                                               </tr>
                                             </thead>
-                                            <tbody id="notification_emp" style="background:#fff; position: relative; top: 5px; right: 100px; font-size: 13px">
+                                            <tbody id="notification_emp" style="background:#fff; position: relative; top: 5px; right: 120px; font-size: 13px">
                                             </tbody>
                                           </table>
                                         </div>

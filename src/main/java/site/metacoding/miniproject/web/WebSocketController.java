@@ -18,6 +18,7 @@ public class WebSocketController {
         System.out.println(alarmDto.getAlarmMessage());
 
         messageSendingOperations.convertAndSend("/sub/alarm/" + alarmDto.getReceiver(), alarmDto);
+        messageSendingOperations.convertAndSend("/sub/alarm/" + alarmDto.getSender(), alarmDto);
     }
 
     public boolean findByLoginUser(String receiver, String loginUser) {

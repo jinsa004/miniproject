@@ -1,7 +1,6 @@
 //header
 let receiver = $(".checkprinciple").val();
 let stomp = "";
-let contact_data = "";
 
 window.onload = function () {
     if (receiver != null) {
@@ -14,7 +13,7 @@ window.onload = function () {
                 if(alarmResult.alarmMessage == "컨택"){
                     $("#notification_emp").append("<tr><td>" + alarmResult.sender + " 기업이 " + alarmResult.receiver + " 님을 " + alarmResult.alarmMessage + "했습니다.</td></tr>");
                 } else if(alarmResult.alarmMessage == "구독"){
-                    $("#notification_co").append("<tr><td>" + alarmResult.sender + " 님이 " + alarmResult.receiver + " 기업을 " + alarmResult.alarmMessage + "구독했습니다.</td></tr>");
+                    $("#notification_co").append("<tr><td>" + alarmResult.sender + " 님이 " + alarmResult.receiver + " 기업을 " + alarmResult.alarmMessage + "했습니다.</td></tr>");
                 }
             });
         });
