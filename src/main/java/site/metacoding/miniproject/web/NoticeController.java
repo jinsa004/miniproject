@@ -57,7 +57,7 @@ public class NoticeController {
     @GetMapping("emp/noticeDetail/{noticeId}") // notice/Detail로 들어가는게 좋을 것 같습니다
     public String recruitDetail(@PathVariable Integer noticeId, Model model) {// 개인회원 입장에서 채용공고 상세보기
         Employee principal = (Employee) session.getAttribute("empprincipal");
-        Notice noticePS = noticeService.내공고하나보기(noticeId);
+        Notice noticePS = noticeService.기업공고하나보기(noticeId);
         model.addAttribute("noticePS", noticePS);
         List<Resume> resumePS = resumeService.내이력서가져오기(principal.getEmployeeId());
         model.addAttribute("resumePS", resumePS);
@@ -111,7 +111,7 @@ public class NoticeController {
             @PathVariable Integer noticeId, Model model) {
         List<Job> jobPS = jobService.관심직무보기();
         model.addAttribute("jobPS", jobPS);
-        Notice noticePS = noticeService.내공고하나보기(noticeId);
+        Notice noticePS = noticeService.내공고상세보기(noticeId);
         model.addAttribute("noticePS", noticePS);
         return "notice/noticeUpdate";
     }
