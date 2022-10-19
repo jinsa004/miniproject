@@ -109,8 +109,7 @@
               <div class="btn_group">
                 <div class="subscribe_btn">
                   <button type="button">
-                    <i id="iconSub"
-                      class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-star my_pointer my_red'></i>
+                    <i id="iconSub" class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-star my_pointer my_red'></i>
                     <span class="txt">구독</span>
                   </button>
                   <!-- <div><i id="iconSub"
