@@ -12,7 +12,7 @@ public interface IntroDao {
 
 	public Intro findById(Integer companyId);
 
-	public List<Intro> findByJobCodeToIntro(Integer JobCode);
+	public List<Intro> findByJobCodeToIntro(Integer jobCode);
 
 	public void insert(IntroInsertDto introInsertDto);
 

@@ -8,7 +8,7 @@
             <li class="active" data-tab="tab-1"><a href="/emp/companyList">전체직군</a></li>
             <li data-tab="tab-2"><a href="/emp/companyList/search?jobCode=1">프론트엔드</a></li>
             <li data-tab="tab-3"><a href="/emp/companyList/search?jobCode=2">백엔드</a></li>
-            <li data-tab="tab-4"><a href="/emp/companyList/search?jobCode=3">웹풀스택</a></li>
+            <li data-tab="tab-4"><a href="/emp/companyList/search?jobCode=3">풀스택</a></li>
             <li data-tab="tab-5"><a href="/emp/companyList/search?jobCode=4">안드로이드</a></li>
             <li data-tab="tab-6"><a href="/emp/companyList/search?jobCode=5">IOS</a></li>
           </ul>
@@ -19,8 +19,8 @@
           <div class="notice_box">
             <div class="company_card">
               <div id="tab-1" class="company_inner company_inner1 tab-content on">
-                <ul>
-                  <c:forEach var="jobIntroList" items="${jobIntroList}" begin="0" end="3" step="1">
+                <c:forEach var="jobIntroList" items="${jobIntroList}">
+                  <ul>
                     <li>
                       <a href="companyIntroDetail/${jobIntroList.introId}">
                         <span class="company_logo"><img src="/image?imageName=${jobIntroList.newImageName}"
@@ -32,7 +32,8 @@
                         <!-- .company_txt -->
                       </a>
                     </li>
-                  </c:forEach>
+                  </ul>
+                </c:forEach>
               </div>
             </div>
           </div>
