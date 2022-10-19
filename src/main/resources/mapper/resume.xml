@@ -4,9 +4,9 @@
 <mapper namespace="site.metacoding.miniproject.domain.resume.ResumeDao">
 
 	<insert id="insert">
-    insert into resume(resume_title, employee_id, resume_image_id, highschool_name, highschool_startdate, highschool_enddate, highschool_major, 
-    univ_name, univ_startdate, univ_enddate, univ_major, univ_grades, prev_co, career_period, career_position, career_department, career_task, job_id, is_main, created_at) 
-    VALUES(#{resumeTitle}, #{employeeId}, #{resumeImageId}, #{highschoolName}, #{highschoolStartdate}, #{highschoolEnddate},  #{highschoolMajor}, #{univName}, #{univStartdate}, #{univEnddate}, #{univMajor}, #{univGrades}, #{prevCo}, #{careerPeriod}, #{careerPosition}, #{careerDepartment}, #{careerTask}, #{jobId}, false, NOW())
+		insert into resume(resume_title, employee_id, resume_image_id, highschool_name, highschool_startdate, highschool_enddate, highschool_major, 
+		univ_name, univ_startdate, univ_enddate, univ_major, univ_grades, prev_co, career_period, career_position, career_department, career_task, job_id, is_main, created_at) 
+		VALUES(#{resumeTitle}, #{employeeId}, #{resumeImageId}, #{highschoolName}, #{highschoolStartdate}, #{highschoolEnddate},  #{highschoolMajor}, #{univName}, #{univStartdate}, #{univEnddate}, #{univMajor}, #{univGrades}, #{prevCo}, #{careerPeriod}, #{careerPosition}, #{careerDepartment}, #{careerTask}, #{jobId}, false, NOW())
 	</insert>
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.resume.Resume">
@@ -52,16 +52,16 @@
 		LEFT OUTER JOIN employee e
 		ON r.employee_id = e.employee_id
 		LEFT OUTER JOIN job j
-		ON e.job_id = j.job_id
+		ON r.job_id = j.job_id
 		WHERE r.resume_id = #{resumeId}
 	</select>
 
 	<select id="findByEmployeeId" resultType="site.metacoding.miniproject.domain.resume.Resume">
-    SELECT *
-    FROM resume r
-    INNER JOIN job j
-    ON r.job_id = j.job_id
-    WHERE r.employee_id=#{employeeId}
+		SELECT *
+		FROM resume r
+		INNER JOIN job j
+		ON r.job_id = j.job_id
+		WHERE r.employee_id=#{employeeId}
   </select>
 
 	<update id="update">
