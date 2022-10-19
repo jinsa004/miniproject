@@ -12,6 +12,8 @@ public interface IntroDao {
 
 	public Intro findById(Integer companyId);
 
+	public List<Intro> findByJobCodeToIntro(Integer jobCode);
+
 	public void insert(IntroInsertDto introInsertDto);
 
 	public void update(Intro intro);

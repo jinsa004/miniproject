@@ -36,6 +36,10 @@ public class IntroService {
         return introDao.findAll();
     }
 
+    public List<Intro> 기업소개분야별목록보기(Integer jobCode) {
+        return introDao.findByJobCodeToIntro(jobCode);
+    }
+
     public DetailDto 기업소개상세보기(Integer companyId, Integer principalId) {// 개인이 보는 기업상세보기
         return introDao.findByDetail(companyId, principalId);
     }

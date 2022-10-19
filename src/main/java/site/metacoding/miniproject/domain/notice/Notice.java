@@ -41,6 +41,7 @@ public class Notice {
 	private String introLocation;
 	private String introImage;
 	private Integer resumeId;
+	private String newImageName;
 
 	public void update(NoticeUpdateDto noticeUpdateDto) {
 		this.noticeTitle = noticeUpdateDto.getNoticeTitle();

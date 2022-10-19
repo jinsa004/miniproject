@@ -31,8 +31,8 @@
                 <ul id="tab-1" class="notice_inner tab_content show">
                   <c:forEach var="noticeAllList" items="${noticeAllList}">
                     <ul>
-                      <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}"><img src="/img/logo_1.png"
-                            alt="logo"></a>
+                      <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}"><img
+                            src="/image?imageName=${noticeAllList.newImageName}" alt="logo"></a>
                       </li>
                       <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}">
                           ${noticeAllList.noticeTitle}
