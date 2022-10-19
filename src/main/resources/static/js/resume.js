@@ -44,9 +44,9 @@ function insertResume() {
   let univStartdate = $("#univ_start_date").val();
   let univEnddate = $("#univ_end_date").val();
   let univMajor = $("#univ_major").val();
-  let univGrades = $("univ_grades").val();
+  let univGrades = $("#univ_grades").val();
   let prevCo = $("#career_name").val();
-  let careerPeriod = $('select[name="career_option"]:checked').val();
+  let careerPeriod = $("#career_option").val();
   let careerPosition = $("#career_position").val();
   let careerDepartment = $("#career_section").val();
   let careerTask = $("#career_task").val();
