@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
@@ -103,6 +104,13 @@ public class EmployeeController {
         List<Intro> introList = introService.기업소개목록보기();
         model.addAttribute("introList", introList);
         return "employee/companyList";
+    }
+
+    @GetMapping("emp/companyList/search")
+    public String getJobNoticeList(@RequestParam("jobCode") Integer jobCode, Model model) {
+        List<Intro> jobIntroList = introService.기업소개분야별목록보기(jobCode);
+        model.addAttribute("jobNoticeList", jobIntroList);
+        return "employee/companyJobList";
     }
 
     @GetMapping("/emp/mypageInsertForm/{employeeId}")

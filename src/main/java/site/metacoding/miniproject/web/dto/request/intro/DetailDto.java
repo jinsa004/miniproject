@@ -26,4 +26,5 @@ public class DetailDto {
     private Integer employeeId;
     private boolean isSubed;
     private Integer subscribeId;
+    private String newImageName;
 }

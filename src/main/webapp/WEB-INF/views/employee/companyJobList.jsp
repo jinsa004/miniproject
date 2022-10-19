@@ -19,20 +19,21 @@
           <div class="notice_box">
             <div class="company_card">
               <div id="tab-1" class="company_inner company_inner1 tab-content on">
-                <ul>
-                  <c:forEach var="intro" items="${introList}">
+                <c:forEach var="jobIntroList" items="${jobIntroList}">
+                  <ul>
                     <li>
-                      <a href="companyIntroDetail/${intro.introId}">
-                        <span class="company_logo"><img src="/image?imageName=${intro.newImageName}"
+                      <a href="companyIntroDetail/${jobIntroList.introId}">
+                        <span class="company_logo"><img src="/image?imageName=${jobIntroList.newImageName}"
                             alt="회사로고" /></span>
                         <div class="company_txt">
-                          <span class="company_title">${intro.introConame}</span>
-                          <span class="company_text">${intro.introTask}</span>
+                          <span class="company_title">${jobIntroList.introConame}</span>
+                          <span class="company_text">${jobIntroList.introTask}</span>
                         </div>
                         <!-- .company_txt -->
                       </a>
                     </li>
-                  </c:forEach>
+                  </ul>
+                </c:forEach>
               </div>
             </div>
           </div>

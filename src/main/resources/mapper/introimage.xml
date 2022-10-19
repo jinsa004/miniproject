@@ -3,8 +3,8 @@
 <mapper namespace="site.metacoding.miniproject.domain.image.intro.IntroImageDao">
 
     <insert id="save" parameterType="site.metacoding.miniproject.domain.image.intro.IntroImage" useGeneratedKeys="true" keyProperty="introImageId">
-        INSERT INTO intro_image(origin_image_name, new_image_name, image_path, created_at)
-		VALUES(#{originImageName}, #{newImageName}, #{imagePath}, NOW())
+        INSERT INTO intro_image(company_id, origin_image_name, new_image_name, image_path, created_at)
+		VALUES(#{companyId}, #{originImageName}, #{newImageName}, #{imagePath}, NOW())
     </insert>
 
 </mapper>

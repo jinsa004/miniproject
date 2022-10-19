@@ -12,13 +12,15 @@ import lombok.Setter;
 @Setter
 public class IntroImage {
     private Integer introImageId;
+    private Integer companyId;
     private String originImageName;
     private String newImageName;
     private String imagePath;
     private Timestamp createdAt;
 
     @Builder
-    public IntroImage(String originImageName, String newImageName, String imagePath) {
+    public IntroImage(Integer companyId, String originImageName, String newImageName, String imagePath) {
+        this.companyId = companyId;
         this.originImageName = originImageName;
         this.newImageName = newImageName;
         this.imagePath = imagePath;
