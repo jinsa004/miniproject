@@ -14,7 +14,7 @@ public class Intro {
 	private Integer introId;
 	private Integer companyId;
 	@NotBlank
-	private String introTitle;
+	private String introConame;
 	private String introBirth;
 	@NotBlank
 	private String introTask;
@@ -32,7 +32,7 @@ public class Intro {
 
 	public void Update(UpdateDto updateDto) {
 		this.companyName = updateDto.getCompanyName();
-		this.introTitle = updateDto.getIntroTitle();
+		this.introConame = updateDto.getIntroConame();
 		this.introBirth = updateDto.getIntroBirth();
 		this.introTask = updateDto.getIntroTask();
 		this.introSal = updateDto.getIntroSal();

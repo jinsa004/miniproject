@@ -35,8 +35,8 @@
                 <div class="info_left margin_bottom">
                   <div class="basic_input">
                     <span class="info_right_txt">회사명</span>
-                    <input type="text" id="companyName" name="basic_name" class="box_input info_right_input"
-                      value="${intro.companyName}" placeholder="회사명을 입력하세요" />
+                    <input type="text" id="introConame" name="basic_name" class="box_input info_right_input"
+                      value="${intro.coname}" placeholder="회사명을 입력하세요" />
                   </div>
                 </div>
                 <div class="basic_row margin_bottom">

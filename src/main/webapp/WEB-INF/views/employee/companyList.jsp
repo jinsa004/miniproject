@@ -26,32 +26,17 @@
                         <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
                         <div class="company_txt">
                           <input type="hidden" value="${intro.no}">
-                          <span class="company_title">${intro.companyName}</span>
-                          <span class="company_text">${intro.introTitle}, ${intro.introTask}</span>
+                          <span class="company_title">${intro.introConame}</span>
+                          <span class="company_text">${intro.introTask}</span>
                         </div>
                         <!-- .company_txt -->
                       </a>
+                    </li>
                   </c:forEach>
-                  </li>
-              </div>
-              <div id="tab-2" class="company_inner company_inner1 tab-content on">
-                <ul>
-                  <c:forEach var="intro" items="${introList}" begin="4" end="7" step="1">
-                    <li>
-                      <a href="companyIntroDetail/${intro.introId}">
-                        <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
-                        <div class="company_txt">
-                          <input type="hidden" value="${intro.no}">
-                          <span class="company_title">${intro.companyName}</span>
-                          <span class="company_text">${intro.introTitle}, ${intro.introTask}</span>
-                        </div>
-                        <!-- .company_txt -->
-                      </a>
-                  </c:forEach>
-                  </li>
               </div>
             </div>
-            <!-- .notice_box -->
+          </div>
+          <!-- .notice_box -->
         </section>
         <div class="paging">
           <ul class="pagination">

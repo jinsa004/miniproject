@@ -59,7 +59,7 @@
 	</select>
 
 	<select id="findByNoticeIdToNoticeDetail" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT nj.*, i.intro_id, i.intro_title, i.intro_birth, i.intro_task, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_location
+		SELECT nj.*, i.intro_id, i.intro_coname, i.intro_birth, i.intro_task, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_location
 		FROM (SELECT n.*,j.job_name
 		FROM notice n
 		INNER JOIN job j
