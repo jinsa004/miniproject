@@ -914,6 +914,12 @@ input.login_check{
     height: 200px;
     background: #bbb;
 }
+.company_box .company_location .location_img img{
+    max-width: 340px;
+    min-height: 200px;
+    height: auto;
+    width: 340px;
+}
 
 .btn_recruit_insert{
     width: 402px;
@@ -1236,6 +1242,12 @@ input.login_check{
     height: 330px;
     background: #ddd;
     text-align: center;
+}
+.location_map img{
+    max-width: 380px;
+    min-height: 330px;
+    height: auto;
+    width: 380px;
 }
 .location_info{
     margin-top: 20px;

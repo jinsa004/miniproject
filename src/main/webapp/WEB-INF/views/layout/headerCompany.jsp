@@ -67,6 +67,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
               </c:when>
               <c:otherwise>
                 <a class="btn_logout" href="/co/logout">로그아웃</a>
+                <a href="/co/companyIntroInsert" class="btn_mypage"
+                  >마이페이지</a
+                >
                 <!-- <c:choose>
                     <c:when test="${empty introPS.introId}">
                       <a href="/co/companyIntroInsert" class="btn_mypage">마이페이지</a>

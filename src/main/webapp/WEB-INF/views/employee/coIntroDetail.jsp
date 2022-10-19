@@ -83,7 +83,7 @@
                       <span class="info_right_txt info_right_txt2">회사위치</span>
                       <div class="basic_location">
                         <div class="location_map">
-                          <img src="">지도
+                          <img src="/img/map_1.png" alt="지도예시">
                         </div>
                         <div class="location_info">
                           <input type="text" id="sample6_address" placeholder="주소">
