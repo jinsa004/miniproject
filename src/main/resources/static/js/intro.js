@@ -13,7 +13,7 @@ $("#iconSub").click(() => {
   }
 });
 
-$("#btnUpdate").click(() => {
+$("#btnInsertCompany").click(() => {
   update();
 });
 
@@ -36,6 +36,7 @@ function insertSub() {
     }
   });
 }
+
 //DB에 delete요청하기
 function deleteSub() {
   let introId = $("#introId").val();
@@ -52,30 +53,74 @@ function deleteSub() {
     }
   });
 }
+
 //빨강하트 그리기
 function renderSub() {
   $("#iconSub").removeClass("fa-regular");
   $("#iconSub").addClass("fa-solid");
 }
+
 //검정하트 그리기
 function renderCancelSub() {
   $("#iconSub").removeClass("fa-solid");
   $("#iconSub").addClass("fa-regular");
 }
-//기업소개 수정하기
-function update() {
+
+
+//기업소개 등록하기
+$("#btnInsertCompanyInfo").click(() => {
+  InsertIntro();
+});
+
+function InsertIntro() {
+  let data = {
+    companyId: $("#companyId").val(),
+    introTitle: $("#introTitle").val(),
+    introBirth: $("#introBirth").val(),
+    introTask: $("#introTask").val(),
+    introSal: $("#introSal").val(),
+    introWellfare: $("#introWellfare").val(),
+    introContent: $("#introContent").val(),
+    introLocation: $("#sample6_address").val()
+  }
+
+
+  $.ajax("/co/companyIntroInsert", {
+    type: "POST",
+    dataType: "json", // 응답 데이터
+    data: JSON.stringify(data), // http body에 들고갈 요청 데이터
+    headers: {
+      // http header에 들고갈 요청 데이터
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  }).done((res) => {
+    if (res.code == 1) {
+      alert("기업소개 등록 완료");
+      location.href = "/co/companyIntroUpdate/" + data.companyId;
+    } else {
+      alert("등록에 실패하였습니다");
+    }
+  });
+}
+
+
+$("#btnUpdateCompanyInfo").click(() => {
+  updateIntro();
+});
+
+
+function updateIntro() {
   let data = {
     companyName: $("#companyName").val(),
     introBirth: $("#introBirth").val(),
     introTask: $("#introTask").val(),
     introSal: $("#introSal").val(),
     introWellfare: $("#introWellfare").val(),
-    introContent: $("#introContent").val(),
-    jobName: $("#jobName").val()
+    introContent: $("#introContent").val()
   }
-  let introId = $("#introId").val();
+  let companyId = $("#companyId").val();
   console.log("업데이트확인");
-  $.ajax("/co/companyIntroUpdate/" + introId + "/update", {
+  $.ajax("/co/companyIntroUpdate/" + companyId + "/update", {
     type: "PUT",
     dataType: "json", // 응답 데이터
     data: JSON.stringify(data), // http body에 들고갈 요청 데이터

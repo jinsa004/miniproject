@@ -6,7 +6,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,12 +17,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject.domain.check.employee.EmpCheck;
 import site.metacoding.miniproject.domain.employee.Employee;
 import site.metacoding.miniproject.domain.intro.Intro;
+import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
 import site.metacoding.miniproject.domain.subscribe.Subscribe;
 import site.metacoding.miniproject.service.EmployeeService;
 import site.metacoding.miniproject.service.IntroService;
+import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.ResumeService;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeJoinDto;
 import site.metacoding.miniproject.web.dto.request.employee.EmployeeLoginDto;
@@ -34,10 +36,10 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 @Controller
 public class EmployeeController {
 
-    @Autowired
     private final EmployeeService employeeService;
     private final ResumeService resumeService;
     private final IntroService introService;
+    private final JobService jobService;
     private final HttpSession session;
 
     @PostMapping("/emp/login")
@@ -63,12 +65,7 @@ public class EmployeeController {
             return new CMRespDto<>(-1, "로그인실패", null);
         }
         session.setAttribute("principal", principal);
-        return new CMRespDto<>(1, "로그인성공", principal);
-    }
-
-    @GetMapping("/emp/matchingNotice")
-    public String matchingList() {// 개인회원이 보는 매칭리스트탭(관심분야맞는 공고 목록보기)
-        return "employee/matchingNotice";
+        return new CMRespDto<>(1, "로그인성공", null);
     }
 
     @GetMapping("/emp/subscription")
@@ -118,6 +115,13 @@ public class EmployeeController {
 
     @GetMapping("/emp/employeeInfo/{employeeId}")
     public String 회원정보수정탈퇴페이지(@PathVariable Integer employeeId, Model model) {// 개인회원 회원가입 정보수정
+        // 리스트값 불러오기
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
+        List<EmpCheck> checkPS = employeeService.관심분야값보기(employeeId);
+        model.addAttribute("checkPS", checkPS);
+
+        // 세션값담기
         Employee employeePS = (Employee) session.getAttribute("principal");
         /* Employee employeePS = employeeService.employeeUpdate(employeeId); */
         model.addAttribute("employee", employeePS);
@@ -137,12 +141,9 @@ public class EmployeeController {
     @PutMapping("/emp/employeeInfo/{employeeId}")
     public @ResponseBody CMRespDto<?> 회원정보수정(@PathVariable Integer employeeId,
             @RequestBody EmployeeUpdateDto employeeUpdateDto) {
-
         Employee employeePS = employeeService.employeeUpdate(employeeId,
                 employeeUpdateDto);
         session.setAttribute("principal", employeePS);
-
-        employeeService.employeeUpdate(employeeId, employeeUpdateDto);
         return new CMRespDto<>(1, "회원수정성공", null);
     }
 
@@ -156,5 +157,25 @@ public class EmployeeController {
     public String logout() {
         session.invalidate();
         return "redirect:/";
+    }
+
+    // =========================== 유효성체크 ======================================
+    // http://localhost:8000/users/usernameSameCheck?username=ssar
+    @GetMapping("/emp/usernameSameCheck")
+    public @ResponseBody CMRespDto<Boolean> usernameSameCheck(String employeeUsername) {
+        boolean isSame = employeeService.유저네임중복확인(employeeUsername);
+        return new CMRespDto<>(1, "성공", isSame);
+    }
+
+    @GetMapping("/emp/checkPassword")
+    public @ResponseBody CMRespDto<Boolean> checkPassword(String employeePassword) {
+        boolean isSame = employeeService.비밀번호2차체크(employeePassword);
+        return new CMRespDto<>(1, "성공", isSame);
+    }
+
+    @GetMapping("/emp/checkEmail")
+    public @ResponseBody CMRespDto<Boolean> checkEmail(String employeeEmail) {
+        boolean isSame = employeeService.이메일형식체크(employeeEmail);
+        return new CMRespDto<>(1, "성공", isSame);
     }
 }

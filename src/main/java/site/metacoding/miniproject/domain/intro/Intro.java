@@ -1,9 +1,11 @@
 package site.metacoding.miniproject.domain.intro;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 
+@NoArgsConstructor
 @Getter
 @Setter
 public class Intro {

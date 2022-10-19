@@ -9,6 +9,8 @@ public interface ResumeDao {
 
     public Resume findById(Integer resumeId);
 
+    public List<Resume> findMatchingByJobId(Integer companyId);
+
     public List<Resume> findByEmployeeId(Integer employeeId);
 
     public void insert(Resume resume);

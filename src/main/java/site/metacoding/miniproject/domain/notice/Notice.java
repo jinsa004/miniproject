@@ -31,13 +31,16 @@ public class Notice {
 	// 엔티티가 아닌 필드
 	private Integer jobCode;
 	private String jobName;
+	private String introId;
 	private String introTitle;
 	private String introBirth;
 	private String introTask;
 	private String introSal;
 	private String introWellfare;
+	private String introContent;
 	private String introLocation;
 	private String introImage;
+	private Integer resumeId;
 
 	public void update(NoticeUpdateDto noticeUpdateDto) {
 		this.noticeTitle = noticeUpdateDto.getNoticeTitle();

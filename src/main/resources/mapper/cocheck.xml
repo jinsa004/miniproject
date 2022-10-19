@@ -7,4 +7,8 @@
 		VALUES(#{companyId}, #{jobId})
 	</insert>
 
+	<delete id="deleteById">
+		DELETE FROM co_check WHERE company_id=#{companyId}
+	</delete>
+
 </mapper>

@@ -14,4 +14,8 @@ public interface EmployeeDao {
 	public void deleteById(Integer employeeId);
 
 	public Employee findByEmployeeUsername(String employeeUsername);
+
+	public Employee findByEmployeePassword(String employeePassword);
+
+	public Employee findByEmployeeEmail(String employeeEmail);
 }

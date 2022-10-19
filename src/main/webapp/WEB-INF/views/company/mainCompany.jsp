@@ -5,12 +5,12 @@
       <div class="container">
         <div class="tablist">
           <ul class="tabs">
-            <li class="btn_tab  on" data-tab="tab-1"><a href="/co">전체직군</a></li>
-            <li class="btn_tab" data-tab="tab-2"><a href="/co/resume?jobCode=1">프론트엔드</a></li>
-            <li class="btn_tab" data-tab="tab-3"><a href="/co/resume?jobCode=2">백엔드</a></li>
-            <li class="btn_tab" data-tab="tab-4"><a href="/co/resume?jobCode=3">웹풀스택</a></li>
-            <li class="btn_tab" data-tab="tab-5"><a href="/co/resume?jobCode=4">안드로이드</a></li>
-            <li class="btn_tab" data-tab="tab-6"><a href="/co/resume?jobCode=5">IOS</a></li>
+            <li class="active" data-tab="tab-1">전체직군</a></li>
+            <li data-tab="tab-2"><a href="/co/resume?jobCode=1">프론트엔드</a></li>
+            <li data-tab="tab-3"><a href="/co/resume?jobCode=2">백엔드</a></li>
+            <li data-tab="tab-4"><a href="/co/resume?jobCode=3">풀스택</a></li>
+            <li data-tab="tab-5"><a href="/co/resume?jobCode=4">안드로이드</a></li>
+            <li data-tab="tab-6"><a href="/co/resume?jobCode=5">IOS</a></li>
           </ul>
         </div>
         <!-- .tablist -->
@@ -34,7 +34,9 @@
                               <li class="career">
                                 <span>${resumeAllList.careerPeriod}</span>
                               </li>
-                              <li class="part"><span>${resumeAllList.jobName}</span></li>
+                              <li class="part">
+                                <span>${resumeAllList.jobName}</span>
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -42,7 +44,8 @@
                       </a>
                     </li>
                   </c:forEach>
-                </ul><!-- #tab-1 -->
+                </ul>
+                <!-- #tab-1 -->
               </div>
             </div>
             <!-- .resume_list -->
@@ -71,4 +74,28 @@
 
     <script src="/js/main.js"></script>
     <script src="/js/company.js"></script>
+    <!-- <script type="text/javascript">
+      // jquery 최초 기본형
+      $(document).ready(function () {
+        // 탭메뉴
+        let tab_menu_list_a = $(".tabs li a");
+        let tab_menu_list = $(".tabs li");
+
+        // 메뉴 내용
+        let tab_box = $(".tab_content");
+
+        // 탭메뉴 내용 보여주기
+        $.each(tab_menu_list, function (index, item) {
+          // tab_menu_list_a.eq(index) = $(this)
+          $(this).click(function (event) {
+            event.preventDefault();
+
+            tab_menu_list.removeClass("active");
+            $(this).addClass("active");
+            tab_box.hide();
+            tab_box.eq(index).show();
+          });
+        });
+      });
+    </script> -->
     <%@ include file="../layout/footerCompany.jsp" %>

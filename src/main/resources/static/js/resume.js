@@ -41,7 +41,7 @@ function insertResume() {
     careerPosition: $("#career_position").val(),
     careerDepartment: $("#career_section").val(),
     careerTask: $("#career_task").val(),
-    jobId: $("input[id=jobId]:checked").val()
+    jobId: $("input[class=job_id]:checked").val()
   };
   console.log(data.resumeName);
   $.ajax("/emp/resumeSave", {
@@ -82,7 +82,7 @@ function updateResume() {
     careerPosition: $("#career_position").val(),
     careerDepartment: $("#career_section").val(),
     careerTask: $("#career_task").val(),
-    jobId: $('input[id=jobId]:checked').val(),
+    jobId: $('input[class=job_id]:checked').val(),
   };
   let employeeId = $("#employeeId").val();
   let resumeId = $("#resumeId").val();

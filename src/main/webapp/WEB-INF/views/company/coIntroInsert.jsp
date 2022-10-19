@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypageCompany.jsp" %>
-
     <div class="company_update">
       <div id="intro_wrap">
         <div class="container">
           <div class="intro_update">
             <div class="title_update">
-              <h1>기업 소개 수정하기</h1>
+              <h1>기업 소개 등록</h1>
             </div>
             <div id="logo_info" class="form">
               <div class="form_title">
@@ -16,7 +15,7 @@
                 <div class="info_img">
                   <form method="post" action="/resume_detail" enctype="multipart/form-data">
                     <span class="info_myimg">
-                      <img src="/img/logo_1.png">
+                      <img src="">
                     </span>
                     <div class="logo_img_right">
                       <input type="file" name="file" id="files" class="hidden" />
@@ -27,7 +26,7 @@
               </div><!-- .logo_form -->
             </div>
             <!-- logo -->
-            <input id="companyId" type="hidden" value="${principal.companyId}" />
+            <input id="introId" type="hidden" value="${intro.introId}" />
             <div id="basic_info" class="form">
               <div class="form_title">
                 <h2 class="title">회사 정보</h2>
@@ -99,7 +98,7 @@
 
             <div class="btn_group">
               <div class="update_btn">
-                <button id="btnUpdateCompanyInfo" type="button" class="btn btn-primary">수정완료</button>
+                <button id="btnInsertCompanyInfo" type="button" class="btn btn-primary">등록하기</button>
               </div>
             </div>
             <!-- btn -->

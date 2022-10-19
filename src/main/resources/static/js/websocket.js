@@ -12,7 +12,7 @@ window.onload = function () {
                 let alarmResult = JSON.parse(result.body);
                 console.log(alarmResult.sender);
 
-                $("#notification").append("<tr><td>" + alarmResult.sender + " 기업이 " +alarmResult.receiver + " 님을 " + alarmResult.alarmMessage + "했습니다.</td></tr>");
+                $("#notification").append("<tr><td>" + alarmResult.sender + " 기업이 " + alarmResult.receiver + " 님을 " + alarmResult.alarmMessage + "했습니다.</td></tr>");
             });
         });
     }
@@ -53,7 +53,7 @@ function contact() {
         "alarmMessage": "컨택",
         "sender": sender,
     };
-   console.log(sender) ;
+    console.log(sender);
 
     // let contact_data = sender + "기업이 " + receiver + "님께 컨택했습니다.";
     // console.log(contact_data);

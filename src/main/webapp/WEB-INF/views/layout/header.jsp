@@ -10,6 +10,7 @@
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="/css/reset.css" />
       <link rel="stylesheet" href="/css/main.css" />
+      <link href="/css/style.css" rel="stylesheet" />
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
       <script type="text/javascript"
@@ -53,18 +54,19 @@
                   <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
                   <!--여기에 alarmContainer 만들어야함-->
                   <div id="alarmContainer">
-                    <button type="button" style="width: 20px; height: 20px; background: red; border-radius: 50%">1</button>
+                    <button type="button"
+                      style="width: 20px; height: 20px; background: red; border-radius: 50%">1</button>
                     <div class="row">
                       <div class="col-md-12">
-                          <table id="conversation" class="table table-striped">
-                              <thead>
-                              <tr>
-                                  <th>Notification</th>
-                              </tr>
-                              </thead>
-                              <tbody id="notification">
-                              </tbody>
-                          </table>
+                        <table id="conversation" class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Notification</th>
+                            </tr>
+                          </thead>
+                          <tbody id="notification">
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   </div>
@@ -241,5 +243,4 @@
           <input class="checkprinciple" type="hidden" value="${principal.companyName}">
         </c:when>
       </c:choose>
-
       <script src="/js/webSocket.js"></script>

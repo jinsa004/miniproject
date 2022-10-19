@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.application.Application;
 import site.metacoding.miniproject.domain.company.Company;
+import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
-import site.metacoding.miniproject.service.CompanyService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.ResumeService;
@@ -30,8 +30,10 @@ import site.metacoding.miniproject.web.dto.response.CMRespDto;
 @RequiredArgsConstructor
 @Controller
 public class ResumeController {
+
     private final ResumeService resumeService;
     private final JobService jobService;
+    private final IntroService introService;
     private final HttpSession session;
 
     /* =============================개인회원========================================= */
@@ -92,6 +94,11 @@ public class ResumeController {
         model.addAttribute("jobPS", jobPS);
         List<Resume> resumeAllList = resumeService.이력서목록보기();
         model.addAttribute("resumeAllList", resumeAllList);
+        // Company principal = (Company) session.getAttribute("principal");
+        // if (principal != null) {
+        // Intro introPS = introService.마이페이지설정(principal.getCompanyId());
+        // model.addAttribute("introPS", introPS);
+        // }
         return "company/mainCompany";
     }
 
@@ -102,10 +109,15 @@ public class ResumeController {
         return "company/jobResume";
     }
 
+    @GetMapping("/co/matchingResume/{companyId}")
+    public String companyMatchingList(@PathVariable Integer companyId, Model model) {
+        List<Resume> matchingResume = resumeService.기업매칭리스트보기(companyId);
+        model.addAttribute("matchingResume", matchingResume);
+        return "company/matchingResume";
+    }
+
     @GetMapping("co/resumeDetail/{resumeId}")
     public String getResumeDetail(@PathVariable Integer resumeId, Model model) {
-        Company companyPS = (Company) session.getAttribute("principal");
-        model.addAttribute("company", companyPS);
         model.addAttribute("resume", resumeService.이력서상세보기(resumeId));
         return "company/resumeDetail";
     }
