@@ -95,7 +95,7 @@ public class NoticeController {
         return "notice/noticeSave";
     }
 
-    @PostMapping("/coapi/co/noticeSave")
+    @PostMapping("/coapi/cs/co/noticeSave")
     public @ResponseBody CMRespDto<?> insert(@RequestBody Notice notice) {
         noticeService.공고등록(notice);
         return new CMRespDto<>(1, "통신성공", null);

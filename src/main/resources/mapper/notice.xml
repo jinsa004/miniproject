@@ -10,7 +10,7 @@
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT n.*, i.new_image_name
 		FROM notice n
-		LEFT outer JOIN intro_image i
+		LEFT OUTER JOIN intro_image i
 		ON n.company_id = i.company_id
 		ORDER BY n.notice_period DESC
 	</select>
@@ -19,7 +19,7 @@
 		SELECT ni.*
 		FROM (SELECT n.*, i.new_image_name
 		FROM notice n
-		INNER JOIN intro_image i
+		LEFT OUTER JOIN intro_image i
 		ON n.company_id = i.company_id) ni
 		INNER JOIN job j
 		ON ni.job_id = j.job_id
@@ -37,7 +37,7 @@
 		ON ec.employee_id = e.employee_id
 		WHERE ec.employee_id = #{employeeId}) ec
 		ON n.job_id = ec.job_id) nec
-		INNER JOIN intro_image img
+		LEFT OUTER JOIN intro_image img
 		ON nec.company_id = img.company_id
 		ORDER BY nec.notice_period DESC
 	</select>
@@ -61,7 +61,7 @@
 		INNER JOIN subscribe s
 		ON n.company_id = s.company_id
 		WHERE s.employee_id = #{employeeId}) ns
-		INNER JOIN intro_image img
+		LEFT OUTER JOIN intro_image img
 		ON ns.company_id = img.company_id
 		ORDER BY ns.notice_period DESC
 	</select>
