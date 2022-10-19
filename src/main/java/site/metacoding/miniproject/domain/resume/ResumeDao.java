@@ -2,6 +2,8 @@ package site.metacoding.miniproject.domain.resume;
 
 import java.util.List;
 
+import site.metacoding.miniproject.web.dto.request.resume.ResumeInsertDto;
+
 public interface ResumeDao {
     public List<Resume> findAll();
 
@@ -13,7 +15,7 @@ public interface ResumeDao {
 
     public List<Resume> findByEmployeeId(Integer employeeId);
 
-    public void insert(Resume resume);
+    public void insert(ResumeInsertDto rid);
 
     public void deleteById(Integer resumeId);
 

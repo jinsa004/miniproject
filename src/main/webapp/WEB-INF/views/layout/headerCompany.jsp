@@ -32,8 +32,7 @@
 
                         <div class="search_bar">
                             <form class="cf">
-                                <input type="text" id="search" title="검색어 입력" name="search" placeholder="검색어를 입력해주세요."
-                                    maxlength="50" />
+                                <input type="text" id="search" title="검색어 입력" name="search" placeholder="검색어를 입력해주세요." maxlength="50" />
                                 <!-- <button type="submit" class="btn_search">검색</button> -->
                             </form>
                         </div>
@@ -41,13 +40,9 @@
 
                         <div class="login_box">
                             <c:choose>
-                                <c:when test="${empty principal.companyId}">
-                                    <button class="btn_login" type="button" onClick="javascript:popOpenCompany();">
-                                        로그인
-                                    </button>
-                                    <button class="btn_join" type="button" onClick="javascript:popOpenCompany2();">
-                                        회원가입
-                                    </button>
+                                <c:when test="${empty coprincipal.companyId}">
+                                    <button class="btn_login" type="button" onClick="javascript:popOpenCompany();">로그인</button>
+                                    <button class="btn_join" type="button" onClick="javascript:popOpenCompany2();">회원가입</button>
                                     <a href="/emp/main" class="btn_company">회원 서비스</a>
                                 </c:when>
                                 <c:otherwise>
@@ -57,8 +52,7 @@
                                             <a href="/co/companyIntroInsert" class="btn_mypage">마이페이지</a>
                                         </c:when>
                                         <c:otherwise>
-                                            <a href="/co/companyIntroUpdate/${principal.companyId}"
-                                                class="btn_mypage">마이페이지</a>
+                                            <a href="/co/companyIntroUpdate/${coprincipal.companyId}" class="btn_mypage">마이페이지</a>
                                         </c:otherwise>
                                     </c:choose>
                                     <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
@@ -78,7 +72,7 @@
                                             </table>
                                           </div>
                                         </div>
-                                      </div>
+                                    </div>
                                 </c:otherwise>
                             </c:choose>
                         </div>
@@ -253,11 +247,10 @@
                 </div>
             </div>
             <c:choose>
-                <c:when test="${!empty principal.employeeId}">
-                    <input class="checkprinciple" type="hidden" value="${principal.employeeName}">
+                <c:when test="${!empty empprincipal.employeeId}">
+                    <input class="checkprinciple" type="hidden" value="${empprincipal.employeeName}">
                 </c:when>
-                <c:when test="${!empty principal.companyId}">
-                    <input class="checkprinciple" type="hidden" value="${principal.companyName}">
+                <c:when test="${!empty coprincipal.companyId}">
+                    <input class="checkprinciple" type="hidden" value="${coprincipal.companyName}">
                 </c:when>
             </c:choose>
-            <script src="/js/websocket.js"></script>

@@ -11,9 +11,11 @@ window.onload = function () {
             stomp.subscribe("/sub/alarm/" + receiver, function (result) {
                 let alarmResult = JSON.parse(result.body);
                 console.log(alarmResult.sender);
-
-                $("#notification_emp").append("<tr><td>" + alarmResult.sender + " 기업이 " + alarmResult.receiver + " 님을 " + alarmResult.alarmMessage + "했습니다.</td></tr>");
-                $("#notification_co").append("<tr><td>" + alarmResult.sender + " 님이 " + alarmResult.receiver + " 기업을 " + alarmResult.alarmMessage + "구독했습니다.</td></tr>");
+                if(alarmResult.alarmMessage == "컨택"){
+                    $("#notification_emp").append("<tr><td>" + alarmResult.sender + " 기업이 " + alarmResult.receiver + " 님을 " + alarmResult.alarmMessage + "했습니다.</td></tr>");
+                } else if(alarmResult.alarmMessage == "구독"){
+                    $("#notification_co").append("<tr><td>" + alarmResult.sender + " 님이 " + alarmResult.receiver + " 기업을 " + alarmResult.alarmMessage + "구독했습니다.</td></tr>");
+                }
             });
         });
     }
@@ -38,6 +40,7 @@ function subscribe() {
         "alarmMessage": "구독",
         "sender": sender,
     };
+    console.log(sender);
 
     let subdata = sender + "님이 " + receiver + "을 구독 했습니다";
     console.log(subdata);

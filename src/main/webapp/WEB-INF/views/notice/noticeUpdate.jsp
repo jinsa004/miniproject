@@ -123,7 +123,5 @@
         </div>
       </div>
       <!-- #wrap -->
-
-      <script src="/js/main.js"></script>
       <script src="/js/notice.js"></script>
       <%@ include file="../layout/footerCompany.jsp" %>

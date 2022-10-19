@@ -52,7 +52,10 @@
       </div>
     </div>
   </footer>
-
+  <script src="/js/main.js"></script>
+  <script src="/js/company.js"></script>
+  <script src="/js/intro.js"></script>
+  <script src="/js/websocket.js"></script>
   </body>
 
   </html>

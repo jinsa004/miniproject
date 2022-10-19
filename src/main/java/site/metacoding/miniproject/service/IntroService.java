@@ -41,17 +41,17 @@ public class IntroService {
 
     public Intro 기업소개수정상세보기(Integer companyId) {// 기업이 보는 마이페이지
         Intro intro = introDao.findById(companyId);
-        Company principal = (Company) session.getAttribute("principal");
+        Company coprincipal = (Company) session.getAttribute("coprincipal");
         // 비정상 요청 체크
         if (intro == null) {
             throw new RuntimeException("잘못된 접근입니다");
         }
         // 인증체크
-        if (principal == null) {
+        if (coprincipal == null) {
             throw new RuntimeException("로그인하세요");
         }
         // 권한체크
-        if (principal.getCompanyId() != intro.getCompanyId()) {
+        if (coprincipal.getCompanyId() != intro.getCompanyId()) {
             throw new RuntimeException("잘못접근");
         }
         return intro;
