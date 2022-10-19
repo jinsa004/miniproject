@@ -1,8 +1,16 @@
 package site.metacoding.miniproject.service;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.UUID;
 
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -74,7 +82,7 @@ public class ImageService {
         return resumeImage.getResumeImageId();
     }
 
-    public Integer introInsertImage(MultipartFile image) throws Exception {
+    public Integer introInsertImage(MultipartFile image, Integer companyId) throws Exception {
         // 파일이 빈 것이 들어오면 메서드 종료
         if (image.isEmpty()) {
             return null;
@@ -114,6 +122,7 @@ public class ImageService {
                     .originImageName(image.getOriginalFilename())
                     .newImageName(newImageName)
                     .imagePath(absolutePath)
+                    .companyId(companyId)
                     .build();
 
             introImageDao.save(introImage);
@@ -129,4 +138,25 @@ public class ImageService {
         // DTO를 위에 띄웠기 때문에 resumeImageId값을 받을 수 있음
         return introImage.getIntroImageId();
     }
+
+    // public ResponseEntity<Resource> 이미지불러오기(String newImageName) {
+    // String absolutePath = "src/main/resources/static/images/";
+    // FileSystemResource resource = new FileSystemResource(absolutePath +
+    // newImageName);
+    // if (!resource.exists()) {
+    // return null;
+    // }
+    // HttpHeaders header = new HttpHeaders();
+    // Path filePath = null;
+    // try {
+    // filePath = Paths.get(absolutePath + newImageName);
+    // header.add("Content-Type", Files.probeContentType(filePath));
+
+    // } catch (Exception e) {
+    // e.printStackTrace();
+    // }
+    // ResponseEntity<Resource> responseEntity = new
+    // ResponseEntity<Resource>(resource, header, HttpStatus.OK);
+    // return responseEntity;
+    // }
 }

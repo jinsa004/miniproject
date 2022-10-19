@@ -70,7 +70,8 @@
 
           <div class="company_box rd_right">
             <span class="company_box_title">기업정보</span>
-            <span class="info_logo"><img src="/img/logo_1.png" alt="logo" /></span>
+            <span class="info_logo"><img src="/image?imageName=9339f9ee-830c-45ec-a5e9-a09c85ae4463.jpg"
+                alt="logo" /></span>
             <span class="info_tit"><em>회사명</em><strong>${noticePS.introConame}</strong></span>
             <span class="info_year"><em>설립연도</em><strong>${noticePS.introBirth}</strong></span>
             <span class="info_task"><em>주요업무</em><strong>${noticePS.introTask}</strong></span>

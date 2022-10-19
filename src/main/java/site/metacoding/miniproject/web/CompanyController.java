@@ -98,7 +98,7 @@ public class CompanyController {
 
     @PostMapping("/co/companyIntroInsert")
     public @ResponseBody CMRespDto<?> 기업소개등록(IntroInsertDto introInsertDto) throws Exception {
-        Integer introImageId = imageService.introInsertImage(introInsertDto.getImage());
+        Integer introImageId = imageService.introInsertImage(introInsertDto.getImage(), introInsertDto.getCompanyId());
         introInsertDto.setIntroImageId(introImageId);
         introService.기업소개등록(introInsertDto);
         return new CMRespDto<>(1, "기업소개 등록 성공", null);
