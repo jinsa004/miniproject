@@ -34,7 +34,7 @@ create table resume(
     univ_startdate VARCHAR(24),
     univ_enddate VARCHAR(24),
     univ_major VARCHAR(24),
-    univ_grades FLOAT,
+    univ_grades VARCHAR(8),
     prev_co VARCHAR(40),
     career_period VARCHAR(40),
     career_position VARCHAR(24),
