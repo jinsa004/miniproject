@@ -9,7 +9,7 @@
                 <div class="resume_update">
                   <input id="employeeId" type="hidden" value="${empprincipal.employeeId}">
                   <div class="title_update">
-                    <h1>이력서제목의 이력서 입니다.</h1>
+                    <h1>${resume.resumeTitle}</h1>
                   </div>
                   <div id="info" class="form">
                     <div class="form_title">

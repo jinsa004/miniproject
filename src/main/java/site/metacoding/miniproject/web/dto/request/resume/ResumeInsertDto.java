@@ -1,7 +1,5 @@
 package site.metacoding.miniproject.web.dto.request.resume;
 
-import javax.validation.constraints.NotEmpty;
-
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Getter;

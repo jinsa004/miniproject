@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerMypageCompany.jsp" %>
-
     <div class="company_update">
       <div id="intro_wrap">
         <div class="container">
@@ -36,8 +35,8 @@
                 <div class="info_left margin_bottom">
                   <div class="basic_input">
                     <span class="info_right_txt">회사명</span>
-                    <input type="text" id="introConame" name="basic_name" class="box_input info_right_input"
-                      value="${intro.introConame}" placeholder="회사명을 입력하세요" />
+                    <input type="text" id="companyName" name="basic_name" class="box_input info_right_input"
+                      value="${intro.companyName}" placeholder="회사명을 입력하세요" />
                   </div>
                 </div>
                 <div class="basic_row margin_bottom">

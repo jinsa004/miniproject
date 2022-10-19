@@ -7,7 +7,7 @@
             <div class="title_update">
               <h1>기업 소개 등록</h1>
             </div>
-            <input id="companyId" type="hidden" value="${principal.companyId}" />
+            <input id="companyId" type="hidden" value="${coprincipal.companyId}" />
             <div id="logo_info" class="form">
               <div class="form_title">
                 <h2 class="title">회사로고</h2>
@@ -34,7 +34,7 @@
                   <div class="basic_input">
                     <span class="info_right_txt">회사명</span>
                     <input type="text" id="introConame" name="basic_name" class="box_input info_right_input"
-                      value="${intro.coname}" placeholder="회사명을 입력하세요" />
+                      value="${intro.introConame}" placeholder="회사명을 입력하세요" />
                   </div>
                 </div>
                 <div class="basic_row margin_bottom">

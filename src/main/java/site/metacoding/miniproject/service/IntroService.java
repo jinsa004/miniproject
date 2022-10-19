@@ -60,7 +60,7 @@ public class IntroService {
 
     public void 기업소개수정하기(Integer companyId, UpdateDto updateDto) {
         Intro introPS = introDao.findById(companyId);
-        Company principal = (Company) session.getAttribute("principal");
+        Company principal = (Company) session.getAttribute("coprincipal");
         // 비정상 요청 체크
         if (introPS == null) {
             throw new RuntimeException("잘못된 접근입니다");

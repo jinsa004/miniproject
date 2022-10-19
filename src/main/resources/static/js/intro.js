@@ -13,10 +13,6 @@ $("#iconSub").click(() => {
   }
 });
 
-$("#btnInsertCompany").click(() => {
-  update();
-});
-
 $("#btnUpdateCompanyInfo").click(() => {
   updateIntro();
 });
@@ -70,7 +66,6 @@ function renderCancelSub() {
   $("#iconSub").addClass("fa-regular");
 }
 
-
 //기업소개 등록하기
 $("#btnInsertCompanyInfo").click(() => {
   InsertIntro();
@@ -90,7 +85,7 @@ $("#image").on("change", function (event) {
 
 function InsertIntro() {
   let companyId = $("#companyId").val();
-  let introTitle = $("#introTitle").val();
+  let introConame = $("#introConame").val();
   let introBirth = $("#introBirth").val();
   let introTask = $("#introTask").val();
   let introSal = $("#introSal").val();
@@ -101,7 +96,7 @@ function InsertIntro() {
 
   let formData = new FormData();
   formData.append("companyId", companyId);
-  formData.append("introTitle", introTitle);
+  formData.append("introConame", introConame);
   formData.append("introBirth", introBirth);
   formData.append("introTask", introTask);
   formData.append("introSal", introSal);
@@ -128,7 +123,7 @@ function InsertIntro() {
 
 function updateIntro() {
   let data = {
-    companyName: $("#companyName").val(),
+    introConame: $("#introConame").val(),
     introBirth: $("#introBirth").val(),
     introTask: $("#introTask").val(),
     introSal: $("#introSal").val(),

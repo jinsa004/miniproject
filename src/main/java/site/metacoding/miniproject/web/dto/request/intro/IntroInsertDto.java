@@ -12,7 +12,7 @@ import lombok.Setter;
 public class IntroInsertDto {
     private Integer introImageId;
     private Integer companyId;
-    private String introTitle;
+    private String introConame;
     private String introBirth;
     private String introTask;
     private String introSal;
