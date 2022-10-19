@@ -70,7 +70,7 @@ public class ResumeController {
     //
     @PostMapping(value = "emp/imageSave", produces = "text/plain;charset=utf-8")
     public @ResponseBody CMRespDto<?> insertImage(ResumeInsertDto rid) throws Exception {
-        Integer resumeImageId = imageService.insertImage(rid.getImage());
+        Integer resumeImageId = imageService.resumeInsertImage(rid.getImage());
         rid.setResumeImageId(resumeImageId);
         resumeService.이력서작성(rid);
         return new CMRespDto<>(1, "이력서 등록 성공", null);
