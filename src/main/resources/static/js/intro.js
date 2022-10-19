@@ -96,24 +96,22 @@ function InsertIntro() {
   let image = $('input[name="image"]').get(0).files[0];
 
   let formData = new FormData();
-  formData.append("resumeTitle", companyId);
-  formData.append("employeeId", introTitle);
-  formData.append("highschoolName", introBirth);
-  formData.append("highschoolStartdate", introTask);
-  formData.append("highschoolEnddate", introSal);
-  formData.append("highschoolMajor", introWellfare);
-  formData.append("univName", introContent);
+  formData.append("companyId", companyId);
+  formData.append("introTitle", introTitle);
+  formData.append("introBirth", introBirth);
+  formData.append("introTask", introTask);
+  formData.append("introSal", introSal);
+  formData.append("introWellfare", introWellfare);
+  formData.append("introContent", introContent);
   formData.append("introLocation", introLocation);
   formData.append("image", image);
 
   $.ajax("/co/companyIntroInsert", {
     type: "POST",
     dataType: "json", // 응답 데이터
-    data: JSON.stringify(data), // http body에 들고갈 요청 데이터
-    headers: {
-      // http header에 들고갈 요청 데이터
-      "Content-Type": "application/json; charset=utf-8",
-    },
+    processData: false,
+    contentType: false,
+    data: formData // http body에 들고갈 요청 데이터
   }).done((res) => {
     if (res.code == 1) {
       alert("기업소개 등록 완료");
