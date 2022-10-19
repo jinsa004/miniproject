@@ -93,6 +93,7 @@ function InsertIntro() {
   let introWellfare = $("#introWellfare").val();
   let introContent = $("#introContent").val();
   let introLocation = $("#sample6_address").val();
+  let jobId = $('input[class=job_id]:checked').val();
   let image = $('input[name="image"]').get(0).files[0];
 
   let formData = new FormData();
@@ -104,6 +105,7 @@ function InsertIntro() {
   formData.append("introWellfare", introWellfare);
   formData.append("introContent", introContent);
   formData.append("introLocation", introLocation);
+  formData.append("jobId", jobId);
   formData.append("image", image);
 
   $.ajax("/co/companyIntroInsert", {
@@ -130,8 +132,10 @@ function updateIntro() {
     introSal: $("#introSal").val(),
     introWellfare: $("#introWellfare").val(),
     introContent: $("#introContent").val(),
-    introLocation: $(".introLocation").val()
+    introLocation: $(".introLocation").val(),
+    jobId: $('input[class="job_id"]:checked').val()
   }
+
   let companyId = $("#companyId").val();
   console.log("업데이트확인");
   $.ajax("/co/companyIntroUpdate/" + companyId + "/update", {

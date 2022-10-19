@@ -51,7 +51,7 @@
                   <a class="btn_logout" href="/co/logout">로그아웃</a>
                   <c:choose>
                     <c:when test="${empty introPS.introId}">
-                      <a href="/co/companyIntroDetail/${coprincipal.companyId}" class="btn_mypage">마이페이지</a>
+                      <a href="/co/companyIntroInsert" class="btn_mypage">마이페이지</a>
                     </c:when>
                     <c:otherwise>
                       <a href="/co/companyIntroUpdate/${coprincipal.companyId}" class="btn_mypage">마이페이지</a>

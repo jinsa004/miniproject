@@ -19,5 +19,6 @@ public class UpdateDto {
     private String introContent;
     private String introLocation;
     private String introImageId;
+    private Integer jobId;
     private String jobName;
 }
