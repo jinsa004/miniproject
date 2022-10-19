@@ -7,7 +7,7 @@
             <section id="resume_wrap">
               <div class="container">
                 <div class="resume_update">
-                  <input id="employeeId" type="hidden" value="${principal.employeeId}">
+                  <input id="employeeId" type="hidden" value="${empprincipal.employeeId}">
                   <div class="title_update">
                     <h1>이력서제목의 이력서 입니다.</h1>
                   </div>

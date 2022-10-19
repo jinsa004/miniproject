@@ -27,7 +27,7 @@
               </div><!-- .logo_form -->
             </div>
             <!-- logo -->
-            <input id="companyId" type="hidden" value="${principal.companyId}" />
+            <input id="companyId" type="hidden" value="${coprincipal.companyId}" />
             <div id="basic_info" class="form">
               <div class="form_title">
                 <h2 class="title">회사 정보</h2>
