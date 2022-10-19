@@ -98,8 +98,8 @@
                   <ul>
                     <c:forEach var="jobPS" items="${jobPS}">
                       <li>
-                        <input type="radio" name="job_id" id="part_select_front" class="job_id"
-                          value="${jobPS.jobId}" />
+                        <input type="radio" name="job_id" id="part_select_front" class="job_id" value="${jobPS.jobId}"
+                          <c:if test="${jobPS.jobId eq intro.jobId}">checked</c:if>/>
                         <label for="part_select_front"><em>${jobPS.jobName}</em></label>
                       </li>
                     </c:forEach>
