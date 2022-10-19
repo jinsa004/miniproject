@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject.domain.application.Application;
@@ -21,9 +22,11 @@ import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.domain.resume.Resume;
+import site.metacoding.miniproject.service.ImageService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.service.ResumeService;
+import site.metacoding.miniproject.web.dto.request.resume.ResumeInsertDto;
 import site.metacoding.miniproject.web.dto.request.resume.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
@@ -33,6 +36,7 @@ public class ResumeController {
 
     private final ResumeService resumeService;
     private final JobService jobService;
+    private final ImageService imageService;
     private final IntroService introService;
     private final HttpSession session;
 
@@ -64,11 +68,20 @@ public class ResumeController {
         return "resume/resumeSave";
     }
 
-    @PostMapping("emp/resumeSave")
-    public @ResponseBody CMRespDto<?> insertResume(@RequestBody Resume resume) {
-        resumeService.이력서작성(resume);
+    // , produces = "text/plain;charset=utf-8"
+    @PostMapping("emp/imageSave")
+    public @ResponseBody CMRespDto<?> insertImage(ResumeInsertDto rid) throws Exception {
+        Integer resumeImageId = imageService.insertImage(rid.getImage());
+        rid.setResumeImageId(resumeImageId);
+        resumeService.이력서작성(rid);
         return new CMRespDto<>(1, "이력서 등록 성공", null);
     }
+
+    // @PostMapping("emp/resumeSave")
+    // public @ResponseBody CMRespDto<?> insertResume(@RequestBody Resume resume) {
+    // resumeService.이력서작성(resume);
+    // return new CMRespDto<>(1, "이력서 등록 성공", null);
+    // }
 
     @GetMapping("emp/resumeUpdate/{resumeId}")
     public String updateResumeForm(@PathVariable Integer resumeId, Model model) { // 이력서 수정 페이지
