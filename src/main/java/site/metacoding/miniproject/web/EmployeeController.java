@@ -106,11 +106,11 @@ public class EmployeeController {
         return "employee/companyList";
     }
 
-    @GetMapping("emp/notice")
+    @GetMapping("emp/companyList/search")
     public String getJobNoticeList(@RequestParam("jobCode") Integer jobCode, Model model) {
         List<Intro> jobIntroList = introService.기업소개분야별목록보기(jobCode);
         model.addAttribute("jobNoticeList", jobIntroList);
-        return "employee/jobNotice";
+        return "employee/companyJobList";
     }
 
     @GetMapping("/emp/mypageInsertForm/{employeeId}")

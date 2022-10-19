@@ -29,6 +29,16 @@
 		WHERE c.company_id = #{companyId}
 	</select>
 
+	<select id="findByJobCodeToIntro" resultType="site.metacoding.miniproject.domain.intro.Intro">
+		SELECT ii.*
+		FROM (SELECT i.*, img.new_image_name
+		FROM intro i
+		INNER JOIN intro_image img
+		ON i.company_id = img.company_id) ii
+		INNER JOIN job j
+		ON ii.job_id = j.job_id
+		WHERE j.job_code = #{jobCode}
+	</select>
 
 	<update id="update">
 		UPDATE intro i
