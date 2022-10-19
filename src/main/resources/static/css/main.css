@@ -1331,7 +1331,8 @@ input.login_check {
     height: 200px;
     background: #bbb;
 }
-.company_box .company_location .location_img img{
+
+.company_box .company_location .location_img img {
     max-width: 340px;
     min-height: 200px;
     height: auto;
@@ -1478,7 +1479,8 @@ input.login_check {
     cursor: pointer;
     box-sizing: border-box;
 }
-.resume_select_cont .resume_select_box .tit{
+
+.resume_select_cont .resume_select_box .tit {
     display: block;
     max-width: 370px;
     font-size: 16px;
@@ -1699,13 +1701,15 @@ input.login_check {
     background: #ddd;
     text-align: center;
 }
-.location_map img{
+
+.location_map img {
     max-width: 380px;
     min-height: 330px;
     height: auto;
     width: 380px;
 }
-.location_info{
+
+.location_info {
     margin-top: 20px;
 }
 
@@ -1748,7 +1752,8 @@ input.login_check {
     color: #4876ef;
     transition: all 0.3s;
 }
-#iconSub{
+
+#iconSub {
     cursor: pointer;
 }
 
@@ -1763,7 +1768,7 @@ input.login_check {
     border: 1px solid #4876ef;
     color: #fff;
     font-size: 18px;
-    
+
     transition: all 0.3s;
     font-weight: bold;
     letter-spacing: 0em;
@@ -1793,10 +1798,10 @@ input.login_check {
 .subscribe_btn button:hover {
     border-color: #0ccca4;
     animation: btn 0.5s linear;
-    background:#0ccca4;
+    background: #0ccca4;
 }
 
-.subscribe_btn button:hover #iconSub{
+.subscribe_btn button:hover #iconSub {
     color: #fff;
 }
 
