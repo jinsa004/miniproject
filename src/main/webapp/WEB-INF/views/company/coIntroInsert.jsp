@@ -13,13 +13,13 @@
               </div>
               <div class="logo_form">
                 <div class="info_img">
-                  <form method="post" action="/치는주소" enctype="multipart/form-data">
+                  <form method="post" action="/resume_detail" enctype="multipart/form-data">
                     <span class="info_myimg">
                       <img src="">
                     </span>
                     <div class="logo_img_right">
-                      <input type="file" multiple="multiple" name="image" />
-                      <button type="submit" id="submit" value="전송" class="file_submit">파일전송</button>
+                      <input type="file" name="file" id="files" class="hidden" />
+                      <button type="submit" class="file_submit">파일전송</button>
                     </div>
                   </form>
                 </div>
@@ -27,7 +27,6 @@
             </div>
             <!-- logo -->
             <input id="introId" type="hidden" value="${intro.introId}" />
-            <input id="companyId" type="hidden" value="${principal.companyId}" />
             <div id="basic_info" class="form">
               <div class="form_title">
                 <h2 class="title">회사 정보</h2>
@@ -35,9 +34,9 @@
               <div class="info_form">
                 <div class="info_left margin_bottom">
                   <div class="basic_input">
-                    <span class="info_right_txt">소개명</span>
-                    <input type="text" id="introTitle" name="basic_name" class="box_input info_right_input"
-                      value="${intro.introTitle}" placeholder="소개명을 입력하세요" />
+                    <span class="info_right_txt">회사명</span>
+                    <input type="text" id="companyName" name="basic_name" class="box_input info_right_input"
+                      value="${intro.companyName}" placeholder="회사명을 입력하세요" />
                   </div>
                 </div>
                 <div class="basic_row margin_bottom">
@@ -84,7 +83,7 @@
                       </div>
                       <div class="location_info">
                         <input type="text" id="sample6_postcode" placeholder="우편번호">
-                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn_post_code">
+                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="btn_post">
                         <input type="text" id="sample6_address" placeholder="주소">
                         <input type="text" id="sample6_detailAddress" placeholder="상세주소">
                         <!-- <input type="text" id="sample6_extraAddress" placeholder="참고항목"> -->
@@ -92,13 +91,14 @@
                     </div>
                   </div>
                 </div><!-- .location_wrap -->
+
               </div>
             </div>
             <!-- basic -->
 
             <div class="btn_group">
               <div class="update_btn">
-                <button id="btnInsertCompanyInfo" type="button" class="btn btn-primary">등록완료</button>
+                <button id="btnInsertCompanyInfo" type="button" class="btn btn-primary">등록하기</button>
               </div>
             </div>
             <!-- btn -->

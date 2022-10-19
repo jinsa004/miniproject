@@ -16,4 +16,8 @@ public interface CompanyDao {
 	public Company findByCompanyUsername(String companyUsername);
 
 	public Company findByIdCompanyUsername(String companyUsername);
+
+	public Company findByCompanyPassword(String companyPassword);
+
+	public Company findByCompanyEmail(String companyEmail);
 }

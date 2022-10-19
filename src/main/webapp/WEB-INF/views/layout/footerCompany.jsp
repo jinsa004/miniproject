@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-  <div id="company_wrap">
+
     <footer id="sri_footer" class="sri_footer">
       <div class="wrap_footer">
         <div class="links" role="navigation" aria-label="4조 서비스 정책 및 이용문의">
@@ -53,7 +53,7 @@
         </div>
       </div>
     </footer>
-  </div>
+
   </body>
 
   </html>

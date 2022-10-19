@@ -638,6 +638,49 @@ select option{
     background: #333;
 }
 
+/* 관심분야 radio */
+[type="radio"] {
+    vertical-align: middle;
+    appearance: none;
+    border: max(2px, 2px) solid #666;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    transition: border 0.3s ease-in-out;
+}
+[type="radio"]:checked {
+    border: 6px solid #4876ef;
+}
+[type="radio"]:focus-visible {
+    outline-offset: max(2px, 2px);
+    outline: max(2px, 2px) solid #4876ef;
+} 
+[type="radio"]:hover {
+    box-shadow: 0 0 0 max(4px, 2px) #ddd;
+    cursor: pointer;
+}
+.input_radio_skill ul{
+    font-size: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.input_radio_skill ul li{
+}
+.input_radio_skill ul li:first-child{
+    margin-left: 0;
+}
+.input_radio_skill input{
+    vertical-align: top;
+    margin-right: 10px;
+}
+.input_radio_skill ul li em{
+    font-style: normal;
+    color: #333;
+    font-size: 18px;
+    vertical-align: top;
+}
+
+
 /* =================== 회원정보 수정 ======================== */
 #user_info_wrap{
     position: relative;
