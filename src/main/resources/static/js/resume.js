@@ -22,6 +22,17 @@ $("#btnDeleteResume").click(() => {
 // ====================== function ========================== //
 //이력서 등록
 
+$("#image").on("change", function (event) {
+  let file = event.target.files[0];
+
+  let reader = new FileReader();
+  reader.onload = function (e) {
+    $("#preImage").attr("src", e.target.result);
+  }
+
+  reader.readAsDataURL(file);
+});
+
 function insertResume() {
   let resumeTitle = $("#resume_title").val();
   let employeeId = $("#employeeId").val();
@@ -33,13 +44,13 @@ function insertResume() {
   let univStartdate = $("#univ_start_date").val();
   let univEnddate = $("#univ_end_date").val();
   let univMajor = $("#univ_major").val();
-  let univGrades = $("#grades").val();
+  let univGrades = $("#univ_grades").val();
   let prevCo = $("#career_name").val();
-  let careerPeriod = $("#career_period").val();
+  let careerPeriod = $("#career_option").val();
   let careerPosition = $("#career_position").val();
   let careerDepartment = $("#career_section").val();
   let careerTask = $("#career_task").val();
-  let jobId = $("input[id=jobId]:checked").val();
+  let jobId = $("input[name=job_id]:checked").val();
   let image = $('input[name="image"]').get(0).files[0];
 
   let formData = new FormData();
@@ -71,6 +82,7 @@ function insertResume() {
   }).done((res) => {
     if (res.code == 1) {
       alert("이력서 등록 완료");
+      location.href = "/emp/mypageInsertForm/" + employeeId
     } else {
       alert("이력서 등록에 실패하였습니다");
     }

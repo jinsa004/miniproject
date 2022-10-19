@@ -12,6 +12,7 @@ import site.metacoding.miniproject.domain.intro.IntroDao;
 import site.metacoding.miniproject.domain.subscribe.Subscribe;
 import site.metacoding.miniproject.domain.subscribe.SubscribeDao;
 import site.metacoding.miniproject.web.dto.request.intro.DetailDto;
+import site.metacoding.miniproject.web.dto.request.intro.IntroInsertDto;
 import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 
 @RequiredArgsConstructor
@@ -27,8 +28,8 @@ public class IntroService {
         return intro;
     }
 
-    public void 기업소개등록(Intro intro) {
-        introDao.insert(intro);
+    public void 기업소개등록(IntroInsertDto introInsertDto) {
+        introDao.insert(introInsertDto);
     }
 
     public List<Intro> 기업소개목록보기() {

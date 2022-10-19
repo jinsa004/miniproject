@@ -76,31 +76,50 @@ $("#btnInsertCompanyInfo").click(() => {
   InsertIntro();
 });
 
-function InsertIntro() {
-  let data = {
-    companyId: $("#companyId").val(),
-    introTitle: $("#introTitle").val(),
-    introBirth: $("#introBirth").val(),
-    introTask: $("#introTask").val(),
-    introSal: $("#introSal").val(),
-    introWellfare: $("#introWellfare").val(),
-    introContent: $("#introContent").val(),
-    introLocation: $("#sample6_address").val()
+$("#image").on("change", function (event) {
+  let file = event.target.files[0];
+
+  let reader = new FileReader();
+  reader.onload = function (e) {
+    $("#preImage").attr("src", e.target.result);
   }
 
+  reader.readAsDataURL(file);
+});
+
+
+function InsertIntro() {
+  let companyId = $("#companyId").val();
+  let introTitle = $("#introTitle").val();
+  let introBirth = $("#introBirth").val();
+  let introTask = $("#introTask").val();
+  let introSal = $("#introSal").val();
+  let introWellfare = $("#introWellfare").val();
+  let introContent = $("#introContent").val();
+  let introLocation = $("#sample6_address").val();
+  let image = $('input[name="image"]').get(0).files[0];
+
+  let formData = new FormData();
+  formData.append("companyId", companyId);
+  formData.append("introTitle", introTitle);
+  formData.append("introBirth", introBirth);
+  formData.append("introTask", introTask);
+  formData.append("introSal", introSal);
+  formData.append("introWellfare", introWellfare);
+  formData.append("introContent", introContent);
+  formData.append("introLocation", introLocation);
+  formData.append("image", image);
 
   $.ajax("/co/companyIntroInsert", {
     type: "POST",
     dataType: "json", // 응답 데이터
-    data: JSON.stringify(data), // http body에 들고갈 요청 데이터
-    headers: {
-      // http header에 들고갈 요청 데이터
-      "Content-Type": "application/json; charset=utf-8",
-    },
+    processData: false,
+    contentType: false,
+    data: formData // http body에 들고갈 요청 데이터
   }).done((res) => {
     if (res.code == 1) {
       alert("기업소개 등록 완료");
-      location.href = "/co/companyIntroUpdate/" + data.companyId;
+      location.href = "/co/companyIntroUpdate/" + companyId;
     } else {
       alert("등록에 실패하였습니다");
     }

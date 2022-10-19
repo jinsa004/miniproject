@@ -20,11 +20,13 @@ import site.metacoding.miniproject.domain.company.Company;
 import site.metacoding.miniproject.domain.intro.Intro;
 import site.metacoding.miniproject.domain.job.Job;
 import site.metacoding.miniproject.service.CompanyService;
+import site.metacoding.miniproject.service.ImageService;
 import site.metacoding.miniproject.service.IntroService;
 import site.metacoding.miniproject.service.JobService;
 import site.metacoding.miniproject.web.dto.request.company.CompanyJoinDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyLoginDto;
 import site.metacoding.miniproject.web.dto.request.company.CompanyUpdateDto;
+import site.metacoding.miniproject.web.dto.request.intro.IntroInsertDto;
 import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 import site.metacoding.miniproject.web.dto.response.CMRespDto;
 
@@ -36,6 +38,7 @@ public class CompanyController {
     private final HttpSession session;
     private final IntroService introService;
     private final JobService jobService;
+    private final ImageService imageService;
 
     @PostMapping("/co/login")
     public @ResponseBody CMRespDto<?> login(@RequestBody CompanyLoginDto loginDto, HttpServletResponse response) {
@@ -95,8 +98,10 @@ public class CompanyController {
     }
 
     @PostMapping("/co/companyIntroInsert")
-    public @ResponseBody CMRespDto<?> 기업소개등록(@RequestBody Intro intro) {
-        introService.기업소개등록(intro);
+    public @ResponseBody CMRespDto<?> 기업소개등록(IntroInsertDto introInsertDto) throws Exception {
+        Integer introImageId = imageService.introInsertImage(introInsertDto.getImage());
+        introInsertDto.setIntroImageId(introImageId);
+        introService.기업소개등록(introInsertDto);
         return new CMRespDto<>(1, "기업소개 등록 성공", null);
     }
 

@@ -24,17 +24,13 @@
             <div class="info_form cf">
               <div class="info_left">
                 <div class="info_img">
-                  <form method="post" action="/emp/resumeSave" enctype="multipart/form-data">
-                    <input id="resumeImageId" type="hidden" value="" />
-                    <span class="info_myimg">
-                      <img id="preImage" alt="image_title">
-                    </span>
-                    <input type="file" multiple="multiple" id="image" name="image" />
-                  </form>
+                  <span class="info_myimg">
+                    <img id="preImage" alt="image_title" onerror="this.style.display='none';" />
+                  </span>
+                  <input type="file" multiple="multiple" id="image" name="image" />
                 </div>
               </div><!-- .info_left -->
               <div class="info_right">
-
                 <dl class="info_name">
                   <dd class="name">
                     <span class="info_right_txt">이름</span>
@@ -243,8 +239,7 @@
                 <ul>
                   <c:forEach var="jobPS" items="${jobPS}">
                     <li>
-                      <input type="radio" name="part_select" id="part_select_front" class="job_id"
-                        value="${jobPS.jobId}" />
+                      <input type="radio" name="job_id" id="part_select_front" class="job_id" value="${jobPS.jobId}" />
                       <label for="part_select_front"><em>${jobPS.jobName}</em></label>
                     </li>
                   </c:forEach>
@@ -267,16 +262,6 @@
     </div>
     </div>
     <!-- body -->
-    <script>
-      $("#image").on("change", function (event) {
-        let file = event.target.files[0];
-
-        let reader = new FileReader();
-        reader.onload = function (e) {
-          $("#preImage").attr("src", e.target.result);
-        }
-
-        reader.readAsDataURL(file);
-      });
-    </script>
+    <script src="/js/main.js"></script>
+    <script src="/js/resume.js"></script>
     <%@ include file="../layout/footer.jsp" %>
