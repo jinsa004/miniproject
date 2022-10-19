@@ -422,9 +422,11 @@
 }
 
 .logo_form .info_myimg img {
-    width: 100%;
     height: auto;
     text-align: center;
+    max-width: 340px;
+    min-height: 164px;
+    width: 340px;
 }
 
 .logo_form .logo_img_right {
