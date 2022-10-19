@@ -22,7 +22,7 @@ function btnInsertNotice() {
     noticeQual: $('input[class=noticeQual]:checked').val(),
     noticeCareer: $("#noticeCareer").val(),
     noticeWellfare: $("#noticeWellfare").val(),
-    jobId: $('input[id=job_id]:checked').val()
+    jobId: $('input[class=job_id]:checked').val()
   };
   console.log(data);
   $.ajax("/co/noticeSave", {
@@ -54,10 +54,10 @@ function updateNotice() {
     noticePosition: $("#notice_position").val(),
     noticeTask: $("#notice_task").val(),
     noticeSal: $("#notice_sal").val(),
-    noticeQual: $('input[id=notice_qual]:checked').val(),
+    noticeQual: $('input[class=notice_qual]:checked').val(),
     noticeCareer: $("#notice_career").val(),
     noticeWellfare: $("#notice_wellfare").val(),
-    jobId: $('input[id=job_id]:checked').val(),
+    jobId: $('input[class=job_id]:checked').val(),
   };
 
   $.ajax("/co/noticeUpdate/" + noticeId, {
