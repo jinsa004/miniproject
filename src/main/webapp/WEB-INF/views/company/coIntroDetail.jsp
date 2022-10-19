@@ -112,5 +112,4 @@
     </div>
     </div>
     <!-- body -->
-
     <%@ include file="../layout/footerCompany.jsp" %>

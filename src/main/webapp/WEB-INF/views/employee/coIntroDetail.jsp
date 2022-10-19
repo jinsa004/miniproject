@@ -127,6 +127,4 @@
     </div><!-- .intro_wrap -->
     </div>
     <!-- body -->
-    <script src="/js/main.js"></script>
-    <script src="/js/intro.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

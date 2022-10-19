@@ -72,8 +72,6 @@
       <!-- .container -->
     </div>
     <!-- #wrap -->
-    <script src="/js/main.js"></script>
-    <script src="/js/employee.js"></script>
     <script type="text/javascript">
       // jquery 최초 기본형
       $(document).ready(function () {
@@ -99,4 +97,5 @@
         });
       });
     </script>
+
     <%@ include file="../layout/footer.jsp" %>

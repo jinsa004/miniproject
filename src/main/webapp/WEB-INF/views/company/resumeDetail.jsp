@@ -251,6 +251,4 @@
       </div>
     </div>
     </div><!-- .company_wrap -->
-    <script src="/js/main.js"></script>
-    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>
