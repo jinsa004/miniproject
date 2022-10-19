@@ -9,7 +9,7 @@ import site.metacoding.miniproject.web.dto.request.intro.DetailDto;
 public interface IntroDao {
 	public List<Intro> findAll();
 
-	public Intro findById(Integer introId);
+	public Intro findById(Integer companyId);
 
 	public void insert(Intro intro);
 

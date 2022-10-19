@@ -27,7 +27,7 @@
               </div><!-- .logo_form -->
             </div>
             <!-- logo -->
-            <input id="introId" type="hidden" value="${intro.introId}" />
+            <input id="companyId" type="hidden" value="${principal.companyId}" />
             <div id="basic_info" class="form">
               <div class="form_title">
                 <h2 class="title">회사 정보</h2>
@@ -99,7 +99,7 @@
 
             <div class="btn_group">
               <div class="update_btn">
-                <button id="btnInsertCompany" type="button" class="btn btn-primary">수정완료</button>
+                <button id="btnUpdateCompanyInfo" type="button" class="btn btn-primary">수정완료</button>
               </div>
             </div>
             <!-- btn -->
