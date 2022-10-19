@@ -101,7 +101,7 @@ public class CompanyController {
     }
 
     @PostMapping(value = "/co/companyIntroInsert", produces = "text/plain;charset=utf-8")
-    public @ResponseBody CMRespDto<?> insertImage(IntroInsertDto introInsertDto) throws Exception {
+    public @ResponseBody CMRespDto<?> insertImage(IntroImagetDto introInsertDto) throws Exception {
         Integer introImageId = imageService.insertImage(introInsertDto.getImage());
         introInsertDto.setResumeImageId(introImageId);
         introService.이력서작성(introInsertDto);

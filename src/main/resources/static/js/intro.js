@@ -95,7 +95,6 @@ function InsertIntro() {
   let introLocation = $("#sample6_address").val();
   let image = $('input[name="image"]').get(0).files[0];
 
-
   let formData = new FormData();
   formData.append("resumeTitle", companyId);
   formData.append("employeeId", introTitle);
