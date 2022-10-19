@@ -56,23 +56,23 @@
                                         </c:otherwise>
                                     </c:choose>
                                     <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
-                                    <div id="alarmContainer">
-                                        <button type="button"
-                                          style="width: 20px; height: 20px; background: red; border-radius: 50%">1</button>
-                                        <div class="row">
-                                          <div class="col-md-12">
-                                            <table id="conversation" class="table table-striped">
-                                              <thead>
-                                                <tr>
-                                                  <th>Notification</th>
-                                                </tr>
-                                              </thead>
-                                              <tbody id="notification_co">
-                                              </tbody>
-                                            </table>
-                                          </div>
+                                    <div id="alarmContainer" style="width: 40px; height: 40px; position: relative; top: 0px; right: -20px">
+                                        <button type="button" style="width: 40px; height: 40px; color: #fff; background: none; border: 1px #fff solid; border-radius: 50%" onclick="addNotice()">
+                                            <i class="fa-regular fa-bell"></i>
+                                        </button>
+                                        <div class="row"  style="display: none;">
+                                            <table id="conversation" class="table table-striped" style="position: relative; top: 5px; right: 25px; display: none;">
+                                                <thead>
+                                                  <tr>
+                                                    <th>Notification</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody id="notification_emp">
+                                                </tbody>
+                                              </table>
                                         </div>
                                     </div>
+                                    <!-- alarmContainer -->
                                 </c:otherwise>
                             </c:choose>
                         </div>

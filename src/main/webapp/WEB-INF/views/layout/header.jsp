@@ -55,23 +55,23 @@
                                     <a href="/emp/mypageInsertForm/${empprincipal.employeeId}" class="btn_mypage">마이
                                         페이지</a>
                                     <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
-                                    <div id="alarmContainer">
-                                      <button type="button"
-                                        style="width: 20px; height: 20px; background: red; border-radius: 50%">1</button>
-                                      <div class="row">
-                                        <div class="col-md-12">
-                                          <table id="conversation" class="table table-striped">
+                                    <div id="alarmContainer" style="width: 40px; height: 40px; position: relative; top: 0px; right: -20px">
+                                        <button type="button" style="width: 40px; height: 40px; background: none; border: 1px #ddd solid; border-radius: 50%" onclick="addNotice()">
+                                            <i class="fa-regular fa-bell"></i>
+                                        </button>
+                                        <div class="row">
+                                          <table id="conversation" class="table table-striped" style="width: 250px; display: none;">
                                             <thead>
                                               <tr>
-                                                <th>Notification</th>
+                                                <th style="width: 250px; position: relative; top: 5px; right: 100px; ">Notification</th>
                                               </tr>
                                             </thead>
-                                            <tbody id="notification_emp">
+                                            <tbody id="notification_emp" style=" position: relative; top: 5px; right: 100px; font-size: 13px">
                                             </tbody>
                                           </table>
                                         </div>
-                                      </div>
                                     </div>
+                                    <!-- alarmContainer -->
                                 </c:otherwise>
                             </c:choose>
                         </div>
@@ -95,6 +95,7 @@
                         <!-- nav -->
                     </header>
                     <!-- header -->
+                    
                 </div>
                 <!-- .header_wrap -->
 
