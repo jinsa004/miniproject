@@ -1042,7 +1042,7 @@ input.login_check{
     box-sizing: border-box;
 }
 .resume_select_cont .resume_select_box .tit{
-    display: block;
+    display: inline-block;
     max-width: 370px;
     font-size: 16px;
     font-weight: normal;

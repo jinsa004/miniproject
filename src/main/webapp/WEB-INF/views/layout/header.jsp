@@ -185,39 +185,40 @@
                                         </span>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="join_right">
-                                    <div class="join_adress join_box company_location">
-                                        <h3>
-                                            <label for="employeeLocation">주소</label>
-                                        </h3>
-                                        <span>
-                                            <input type="text" id="sample6_postcode" placeholder="우편번호" />
-                                            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"
-                                                class="btn_post_code" />
-                                            <input type="text" id="sample6_address" class="employeeLocation"
-                                                placeholder="주소" />
-                                            <input type="text" id="sample6_detailAddress" placeholder="상세주소" />
-                                            <input type="text" id="sample6_extraAddress" placeholder="참고항목" />
-                                        </span>
-                                    </div>
-                                    <!-- .join_adress -->
-
-                                    <div class="career_part">
-                                        <h2>관심분야</h2>
-                                        <c:forEach var="jobPS" items="${jobPS}">
-                                            <div class="career_part1 part_box">
-                                                <input type="checkbox" class="login_check" class="job_Id"
-                                                    name="job_checkbox" value="${jobPS.jobId}" />
-                                                <em>
-                                                    <label for="c_part_front">${jobPS.jobName}</label>
-                                                </em>
-                                            </div>
-                                        </c:forEach>
-                                    </div>
-                                    <!-- .career_part -->
+                            <div class="join_right">
+                                <div class="join_adress join_box company_location">
+                                    <h3>
+                                        <label for="employeeLocation">주소</label>
+                                    </h3>
+                                    <span>
+                                        <input type="text" id="sample6_postcode" placeholder="우편번호" />
+                                        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"
+                                            class="btn_post_code" />
+                                        <input type="text" id="sample6_address" class="employeeLocation"
+                                            placeholder="주소" />
+                                        <input type="text" id="sample6_detailAddress" placeholder="상세주소" />
+                                        <input type="text" id="sample6_extraAddress" placeholder="참고항목" />
+                                    </span>
                                 </div>
-                                <!-- .join_right -->
+                                <!-- .join_adress -->
+
+                                <div class="career_part">
+                                    <h2>관심분야</h2>
+                                    <c:forEach var="jobPS" items="${jobPS}">
+                                        <div class="career_part1 part_box">
+                                            <input type="checkbox" class="login_check" class="job_Id"
+                                                name="job_checkbox" value="${jobPS.jobId}" />
+                                            <em>
+                                                <label for="c_part_front">${jobPS.jobName}</label>
+                                            </em>
+                                        </div>
+                                    </c:forEach>
+                                </div>
+                                <!-- .career_part -->
+                            </div>
+                            <!-- .join_right -->
                         </form>
 
                         <button id="btn_join" type="button">회원가입</button>

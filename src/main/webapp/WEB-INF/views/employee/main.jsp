@@ -7,7 +7,7 @@
             <li class="active" data-tab="tab-1"><a href="/emp">전체직군</a></li>
             <li class="" data-tab="tab-2"><a href="/emp/notice?jobCode=1">프론트엔드</a></li>
             <li class="" data-tab="tab-3"><a href="/emp/notice?jobCode=2">백엔드</a></li>
-            <li class="" data-tab="tab-4"><a href="/emp/notice?jobCode=3">웹풀스택</a></li>
+            <li class="" data-tab="tab-4"><a href="/emp/notice?jobCode=3">풀스택</a></li>
             <li class="" data-tab="tab-5"><a href="/emp/notice?jobCode=4">안드로이드</a></li>
             <li class="" data-tab="tab-6"><a href="/emp/notice?jobCode=5">IOS</a></li>
           </ul>
