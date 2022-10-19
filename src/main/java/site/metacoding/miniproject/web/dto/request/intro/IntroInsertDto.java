@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class IntroInsertDto {
+    private Integer introImageId;
     private Integer companyId;
     private String introTitle;
     private String introBirth;

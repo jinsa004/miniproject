@@ -16,14 +16,11 @@ import site.metacoding.miniproject.domain.image.resume.ResumeImageDao;
 public class ImageService {
     private final ResumeImageDao resumeImageDao;
 
-    public Integer insertImage(MultipartFile image) throws Exception {
+    public Integer resumensertImage(MultipartFile image) throws Exception {
         // 파일이 빈 것이 들어오면 메서드 종료
         if (image.isEmpty()) {
             return null;
         }
-
-        // save할 DTO 띄우기
-        ResumeImage resumeImage = new ResumeImage();
 
         // 절대경로 추출
         String absolutePath = new File("src/main/resources/static/images/").getAbsolutePath();
@@ -50,6 +47,8 @@ public class ImageService {
             }
             String newImageName = UUID.randomUUID().toString() + originalImageExtension;
 
+            // save할 DTO 띄우기
+            ResumeImage resumeImage = new ResumeImage();
             // DTO에 담기
             resumeImage = ResumeImage.builder()
                     .originImageName(image.getOriginalFilename())
