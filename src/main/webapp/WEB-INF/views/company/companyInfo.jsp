@@ -126,5 +126,4 @@
     </div>
     </div>
     <!-- body -->
-    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

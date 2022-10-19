@@ -53,6 +53,8 @@
     </div>
   </footer>
   <script src="/js/main.js"></script>
+  <script src="/js/company.js"></script>
+  <script src="/js/notice.js"></script>
   <script src="/js/intro.js"></script>
   </body>
 
