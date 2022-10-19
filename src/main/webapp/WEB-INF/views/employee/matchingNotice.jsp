@@ -4,7 +4,7 @@
     <div id="user_wrap">
       <div class="container">
         <div class="matching_list">
-          <a href="/emp/employeeInfo/${empprincipal.employeeId}" class="btn_matching_insert"> 관심 분야 수정</a>
+          <a href="/es/emp/employeeInfo/${empprincipal.employeeId}" class="btn_matching_insert"> 관심 분야 수정</a>
         </div>
         <!-- .tablist -->
 
@@ -23,8 +23,8 @@
               <c:forEach var="matchingNotice" items="${matchingNotice}">
                 <div>
                   <ul>
-                    <li><a href="/emp/noticeDetail/${matchingNotice.noticeId}"><img src="/img/logo_1.png"
-                          alt="logo"></a>
+                    <li><a href="/emp/noticeDetail/${matchingNotice.noticeId}"><img
+                          src="/image?imageName=${matchingNotice.newImageName}" alt="logo"></a>
                     </li>
                     <li><a href="/emp/noticeDetail/${matchingNotice.noticeId}">
                         ${matchingNotice.noticeTitle}
@@ -32,8 +32,8 @@
                       </a></li>
                     <li>${matchingNotice.noticeCareer}<span class="notice_small">${matchingNotice.noticeQual}</span>
                     </li>
-                    <li>${matchingNotice.noticePosition}<span class="notice_small">부산</span></li>
-                    <!-- notice 테이블에 지역 컬럼 만들거나 sal을 넣는 등 수정 필요 -->
+                    <li>${matchingNotice.noticeDept}<span class="notice_small">${matchingNotice.noticePosition}</span>
+                    </li>
                     <li>~${matchingNotice.noticePeriod}<span class="notice_small">마감 13일전</span></li>
                   </ul>
                 </div>
@@ -61,6 +61,5 @@
       <!-- .container -->
     </div>
     <!-- #wrap -->
-    <script src="/js/main.js"></script>
-    <script src="/js/employee.js"></script>
+
     <%@ include file="../layout/footer.jsp" %>

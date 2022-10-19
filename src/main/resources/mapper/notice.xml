@@ -8,34 +8,38 @@
 	</insert>
 
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT
-        notice_id, notice_title,notice_task, notice_career,notice_qual,
-        notice_position, DATE_FORMAT(notice_period, '%Y.%m.%d') as notice_period
-        FROM notice
-        ORDER BY notice_period DESC
+		SELECT n.*, i.new_image_name
+		FROM notice n
+		LEFT OUTER JOIN intro_image i
+		ON n.company_id = i.company_id
+		ORDER BY n.notice_period DESC
 	</select>
 
 	<select id="findByJobCodeToNotice" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT
-        n.notice_id, n.notice_title, n.notice_task, n.notice_career, n.notice_qual,
-        n.notice_position, DATE_FORMAT(n.notice_period, '%Y.%m.%d') as notice_period
-        FROM notice n
+		SELECT ni.*
+		FROM (SELECT n.*, i.new_image_name
+		FROM notice n
+		LEFT OUTER JOIN intro_image i
+		ON n.company_id = i.company_id) ni
 		INNER JOIN job j
-		ON n.job_id = j.job_id
+		ON ni.job_id = j.job_id
 		WHERE j.job_code = #{jobCode}
-        ORDER BY n.notice_period DESC
+		ORDER BY ni.notice_period DESC
 	</select>
 
 	<select id="findMatchingByJobId" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT n.notice_id, n.notice_title, n.notice_task, n.notice_career, n.notice_qual, n.notice_position, DATE_FORMAT(n.notice_period, '%Y.%m.%d') as notice_period, n.job_id
+		SELECT nec.*, img.new_image_name
+		FROM (SELECT n.*
 		FROM notice n
 		INNER JOIN (SELECT ec.job_id
 		FROM emp_check ec
 		INNER JOIN employee e
 		ON ec.employee_id = e.employee_id
 		WHERE ec.employee_id = #{employeeId}) ec
-		ON n.job_id = ec.job_id
-		ORDER BY n.notice_period DESC
+		ON n.job_id = ec.job_id) nec
+		LEFT OUTER JOIN intro_image img
+		ON nec.company_id = img.company_id
+		ORDER BY nec.notice_period DESC
 	</select>
 
 	<select id="findByCompanyId" resultType="site.metacoding.miniproject.domain.notice.Notice">
@@ -51,24 +55,30 @@
 	</select>
 
 	<select id="findSubsByEmployeeId" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT *
+		SELECT ns.*, img.new_image_name
+		FROM (SELECT n.*
 		FROM notice n
 		INNER JOIN subscribe s
 		ON n.company_id = s.company_id
-		WHERE s.employee_id = #{employeeId}
+		WHERE s.employee_id = #{employeeId}) ns
+		LEFT OUTER JOIN intro_image img
+		ON ns.company_id = img.company_id
+		ORDER BY ns.notice_period DESC
 	</select>
 
 	<select id="findByNoticeIdToNoticeDetail" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT *
+		SELECT nj.*, ii.intro_id, ii.intro_coname, ii.intro_birth, ii.intro_task, ii.intro_sal, ii.intro_wellfare, ii.intro_content, ii.intro_location, ii.new_image_name
+		FROM (SELECT n.*,j.job_name
 		FROM notice n
-		INNER JOIN (
-		SELECT i.intro_id, i.company_id, i.intro_title, i.intro_birth, i.intro_task, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_location, j.job_code, j.job_name
-		FROM intro i
 		INNER JOIN job j
-		ON i.job_id = j.job_id) ij
-		ON n.company_id = ij.company_id
-		WHERE n.notice_id = #{noticeId}
-		GROUP BY n.notice_id
+		ON n.job_id = j.job_id) nj
+		INNER JOIN (
+		SELECT i.*, img.new_image_name
+		FROM intro i
+		LEFT OUTER JOIN intro_image img
+		ON i.intro_image_id = img.intro_image_id) ii
+		ON nj.company_id = ii.company_id
+		WHERE nj.notice_id = #{noticeId}
 	</select>
 
 	<update id="update">

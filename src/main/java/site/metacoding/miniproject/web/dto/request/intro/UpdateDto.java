@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 public class UpdateDto {
     private String companyName;
-    private String introTitle;
+    private String introConame;
     private String introBirth;
     private String introTask;
     private String introSal;
@@ -19,5 +19,6 @@ public class UpdateDto {
     private String introContent;
     private String introLocation;
     private String introImageId;
+    private Integer jobId;
     private String jobName;
 }

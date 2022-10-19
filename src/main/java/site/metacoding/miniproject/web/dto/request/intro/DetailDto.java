@@ -12,7 +12,7 @@ import lombok.Setter;
 public class DetailDto {
     private Integer introId;
     private Integer companyId;
-    private String introTitle;
+    private String introConame;
     private String introBirth;
     private String introTask;
     private String introSal;
@@ -26,4 +26,5 @@ public class DetailDto {
     private Integer employeeId;
     private boolean isSubed;
     private Integer subscribeId;
+    private String newImageName;
 }

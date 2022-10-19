@@ -14,11 +14,11 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <link rel="stylesheet" href="/css/reset.css" />
         <link rel="stylesheet" href="/css/main.css" />
         <link rel="stylesheet" href="/css/mypageCompany.css" />
-
         <script
             type="text/javascript"
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         ></script>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
         <title>4조 PROJECT</title>
     </head>
 
@@ -29,23 +29,29 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     <a href="/co">COMPANY_4</a>
                 </div>
                 <ul class="gnb_left">
+                    <li class="gnb_list4">
+                        <a href="/cs/co/companyIntroInsert/">
+                            <i class="fa-regular fa-paper-plane"></i>
+                            <span class="txt">기업소개 등록</span>
+                        </a>
+                    </li>
                     <li class="gnb_list1">
                         <a
-                            href="/co/companyIntroUpdate/${coprincipal.companyId}"
+                            href="/cs/co/companyIntroUpdate/${coprincipal.companyId}"
                         >
-                            <i class="fa-regular fa-paper-plane"></i>
-                            <span class="txt">기업소개 관리</span>
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <span class="txt">기업소개 수정</span>
                         </a>
                     </li>
                     <li class="gnb_list2">
-                        <a href="/co/noticeService/${coprincipal.companyId}">
-                            <i class="fa-regular fa-pen-to-square"></i>
+                        <a href="/cs/co/noticeService/${coprincipal.companyId}">
+                            <i class="fa-regular fa-rectangle-list"></i>
                             <span class="txt">공고 관리</span>
                         </a>
                     </li>
                     <li class="gnb_list3">
-                        <a href="/co/companyInfo/${coprincipal.companyId}">
-                            <i class="fa-regular fa-star"></i>
+                        <a href="/cs/co/companyInfo/${coprincipal.companyId}">
+                            <i class="fa-regular fa-user"></i>
                             <span class="txt">회원정보 관리(수정/탈퇴)</span>
                         </a>
                     </li>

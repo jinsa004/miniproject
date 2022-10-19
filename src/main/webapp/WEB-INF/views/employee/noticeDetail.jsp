@@ -70,8 +70,8 @@
 
           <div class="company_box rd_right">
             <span class="company_box_title">기업정보</span>
-            <span class="info_logo"><img src="/img/logo_1.png" alt="logo" /></span>
-            <span class="info_tit"><em>회사명</em><strong>${noticePS.introTitle}</strong></span>
+            <span class="info_logo"><img src="/image?imageName=${noticePS.newImageName}" alt="logo" /></span>
+            <span class="info_tit"><em>회사명</em><strong>${noticePS.introConame}</strong></span>
             <span class="info_year"><em>설립연도</em><strong>${noticePS.introBirth}</strong></span>
             <span class="info_task"><em>주요업무</em><strong>${noticePS.introTask}</strong></span>
             <span class="info_ssar"><em>평균연봉</em><strong>${noticePS.introSal}</strong></span>
@@ -105,20 +105,21 @@
                       <span class="career">${resumePS.careerPeriod}</span>
                       <span class="part">${resumePS.jobName}</span>
                     </label>
-                  </li><!-- .resume_select_cont -->
+                  </li>
+                  <!-- .resume_select_cont -->
                 </c:forEach>
               </ul>
-            </div><!-- .form_box -->
+            </div>
+            <!-- .form_box -->
             <button id="btn_recruit" type="button" class="btn btn-primary">
               지원하기
             </button>
           </div>
           <!-- .modal_select_wrap -->
-        </div><!-- .recruit_detail_box -->
+        </div>
+        <!-- .recruit_detail_box -->
       </div>
       <!-- .container -->
     </div>
     <!-- #wrap -->
-    <script src="/js/main.js"></script>
-    <script src="/js/employee.js"></script>
     <%@ include file="../layout/footer.jsp" %>

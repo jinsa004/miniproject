@@ -18,6 +18,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             type="text/javascript"
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         ></script>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
         <title>4조 PROJECT</title>
     </head>
 
@@ -36,7 +37,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             </li> -->
                     <li class="gnb_list2">
                         <a
-                            href="/emp/mypageInsertForm/${empprincipal.employeeId}"
+                            href="/es/emp/mypageInsertForm/${empprincipal.employeeId}"
                         >
                             <i class="fa-regular fa-pen-to-square"></i>
                             <span class="txt">이력서 관리</span>
@@ -44,7 +45,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </li>
                     <li class="gnb_list1">
                         <a
-                            href="/emp/resumeSaveForm/${empprincipal.employeeId}"
+                            href="/es/emp/resumeSaveForm/${empprincipal.employeeId}"
                         >
                             <i class="fa-regular fa-paper-plane"></i>
                             <span class="txt">이력서 등록</span>
@@ -52,7 +53,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     </li>
 
                     <li class="gnb_list4">
-                        <a href="/emp/employeeInfo/${empprincipal.employeeId}">
+                        <a
+                            href="/es/emp/employeeInfo/${empprincipal.employeeId}"
+                        >
                             <i class="fa-regular fa-user"></i>
                             <span class="txt">회원정보관리(수정/탈퇴)</span>
                         </a>

@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+d<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
   <%@ include file="../layout/headerCompany.jsp" %>
 
     <div id="company_wrap">
       <div class="container">
         <div class="tablist">
           <ul class="tabs">
-            <li class="active" data-tab="tab-1">전체직군</a></li>
-            <li data-tab="tab-2"><a href="/co/resume?jobCode=1">프론트엔드</a></li>
+            <li class="active" data-tab="tab-1"><a href="/co/">전체직군</a></li>
+            <li data-tab=" tab-2"><a href="/co/resume?jobCode=1">프론트엔드</a></li>
             <li data-tab="tab-3"><a href="/co/resume?jobCode=2">백엔드</a></li>
             <li data-tab="tab-4"><a href="/co/resume?jobCode=3">풀스택</a></li>
             <li data-tab="tab-5"><a href="/co/resume?jobCode=4">안드로이드</a></li>
@@ -71,9 +71,6 @@
       <!-- .container -->
     </div>
     <!-- #wrap -->
-
-    <script src="/js/main.js"></script>
-    <script src="/js/company.js"></script>
     <!-- <script type="text/javascript">
       // jquery 최초 기본형
       $(document).ready(function () {

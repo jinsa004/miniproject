@@ -5,12 +5,12 @@
       <div class="container">
         <div class="tablist">
           <ul class="tabs">
-            <li class="active" data-tab="tab-1"><a href="/emp">전체직군</a></li>
-            <li data-tab="tab-2"><a href="/emp/notice?jobCode=1">프론트엔드</a></li>
-            <li data-tab="tab-3"><a href="/emp/notice?jobCode=2">백엔드</a></li>
-            <li data-tab="tab-4"><a href="/emp/notice?jobCode=3">웹풀스택</a></li>
-            <li data-tab="tab-5"><a href="/emp/notice?jobCode=4">안드로이드</a></li>
-            <li data-tab="tab-6"><a href="/emp/notice?jobCode=5">IOS</a></li>
+            <li class="active" data-tab="tab-1"><a href="/emp/companyList">전체직군</a></li>
+            <li data-tab="tab-2"><a href="/emp/companyList/search?jobCode=1">프론트엔드</a></li>
+            <li data-tab="tab-3"><a href="/emp/companyList/search?jobCode=2">백엔드</a></li>
+            <li data-tab="tab-4"><a href="/emp/companyList/search?jobCode=3">풀스택</a></li>
+            <li data-tab="tab-5"><a href="/emp/companyList/search?jobCode=4">안드로이드</a></li>
+            <li data-tab="tab-6"><a href="/emp/companyList/search?jobCode=5">IOS</a></li>
           </ul>
         </div>
         <!-- .tablist -->
@@ -20,38 +20,23 @@
             <div class="company_card">
               <div id="tab-1" class="company_inner company_inner1 tab-content on">
                 <ul>
-                  <c:forEach var="intro" items="${introList}" begin="0" end="3" step="1">
+                  <c:forEach var="intro" items="${introList}">
                     <li>
                       <a href="companyIntroDetail/${intro.introId}">
-                        <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
+                        <span class="company_logo"><img src="/image?imageName=${intro.newImageName}"
+                            alt="회사로고" /></span>
                         <div class="company_txt">
-                          <input type="hidden" value="${intro.no}">
-                          <span class="company_title">${intro.companyName}</span>
-                          <span class="company_text">${intro.introTitle}, ${intro.introTask}</span>
+                          <span class="company_title">${intro.introConame}</span>
+                          <span class="company_text">${intro.introTask}</span>
                         </div>
                         <!-- .company_txt -->
                       </a>
+                    </li>
                   </c:forEach>
-                  </li>
-              </div>
-              <div id="tab-2" class="company_inner company_inner1 tab-content on">
-                <ul>
-                  <c:forEach var="intro" items="${introList}" begin="4" end="7" step="1">
-                    <li>
-                      <a href="companyIntroDetail/${intro.introId}">
-                        <span class="company_logo"><img src="/img/logo_1.png" alt="회사로고" /></span>
-                        <div class="company_txt">
-                          <input type="hidden" value="${intro.no}">
-                          <span class="company_title">${intro.companyName}</span>
-                          <span class="company_text">${intro.introTitle}, ${intro.introTask}</span>
-                        </div>
-                        <!-- .company_txt -->
-                      </a>
-                  </c:forEach>
-                  </li>
               </div>
             </div>
-            <!-- .notice_box -->
+          </div>
+          <!-- .notice_box -->
         </section>
         <div class="paging">
           <ul class="pagination">
@@ -72,9 +57,7 @@
       <!-- .container -->
     </div>
     <!-- #wrap -->
-    <script src="/js/main.js"></script>
-    <script src="/js/employee.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       // jquery 최초 기본형
       $(document).ready(function () {
 
@@ -98,5 +81,6 @@
           });
         });
       });
-    </script>
+    </script> -->
+
     <%@ include file="../layout/footer.jsp" %>

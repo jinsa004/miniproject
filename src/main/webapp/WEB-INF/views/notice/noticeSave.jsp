@@ -121,6 +121,4 @@
         </div>
       </div>
     </div>
-    <script src="/js/notice.js"></script>
-    <script src="/js/main.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

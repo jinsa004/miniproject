@@ -7,7 +7,7 @@
             <li class="active" data-tab="tab-1"><a href="/emp">전체직군</a></li>
             <li class="" data-tab="tab-2"><a href="/emp/notice?jobCode=1">프론트엔드</a></li>
             <li class="" data-tab="tab-3"><a href="/emp/notice?jobCode=2">백엔드</a></li>
-            <li class="" data-tab="tab-4"><a href="/emp/notice?jobCode=3">풀스택</a></li>
+            <li class="" data-tab="tab-4"><a href="/emp/notice?jobCode=3">웹풀스택</a></li>
             <li class="" data-tab="tab-5"><a href="/emp/notice?jobCode=4">안드로이드</a></li>
             <li class="" data-tab="tab-6"><a href="/emp/notice?jobCode=5">IOS</a></li>
           </ul>
@@ -31,8 +31,8 @@
                 <ul id="tab-1" class="notice_inner tab_content show">
                   <c:forEach var="noticeAllList" items="${noticeAllList}">
                     <ul>
-                      <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}"><img src="/img/logo_1.png"
-                            alt="logo"></a>
+                      <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}"><img
+                            src="/image?imageName=${noticeAllList.newImageName}" alt="logo"></a>
                       </li>
                       <li><a href="/emp/noticeDetail/${noticeAllList.noticeId}">
                           ${noticeAllList.noticeTitle}
@@ -71,8 +71,6 @@
       <!-- .container -->
     </div>
     <!-- #user_wrap -->
-    <script src="/js/main.js"></script>
-    <script src="/js/employee.js"></script>
     <!-- <script type="text/javascript">
       // jquery 최초 기본형
       $(document).ready(function () {

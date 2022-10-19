@@ -1,7 +1,5 @@
 package site.metacoding.miniproject.domain.intro;
 
-import javax.validation.constraints.NotBlank;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,10 +11,8 @@ import site.metacoding.miniproject.web.dto.request.intro.UpdateDto;
 public class Intro {
 	private Integer introId;
 	private Integer companyId;
-	@NotBlank
-	private String introTitle;
+	private String introConame;
 	private String introBirth;
-	@NotBlank
 	private String introTask;
 	private String introSal;
 	private String introWellfare;
@@ -26,13 +22,13 @@ public class Intro {
 	private Integer jobId;
 
 	// 엔티티가 아닌 필드
-	private Integer no;
 	private String companyName;
 	private String jobName;
+	private String newImageName;
 
 	public void Update(UpdateDto updateDto) {
 		this.companyName = updateDto.getCompanyName();
-		this.introTitle = updateDto.getIntroTitle();
+		this.introConame = updateDto.getIntroConame();
 		this.introBirth = updateDto.getIntroBirth();
 		this.introTask = updateDto.getIntroTask();
 		this.introSal = updateDto.getIntroSal();
@@ -41,5 +37,6 @@ public class Intro {
 		this.introLocation = updateDto.getIntroLocation();
 		this.introImageId = updateDto.getIntroImageId();
 		this.jobName = updateDto.getJobName();
+		this.jobId = updateDto.getJobId();
 	}
 }

@@ -59,7 +59,7 @@ create table company(
 create table intro(
     intro_id int primary KEY auto_increment,
     company_id INT,
-    intro_title VARCHAR(24) NOT null,
+    intro_coname VARCHAR(24) NOT null,
     intro_birth VARCHAR(24) NOT null,
     intro_task VARCHAR(256) NOT null,
     intro_sal VARCHAR(24),
@@ -114,6 +114,7 @@ create table resume_image(
 
 create table intro_image(
     intro_image_id int primary KEY auto_increment,
+    company_id int not null,
     origin_image_name VARCHAR(4000) NOT null,
     new_image_name VARCHAR(4000) NOT null,
     image_path VARCHAR(4000) NOT null,
@@ -131,6 +132,7 @@ create table co_check(
     company_id INT NOT null,
     job_id INT NOT null
 );
+
 ```
 
 ### 더미데이터 추가
@@ -155,13 +157,13 @@ INSERT INTO company
 (company_number, company_name, company_email, company_tel, company_location, company_username, company_password)
 VALUES(117242, 'LG전자', 'veda@lgelectronic.com', '02-5522-1854', '부산시 부산진구 어디어디', 'LGman1234', 'q1w2e3r4!@');
 INSERT INTO intro
-(company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
+(company_id, intro_coname, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
 VALUES(1, '회사소개입니다', '1998-02-24', 'flutter 신규 앱 개발', '2600만원', '야근거의없음, 월1회 회식', '우리회사는 어쩌고저쩌고 이렇습니다', '부산시 부산진구 어디어디', 3, NULL);
 INSERT INTO intro
-(company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
+(company_id, intro_coname, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
 VALUES(2, '회사소개입니당', '2007-07-01', 'DB 관리', '2400만원', '야근거의없음, 분기당 1회 회식', '우리회사는 어쩌고저쩌고 저렇습니다', '부산시 부산진구 어디어디', 2, NULL);
 INSERT INTO intro
-(company_id, intro_title, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
+(company_id, intro_coname, intro_birth, intro_task, intro_sal, intro_wellfare, intro_content, intro_location, job_id, intro_image_id)
 VALUES(3, '회사소개요', '1995-11-20', '웹디자인', '2800만원', '전자레인지 있음, 주5회 회식', '우리회사는 어쩌고저쩌고 그렇다', '부산시 부산진구 어디어디', 1, NULL);
 INSERT INTO notice(company_id, notice_title, notice_period, notice_dept, notice_position, notice_task, notice_sal, notice_qual, notice_career, notice_wellfare, job_id)
 VALUES(1, '백엔드 개발자 모집중', '2022-10-30', '백엔드개발', '사원', 'java 코딩', '회사 내규에 따름', '대졸', '신입', '전자레인지 있음, 커피 제공', 2);
@@ -197,12 +199,12 @@ insert into resume_image(origin_image_name, new_image_name, image_path, created_
 VALUES("100100111", "10101111", "D:/user/resume/image", NOW());
 insert into resume_image(origin_image_name, new_image_name, image_path, created_at)
 VALUES("100101101", "10111110", "D:/user/resume/image", NOW());
-insert into intro_image(origin_image_name, new_image_name, image_path, created_at) 
-VALUES("110101101", "11111110", "D:/user/notice/image", NOW());
-insert into intro_image(origin_image_name, new_image_name, image_path, created_at) 
-VALUES("101101101", "10111111", "D:/user/notice/image", NOW());
-insert into intro_image(origin_image_name, new_image_name, image_path, created_at) 
-VALUES("11101101", "11001110", "D:/user/notice/image", NOW());
+insert into intro_image(company_id, origin_image_name, new_image_name, image_path, created_at) 
+VALUES(1,"110101101", "11111110", "D:/user/notice/image", NOW());
+insert into intro_image(company_id, origin_image_name, new_image_name, image_path, created_at) 
+VALUES(2,"101101101", "10111111", "D:/user/notice/image", NOW());
+insert into intro_image(company_id, origin_image_name, new_image_name, image_path, created_at) 
+VALUES(3,"11101101", "11001110", "D:/user/notice/image", NOW());
 insert into emp_check(employee_id, job_id) 
 VALUES(1, 1);
 insert into emp_check(employee_id, job_id) 

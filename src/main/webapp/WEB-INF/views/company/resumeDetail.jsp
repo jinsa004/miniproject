@@ -9,7 +9,7 @@
                 <div class="resume_update">
                   <input id="employeeId" type="hidden" value="${empprincipal.employeeId}">
                   <div class="title_update">
-                    <h1>이력서제목의 이력서 입니다.</h1>
+                    <h1>${resume.resumeTitle}</h1>
                   </div>
                   <div id="info" class="form">
                     <div class="form_title">
@@ -132,7 +132,6 @@
                                 <col width="25%">
                                 <col width="*">
                                 <col width="10%">
-                                <col width="10%">
                                 <col width="15%">
                               </colgroup>
                               <thead>
@@ -238,9 +237,9 @@
                   </div> <!-- #part -->
 
                   <div class="contact_btn">
-                    <button type="button" onclick="location.href='#'">
-                      컨택하기
-                    </button>
+                    <input id="receiver" type="hidden" value="${resume.employeeName}">
+                    <input id="sender" type="hidden" value="${company.companyName}">
+                    <button type="button" onclick="contact()">컨택하기</button> 
                   </div>
                   <!-- update -->
                   <!-- resume_update -->
@@ -251,6 +250,4 @@
       </div>
     </div>
     </div><!-- .company_wrap -->
-    <script src="/js/main.js"></script>
-    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

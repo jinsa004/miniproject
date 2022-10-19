@@ -5,7 +5,7 @@
       <div class="container">
         <section>
           <div class="matching_list">
-            <a href="/co/companyInfo/${coprincipal.companyId}" class="btn_matching_insert"> 관심 분야 수정</a>
+            <a href="/cs/co/companyInfo/${coprincipal.companyId}" class="btn_matching_insert"> 관심 분야 수정</a>
           </div>
           <!-- .tablist -->
 
@@ -62,7 +62,4 @@
       <!-- .container -->
     </div>
     <!-- #wrap -->
-
-    <script src="/js/main.js"></script>
-    <script src="/js/company.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>
