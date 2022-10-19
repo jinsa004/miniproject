@@ -19,5 +19,6 @@ public class IntroInsertDto {
     private String introWellfare;
     private String introContent;
     private String introLocation;
+    private Integer jobId;
     private MultipartFile image;
 }

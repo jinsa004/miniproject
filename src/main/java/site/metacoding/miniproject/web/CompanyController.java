@@ -110,6 +110,8 @@ public class CompanyController {
         session.getAttribute("coprincipal");
         Intro introPS = introService.기업소개상세보기(companyId);
         model.addAttribute("introPS", introPS);
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
         return "company/coIntroDetail";
     }
 
@@ -117,6 +119,8 @@ public class CompanyController {
     public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
         session.getAttribute("coprincipal");
         model.addAttribute("intro", introService.기업소개상세보기(companyId));
+        List<Job> jobPS = jobService.관심직무보기();
+        model.addAttribute("jobPS", jobPS);
         return "company/coIntroUpdate";
     }
 

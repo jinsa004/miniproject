@@ -88,6 +88,27 @@
               </div>
             </div>
             <!-- basic -->
+            <div id="field" class="form">
+              <div class="form_title">
+                <h2 class="title">관심분야</h2>
+              </div>
+              <div class="resume_field info_form2">
+
+                <div class="input_radio_skill">
+                  <ul>
+                    <c:forEach var="jobPS" items="${jobPS}">
+                      <li>
+                        <input type="radio" name="job_id" id="part_select_front" class="job_id"
+                          value="${jobPS.jobId}" />
+                        <label for="part_select_front"><em>${jobPS.jobName}</em></label>
+                      </li>
+                    </c:forEach>
+                  </ul>
+                </div><!-- .input_radio_skill -->
+
+              </div><!-- .resume_field -->
+            </div>
+            <!-- field -->
 
             <div class="btn_group">
               <div class="update_btn">

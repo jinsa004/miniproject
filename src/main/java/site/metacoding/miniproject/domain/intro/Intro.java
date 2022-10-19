@@ -37,5 +37,6 @@ public class Intro {
 		this.introLocation = updateDto.getIntroLocation();
 		this.introImageId = updateDto.getIntroImageId();
 		this.jobName = updateDto.getJobName();
+		this.jobId = updateDto.getJobId();
 	}
 }
