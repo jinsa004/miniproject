@@ -112,7 +112,7 @@
                 <div class="subscribe_btn">
                   <button type="button">
                     <i id="iconSub"
-                      class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-star my_pointer my_red'></i>
+                      class='${detailDto.subed ? "fa-solid" : "fa-regular"} fa-star my_pointer my_red' onclick="subscribe()"></i>
                     <span class="txt">구독</span>
                   </button>
                   <!-- <div><i id="iconSub"
@@ -131,5 +131,4 @@
     <!-- body -->
     <script src="/js/main.js"></script>
     <script src="/js/intro.js"></script>
-    <script src="/js/webSocket.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

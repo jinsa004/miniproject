@@ -62,6 +62,23 @@
                                         </c:otherwise>
                                     </c:choose>
                                     <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
+                                    <div id="alarmContainer">
+                                        <button type="button"
+                                          style="width: 20px; height: 20px; background: red; border-radius: 50%">1</button>
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                            <table id="conversation" class="table table-striped">
+                                              <thead>
+                                                <tr>
+                                                  <th>Notification</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody id="notification_co">
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </div>
                                 </c:otherwise>
                             </c:choose>
                         </div>
@@ -243,4 +260,4 @@
                     <input class="checkprinciple" type="hidden" value="${principal.companyName}">
                 </c:when>
             </c:choose>
-            <script src="/js/webSocket.js"></script>
+            <script src="/js/websocket.js"></script>

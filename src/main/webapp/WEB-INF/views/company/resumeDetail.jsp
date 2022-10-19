@@ -238,9 +238,9 @@
                   </div> <!-- #part -->
 
                   <div class="contact_btn">
-                    <button type="button" onclick="location.href='#'">
-                      컨택하기
-                    </button>
+                    <input id="receiver" type="hidden" value="${resume.employeeName}">
+                    <input id="sender" type="hidden" value="${company.companyName}">
+                    <button type="button" onclick="contact()">컨택하기</button> 
                   </div>
                   <!-- update -->
                   <!-- resume_update -->
@@ -253,5 +253,4 @@
     </div><!-- .company_wrap -->
     <script src="/js/main.js"></script>
     <script src="/js/company.js"></script>
-    <script src="/js/websocket.js"></script>
     <%@ include file="../layout/footerCompany.jsp" %>

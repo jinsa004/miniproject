@@ -46,12 +46,12 @@
                   <button class="btn_join" type="button" onClick="javascript:popOpen2();">
                     회원가입
                   </button>
-                  <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
+                  <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
                 </c:when>
                 <c:otherwise>
                   <a class="btn_logout" href="/logout">로그아웃</a>
                   <a href="/emp/mypageInsertForm/${principal.employeeId}" class="btn_mypage">마이 페이지</a>
-                  <a href="/co/mainCompany" class="btn_company">기업 서비스</a><!-- .btn_company -->
+                  <a href="/co" class="btn_company">기업 서비스</a><!-- .btn_company -->
                   <!--여기에 alarmContainer 만들어야함-->
                   <div id="alarmContainer">
                     <button type="button"
@@ -64,7 +64,7 @@
                               <th>Notification</th>
                             </tr>
                           </thead>
-                          <tbody id="notification">
+                          <tbody id="notification_emp">
                           </tbody>
                         </table>
                       </div>
@@ -243,4 +243,4 @@
           <input class="checkprinciple" type="hidden" value="${principal.companyName}">
         </c:when>
       </c:choose>
-      <script src="/js/webSocket.js"></script>
+      <script src="/js/websocket.js"></script>

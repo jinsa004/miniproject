@@ -12,7 +12,8 @@ window.onload = function () {
                 let alarmResult = JSON.parse(result.body);
                 console.log(alarmResult.sender);
 
-                $("#notification").append("<tr><td>" + alarmResult.sender + " 기업이 " + alarmResult.receiver + " 님을 " + alarmResult.alarmMessage + "했습니다.</td></tr>");
+                $("#notification_emp").append("<tr><td>" + alarmResult.sender + " 기업이 " + alarmResult.receiver + " 님을 " + alarmResult.alarmMessage + "했습니다.</td></tr>");
+                $("#notification_co").append("<tr><td>" + alarmResult.sender + " 님이 " + alarmResult.receiver + " 기업을 " + alarmResult.alarmMessage + "구독했습니다.</td></tr>");
             });
         });
     }
