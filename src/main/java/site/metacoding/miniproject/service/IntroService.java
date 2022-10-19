@@ -40,7 +40,7 @@ public class IntroService {
         return introDao.findByDetail(companyId, principalId);
     }
 
-    public Intro 기업소개수정상세보기(Integer companyId) {// 기업이 보는 마이페이지
+    public Intro 기업소개상세보기(Integer companyId) {// 기업이 보는 마이페이지
         Intro intro = introDao.findById(companyId);
         Company coprincipal = (Company) session.getAttribute("coprincipal");
         // 비정상 요청 체크

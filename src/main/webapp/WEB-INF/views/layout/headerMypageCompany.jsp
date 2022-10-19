@@ -24,9 +24,9 @@
                     </div>
                     <ul class="gnb_left">
                         <li class="gnb_list1">
-                            <a href="/co/companyIntroUpdate/${coprincipal.companyId}">
+                            <a href="/co/companyIntroDetail/${coprincipal.companyId}">
                                 <i class="fa-regular fa-paper-plane"></i>
-                                <span class="txt">기업소개 관리</span>
+                                <span class="txt">기업소개</span>
                             </a>
                         </li>
                         <li class="gnb_list2">
