@@ -25,7 +25,7 @@
               <div class="info_left">
                 <div class="info_img">
                   <form method="post" action="/emp/resumeSave" enctype="multipart/form-data">
-                    <input id="resumeImageId" type="hidden" value="" />
+                    <!-- <input id="resumeImageId" type="hidden" value="" /> -->
                     <span class="info_myimg">
                       <img id="preImage" alt="image_title">
                     </span>
@@ -243,8 +243,7 @@
                 <ul>
                   <c:forEach var="jobPS" items="${jobPS}">
                     <li>
-                      <input type="radio" name="part_select" id="part_select_front" class="job_id"
-                        value="${jobPS.jobId}" />
+                      <input type="radio" name="job_id" id="part_select_front" class="job_id" value="${jobPS.jobId}" />
                       <label for="part_select_front"><em>${jobPS.jobName}</em></label>
                     </li>
                   </c:forEach>
