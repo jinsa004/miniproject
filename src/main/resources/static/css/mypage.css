@@ -456,6 +456,7 @@
 }
 
 div.file_submit {
+
     display: block;
     cursor: pointer;
     width: 140px;
@@ -471,11 +472,15 @@ div.file_submit {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-button.file_submit:hover {
+div.file_submit:hover{
     background: #333;
 }
-
-.info_form .info_left {
+ul.image_preview{
+    max-width: 140px;
+    min-height: 180px;
+    max-height: 180px;
+}
+.info_form .info_left{
     float: left;
 }
 
