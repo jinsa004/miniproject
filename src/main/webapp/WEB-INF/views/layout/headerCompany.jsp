@@ -51,10 +51,10 @@
                   <a class="btn_logout" href="/co/logout">로그아웃</a>
                   <c:choose>
                     <c:when test="${empty introPS.introId}">
-                      <a href="/co/companyIntroInsert" class="btn_mypage">마이페이지</a>
+                      <a href="/cs/co/companyIntroInsert" class="btn_mypage">마이페이지</a>
                     </c:when>
                     <c:otherwise>
-                      <a href="/co/companyIntroUpdate/${coprincipal.companyId}" class="btn_mypage">마이페이지</a>
+                      <a href="/cs/co/companyIntroDetail/${coprincipal.companyId}" class="btn_mypage">마이페이지</a>
                     </c:otherwise>
                   </c:choose>
                   <a href="/emp/main" class="btn_company">회원 서비스</a><!-- .btn_company -->
@@ -90,13 +90,13 @@
                   <a href="/co">인재검색</a>
                 </li>
                 <li>
-                  <a href="/co/noticeSave/${coprincipal.companyId}">공고등록</a>
+                  <a href="/cs/co/noticeSave/${coprincipal.companyId}">공고등록</a>
                 </li>
                 <li>
-                  <a href="/co/noticeService/${coprincipal.companyId}">공고/지원자관리</a>
+                  <a href="/cs/co/noticeService/${coprincipal.companyId}">공고/지원자관리</a>
                 </li>
                 <li>
-                  <a href="/co/matchingResume/${coprincipal.companyId}">매칭리스트</a>
+                  <a href="/cs/co/matchingResume/${coprincipal.companyId}">매칭리스트</a>
                 </li>
               </ul>
             </nav>

@@ -4,7 +4,7 @@
     <div id="user_wrap">
       <div class="container">
         <div class="matching_list">
-          <a href="/emp/employeeInfo/${empprincipal.employeeId}" class="btn_matching_insert"> 관심 분야 수정</a>
+          <a href="/es/emp/employeeInfo/${empprincipal.employeeId}" class="btn_matching_insert"> 관심 분야 수정</a>
         </div>
         <!-- .tablist -->
 

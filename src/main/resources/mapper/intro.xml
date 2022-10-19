@@ -12,9 +12,9 @@
 		SELECT ii.*, c.company_name
 		FROM (SELECT i.*, img.new_image_name
 		FROM intro i
-		INNER JOIN intro_image img
+		LEFT OUTER JOIN intro_image img
 		ON i.intro_image_id = img.intro_image_id) ii
-		LEFT OUTER JOIN company c
+		INNER JOIN company c
 		ON ii.company_id = c.company_id
 	</select>
 
@@ -33,7 +33,7 @@
 		SELECT ii.*
 		FROM (SELECT i.*, img.new_image_name
 		FROM intro i
-		INNER JOIN intro_image img
+		LEFT OUTER JOIN intro_image img
 		ON i.company_id = img.company_id) ii
 		INNER JOIN job j
 		ON ii.job_id = j.job_id
@@ -67,7 +67,7 @@
 		c.company_name
 		FROM (SELECT i.*, img.new_image_name
 		FROM intro i
-		INNER JOIN intro_image img
+		LEFT OUTER JOIN intro_image img
 		ON i.intro_image_id = img.intro_image_id) ii
 		LEFT OUTER JOIN (SELECT * FROM subscribe WHERE employee_id = #{principalId}) s
 		ON ii.company_id = s.company_id

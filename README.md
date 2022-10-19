@@ -114,6 +114,7 @@ create table resume_image(
 
 create table intro_image(
     intro_image_id int primary KEY auto_increment,
+    company_id int not null,
     origin_image_name VARCHAR(4000) NOT null,
     new_image_name VARCHAR(4000) NOT null,
     image_path VARCHAR(4000) NOT null,

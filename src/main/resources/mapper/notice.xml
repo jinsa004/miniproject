@@ -10,7 +10,7 @@
 	<select id="findAll" resultType="site.metacoding.miniproject.domain.notice.Notice">
 		SELECT n.*, i.new_image_name
 		FROM notice n
-		INNER JOIN intro_image i
+		LEFT outer JOIN intro_image i
 		ON n.company_id = i.company_id
 		ORDER BY n.notice_period DESC
 	</select>
@@ -75,7 +75,7 @@
 		INNER JOIN (
 		SELECT i.*, img.new_image_name
 		FROM intro i
-		INNER JOIN intro_image img
+		LEFT outer JOIN intro_image img
 		ON i.intro_image_id = img.intro_image_id) ii
 		ON nj.company_id = ii.company_id
 		WHERE nj.notice_id = #{noticeId}
