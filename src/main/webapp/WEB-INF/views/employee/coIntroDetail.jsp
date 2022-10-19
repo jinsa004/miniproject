@@ -129,4 +129,4 @@
     </div><!-- .intro_wrap -->
     </div>
     <!-- body -->
-    <%@ include file="../layout/footerCompany.jsp" %>
+    <%@ include file="../layout/footer.jsp" %>
