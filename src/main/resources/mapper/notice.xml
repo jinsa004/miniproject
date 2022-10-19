@@ -55,11 +55,15 @@
 	</select>
 
 	<select id="findSubsByEmployeeId" resultType="site.metacoding.miniproject.domain.notice.Notice">
-		SELECT *
+		SELECT ns.*, img.new_image_name
+		FROM (SELECT n.*
 		FROM notice n
 		INNER JOIN subscribe s
 		ON n.company_id = s.company_id
-		WHERE s.employee_id = #{employeeId}
+		WHERE s.employee_id = #{employeeId}) ns
+		INNER JOIN intro_image img
+		ON ns.company_id = img.company_id
+		ORDER BY ns.notice_period DESC
 	</select>
 
 	<select id="findByNoticeIdToNoticeDetail" resultType="site.metacoding.miniproject.domain.notice.Notice">

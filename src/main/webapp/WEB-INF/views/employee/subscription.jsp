@@ -21,7 +21,8 @@
               <div>
                 <c:forEach var="noticeList" items="${noticeList}">
                   <ul>
-                    <li><a href="/emp/noticeDetail/${noticeList.noticeId}"><img src="/img/logo_1.png" alt="logo"></a>
+                    <li><a href="/emp/noticeDetail/${noticeList.noticeId}"><img
+                          src="/image?imageName=${noticeList.newImageName}" alt="logo"></a>
                     </li>
                     <li><a href="/emp/noticeDetail/${noticeList.noticeId}">
                         ${noticeList.noticeTitle}
