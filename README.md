@@ -1,4 +1,30 @@
-# 이력관리 프로그램
+# 프로젝트 4조 이력관리 사이트
+
+### 1. 프로젝트 기간
+```
+2022.10.05 ~ 2022.10.19
+```
+
+### 2. 사용언어 및 개발환경
+
+- ![VS Code Insiders](https://img.shields.io/badge/VS%20Code%20Insiders-35b393.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) 
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) 
+- ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) 	![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 	![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) ![Gradle](https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white)
+- ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) 	![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) 	![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+-  MyBatis / Jsp
+
+### 3. 아키텍처 MVC패턴
+![image](https://user-images.githubusercontent.com/112357294/210489876-554921fe-2812-4064-80cf-b211c8e04905.png)
+
+
+### 테이블 설계
+https://getinthere.notion.site/99ff6dd910fb4a3c984056db01f17bb0
+
+### 프로젝트 시연영상
+https://getinthere.notion.site/5f09cd124c0d4bc2a5a1e5c81db02c3b
+
+
+# 이력관리 프로그램 테이블 더미데이터
 
 ### 사용DB 변경 후 권한부여
 ```sql
