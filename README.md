@@ -17,10 +17,10 @@
 ![image](https://user-images.githubusercontent.com/112357294/210489876-554921fe-2812-4064-80cf-b211c8e04905.png)
 
 
-### 테이블 설계
+### 4. 테이블 설계
 https://getinthere.notion.site/99ff6dd910fb4a3c984056db01f17bb0
 
-### 프로젝트 시연영상
+### 5. 프로젝트 시연영상
 https://getinthere.notion.site/5f09cd124c0d4bc2a5a1e5c81db02c3b
 
 
